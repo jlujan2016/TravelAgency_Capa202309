@@ -1,0 +1,9 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\Reorganization.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\Reorganization.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\reorganization.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\reorganization.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\reorganization.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\Reorganization.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\refint\Reorganization.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\Reorganization.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\reorganization\obj\Release\net6.0\ref\Reorganization.dll

@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.ui.masterprompt.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.ui.masterprompt.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\refint\general.ui.masterprompt.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\general.ui.masterprompt.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterprompt\obj\Release\net6.0\ref\general.ui.masterprompt.dll

@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.ui.masterunanimosidebar.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.ui.masterunanimosidebar.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\refint\general.ui.masterunanimosidebar.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\general.ui.masterunanimosidebar.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.ui.masterunanimosidebar\obj\Release\net6.0\ref\general.ui.masterunanimosidebar.dll

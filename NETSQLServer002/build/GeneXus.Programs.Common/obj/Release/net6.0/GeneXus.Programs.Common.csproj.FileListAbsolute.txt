@@ -1,0 +1,9 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\GeneXus.Programs.Common.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\GeneXus.Programs.Common.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\GeneXus.Programs.Common.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\GeneXus.Programs.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\GeneXus.Programs.Common.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\GeneXus.Programs.Common.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\refint\GeneXus.Programs.Common.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\GeneXus.Programs.Common.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\GeneXus.Programs.Common\obj\Release\net6.0\ref\GeneXus.Programs.Common.dll

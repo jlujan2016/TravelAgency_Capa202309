@@ -1,3 +1,8 @@
 <Objects>
-  <Recent />
+  <Recent>
+    <RecentKBObjectsList>
+      <MaximumItems>10</MaximumItems>
+      <RecentKBObjects />
+    </RecentKBObjectsList>
+  </Recent>
 </Objects>
