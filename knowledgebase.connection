@@ -1,0 +1,10 @@
+﻿<ConnectionInformation>
+	<DBName>GX_KB_TravelAgency_Capa202309</DBName>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<ServerInstance>JLUJAN2\MSSQLSERVERBETO</ServerInstance>
+	<CreateDbInKbFolder>True</CreateDbInKbFolder>
+	<Directory>C:\KBs\TravelAgency_Capa202309</Directory>
+	<DataFile>GX_KB_TravelAgency_Capa202309.mdf</DataFile>
+	<LogFile>GX_KB_TravelAgency_Capa202309_log.ldf</LogFile>
+	<HostName>JLUJAN2</HostName>
+</ConnectionInformation>
