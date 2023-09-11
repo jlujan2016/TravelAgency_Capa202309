@@ -83,7 +83,7 @@
 <AttriName>CustomerName</AttriName>
 <Description>Customer Name</Description></Attribute>
 <Sp></Sp>
-<Token>&gt;=</Token>
+<Token>like</Token>
 <Sp></Sp>
 <Variable>
 <VarId>Ccustomername</VarId>
@@ -104,7 +104,7 @@
 <AttriName>CustomerLastName</AttriName>
 <Description>Customer Last Name</Description></Attribute>
 <Sp></Sp>
-<Token>&gt;=</Token>
+<Token>like</Token>
 <Sp></Sp>
 <Variable>
 <VarId>Ccustomerlastname</VarId>

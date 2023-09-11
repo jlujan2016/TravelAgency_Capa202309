@@ -156,8 +156,8 @@ namespace GeneXus.Programs {
       {
          subGrid1_Rows = (int)(Math.Round(NumberUtil.Val( GetPar( "subGrid1_Rows"), "."), 18, MidpointRounding.ToEven));
          AV6cCustomerId = (short)(Math.Round(NumberUtil.Val( GetPar( "cCustomerId"), "."), 18, MidpointRounding.ToEven));
-         AV7cCustomerName = (short)(Math.Round(NumberUtil.Val( GetPar( "cCustomerName"), "."), 18, MidpointRounding.ToEven));
-         AV8cCustomerLastName = (short)(Math.Round(NumberUtil.Val( GetPar( "cCustomerLastName"), "."), 18, MidpointRounding.ToEven));
+         AV7cCustomerName = GetPar( "cCustomerName");
+         AV8cCustomerLastName = GetPar( "cCustomerLastName");
          AV9cCustomerPhone = GetPar( "cCustomerPhone");
          AV10cCustomerEmail = GetPar( "cCustomerEmail");
          setAjaxCallMode();
@@ -307,8 +307,8 @@ namespace GeneXus.Programs {
       {
          /* Send hidden variables. */
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV6cCustomerId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERNAME", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV7cCustomerName), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERLASTNAME", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV8cCustomerLastName), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERNAME", AV7cCustomerName);
+         GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERLASTNAME", AV8cCustomerLastName);
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERPHONE", StringUtil.RTrim( AV9cCustomerPhone));
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMEREMAIL", AV10cCustomerEmail);
          /* Send saved values. */
@@ -469,7 +469,7 @@ namespace GeneXus.Programs {
             GxWebStd.gx_label_element( context, edtavCcustomername_Internalname, "Customer Name", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
             TempTags = "  onfocus=\"gx.evt.onfocus(this, 26,'',false,'" + sGXsfl_64_idx + "',0)\"";
-            GxWebStd.gx_single_line_edit( context, edtavCcustomername_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV7cCustomerName), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCcustomername_Enabled!=0) ? context.localUtil.Format( (decimal)(AV7cCustomerName), "ZZZ9") : context.localUtil.Format( (decimal)(AV7cCustomerName), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,26);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomername_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomername_Visible, edtavCcustomername_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0010.htm");
+            GxWebStd.gx_single_line_edit( context, edtavCcustomername_Internalname, AV7cCustomerName, StringUtil.RTrim( context.localUtil.Format( AV7cCustomerName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,26);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomername_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomername_Visible, edtavCcustomername_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "", "start", true, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -500,7 +500,7 @@ namespace GeneXus.Programs {
             GxWebStd.gx_label_element( context, edtavCcustomerlastname_Internalname, "Customer Last Name", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
             TempTags = "  onfocus=\"gx.evt.onfocus(this, 36,'',false,'" + sGXsfl_64_idx + "',0)\"";
-            GxWebStd.gx_single_line_edit( context, edtavCcustomerlastname_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV8cCustomerLastName), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCcustomerlastname_Enabled!=0) ? context.localUtil.Format( (decimal)(AV8cCustomerLastName), "ZZZ9") : context.localUtil.Format( (decimal)(AV8cCustomerLastName), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,36);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomerlastname_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomerlastname_Visible, edtavCcustomerlastname_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0010.htm");
+            GxWebStd.gx_single_line_edit( context, edtavCcustomerlastname_Internalname, AV8cCustomerLastName, StringUtil.RTrim( context.localUtil.Format( AV8cCustomerLastName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,36);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomerlastname_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomerlastname_Visible, edtavCcustomerlastname_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "", "start", true, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -773,8 +773,8 @@ namespace GeneXus.Programs {
                               AssignProp("", false, edtavLinkselection_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV13Linkselection_GXI : context.convertURL( context.PathToRelativeUrl( AV5LinkSelection))), !bGXsfl_64_Refreshing);
                               AssignProp("", false, edtavLinkselection_Internalname, "SrcSet", context.GetImageSrcSet( AV5LinkSelection), true);
                               A1CustomerId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtCustomerId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-                              A2CustomerName = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtCustomerName_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-                              A3CustomerLastName = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtCustomerLastName_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+                              A2CustomerName = cgiGet( edtCustomerName_Internalname);
+                              A3CustomerLastName = cgiGet( edtCustomerLastName_Internalname);
                               A5CustomerPhone = cgiGet( edtCustomerPhone_Internalname);
                               sEvtType = StringUtil.Right( sEvt, 1);
                               if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
@@ -806,12 +806,12 @@ namespace GeneXus.Programs {
                                           Rfr0gs = true;
                                        }
                                        /* Set Refresh If Ccustomername Changed */
-                                       if ( ( context.localUtil.CToN( cgiGet( "GXH_vCCUSTOMERNAME"), ".", ",") != Convert.ToDecimal( AV7cCustomerName )) )
+                                       if ( StringUtil.StrCmp(cgiGet( "GXH_vCCUSTOMERNAME"), AV7cCustomerName) != 0 )
                                        {
                                           Rfr0gs = true;
                                        }
                                        /* Set Refresh If Ccustomerlastname Changed */
-                                       if ( ( context.localUtil.CToN( cgiGet( "GXH_vCCUSTOMERLASTNAME"), ".", ",") != Convert.ToDecimal( AV8cCustomerLastName )) )
+                                       if ( StringUtil.StrCmp(cgiGet( "GXH_vCCUSTOMERLASTNAME"), AV8cCustomerLastName) != 0 )
                                        {
                                           Rfr0gs = true;
                                        }
@@ -916,8 +916,8 @@ namespace GeneXus.Programs {
 
       protected void gxgrGrid1_refresh( int subGrid1_Rows ,
                                         short AV6cCustomerId ,
-                                        short AV7cCustomerName ,
-                                        short AV8cCustomerLastName ,
+                                        string AV7cCustomerName ,
+                                        string AV8cCustomerLastName ,
                                         string AV9cCustomerPhone ,
                                         string AV10cCustomerEmail )
       {
@@ -1005,13 +1005,15 @@ namespace GeneXus.Programs {
                                                  A6CustomerEmail ,
                                                  AV6cCustomerId } ,
                                                  new int[]{
-                                                 TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
+                                                 TypeConstants.SHORT
                                                  }
             });
+            lV7cCustomerName = StringUtil.Concat( StringUtil.RTrim( AV7cCustomerName), "%", "");
+            lV8cCustomerLastName = StringUtil.Concat( StringUtil.RTrim( AV8cCustomerLastName), "%", "");
             lV9cCustomerPhone = StringUtil.PadR( StringUtil.RTrim( AV9cCustomerPhone), 20, "%");
             lV10cCustomerEmail = StringUtil.Concat( StringUtil.RTrim( AV10cCustomerEmail), "%", "");
             /* Using cursor H00032 */
-            pr_default.execute(0, new Object[] {AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
+            pr_default.execute(0, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
             nGXsfl_64_idx = 1;
             sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
             SubsflControlProps_642( ) ;
@@ -1063,13 +1065,15 @@ namespace GeneXus.Programs {
                                               A6CustomerEmail ,
                                               AV6cCustomerId } ,
                                               new int[]{
-                                              TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
+                                              TypeConstants.SHORT
                                               }
          });
+         lV7cCustomerName = StringUtil.Concat( StringUtil.RTrim( AV7cCustomerName), "%", "");
+         lV8cCustomerLastName = StringUtil.Concat( StringUtil.RTrim( AV8cCustomerLastName), "%", "");
          lV9cCustomerPhone = StringUtil.PadR( StringUtil.RTrim( AV9cCustomerPhone), 20, "%");
          lV10cCustomerEmail = StringUtil.Concat( StringUtil.RTrim( AV10cCustomerEmail), "%", "");
          /* Using cursor H00033 */
-         pr_default.execute(1, new Object[] {AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail});
+         pr_default.execute(1, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail});
          GRID1_nRecordCount = H00033_AGRID1_nRecordCount[0];
          pr_default.close(1);
          return (int)(GRID1_nRecordCount) ;
@@ -1220,34 +1224,10 @@ namespace GeneXus.Programs {
                AV6cCustomerId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCcustomerid_Internalname), ".", ","), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "AV6cCustomerId", StringUtil.LTrimStr( (decimal)(AV6cCustomerId), 4, 0));
             }
-            if ( ( ( context.localUtil.CToN( cgiGet( edtavCcustomername_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtavCcustomername_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "vCCUSTOMERNAME");
-               GX_FocusControl = edtavCcustomername_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               AV7cCustomerName = 0;
-               AssignAttri("", false, "AV7cCustomerName", StringUtil.LTrimStr( (decimal)(AV7cCustomerName), 4, 0));
-            }
-            else
-            {
-               AV7cCustomerName = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCcustomername_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-               AssignAttri("", false, "AV7cCustomerName", StringUtil.LTrimStr( (decimal)(AV7cCustomerName), 4, 0));
-            }
-            if ( ( ( context.localUtil.CToN( cgiGet( edtavCcustomerlastname_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtavCcustomerlastname_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "vCCUSTOMERLASTNAME");
-               GX_FocusControl = edtavCcustomerlastname_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               AV8cCustomerLastName = 0;
-               AssignAttri("", false, "AV8cCustomerLastName", StringUtil.LTrimStr( (decimal)(AV8cCustomerLastName), 4, 0));
-            }
-            else
-            {
-               AV8cCustomerLastName = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCcustomerlastname_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-               AssignAttri("", false, "AV8cCustomerLastName", StringUtil.LTrimStr( (decimal)(AV8cCustomerLastName), 4, 0));
-            }
+            AV7cCustomerName = cgiGet( edtavCcustomername_Internalname);
+            AssignAttri("", false, "AV7cCustomerName", AV7cCustomerName);
+            AV8cCustomerLastName = cgiGet( edtavCcustomerlastname_Internalname);
+            AssignAttri("", false, "AV8cCustomerLastName", AV8cCustomerLastName);
             AV9cCustomerPhone = cgiGet( edtavCcustomerphone_Internalname);
             AssignAttri("", false, "AV9cCustomerPhone", AV9cCustomerPhone);
             AV10cCustomerEmail = cgiGet( edtavCcustomeremail_Internalname);
@@ -1260,11 +1240,11 @@ namespace GeneXus.Programs {
             {
                GRID1_nFirstRecordOnPage = 0;
             }
-            if ( ( context.localUtil.CToN( cgiGet( "GXH_vCCUSTOMERNAME"), ".", ",") != Convert.ToDecimal( AV7cCustomerName )) )
+            if ( StringUtil.StrCmp(cgiGet( "GXH_vCCUSTOMERNAME"), AV7cCustomerName) != 0 )
             {
                GRID1_nFirstRecordOnPage = 0;
             }
-            if ( ( context.localUtil.CToN( cgiGet( "GXH_vCCUSTOMERLASTNAME"), ".", ",") != Convert.ToDecimal( AV8cCustomerLastName )) )
+            if ( StringUtil.StrCmp(cgiGet( "GXH_vCCUSTOMERLASTNAME"), AV8cCustomerLastName) != 0 )
             {
                GRID1_nFirstRecordOnPage = 0;
             }
@@ -1386,7 +1366,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2023981139592", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2023981241490", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1402,7 +1382,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("gx0010.js", "?2023981139592", false, true);
+         context.AddJavascriptSource("gx0010.js", "?2023981241490", false, true);
          /* End function include_jscripts */
       }
 
@@ -1511,21 +1491,21 @@ namespace GeneXus.Programs {
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
-               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"end"+"\""+" style=\""+""+"\">") ;
+               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"start"+"\""+" style=\""+""+"\">") ;
             }
             /* Single line edit */
             ROClassString = "DescriptionAttribute";
             edtCustomerName_Link = "javascript:gx.popup.gxReturn(["+"'"+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", "")))+"'"+"]);";
             AssignProp("", false, edtCustomerName_Internalname, "Link", edtCustomerName_Link, !bGXsfl_64_Refreshing);
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerName_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A2CustomerName), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A2CustomerName), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtCustomerName_Link,(string)"",(string)"",(string)"",(string)edtCustomerName_Jsonclick,(short)0,(string)"DescriptionAttribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)0,(bool)true,(string)"",(string)"end",(bool)false,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerName_Internalname,(string)A2CustomerName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtCustomerName_Link,(string)"",(string)"",(string)"",(string)edtCustomerName_Jsonclick,(short)0,(string)"DescriptionAttribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
-               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"end"+"\""+" style=\""+""+"\">") ;
+               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"start"+"\""+" style=\""+""+"\">") ;
             }
             /* Single line edit */
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerLastName_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A3CustomerLastName), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A3CustomerLastName), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerLastName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)0,(bool)true,(string)"",(string)"end",(bool)false,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerLastName_Internalname,(string)A3CustomerLastName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerLastName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
@@ -1595,10 +1575,10 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Id") ;
             context.WriteHtmlTextNl( "</th>") ;
-            context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"DescriptionAttribute"+"\" "+" style=\""+""+""+"\" "+">") ;
+            context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"DescriptionAttribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Name") ;
             context.WriteHtmlTextNl( "</th>") ;
-            context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
+            context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Last Name") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
@@ -1634,11 +1614,11 @@ namespace GeneXus.Programs {
             Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", ""))));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
-            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A2CustomerName), 4, 0, ".", ""))));
+            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( A2CustomerName));
             Grid1Column.AddObjectProperty("Link", StringUtil.RTrim( edtCustomerName_Link));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
-            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A3CustomerLastName), 4, 0, ".", ""))));
+            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( A3CustomerLastName));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
             Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.RTrim( A5CustomerPhone)));
@@ -1745,7 +1725,7 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:'ZZZ9'},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:'ZZZ9'},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
          setEventMetadata("REFRESH",",oparms:[]}");
          setEventMetadata("'TOGGLE'","{handler:'E16031',iparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]");
          setEventMetadata("'TOGGLE'",",oparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]}");
@@ -1761,13 +1741,13 @@ namespace GeneXus.Programs {
          setEventMetadata("LBLCUSTOMEREMAILFILTER.CLICK",",oparms:[{av:'divCustomeremailfiltercontainer_Class',ctrl:'CUSTOMEREMAILFILTERCONTAINER',prop:'Class'},{av:'edtavCcustomeremail_Visible',ctrl:'vCCUSTOMEREMAIL',prop:'Visible'}]}");
          setEventMetadata("ENTER","{handler:'E19032',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9',hsh:true}]");
          setEventMetadata("ENTER",",oparms:[{av:'AV11pCustomerId',fld:'vPCUSTOMERID',pic:'ZZZ9'}]}");
-         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:'ZZZ9'},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:'ZZZ9'},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
          setEventMetadata("GRID1_FIRSTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:'ZZZ9'},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:'ZZZ9'},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
          setEventMetadata("GRID1_PREVPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:'ZZZ9'},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:'ZZZ9'},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
          setEventMetadata("GRID1_NEXTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:'ZZZ9'},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:'ZZZ9'},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
          setEventMetadata("GRID1_LASTPAGE",",oparms:[]}");
          setEventMetadata("VALIDV_CCUSTOMEREMAIL","{handler:'Validv_Ccustomeremail',iparms:[]");
          setEventMetadata("VALIDV_CCUSTOMEREMAIL",",oparms:[]}");
@@ -1794,6 +1774,8 @@ namespace GeneXus.Programs {
       {
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
+         AV7cCustomerName = "";
+         AV8cCustomerLastName = "";
          AV9cCustomerPhone = "";
          AV10cCustomerEmail = "";
          sDynURL = "";
@@ -1821,15 +1803,19 @@ namespace GeneXus.Programs {
          sEvtType = "";
          AV5LinkSelection = "";
          AV13Linkselection_GXI = "";
+         A2CustomerName = "";
+         A3CustomerLastName = "";
          A5CustomerPhone = "";
          scmdbuf = "";
+         lV7cCustomerName = "";
+         lV8cCustomerLastName = "";
          lV9cCustomerPhone = "";
          lV10cCustomerEmail = "";
          A6CustomerEmail = "";
          H00032_A6CustomerEmail = new string[] {""} ;
          H00032_A5CustomerPhone = new string[] {""} ;
-         H00032_A3CustomerLastName = new short[1] ;
-         H00032_A2CustomerName = new short[1] ;
+         H00032_A3CustomerLastName = new string[] {""} ;
+         H00032_A2CustomerName = new string[] {""} ;
          H00032_A1CustomerId = new short[1] ;
          H00033_AGRID1_nRecordCount = new long[1] ;
          AV12ADVANCED_LABEL_TEMPLATE = "";
@@ -1859,15 +1845,11 @@ namespace GeneXus.Programs {
       private short nGotPars ;
       private short GxWebError ;
       private short AV6cCustomerId ;
-      private short AV7cCustomerName ;
-      private short AV8cCustomerLastName ;
       private short initialized ;
       private short gxajaxcallmode ;
       private short wbEnd ;
       private short wbStart ;
       private short A1CustomerId ;
-      private short A2CustomerName ;
-      private short A3CustomerLastName ;
       private short nDonePA ;
       private short gxcookieaux ;
       private short subGrid1_Backcolorstyle ;
@@ -1883,10 +1865,10 @@ namespace GeneXus.Programs {
       private int nGXsfl_64_idx=1 ;
       private int edtavCcustomerid_Enabled ;
       private int edtavCcustomerid_Visible ;
-      private int edtavCcustomername_Enabled ;
       private int edtavCcustomername_Visible ;
-      private int edtavCcustomerlastname_Enabled ;
+      private int edtavCcustomername_Enabled ;
       private int edtavCcustomerlastname_Visible ;
+      private int edtavCcustomerlastname_Enabled ;
       private int edtavCcustomerphone_Visible ;
       private int edtavCcustomerphone_Enabled ;
       private int edtavCcustomeremail_Visible ;
@@ -1994,8 +1976,14 @@ namespace GeneXus.Programs {
       private bool gxdyncontrolsrefreshing ;
       private bool returnInSub ;
       private bool AV5LinkSelection_IsBlob ;
+      private string AV7cCustomerName ;
+      private string AV8cCustomerLastName ;
       private string AV10cCustomerEmail ;
       private string AV13Linkselection_GXI ;
+      private string A2CustomerName ;
+      private string A3CustomerLastName ;
+      private string lV7cCustomerName ;
+      private string lV8cCustomerLastName ;
       private string lV10cCustomerEmail ;
       private string A6CustomerEmail ;
       private string AV5LinkSelection ;
@@ -2006,8 +1994,8 @@ namespace GeneXus.Programs {
       private IDataStoreProvider pr_default ;
       private string[] H00032_A6CustomerEmail ;
       private string[] H00032_A5CustomerPhone ;
-      private short[] H00032_A3CustomerLastName ;
-      private short[] H00032_A2CustomerName ;
+      private string[] H00032_A3CustomerLastName ;
+      private string[] H00032_A2CustomerName ;
       private short[] H00032_A1CustomerId ;
       private long[] H00033_AGRID1_nRecordCount ;
       private msglist BackMsgLst ;
@@ -2019,12 +2007,12 @@ namespace GeneXus.Programs {
    public class gx0010__default : DataStoreHelperBase, IDataStoreHelper
    {
       protected Object[] conditional_H00032( IGxContext context ,
-                                             short AV7cCustomerName ,
-                                             short AV8cCustomerLastName ,
+                                             string AV7cCustomerName ,
+                                             string AV8cCustomerLastName ,
                                              string AV9cCustomerPhone ,
                                              string AV10cCustomerEmail ,
-                                             short A2CustomerName ,
-                                             short A3CustomerLastName ,
+                                             string A2CustomerName ,
+                                             string A3CustomerLastName ,
                                              string A5CustomerPhone ,
                                              string A6CustomerEmail ,
                                              short AV6cCustomerId )
@@ -2040,17 +2028,17 @@ namespace GeneXus.Programs {
          sFromString = " FROM [Customer]";
          sOrderString = "";
          AddWhere(sWhereString, "([CustomerId] >= @AV6cCustomerId)");
-         if ( ! (0==AV7cCustomerName) )
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV7cCustomerName)) )
          {
-            AddWhere(sWhereString, "([CustomerName] >= @AV7cCustomerName)");
+            AddWhere(sWhereString, "([CustomerName] like @lV7cCustomerName)");
          }
          else
          {
             GXv_int1[1] = 1;
          }
-         if ( ! (0==AV8cCustomerLastName) )
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV8cCustomerLastName)) )
          {
-            AddWhere(sWhereString, "([CustomerLastName] >= @AV8cCustomerLastName)");
+            AddWhere(sWhereString, "([CustomerLastName] like @lV8cCustomerLastName)");
          }
          else
          {
@@ -2080,12 +2068,12 @@ namespace GeneXus.Programs {
       }
 
       protected Object[] conditional_H00033( IGxContext context ,
-                                             short AV7cCustomerName ,
-                                             short AV8cCustomerLastName ,
+                                             string AV7cCustomerName ,
+                                             string AV8cCustomerLastName ,
                                              string AV9cCustomerPhone ,
                                              string AV10cCustomerEmail ,
-                                             short A2CustomerName ,
-                                             short A3CustomerLastName ,
+                                             string A2CustomerName ,
+                                             string A3CustomerLastName ,
                                              string A5CustomerPhone ,
                                              string A6CustomerEmail ,
                                              short AV6cCustomerId )
@@ -2096,17 +2084,17 @@ namespace GeneXus.Programs {
          Object[] GXv_Object4 = new Object[2];
          scmdbuf = "SELECT COUNT(*) FROM [Customer]";
          AddWhere(sWhereString, "([CustomerId] >= @AV6cCustomerId)");
-         if ( ! (0==AV7cCustomerName) )
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV7cCustomerName)) )
          {
-            AddWhere(sWhereString, "([CustomerName] >= @AV7cCustomerName)");
+            AddWhere(sWhereString, "([CustomerName] like @lV7cCustomerName)");
          }
          else
          {
             GXv_int3[1] = 1;
          }
-         if ( ! (0==AV8cCustomerLastName) )
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV8cCustomerLastName)) )
          {
-            AddWhere(sWhereString, "([CustomerLastName] >= @AV8cCustomerLastName)");
+            AddWhere(sWhereString, "([CustomerLastName] like @lV8cCustomerLastName)");
          }
          else
          {
@@ -2141,9 +2129,9 @@ namespace GeneXus.Programs {
          switch ( cursor )
          {
                case 0 :
-                     return conditional_H00032(context, (short)dynConstraints[0] , (short)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (short)dynConstraints[4] , (short)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
+                     return conditional_H00032(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (string)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
                case 1 :
-                     return conditional_H00033(context, (short)dynConstraints[0] , (short)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (short)dynConstraints[4] , (short)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
+                     return conditional_H00033(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (string)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
          }
          return base.getDynamicStatement(cursor, context, dynConstraints);
       }
@@ -2165,8 +2153,8 @@ namespace GeneXus.Programs {
           Object[] prmH00032;
           prmH00032 = new Object[] {
           new ParDef("@AV6cCustomerId",GXType.Int16,4,0) ,
-          new ParDef("@AV7cCustomerName",GXType.Int16,4,0) ,
-          new ParDef("@AV8cCustomerLastName",GXType.Int16,4,0) ,
+          new ParDef("@lV7cCustomerName",GXType.NVarChar,40,0) ,
+          new ParDef("@lV8cCustomerLastName",GXType.NVarChar,40,0) ,
           new ParDef("@lV9cCustomerPhone",GXType.NChar,20,0) ,
           new ParDef("@lV10cCustomerEmail",GXType.NVarChar,100,0) ,
           new ParDef("@GXPagingFrom2",GXType.Int32,9,0) ,
@@ -2176,8 +2164,8 @@ namespace GeneXus.Programs {
           Object[] prmH00033;
           prmH00033 = new Object[] {
           new ParDef("@AV6cCustomerId",GXType.Int16,4,0) ,
-          new ParDef("@AV7cCustomerName",GXType.Int16,4,0) ,
-          new ParDef("@AV8cCustomerLastName",GXType.Int16,4,0) ,
+          new ParDef("@lV7cCustomerName",GXType.NVarChar,40,0) ,
+          new ParDef("@lV8cCustomerLastName",GXType.NVarChar,40,0) ,
           new ParDef("@lV9cCustomerPhone",GXType.NChar,20,0) ,
           new ParDef("@lV10cCustomerEmail",GXType.NVarChar,100,0)
           };
@@ -2197,8 +2185,8 @@ namespace GeneXus.Programs {
              case 0 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 ((string[]) buf[1])[0] = rslt.getString(2, 20);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
-                ((short[]) buf[3])[0] = rslt.getShort(4);
+                ((string[]) buf[2])[0] = rslt.getVarchar(3);
+                ((string[]) buf[3])[0] = rslt.getVarchar(4);
                 ((short[]) buf[4])[0] = rslt.getShort(5);
                 return;
              case 1 :

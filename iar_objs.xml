@@ -11,5 +11,5 @@
 <TableId>1</TableId>
 <TableName>Customer</TableName>
 <Description>Customer</Description></Table>
-<ReorgAction>*</ReorgAction>
+<ReorgAction>#</ReorgAction>
 <ObjNavig>beto\MDL002\GEN41\CustomerConversion.xml</ObjNavig></Object>

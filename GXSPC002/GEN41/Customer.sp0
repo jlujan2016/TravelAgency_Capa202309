@@ -170,8 +170,8 @@ v_i(t,o,2,6).
 attri_i(6,[ 'CustomerEmail',svchar,100,0,'',0,'Customer Email','',0 ]).
 attri_i(5,[ 'CustomerPhone',char,20,0,'',0,'Customer Phone','',0 ]).
 attri_i(4,[ 'CustomerAddress',svchar,1024,0,'',0,'Customer Address','',0 ]).
-attri_i(3,[ 'CustomerLastName',int,4,0,'ZZZ9',0,'Customer Last Name','',0 ]).
-attri_i(2,[ 'CustomerName',int,4,0,'ZZZ9',0,'Customer Name','',0 ]).
+attri_i(3,[ 'CustomerLastName',svchar,40,0,'',0,'Customer Last Name','',0 ]).
+attri_i(2,[ 'CustomerName',svchar,40,0,'',0,'Customer Name','',0 ]).
 attri_i(1,[ 'CustomerId',int,4,0,'ZZZ9',0,'Customer Id','',0 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
@@ -672,7 +672,7 @@ html_comp_i(38,'Semanticcontent',div,d,[ str ]).
 html_comp_i(38,'Align',left,d,[ str ]).
 html_comp_i(38,'Valign',top,d,[ str ]).
 html_comp_i(39,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(39,'Colcount',4,d,[ num ]).
+html_comp_i(39,'Colcount',40,d,[ num ]).
 html_comp_i(39,'Attid',2,v,[ num ]).
 html_comp_i(39,'Class','Attribute',v,[ str ]).
 html_comp_i(39,'Controlname','Customername',d,[ str ]).
@@ -684,13 +684,16 @@ html_comp_i(39,'Captionvalue','Name',d,[ str ]).
 html_comp_i(39,'Layoutclass','col-sm-9',v,[ str ]).
 html_comp_i(39,'Controltype',2,d,[ num ]).
 html_comp_i(39,'Inputtype',0,d,[ num ]).
+html_comp_i(39,'Editautocomplete',0,d,[ num ]).
+html_comp_i(39,'Autocorrection',-1,d,[ bool ]).
+html_comp_i(39,'Autocapitalization','FirstWord',d,[ str ]).
 html_comp_i(39,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(39,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(39,'Readonly',0,v,[ bool ]).
 html_comp_i(39,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(39,'Ispassword',0,d,[ bool ]).
 html_comp_i(39,'Autoresize',-1,d,[ bool ]).
-html_comp_i(39,'Gxwidth',measure(4,chr),d,[ measure ]).
+html_comp_i(39,'Gxwidth',measure(40,chr),d,[ measure ]).
 html_comp_i(39,'Gxheight',measure(1,row),d,[ measure ]).
 html_comp_i(39,'Ismultiline',0,d,[ bool ]).
 html_comp_i(39,'Maxtextnumberlines',0,d,[ num ]).
@@ -698,7 +701,7 @@ html_comp_i(39,'Fill',-1,d,[ bool ]).
 html_comp_i(39,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(39,'Forecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(39,'Font',font('Verdana',12,[]),d,[ font ]).
-html_comp_i(39,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(39,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(39,'Gxformat',0,d,[ num ]).
 html_comp_i(39,'Title','',d,[ str ]).
 html_comp_i(39,'Invitemsg','',v,[ str ]).
@@ -735,7 +738,7 @@ html_comp_i(43,'Semanticcontent',div,d,[ str ]).
 html_comp_i(43,'Align',left,d,[ str ]).
 html_comp_i(43,'Valign',top,d,[ str ]).
 html_comp_i(44,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(44,'Colcount',4,d,[ num ]).
+html_comp_i(44,'Colcount',40,d,[ num ]).
 html_comp_i(44,'Attid',3,v,[ num ]).
 html_comp_i(44,'Class','Attribute',v,[ str ]).
 html_comp_i(44,'Controlname','Customerlastname',d,[ str ]).
@@ -747,13 +750,16 @@ html_comp_i(44,'Captionvalue','Last Name',d,[ str ]).
 html_comp_i(44,'Layoutclass','col-sm-9',v,[ str ]).
 html_comp_i(44,'Controltype',2,d,[ num ]).
 html_comp_i(44,'Inputtype',0,d,[ num ]).
+html_comp_i(44,'Editautocomplete',0,d,[ num ]).
+html_comp_i(44,'Autocorrection',-1,d,[ bool ]).
+html_comp_i(44,'Autocapitalization','FirstWord',d,[ str ]).
 html_comp_i(44,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(44,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(44,'Readonly',0,v,[ bool ]).
 html_comp_i(44,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(44,'Ispassword',0,d,[ bool ]).
 html_comp_i(44,'Autoresize',-1,d,[ bool ]).
-html_comp_i(44,'Gxwidth',measure(4,chr),d,[ measure ]).
+html_comp_i(44,'Gxwidth',measure(40,chr),d,[ measure ]).
 html_comp_i(44,'Gxheight',measure(1,row),d,[ measure ]).
 html_comp_i(44,'Ismultiline',0,d,[ bool ]).
 html_comp_i(44,'Maxtextnumberlines',0,d,[ num ]).
@@ -761,7 +767,7 @@ html_comp_i(44,'Fill',-1,d,[ bool ]).
 html_comp_i(44,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(44,'Forecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(44,'Font',font('Verdana',12,[]),d,[ font ]).
-html_comp_i(44,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(44,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(44,'Gxformat',0,d,[ num ]).
 html_comp_i(44,'Title','',d,[ str ]).
 html_comp_i(44,'Invitemsg','',v,[ str ]).
@@ -1151,8 +1157,8 @@ att_prop_i(2,2,'ExternalName','CustomerName',d).
 att_prop_i(2,2,'ExternalNamespace','TravelAgency_Capa202309',d).
 att_prop_i(2,2,'EmptyAsNull','Yes',d).
 att_prop_i(2,2,idBasedOn,'',d).
-att_prop_i(2,2,'AUTONUMBER','0',d).
 att_prop_i(2,2,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,2,'DB_NLS_SUPPORT','Yes',d).
 att_prop_i(2,2,'AttRegEx','',d).
 att_prop_i(2,2,'AttValidationFailedMsg','',d).
 att_prop_i(2,2,'DownloadOffline','0',d).
@@ -1162,8 +1168,8 @@ att_prop_i(2,3,'ExternalName','CustomerLastName',d).
 att_prop_i(2,3,'ExternalNamespace','TravelAgency_Capa202309',d).
 att_prop_i(2,3,'EmptyAsNull','Yes',d).
 att_prop_i(2,3,idBasedOn,'',d).
-att_prop_i(2,3,'AUTONUMBER','0',d).
 att_prop_i(2,3,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,3,'DB_NLS_SUPPORT','Yes',d).
 att_prop_i(2,3,'AttRegEx','',d).
 att_prop_i(2,3,'AttValidationFailedMsg','',d).
 att_prop_i(2,3,'DownloadOffline','0',d).
@@ -1225,9 +1231,10 @@ trn_level_i(1,[ [ 1,2,3,4,5,6 ],'Customer','Customer','Customer','',2 ]).
  
  
  
-pgm_parm_i(web,0,'GX0010',[ [ int,4,0,0 ] ],[ [ 'V1',out,[] ] ]).
+pgm_parm_i(web,3,'GX0010',[ [ int,4,0,0 ] ],[ [ pCustomerId,out,[] ] ]).
  
 pgm_callprotocol_i(trn,1,'CUSTOMER','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,3,'GX0010','INTERNAL','Unsecure').
  
  
  
