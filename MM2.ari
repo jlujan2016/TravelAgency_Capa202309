@@ -77,7 +77,7 @@ lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
 lng_prop_i(1,'FullyQualifiedName','English',d).
  
-ver_stamp('20230912.152852').
+ver_stamp('20230912.164250').
  
-ver_stamp(date(2023,9,12),time(10,31,14,10)).
+ver_stamp(date(2023,9,12),time(11,44,38,37)).
  

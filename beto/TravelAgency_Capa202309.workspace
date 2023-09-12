@@ -4,10 +4,35 @@
     <Id>1</Id>
     <Part>264be5fb-1b28-4b25-a598-6ca900dd059f</Part>
   </Object>
+  <Object>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Id>2</Id>
+    <Part>264be5fb-1b28-4b25-a598-6ca900dd059f</Part>
+  </Object>
+  <Object>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Id>3</Id>
+    <Part>264be5fb-1b28-4b25-a598-6ca900dd059f</Part>
+  </Object>
+  <Object>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Id>4</Id>
+    <Part>264be5fb-1b28-4b25-a598-6ca900dd059f</Part>
+  </Object>
   <Recent>
     <RecentKBObjectsList>
       <MaximumItems>10</MaximumItems>
       <RecentKBObjects>
+        <RecentKBObject>
+          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-3</Key>
+          <Name>Country</Name>
+          <LastAccess>2023-09-12T10:30:40.5706306-05:00</LastAccess>
+        </RecentKBObject>
+        <RecentKBObject>
+          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-2</Key>
+          <Name>Attraction</Name>
+          <LastAccess>2023-09-12T10:20:12.5106113-05:00</LastAccess>
+        </RecentKBObject>
         <RecentKBObject>
           <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-1</Key>
           <Name>Customer</Name>

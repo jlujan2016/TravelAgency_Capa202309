@@ -80,6 +80,82 @@
         }
       }
     },
+    "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj",
+        "projectName": "category",
+        "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj",
+        "packagesPath": "C:\\Users\\beto\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\beto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.24.1, 1.24.1]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.24.1, 1.24.1]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -259,6 +335,9 @@
               "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj": {
                 "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj"
               },
+              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj": {
+                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj"
+              },
               "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj": {
                 "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj"
               },
@@ -282,6 +361,9 @@
               },
               "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\gx0030.csproj": {
                 "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\gx0030.csproj"
+              },
+              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
+                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj"
               }
             }
           }
@@ -716,6 +798,82 @@
         "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\gx0030.csproj",
         "packagesPath": "C:\\Users\\beto\\.nuget\\packages\\",
         "outputPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\beto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.24.1, 1.24.1]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.24.1, 1.24.1]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj",
+        "projectName": "gx0040",
+        "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj",
+        "packagesPath": "C:\\Users\\beto\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\NuGet.Config",

@@ -2499,6 +2499,24 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "category/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/category.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/category.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "country/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2637,6 +2655,24 @@
         },
         "runtime": {
           "bin/placeholder/gx0030.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "gx0040/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx0040.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx0040.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -7981,6 +8017,11 @@
       "path": "../attraction/attraction.csproj",
       "msbuildProject": "../attraction/attraction.csproj"
     },
+    "category/1.0.0": {
+      "type": "project",
+      "path": "../category/category.csproj",
+      "msbuildProject": "../category/category.csproj"
+    },
     "country/1.0.0": {
       "type": "project",
       "path": "../country/country.csproj",
@@ -8020,6 +8061,11 @@
       "type": "project",
       "path": "../gx0030/gx0030.csproj",
       "msbuildProject": "../gx0030/gx0030.csproj"
+    },
+    "gx0040/1.0.0": {
+      "type": "project",
+      "path": "../gx0040/gx0040.csproj",
+      "msbuildProject": "../gx0040/gx0040.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8028,13 +8074,15 @@
       "GeneXus.PdfReportsCS.Core >= 1.24.1 <= 1.24.1",
       "GeneXus.Programs.Common >= 1.0.0",
       "attraction >= 1.0.0",
+      "category >= 1.0.0",
       "country >= 1.0.0",
       "customer >= 1.0.0",
       "general.ui.masterprompt >= 1.0.0",
       "general.ui.masterunanimosidebar >= 1.0.0",
       "gx0010 >= 1.0.0",
       "gx0020 >= 1.0.0",
-      "gx0030 >= 1.0.0"
+      "gx0030 >= 1.0.0",
+      "gx0040 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8067,6 +8115,9 @@
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj"
             },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj"
             },
@@ -8090,6 +8141,9 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\gx0030.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0030\\gx0030.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj"
             }
           }
         }

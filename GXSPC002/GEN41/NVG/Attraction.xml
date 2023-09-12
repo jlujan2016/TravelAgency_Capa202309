@@ -49,6 +49,17 @@
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>4</TableId>
+<TableName>Category</TableName>
+<Description>Category</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></KeyAttributes>
 <Tables></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
@@ -70,9 +81,21 @@
 <AttriName>AttractionName</AttriName>
 <Description>Attraction Name</Description></Attribute>
 <Attribute>
+<AttriId>13</AttriId>
+<AttriName>AttractionPhoto</AttriName>
+<Description>Attraction Photo</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>AttractionPhoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
-<Description>Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Country Id</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>2</TableId>
@@ -85,9 +108,21 @@
 <AttriName>AttractionName</AttriName>
 <Description>Attraction Name</Description></Attribute>
 <Attribute>
+<AttriId>13</AttriId>
+<AttriName>AttractionPhoto</AttriName>
+<Description>Attraction Photo</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>AttractionPhoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
-<Description>Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Country Id</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>2</TableId>
@@ -103,6 +138,25 @@
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts>
+<Prompt>
+<Table>
+<TableId>4</TableId>
+<TableName>Category</TableName>
+<Description>Category</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Gx0040</ObjName>
+<ObjPgmName>Gx0040</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>
 <TableId>3</TableId>

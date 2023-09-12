@@ -21,4 +21,10 @@
       <ObjDesc>Country</ObjDesc>
       <ObjLink>country.aspx</ObjLink>
    </Object>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Category</ObjName>
+      <ObjDesc>Category</ObjDesc>
+      <ObjLink>category.aspx</ObjLink>
+   </Object>
 </Objects>

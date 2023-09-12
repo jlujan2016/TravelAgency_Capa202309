@@ -60,31 +60,43 @@ namespace GeneXus.Programs {
       {
          string cmdBuffer = "";
          /* Indices for table Attraction */
-         cmdBuffer=" ALTER TABLE [Attraction] ADD [CountryId] smallint NOT NULL CONSTRAINT CountryIdAttraction_DEFAULT DEFAULT convert(int, 0) "
+         cmdBuffer=" ALTER TABLE [Attraction] ADD [CategoryId] smallint NOT NULL CONSTRAINT CategoryIdAttraction_DEFAULT DEFAULT convert(int, 0), [AttractionPhoto] VARBINARY(MAX) NOT NULL CONSTRAINT AttractionPhotoAttraction_DEFAULT DEFAULT CONVERT(varbinary(1), ''), [AttractionPhoto_GXI] varchar(2048) NOT NULL CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT DEFAULT '' "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT CountryIdAttraction_DEFAULT "
+         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT CategoryIdAttraction_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Country] ON "
+         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhotoAttraction_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Country] ([CountryId], [CountryName]) SELECT TOP 1 convert(int, 0), ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Country] WHERE CountryId=convert(int, 0)) "
+         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Country] OFF "
+         cmdBuffer=" SET IDENTITY_INSERT [Category] ON "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
+         cmdBuffer=" INSERT INTO [Category] ([CategoryId], [CategoryName]) SELECT TOP 1 convert(int, 0), ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Category] WHERE CategoryId=convert(int, 0)) "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
+         cmdBuffer=" SET IDENTITY_INSERT [Category] OFF "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -92,7 +104,7 @@ namespace GeneXus.Programs {
          RGZ.Drop();
          try
          {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION1] ON [Attraction] ([CountryId] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION2] ON [Attraction] ([CategoryId] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -101,13 +113,13 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX [IATTRACTION1] ON [Attraction] "
+            cmdBuffer=" DROP INDEX [IATTRACTION2] ON [Attraction] "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION1] ON [Attraction] ([CountryId] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION2] ON [Attraction] ([CategoryId] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -116,12 +128,12 @@ namespace GeneXus.Programs {
          }
       }
 
-      public void RIAttractionCountry( )
+      public void RIAttractionCategory( )
       {
          string cmdBuffer;
          try
          {
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]) "
+            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION2] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId]) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -132,7 +144,7 @@ namespace GeneXus.Programs {
          {
             try
             {
-               cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT [IATTRACTION1] "
+               cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT [IATTRACTION2] "
                ;
                RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
                RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
@@ -142,7 +154,7 @@ namespace GeneXus.Programs {
             catch
             {
             }
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]) "
+            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION2] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId]) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -201,9 +213,19 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ColumnExist("Attraction",sSchemaVar,"CountryId") )
+         if ( ColumnExist("Attraction",sSchemaVar,"CategoryId") )
          {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"CountryId", "Attraction"}) ) ;
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"CategoryId", "Attraction"}) ) ;
+            return false ;
+         }
+         if ( ColumnExist("Attraction",sSchemaVar,"AttractionPhoto") )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"AttractionPhoto", "Attraction"}) ) ;
+            return false ;
+         }
+         if ( ColumnExist("Attraction",sSchemaVar,"AttractionPhoto_GXI") )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"AttractionPhoto_GXI", "Attraction"}) ) ;
             return false ;
          }
          return true ;
@@ -239,7 +261,7 @@ namespace GeneXus.Programs {
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIAttractionCountry" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIAttractionCategory" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -262,8 +284,8 @@ namespace GeneXus.Programs {
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IATTRACTION1]"}) );
-         ReorgExecute.RegisterPrecedence( "RIAttractionCountry" ,  "ReorganizeAttraction" );
+         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IATTRACTION2]"}) );
+         ReorgExecute.RegisterPrecedence( "RIAttractionCategory" ,  "ReorganizeAttraction" );
       }
 
       private void ExecuteReorganization( )
