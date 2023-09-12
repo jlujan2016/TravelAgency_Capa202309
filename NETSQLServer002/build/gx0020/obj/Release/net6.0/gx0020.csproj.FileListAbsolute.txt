@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\gx0020.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\gx0020.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\refint\gx0020.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\gx0020.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\gx0020\obj\Release\net6.0\ref\gx0020.dll

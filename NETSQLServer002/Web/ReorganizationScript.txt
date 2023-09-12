@@ -1,3 +1,9 @@
-ALTER TABLE [Customer] ALTER COLUMN [CustomerName] nvarchar(40) NOT NULL;
-ALTER TABLE [Customer] ALTER COLUMN [CustomerLastName] nvarchar(40) NOT NULL;
+ALTER TABLE [Attraction] ADD [CountryId] smallint NOT NULL CONSTRAINT CountryIdAttraction_DEFAULT DEFAULT convert(int, 0);
+ALTER TABLE [Attraction] DROP CONSTRAINT CountryIdAttraction_DEFAULT;
+SET IDENTITY_INSERT [Country] ON;
+INSERT INTO [Country] ([CountryId], [CountryName]) SELECT TOP 1 convert(int, 0), ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Country] WHERE CountryId=convert(int, 0));
+SET IDENTITY_INSERT [Country] OFF;
+CREATE NONCLUSTERED INDEX [IATTRACTION1] ON [Attraction] ([CountryId] );
+
+ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]);
 

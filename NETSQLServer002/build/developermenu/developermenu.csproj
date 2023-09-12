@@ -14,7 +14,11 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+		<ProjectReference Include=".\..\country\country.csproj" />
+		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\gx0030\gx0030.csproj" />
+		<ProjectReference Include=".\..\gx0020\gx0020.csproj" />
 		<ProjectReference Include=".\..\gx0010\gx0010.csproj" />
 		<ProjectReference Include=".\..\general.ui.masterprompt\general.ui.masterprompt.csproj" />
 		<ProjectReference Include=".\..\general.ui.masterunanimosidebar\general.ui.masterunanimosidebar.csproj" />

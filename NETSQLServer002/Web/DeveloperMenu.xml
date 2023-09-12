@@ -9,4 +9,16 @@
       <ObjDesc>Customer</ObjDesc>
       <ObjLink>customer.aspx</ObjLink>
    </Object>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Attraction</ObjName>
+      <ObjDesc>Attraction</ObjDesc>
+      <ObjLink>attraction.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Country</ObjName>
+      <ObjDesc>Country</ObjDesc>
+      <ObjLink>country.aspx</ObjLink>
+   </Object>
 </Objects>
