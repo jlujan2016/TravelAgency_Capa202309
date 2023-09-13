@@ -169,27 +169,27 @@ v_i(t,o,2,15).
  
  
  
-tbl_to_delete_i(3,[ 2,[ [ 3,9,9 ] ],c,'IATTRACTION1',0,[ 7 ],'' ]).
-tbl_to_delete_i(3,[ 5,[ [ 3,9,9 ] ],d,'ICOUNTRYCITY',0,[ 9,14 ],'' ]).
+tbl_to_delete_i(5,[ 2,[ [ 5,9,9 ],[ 5,14,14 ] ],c,'IATTRACTION1',0,[ 7 ],'' ]).
+tbl_to_delete_i(3,[ 2,[ [ 3,9,9 ] ],u(5),'IATTRACTION1',0,[ 7 ],'' ]).
  
  
  
-attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
 attri_i(15,[ 'CityName',svchar,40,0,'',0,'City Name','',0 ]).
 attri_i(14,[ 'CityId',int,4,0,'ZZZ9',0,'City Id','',0 ]).
+attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
 attri_i(10,[ 'CountryName',svchar,40,0,'',0,'Country Name','',0 ]).
 attri_i(9,[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',0 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
-table_i(2,[ 'Attraction',[ 7,9 ],'Attraction','Attraction' ]).
+table_i(2,[ 'Attraction',[ 7,9,14 ],'Attraction','Attraction' ]).
 table_i(3,[ 'Country',[ 9,10 ],'Country','Country' ]).
 table_i(5,[ 'CountryCity',[ 9,14,15 ],'City','CountryCity' ]).
  
 index_i(3,[ 'ICOUNTRY',u,[ 9 ],'ICountry' ]).
-index_i(5,[ 'ICOUNTRYCITY',u,[ 9,14 ],'ICountryCity' ]).
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
-index_i(2,[ 'IATTRACTION1',d,[ 9 ],'IAttraction1' ]).
+index_i(2,[ 'IATTRACTION1',d,[ 9,14 ],'IAttraction1' ]).
+index_i(5,[ 'ICOUNTRYCITY',u,[ 9,14 ],'ICountryCity' ]).
  
  
  
@@ -1080,21 +1080,23 @@ att_prop_i(2,7,'DownloadOffline','0',d).
 att_prop_i(2,7,'VarServiceExtName','',d).
 att_prop_i(2,7,'FullName','AttractionId',v).
  
-tbl_prop_i(2,2,'AllDirSuper',[ [ 3,[ 9 ] ] ],v).
 tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 9 ] ] ],v).
-tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 9 ] ],[ 2,[ 9 ] ] ],v).
-tbl_prop_i(2,2,'DirSuper',[ [ 3,[ 9 ] ] ],v).
+tbl_prop_i(2,2,'AllDirSuper',[ [ 5,[ 9,14 ] ],[ 3,[ 9 ] ] ],v).
+tbl_prop_i(2,2,'DirSuperNull',[ [ 5,[ 9,14 ] ] ],v).
+tbl_prop_i(2,5,'DirSubor',[ [ 2,[ 9,14 ] ] ],v).
+tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 9 ] ] ],v).
 tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 9 ] ] ],v).
+tbl_prop_i(2,2,'DirSuper',[ [ 5,[ 9,14 ] ] ],v).
  
 tbl_att_prop_i(2,3,9,'AllowNulls',n).
 tbl_att_prop_i(2,3,9,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,10,'AllowNulls',n).
-tbl_att_prop_i(2,5,9,'AllowNulls',n).
-tbl_att_prop_i(2,5,14,'AllowNulls',n).
-tbl_att_prop_i(2,5,15,'AllowNulls',n).
 tbl_att_prop_i(2,2,7,'AllowNulls',n).
 tbl_att_prop_i(2,2,7,'AUTONUMBER',y).
 tbl_att_prop_i(2,2,9,'AllowNulls',n).
+tbl_att_prop_i(2,5,9,'AllowNulls',n).
+tbl_att_prop_i(2,5,14,'AllowNulls',n).
+tbl_att_prop_i(2,5,15,'AllowNulls',n).
  
  
  
@@ -1111,10 +1113,11 @@ trn_level_i(5,[ [ 14,15 ],'City','City','City','',15 ]).
  
  
 pgm_parm_i(web,5,'GX0030',[ [ int,4,0,0 ] ],[ [ pCountryId,out,[] ] ]).
-pgm_parm_i(web,0,'GX0051',[ [ int,4,0,0 ],[ int,4,0,0 ] ],[ [ 'CountryId',in,[] ],[ 'V14',out,[] ] ]).
+pgm_parm_i(web,7,'GX0051',[ [ int,4,0,0 ],[ int,4,0,0 ] ],[ [ pCountryId,in,[] ],[ pCityId,out,[] ] ]).
  
 pgm_callprotocol_i(trn,3,'COUNTRY','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,5,'GX0030','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,7,'GX0051','INTERNAL','Unsecure').
  
  
  

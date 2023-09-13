@@ -1,4 +1,6 @@
-CREATE TABLE [CountryCity] ([CountryId] smallint NOT NULL , [CityId] smallint NOT NULL , [CityName] nvarchar(40) NOT NULL , PRIMARY KEY([CountryId], [CityId]));
+ALTER TABLE [Attraction] ADD [CityId] smallint NULL;
+DROP INDEX [IATTRACTION1] ON [Attraction];
+CREATE NONCLUSTERED INDEX [IATTRACTION1] ON [Attraction] ([CountryId] ,[CityId] );
 
-ALTER TABLE [CountryCity] ADD CONSTRAINT [ICOUNTRYCITY1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]);
+ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION1] FOREIGN KEY ([CountryId], [CityId]) REFERENCES [CountryCity] ([CountryId], [CityId]);
 
