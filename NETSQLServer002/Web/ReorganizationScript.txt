@@ -1,11 +1,4 @@
-ALTER TABLE [Attraction] ADD [CategoryId] smallint NOT NULL CONSTRAINT CategoryIdAttraction_DEFAULT DEFAULT convert(int, 0), [AttractionPhoto] VARBINARY(MAX) NOT NULL CONSTRAINT AttractionPhotoAttraction_DEFAULT DEFAULT CONVERT(varbinary(1), ''), [AttractionPhoto_GXI] varchar(2048) NOT NULL CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT DEFAULT '';
-ALTER TABLE [Attraction] DROP CONSTRAINT CategoryIdAttraction_DEFAULT;
-ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhotoAttraction_DEFAULT;
-ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT;
-SET IDENTITY_INSERT [Category] ON;
-INSERT INTO [Category] ([CategoryId], [CategoryName]) SELECT TOP 1 convert(int, 0), ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Category] WHERE CategoryId=convert(int, 0));
-SET IDENTITY_INSERT [Category] OFF;
-CREATE NONCLUSTERED INDEX [IATTRACTION2] ON [Attraction] ([CategoryId] );
+CREATE TABLE [CountryCity] ([CountryId] smallint NOT NULL , [CityId] smallint NOT NULL , [CityName] nvarchar(40) NOT NULL , PRIMARY KEY([CountryId], [CityId]));
 
-ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION2] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId]);
+ALTER TABLE [CountryCity] ADD CONSTRAINT [ICOUNTRYCITY1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]);
 

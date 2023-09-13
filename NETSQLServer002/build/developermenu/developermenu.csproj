@@ -18,6 +18,7 @@
 		<ProjectReference Include=".\..\country\country.csproj" />
 		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\gx0051\gx0051.csproj" />
 		<ProjectReference Include=".\..\gx0040\gx0040.csproj" />
 		<ProjectReference Include=".\..\gx0030\gx0030.csproj" />
 		<ProjectReference Include=".\..\gx0020\gx0020.csproj" />

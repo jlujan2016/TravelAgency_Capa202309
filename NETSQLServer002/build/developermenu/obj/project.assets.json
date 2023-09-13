@@ -2677,6 +2677,24 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "gx0051/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx0051.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx0051.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -8066,6 +8084,11 @@
       "type": "project",
       "path": "../gx0040/gx0040.csproj",
       "msbuildProject": "../gx0040/gx0040.csproj"
+    },
+    "gx0051/1.0.0": {
+      "type": "project",
+      "path": "../gx0051/gx0051.csproj",
+      "msbuildProject": "../gx0051/gx0051.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8082,7 +8105,8 @@
       "gx0010 >= 1.0.0",
       "gx0020 >= 1.0.0",
       "gx0030 >= 1.0.0",
-      "gx0040 >= 1.0.0"
+      "gx0040 >= 1.0.0",
+      "gx0051 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8144,6 +8168,9 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0040\\gx0040.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj"
             }
           }
         }

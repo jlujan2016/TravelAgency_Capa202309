@@ -56,84 +56,13 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeAttraction( )
+      public void CreateCountryCity( )
       {
          string cmdBuffer = "";
-         /* Indices for table Attraction */
-         cmdBuffer=" ALTER TABLE [Attraction] ADD [CategoryId] smallint NOT NULL CONSTRAINT CategoryIdAttraction_DEFAULT DEFAULT convert(int, 0), [AttractionPhoto] VARBINARY(MAX) NOT NULL CONSTRAINT AttractionPhotoAttraction_DEFAULT DEFAULT CONVERT(varbinary(1), ''), [AttractionPhoto_GXI] varchar(2048) NOT NULL CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT DEFAULT '' "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT CategoryIdAttraction_DEFAULT "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhotoAttraction_DEFAULT "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT AttractionPhoto_GXIAttraction_DEFAULT "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Category] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Category] ([CategoryId], [CategoryName]) SELECT TOP 1 convert(int, 0), ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Category] WHERE CategoryId=convert(int, 0)) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Category] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
+         /* Indices for table CountryCity */
          try
          {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION2] ON [Attraction] ([CategoryId] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-            cmdBuffer=" DROP INDEX [IATTRACTION2] ON [Attraction] "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION2] ON [Attraction] ([CategoryId] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-      }
-
-      public void RIAttractionCategory( )
-      {
-         string cmdBuffer;
-         try
-         {
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION2] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId]) "
+            cmdBuffer=" CREATE TABLE [CountryCity] ([CountryId] smallint NOT NULL , [CityId] smallint NOT NULL , [CityName] nvarchar(40) NOT NULL , PRIMARY KEY([CountryId], [CityId]))  "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -144,7 +73,69 @@ namespace GeneXus.Programs {
          {
             try
             {
-               cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT [IATTRACTION2] "
+               DropTableConstraints( "[CountryCity]") ;
+               cmdBuffer=" DROP TABLE [CountryCity] "
+               ;
+               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+               RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+               RGZ.ExecuteStmt() ;
+               RGZ.Drop();
+            }
+            catch
+            {
+               try
+               {
+                  DropTableConstraints( "[CountryCity]") ;
+                  cmdBuffer=" DROP VIEW [CountryCity] "
+                  ;
+                  RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                  RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+                  RGZ.ExecuteStmt() ;
+                  RGZ.Drop();
+               }
+               catch
+               {
+                  try
+                  {
+                     DropTableConstraints( "[CountryCity]") ;
+                     cmdBuffer=" DROP FUNCTION [CountryCity] "
+                     ;
+                     RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                     RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+                     RGZ.ExecuteStmt() ;
+                     RGZ.Drop();
+                  }
+                  catch
+                  {
+                  }
+               }
+            }
+            cmdBuffer=" CREATE TABLE [CountryCity] ([CountryId] smallint NOT NULL , [CityId] smallint NOT NULL , [CityName] nvarchar(40) NOT NULL , PRIMARY KEY([CountryId], [CityId]))  "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
+      }
+
+      public void RICountryCityCountry( )
+      {
+         string cmdBuffer;
+         try
+         {
+            cmdBuffer=" ALTER TABLE [CountryCity] ADD CONSTRAINT [ICOUNTRYCITY1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]) "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
+         catch
+         {
+            try
+            {
+               cmdBuffer=" ALTER TABLE [CountryCity] DROP CONSTRAINT [ICOUNTRYCITY1] "
                ;
                RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
                RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
@@ -154,7 +145,7 @@ namespace GeneXus.Programs {
             catch
             {
             }
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION2] FOREIGN KEY ([CategoryId]) REFERENCES [Category] ([CategoryId]) "
+            cmdBuffer=" ALTER TABLE [CountryCity] ADD CONSTRAINT [ICOUNTRYCITY1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId]) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -165,14 +156,6 @@ namespace GeneXus.Programs {
 
       private void TablesCount( )
       {
-         if ( ! IsResumeMode( ) )
-         {
-            /* Using cursor P00012 */
-            pr_default.execute(0);
-            AttractionCount = P00012_AAttractionCount[0];
-            pr_default.close(0);
-            PrintRecordCount ( "Attraction" ,  AttractionCount );
-         }
       }
 
       private bool PreviousCheck( )
@@ -191,6 +174,18 @@ namespace GeneXus.Programs {
          }
          if ( GXUtil.IsSQLSERVER2005( context, "DEFAULT") )
          {
+            /* Using cursor P00012 */
+            pr_default.execute(0);
+            while ( (pr_default.getStatus(0) != 101) )
+            {
+               sSchemaVar = P00012_AsSchemaVar[0];
+               nsSchemaVar = P00012_nsSchemaVar[0];
+               pr_default.readNext(0);
+            }
+            pr_default.close(0);
+         }
+         else
+         {
             /* Using cursor P00023 */
             pr_default.execute(1);
             while ( (pr_default.getStatus(1) != 101) )
@@ -201,67 +196,42 @@ namespace GeneXus.Programs {
             }
             pr_default.close(1);
          }
-         else
+         if ( tableexist("CountryCity",sSchemaVar) )
          {
-            /* Using cursor P00034 */
-            pr_default.execute(2);
-            while ( (pr_default.getStatus(2) != 101) )
-            {
-               sSchemaVar = P00034_AsSchemaVar[0];
-               nsSchemaVar = P00034_nsSchemaVar[0];
-               pr_default.readNext(2);
-            }
-            pr_default.close(2);
-         }
-         if ( ColumnExist("Attraction",sSchemaVar,"CategoryId") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"CategoryId", "Attraction"}) ) ;
-            return false ;
-         }
-         if ( ColumnExist("Attraction",sSchemaVar,"AttractionPhoto") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"AttractionPhoto", "Attraction"}) ) ;
-            return false ;
-         }
-         if ( ColumnExist("Attraction",sSchemaVar,"AttractionPhoto_GXI") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"AttractionPhoto_GXI", "Attraction"}) ) ;
+            SetCheckError ( GXResourceManager.GetMessage("GXM_table_exist", new   object[]  {"CountryCity"}) ) ;
             return false ;
          }
          return true ;
       }
 
-      private bool ColumnExist( string sTableName ,
-                                string sMySchemaName ,
-                                string sMyColumnName )
+      private bool tableexist( string sTableName ,
+                               string sMySchemaName )
       {
          bool result;
          result = false;
-         /* Using cursor P00045 */
-         pr_default.execute(3, new Object[] {sTableName, sMySchemaName, sMyColumnName});
-         while ( (pr_default.getStatus(3) != 101) )
+         /* Using cursor P00034 */
+         pr_default.execute(2, new Object[] {sTableName, sMySchemaName});
+         while ( (pr_default.getStatus(2) != 101) )
          {
-            tablename = P00045_Atablename[0];
-            ntablename = P00045_ntablename[0];
-            schemaname = P00045_Aschemaname[0];
-            nschemaname = P00045_nschemaname[0];
-            columnname = P00045_Acolumnname[0];
-            ncolumnname = P00045_ncolumnname[0];
+            tablename = P00034_Atablename[0];
+            ntablename = P00034_ntablename[0];
+            schemaname = P00034_Aschemaname[0];
+            nschemaname = P00034_nschemaname[0];
             result = true;
-            pr_default.readNext(3);
+            pr_default.readNext(2);
          }
-         pr_default.close(3);
+         pr_default.close(2);
          return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeAttraction" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "CreateCountryCity" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIAttractionCategory" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RICountryCityCountry" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -279,13 +249,13 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Attraction", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_filecrea", new   object[]  {"CountryCity", ""}) );
       }
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IATTRACTION2]"}) );
-         ReorgExecute.RegisterPrecedence( "RIAttractionCategory" ,  "ReorganizeAttraction" );
+         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[ICOUNTRYCITY1]"}) );
+         ReorgExecute.RegisterPrecedence( "RICountryCityCountry" ,  "CreateCountryCity" );
       }
 
       private void ExecuteReorganization( )
@@ -300,6 +270,29 @@ namespace GeneXus.Programs {
                ExecuteTablesReorganization( ) ;
             }
          }
+      }
+
+      public void DropTableConstraints( string sTableName )
+      {
+         string cmdBuffer;
+         /* Using cursor P00045 */
+         pr_default.execute(3, new Object[] {sTableName});
+         while ( (pr_default.getStatus(3) != 101) )
+         {
+            constid = P00045_Aconstid[0];
+            nconstid = P00045_nconstid[0];
+            fkeyid = P00045_Afkeyid[0];
+            nfkeyid = P00045_nfkeyid[0];
+            rkeyid = P00045_Arkeyid[0];
+            nrkeyid = P00045_nrkeyid[0];
+            cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+            pr_default.readNext(3);
+         }
+         pr_default.close(3);
       }
 
       public void UtilsCleanup( )
@@ -318,42 +311,46 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         scmdbuf = "";
-         P00012_AAttractionCount = new int[1] ;
          sSchemaVar = "";
          nsSchemaVar = false;
+         scmdbuf = "";
+         P00012_AsSchemaVar = new string[] {""} ;
+         P00012_nsSchemaVar = new bool[] {false} ;
          P00023_AsSchemaVar = new string[] {""} ;
          P00023_nsSchemaVar = new bool[] {false} ;
-         P00034_AsSchemaVar = new string[] {""} ;
-         P00034_nsSchemaVar = new bool[] {false} ;
          sTableName = "";
          sMySchemaName = "";
-         sMyColumnName = "";
          tablename = "";
          ntablename = false;
          schemaname = "";
          nschemaname = false;
-         columnname = "";
-         ncolumnname = false;
-         P00045_Atablename = new string[] {""} ;
-         P00045_ntablename = new bool[] {false} ;
-         P00045_Aschemaname = new string[] {""} ;
-         P00045_nschemaname = new bool[] {false} ;
-         P00045_Acolumnname = new string[] {""} ;
-         P00045_ncolumnname = new bool[] {false} ;
+         P00034_Atablename = new string[] {""} ;
+         P00034_ntablename = new bool[] {false} ;
+         P00034_Aschemaname = new string[] {""} ;
+         P00034_nschemaname = new bool[] {false} ;
+         constid = "";
+         nconstid = false;
+         fkeyid = "";
+         nfkeyid = false;
+         P00045_Aconstid = new string[] {""} ;
+         P00045_nconstid = new bool[] {false} ;
+         P00045_Afkeyid = new string[] {""} ;
+         P00045_nfkeyid = new bool[] {false} ;
+         P00045_Arkeyid = new int[1] ;
+         P00045_nrkeyid = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_AAttractionCount
+               P00012_AsSchemaVar
                }
                , new Object[] {
                P00023_AsSchemaVar
                }
                , new Object[] {
-               P00034_AsSchemaVar
+               P00034_Atablename, P00034_Aschemaname
                }
                , new Object[] {
-               P00045_Atablename, P00045_Aschemaname, P00045_Acolumnname
+               P00045_Aconstid, P00045_Afkeyid, P00045_Arkeyid
                }
             }
          );
@@ -361,33 +358,38 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int AttractionCount ;
-      protected string scmdbuf ;
+      protected int rkeyid ;
       protected string sSchemaVar ;
+      protected string scmdbuf ;
       protected string sTableName ;
       protected string sMySchemaName ;
-      protected string sMyColumnName ;
       protected bool nsSchemaVar ;
       protected bool ntablename ;
       protected bool nschemaname ;
-      protected bool ncolumnname ;
+      protected bool nconstid ;
+      protected bool nfkeyid ;
+      protected bool nrkeyid ;
       protected string tablename ;
       protected string schemaname ;
-      protected string columnname ;
+      protected string constid ;
+      protected string fkeyid ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_AAttractionCount ;
+      protected string[] P00012_AsSchemaVar ;
+      protected bool[] P00012_nsSchemaVar ;
       protected string[] P00023_AsSchemaVar ;
       protected bool[] P00023_nsSchemaVar ;
-      protected string[] P00034_AsSchemaVar ;
-      protected bool[] P00034_nsSchemaVar ;
-      protected string[] P00045_Atablename ;
-      protected bool[] P00045_ntablename ;
-      protected string[] P00045_Aschemaname ;
-      protected bool[] P00045_nschemaname ;
-      protected string[] P00045_Acolumnname ;
-      protected bool[] P00045_ncolumnname ;
+      protected string[] P00034_Atablename ;
+      protected bool[] P00034_ntablename ;
+      protected string[] P00034_Aschemaname ;
+      protected bool[] P00034_nschemaname ;
+      protected string[] P00045_Aconstid ;
+      protected bool[] P00045_nconstid ;
+      protected string[] P00045_Afkeyid ;
+      protected bool[] P00045_nfkeyid ;
+      protected int[] P00045_Arkeyid ;
+      protected bool[] P00045_nrkeyid ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -416,18 +418,18 @@ namespace GeneXus.Programs {
           };
           Object[] prmP00034;
           prmP00034 = new Object[] {
+          new ParDef("@sTableName",GXType.Char,255,0) ,
+          new ParDef("@sMySchemaName",GXType.Char,255,0)
           };
           Object[] prmP00045;
           prmP00045 = new Object[] {
-          new ParDef("@sTableName",GXType.Char,255,0) ,
-          new ParDef("@sMySchemaName",GXType.Char,255,0) ,
-          new ParDef("@sMyColumnName",GXType.Char,255,0)
+          new ParDef("@sTableName",GXType.Char,255,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM [Attraction] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00045", "SELECT TABLE_NAME, TABLE_SCHEMA, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) AND (COLUMN_NAME = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00023", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00034", "SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00045", "SELECT OBJECT_NAME(object_id), OBJECT_NAME(parent_object_id), referenced_object_id FROM sys.foreign_keys WHERE referenced_object_id = OBJECT_ID(RTRIM(LTRIM(@sTableName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -439,18 +441,19 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((int[]) buf[0])[0] = rslt.getInt(1);
+                ((string[]) buf[0])[0] = rslt.getString(1, 255);
                 return;
              case 1 :
                 ((string[]) buf[0])[0] = rslt.getString(1, 255);
                 return;
              case 2 :
-                ((string[]) buf[0])[0] = rslt.getString(1, 255);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 return;
              case 3 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
+                ((int[]) buf[2])[0] = rslt.getInt(3);
                 return;
        }
     }
