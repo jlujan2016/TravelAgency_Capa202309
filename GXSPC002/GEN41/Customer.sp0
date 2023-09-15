@@ -59,9 +59,9 @@ rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'DS_READ_REPLICA','No')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
-rule_i(0,datastore(1,'USER_PASSWORD','')).
-rule_i(0,datastore(1,'USER_ID','')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Timeout=120')).
+rule_i(0,datastore(1,'USER_PASSWORD','u��A�*�8OYS��Fs��up�RxVY')).
+rule_i(0,datastore(1,'USER_ID',uEHOYk6k1ERudxTa)).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
 rule_i(0,datastore(1,'CS_CONNECT','First')).
 rule_i(0,datastore(1,'DBMS_PORT','')).
@@ -149,18 +149,22 @@ rule_i(1,rule([ a(23,[ [ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ] ]) ],[],[],[ 1 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(41)).
 rule_i(1,rule([ a(1,msg([ t('"Field Customer Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(6,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ],[ insert,update ],[ 6 ])).
+rule_i(1,rule([ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ],[ insert,update,delete,display ],[ 2 ])).
  
 a_i(1,1,b,0,[],[ [],[ a(1,msg([ t('"Field Customer Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(6,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ] ]).
-a_i(2,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
+a_i(2,1,b,1,[],[ [],[ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ] ]).
+a_i(3,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
  
 v_i(b,i,1,6).
 v_i(b,o,1,[]).
-v_i(t,i,2,1).
-v_i(t,o,2,2).
-v_i(t,o,2,3).
-v_i(t,o,2,4).
-v_i(t,o,2,5).
-v_i(t,o,2,6).
+v_i(b,i,2,2).
+v_i(b,o,2,[]).
+v_i(t,i,3,1).
+v_i(t,o,3,2).
+v_i(t,o,3,3).
+v_i(t,o,3,4).
+v_i(t,o,3,5).
+v_i(t,o,3,6).
  
  
  

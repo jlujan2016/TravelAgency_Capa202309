@@ -38,9 +38,9 @@ datastore_i(1,'CS_RPCPGML','').
 datastore_i(1,'DS_READ_REPLICA','No').
 datastore_i(1,'JDBC_DATASOURCE','').
 datastore_i(1,'USE_JDBC_DATASOURCE','0').
-datastore_i(1,'DS_DBMS_ADDINFO','').
-datastore_i(1,'USER_PASSWORD','').
-datastore_i(1,'USER_ID','').
+datastore_i(1,'DS_DBMS_ADDINFO','Timeout=120').
+datastore_i(1,'USER_PASSWORD','u��A�*�8OYS��Fs��up�RxVY').
+datastore_i(1,'USER_ID',uEHOYk6k1ERudxTa).
 datastore_i(1,'TRUSTED_CONNECTION','Yes').
 datastore_i(1,'CS_CONNECT','First').
 datastore_i(1,'DBMS_PORT','').

@@ -711,7 +711,7 @@ namespace GeneXus.Programs {
 
       protected void ZM011( short GX_JID )
       {
-         if ( ( GX_JID == 2 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 3 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -730,7 +730,7 @@ namespace GeneXus.Programs {
                Z6CustomerEmail = A6CustomerEmail;
             }
          }
-         if ( GX_JID == -2 )
+         if ( GX_JID == -3 )
          {
             Z1CustomerId = A1CustomerId;
             Z2CustomerName = A2CustomerName;
@@ -786,7 +786,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A5CustomerPhone", A5CustomerPhone);
             A6CustomerEmail = T00014_A6CustomerEmail[0];
             AssignAttri("", false, "A6CustomerEmail", A6CustomerEmail);
-            ZM011( -2) ;
+            ZM011( -3) ;
          }
          pr_default.close(2);
          OnLoadActions011( ) ;
@@ -801,6 +801,13 @@ namespace GeneXus.Programs {
          nIsDirty_1 = 0;
          Gx_BScreen = 1;
          standaloneModal( ) ;
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( A2CustomerName)) )
+         {
+            GX_msglist.addItem("Error, el nombre del cliente no debe estar vacio", 1, "CUSTOMERNAME");
+            AnyError = 1;
+            GX_FocusControl = edtCustomerName_Internalname;
+            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+         }
          if ( ! ( GxRegex.IsMatch(A6CustomerEmail,"^((\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)|(\\s*))$") ) )
          {
             GX_msglist.addItem("Field Customer Email does not match the specified pattern", "OutOfRange", 1, "CUSTOMEREMAIL");
@@ -839,7 +846,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A1CustomerId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM011( 2) ;
+            ZM011( 3) ;
             RcdFound1 = 1;
             A1CustomerId = T00013_A1CustomerId[0];
             AssignAttri("", false, "A1CustomerId", StringUtil.LTrimStr( (decimal)(A1CustomerId), 4, 0));
@@ -1733,7 +1740,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20239812414667", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391510212822", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1749,7 +1756,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("customer.js", "?20239812414667", false, true);
+         context.AddJavascriptSource("customer.js", "?202391510212822", false, true);
          /* End function include_jscripts */
       }
 
@@ -1898,6 +1905,8 @@ namespace GeneXus.Programs {
          setEventMetadata("REFRESH",",oparms:[]}");
          setEventMetadata("VALID_CUSTOMERID","{handler:'Valid_Customerid',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'}]");
          setEventMetadata("VALID_CUSTOMERID",",oparms:[{av:'A2CustomerName',fld:'CUSTOMERNAME',pic:''},{av:'A3CustomerLastName',fld:'CUSTOMERLASTNAME',pic:''},{av:'A4CustomerAddress',fld:'CUSTOMERADDRESS',pic:''},{av:'A5CustomerPhone',fld:'CUSTOMERPHONE',pic:''},{av:'A6CustomerEmail',fld:'CUSTOMEREMAIL',pic:''},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z1CustomerId'},{av:'Z2CustomerName'},{av:'Z3CustomerLastName'},{av:'Z4CustomerAddress'},{av:'Z5CustomerPhone'},{av:'Z6CustomerEmail'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
+         setEventMetadata("VALID_CUSTOMERNAME","{handler:'Valid_Customername',iparms:[]");
+         setEventMetadata("VALID_CUSTOMERNAME",",oparms:[]}");
          setEventMetadata("VALID_CUSTOMEREMAIL","{handler:'Valid_Customeremail',iparms:[]");
          setEventMetadata("VALID_CUSTOMEREMAIL",",oparms:[]}");
          return  ;
