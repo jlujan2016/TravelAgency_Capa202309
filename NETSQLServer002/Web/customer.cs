@@ -519,7 +519,6 @@ namespace GeneXus.Programs {
             IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ".", ","), 18, MidpointRounding.ToEven));
             Gx_mode = cgiGet( "Mode");
             Gx_date = context.localUtil.CToD( cgiGet( "vTODAY"), 0);
-            Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ".", ","), 18, MidpointRounding.ToEven));
             /* Read variables values. */
             if ( ( ( context.localUtil.CToN( cgiGet( edtCustomerId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtCustomerId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
             {
@@ -790,8 +789,6 @@ namespace GeneXus.Programs {
       {
          edtCustomerAddedDate_Enabled = 0;
          AssignProp("", false, edtCustomerAddedDate_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCustomerAddedDate_Enabled), 5, 0), true);
-         Gx_BScreen = 0;
-         AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          Gx_date = DateTimeUtil.Today( context);
          AssignAttri("", false, "Gx_date", context.localUtil.Format(Gx_date, "99/99/99"));
          edtCustomerAddedDate_Enabled = 0;
@@ -800,7 +797,7 @@ namespace GeneXus.Programs {
 
       protected void standaloneModal( )
       {
-         if ( IsIns( )  && (DateTime.MinValue==A16CustomerAddedDate) && ( Gx_BScreen == 0 ) )
+         if ( IsIns( )  )
          {
             A16CustomerAddedDate = Gx_date;
             AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
@@ -860,7 +857,6 @@ namespace GeneXus.Programs {
       {
          nIsDirty_1 = 0;
          Gx_BScreen = 1;
-         AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
          if ( String.IsNullOrEmpty(StringUtil.RTrim( A2CustomerName)) )
          {
@@ -1727,7 +1723,6 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "vTODAY", context.localUtil.DToC( Gx_date, 0, "/"));
-         GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ".", "")));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -1809,7 +1804,7 @@ namespace GeneXus.Programs {
          AssignAttri("", false, "A5CustomerPhone", A5CustomerPhone);
          A6CustomerEmail = "";
          AssignAttri("", false, "A6CustomerEmail", A6CustomerEmail);
-         A16CustomerAddedDate = Gx_date;
+         A16CustomerAddedDate = DateTime.MinValue;
          AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
          Z2CustomerName = "";
          Z3CustomerLastName = "";
@@ -1844,7 +1839,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391511295990", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391511501099", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1860,7 +1855,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("customer.js", "?202391511295990", false, true);
+         context.AddJavascriptSource("customer.js", "?202391511501099", false, true);
          /* End function include_jscripts */
       }
 
@@ -2012,7 +2007,7 @@ namespace GeneXus.Programs {
          setEventMetadata("ENTER",",oparms:[]}");
          setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("REFRESH",",oparms:[]}");
-         setEventMetadata("VALID_CUSTOMERID","{handler:'Valid_Customerid',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9'},{av:'Gx_date',fld:'vTODAY',pic:''},{av:'Gx_BScreen',fld:'vGXBSCREEN',pic:'9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''}]");
+         setEventMetadata("VALID_CUSTOMERID","{handler:'Valid_Customerid',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9'},{av:'Gx_date',fld:'vTODAY',pic:''},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("VALID_CUSTOMERID",",oparms:[{av:'A2CustomerName',fld:'CUSTOMERNAME',pic:''},{av:'A3CustomerLastName',fld:'CUSTOMERLASTNAME',pic:''},{av:'A4CustomerAddress',fld:'CUSTOMERADDRESS',pic:''},{av:'A5CustomerPhone',fld:'CUSTOMERPHONE',pic:''},{av:'A6CustomerEmail',fld:'CUSTOMEREMAIL',pic:''},{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z1CustomerId'},{av:'Z2CustomerName'},{av:'Z3CustomerLastName'},{av:'Z4CustomerAddress'},{av:'Z5CustomerPhone'},{av:'Z6CustomerEmail'},{av:'Z16CustomerAddedDate'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
          setEventMetadata("VALID_CUSTOMERNAME","{handler:'Valid_Customername',iparms:[]");
          setEventMetadata("VALID_CUSTOMERNAME",",oparms:[]}");
@@ -2155,9 +2150,6 @@ namespace GeneXus.Programs {
                }
             }
          );
-         Z16CustomerAddedDate = DateTime.MinValue;
-         A16CustomerAddedDate = DateTime.MinValue;
-         i16CustomerAddedDate = DateTime.MinValue;
          Gx_date = DateTimeUtil.Today( context);
       }
 
@@ -2170,10 +2162,10 @@ namespace GeneXus.Programs {
       private short nKeyPressed ;
       private short initialized ;
       private short A1CustomerId ;
-      private short Gx_BScreen ;
       private short GX_JID ;
       private short RcdFound1 ;
       private short nIsDirty_1 ;
+      private short Gx_BScreen ;
       private short gxajaxcallmode ;
       private short ZZ1CustomerId ;
       private int trnEnded ;

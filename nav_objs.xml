@@ -6,3 +6,11 @@
 <ObjName>Customer</ObjName>
 <ObjStatus>genreq</ObjStatus>
 <ObjNavig>GXSPC002\GEN41\NVG\Customer.xml</ObjNavig></Object>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>1</ObjId>
+<ObjName>Customer</ObjName>
+<ObjStatus>genreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN41\NVG\Customer.xml</ObjNavig>
+<Replace>true</Replace></Object>
