@@ -433,9 +433,8 @@ namespace GeneXus.Programs {
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
          /* Single line edit */
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 64,'',false,'',0)\"";
          context.WriteHtmlText( "<div id=\""+edtCustomerAddedDate_Internalname+"_dp_container\" class=\"dp_container\" style=\"white-space:nowrap;display:inline;\">") ;
-         GxWebStd.gx_single_line_edit( context, edtCustomerAddedDate_Internalname, context.localUtil.Format(A16CustomerAddedDate, "99/99/99"), context.localUtil.Format( A16CustomerAddedDate, "99/99/99"), TempTags+" onchange=\""+"gx.date.valid_date(this, 8,'MDY',0,12,'eng',false,0);"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.date.valid_date(this, 8,'MDY',0,12,'eng',false,0);"+";gx.evt.onblur(this,64);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtCustomerAddedDate_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtCustomerAddedDate_Enabled, 0, "text", "", 8, "chr", 1, "row", 8, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Customer.htm");
+         GxWebStd.gx_single_line_edit( context, edtCustomerAddedDate_Internalname, context.localUtil.Format(A16CustomerAddedDate, "99/99/99"), context.localUtil.Format( A16CustomerAddedDate, "99/99/99"), "", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtCustomerAddedDate_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtCustomerAddedDate_Enabled, 0, "text", "", 8, "chr", 1, "row", 8, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Customer.htm");
          GxWebStd.gx_bitmap( context, edtCustomerAddedDate_Internalname+"_dp_trigger", context.GetImagePath( "", "", context.GetTheme( )), "", "", "", "", ((1==0)||(edtCustomerAddedDate_Enabled==0) ? 0 : 1), 0, "Date selector", "Date selector", 0, 1, 0, "", 0, "", 0, 0, 0, "", "", "cursor: pointer;", "", "", "", "", "", "", "", "", 1, false, false, "", "HLP_Customer.htm");
          context.WriteHtmlTextNl( "</div>") ;
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -547,24 +546,29 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A5CustomerPhone", A5CustomerPhone);
             A6CustomerEmail = cgiGet( edtCustomerEmail_Internalname);
             AssignAttri("", false, "A6CustomerEmail", A6CustomerEmail);
-            if ( context.localUtil.VCDate( cgiGet( edtCustomerAddedDate_Internalname), 1) == 0 )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_faildate", new   object[]  {"Customer Added Date"}), 1, "CUSTOMERADDEDDATE");
-               AnyError = 1;
-               GX_FocusControl = edtCustomerAddedDate_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A16CustomerAddedDate = DateTime.MinValue;
-               AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
-            }
-            else
-            {
-               A16CustomerAddedDate = context.localUtil.CToD( cgiGet( edtCustomerAddedDate_Internalname), 1);
-               AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
-            }
+            A16CustomerAddedDate = context.localUtil.CToD( cgiGet( edtCustomerAddedDate_Internalname), 1);
+            AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+            forbiddenHiddens = new GXProperties();
+            forbiddenHiddens.Add("hshsalt", "hsh"+"Customer");
+            A16CustomerAddedDate = context.localUtil.CToD( cgiGet( edtCustomerAddedDate_Internalname), 1);
+            AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
+            forbiddenHiddens.Add("CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
+            hsh = cgiGet( "hsh");
+            if ( ( ! ( ( A1CustomerId != Z1CustomerId ) ) || ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) ) && ! GXUtil.CheckEncryptedHash( forbiddenHiddens.ToString(), hsh, GXKey) )
+            {
+               GXUtil.WriteLogError("customer:[ SecurityCheckFailed (403 Forbidden) value for]"+forbiddenHiddens.ToJSonString());
+               GxWebError = 1;
+               context.HttpContext.Response.StatusCode = 403;
+               context.WriteHtmlText( "<title>403 Forbidden</title>") ;
+               context.WriteHtmlText( "<h1>403 Forbidden</h1>") ;
+               context.WriteHtmlText( "<p /><hr />") ;
+               GXUtil.WriteLog("send_http_error_code " + 403.ToString());
+               AnyError = 1;
+               return  ;
+            }
             standaloneNotModal( ) ;
          }
          else
@@ -749,7 +753,7 @@ namespace GeneXus.Programs {
 
       protected void ZM011( short GX_JID )
       {
-         if ( ( GX_JID == 8 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 7 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -770,7 +774,7 @@ namespace GeneXus.Programs {
                Z16CustomerAddedDate = A16CustomerAddedDate;
             }
          }
-         if ( GX_JID == -8 )
+         if ( GX_JID == -7 )
          {
             Z1CustomerId = A1CustomerId;
             Z2CustomerName = A2CustomerName;
@@ -784,10 +788,14 @@ namespace GeneXus.Programs {
 
       protected void standaloneNotModal( )
       {
+         edtCustomerAddedDate_Enabled = 0;
+         AssignProp("", false, edtCustomerAddedDate_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCustomerAddedDate_Enabled), 5, 0), true);
          Gx_BScreen = 0;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          Gx_date = DateTimeUtil.Today( context);
          AssignAttri("", false, "Gx_date", context.localUtil.Format(Gx_date, "99/99/99"));
+         edtCustomerAddedDate_Enabled = 0;
+         AssignProp("", false, edtCustomerAddedDate_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCustomerAddedDate_Enabled), 5, 0), true);
       }
 
       protected void standaloneModal( )
@@ -817,9 +825,6 @@ namespace GeneXus.Programs {
             bttBtn_enter_Enabled = 1;
             AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
          }
-         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ( Gx_BScreen == 0 ) )
-         {
-         }
       }
 
       protected void Load011( )
@@ -841,7 +846,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A6CustomerEmail", A6CustomerEmail);
             A16CustomerAddedDate = T00014_A16CustomerAddedDate[0];
             AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
-            ZM011( -8) ;
+            ZM011( -7) ;
          }
          pr_default.close(2);
          OnLoadActions011( ) ;
@@ -882,20 +887,6 @@ namespace GeneXus.Programs {
             GX_FocusControl = edtCustomerEmail_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         if ( ! ( (DateTime.MinValue==A16CustomerAddedDate) || ( DateTimeUtil.ResetTime ( A16CustomerAddedDate ) >= DateTimeUtil.ResetTime ( context.localUtil.YMDToD( 1753, 1, 1) ) ) ) )
-         {
-            GX_msglist.addItem("Field Customer Added Date is out of range", "OutOfRange", 1, "CUSTOMERADDEDDATE");
-            AnyError = 1;
-            GX_FocusControl = edtCustomerAddedDate_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         }
-         if ( DateTimeUtil.ResetTime ( A16CustomerAddedDate ) > DateTimeUtil.ResetTime ( Gx_date ) )
-         {
-            GX_msglist.addItem("La fecha ingresasda no debe ser mayor a hoy dia", 1, "CUSTOMERADDEDDATE");
-            AnyError = 1;
-            GX_FocusControl = edtCustomerAddedDate_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         }
       }
 
       protected void CloseExtendedTableCursors011( )
@@ -927,7 +918,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A1CustomerId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM011( 8) ;
+            ZM011( 7) ;
             RcdFound1 = 1;
             A1CustomerId = T00013_A1CustomerId[0];
             AssignAttri("", false, "A1CustomerId", StringUtil.LTrimStr( (decimal)(A1CustomerId), 4, 0));
@@ -1713,6 +1704,11 @@ namespace GeneXus.Programs {
       protected void send_integrity_footer_hashes( )
       {
          GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+         forbiddenHiddens = new GXProperties();
+         forbiddenHiddens.Add("hshsalt", "hsh"+"Customer");
+         forbiddenHiddens.Add("CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
+         GxWebStd.gx_hidden_field( context, "hsh", GetEncryptedHash( forbiddenHiddens.ToString(), GXKey));
+         GXUtil.WriteLogInfo("customer:[ SendSecurityCheck value for]"+forbiddenHiddens.ToJSonString());
       }
 
       protected void SendCloseFormHiddens( )
@@ -1848,7 +1844,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391511214331", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391511295990", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1864,7 +1860,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("customer.js", "?202391511214331", false, true);
+         context.AddJavascriptSource("customer.js", "?202391511295990", false, true);
          /* End function include_jscripts */
       }
 
@@ -1912,7 +1908,7 @@ namespace GeneXus.Programs {
          bttBtn_enter_Enabled = 1;
          bttBtn_enter_Visible = 1;
          edtCustomerAddedDate_Jsonclick = "";
-         edtCustomerAddedDate_Enabled = 1;
+         edtCustomerAddedDate_Enabled = 0;
          edtCustomerEmail_Jsonclick = "";
          edtCustomerEmail_Enabled = 1;
          edtCustomerPhone_Jsonclick = "";
@@ -2014,7 +2010,7 @@ namespace GeneXus.Programs {
       {
          setEventMetadata("ENTER","{handler:'UserMainFullajax',iparms:[{postForm:true}]");
          setEventMetadata("ENTER",",oparms:[]}");
-         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[]");
+         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("REFRESH",",oparms:[]}");
          setEventMetadata("VALID_CUSTOMERID","{handler:'Valid_Customerid',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9'},{av:'Gx_date',fld:'vTODAY',pic:''},{av:'Gx_BScreen',fld:'vGXBSCREEN',pic:'9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("VALID_CUSTOMERID",",oparms:[{av:'A2CustomerName',fld:'CUSTOMERNAME',pic:''},{av:'A3CustomerLastName',fld:'CUSTOMERLASTNAME',pic:''},{av:'A4CustomerAddress',fld:'CUSTOMERADDRESS',pic:''},{av:'A5CustomerPhone',fld:'CUSTOMERPHONE',pic:''},{av:'A6CustomerEmail',fld:'CUSTOMEREMAIL',pic:''},{av:'A16CustomerAddedDate',fld:'CUSTOMERADDEDDATE',pic:''},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z1CustomerId'},{av:'Z2CustomerName'},{av:'Z3CustomerLastName'},{av:'Z4CustomerAddress'},{av:'Z5CustomerPhone'},{av:'Z6CustomerEmail'},{av:'Z16CustomerAddedDate'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
@@ -2026,8 +2022,6 @@ namespace GeneXus.Programs {
          setEventMetadata("VALID_CUSTOMERPHONE",",oparms:[]}");
          setEventMetadata("VALID_CUSTOMEREMAIL","{handler:'Valid_Customeremail',iparms:[]");
          setEventMetadata("VALID_CUSTOMEREMAIL",",oparms:[]}");
-         setEventMetadata("VALID_CUSTOMERADDEDDATE","{handler:'Valid_Customeraddeddate',iparms:[]");
-         setEventMetadata("VALID_CUSTOMERADDEDDATE",",oparms:[]}");
          return  ;
       }
 
@@ -2084,6 +2078,8 @@ namespace GeneXus.Programs {
          bttBtn_delete_Jsonclick = "";
          Gx_mode = "";
          Gx_date = DateTime.MinValue;
+         forbiddenHiddens = new GXProperties();
+         hsh = "";
          sEvt = "";
          EvtGridId = "";
          EvtRowId = "";
@@ -2249,6 +2245,7 @@ namespace GeneXus.Programs {
       private string bttBtn_delete_Internalname ;
       private string bttBtn_delete_Jsonclick ;
       private string Gx_mode ;
+      private string hsh ;
       private string sEvt ;
       private string EvtGridId ;
       private string EvtRowId ;
@@ -2281,6 +2278,7 @@ namespace GeneXus.Programs {
       private string ZZ3CustomerLastName ;
       private string ZZ4CustomerAddress ;
       private string ZZ6CustomerEmail ;
+      private GXProperties forbiddenHiddens ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
       private short[] T00014_A1CustomerId ;

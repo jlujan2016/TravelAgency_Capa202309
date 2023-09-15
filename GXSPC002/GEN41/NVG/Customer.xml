@@ -26,220 +26,25 @@
 <TableId>1</TableId>
 <TableName>Customer</TableName>
 <Description>Customer</Description></Table></BaseTable>
-<StandAloneRules>
-<Action>
-<ActionType>Formula</ActionType>
-<FormulaName>
-<Variable>
-<VarId>GxBScreen</VarId>
-<VarName>&amp;Gxbscreen</VarName></Variable></FormulaName>
-<FormulaExpression>
-<Token>0</Token></FormulaExpression></Action>
-<Action>
-<ActionType>Formula</ActionType>
-<FormulaName>
-<Variable>
-<VarId>Today</VarId>
-<VarName>&amp;Today</VarName></Variable></FormulaName>
-<FormulaExpression>
-<Token>today(</Token>
-<Token>)</Token></FormulaExpression></Action></StandAloneRules>
-<BaseTableRule>
-<Action>
-<ActionType>ReadBaseTable</ActionType>
+<NavigationTree>
 <Table>
 <TableId>1</TableId>
 <TableName>Customer</TableName>
-<Description>Customer</Description></Table>
-<JoinConditions>
-<Table>
-<TableId>1</TableId>
-<TableName>Customer</TableName>
-<Description>Customer</Description></Table>
-<JoinCondition>
-<AttributeTo>
+<Description>Customer</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
 <Attribute>
 <AttriId>1</AttriId>
 <AttriName>CustomerId</AttriName>
-<Description>Customer Id</Description></Attribute></AttributeTo>
-<Table></Table>
-<AttributeFrom>
-<Attribute>
-<AttriId>1</AttriId>
-<AttriName>CustomerId</AttriName>
-<Description>Customer Id</Description></Attribute></AttributeFrom></JoinCondition></JoinConditions>
-<Into>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>CustomerName</AttriName>
-<Description>Customer Name</Description></Attribute>
-<Attribute>
-<AttriId>3</AttriId>
-<AttriName>CustomerLastName</AttriName>
-<Description>Customer Last Name</Description></Attribute>
-<Attribute>
-<AttriId>4</AttriId>
-<AttriName>CustomerAddress</AttriName>
-<Description>Customer Address</Description></Attribute>
-<Attribute>
-<AttriId>5</AttriId>
-<AttriName>CustomerPhone</AttriName>
-<Description>Customer Phone</Description></Attribute>
-<Attribute>
-<AttriId>6</AttriId>
-<AttriName>CustomerEmail</AttriName>
-<Description>Customer Email</Description></Attribute>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute></Into></Action></BaseTableRule>
-<StandAloneWithModeRules>
-<Action>
-<ActionType>Formula</ActionType>
-<FormulaName>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute></FormulaName>
-<FormulaExpression>
-<Variable>
-<VarId>Today</VarId>
-<VarName>&amp;Today</VarName></Variable>
-<Token>IF</Token>
-<Token>insert</Token>
-<Token>and</Token>
-<Token>null1(</Token>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute>
-<Token>)</Token>
-<Token>and</Token>
-<Variable>
-<VarId>GxBScreen</VarId>
-<VarName>&amp;Gxbscreen</VarName></Variable>
-<Token>=</Token>
-<Token>0</Token>
-<Token>;</Token></FormulaExpression></Action></StandAloneWithModeRules>
-<Rules>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>ErrorRule</RuleType>
-<Expression>
-<Token>&quot;La fecha ingresasda no debe ser mayor a hoy dia&quot;</Token></Expression>
-<Condition>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute>
-<Sp></Sp>
-<Token>&gt;</Token>
-<Sp></Sp>
-<Variable>
-<VarId>Today</VarId>
-<VarName>&amp;Today</VarName></Variable></Condition></Action>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>ErrorRule</RuleType>
-<Expression>
-<Token>&quot;Field Customer Email does not match the specified pattern&quot;</Token>
-<Token>,</Token>
-<Sp></Sp>
-<Token>OutOfRange</Token></Expression>
-<Condition>
-<Token>not</Token>
-<Token>(</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>6</AttriId>
-<AttriName>CustomerEmail</AttriName>
-<Description>Customer Email</Description></Attribute>
-<Token>.</Token>
-<Token>ismatch(</Token>
-<Sp></Sp>
-<Token>&quot;^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$&quot;</Token>
-<Token>)</Token>
-<Token>)</Token></Condition></Action>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>MsgRule</RuleType>
-<Expression>
-<Token>&quot;El Telefono Vacio&quot;</Token></Expression>
-<Condition>
-<Attribute>
-<AttriId>5</AttriId>
-<AttriName>CustomerPhone</AttriName>
-<Description>Customer Phone</Description></Attribute>
-<Token>.</Token>
-<Token>isempty(</Token>
-<Token>)</Token></Condition></Action>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>ErrorRule</RuleType>
-<Expression>
-<Token>&quot;Error, el apellido del cliente no debe estar vacio&quot;</Token></Expression>
-<Condition>
-<Attribute>
-<AttriId>3</AttriId>
-<AttriName>CustomerLastName</AttriName>
-<Description>Customer Last Name</Description></Attribute>
-<Token>.</Token>
-<Token>isempty(</Token>
-<Token>)</Token></Condition></Action>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>ErrorRule</RuleType>
-<Expression>
-<Token>&quot;Error, el nombre del cliente no debe estar vacio&quot;</Token></Expression>
-<Condition>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>CustomerName</AttriName>
-<Description>Customer Name</Description></Attribute>
-<Token>.</Token>
-<Token>isempty(</Token>
-<Token>)</Token></Condition></Action>
-<Action>
-<ActionType>BusinessRule</ActionType>
-<RuleType>ErrorRule</RuleType>
-<Expression>
-<Token>&quot;Field Customer Added Date is out of range&quot;</Token>
-<Token>,</Token>
-<Sp></Sp>
-<Token>OutOfRange</Token></Expression>
-<Condition>
-<Token>not</Token>
-<Token>(</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute>
-<Token>.</Token>
-<Token>isempty(</Token>
-<Token>)</Token>
-<Sp></Sp>
-<Token>or</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>CustomerAddedDate</AttriName>
-<Description>Customer Added Date</Description></Attribute>
-<Sp></Sp>
-<Token>&gt;=</Token>
-<Sp></Sp>
-<Token>ymdtod(</Token>
-<Sp></Sp>
-<Token>1753</Token>
-<Token>,</Token>
-<Sp></Sp>
-<Token>01</Token>
-<Token>,</Token>
-<Sp></Sp>
-<Token>01</Token>
-<Token>)</Token>
-<Token>)</Token></Condition></Action></Rules>
-<BeforeConfirmRules></BeforeConfirmRules>
+<Description>Customer Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
 <AfterConfirmRules></AfterConfirmRules>
 <TablesToUpdate>
 <TableToUpdate>
@@ -311,20 +116,13 @@
 <Description>Customer</Description></Table>
 <TableAction>delete</TableAction>
 <AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
-<BeforeInsertRules></BeforeInsertRules>
 <AfterInsertRules></AfterInsertRules>
-<BeforeUpdateRules></BeforeUpdateRules>
 <AfterUpdateRules></AfterUpdateRules>
-<BeforeDeleteRules></BeforeDeleteRules>
 <AfterDeleteRules></AfterDeleteRules>
-<AfterDisplayRules></AfterDisplayRules>
 <TablesToControlOnDelete></TablesToControlOnDelete>
 <Levels></Levels>
-<BeforeTrnRules></BeforeTrnRules>
 <AfterTrnRules></AfterTrnRules>
-<AfterLevelRules></AfterLevelRules>
-<Formulas>
-<AggSelFormulas></AggSelFormulas></Formulas></Level></Levels>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts>
 <Prompt>
 <Table>
