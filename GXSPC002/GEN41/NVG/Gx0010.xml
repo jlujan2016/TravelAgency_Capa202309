@@ -38,6 +38,8 @@
 <Event>
 <EventName>Lblcustomeremailfilter.Click</EventName></Event>
 <Event>
+<EventName>Lblcustomeraddeddatefilter.Click</EventName></Event>
+<Event>
 <EventName>Load</EventName>
 <LoadMethod>Auto</LoadMethod>
 <ImplicitForEach>
@@ -159,6 +161,27 @@
 <VarName>&amp;cCustomerEmail</VarName></Variable>
 <Token>.</Token>
 <Token>isempty(</Token>
+<Token>)</Token></Condition></ConditionalConstraint>
+<ConditionalConstraint>
+<Constraint>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>CustomerAddedDate</AttriName>
+<Description>Customer Added Date</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomeraddeddate</VarId>
+<VarName>&amp;cCustomerAddedDate</VarName></Variable></Constraint>
+<Condition>
+<Token>not</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomeraddeddate</VarId>
+<VarName>&amp;cCustomerAddedDate</VarName></Variable>
+<Token>.</Token>
+<Token>isempty(</Token>
 <Token>)</Token></Condition></ConditionalConstraint></NonOptimizedWhere>
 <NavigationTree>
 <Table>
@@ -171,6 +194,31 @@
 <AttriId>1</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></KeyAttributes>
+<Into>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>CustomerAddedDate</AttriName>
+<Description>Customer Added Date</Description></Attribute>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>CustomerEmail</AttriName>
+<Description>Customer Email</Description></Attribute>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>CustomerPhone</AttriName>
+<Description>Customer Phone</Description></Attribute>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerLastName</AttriName>
+<Description>Customer Last Name</Description></Attribute>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>CustomerName</AttriName>
+<Description>Customer Name</Description></Attribute>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></Into>
 <Tables></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>

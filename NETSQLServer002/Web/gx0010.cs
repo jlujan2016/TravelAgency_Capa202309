@@ -139,9 +139,9 @@ namespace GeneXus.Programs {
 
       protected void gxnrGrid1_newrow_invoke( )
       {
-         nRC_GXsfl_64 = (int)(Math.Round(NumberUtil.Val( GetPar( "nRC_GXsfl_64"), "."), 18, MidpointRounding.ToEven));
-         nGXsfl_64_idx = (int)(Math.Round(NumberUtil.Val( GetPar( "nGXsfl_64_idx"), "."), 18, MidpointRounding.ToEven));
-         sGXsfl_64_idx = GetPar( "sGXsfl_64_idx");
+         nRC_GXsfl_74 = (int)(Math.Round(NumberUtil.Val( GetPar( "nRC_GXsfl_74"), "."), 18, MidpointRounding.ToEven));
+         nGXsfl_74_idx = (int)(Math.Round(NumberUtil.Val( GetPar( "nGXsfl_74_idx"), "."), 18, MidpointRounding.ToEven));
+         sGXsfl_74_idx = GetPar( "sGXsfl_74_idx");
          setAjaxCallMode();
          if ( ! IsValidAjaxCall( true) )
          {
@@ -160,13 +160,14 @@ namespace GeneXus.Programs {
          AV8cCustomerLastName = GetPar( "cCustomerLastName");
          AV9cCustomerPhone = GetPar( "cCustomerPhone");
          AV10cCustomerEmail = GetPar( "cCustomerEmail");
+         AV13cCustomerAddedDate = context.localUtil.ParseDateParm( GetPar( "cCustomerAddedDate"));
          setAjaxCallMode();
          if ( ! IsValidAjaxCall( true) )
          {
             GxWebError = 1;
             return  ;
          }
-         gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+         gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          AddString( context.getJSONResponse( )) ;
          /* End function gxgrGrid1_refresh_invoke */
       }
@@ -261,6 +262,9 @@ namespace GeneXus.Programs {
          {
             enableOutput();
          }
+         context.AddJavascriptSource("calendar.js", "?"+context.GetBuildNumber( 1910300), false, true);
+         context.AddJavascriptSource("calendar-setup.js", "?"+context.GetBuildNumber( 1910300), false, true);
+         context.AddJavascriptSource("calendar-en.js", "?"+context.GetBuildNumber( 1910300), false, true);
          context.WriteHtmlText( Form.Headerrawhtml) ;
          context.CloseHtmlHeader();
          if ( context.isSpaRequest( ) )
@@ -311,9 +315,10 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERLASTNAME", AV8cCustomerLastName);
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERPHONE", StringUtil.RTrim( AV9cCustomerPhone));
          GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMEREMAIL", AV10cCustomerEmail);
+         GxWebStd.gx_hidden_field( context, "GXH_vCCUSTOMERADDEDDATE", context.localUtil.Format(AV13cCustomerAddedDate, "99/99/99"));
          /* Send saved values. */
          send_integrity_footer_hashes( ) ;
-         GxWebStd.gx_hidden_field( context, "nRC_GXsfl_64", StringUtil.LTrim( StringUtil.NToC( (decimal)(nRC_GXsfl_64), 8, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "nRC_GXsfl_74", StringUtil.LTrim( StringUtil.NToC( (decimal)(nRC_GXsfl_74), 8, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "vPCUSTOMERID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV11pCustomerId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "GRID1_nEOF", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nEOF), 1, 0, ".", "")));
@@ -324,6 +329,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "CUSTOMERLASTNAMEFILTERCONTAINER_Class", StringUtil.RTrim( divCustomerlastnamefiltercontainer_Class));
          GxWebStd.gx_hidden_field( context, "CUSTOMERPHONEFILTERCONTAINER_Class", StringUtil.RTrim( divCustomerphonefiltercontainer_Class));
          GxWebStd.gx_hidden_field( context, "CUSTOMEREMAILFILTERCONTAINER_Class", StringUtil.RTrim( divCustomeremailfiltercontainer_Class));
+         GxWebStd.gx_hidden_field( context, "CUSTOMERADDEDDATEFILTERCONTAINER_Class", StringUtil.RTrim( divCustomeraddeddatefiltercontainer_Class));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -437,7 +443,7 @@ namespace GeneXus.Programs {
             /* Attribute/Variable Label */
             GxWebStd.gx_label_element( context, edtavCcustomerid_Internalname, "Customer Id", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 16,'',false,'" + sGXsfl_64_idx + "',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 16,'',false,'" + sGXsfl_74_idx + "',0)\"";
             GxWebStd.gx_single_line_edit( context, edtavCcustomerid_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV6cCustomerId), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCcustomerid_Enabled!=0) ? context.localUtil.Format( (decimal)(AV6cCustomerId), "ZZZ9") : context.localUtil.Format( (decimal)(AV6cCustomerId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,16);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomerid_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomerid_Visible, edtavCcustomerid_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -468,7 +474,7 @@ namespace GeneXus.Programs {
             /* Attribute/Variable Label */
             GxWebStd.gx_label_element( context, edtavCcustomername_Internalname, "Customer Name", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 26,'',false,'" + sGXsfl_64_idx + "',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 26,'',false,'" + sGXsfl_74_idx + "',0)\"";
             GxWebStd.gx_single_line_edit( context, edtavCcustomername_Internalname, AV7cCustomerName, StringUtil.RTrim( context.localUtil.Format( AV7cCustomerName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,26);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomername_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomername_Visible, edtavCcustomername_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "", "start", true, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -499,7 +505,7 @@ namespace GeneXus.Programs {
             /* Attribute/Variable Label */
             GxWebStd.gx_label_element( context, edtavCcustomerlastname_Internalname, "Customer Last Name", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 36,'',false,'" + sGXsfl_64_idx + "',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 36,'',false,'" + sGXsfl_74_idx + "',0)\"";
             GxWebStd.gx_single_line_edit( context, edtavCcustomerlastname_Internalname, AV8cCustomerLastName, StringUtil.RTrim( context.localUtil.Format( AV8cCustomerLastName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,36);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomerlastname_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomerlastname_Visible, edtavCcustomerlastname_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "", "start", true, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -530,7 +536,7 @@ namespace GeneXus.Programs {
             /* Attribute/Variable Label */
             GxWebStd.gx_label_element( context, edtavCcustomerphone_Internalname, "Customer Phone", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 46,'',false,'" + sGXsfl_64_idx + "',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 46,'',false,'" + sGXsfl_74_idx + "',0)\"";
             GxWebStd.gx_single_line_edit( context, edtavCcustomerphone_Internalname, StringUtil.RTrim( AV9cCustomerPhone), StringUtil.RTrim( context.localUtil.Format( AV9cCustomerPhone, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,46);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomerphone_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomerphone_Visible, edtavCcustomerphone_Enabled, 0, "text", "", 20, "chr", 1, "row", 20, 0, 0, 0, 0, -1, 0, true, "", "start", true, "", "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -561,8 +567,41 @@ namespace GeneXus.Programs {
             /* Attribute/Variable Label */
             GxWebStd.gx_label_element( context, edtavCcustomeremail_Internalname, "Customer Email", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 56,'',false,'" + sGXsfl_64_idx + "',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 56,'',false,'" + sGXsfl_74_idx + "',0)\"";
             GxWebStd.gx_single_line_edit( context, edtavCcustomeremail_Internalname, AV10cCustomerEmail, StringUtil.RTrim( context.localUtil.Format( AV10cCustomerEmail, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,56);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomeremail_Jsonclick, 0, "Attribute", "", "", "", "", edtavCcustomeremail_Visible, edtavCcustomeremail_Enabled, 0, "text", "", 80, "chr", 1, "row", 100, 0, 0, 0, 0, -1, 0, true, "", "start", true, "", "HLP_Gx0010.htm");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, divCustomeraddeddatefiltercontainer_Internalname, 1, 0, "px", 0, "px", divCustomeraddeddatefiltercontainer_Class, "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
+            /* Text block */
+            GxWebStd.gx_label_ctrl( context, lblLblcustomeraddeddatefilter_Internalname, "Customer Added Date", "", "", lblLblcustomeraddeddatefilter_Jsonclick, "'"+""+"'"+",false,"+"'"+"e16031_client"+"'", "", "WWAdvancedLabel WWDateFilterLabel", 7, "", 1, 1, 0, 1, "HLP_Gx0010.htm");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 WWFiltersCell", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", " gx-attribute", "start", "top", "", "", "div");
+            /* Attribute/Variable Label */
+            GxWebStd.gx_label_element( context, edtavCcustomeraddeddate_Internalname, "Customer Added Date", "col-sm-3 AttributeLabel", 0, true, "");
+            /* Single line edit */
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 66,'',false,'" + sGXsfl_74_idx + "',0)\"";
+            context.WriteHtmlText( "<div id=\""+edtavCcustomeraddeddate_Internalname+"_dp_container\" class=\"dp_container\" style=\"white-space:nowrap;display:inline;\">") ;
+            GxWebStd.gx_single_line_edit( context, edtavCcustomeraddeddate_Internalname, context.localUtil.Format(AV13cCustomerAddedDate, "99/99/99"), context.localUtil.Format( AV13cCustomerAddedDate, "99/99/99"), TempTags+" onchange=\""+"gx.date.valid_date(this, 8,'MDY',0,12,'eng',false,0);"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.date.valid_date(this, 8,'MDY',0,12,'eng',false,0);"+";gx.evt.onblur(this,66);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCcustomeraddeddate_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtavCcustomeraddeddate_Enabled, 0, "text", "", 8, "chr", 1, "row", 8, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0010.htm");
+            context.WriteHtmlTextNl( "</div>") ;
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -579,10 +618,10 @@ namespace GeneXus.Programs {
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 hidden-sm hidden-md hidden-lg ToggleCell", "start", "top", "", "", "div");
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 61,'',false,'',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 71,'',false,'',0)\"";
             ClassString = bttBtntoggle_Class;
             StyleString = "";
-            GxWebStd.gx_button_ctrl( context, bttBtntoggle_Internalname, "gx.evt.setGridEvt("+StringUtil.Str( (decimal)(64), 2, 0)+","+"null"+");", "|||", bttBtntoggle_Jsonclick, 7, "|||", "", StyleString, ClassString, 1, 1, "standard", "'"+""+"'"+",false,"+"'"+"e16031_client"+"'", TempTags, "", 2, "HLP_Gx0010.htm");
+            GxWebStd.gx_button_ctrl( context, bttBtntoggle_Internalname, "gx.evt.setGridEvt("+StringUtil.Str( (decimal)(74), 2, 0)+","+"null"+");", "|||", bttBtntoggle_Jsonclick, 7, "|||", "", StyleString, ClassString, 1, 1, "standard", "'"+""+"'"+",false,"+"'"+"e17031_client"+"'", TempTags, "", 2, "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
@@ -591,12 +630,12 @@ namespace GeneXus.Programs {
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
             /*  Grid Control  */
             Grid1Container.SetWrapped(nGXWrapped);
-            StartGridControl64( ) ;
+            StartGridControl74( ) ;
          }
-         if ( wbEnd == 64 )
+         if ( wbEnd == 74 )
          {
             wbEnd = 0;
-            nRC_GXsfl_64 = (int)(nGXsfl_64_idx-1);
+            nRC_GXsfl_74 = (int)(nGXsfl_74_idx-1);
             if ( Grid1Container.GetWrapped() == 1 )
             {
                context.WriteHtmlText( "</table>") ;
@@ -628,10 +667,10 @@ namespace GeneXus.Programs {
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 72,'',false,'',0)\"";
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 82,'',false,'',0)\"";
             ClassString = "BtnCancel";
             StyleString = "";
-            GxWebStd.gx_button_ctrl( context, bttBtn_cancel_Internalname, "gx.evt.setGridEvt("+StringUtil.Str( (decimal)(64), 2, 0)+","+"null"+");", "Cancel", bttBtn_cancel_Jsonclick, 1, "Cancel", "", StyleString, ClassString, 1, 1, "standard", "'"+""+"'"+",false,"+"'"+"ECANCEL."+"'", TempTags, "", context.GetButtonType( ), "HLP_Gx0010.htm");
+            GxWebStd.gx_button_ctrl( context, bttBtn_cancel_Internalname, "gx.evt.setGridEvt("+StringUtil.Str( (decimal)(74), 2, 0)+","+"null"+");", "Cancel", bttBtn_cancel_Jsonclick, 1, "Cancel", "", StyleString, ClassString, 1, 1, "standard", "'"+""+"'"+",false,"+"'"+"ECANCEL."+"'", TempTags, "", context.GetButtonType( ), "HLP_Gx0010.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -640,7 +679,7 @@ namespace GeneXus.Programs {
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
          }
-         if ( wbEnd == 64 )
+         if ( wbEnd == 74 )
          {
             wbEnd = 0;
             if ( isFullAjaxMode( ) )
@@ -766,11 +805,11 @@ namespace GeneXus.Programs {
                            sEvt = StringUtil.Left( sEvt, (short)(StringUtil.Len( sEvt)-4));
                            if ( ( StringUtil.StrCmp(StringUtil.Left( sEvt, 5), "START") == 0 ) || ( StringUtil.StrCmp(StringUtil.Left( sEvt, 4), "LOAD") == 0 ) || ( StringUtil.StrCmp(StringUtil.Left( sEvt, 5), "ENTER") == 0 ) )
                            {
-                              nGXsfl_64_idx = (int)(Math.Round(NumberUtil.Val( sEvtType, "."), 18, MidpointRounding.ToEven));
-                              sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
-                              SubsflControlProps_642( ) ;
+                              nGXsfl_74_idx = (int)(Math.Round(NumberUtil.Val( sEvtType, "."), 18, MidpointRounding.ToEven));
+                              sGXsfl_74_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_74_idx), 4, 0), 4, "0");
+                              SubsflControlProps_742( ) ;
                               AV5LinkSelection = cgiGet( edtavLinkselection_Internalname);
-                              AssignProp("", false, edtavLinkselection_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV13Linkselection_GXI : context.convertURL( context.PathToRelativeUrl( AV5LinkSelection))), !bGXsfl_64_Refreshing);
+                              AssignProp("", false, edtavLinkselection_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV14Linkselection_GXI : context.convertURL( context.PathToRelativeUrl( AV5LinkSelection))), !bGXsfl_74_Refreshing);
                               AssignProp("", false, edtavLinkselection_Internalname, "SrcSet", context.GetImageSrcSet( AV5LinkSelection), true);
                               A1CustomerId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtCustomerId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
                               A2CustomerName = cgiGet( edtCustomerName_Internalname);
@@ -785,14 +824,14 @@ namespace GeneXus.Programs {
                                     context.wbHandled = 1;
                                     dynload_actions( ) ;
                                     /* Execute user event: Start */
-                                    E17032 ();
+                                    E18032 ();
                                  }
                                  else if ( StringUtil.StrCmp(sEvt, "LOAD") == 0 )
                                  {
                                     context.wbHandled = 1;
                                     dynload_actions( ) ;
                                     /* Execute user event: Load */
-                                    E18032 ();
+                                    E19032 ();
                                  }
                                  else if ( StringUtil.StrCmp(sEvt, "ENTER") == 0 )
                                  {
@@ -825,10 +864,15 @@ namespace GeneXus.Programs {
                                        {
                                           Rfr0gs = true;
                                        }
+                                       /* Set Refresh If Ccustomeraddeddate Changed */
+                                       if ( context.localUtil.CToT( cgiGet( "GXH_vCCUSTOMERADDEDDATE"), 0) != AV13cCustomerAddedDate )
+                                       {
+                                          Rfr0gs = true;
+                                       }
                                        if ( ! Rfr0gs )
                                        {
                                           /* Execute user event: Enter */
-                                          E19032 ();
+                                          E20032 ();
                                        }
                                        dynload_actions( ) ;
                                     }
@@ -902,13 +946,13 @@ namespace GeneXus.Programs {
       protected void gxnrGrid1_newrow( )
       {
          GxWebStd.set_html_headers( context, 0, "", "");
-         SubsflControlProps_642( ) ;
-         while ( nGXsfl_64_idx <= nRC_GXsfl_64 )
+         SubsflControlProps_742( ) ;
+         while ( nGXsfl_74_idx <= nRC_GXsfl_74 )
          {
-            sendrow_642( ) ;
-            nGXsfl_64_idx = ((subGrid1_Islastpage==1)&&(nGXsfl_64_idx+1>subGrid1_fnc_Recordsperpage( )) ? 1 : nGXsfl_64_idx+1);
-            sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
-            SubsflControlProps_642( ) ;
+            sendrow_742( ) ;
+            nGXsfl_74_idx = ((subGrid1_Islastpage==1)&&(nGXsfl_74_idx+1>subGrid1_fnc_Recordsperpage( )) ? 1 : nGXsfl_74_idx+1);
+            sGXsfl_74_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_74_idx), 4, 0), 4, "0");
+            SubsflControlProps_742( ) ;
          }
          AddString( context.httpAjaxContext.getJSONContainerResponse( Grid1Container)) ;
          /* End function gxnrGrid1_newrow */
@@ -919,7 +963,8 @@ namespace GeneXus.Programs {
                                         string AV7cCustomerName ,
                                         string AV8cCustomerLastName ,
                                         string AV9cCustomerPhone ,
-                                        string AV10cCustomerEmail )
+                                        string AV10cCustomerEmail ,
+                                        DateTime AV13cCustomerAddedDate )
       {
          initialize_formulas( ) ;
          GxWebStd.set_html_headers( context, 0, "", "");
@@ -973,11 +1018,11 @@ namespace GeneXus.Programs {
          {
             Grid1Container.ClearRows();
          }
-         wbStart = 64;
-         nGXsfl_64_idx = 1;
-         sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
-         SubsflControlProps_642( ) ;
-         bGXsfl_64_Refreshing = true;
+         wbStart = 74;
+         nGXsfl_74_idx = 1;
+         sGXsfl_74_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_74_idx), 4, 0), 4, "0");
+         SubsflControlProps_742( ) ;
+         bGXsfl_74_Refreshing = true;
          Grid1Container.AddObjectProperty("GridName", "Grid1");
          Grid1Container.AddObjectProperty("CmpContext", "");
          Grid1Container.AddObjectProperty("InMasterPage", "false");
@@ -991,7 +1036,7 @@ namespace GeneXus.Programs {
          gxdyncontrolsrefreshing = false;
          if ( ! context.WillRedirect( ) && ( context.nUserReturn != 1 ) )
          {
-            SubsflControlProps_642( ) ;
+            SubsflControlProps_742( ) ;
             GXPagingFrom2 = (int)(GRID1_nFirstRecordOnPage);
             GXPagingTo2 = (int)(subGrid1_fnc_Recordsperpage( )+1);
             pr_default.dynParam(0, new Object[]{ new Object[]{
@@ -999,13 +1044,15 @@ namespace GeneXus.Programs {
                                                  AV8cCustomerLastName ,
                                                  AV9cCustomerPhone ,
                                                  AV10cCustomerEmail ,
+                                                 AV13cCustomerAddedDate ,
                                                  A2CustomerName ,
                                                  A3CustomerLastName ,
                                                  A5CustomerPhone ,
                                                  A6CustomerEmail ,
+                                                 A16CustomerAddedDate ,
                                                  AV6cCustomerId } ,
                                                  new int[]{
-                                                 TypeConstants.SHORT
+                                                 TypeConstants.DATE, TypeConstants.DATE, TypeConstants.SHORT
                                                  }
             });
             lV7cCustomerName = StringUtil.Concat( StringUtil.RTrim( AV7cCustomerName), "%", "");
@@ -1013,33 +1060,34 @@ namespace GeneXus.Programs {
             lV9cCustomerPhone = StringUtil.PadR( StringUtil.RTrim( AV9cCustomerPhone), 20, "%");
             lV10cCustomerEmail = StringUtil.Concat( StringUtil.RTrim( AV10cCustomerEmail), "%", "");
             /* Using cursor H00032 */
-            pr_default.execute(0, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
-            nGXsfl_64_idx = 1;
-            sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
-            SubsflControlProps_642( ) ;
+            pr_default.execute(0, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail, AV13cCustomerAddedDate, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
+            nGXsfl_74_idx = 1;
+            sGXsfl_74_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_74_idx), 4, 0), 4, "0");
+            SubsflControlProps_742( ) ;
             while ( ( (pr_default.getStatus(0) != 101) ) && ( ( GRID1_nCurrentRecord < subGrid1_fnc_Recordsperpage( ) ) ) )
             {
+               A16CustomerAddedDate = H00032_A16CustomerAddedDate[0];
                A6CustomerEmail = H00032_A6CustomerEmail[0];
                A5CustomerPhone = H00032_A5CustomerPhone[0];
                A3CustomerLastName = H00032_A3CustomerLastName[0];
                A2CustomerName = H00032_A2CustomerName[0];
                A1CustomerId = H00032_A1CustomerId[0];
                /* Execute user event: Load */
-               E18032 ();
+               E19032 ();
                pr_default.readNext(0);
             }
             GRID1_nEOF = (short)(((pr_default.getStatus(0) == 101) ? 1 : 0));
             GxWebStd.gx_hidden_field( context, "GRID1_nEOF", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nEOF), 1, 0, ".", "")));
             pr_default.close(0);
-            wbEnd = 64;
+            wbEnd = 74;
             WB030( ) ;
          }
-         bGXsfl_64_Refreshing = true;
+         bGXsfl_74_Refreshing = true;
       }
 
       protected void send_integrity_lvl_hashes032( )
       {
-         GxWebStd.gx_hidden_field( context, "gxhash_CUSTOMERID"+"_"+sGXsfl_64_idx, GetSecureSignedToken( sGXsfl_64_idx, context.localUtil.Format( (decimal)(A1CustomerId), "ZZZ9"), context));
+         GxWebStd.gx_hidden_field( context, "gxhash_CUSTOMERID"+"_"+sGXsfl_74_idx, GetSecureSignedToken( sGXsfl_74_idx, context.localUtil.Format( (decimal)(A1CustomerId), "ZZZ9"), context));
       }
 
       protected int subGrid1_fnc_Pagecount( )
@@ -1059,13 +1107,15 @@ namespace GeneXus.Programs {
                                               AV8cCustomerLastName ,
                                               AV9cCustomerPhone ,
                                               AV10cCustomerEmail ,
+                                              AV13cCustomerAddedDate ,
                                               A2CustomerName ,
                                               A3CustomerLastName ,
                                               A5CustomerPhone ,
                                               A6CustomerEmail ,
+                                              A16CustomerAddedDate ,
                                               AV6cCustomerId } ,
                                               new int[]{
-                                              TypeConstants.SHORT
+                                              TypeConstants.DATE, TypeConstants.DATE, TypeConstants.SHORT
                                               }
          });
          lV7cCustomerName = StringUtil.Concat( StringUtil.RTrim( AV7cCustomerName), "%", "");
@@ -1073,7 +1123,7 @@ namespace GeneXus.Programs {
          lV9cCustomerPhone = StringUtil.PadR( StringUtil.RTrim( AV9cCustomerPhone), 20, "%");
          lV10cCustomerEmail = StringUtil.Concat( StringUtil.RTrim( AV10cCustomerEmail), "%", "");
          /* Using cursor H00033 */
-         pr_default.execute(1, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail});
+         pr_default.execute(1, new Object[] {AV6cCustomerId, lV7cCustomerName, lV8cCustomerLastName, lV9cCustomerPhone, lV10cCustomerEmail, AV13cCustomerAddedDate});
          GRID1_nRecordCount = H00033_AGRID1_nRecordCount[0];
          pr_default.close(1);
          return (int)(GRID1_nRecordCount) ;
@@ -1095,7 +1145,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1116,7 +1166,7 @@ namespace GeneXus.Programs {
          Grid1Container.AddObjectProperty("GRID1_nFirstRecordOnPage", GRID1_nFirstRecordOnPage);
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          }
          send_integrity_footer_hashes( ) ;
          return (short)(((GRID1_nEOF==0) ? 0 : 2)) ;
@@ -1135,7 +1185,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1162,7 +1212,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1181,7 +1231,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cCustomerId, AV7cCustomerName, AV8cCustomerLastName, AV9cCustomerPhone, AV10cCustomerEmail, AV13cCustomerAddedDate) ;
          }
          send_integrity_footer_hashes( ) ;
          return (int)(0) ;
@@ -1199,14 +1249,14 @@ namespace GeneXus.Programs {
          /* Execute Start event if defined. */
          context.wbGlbDoneStart = 0;
          /* Execute user event: Start */
-         E17032 ();
+         E18032 ();
          context.wbGlbDoneStart = 1;
          /* After Start, stand alone formulas. */
          if ( StringUtil.StrCmp(context.GetRequestMethod( ), "POST") == 0 )
          {
             /* Read saved SDTs. */
             /* Read saved values. */
-            nRC_GXsfl_64 = (int)(Math.Round(context.localUtil.CToN( cgiGet( "nRC_GXsfl_64"), ".", ","), 18, MidpointRounding.ToEven));
+            nRC_GXsfl_74 = (int)(Math.Round(context.localUtil.CToN( cgiGet( "nRC_GXsfl_74"), ".", ","), 18, MidpointRounding.ToEven));
             GRID1_nFirstRecordOnPage = (long)(Math.Round(context.localUtil.CToN( cgiGet( "GRID1_nFirstRecordOnPage"), ".", ","), 18, MidpointRounding.ToEven));
             GRID1_nEOF = (short)(Math.Round(context.localUtil.CToN( cgiGet( "GRID1_nEOF"), ".", ","), 18, MidpointRounding.ToEven));
             /* Read variables values. */
@@ -1232,6 +1282,20 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "AV9cCustomerPhone", AV9cCustomerPhone);
             AV10cCustomerEmail = cgiGet( edtavCcustomeremail_Internalname);
             AssignAttri("", false, "AV10cCustomerEmail", AV10cCustomerEmail);
+            if ( context.localUtil.VCDate( cgiGet( edtavCcustomeraddeddate_Internalname), 1) == 0 )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_faildate", new   object[]  {"Customer Added Date"}), 1, "vCCUSTOMERADDEDDATE");
+               GX_FocusControl = edtavCcustomeraddeddate_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+               wbErr = true;
+               AV13cCustomerAddedDate = DateTime.MinValue;
+               AssignAttri("", false, "AV13cCustomerAddedDate", context.localUtil.Format(AV13cCustomerAddedDate, "99/99/99"));
+            }
+            else
+            {
+               AV13cCustomerAddedDate = context.localUtil.CToD( cgiGet( edtavCcustomeraddeddate_Internalname), 1);
+               AssignAttri("", false, "AV13cCustomerAddedDate", context.localUtil.Format(AV13cCustomerAddedDate, "99/99/99"));
+            }
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
@@ -1256,6 +1320,10 @@ namespace GeneXus.Programs {
             {
                GRID1_nFirstRecordOnPage = 0;
             }
+            if ( DateTimeUtil.ResetTime ( context.localUtil.CToD( cgiGet( "GXH_vCCUSTOMERADDEDDATE"), 1) ) != DateTimeUtil.ResetTime ( AV13cCustomerAddedDate ) )
+            {
+               GRID1_nFirstRecordOnPage = 0;
+            }
          }
          else
          {
@@ -1266,7 +1334,7 @@ namespace GeneXus.Programs {
       protected void GXStart( )
       {
          /* Execute user event: Start */
-         E17032 ();
+         E18032 ();
          if ( returnInSub )
          {
             returnInSub = true;
@@ -1274,7 +1342,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void E17032( )
+      protected void E18032( )
       {
          /* Start Routine */
          returnInSub = false;
@@ -1283,26 +1351,26 @@ namespace GeneXus.Programs {
          AV12ADVANCED_LABEL_TEMPLATE = "%1 <strong>%2</strong>";
       }
 
-      private void E18032( )
+      private void E19032( )
       {
          /* Load Routine */
          returnInSub = false;
          edtavLinkselection_gximage = "selectRow";
          AV5LinkSelection = context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( ));
          AssignAttri("", false, edtavLinkselection_Internalname, AV5LinkSelection);
-         AV13Linkselection_GXI = GXDbFile.PathToUrl( context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( )));
-         sendrow_642( ) ;
+         AV14Linkselection_GXI = GXDbFile.PathToUrl( context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( )));
+         sendrow_742( ) ;
          GRID1_nCurrentRecord = (long)(GRID1_nCurrentRecord+1);
-         if ( isFullAjaxMode( ) && ! bGXsfl_64_Refreshing )
+         if ( isFullAjaxMode( ) && ! bGXsfl_74_Refreshing )
          {
-            DoAjaxLoad(64, Grid1Row);
+            DoAjaxLoad(74, Grid1Row);
          }
       }
 
       public void GXEnter( )
       {
          /* Execute user event: Enter */
-         E19032 ();
+         E20032 ();
          if ( returnInSub )
          {
             returnInSub = true;
@@ -1310,7 +1378,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void E19032( )
+      protected void E20032( )
       {
          /* Enter Routine */
          returnInSub = false;
@@ -1357,6 +1425,7 @@ namespace GeneXus.Programs {
 
       protected void define_styles( )
       {
+         AddStyleSheetFile("calendar-system.css", "");
          AddThemeStyleSheetFile("", context.GetTheme( )+".css", "?"+GetCacheInvalidationToken( ));
          bool outputEnabled = isOutputEnabled( );
          if ( context.isSpaRequest( ) )
@@ -1366,7 +1435,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2023981241490", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391510482499", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1382,33 +1451,33 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("gx0010.js", "?2023981241490", false, true);
+         context.AddJavascriptSource("gx0010.js", "?202391510482499", false, true);
          /* End function include_jscripts */
       }
 
-      protected void SubsflControlProps_642( )
+      protected void SubsflControlProps_742( )
       {
-         edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_64_idx;
-         edtCustomerId_Internalname = "CUSTOMERID_"+sGXsfl_64_idx;
-         edtCustomerName_Internalname = "CUSTOMERNAME_"+sGXsfl_64_idx;
-         edtCustomerLastName_Internalname = "CUSTOMERLASTNAME_"+sGXsfl_64_idx;
-         edtCustomerPhone_Internalname = "CUSTOMERPHONE_"+sGXsfl_64_idx;
+         edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_74_idx;
+         edtCustomerId_Internalname = "CUSTOMERID_"+sGXsfl_74_idx;
+         edtCustomerName_Internalname = "CUSTOMERNAME_"+sGXsfl_74_idx;
+         edtCustomerLastName_Internalname = "CUSTOMERLASTNAME_"+sGXsfl_74_idx;
+         edtCustomerPhone_Internalname = "CUSTOMERPHONE_"+sGXsfl_74_idx;
       }
 
-      protected void SubsflControlProps_fel_642( )
+      protected void SubsflControlProps_fel_742( )
       {
-         edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_64_fel_idx;
-         edtCustomerId_Internalname = "CUSTOMERID_"+sGXsfl_64_fel_idx;
-         edtCustomerName_Internalname = "CUSTOMERNAME_"+sGXsfl_64_fel_idx;
-         edtCustomerLastName_Internalname = "CUSTOMERLASTNAME_"+sGXsfl_64_fel_idx;
-         edtCustomerPhone_Internalname = "CUSTOMERPHONE_"+sGXsfl_64_fel_idx;
+         edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_74_fel_idx;
+         edtCustomerId_Internalname = "CUSTOMERID_"+sGXsfl_74_fel_idx;
+         edtCustomerName_Internalname = "CUSTOMERNAME_"+sGXsfl_74_fel_idx;
+         edtCustomerLastName_Internalname = "CUSTOMERLASTNAME_"+sGXsfl_74_fel_idx;
+         edtCustomerPhone_Internalname = "CUSTOMERPHONE_"+sGXsfl_74_fel_idx;
       }
 
-      protected void sendrow_642( )
+      protected void sendrow_742( )
       {
-         SubsflControlProps_642( ) ;
+         SubsflControlProps_742( ) ;
          WB030( ) ;
-         if ( ( 10 * 1 == 0 ) || ( nGXsfl_64_idx <= subGrid1_fnc_Recordsperpage( ) * 1 ) )
+         if ( ( 10 * 1 == 0 ) || ( nGXsfl_74_idx <= subGrid1_fnc_Recordsperpage( ) * 1 ) )
          {
             Grid1Row = GXWebRow.GetNew(context,Grid1Container);
             if ( subGrid1_Backcolorstyle == 0 )
@@ -1444,7 +1513,7 @@ namespace GeneXus.Programs {
             {
                /* Report style subfile background logic. */
                subGrid1_Backstyle = 1;
-               if ( ((int)((nGXsfl_64_idx) % (2))) == 0 )
+               if ( ((int)((nGXsfl_74_idx) % (2))) == 0 )
                {
                   subGrid1_Backcolor = (int)(0x0);
                   if ( StringUtil.StrCmp(subGrid1_Class, "") != 0 )
@@ -1465,7 +1534,7 @@ namespace GeneXus.Programs {
             {
                context.WriteHtmlText( "<tr ") ;
                context.WriteHtmlText( " class=\""+"PromptGrid"+"\" style=\""+""+"\"") ;
-               context.WriteHtmlText( " gxrow=\""+sGXsfl_64_idx+"\">") ;
+               context.WriteHtmlText( " gxrow=\""+sGXsfl_74_idx+"\">") ;
             }
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
@@ -1474,11 +1543,11 @@ namespace GeneXus.Programs {
             }
             /* Static Bitmap Variable */
             edtavLinkselection_Link = "javascript:gx.popup.gxReturn(["+"'"+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", "")))+"'"+"]);";
-            AssignProp("", false, edtavLinkselection_Internalname, "Link", edtavLinkselection_Link, !bGXsfl_64_Refreshing);
+            AssignProp("", false, edtavLinkselection_Internalname, "Link", edtavLinkselection_Link, !bGXsfl_74_Refreshing);
             ClassString = "SelectionAttribute" + " " + ((StringUtil.StrCmp(edtavLinkselection_gximage, "")==0) ? "" : "GX_Image_"+edtavLinkselection_gximage+"_Class");
             StyleString = "";
-            AV5LinkSelection_IsBlob = (bool)((String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection))&&String.IsNullOrEmpty(StringUtil.RTrim( AV13Linkselection_GXI)))||!String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)));
-            sImgUrl = (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV13Linkselection_GXI : context.PathToRelativeUrl( AV5LinkSelection));
+            AV5LinkSelection_IsBlob = (bool)((String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection))&&String.IsNullOrEmpty(StringUtil.RTrim( AV14Linkselection_GXI)))||!String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)));
+            sImgUrl = (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV14Linkselection_GXI : context.PathToRelativeUrl( AV5LinkSelection));
             Grid1Row.AddColumnProperties("bitmap", 1, isAjaxCallMode( ), new Object[] {(string)edtavLinkselection_Internalname,(string)sImgUrl,(string)edtavLinkselection_Link,(string)"",(string)"",context.GetTheme( ),(short)-1,(short)1,(string)"",(string)"",(short)0,(short)-1,(short)0,(string)"px",(short)0,(string)"px",(short)0,(short)0,(short)0,(string)"",(string)"",(string)StyleString,(string)ClassString,(string)"WWActionColumn",(string)"",(string)"",(string)"",(string)"",(string)"",(string)"",(short)1,(bool)AV5LinkSelection_IsBlob,(bool)false,context.GetImageSrcSet( sImgUrl)});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
@@ -1487,7 +1556,7 @@ namespace GeneXus.Programs {
             }
             /* Single line edit */
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A1CustomerId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A1CustomerId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)74,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
@@ -1496,8 +1565,8 @@ namespace GeneXus.Programs {
             /* Single line edit */
             ROClassString = "DescriptionAttribute";
             edtCustomerName_Link = "javascript:gx.popup.gxReturn(["+"'"+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CustomerId), 4, 0, ".", "")))+"'"+"]);";
-            AssignProp("", false, edtCustomerName_Internalname, "Link", edtCustomerName_Link, !bGXsfl_64_Refreshing);
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerName_Internalname,(string)A2CustomerName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtCustomerName_Link,(string)"",(string)"",(string)"",(string)edtCustomerName_Jsonclick,(short)0,(string)"DescriptionAttribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
+            AssignProp("", false, edtCustomerName_Internalname, "Link", edtCustomerName_Link, !bGXsfl_74_Refreshing);
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerName_Internalname,(string)A2CustomerName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtCustomerName_Link,(string)"",(string)"",(string)"",(string)edtCustomerName_Jsonclick,(short)0,(string)"DescriptionAttribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)74,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
@@ -1505,7 +1574,7 @@ namespace GeneXus.Programs {
             }
             /* Single line edit */
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerLastName_Internalname,(string)A3CustomerLastName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerLastName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerLastName_Internalname,(string)A3CustomerLastName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCustomerLastName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)74,(short)0,(short)-1,(short)-1,(bool)true,(string)"",(string)"start",(bool)true,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
@@ -1517,14 +1586,14 @@ namespace GeneXus.Programs {
                gxphoneLink = "tel:" + StringUtil.RTrim( A5CustomerPhone);
             }
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerPhone_Internalname,StringUtil.RTrim( A5CustomerPhone),(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)gxphoneLink,(string)"",(string)"",(string)"",(string)edtCustomerPhone_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"tel",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)20,(short)0,(short)0,(short)64,(short)0,(short)-1,(short)0,(bool)true,(string)"GeneXus\\Phone",(string)"start",(bool)true,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCustomerPhone_Internalname,StringUtil.RTrim( A5CustomerPhone),(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)gxphoneLink,(string)"",(string)"",(string)"",(string)edtCustomerPhone_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"tel",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)20,(short)0,(short)0,(short)74,(short)0,(short)-1,(short)0,(bool)true,(string)"GeneXus\\Phone",(string)"start",(bool)true,(string)""});
             send_integrity_lvl_hashes032( ) ;
             Grid1Container.AddRow(Grid1Row);
-            nGXsfl_64_idx = ((subGrid1_Islastpage==1)&&(nGXsfl_64_idx+1>subGrid1_fnc_Recordsperpage( )) ? 1 : nGXsfl_64_idx+1);
-            sGXsfl_64_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_64_idx), 4, 0), 4, "0");
-            SubsflControlProps_642( ) ;
+            nGXsfl_74_idx = ((subGrid1_Islastpage==1)&&(nGXsfl_74_idx+1>subGrid1_fnc_Recordsperpage( )) ? 1 : nGXsfl_74_idx+1);
+            sGXsfl_74_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_74_idx), 4, 0), 4, "0");
+            SubsflControlProps_742( ) ;
          }
-         /* End function sendrow_642 */
+         /* End function sendrow_742 */
       }
 
       protected void init_web_controls( )
@@ -1532,11 +1601,11 @@ namespace GeneXus.Programs {
          /* End function init_web_controls */
       }
 
-      protected void StartGridControl64( )
+      protected void StartGridControl74( )
       {
          if ( Grid1Container.GetWrapped() == 1 )
          {
-            context.WriteHtmlText( "<div id=\""+"Grid1Container"+"DivS\" data-gxgridid=\"64\">") ;
+            context.WriteHtmlText( "<div id=\""+"Grid1Container"+"DivS\" data-gxgridid=\"74\">") ;
             sStyleString = "";
             GxWebStd.gx_table_start( context, subGrid1_Internalname, subGrid1_Internalname, "", "PromptGrid", 0, "", "", 1, 2, sStyleString, "", "", 0);
             /* Subfile titles */
@@ -1650,6 +1719,9 @@ namespace GeneXus.Programs {
          lblLblcustomeremailfilter_Internalname = "LBLCUSTOMEREMAILFILTER";
          edtavCcustomeremail_Internalname = "vCCUSTOMEREMAIL";
          divCustomeremailfiltercontainer_Internalname = "CUSTOMEREMAILFILTERCONTAINER";
+         lblLblcustomeraddeddatefilter_Internalname = "LBLCUSTOMERADDEDDATEFILTER";
+         edtavCcustomeraddeddate_Internalname = "vCCUSTOMERADDEDDATE";
+         divCustomeraddeddatefiltercontainer_Internalname = "CUSTOMERADDEDDATEFILTERCONTAINER";
          divAdvancedcontainer_Internalname = "ADVANCEDCONTAINER";
          bttBtntoggle_Internalname = "BTNTOGGLE";
          edtavLinkselection_Internalname = "vLINKSELECTION";
@@ -1684,6 +1756,8 @@ namespace GeneXus.Programs {
          edtavLinkselection_Link = "";
          subGrid1_Class = "PromptGrid";
          subGrid1_Backcolorstyle = 0;
+         edtavCcustomeraddeddate_Jsonclick = "";
+         edtavCcustomeraddeddate_Enabled = 1;
          edtavCcustomeremail_Jsonclick = "";
          edtavCcustomeremail_Enabled = 1;
          edtavCcustomeremail_Visible = 1;
@@ -1699,6 +1773,7 @@ namespace GeneXus.Programs {
          edtavCcustomerid_Jsonclick = "";
          edtavCcustomerid_Enabled = 1;
          edtavCcustomerid_Visible = 1;
+         divCustomeraddeddatefiltercontainer_Class = "AdvancedContainerItem";
          divCustomeremailfiltercontainer_Class = "AdvancedContainerItem";
          divCustomerphonefiltercontainer_Class = "AdvancedContainerItem";
          divCustomerlastnamefiltercontainer_Class = "AdvancedContainerItem";
@@ -1725,9 +1800,9 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''},{av:'AV13cCustomerAddedDate',fld:'vCCUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("REFRESH",",oparms:[]}");
-         setEventMetadata("'TOGGLE'","{handler:'E16031',iparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]");
+         setEventMetadata("'TOGGLE'","{handler:'E17031',iparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]");
          setEventMetadata("'TOGGLE'",",oparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]}");
          setEventMetadata("LBLCUSTOMERIDFILTER.CLICK","{handler:'E11031',iparms:[{av:'divCustomeridfiltercontainer_Class',ctrl:'CUSTOMERIDFILTERCONTAINER',prop:'Class'}]");
          setEventMetadata("LBLCUSTOMERIDFILTER.CLICK",",oparms:[{av:'divCustomeridfiltercontainer_Class',ctrl:'CUSTOMERIDFILTERCONTAINER',prop:'Class'},{av:'edtavCcustomerid_Visible',ctrl:'vCCUSTOMERID',prop:'Visible'}]}");
@@ -1739,18 +1814,22 @@ namespace GeneXus.Programs {
          setEventMetadata("LBLCUSTOMERPHONEFILTER.CLICK",",oparms:[{av:'divCustomerphonefiltercontainer_Class',ctrl:'CUSTOMERPHONEFILTERCONTAINER',prop:'Class'},{av:'edtavCcustomerphone_Visible',ctrl:'vCCUSTOMERPHONE',prop:'Visible'}]}");
          setEventMetadata("LBLCUSTOMEREMAILFILTER.CLICK","{handler:'E15031',iparms:[{av:'divCustomeremailfiltercontainer_Class',ctrl:'CUSTOMEREMAILFILTERCONTAINER',prop:'Class'}]");
          setEventMetadata("LBLCUSTOMEREMAILFILTER.CLICK",",oparms:[{av:'divCustomeremailfiltercontainer_Class',ctrl:'CUSTOMEREMAILFILTERCONTAINER',prop:'Class'},{av:'edtavCcustomeremail_Visible',ctrl:'vCCUSTOMEREMAIL',prop:'Visible'}]}");
-         setEventMetadata("ENTER","{handler:'E19032',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9',hsh:true}]");
+         setEventMetadata("LBLCUSTOMERADDEDDATEFILTER.CLICK","{handler:'E16031',iparms:[{av:'divCustomeraddeddatefiltercontainer_Class',ctrl:'CUSTOMERADDEDDATEFILTERCONTAINER',prop:'Class'}]");
+         setEventMetadata("LBLCUSTOMERADDEDDATEFILTER.CLICK",",oparms:[{av:'divCustomeraddeddatefiltercontainer_Class',ctrl:'CUSTOMERADDEDDATEFILTERCONTAINER',prop:'Class'}]}");
+         setEventMetadata("ENTER","{handler:'E20032',iparms:[{av:'A1CustomerId',fld:'CUSTOMERID',pic:'ZZZ9',hsh:true}]");
          setEventMetadata("ENTER",",oparms:[{av:'AV11pCustomerId',fld:'vPCUSTOMERID',pic:'ZZZ9'}]}");
-         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''},{av:'AV13cCustomerAddedDate',fld:'vCCUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("GRID1_FIRSTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''},{av:'AV13cCustomerAddedDate',fld:'vCCUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("GRID1_PREVPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''},{av:'AV13cCustomerAddedDate',fld:'vCCUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("GRID1_NEXTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''}]");
+         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cCustomerId',fld:'vCCUSTOMERID',pic:'ZZZ9'},{av:'AV7cCustomerName',fld:'vCCUSTOMERNAME',pic:''},{av:'AV8cCustomerLastName',fld:'vCCUSTOMERLASTNAME',pic:''},{av:'AV9cCustomerPhone',fld:'vCCUSTOMERPHONE',pic:''},{av:'AV10cCustomerEmail',fld:'vCCUSTOMEREMAIL',pic:''},{av:'AV13cCustomerAddedDate',fld:'vCCUSTOMERADDEDDATE',pic:''}]");
          setEventMetadata("GRID1_LASTPAGE",",oparms:[]}");
          setEventMetadata("VALIDV_CCUSTOMEREMAIL","{handler:'Validv_Ccustomeremail',iparms:[]");
          setEventMetadata("VALIDV_CCUSTOMEREMAIL",",oparms:[]}");
+         setEventMetadata("VALIDV_CCUSTOMERADDEDDATE","{handler:'Validv_Ccustomeraddeddate',iparms:[]");
+         setEventMetadata("VALIDV_CCUSTOMERADDEDDATE",",oparms:[]}");
          setEventMetadata("NULL","{handler:'Valid_Customerphone',iparms:[]");
          setEventMetadata("NULL",",oparms:[]}");
          return  ;
@@ -1778,6 +1857,7 @@ namespace GeneXus.Programs {
          AV8cCustomerLastName = "";
          AV9cCustomerPhone = "";
          AV10cCustomerEmail = "";
+         AV13cCustomerAddedDate = DateTime.MinValue;
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
@@ -1791,6 +1871,7 @@ namespace GeneXus.Programs {
          lblLblcustomerlastnamefilter_Jsonclick = "";
          lblLblcustomerphonefilter_Jsonclick = "";
          lblLblcustomeremailfilter_Jsonclick = "";
+         lblLblcustomeraddeddatefilter_Jsonclick = "";
          ClassString = "";
          StyleString = "";
          bttBtntoggle_Jsonclick = "";
@@ -1802,7 +1883,7 @@ namespace GeneXus.Programs {
          EvtRowId = "";
          sEvtType = "";
          AV5LinkSelection = "";
-         AV13Linkselection_GXI = "";
+         AV14Linkselection_GXI = "";
          A2CustomerName = "";
          A3CustomerLastName = "";
          A5CustomerPhone = "";
@@ -1812,6 +1893,8 @@ namespace GeneXus.Programs {
          lV9cCustomerPhone = "";
          lV10cCustomerEmail = "";
          A6CustomerEmail = "";
+         A16CustomerAddedDate = DateTime.MinValue;
+         H00032_A16CustomerAddedDate = new DateTime[] {DateTime.MinValue} ;
          H00032_A6CustomerEmail = new string[] {""} ;
          H00032_A5CustomerPhone = new string[] {""} ;
          H00032_A3CustomerLastName = new string[] {""} ;
@@ -1830,7 +1913,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.gx0010__default(),
             new Object[][] {
                 new Object[] {
-               H00032_A6CustomerEmail, H00032_A5CustomerPhone, H00032_A3CustomerLastName, H00032_A2CustomerName, H00032_A1CustomerId
+               H00032_A16CustomerAddedDate, H00032_A6CustomerEmail, H00032_A5CustomerPhone, H00032_A3CustomerLastName, H00032_A2CustomerName, H00032_A1CustomerId
                }
                , new Object[] {
                H00033_AGRID1_nRecordCount
@@ -1860,9 +1943,9 @@ namespace GeneXus.Programs {
       private short subGrid1_Allowhovering ;
       private short subGrid1_Allowcollapsing ;
       private short subGrid1_Collapsed ;
-      private int nRC_GXsfl_64 ;
+      private int nRC_GXsfl_74 ;
       private int subGrid1_Rows ;
-      private int nGXsfl_64_idx=1 ;
+      private int nGXsfl_74_idx=1 ;
       private int edtavCcustomerid_Enabled ;
       private int edtavCcustomerid_Visible ;
       private int edtavCcustomername_Visible ;
@@ -1873,6 +1956,7 @@ namespace GeneXus.Programs {
       private int edtavCcustomerphone_Enabled ;
       private int edtavCcustomeremail_Visible ;
       private int edtavCcustomeremail_Enabled ;
+      private int edtavCcustomeraddeddate_Enabled ;
       private int subGrid1_Islastpage ;
       private int GXPagingFrom2 ;
       private int GXPagingTo2 ;
@@ -1893,9 +1977,10 @@ namespace GeneXus.Programs {
       private string divCustomerlastnamefiltercontainer_Class ;
       private string divCustomerphonefiltercontainer_Class ;
       private string divCustomeremailfiltercontainer_Class ;
+      private string divCustomeraddeddatefiltercontainer_Class ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
-      private string sGXsfl_64_idx="0001" ;
+      private string sGXsfl_74_idx="0001" ;
       private string AV9cCustomerPhone ;
       private string sDynURL ;
       private string FormProcess ;
@@ -1931,6 +2016,11 @@ namespace GeneXus.Programs {
       private string lblLblcustomeremailfilter_Jsonclick ;
       private string edtavCcustomeremail_Internalname ;
       private string edtavCcustomeremail_Jsonclick ;
+      private string divCustomeraddeddatefiltercontainer_Internalname ;
+      private string lblLblcustomeraddeddatefilter_Internalname ;
+      private string lblLblcustomeraddeddatefilter_Jsonclick ;
+      private string edtavCcustomeraddeddate_Internalname ;
+      private string edtavCcustomeraddeddate_Jsonclick ;
       private string divGridtable_Internalname ;
       private string ClassString ;
       private string StyleString ;
@@ -1954,7 +2044,7 @@ namespace GeneXus.Programs {
       private string lV9cCustomerPhone ;
       private string AV12ADVANCED_LABEL_TEMPLATE ;
       private string edtavLinkselection_gximage ;
-      private string sGXsfl_64_fel_idx="0001" ;
+      private string sGXsfl_74_fel_idx="0001" ;
       private string subGrid1_Class ;
       private string subGrid1_Linesclass ;
       private string edtavLinkselection_Link ;
@@ -1967,19 +2057,21 @@ namespace GeneXus.Programs {
       private string gxphoneLink ;
       private string edtCustomerPhone_Jsonclick ;
       private string subGrid1_Header ;
+      private DateTime AV13cCustomerAddedDate ;
+      private DateTime A16CustomerAddedDate ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool wbLoad ;
       private bool Rfr0gs ;
       private bool wbErr ;
-      private bool bGXsfl_64_Refreshing=false ;
+      private bool bGXsfl_74_Refreshing=false ;
       private bool gxdyncontrolsrefreshing ;
       private bool returnInSub ;
       private bool AV5LinkSelection_IsBlob ;
       private string AV7cCustomerName ;
       private string AV8cCustomerLastName ;
       private string AV10cCustomerEmail ;
-      private string AV13Linkselection_GXI ;
+      private string AV14Linkselection_GXI ;
       private string A2CustomerName ;
       private string A3CustomerLastName ;
       private string lV7cCustomerName ;
@@ -1992,6 +2084,7 @@ namespace GeneXus.Programs {
       private GXWebColumn Grid1Column ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
+      private DateTime[] H00032_A16CustomerAddedDate ;
       private string[] H00032_A6CustomerEmail ;
       private string[] H00032_A5CustomerPhone ;
       private string[] H00032_A3CustomerLastName ;
@@ -2011,20 +2104,22 @@ namespace GeneXus.Programs {
                                              string AV8cCustomerLastName ,
                                              string AV9cCustomerPhone ,
                                              string AV10cCustomerEmail ,
+                                             DateTime AV13cCustomerAddedDate ,
                                              string A2CustomerName ,
                                              string A3CustomerLastName ,
                                              string A5CustomerPhone ,
                                              string A6CustomerEmail ,
+                                             DateTime A16CustomerAddedDate ,
                                              short AV6cCustomerId )
       {
          System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
          string scmdbuf;
-         short[] GXv_int1 = new short[8];
+         short[] GXv_int1 = new short[9];
          Object[] GXv_Object2 = new Object[2];
          string sSelectString;
          string sFromString;
          string sOrderString;
-         sSelectString = " [CustomerEmail], [CustomerPhone], [CustomerLastName], [CustomerName], [CustomerId]";
+         sSelectString = " [CustomerAddedDate], [CustomerEmail], [CustomerPhone], [CustomerLastName], [CustomerName], [CustomerId]";
          sFromString = " FROM [Customer]";
          sOrderString = "";
          AddWhere(sWhereString, "([CustomerId] >= @AV6cCustomerId)");
@@ -2060,6 +2155,14 @@ namespace GeneXus.Programs {
          {
             GXv_int1[4] = 1;
          }
+         if ( ! (DateTime.MinValue==AV13cCustomerAddedDate) )
+         {
+            AddWhere(sWhereString, "([CustomerAddedDate] >= @AV13cCustomerAddedDate)");
+         }
+         else
+         {
+            GXv_int1[5] = 1;
+         }
          sOrderString += " ORDER BY [CustomerId]";
          scmdbuf = "SELECT " + sSelectString + sFromString + sWhereString + sOrderString + "" + " OFFSET " + "@GXPagingFrom2" + " ROWS FETCH NEXT CAST((SELECT CASE WHEN " + "@GXPagingTo2" + " > 0 THEN " + "@GXPagingTo2" + " ELSE 1e9 END) AS INTEGER) ROWS ONLY";
          GXv_Object2[0] = scmdbuf;
@@ -2072,15 +2175,17 @@ namespace GeneXus.Programs {
                                              string AV8cCustomerLastName ,
                                              string AV9cCustomerPhone ,
                                              string AV10cCustomerEmail ,
+                                             DateTime AV13cCustomerAddedDate ,
                                              string A2CustomerName ,
                                              string A3CustomerLastName ,
                                              string A5CustomerPhone ,
                                              string A6CustomerEmail ,
+                                             DateTime A16CustomerAddedDate ,
                                              short AV6cCustomerId )
       {
          System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
          string scmdbuf;
-         short[] GXv_int3 = new short[5];
+         short[] GXv_int3 = new short[6];
          Object[] GXv_Object4 = new Object[2];
          scmdbuf = "SELECT COUNT(*) FROM [Customer]";
          AddWhere(sWhereString, "([CustomerId] >= @AV6cCustomerId)");
@@ -2116,6 +2221,14 @@ namespace GeneXus.Programs {
          {
             GXv_int3[4] = 1;
          }
+         if ( ! (DateTime.MinValue==AV13cCustomerAddedDate) )
+         {
+            AddWhere(sWhereString, "([CustomerAddedDate] >= @AV13cCustomerAddedDate)");
+         }
+         else
+         {
+            GXv_int3[5] = 1;
+         }
          scmdbuf += sWhereString;
          GXv_Object4[0] = scmdbuf;
          GXv_Object4[1] = GXv_int3;
@@ -2129,9 +2242,9 @@ namespace GeneXus.Programs {
          switch ( cursor )
          {
                case 0 :
-                     return conditional_H00032(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (string)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
+                     return conditional_H00032(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (DateTime)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (string)dynConstraints[8] , (DateTime)dynConstraints[9] , (short)dynConstraints[10] );
                case 1 :
-                     return conditional_H00033(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (string)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (short)dynConstraints[8] );
+                     return conditional_H00033(context, (string)dynConstraints[0] , (string)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] , (DateTime)dynConstraints[4] , (string)dynConstraints[5] , (string)dynConstraints[6] , (string)dynConstraints[7] , (string)dynConstraints[8] , (DateTime)dynConstraints[9] , (short)dynConstraints[10] );
          }
          return base.getDynamicStatement(cursor, context, dynConstraints);
       }
@@ -2157,6 +2270,7 @@ namespace GeneXus.Programs {
           new ParDef("@lV8cCustomerLastName",GXType.NVarChar,40,0) ,
           new ParDef("@lV9cCustomerPhone",GXType.NChar,20,0) ,
           new ParDef("@lV10cCustomerEmail",GXType.NVarChar,100,0) ,
+          new ParDef("@AV13cCustomerAddedDate",GXType.Date,8,0) ,
           new ParDef("@GXPagingFrom2",GXType.Int32,9,0) ,
           new ParDef("@GXPagingTo2",GXType.Int32,9,0) ,
           new ParDef("@GXPagingTo2",GXType.Int32,9,0)
@@ -2167,7 +2281,8 @@ namespace GeneXus.Programs {
           new ParDef("@lV7cCustomerName",GXType.NVarChar,40,0) ,
           new ParDef("@lV8cCustomerLastName",GXType.NVarChar,40,0) ,
           new ParDef("@lV9cCustomerPhone",GXType.NChar,20,0) ,
-          new ParDef("@lV10cCustomerEmail",GXType.NVarChar,100,0)
+          new ParDef("@lV10cCustomerEmail",GXType.NVarChar,100,0) ,
+          new ParDef("@AV13cCustomerAddedDate",GXType.Date,8,0)
           };
           def= new CursorDef[] {
               new CursorDef("H00032", "scmdbuf",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH00032,11, GxCacheFrequency.OFF ,false,false )
@@ -2183,11 +2298,12 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((string[]) buf[1])[0] = rslt.getString(2, 20);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
+                ((DateTime[]) buf[0])[0] = rslt.getGXDate(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((string[]) buf[2])[0] = rslt.getString(3, 20);
                 ((string[]) buf[3])[0] = rslt.getVarchar(4);
-                ((short[]) buf[4])[0] = rslt.getShort(5);
+                ((string[]) buf[4])[0] = rslt.getVarchar(5);
+                ((short[]) buf[5])[0] = rslt.getShort(6);
                 return;
              case 1 :
                 ((long[]) buf[0])[0] = rslt.getLong(1);
