@@ -126,6 +126,22 @@
 <ActionType>BusinessRule</ActionType>
 <RuleType>ErrorRule</RuleType>
 <Expression>
+<Token>&quot;La fecha ingresasda no debe ser mayor a hoy dia&quot;</Token></Expression>
+<Condition>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>CustomerAddedDate</AttriName>
+<Description>Customer Added Date</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Today</VarId>
+<VarName>&amp;Today</VarName></Variable></Condition></Action>
+<Action>
+<ActionType>BusinessRule</ActionType>
+<RuleType>ErrorRule</RuleType>
+<Expression>
 <Token>&quot;Field Customer Email does not match the specified pattern&quot;</Token>
 <Token>,</Token>
 <Sp></Sp>

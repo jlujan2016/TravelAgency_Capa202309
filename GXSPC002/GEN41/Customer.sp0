@@ -156,6 +156,7 @@ rule_i(1,rule([ a(1,msg([ t('"Field Customer Added Date is out of range"',3) ],[
 rule_i(1,rule([ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ],[ insert,update,delete,display ],[ 2 ])).
 rule_i(1,rule([ a(1,[ t('"Error, el apellido del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(3,2),t(')',4) ],[ insert,update,delete,display ],[ 3 ])).
 rule_i(1,rule([ a(4,[ t('"El Telefono Vacio"',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ],[ insert,update,delete,display ],[ 5 ])).
+rule_i(1,rule([ a(1,[ t('"La fecha ingresasda no debe ser mayor a hoy dia"',3) ]) ],[ t(16,2),t(>,10),t('Today',23) ],[ insert,update,delete,display ],[ 16,'Today' ])).
  
 a_i(1,1,b,0,[],[ [],[ a(1,msg([ t('"Field Customer Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(6,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ] ]).
 a_i(2,1,b,0,[],[ [],[ a(1,msg([ t('"Field Customer Added Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t(16,2),t(')',4),t('.OR.',9),t(16,2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
@@ -163,9 +164,10 @@ a_i(3,1,f,16,[],[ [ insert ],[ t('Today',23),t('IF',17),t(insert,1),t('AND',9),t
 a_i(4,1,b,1,[],[ [],[ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ] ]).
 a_i(5,1,b,2,[],[ [],[ a(1,[ t('"Error, el apellido del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(3,2),t(')',4) ] ]).
 a_i(6,1,b,3,[],[ [],[ a(4,[ t('"El Telefono Vacio"',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
-a_i(7,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
-a_i(8,1,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
-a_i(9,1,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
+a_i(7,1,b,5,[],[ [],[ a(1,[ t('"La fecha ingresasda no debe ser mayor a hoy dia"',3) ]) ],[ t(16,2),t(>,10),t('Today',23) ] ]).
+a_i(8,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
+a_i(9,1,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(10,1,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
  
 v_i(b,i,1,6).
 v_i(b,o,1,[]).
@@ -180,17 +182,20 @@ v_i(b,i,5,3).
 v_i(b,o,5,[]).
 v_i(b,i,6,5).
 v_i(b,o,6,[]).
-v_i(t,i,7,1).
-v_i(t,o,7,2).
-v_i(t,o,7,3).
-v_i(t,o,7,4).
-v_i(t,o,7,5).
-v_i(t,o,7,6).
-v_i(t,o,7,16).
-v_i(f,i,8,[]).
-v_i(f,o,8,'GxBScreen').
+v_i(b,i,7,16).
+v_i(b,i,7,'Today').
+v_i(b,o,7,[]).
+v_i(t,i,8,1).
+v_i(t,o,8,2).
+v_i(t,o,8,3).
+v_i(t,o,8,4).
+v_i(t,o,8,5).
+v_i(t,o,8,6).
+v_i(t,o,8,16).
 v_i(f,i,9,[]).
-v_i(f,o,9,'Today').
+v_i(f,o,9,'GxBScreen').
+v_i(f,i,10,[]).
+v_i(f,o,10,'Today').
  
 act_info_i(3,[ [ 16 ] ]).
  

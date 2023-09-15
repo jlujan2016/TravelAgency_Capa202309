@@ -749,7 +749,7 @@ namespace GeneXus.Programs {
 
       protected void ZM011( short GX_JID )
       {
-         if ( ( GX_JID == 7 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 8 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -770,7 +770,7 @@ namespace GeneXus.Programs {
                Z16CustomerAddedDate = A16CustomerAddedDate;
             }
          }
-         if ( GX_JID == -7 )
+         if ( GX_JID == -8 )
          {
             Z1CustomerId = A1CustomerId;
             Z2CustomerName = A2CustomerName;
@@ -841,7 +841,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A6CustomerEmail", A6CustomerEmail);
             A16CustomerAddedDate = T00014_A16CustomerAddedDate[0];
             AssignAttri("", false, "A16CustomerAddedDate", context.localUtil.Format(A16CustomerAddedDate, "99/99/99"));
-            ZM011( -7) ;
+            ZM011( -8) ;
          }
          pr_default.close(2);
          OnLoadActions011( ) ;
@@ -889,6 +889,13 @@ namespace GeneXus.Programs {
             GX_FocusControl = edtCustomerAddedDate_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
+         if ( DateTimeUtil.ResetTime ( A16CustomerAddedDate ) > DateTimeUtil.ResetTime ( Gx_date ) )
+         {
+            GX_msglist.addItem("La fecha ingresasda no debe ser mayor a hoy dia", 1, "CUSTOMERADDEDDATE");
+            AnyError = 1;
+            GX_FocusControl = edtCustomerAddedDate_Internalname;
+            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+         }
       }
 
       protected void CloseExtendedTableCursors011( )
@@ -920,7 +927,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A1CustomerId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM011( 7) ;
+            ZM011( 8) ;
             RcdFound1 = 1;
             A1CustomerId = T00013_A1CustomerId[0];
             AssignAttri("", false, "A1CustomerId", StringUtil.LTrimStr( (decimal)(A1CustomerId), 4, 0));
@@ -1841,7 +1848,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391510482416", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391511214331", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1857,7 +1864,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("customer.js", "?202391510482416", false, true);
+         context.AddJavascriptSource("customer.js", "?202391511214331", false, true);
          /* End function include_jscripts */
       }
 
