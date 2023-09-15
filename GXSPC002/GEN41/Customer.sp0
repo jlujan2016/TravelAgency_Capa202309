@@ -150,21 +150,29 @@ rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(41)).
 rule_i(1,rule([ a(1,msg([ t('"Field Customer Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(6,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ],[ insert,update ],[ 6 ])).
 rule_i(1,rule([ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ],[ insert,update,delete,display ],[ 2 ])).
+rule_i(1,rule([ a(1,[ t('"Error, el apellido del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(3,2),t(')',4) ],[ insert,update,delete,display ],[ 3 ])).
+rule_i(1,rule([ a(4,[ t('"El Telefono Vacio"',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ],[ insert,update,delete,display ],[ 5 ])).
  
 a_i(1,1,b,0,[],[ [],[ a(1,msg([ t('"Field Customer Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(6,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ] ]).
 a_i(2,1,b,1,[],[ [],[ a(1,[ t('"Error, el nombre del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ] ]).
-a_i(3,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
+a_i(3,1,b,2,[],[ [],[ a(1,[ t('"Error, el apellido del cliente no debe estar vacio"',3) ]) ],[ t('null(',1),t(3,2),t(')',4) ] ]).
+a_i(4,1,b,3,[],[ [],[ a(4,[ t('"El Telefono Vacio"',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
+a_i(5,1,t,1,[],[ [ [ [],1,1 ] ],'ICUSTOMER',[] ]).
  
 v_i(b,i,1,6).
 v_i(b,o,1,[]).
 v_i(b,i,2,2).
 v_i(b,o,2,[]).
-v_i(t,i,3,1).
-v_i(t,o,3,2).
-v_i(t,o,3,3).
-v_i(t,o,3,4).
-v_i(t,o,3,5).
-v_i(t,o,3,6).
+v_i(b,i,3,3).
+v_i(b,o,3,[]).
+v_i(b,i,4,5).
+v_i(b,o,4,[]).
+v_i(t,i,5,1).
+v_i(t,o,5,2).
+v_i(t,o,5,3).
+v_i(t,o,5,4).
+v_i(t,o,5,5).
+v_i(t,o,5,6).
  
  
  
