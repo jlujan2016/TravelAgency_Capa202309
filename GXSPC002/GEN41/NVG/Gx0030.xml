@@ -32,6 +32,8 @@
 <Event>
 <EventName>Lblcountrynamefilter.Click</EventName></Event>
 <Event>
+<EventName>Lblcountrylastlinefilter.Click</EventName></Event>
+<Event>
 <EventName>Load</EventName>
 <LoadMethod>Auto</LoadMethod>
 <ImplicitForEach>
@@ -88,6 +90,27 @@
 <Variable>
 <VarId>Ccountryname</VarId>
 <VarName>&amp;cCountryName</VarName></Variable>
+<Token>.</Token>
+<Token>isempty(</Token>
+<Token>)</Token></Condition></ConditionalConstraint>
+<ConditionalConstraint>
+<Constraint>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>CountryLastLine</AttriName>
+<Description>Country Last Line</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccountrylastline</VarId>
+<VarName>&amp;cCountryLastLine</VarName></Variable></Constraint>
+<Condition>
+<Token>not</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccountrylastline</VarId>
+<VarName>&amp;cCountryLastLine</VarName></Variable>
 <Token>.</Token>
 <Token>isempty(</Token>
 <Token>)</Token></Condition></ConditionalConstraint></NonOptimizedWhere>

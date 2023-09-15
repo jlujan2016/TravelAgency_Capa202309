@@ -140,9 +140,11 @@ namespace GeneXus.Programs {
 
       protected void gxnrGridcountry_city_newrow_invoke( )
       {
-         nRC_GXsfl_48 = (int)(Math.Round(NumberUtil.Val( GetPar( "nRC_GXsfl_48"), "."), 18, MidpointRounding.ToEven));
-         nGXsfl_48_idx = (int)(Math.Round(NumberUtil.Val( GetPar( "nGXsfl_48_idx"), "."), 18, MidpointRounding.ToEven));
-         sGXsfl_48_idx = GetPar( "sGXsfl_48_idx");
+         nRC_GXsfl_53 = (int)(Math.Round(NumberUtil.Val( GetPar( "nRC_GXsfl_53"), "."), 18, MidpointRounding.ToEven));
+         nGXsfl_53_idx = (int)(Math.Round(NumberUtil.Val( GetPar( "nGXsfl_53_idx"), "."), 18, MidpointRounding.ToEven));
+         sGXsfl_53_idx = GetPar( "sGXsfl_53_idx");
+         A17CountryLastLine = (short)(Math.Round(NumberUtil.Val( GetPar( "CountryLastLine"), "."), 18, MidpointRounding.ToEven));
+         Gx_BScreen = (short)(Math.Round(NumberUtil.Val( GetPar( "Gx_BScreen"), "."), 18, MidpointRounding.ToEven));
          Gx_mode = GetPar( "Mode");
          setAjaxCallMode();
          if ( ! IsValidAjaxCall( true) )
@@ -370,6 +372,22 @@ namespace GeneXus.Programs {
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
          /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 form__cell", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+edtCountryLastLine_Internalname+"\"", "", "div");
+         /* Attribute/Variable Label */
+         GxWebStd.gx_label_element( context, edtCountryLastLine_Internalname, "Last Line", "col-sm-3 AttributeLabel", 1, true, "");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
+         /* Single line edit */
+         GxWebStd.gx_single_line_edit( context, edtCountryLastLine_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A17CountryLastLine), 4, 0, ".", "")), StringUtil.LTrim( ((edtCountryLastLine_Enabled!=0) ? context.localUtil.Format( (decimal)(A17CountryLastLine), "ZZZ9") : context.localUtil.Format( (decimal)(A17CountryLastLine), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtCountryLastLine_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtCountryLastLine_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Country.htm");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+         /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, divCitytable_Internalname, 1, 0, "px", 0, "px", "form__table-level", "start", "top", "", "", "div");
@@ -402,21 +420,21 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-action-group", "start", "top", " "+"data-gx-actiongroup-type=\"toolbar\""+" ", "", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 55,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 60,'',false,'',0)\"";
          ClassString = "Button button-primary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", "Confirm", bttBtn_enter_Jsonclick, 5, "Confirm", "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Country.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 57,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 62,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_cancel_Internalname, "", "Cancel", bttBtn_cancel_Jsonclick, 1, "Cancel", "", StyleString, ClassString, bttBtn_cancel_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ECANCEL."+"'", TempTags, "", context.GetButtonType( ), "HLP_Country.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 59,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 64,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_delete_Internalname, "", "Delete", bttBtn_delete_Jsonclick, 5, "Delete", "", StyleString, ClassString, bttBtn_delete_Visible, bttBtn_delete_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EDELETE."+"'", TempTags, "", context.GetButtonType( ), "HLP_Country.htm");
@@ -431,8 +449,8 @@ namespace GeneXus.Programs {
       protected void gxdraw_Gridcountry_city( )
       {
          /*  Grid Control  */
-         StartGridControl48( ) ;
-         nGXsfl_48_idx = 0;
+         StartGridControl53( ) ;
+         nGXsfl_53_idx = 0;
          if ( ( nKeyPressed == 1 ) && ( AnyError == 0 ) )
          {
             /* Enter key processing. */
@@ -456,17 +474,19 @@ namespace GeneXus.Programs {
          else if ( ( nKeyPressed == 3 ) || ( nKeyPressed == 4 ) || ( ( nKeyPressed == 1 ) && ( AnyError != 0 ) ) )
          {
             /* Button check  or addlines. */
+            B17CountryLastLine = A17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             standaloneNotModal035( ) ;
             standaloneModal035( ) ;
             sMode5 = Gx_mode;
-            while ( nGXsfl_48_idx < nRC_GXsfl_48 )
+            while ( nGXsfl_53_idx < nRC_GXsfl_53 )
             {
-               bGXsfl_48_Refreshing = true;
+               bGXsfl_53_Refreshing = true;
                ReadRow035( ) ;
-               edtCityId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYID_"+sGXsfl_48_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
-               AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_48_Refreshing);
-               edtCityName_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYNAME_"+sGXsfl_48_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
-               AssignProp("", false, edtCityName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityName_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+               edtCityId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYID_"+sGXsfl_53_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+               AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_53_Refreshing);
+               edtCityName_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYNAME_"+sGXsfl_53_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+               AssignProp("", false, edtCityName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityName_Enabled), 5, 0), !bGXsfl_53_Refreshing);
                if ( ( nRcdExists_5 == 0 ) && ! IsIns( ) )
                {
                   Gx_mode = "INS";
@@ -474,10 +494,12 @@ namespace GeneXus.Programs {
                   standaloneModal035( ) ;
                }
                SendRow035( ) ;
-               bGXsfl_48_Refreshing = false;
+               bGXsfl_53_Refreshing = false;
             }
             Gx_mode = sMode5;
             AssignAttri("", false, "Gx_mode", Gx_mode);
+            A17CountryLastLine = B17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          }
          else
          {
@@ -489,8 +511,8 @@ namespace GeneXus.Programs {
                ScanStart035( ) ;
                while ( RcdFound5 != 0 )
                {
-                  sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx+1), 4, 0), 4, "0");
-                  SubsflControlProps_485( ) ;
+                  sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx+1), 4, 0), 4, "0");
+                  SubsflControlProps_535( ) ;
                   init_level_properties5( ) ;
                   standaloneNotModal035( ) ;
                   getByPrimaryKey035( ) ;
@@ -505,10 +527,12 @@ namespace GeneXus.Programs {
          sMode5 = Gx_mode;
          Gx_mode = "INS";
          AssignAttri("", false, "Gx_mode", Gx_mode);
-         sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx+1), 4, 0), 4, "0");
-         SubsflControlProps_485( ) ;
+         sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx+1), 4, 0), 4, "0");
+         SubsflControlProps_535( ) ;
          InitAll035( ) ;
          init_level_properties5( ) ;
+         B17CountryLastLine = A17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          nRcdExists_5 = 0;
          nIsMod_5 = 0;
          nRcdDeleted_5 = 0;
@@ -529,6 +553,8 @@ namespace GeneXus.Programs {
          }
          Gx_mode = sMode5;
          AssignAttri("", false, "Gx_mode", Gx_mode);
+         A17CountryLastLine = B17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          sStyleString = "";
          context.WriteHtmlText( "<div id=\""+"Gridcountry_cityContainer"+"Div\" "+sStyleString+">"+"</div>") ;
          context.httpAjaxContext.ajax_rsp_assign_grid("_"+"Gridcountry_city", Gridcountry_cityContainer, subGridcountry_city_Internalname);
@@ -578,10 +604,13 @@ namespace GeneXus.Programs {
             /* Read saved values. */
             Z9CountryId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z9CountryId"), ".", ","), 18, MidpointRounding.ToEven));
             Z10CountryName = cgiGet( "Z10CountryName");
+            Z17CountryLastLine = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z17CountryLastLine"), ".", ","), 18, MidpointRounding.ToEven));
+            O17CountryLastLine = (short)(Math.Round(context.localUtil.CToN( cgiGet( "O17CountryLastLine"), ".", ","), 18, MidpointRounding.ToEven));
             IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ".", ","), 18, MidpointRounding.ToEven));
             IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ".", ","), 18, MidpointRounding.ToEven));
             Gx_mode = cgiGet( "Mode");
-            nRC_GXsfl_48 = (int)(Math.Round(context.localUtil.CToN( cgiGet( "nRC_GXsfl_48"), ".", ","), 18, MidpointRounding.ToEven));
+            nRC_GXsfl_53 = (int)(Math.Round(context.localUtil.CToN( cgiGet( "nRC_GXsfl_53"), ".", ","), 18, MidpointRounding.ToEven));
+            Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ".", ","), 18, MidpointRounding.ToEven));
             /* Read variables values. */
             if ( ( ( context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
             {
@@ -600,6 +629,8 @@ namespace GeneXus.Programs {
             }
             A10CountryName = cgiGet( edtCountryName_Internalname);
             AssignAttri("", false, "A10CountryName", A10CountryName);
+            A17CountryLastLine = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtCountryLastLine_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
@@ -786,8 +817,10 @@ namespace GeneXus.Programs {
 
       protected void CONFIRM_035( )
       {
-         nGXsfl_48_idx = 0;
-         while ( nGXsfl_48_idx < nRC_GXsfl_48 )
+         s17CountryLastLine = O17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+         nGXsfl_53_idx = 0;
+         while ( nGXsfl_53_idx < nRC_GXsfl_53 )
          {
             ReadRow035( ) ;
             if ( ( nRcdExists_5 != 0 ) || ( nIsMod_5 != 0 ) )
@@ -809,11 +842,13 @@ namespace GeneXus.Programs {
                            IsConfirmed = 1;
                            AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
                         }
+                        O17CountryLastLine = A17CountryLastLine;
+                        AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                      }
                   }
                   else
                   {
-                     GXCCtl = "CITYID_" + sGXsfl_48_idx;
+                     GXCCtl = "CITYID_" + sGXsfl_53_idx;
                      GX_msglist.addItem(context.GetMessage( "GXM_noupdate", ""), "DuplicatePrimaryKey", 1, GXCCtl);
                      AnyError = 1;
                      GX_FocusControl = edtCityId_Internalname;
@@ -834,6 +869,8 @@ namespace GeneXus.Programs {
                         if ( AnyError == 0 )
                         {
                            OnDeleteControls035( ) ;
+                           O17CountryLastLine = A17CountryLastLine;
+                           AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                         }
                      }
                      else
@@ -852,6 +889,8 @@ namespace GeneXus.Programs {
                                  IsConfirmed = 1;
                                  AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
                               }
+                              O17CountryLastLine = A17CountryLastLine;
+                              AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                            }
                         }
                      }
@@ -860,7 +899,7 @@ namespace GeneXus.Programs {
                   {
                      if ( nRcdDeleted_5 == 0 )
                      {
-                        GXCCtl = "CITYID_" + sGXsfl_48_idx;
+                        GXCCtl = "CITYID_" + sGXsfl_53_idx;
                         GX_msglist.addItem(context.GetMessage( "GXM_recdeleted", ""), 1, GXCCtl);
                         AnyError = 1;
                         GX_FocusControl = edtCityId_Internalname;
@@ -871,17 +910,19 @@ namespace GeneXus.Programs {
             }
             ChangePostValue( edtCityId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A14CityId), 4, 0, ".", ""))) ;
             ChangePostValue( edtCityName_Internalname, A15CityName) ;
-            ChangePostValue( "ZT_"+"Z14CityId_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14CityId), 4, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z15CityName_"+sGXsfl_48_idx, Z15CityName) ;
-            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nRcdExists_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nIsMod_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z14CityId_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14CityId), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z15CityName_"+sGXsfl_53_idx, Z15CityName) ;
+            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
             if ( nIsMod_5 != 0 )
             {
-               ChangePostValue( "CITYID_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "CITYNAME_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "CITYID_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "CITYNAME_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", ""))) ;
             }
          }
+         O17CountryLastLine = s17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          /* Start of After( level) rules */
          /* End of After( level) rules */
       }
@@ -892,26 +933,35 @@ namespace GeneXus.Programs {
 
       protected void ZM033( short GX_JID )
       {
-         if ( ( GX_JID == 1 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 5 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
                Z10CountryName = T00035_A10CountryName[0];
+               Z17CountryLastLine = T00035_A17CountryLastLine[0];
             }
             else
             {
                Z10CountryName = A10CountryName;
+               Z17CountryLastLine = A17CountryLastLine;
             }
          }
-         if ( GX_JID == -1 )
+         if ( GX_JID == -5 )
          {
             Z9CountryId = A9CountryId;
             Z10CountryName = A10CountryName;
+            Z17CountryLastLine = A17CountryLastLine;
          }
       }
 
       protected void standaloneNotModal( )
       {
+         edtCountryLastLine_Enabled = 0;
+         AssignProp("", false, edtCountryLastLine_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryLastLine_Enabled), 5, 0), true);
+         Gx_BScreen = 0;
+         AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
+         edtCountryLastLine_Enabled = 0;
+         AssignProp("", false, edtCountryLastLine_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryLastLine_Enabled), 5, 0), true);
       }
 
       protected void standaloneModal( )
@@ -947,7 +997,9 @@ namespace GeneXus.Programs {
             RcdFound3 = 1;
             A10CountryName = T00036_A10CountryName[0];
             AssignAttri("", false, "A10CountryName", A10CountryName);
-            ZM033( -1) ;
+            A17CountryLastLine = T00036_A17CountryLastLine[0];
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+            ZM033( -5) ;
          }
          pr_default.close(4);
          OnLoadActions033( ) ;
@@ -961,6 +1013,7 @@ namespace GeneXus.Programs {
       {
          nIsDirty_3 = 0;
          Gx_BScreen = 1;
+         AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
       }
 
@@ -993,12 +1046,16 @@ namespace GeneXus.Programs {
          pr_default.execute(3, new Object[] {A9CountryId});
          if ( (pr_default.getStatus(3) != 101) )
          {
-            ZM033( 1) ;
+            ZM033( 5) ;
             RcdFound3 = 1;
             A9CountryId = T00035_A9CountryId[0];
             AssignAttri("", false, "A9CountryId", StringUtil.LTrimStr( (decimal)(A9CountryId), 4, 0));
             A10CountryName = T00035_A10CountryName[0];
             AssignAttri("", false, "A10CountryName", A10CountryName);
+            A17CountryLastLine = T00035_A17CountryLastLine[0];
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+            O17CountryLastLine = A17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             Z9CountryId = A9CountryId;
             sMode3 = Gx_mode;
             Gx_mode = "DSP";
@@ -1092,6 +1149,8 @@ namespace GeneXus.Programs {
          if ( IsIns( ) )
          {
             /* Insert record */
+            A17CountryLastLine = O17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             GX_FocusControl = edtCountryId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
             Insert033( ) ;
@@ -1116,6 +1175,8 @@ namespace GeneXus.Programs {
                }
                else if ( IsDlt( ) )
                {
+                  A17CountryLastLine = O17CountryLastLine;
+                  AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                   delete( ) ;
                   AfterTrn( ) ;
                   GX_FocusControl = edtCountryId_Internalname;
@@ -1126,6 +1187,8 @@ namespace GeneXus.Programs {
                   Gx_mode = "UPD";
                   AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Update record */
+                  A17CountryLastLine = O17CountryLastLine;
+                  AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                   Update033( ) ;
                   GX_FocusControl = edtCountryId_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
@@ -1138,6 +1201,8 @@ namespace GeneXus.Programs {
                   Gx_mode = "INS";
                   AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Insert record */
+                  A17CountryLastLine = O17CountryLastLine;
+                  AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                   GX_FocusControl = edtCountryId_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                   Insert033( ) ;
@@ -1161,6 +1226,8 @@ namespace GeneXus.Programs {
                      Gx_mode = "INS";
                      AssignAttri("", false, "Gx_mode", Gx_mode);
                      /* Insert record */
+                     A17CountryLastLine = O17CountryLastLine;
+                     AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                      GX_FocusControl = edtCountryId_Internalname;
                      AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                      Insert033( ) ;
@@ -1189,6 +1256,8 @@ namespace GeneXus.Programs {
          }
          else
          {
+            A17CountryLastLine = O17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             delete( ) ;
             AfterTrn( ) ;
             GX_FocusControl = edtCountryId_Internalname;
@@ -1336,13 +1405,19 @@ namespace GeneXus.Programs {
                AnyError = 1;
                return  ;
             }
-            if ( (pr_default.getStatus(2) == 101) || ( StringUtil.StrCmp(Z10CountryName, T00034_A10CountryName[0]) != 0 ) )
+            if ( (pr_default.getStatus(2) == 101) || ( StringUtil.StrCmp(Z10CountryName, T00034_A10CountryName[0]) != 0 ) || ( Z17CountryLastLine != T00034_A17CountryLastLine[0] ) )
             {
                if ( StringUtil.StrCmp(Z10CountryName, T00034_A10CountryName[0]) != 0 )
                {
                   GXUtil.WriteLog("country:[seudo value changed for attri]"+"CountryName");
                   GXUtil.WriteLogRaw("Old: ",Z10CountryName);
                   GXUtil.WriteLogRaw("Current: ",T00034_A10CountryName[0]);
+               }
+               if ( Z17CountryLastLine != T00034_A17CountryLastLine[0] )
+               {
+                  GXUtil.WriteLog("country:[seudo value changed for attri]"+"CountryLastLine");
+                  GXUtil.WriteLogRaw("Old: ",Z17CountryLastLine);
+                  GXUtil.WriteLogRaw("Current: ",T00034_A17CountryLastLine[0]);
                }
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Country"}), "RecordWasChanged", 1, "");
                AnyError = 1;
@@ -1371,7 +1446,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000310 */
-                     pr_default.execute(8, new Object[] {A10CountryName});
+                     pr_default.execute(8, new Object[] {A10CountryName, A17CountryLastLine});
                      A9CountryId = T000310_A9CountryId[0];
                      AssignAttri("", false, "A9CountryId", StringUtil.LTrimStr( (decimal)(A9CountryId), 4, 0));
                      pr_default.close(8);
@@ -1428,7 +1503,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000311 */
-                     pr_default.execute(9, new Object[] {A10CountryName, A9CountryId});
+                     pr_default.execute(9, new Object[] {A10CountryName, A17CountryLastLine, A9CountryId});
                      pr_default.close(9);
                      pr_default.SmartCacheProvider.SetUpdated("Country");
                      if ( (pr_default.getStatus(9) == 103) )
@@ -1488,12 +1563,16 @@ namespace GeneXus.Programs {
                BeforeDelete033( ) ;
                if ( AnyError == 0 )
                {
+                  A17CountryLastLine = O17CountryLastLine;
+                  AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                   ScanStart035( ) ;
                   while ( RcdFound5 != 0 )
                   {
                      getByPrimaryKey035( ) ;
                      Delete035( ) ;
                      ScanNext035( ) ;
+                     O17CountryLastLine = A17CountryLastLine;
+                     AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
                   }
                   ScanEnd035( ) ;
                   if ( AnyError == 0 )
@@ -1562,8 +1641,10 @@ namespace GeneXus.Programs {
 
       protected void ProcessNestedLevel035( )
       {
-         nGXsfl_48_idx = 0;
-         while ( nGXsfl_48_idx < nRC_GXsfl_48 )
+         s17CountryLastLine = O17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+         nGXsfl_53_idx = 0;
+         while ( nGXsfl_53_idx < nRC_GXsfl_53 )
          {
             ReadRow035( ) ;
             if ( ( nRcdExists_5 != 0 ) || ( nIsMod_5 != 0 ) )
@@ -1600,7 +1681,7 @@ namespace GeneXus.Programs {
                   {
                      if ( nRcdDeleted_5 == 0 )
                      {
-                        GXCCtl = "CITYID_" + sGXsfl_48_idx;
+                        GXCCtl = "CITYID_" + sGXsfl_53_idx;
                         GX_msglist.addItem(context.GetMessage( "GXM_recdeleted", ""), 1, GXCCtl);
                         AnyError = 1;
                         GX_FocusControl = edtCityId_Internalname;
@@ -1608,18 +1689,20 @@ namespace GeneXus.Programs {
                      }
                   }
                }
+               O17CountryLastLine = A17CountryLastLine;
+               AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
             }
             ChangePostValue( edtCityId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A14CityId), 4, 0, ".", ""))) ;
             ChangePostValue( edtCityName_Internalname, A15CityName) ;
-            ChangePostValue( "ZT_"+"Z14CityId_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14CityId), 4, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z15CityName_"+sGXsfl_48_idx, Z15CityName) ;
-            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nRcdExists_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nIsMod_5_"+sGXsfl_48_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z14CityId_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14CityId), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z15CityName_"+sGXsfl_53_idx, Z15CityName) ;
+            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_5_"+sGXsfl_53_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
             if ( nIsMod_5 != 0 )
             {
-               ChangePostValue( "CITYID_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "CITYNAME_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "CITYID_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "CITYNAME_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", ""))) ;
             }
          }
          /* Start of After( level) rules */
@@ -1627,6 +1710,8 @@ namespace GeneXus.Programs {
          InitAll035( ) ;
          if ( AnyError != 0 )
          {
+            O17CountryLastLine = s17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          }
          nRcdExists_5 = 0;
          nIsMod_5 = 0;
@@ -1640,19 +1725,22 @@ namespace GeneXus.Programs {
          ProcessNestedLevel035( ) ;
          if ( AnyError != 0 )
          {
+            O17CountryLastLine = s17CountryLastLine;
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          }
          /* Restore parent mode. */
          Gx_mode = sMode3;
          AssignAttri("", false, "Gx_mode", Gx_mode);
          /* ' Update level parameters */
+         /* Using cursor T000314 */
+         pr_default.execute(12, new Object[] {A17CountryLastLine, A9CountryId});
+         pr_default.close(12);
+         pr_default.SmartCacheProvider.SetUpdated("Country");
       }
 
       protected void EndLevel033( )
       {
-         if ( ! IsIns( ) )
-         {
-            pr_default.close(2);
-         }
+         pr_default.close(2);
          if ( AnyError == 0 )
          {
             BeforeComplete033( ) ;
@@ -1688,13 +1776,13 @@ namespace GeneXus.Programs {
 
       public void ScanStart033( )
       {
-         /* Using cursor T000314 */
-         pr_default.execute(12);
+         /* Using cursor T000315 */
+         pr_default.execute(13);
          RcdFound3 = 0;
-         if ( (pr_default.getStatus(12) != 101) )
+         if ( (pr_default.getStatus(13) != 101) )
          {
             RcdFound3 = 1;
-            A9CountryId = T000314_A9CountryId[0];
+            A9CountryId = T000315_A9CountryId[0];
             AssignAttri("", false, "A9CountryId", StringUtil.LTrimStr( (decimal)(A9CountryId), 4, 0));
          }
          /* Load Subordinate Levels */
@@ -1703,19 +1791,19 @@ namespace GeneXus.Programs {
       protected void ScanNext033( )
       {
          /* Scan next routine */
-         pr_default.readNext(12);
+         pr_default.readNext(13);
          RcdFound3 = 0;
-         if ( (pr_default.getStatus(12) != 101) )
+         if ( (pr_default.getStatus(13) != 101) )
          {
             RcdFound3 = 1;
-            A9CountryId = T000314_A9CountryId[0];
+            A9CountryId = T000315_A9CountryId[0];
             AssignAttri("", false, "A9CountryId", StringUtil.LTrimStr( (decimal)(A9CountryId), 4, 0));
          }
       }
 
       protected void ScanEnd033( )
       {
-         pr_default.close(12);
+         pr_default.close(13);
       }
 
       protected void AfterConfirm033( )
@@ -1754,11 +1842,13 @@ namespace GeneXus.Programs {
          AssignProp("", false, edtCountryId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryId_Enabled), 5, 0), true);
          edtCountryName_Enabled = 0;
          AssignProp("", false, edtCountryName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryName_Enabled), 5, 0), true);
+         edtCountryLastLine_Enabled = 0;
+         AssignProp("", false, edtCountryLastLine_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryLastLine_Enabled), 5, 0), true);
       }
 
       protected void ZM035( short GX_JID )
       {
-         if ( ( GX_JID == 2 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 6 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -1769,7 +1859,7 @@ namespace GeneXus.Programs {
                Z15CityName = A15CityName;
             }
          }
-         if ( GX_JID == -2 )
+         if ( GX_JID == -6 )
          {
             Z9CountryId = A9CountryId;
             Z14CityId = A14CityId;
@@ -1779,33 +1869,47 @@ namespace GeneXus.Programs {
 
       protected void standaloneNotModal035( )
       {
+         edtCountryLastLine_Enabled = 0;
+         AssignProp("", false, edtCountryLastLine_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryLastLine_Enabled), 5, 0), true);
+         edtCountryLastLine_Enabled = 0;
+         AssignProp("", false, edtCountryLastLine_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCountryLastLine_Enabled), 5, 0), true);
       }
 
       protected void standaloneModal035( )
       {
+         if ( IsIns( )  )
+         {
+            A17CountryLastLine = (short)(O17CountryLastLine+1);
+            AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+         }
+         if ( IsIns( )  && ( Gx_BScreen == 1 ) )
+         {
+            A14CityId = A17CountryLastLine;
+            n14CityId = false;
+         }
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
             edtCityId_Enabled = 0;
-            AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+            AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_53_Refreshing);
          }
          else
          {
             edtCityId_Enabled = 1;
-            AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+            AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_53_Refreshing);
          }
       }
 
       protected void Load035( )
       {
-         /* Using cursor T000315 */
-         pr_default.execute(13, new Object[] {A9CountryId, n14CityId, A14CityId});
-         if ( (pr_default.getStatus(13) != 101) )
+         /* Using cursor T000316 */
+         pr_default.execute(14, new Object[] {A9CountryId, n14CityId, A14CityId});
+         if ( (pr_default.getStatus(14) != 101) )
          {
             RcdFound5 = 1;
-            A15CityName = T000315_A15CityName[0];
-            ZM035( -2) ;
+            A15CityName = T000316_A15CityName[0];
+            ZM035( -6) ;
          }
-         pr_default.close(13);
+         pr_default.close(14);
          OnLoadActions035( ) ;
       }
 
@@ -1817,6 +1921,7 @@ namespace GeneXus.Programs {
       {
          nIsDirty_5 = 0;
          Gx_BScreen = 1;
+         AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal035( ) ;
       }
 
@@ -1830,9 +1935,9 @@ namespace GeneXus.Programs {
 
       protected void GetKey035( )
       {
-         /* Using cursor T000316 */
-         pr_default.execute(14, new Object[] {A9CountryId, n14CityId, A14CityId});
-         if ( (pr_default.getStatus(14) != 101) )
+         /* Using cursor T000317 */
+         pr_default.execute(15, new Object[] {A9CountryId, n14CityId, A14CityId});
+         if ( (pr_default.getStatus(15) != 101) )
          {
             RcdFound5 = 1;
          }
@@ -1840,7 +1945,7 @@ namespace GeneXus.Programs {
          {
             RcdFound5 = 0;
          }
-         pr_default.close(14);
+         pr_default.close(15);
       }
 
       protected void getByPrimaryKey035( )
@@ -1849,7 +1954,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A9CountryId, n14CityId, A14CityId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM035( 2) ;
+            ZM035( 6) ;
             RcdFound5 = 1;
             InitializeNonKey035( ) ;
             A14CityId = T00033_A14CityId[0];
@@ -1929,11 +2034,11 @@ namespace GeneXus.Programs {
                   BeforeInsert035( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000317 */
-                     pr_default.execute(15, new Object[] {A9CountryId, n14CityId, A14CityId, A15CityName});
-                     pr_default.close(15);
+                     /* Using cursor T000318 */
+                     pr_default.execute(16, new Object[] {A9CountryId, n14CityId, A14CityId, A15CityName});
+                     pr_default.close(16);
                      pr_default.SmartCacheProvider.SetUpdated("CountryCity");
-                     if ( (pr_default.getStatus(15) == 1) )
+                     if ( (pr_default.getStatus(16) == 1) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_noupdate", ""), "DuplicatePrimaryKey", 1, "");
                         AnyError = 1;
@@ -1984,11 +2089,11 @@ namespace GeneXus.Programs {
                      BeforeUpdate035( ) ;
                      if ( AnyError == 0 )
                      {
-                        /* Using cursor T000318 */
-                        pr_default.execute(16, new Object[] {A15CityName, A9CountryId, n14CityId, A14CityId});
-                        pr_default.close(16);
+                        /* Using cursor T000319 */
+                        pr_default.execute(17, new Object[] {A15CityName, A9CountryId, n14CityId, A14CityId});
+                        pr_default.close(17);
                         pr_default.SmartCacheProvider.SetUpdated("CountryCity");
-                        if ( (pr_default.getStatus(16) == 103) )
+                        if ( (pr_default.getStatus(17) == 103) )
                         {
                            GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"CountryCity"}), "RecordIsLocked", 1, "");
                            AnyError = 1;
@@ -2040,9 +2145,9 @@ namespace GeneXus.Programs {
                if ( AnyError == 0 )
                {
                   /* No cascading delete specified. */
-                  /* Using cursor T000319 */
-                  pr_default.execute(17, new Object[] {A9CountryId, n14CityId, A14CityId});
-                  pr_default.close(17);
+                  /* Using cursor T000320 */
+                  pr_default.execute(18, new Object[] {A9CountryId, n14CityId, A14CityId});
+                  pr_default.close(18);
                   pr_default.SmartCacheProvider.SetUpdated("CountryCity");
                   if ( AnyError == 0 )
                   {
@@ -2071,14 +2176,14 @@ namespace GeneXus.Programs {
          /* No delete mode formulas found. */
          if ( AnyError == 0 )
          {
-            /* Using cursor T000320 */
-            pr_default.execute(18, new Object[] {A9CountryId, n14CityId, A14CityId});
-            if ( (pr_default.getStatus(18) != 101) )
+            /* Using cursor T000321 */
+            pr_default.execute(19, new Object[] {A9CountryId, n14CityId, A14CityId});
+            if ( (pr_default.getStatus(19) != 101) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Attraction"}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
-            pr_default.close(18);
+            pr_default.close(19);
          }
       }
 
@@ -2098,14 +2203,14 @@ namespace GeneXus.Programs {
       public void ScanStart035( )
       {
          /* Scan By routine */
-         /* Using cursor T000321 */
-         pr_default.execute(19, new Object[] {A9CountryId});
+         /* Using cursor T000322 */
+         pr_default.execute(20, new Object[] {A9CountryId});
          RcdFound5 = 0;
-         if ( (pr_default.getStatus(19) != 101) )
+         if ( (pr_default.getStatus(20) != 101) )
          {
             RcdFound5 = 1;
-            A14CityId = T000321_A14CityId[0];
-            n14CityId = T000321_n14CityId[0];
+            A14CityId = T000322_A14CityId[0];
+            n14CityId = T000322_n14CityId[0];
          }
          /* Load Subordinate Levels */
       }
@@ -2113,19 +2218,19 @@ namespace GeneXus.Programs {
       protected void ScanNext035( )
       {
          /* Scan next routine */
-         pr_default.readNext(19);
+         pr_default.readNext(20);
          RcdFound5 = 0;
-         if ( (pr_default.getStatus(19) != 101) )
+         if ( (pr_default.getStatus(20) != 101) )
          {
             RcdFound5 = 1;
-            A14CityId = T000321_A14CityId[0];
-            n14CityId = T000321_n14CityId[0];
+            A14CityId = T000322_A14CityId[0];
+            n14CityId = T000322_n14CityId[0];
          }
       }
 
       protected void ScanEnd035( )
       {
-         pr_default.close(19);
+         pr_default.close(20);
       }
 
       protected void AfterConfirm035( )
@@ -2161,9 +2266,9 @@ namespace GeneXus.Programs {
       protected void DisableAttributes035( )
       {
          edtCityId_Enabled = 0;
-         AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+         AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_53_Refreshing);
          edtCityName_Enabled = 0;
-         AssignProp("", false, edtCityName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityName_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+         AssignProp("", false, edtCityName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityName_Enabled), 5, 0), !bGXsfl_53_Refreshing);
       }
 
       protected void send_integrity_lvl_hashes035( )
@@ -2174,23 +2279,23 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void SubsflControlProps_485( )
+      protected void SubsflControlProps_535( )
       {
-         edtCityId_Internalname = "CITYID_"+sGXsfl_48_idx;
-         edtCityName_Internalname = "CITYNAME_"+sGXsfl_48_idx;
+         edtCityId_Internalname = "CITYID_"+sGXsfl_53_idx;
+         edtCityName_Internalname = "CITYNAME_"+sGXsfl_53_idx;
       }
 
-      protected void SubsflControlProps_fel_485( )
+      protected void SubsflControlProps_fel_535( )
       {
-         edtCityId_Internalname = "CITYID_"+sGXsfl_48_fel_idx;
-         edtCityName_Internalname = "CITYNAME_"+sGXsfl_48_fel_idx;
+         edtCityId_Internalname = "CITYID_"+sGXsfl_53_fel_idx;
+         edtCityName_Internalname = "CITYNAME_"+sGXsfl_53_fel_idx;
       }
 
       protected void AddRow035( )
       {
-         nGXsfl_48_idx = (int)(nGXsfl_48_idx+1);
-         sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx), 4, 0), 4, "0");
-         SubsflControlProps_485( ) ;
+         nGXsfl_53_idx = (int)(nGXsfl_53_idx+1);
+         sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx), 4, 0), 4, "0");
+         SubsflControlProps_535( ) ;
          SendRow035( ) ;
       }
 
@@ -2230,7 +2335,7 @@ namespace GeneXus.Programs {
          {
             /* Report style subfile background logic. */
             subGridcountry_city_Backstyle = 1;
-            if ( ((int)((nGXsfl_48_idx) % (2))) == 0 )
+            if ( ((int)((nGXsfl_53_idx) % (2))) == 0 )
             {
                subGridcountry_city_Backcolor = (int)(0x0);
                if ( StringUtil.StrCmp(subGridcountry_city_Class, "") != 0 )
@@ -2249,42 +2354,42 @@ namespace GeneXus.Programs {
          }
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_48_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 49,'',false,'" + sGXsfl_48_idx + "',48)\"";
+         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_53_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 54,'',false,'" + sGXsfl_53_idx + "',53)\"";
          ROClassString = "Attribute";
-         Gridcountry_cityRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCityId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A14CityId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A14CityId), "ZZZ9"))," dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,49);\"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCityId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"",(string)"",(short)-1,(int)edtCityId_Enabled,(short)1,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)48,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
+         Gridcountry_cityRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCityId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A14CityId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A14CityId), "ZZZ9"))," dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,54);\"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCityId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"",(string)"",(short)-1,(int)edtCityId_Enabled,(short)1,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)53,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_48_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 50,'',false,'" + sGXsfl_48_idx + "',48)\"";
+         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_53_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 55,'',false,'" + sGXsfl_53_idx + "',53)\"";
          ROClassString = "Attribute";
-         Gridcountry_cityRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCityName_Internalname,(string)A15CityName,(string)"",TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,50);\"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCityName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"",(string)"",(short)-1,(int)edtCityName_Enabled,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)48,(short)0,(short)-1,(short)-1,(bool)true,(string)"Name",(string)"start",(bool)true,(string)""});
+         Gridcountry_cityRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtCityName_Internalname,(string)A15CityName,(string)"",TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,55);\"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtCityName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"",(string)"",(short)-1,(int)edtCityName_Enabled,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)53,(short)0,(short)-1,(short)-1,(bool)true,(string)"Name",(string)"start",(bool)true,(string)""});
          ajax_sending_grid_row(Gridcountry_cityRow);
          send_integrity_lvl_hashes035( ) ;
-         GXCCtl = "Z14CityId_" + sGXsfl_48_idx;
+         GXCCtl = "Z14CityId_" + sGXsfl_53_idx;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14CityId), 4, 0, ".", "")));
-         GXCCtl = "Z15CityName_" + sGXsfl_48_idx;
+         GXCCtl = "Z15CityName_" + sGXsfl_53_idx;
          GxWebStd.gx_hidden_field( context, GXCCtl, Z15CityName);
-         GXCCtl = "nRcdDeleted_5_" + sGXsfl_48_idx;
+         GXCCtl = "nRcdDeleted_5_" + sGXsfl_53_idx;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", "")));
-         GXCCtl = "nRcdExists_5_" + sGXsfl_48_idx;
+         GXCCtl = "nRcdExists_5_" + sGXsfl_53_idx;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", "")));
-         GXCCtl = "nIsMod_5_" + sGXsfl_48_idx;
+         GXCCtl = "nIsMod_5_" + sGXsfl_53_idx;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "CITYID_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "CITYNAME_"+sGXsfl_48_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "CITYID_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityId_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "CITYNAME_"+sGXsfl_53_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtCityName_Enabled), 5, 0, ".", "")));
          ajax_sending_grid_row(null);
          Gridcountry_cityContainer.AddRow(Gridcountry_cityRow);
       }
 
       protected void ReadRow035( )
       {
-         nGXsfl_48_idx = (int)(nGXsfl_48_idx+1);
-         sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx), 4, 0), 4, "0");
-         SubsflControlProps_485( ) ;
-         edtCityId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYID_"+sGXsfl_48_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
-         edtCityName_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYNAME_"+sGXsfl_48_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+         nGXsfl_53_idx = (int)(nGXsfl_53_idx+1);
+         sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx), 4, 0), 4, "0");
+         SubsflControlProps_535( ) ;
+         edtCityId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYID_"+sGXsfl_53_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+         edtCityName_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "CITYNAME_"+sGXsfl_53_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
          if ( ( ( context.localUtil.CToN( cgiGet( edtCityId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtCityId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
          {
-            GXCCtl = "CITYID_" + sGXsfl_48_idx;
+            GXCCtl = "CITYID_" + sGXsfl_53_idx;
             GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, GXCCtl);
             AnyError = 1;
             GX_FocusControl = edtCityId_Internalname;
@@ -2298,15 +2403,15 @@ namespace GeneXus.Programs {
             n14CityId = false;
          }
          A15CityName = cgiGet( edtCityName_Internalname);
-         GXCCtl = "Z14CityId_" + sGXsfl_48_idx;
+         GXCCtl = "Z14CityId_" + sGXsfl_53_idx;
          Z14CityId = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
-         GXCCtl = "Z15CityName_" + sGXsfl_48_idx;
+         GXCCtl = "Z15CityName_" + sGXsfl_53_idx;
          Z15CityName = cgiGet( GXCCtl);
-         GXCCtl = "nRcdDeleted_5_" + sGXsfl_48_idx;
+         GXCCtl = "nRcdDeleted_5_" + sGXsfl_53_idx;
          nRcdDeleted_5 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
-         GXCCtl = "nRcdExists_5_" + sGXsfl_48_idx;
+         GXCCtl = "nRcdExists_5_" + sGXsfl_53_idx;
          nRcdExists_5 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
-         GXCCtl = "nIsMod_5_" + sGXsfl_48_idx;
+         GXCCtl = "nIsMod_5_" + sGXsfl_53_idx;
          nIsMod_5 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
       }
 
@@ -2317,18 +2422,18 @@ namespace GeneXus.Programs {
 
       protected void ConfirmValues030( )
       {
-         nGXsfl_48_idx = 0;
-         sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx), 4, 0), 4, "0");
-         SubsflControlProps_485( ) ;
-         while ( nGXsfl_48_idx < nRC_GXsfl_48 )
+         nGXsfl_53_idx = 0;
+         sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx), 4, 0), 4, "0");
+         SubsflControlProps_535( ) ;
+         while ( nGXsfl_53_idx < nRC_GXsfl_53 )
          {
-            nGXsfl_48_idx = (int)(nGXsfl_48_idx+1);
-            sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx), 4, 0), 4, "0");
-            SubsflControlProps_485( ) ;
-            ChangePostValue( "Z14CityId_"+sGXsfl_48_idx, cgiGet( "ZT_"+"Z14CityId_"+sGXsfl_48_idx)) ;
-            DeletePostValue( "ZT_"+"Z14CityId_"+sGXsfl_48_idx) ;
-            ChangePostValue( "Z15CityName_"+sGXsfl_48_idx, cgiGet( "ZT_"+"Z15CityName_"+sGXsfl_48_idx)) ;
-            DeletePostValue( "ZT_"+"Z15CityName_"+sGXsfl_48_idx) ;
+            nGXsfl_53_idx = (int)(nGXsfl_53_idx+1);
+            sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx), 4, 0), 4, "0");
+            SubsflControlProps_535( ) ;
+            ChangePostValue( "Z14CityId_"+sGXsfl_53_idx, cgiGet( "ZT_"+"Z14CityId_"+sGXsfl_53_idx)) ;
+            DeletePostValue( "ZT_"+"Z14CityId_"+sGXsfl_53_idx) ;
+            ChangePostValue( "Z15CityName_"+sGXsfl_53_idx, cgiGet( "ZT_"+"Z15CityName_"+sGXsfl_53_idx)) ;
+            DeletePostValue( "ZT_"+"Z15CityName_"+sGXsfl_53_idx) ;
          }
       }
 
@@ -2414,10 +2519,13 @@ namespace GeneXus.Programs {
          send_integrity_footer_hashes( ) ;
          GxWebStd.gx_hidden_field( context, "Z9CountryId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z9CountryId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z10CountryName", Z10CountryName);
+         GxWebStd.gx_hidden_field( context, "Z17CountryLastLine", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17CountryLastLine), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "O17CountryLastLine", StringUtil.LTrim( StringUtil.NToC( (decimal)(O17CountryLastLine), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
-         GxWebStd.gx_hidden_field( context, "nRC_GXsfl_48", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_48_idx), 8, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "nRC_GXsfl_53", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_53_idx), 8, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ".", "")));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -2491,7 +2599,12 @@ namespace GeneXus.Programs {
       {
          A10CountryName = "";
          AssignAttri("", false, "A10CountryName", A10CountryName);
+         A17CountryLastLine = 0;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
+         O17CountryLastLine = A17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
          Z10CountryName = "";
+         Z17CountryLastLine = 0;
       }
 
       protected void InitAll033( )
@@ -2520,6 +2633,8 @@ namespace GeneXus.Programs {
 
       protected void StandaloneModalInsert035( )
       {
+         A17CountryLastLine = i17CountryLastLine;
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrimStr( (decimal)(A17CountryLastLine), 4, 0));
       }
 
       protected void define_styles( )
@@ -2533,7 +2648,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391312332622", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391512194727", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2549,17 +2664,17 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("country.js", "?202391312332622", false, true);
+         context.AddJavascriptSource("country.js", "?202391512194727", false, true);
          /* End function include_jscripts */
       }
 
       protected void init_level_properties5( )
       {
          edtCityId_Enabled = defedtCityId_Enabled;
-         AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_48_Refreshing);
+         AssignProp("", false, edtCityId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtCityId_Enabled), 5, 0), !bGXsfl_53_Refreshing);
       }
 
-      protected void StartGridControl48( )
+      protected void StartGridControl53( )
       {
          Gridcountry_cityContainer.AddObjectProperty("GridName", "Gridcountry_city");
          Gridcountry_cityContainer.AddObjectProperty("Header", subGridcountry_city_Header);
@@ -2598,6 +2713,7 @@ namespace GeneXus.Programs {
          divToolbarcell_Internalname = "TOOLBARCELL";
          edtCountryId_Internalname = "COUNTRYID";
          edtCountryName_Internalname = "COUNTRYNAME";
+         edtCountryLastLine_Internalname = "COUNTRYLASTLINE";
          lblTitlecity_Internalname = "TITLECITY";
          edtCityId_Internalname = "CITYID";
          edtCityName_Internalname = "CITYNAME";
@@ -2638,6 +2754,8 @@ namespace GeneXus.Programs {
          bttBtn_cancel_Visible = 1;
          bttBtn_enter_Enabled = 1;
          bttBtn_enter_Visible = 1;
+         edtCountryLastLine_Jsonclick = "";
+         edtCountryLastLine_Enabled = 0;
          edtCountryName_Jsonclick = "";
          edtCountryName_Enabled = 1;
          edtCountryId_Jsonclick = "";
@@ -2664,8 +2782,8 @@ namespace GeneXus.Programs {
          GxWebStd.set_html_headers( context, 0, "", "");
          Gx_mode = "INS";
          AssignAttri("", false, "Gx_mode", Gx_mode);
-         SubsflControlProps_485( ) ;
-         while ( nGXsfl_48_idx <= nRC_GXsfl_48 )
+         SubsflControlProps_535( ) ;
+         while ( nGXsfl_53_idx <= nRC_GXsfl_53 )
          {
             standaloneNotModal( ) ;
             standaloneModal( ) ;
@@ -2674,9 +2792,9 @@ namespace GeneXus.Programs {
             init_web_controls( ) ;
             dynload_actions( ) ;
             SendRow035( ) ;
-            nGXsfl_48_idx = (int)(nGXsfl_48_idx+1);
-            sGXsfl_48_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_48_idx), 4, 0), 4, "0");
-            SubsflControlProps_485( ) ;
+            nGXsfl_53_idx = (int)(nGXsfl_53_idx+1);
+            sGXsfl_53_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_53_idx), 4, 0), 4, "0");
+            SubsflControlProps_535( ) ;
          }
          AddString( context.httpAjaxContext.getJSONContainerResponse( Gridcountry_cityContainer)) ;
          /* End function gxnrGridcountry_city_newrow */
@@ -2728,9 +2846,12 @@ namespace GeneXus.Programs {
          dynload_actions( ) ;
          /*  Sending validation outputs */
          AssignAttri("", false, "A10CountryName", A10CountryName);
+         AssignAttri("", false, "A17CountryLastLine", StringUtil.LTrim( StringUtil.NToC( (decimal)(A17CountryLastLine), 4, 0, ".", "")));
          AssignAttri("", false, "Gx_mode", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "Z9CountryId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z9CountryId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z10CountryName", Z10CountryName);
+         GxWebStd.gx_hidden_field( context, "Z17CountryLastLine", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17CountryLastLine), 4, 0, ".", "")));
+         AssignAttri("", false, "O17CountryLastLine", StringUtil.LTrim( StringUtil.NToC( (decimal)(O17CountryLastLine), 4, 0, ".", "")));
          AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
          AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
          SendCloseFormHiddens( ) ;
@@ -2747,8 +2868,10 @@ namespace GeneXus.Programs {
          setEventMetadata("ENTER",",oparms:[]}");
          setEventMetadata("REFRESH","{handler:'Refresh',iparms:[]");
          setEventMetadata("REFRESH",",oparms:[]}");
-         setEventMetadata("VALID_COUNTRYID","{handler:'Valid_Countryid',iparms:[{av:'A9CountryId',fld:'COUNTRYID',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'}]");
-         setEventMetadata("VALID_COUNTRYID",",oparms:[{av:'A10CountryName',fld:'COUNTRYNAME',pic:''},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z9CountryId'},{av:'Z10CountryName'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
+         setEventMetadata("VALID_COUNTRYID","{handler:'Valid_Countryid',iparms:[{av:'Gx_BScreen',fld:'vGXBSCREEN',pic:'9'},{av:'A17CountryLastLine',fld:'COUNTRYLASTLINE',pic:'ZZZ9'},{av:'A9CountryId',fld:'COUNTRYID',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'}]");
+         setEventMetadata("VALID_COUNTRYID",",oparms:[{av:'A10CountryName',fld:'COUNTRYNAME',pic:''},{av:'A17CountryLastLine',fld:'COUNTRYLASTLINE',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z9CountryId'},{av:'Z10CountryName'},{av:'Z17CountryLastLine'},{av:'O17CountryLastLine'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
+         setEventMetadata("VALID_COUNTRYLASTLINE","{handler:'Valid_Countrylastline',iparms:[]");
+         setEventMetadata("VALID_COUNTRYLASTLINE",",oparms:[]}");
          setEventMetadata("VALID_CITYID","{handler:'Valid_Cityid',iparms:[]");
          setEventMetadata("VALID_CITYID",",oparms:[]}");
          setEventMetadata("NULL","{handler:'Valid_Cityname',iparms:[]");
@@ -2813,24 +2936,27 @@ namespace GeneXus.Programs {
          A15CityName = "";
          T00036_A9CountryId = new short[1] ;
          T00036_A10CountryName = new string[] {""} ;
+         T00036_A17CountryLastLine = new short[1] ;
          T00037_A9CountryId = new short[1] ;
          T00035_A9CountryId = new short[1] ;
          T00035_A10CountryName = new string[] {""} ;
+         T00035_A17CountryLastLine = new short[1] ;
          sMode3 = "";
          T00038_A9CountryId = new short[1] ;
          T00039_A9CountryId = new short[1] ;
          T00034_A9CountryId = new short[1] ;
          T00034_A10CountryName = new string[] {""} ;
+         T00034_A17CountryLastLine = new short[1] ;
          T000310_A9CountryId = new short[1] ;
          T000313_A7AttractionId = new short[1] ;
-         T000314_A9CountryId = new short[1] ;
          T000315_A9CountryId = new short[1] ;
-         T000315_A14CityId = new short[1] ;
-         T000315_n14CityId = new bool[] {false} ;
-         T000315_A15CityName = new string[] {""} ;
          T000316_A9CountryId = new short[1] ;
          T000316_A14CityId = new short[1] ;
          T000316_n14CityId = new bool[] {false} ;
+         T000316_A15CityName = new string[] {""} ;
+         T000317_A9CountryId = new short[1] ;
+         T000317_A14CityId = new short[1] ;
+         T000317_n14CityId = new bool[] {false} ;
          T00033_A9CountryId = new short[1] ;
          T00033_A14CityId = new short[1] ;
          T00033_n14CityId = new bool[] {false} ;
@@ -2839,10 +2965,10 @@ namespace GeneXus.Programs {
          T00032_A14CityId = new short[1] ;
          T00032_n14CityId = new bool[] {false} ;
          T00032_A15CityName = new string[] {""} ;
-         T000320_A7AttractionId = new short[1] ;
-         T000321_A9CountryId = new short[1] ;
-         T000321_A14CityId = new short[1] ;
-         T000321_n14CityId = new bool[] {false} ;
+         T000321_A7AttractionId = new short[1] ;
+         T000322_A9CountryId = new short[1] ;
+         T000322_A14CityId = new short[1] ;
+         T000322_n14CityId = new bool[] {false} ;
          Gridcountry_cityRow = new GXWebRow();
          subGridcountry_city_Linesclass = "";
          ROClassString = "";
@@ -2860,13 +2986,13 @@ namespace GeneXus.Programs {
                T00033_A9CountryId, T00033_A14CityId, T00033_A15CityName
                }
                , new Object[] {
-               T00034_A9CountryId, T00034_A10CountryName
+               T00034_A9CountryId, T00034_A10CountryName, T00034_A17CountryLastLine
                }
                , new Object[] {
-               T00035_A9CountryId, T00035_A10CountryName
+               T00035_A9CountryId, T00035_A10CountryName, T00035_A17CountryLastLine
                }
                , new Object[] {
-               T00036_A9CountryId, T00036_A10CountryName
+               T00036_A9CountryId, T00036_A10CountryName, T00036_A17CountryLastLine
                }
                , new Object[] {
                T00037_A9CountryId
@@ -2888,13 +3014,15 @@ namespace GeneXus.Programs {
                T000313_A7AttractionId
                }
                , new Object[] {
-               T000314_A9CountryId
                }
                , new Object[] {
-               T000315_A9CountryId, T000315_A14CityId, T000315_A15CityName
+               T000315_A9CountryId
                }
                , new Object[] {
-               T000316_A9CountryId, T000316_A14CityId
+               T000316_A9CountryId, T000316_A14CityId, T000316_A15CityName
+               }
+               , new Object[] {
+               T000317_A9CountryId, T000317_A14CityId
                }
                , new Object[] {
                }
@@ -2903,16 +3031,18 @@ namespace GeneXus.Programs {
                , new Object[] {
                }
                , new Object[] {
-               T000320_A7AttractionId
+               T000321_A7AttractionId
                }
                , new Object[] {
-               T000321_A9CountryId, T000321_A14CityId
+               T000322_A9CountryId, T000322_A14CityId
                }
             }
          );
       }
 
       private short Z9CountryId ;
+      private short Z17CountryLastLine ;
+      private short O17CountryLastLine ;
       private short Z14CityId ;
       private short nRcdDeleted_5 ;
       private short nRcdExists_5 ;
@@ -2923,27 +3053,33 @@ namespace GeneXus.Programs {
       private short IsModified ;
       private short AnyError ;
       private short nKeyPressed ;
+      private short A17CountryLastLine ;
+      private short Gx_BScreen ;
       private short initialized ;
       private short A9CountryId ;
       private short nBlankRcdCount5 ;
       private short RcdFound5 ;
+      private short B17CountryLastLine ;
       private short nBlankRcdUsr5 ;
+      private short s17CountryLastLine ;
       private short A14CityId ;
       private short GX_JID ;
       private short RcdFound3 ;
       private short nIsDirty_3 ;
-      private short Gx_BScreen ;
       private short nIsDirty_5 ;
       private short subGridcountry_city_Backcolorstyle ;
       private short subGridcountry_city_Backstyle ;
       private short gxajaxcallmode ;
+      private short i17CountryLastLine ;
       private short subGridcountry_city_Allowselection ;
       private short subGridcountry_city_Allowhovering ;
       private short subGridcountry_city_Allowcollapsing ;
       private short subGridcountry_city_Collapsed ;
       private short ZZ9CountryId ;
-      private int nRC_GXsfl_48 ;
-      private int nGXsfl_48_idx=1 ;
+      private short ZZ17CountryLastLine ;
+      private short ZO17CountryLastLine ;
+      private int nRC_GXsfl_53 ;
+      private int nGXsfl_53_idx=1 ;
       private int trnEnded ;
       private int bttBtn_first_Visible ;
       private int bttBtn_previous_Visible ;
@@ -2952,6 +3088,7 @@ namespace GeneXus.Programs {
       private int bttBtn_select_Visible ;
       private int edtCountryId_Enabled ;
       private int edtCountryName_Enabled ;
+      private int edtCountryLastLine_Enabled ;
       private int bttBtn_enter_Visible ;
       private int bttBtn_enter_Enabled ;
       private int bttBtn_cancel_Visible ;
@@ -2977,7 +3114,7 @@ namespace GeneXus.Programs {
       private string PreviousCaption ;
       private string GX_FocusControl ;
       private string edtCountryId_Internalname ;
-      private string sGXsfl_48_idx="0001" ;
+      private string sGXsfl_53_idx="0001" ;
       private string Gx_mode ;
       private string divMaintable_Internalname ;
       private string divTitlecontainer_Internalname ;
@@ -3001,6 +3138,8 @@ namespace GeneXus.Programs {
       private string edtCountryId_Jsonclick ;
       private string edtCountryName_Internalname ;
       private string edtCountryName_Jsonclick ;
+      private string edtCountryLastLine_Internalname ;
+      private string edtCountryLastLine_Jsonclick ;
       private string divCitytable_Internalname ;
       private string lblTitlecity_Internalname ;
       private string lblTitlecity_Jsonclick ;
@@ -3023,7 +3162,7 @@ namespace GeneXus.Programs {
       private string endTrnMsgCod ;
       private string GXCCtl ;
       private string sMode3 ;
-      private string sGXsfl_48_fel_idx="0001" ;
+      private string sGXsfl_53_fel_idx="0001" ;
       private string subGridcountry_city_Class ;
       private string subGridcountry_city_Linesclass ;
       private string ROClassString ;
@@ -3036,7 +3175,7 @@ namespace GeneXus.Programs {
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool wbErr ;
-      private bool bGXsfl_48_Refreshing=false ;
+      private bool bGXsfl_53_Refreshing=false ;
       private bool n14CityId ;
       private string Z10CountryName ;
       private string Z15CityName ;
@@ -3050,23 +3189,26 @@ namespace GeneXus.Programs {
       private IDataStoreProvider pr_default ;
       private short[] T00036_A9CountryId ;
       private string[] T00036_A10CountryName ;
+      private short[] T00036_A17CountryLastLine ;
       private short[] T00037_A9CountryId ;
       private short[] T00035_A9CountryId ;
       private string[] T00035_A10CountryName ;
+      private short[] T00035_A17CountryLastLine ;
       private short[] T00038_A9CountryId ;
       private short[] T00039_A9CountryId ;
       private short[] T00034_A9CountryId ;
       private string[] T00034_A10CountryName ;
+      private short[] T00034_A17CountryLastLine ;
       private short[] T000310_A9CountryId ;
       private short[] T000313_A7AttractionId ;
-      private short[] T000314_A9CountryId ;
       private short[] T000315_A9CountryId ;
-      private short[] T000315_A14CityId ;
-      private bool[] T000315_n14CityId ;
-      private string[] T000315_A15CityName ;
       private short[] T000316_A9CountryId ;
       private short[] T000316_A14CityId ;
       private bool[] T000316_n14CityId ;
+      private string[] T000316_A15CityName ;
+      private short[] T000317_A9CountryId ;
+      private short[] T000317_A14CityId ;
+      private bool[] T000317_n14CityId ;
       private short[] T00033_A9CountryId ;
       private short[] T00033_A14CityId ;
       private bool[] T00033_n14CityId ;
@@ -3075,10 +3217,10 @@ namespace GeneXus.Programs {
       private short[] T00032_A14CityId ;
       private bool[] T00032_n14CityId ;
       private string[] T00032_A15CityName ;
-      private short[] T000320_A7AttractionId ;
-      private short[] T000321_A9CountryId ;
-      private short[] T000321_A14CityId ;
-      private bool[] T000321_n14CityId ;
+      private short[] T000321_A7AttractionId ;
+      private short[] T000322_A9CountryId ;
+      private short[] T000322_A14CityId ;
+      private bool[] T000322_n14CityId ;
       private GXWebForm Form ;
    }
 
@@ -3100,14 +3242,15 @@ namespace GeneXus.Programs {
          ,new UpdateCursor(def[9])
          ,new UpdateCursor(def[10])
          ,new ForEachCursor(def[11])
-         ,new ForEachCursor(def[12])
+         ,new UpdateCursor(def[12])
          ,new ForEachCursor(def[13])
          ,new ForEachCursor(def[14])
-         ,new UpdateCursor(def[15])
+         ,new ForEachCursor(def[15])
          ,new UpdateCursor(def[16])
          ,new UpdateCursor(def[17])
-         ,new ForEachCursor(def[18])
+         ,new UpdateCursor(def[18])
          ,new ForEachCursor(def[19])
+         ,new ForEachCursor(def[20])
        };
     }
 
@@ -3142,11 +3285,13 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000310;
           prmT000310 = new Object[] {
-          new ParDef("@CountryName",GXType.NVarChar,40,0)
+          new ParDef("@CountryName",GXType.NVarChar,40,0) ,
+          new ParDef("@CountryLastLine",GXType.Int16,4,0)
           };
           Object[] prmT000311;
           prmT000311 = new Object[] {
           new ParDef("@CountryName",GXType.NVarChar,40,0) ,
+          new ParDef("@CountryLastLine",GXType.Int16,4,0) ,
           new ParDef("@CountryId",GXType.Int16,4,0)
           };
           Object[] prmT000312;
@@ -3159,14 +3304,19 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000314;
           prmT000314 = new Object[] {
+          new ParDef("@CountryLastLine",GXType.Int16,4,0) ,
+          new ParDef("@CountryId",GXType.Int16,4,0)
           };
           Object[] prmT000315;
           prmT000315 = new Object[] {
-          new ParDef("@CountryId",GXType.Int16,4,0) ,
-          new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000316;
           prmT000316 = new Object[] {
+          new ParDef("@CountryId",GXType.Int16,4,0) ,
+          new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000317;
+          prmT000317 = new Object[] {
           new ParDef("@CountryId",GXType.Int16,4,0) ,
           new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
           };
@@ -3180,20 +3330,15 @@ namespace GeneXus.Programs {
           new ParDef("@CountryId",GXType.Int16,4,0) ,
           new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT000317;
-          prmT000317 = new Object[] {
+          Object[] prmT000318;
+          prmT000318 = new Object[] {
           new ParDef("@CountryId",GXType.Int16,4,0) ,
           new ParDef("@CityId",GXType.Int16,4,0){Nullable=true} ,
           new ParDef("@CityName",GXType.NVarChar,40,0)
           };
-          Object[] prmT000318;
-          prmT000318 = new Object[] {
-          new ParDef("@CityName",GXType.NVarChar,40,0) ,
-          new ParDef("@CountryId",GXType.Int16,4,0) ,
-          new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
-          };
           Object[] prmT000319;
           prmT000319 = new Object[] {
+          new ParDef("@CityName",GXType.NVarChar,40,0) ,
           new ParDef("@CountryId",GXType.Int16,4,0) ,
           new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
           };
@@ -3204,29 +3349,35 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000321;
           prmT000321 = new Object[] {
+          new ParDef("@CountryId",GXType.Int16,4,0) ,
+          new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000322;
+          prmT000322 = new Object[] {
           new ParDef("@CountryId",GXType.Int16,4,0)
           };
           def= new CursorDef[] {
               new CursorDef("T00032", "SELECT [CountryId], [CityId], [CityName] FROM [CountryCity] WITH (UPDLOCK) WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00032,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00033", "SELECT [CountryId], [CityId], [CityName] FROM [CountryCity] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00033,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00034", "SELECT [CountryId], [CountryName] FROM [Country] WITH (UPDLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00034,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00035", "SELECT [CountryId], [CountryName] FROM [Country] WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00035,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00036", "SELECT TM1.[CountryId], TM1.[CountryName] FROM [Country] TM1 WHERE TM1.[CountryId] = @CountryId ORDER BY TM1.[CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00036,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00034", "SELECT [CountryId], [CountryName], [CountryLastLine] FROM [Country] WITH (UPDLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00034,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00035", "SELECT [CountryId], [CountryName], [CountryLastLine] FROM [Country] WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00035,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00036", "SELECT TM1.[CountryId], TM1.[CountryName], TM1.[CountryLastLine] FROM [Country] TM1 WHERE TM1.[CountryId] = @CountryId ORDER BY TM1.[CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00036,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00037", "SELECT [CountryId] FROM [Country] WHERE [CountryId] = @CountryId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00037,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00038", "SELECT TOP 1 [CountryId] FROM [Country] WHERE ( [CountryId] > @CountryId) ORDER BY [CountryId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00038,1, GxCacheFrequency.OFF ,true,true )
              ,new CursorDef("T00039", "SELECT TOP 1 [CountryId] FROM [Country] WHERE ( [CountryId] < @CountryId) ORDER BY [CountryId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00039,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000310", "INSERT INTO [Country]([CountryName]) VALUES(@CountryName); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000310,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000311", "UPDATE [Country] SET [CountryName]=@CountryName  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000311)
+             ,new CursorDef("T000310", "INSERT INTO [Country]([CountryName], [CountryLastLine]) VALUES(@CountryName, @CountryLastLine); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000310,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000311", "UPDATE [Country] SET [CountryName]=@CountryName, [CountryLastLine]=@CountryLastLine  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000311)
              ,new CursorDef("T000312", "DELETE FROM [Country]  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000312)
              ,new CursorDef("T000313", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000313,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000314", "SELECT [CountryId] FROM [Country] ORDER BY [CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000314,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000315", "SELECT [CountryId], [CityId], [CityName] FROM [CountryCity] WHERE [CountryId] = @CountryId and [CityId] = @CityId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000315,11, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000316", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000316,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000317", "INSERT INTO [CountryCity]([CountryId], [CityId], [CityName]) VALUES(@CountryId, @CityId, @CityName)", GxErrorMask.GX_NOMASK,prmT000317)
-             ,new CursorDef("T000318", "UPDATE [CountryCity] SET [CityName]=@CityName  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000318)
-             ,new CursorDef("T000319", "DELETE FROM [CountryCity]  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000319)
-             ,new CursorDef("T000320", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000320,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000321", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000321,11, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000314", "UPDATE [Country] SET [CountryLastLine]=@CountryLastLine  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000314)
+             ,new CursorDef("T000315", "SELECT [CountryId] FROM [Country] ORDER BY [CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000315,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000316", "SELECT [CountryId], [CityId], [CityName] FROM [CountryCity] WHERE [CountryId] = @CountryId and [CityId] = @CityId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000316,11, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000317", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000317,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000318", "INSERT INTO [CountryCity]([CountryId], [CityId], [CityName]) VALUES(@CountryId, @CityId, @CityName)", GxErrorMask.GX_NOMASK,prmT000318)
+             ,new CursorDef("T000319", "UPDATE [CountryCity] SET [CityName]=@CityName  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000319)
+             ,new CursorDef("T000320", "DELETE FROM [CountryCity]  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000320)
+             ,new CursorDef("T000321", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000321,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000322", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000322,11, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -3250,14 +3401,17 @@ namespace GeneXus.Programs {
              case 2 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 3 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 4 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 5 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
@@ -3274,22 +3428,22 @@ namespace GeneXus.Programs {
              case 11 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
-             case 12 :
-                ((short[]) buf[0])[0] = rslt.getShort(1);
-                return;
              case 13 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
              case 14 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
-             case 18 :
+             case 15 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;
              case 19 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                return;
+             case 20 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;

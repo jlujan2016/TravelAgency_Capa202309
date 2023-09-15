@@ -57,7 +57,11 @@
 <Attribute>
 <AttriId>10</AttriId>
 <AttriName>CountryName</AttriName>
-<Description>Country Name</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Country Name</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>CountryLastLine</AttriName>
+<Description>Country Last Line</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>3</TableId>
@@ -68,7 +72,11 @@
 <Attribute>
 <AttriId>10</AttriId>
 <AttriName>CountryName</AttriName>
-<Description>Country Name</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Country Name</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>CountryLastLine</AttriName>
+<Description>Country Last Line</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>3</TableId>
