@@ -11,6 +11,8 @@ pgm_prop_i(web,14,'COUNTRYGENERAL','URLAccess','No').
 pgm_prop_i(web,15,'COUNTRYCITYWC','WEB_COMP','Yes').
 pgm_prop_i(web,15,'COUNTRYCITYWC','URLAccess','No').
 pgm_prop_i(mnproc,1,'GENERAL\UI\SIDEBARITEMSDP','OutputSDT',o(26,'GeneXusUnanimo\SidebarItems')).
+pgm_prop_i(web,18,'ATTRACTIONGENERAL','WEB_COMP','Yes').
+pgm_prop_i(web,18,'ATTRACTIONGENERAL','URLAccess','No').
  
 model_wrkinfo_i([ '.NET','NETSQLServer002' ]).
  

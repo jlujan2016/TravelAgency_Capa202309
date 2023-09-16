@@ -18,6 +18,9 @@
 		<ProjectReference Include=".\..\country\country.csproj" />
 		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\attractiongeneral\attractiongeneral.csproj" />
+		<ProjectReference Include=".\..\wwattraction\wwattraction.csproj" />
+		<ProjectReference Include=".\..\viewattraction\viewattraction.csproj" />
 		<ProjectReference Include=".\..\countrycitywc\countrycitywc.csproj" />
 		<ProjectReference Include=".\..\countrygeneral\countrygeneral.csproj" />
 		<ProjectReference Include=".\..\wwcountry\wwcountry.csproj" />

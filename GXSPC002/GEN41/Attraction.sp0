@@ -1,6 +1,6 @@
 spec_i([ trn,2,'Attraction','Attraction',[],eng,'18_0_4-174187' ]).
  
-struct_i(2,0,[],[]).
+struct_i(2,0,[ 'Pgmname','Trncontext','Insert_countryid','Insert_cityid','Insert_categoryid','GXV1','Trncontextatt','Mode','Attractionid','Websession' ],[]).
  
 level_i(2,[ 2,[ [ 2,many ],[ 3,one ],[ 5,one ],[ 4,one ] ],[ 7 ],[],[],[],[ 7 ],'IATTRACTION',[ 2,[] ],[] ]).
  
@@ -13,7 +13,7 @@ lwi_i(2,[ [] ]).
  
 ta_i(2,[ [ [ 2,7 ],[ 2,8 ],[ 3,10 ],[ 5,15 ],[ 4,12 ],[ 2,13 ],[ 2,40000 ],[ 2,9 ],[ 2,14 ],[ 2,11 ] ] ]).
  
-las_i(2,[ [ 7,8,9,10,14,15,11,12,13,40000 ] ]).
+las_i(2,[ [ 'Pgmname','Trncontext','Insert_countryid','Insert_cityid','Insert_categoryid','GXV1','Trncontextatt','Mode','Attractionid','Websession',7,9,14,11,8,10,15,12,13,40000 ] ]).
  
 lac_i(2,[ [ 7,8,9,14,11,13 ] ]).
  
@@ -33,6 +33,7 @@ pos_i(12,[ 0,0,0 ]).
 pos_i(13,[ 0,0,0 ]).
  
  
+default_i(e('Pgmname',2,2,'"Attraction"')).
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
 rule_i(0,datastore(1,'LOCK_RETRY','10')).
@@ -153,51 +154,109 @@ rule_i(2,prompt([ 5,[ [ 2,9,9 ],[ 2,14,14 ] ],[ 14 ],[ 9,14 ],[ t(o(13,'Gx0051')
 rule_i(2,rule([ a(23,[ [ 9,14 ],[ t(o(13,'Gx0051'),28),t(9,2),t(',',7),t(14,2) ] ]) ],[],[],[ 9,14 ])).
 rule_i(2,prompt([ 3,[ [ 2,9,9 ] ],[ 9 ],[ 9 ],[ t(o(13,'Gx0030'),28),t(9,2) ],[],n,[] ])).
 rule_i(2,rule([ a(23,[ [ 9 ],[ t(o(13,'Gx0030'),28),t(9,2) ] ]) ],[],[],[ 9 ])).
-rule_i(2,prompt([ 2,[ [ [],7,7 ] ],[],[],[ t(o(13,'Gx0020'),28),t(7,2) ],[],n,[] ])).
-rule_i(2,rule([ a(23,[ [ 7 ],[ t(o(13,'Gx0020'),28),t(7,2) ] ]) ],[],[],[ 7 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(41)).
+rule_i(0,rule([ a(10,[ 'Mode','Attractionid' ]) ],[],[ insert,update,delete,display ],[])).
+rule_i(0,parmio([ [ 'Mode',in ],[ 'Attractionid',in ] ])).
 rule_i(2,rule([ a(18,[ [ 9,14 ] ]) ],[],[ insert,update,delete ],[ 9,14 ])).
+rule_i(2,rule([ a(3,[ t(7,2) ]) ],[],[ insert,update,delete,display ],[ 7 ])).
+rule_i(2,rule([ a(21,[ [ 7 ] ]) ],[],[ insert,update,delete,display ],[ 7 ])).
+rule_i(2,rule([ a(3,[ t(9,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_countryid',23),t(')',4) ],[ insert,update,delete,display ],[ 9,'Mode','Insert_countryid' ])).
+rule_i(2,rule([ a(3,[ t(14,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_cityid',23),t(')',4) ],[ insert,update,delete,display ],[ 14,'Mode','Insert_cityid' ])).
+rule_i(2,rule([ a(3,[ t(11,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_categoryid',23),t(')',4) ],[ insert,update,delete,display ],[ 11,'Mode','Insert_categoryid' ])).
 rule_i(2,rule([ a(19,[ [ 9 ],msg([ t('"No matching ''Country''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 9 ])).
 rule_i(2,rule([ a(19,[ [ 9,14 ],msg([ t('"No matching ''City''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 9,14 ])).
 rule_i(2,rule([ a(19,[ [ 11 ],msg([ t('"No matching ''Category''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 11 ])).
  
-a_i(1,2,t,2,[],[ [ [ [],7,7 ] ],'IATTRACTION',[] ]).
-a_i(2,2,r,3,[],[ [ [ 2,9,9 ] ],'ICOUNTRY',[] ]).
-a_i(3,2,r,5,[],[ [ [ 2,9,9 ],[ 2,14,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(4,2,r,4,[],[ [ [ 2,11,11 ] ],'ICATEGORY',[] ]).
+a_i(3,2,f,7,[],[ [],[ t('Attractionid',23),t('IF',17),t('.NOT.',8),t('null(',1),t('Attractionid',23),t(')',4),t(';',18) ] ]).
+a_i(4,2,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(5,2,f,9,[],[ [],[ t('Insert_countryid',23),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_countryid',23),t(')',4),t(';',18) ] ]).
+a_i(6,2,f,[ t(9,2),t('Enabled',3) ],[],[ [],[ t(0,3),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_countryid',23),t(')',4),t(';',18),t(1,3),t('OTHERWISE',19),t(';',18) ] ]).
+a_i(7,2,f,14,[],[ [],[ t('Insert_cityid',23),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_cityid',23),t(')',4),t(';',18) ] ]).
+a_i(8,2,f,[ t(14,2),t('Enabled',3) ],[],[ [],[ t(0,3),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_cityid',23),t(')',4),t(';',18),t(1,3),t('OTHERWISE',19),t(';',18) ] ]).
+a_i(9,2,f,11,[],[ [],[ t('Insert_categoryid',23),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_categoryid',23),t(')',4),t(';',18) ] ]).
+a_i(10,2,f,[ t(11,2),t('Enabled',3) ],[],[ [],[ t(0,3),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_categoryid',23),t(')',4),t(';',18),t(1,3),t('OTHERWISE',19),t(';',18) ] ]).
+a_i(11,2,b,6,[],[ [],[ a(3,[ t(9,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_countryid',23),t(')',4) ] ]).
+a_i(12,2,b,8,[],[ [],[ a(3,[ t(14,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_cityid',23),t(')',4) ] ]).
+a_i(13,2,b,10,[],[ [],[ a(3,[ t(11,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_categoryid',23),t(')',4) ] ]).
+a_i(14,2,t,2,[],[ [ [ [],7,7 ] ],'IATTRACTION',[] ]).
+a_i(15,2,r,3,[],[ [ [ 2,9,9 ] ],'ICOUNTRY',[] ]).
+a_i(16,2,r,5,[],[ [ [ 2,9,9 ],[ 2,14,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(17,2,r,4,[],[ [ [ 2,11,11 ] ],'ICATEGORY',[] ]).
+a_i(18,2,f,'Pgmname',[],[ [],[ t('"Attraction"',3) ] ]).
  
-v_i(t,i,1,7).
-v_i(t,o,1,8).
-v_i(t,o,1,13).
-v_i(t,o,1,40000).
-v_i(t,o,1,9).
-v_i(t,o,1,14).
-v_i(t,o,1,11).
-v_i(r,i,2,9).
-v_i(r,o,2,10).
-v_i(r,i,3,9).
-v_i(r,i,3,14).
-v_i(r,o,3,15).
-v_i(r,i,4,11).
-v_i(r,o,4,12).
+v_i(f,i,3,'Attractionid').
+v_i(f,o,3,7).
+v_i(f,i,4,[]).
+v_i(f,o,4,[ t(7,2),t('Enabled',3) ]).
+v_i(f,i,5,'Insert_countryid').
+v_i(f,o,5,9).
+v_i(f,i,6,'Insert_countryid').
+v_i(f,o,6,[ t(9,2),t('Enabled',3) ]).
+v_i(f,i,7,'Insert_cityid').
+v_i(f,o,7,14).
+v_i(f,i,8,'Insert_cityid').
+v_i(f,o,8,[ t(14,2),t('Enabled',3) ]).
+v_i(f,i,9,'Insert_categoryid').
+v_i(f,o,9,11).
+v_i(f,i,10,'Insert_categoryid').
+v_i(f,o,10,[ t(11,2),t('Enabled',3) ]).
+v_i(b,i,11,'Insert_countryid').
+v_i(b,o,11,[]).
+v_i(b,i,12,'Insert_cityid').
+v_i(b,o,12,[]).
+v_i(b,i,13,'Insert_categoryid').
+v_i(b,o,13,[]).
+v_i(t,i,14,7).
+v_i(t,o,14,8).
+v_i(t,o,14,13).
+v_i(t,o,14,40000).
+v_i(t,o,14,9).
+v_i(t,o,14,14).
+v_i(t,o,14,11).
+v_i(r,i,15,9).
+v_i(r,o,15,10).
+v_i(r,i,16,9).
+v_i(r,i,16,14).
+v_i(r,o,16,15).
+v_i(r,i,17,11).
+v_i(r,o,17,12).
+v_i(f,i,18,[]).
+v_i(f,o,18,'Pgmname').
  
+act_info_i(3,[ [ 7 ] ]).
+act_info_i(5,[ [ 9 ] ]).
+act_info_i(7,[ [ 14 ] ]).
+act_info_i(9,[ [ 11 ] ]).
  
+ca_i(9,11).
+ca_i(7,14).
+ca_i(5,9).
  
  
  
  
 attri_i(13,[ 'AttractionPhoto',bits,4,0,'',0,'Attraction Photo','',0 ]).
 attri_i(12,[ 'CategoryName',svchar,40,0,'',0,'Category Name','',0 ]).
-attri_i(11,[ 'CategoryId',int,4,0,'ZZZ9',0,'Category Id','',0 ]).
 attri_i(15,[ 'CityName',svchar,40,0,'',0,'City Name','',0 ]).
-attri_i(14,[ 'CityId',int,4,0,'ZZZ9',0,'City Id','',0 ]).
 attri_i(10,[ 'CountryName',svchar,40,0,'',0,'Country Name','',0 ]).
-attri_i(9,[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',0 ]).
 attri_i(8,[ 'AttractionName',svchar,40,0,'',0,'Attraction Name','',0 ]).
+attri_i(11,[ 'CategoryId',int,4,0,'ZZZ9',0,'Category Id','',0 ]).
+attri_i(14,[ 'CityId',int,4,0,'ZZZ9',0,'City Id','',0 ]).
+attri_i(9,[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',0 ]).
 attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
 attri_i(40000,[ 'AttractionPhoto_GXI',svchar,2048,0,'',0,'',[],0 ]).
+attri_i('GXV1',[ 'GXV1',int,8,0,'',0,'','',16 ]).
+attri_i('Pgmname',[ 'Pgmname',char,129,0,'',1,'Program name','',15 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
+attri_i('Trncontextatt',[ 'TrnContextAtt',o('General\UI\TransactionContext.Attribute'),0,0,'',0,'Trn Context Att','',14 ]).
+attri_i('Insert_categoryid',[ 'Insert_CategoryId',int,4,0,'ZZZ9',0,'Insert_Category Id','',13 ]).
+attri_i('Insert_cityid',[ 'Insert_CityId',int,4,0,'ZZZ9',0,'Insert_City Id','',12 ]).
+attri_i('Insert_countryid',[ 'Insert_CountryId',int,4,0,'ZZZ9',0,'Insert_Country Id','',11 ]).
+attri_i('Websession',[ 'WebSession',o(websession),4,0,'',0,'Web Session','',10 ]).
+attri_i('Trncontext',[ 'TrnContext',o('General\UI\TransactionContext'),0,0,'',0,'Trn Context','',9 ]).
+attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',8 ]).
+attri_i('Attractionid',[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',7 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
 table_i(4,[ 'Category',[ 11,12 ],'Category','Category' ]).
@@ -235,8 +294,14 @@ upd_i(2,2,d,[ [],[],'IATTRACTION',[] ]).
  
  
  
+enum_value_i(2,71,'"INS"','Insert','"Insert"',[ none ]).
+enum_value_i(2,71,'"UPD"','Update','"Update"',[ none ]).
+enum_value_i(2,71,'"DLT"','Delete','"Delete"',[ none ]).
+enum_value_i(2,71,'"DSP"','Display','"Display"',[ none ]).
  
+enum_value_info_i(2,71,'GeneXus\TrnMode').
  
+enum_type_i(2,71,char,3,0).
  
 dom_info_i(94,[ 'Id' ]).
 dom_info_i(95,[ 'Name' ]).
@@ -244,8 +309,44 @@ dom_info_i(95,[ 'Name' ]).
  
 break_i(2,nvg,1,[],[ [],[],[] ]).
  
-b_group_i(2,1,lit,0,1,0).
+b_group_i(2,1,lit,0,1,1).
+b_group_i(2,2,lit,0,2,38).
+b_group_i(2,3,lit,0,39,0).
  
+b_line_i(1,2,1,cmd,1,[ t('',146,1,0),t('Start',3,1,7) ]).
+b_line_i(5,2,2,cmd,1,[ t('',109,5,0),t('.NOT.',8,1,5),t('udp(',1,5,23),t(o(1,'General\Security\IsAuthorized'),28,5,11),t(',',7,1,0),t('Pgmname',23,1,24),t(')',4,1,0) ]).
+b_line_i(6,2,2,cmd,1,[ t('',104,6,0),t(o(13,'General\Security\NotAuthorized'),28,1,3),t('Pgmname',23,1,17) ]).
+b_line_i(7,2,2,cmd,1,[ t('',111,7,0) ]).
+b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t([ t('Trncontext',23,9,2),t('fromxml(',1,9,14) ],31,9,2),t([ t('Websession',23,1,23),t('get(',1,1,35) ],31,9,35),t('"TrnContext"',3,9,40),t(')',4,1,53),t(')',4,1,54) ]).
+b_line_i(10,2,2,cmd,1,[ t('',107,10,0),t([ t('Insert_countryid',23,10,2),t('setempty(',1,10,20) ],31,10,2),t(')',4,1,30) ]).
+b_line_i(11,2,2,cmd,1,[ t('',107,11,0),t([ t('Insert_cityid',23,11,2),t('setempty(',1,11,17) ],31,11,2),t(')',4,1,27) ]).
+b_line_i(12,2,2,cmd,1,[ t('',107,12,0),t([ t('Insert_categoryid',23,12,2),t('setempty(',1,12,21) ],31,12,2),t(')',4,1,31) ]).
+b_line_i(14,2,2,cmd,1,[ t('',109,14,0),t('(',0,1,5),t([ t('Trncontext',23,14,6),t('Transactionname',3,14,18) ],29,14,18),t(=,10,1,34),t('Pgmname',23,1,36),t('.AND.',9,1,45),t('Mode',23,1,51),t(=,10,1,57),t([ 71,'Insert' ],44,14,59),t(')',4,1,73) ]).
+b_line_i(15,2,2,cmd,1,[ t('',107,15,0),t('GXV1',23,1,0),t(=,10,1,0),t(1,3,1,0) ]).
+b_line_i([ 15,2 ],2,2,cmd,1,[ t('',114,15,0),t('GXV1',23,1,0),t(<=,10,1,0),t([ t('Trncontext',23,15,25),t('Attributes',3,15,37),t('Count',3,15,0) ],29,15,0) ]).
+b_line_i([ 15,3 ],2,2,cmd,1,[ t('',107,15,0),t('Trncontextatt',23,1,0),t(=,10,1,0),t([ t([ t('Trncontext',23,1,0),t('Attributes',3,1,0) ],29,1,0),t('item(',1,1,0) ],31,1,0),t('GXV1',23,1,0),t(')',4,1,0) ]).
+b_line_i(16,2,2,cmd,2,[ t('',152,16,0) ]).
+b_line_i(18,2,2,cmd,2,[ t('',153,18,0),t([ t('Trncontextatt',23,18,10),t('Attributename',3,18,25) ],29,18,25),t(=,10,2,39),t('"CountryId"',3,18,41) ]).
+b_line_i(19,2,2,cmd,2,[ t('',107,19,0),t('Insert_countryid',23,19,6),t(=,10,19,6),t('val(',1,19,6),t([ t('Trncontextatt',23,19,36),t('Attributevalue',3,19,51) ],29,19,51),t(')',4,2,65) ]).
+b_line_i(21,2,2,cmd,2,[ t('',153,21,0),t([ t('Trncontextatt',23,21,10),t('Attributename',3,21,25) ],29,21,25),t(=,10,2,39),t('"CityId"',3,21,41) ]).
+b_line_i(22,2,2,cmd,2,[ t('',107,22,0),t('Insert_cityid',23,22,6),t(=,10,22,6),t('val(',1,22,6),t([ t('Trncontextatt',23,22,33),t('Attributevalue',3,22,48) ],29,22,48),t(')',4,2,62) ]).
+b_line_i(24,2,2,cmd,2,[ t('',153,24,0),t([ t('Trncontextatt',23,24,10),t('Attributename',3,24,25) ],29,24,25),t(=,10,2,39),t('"CategoryId"',3,24,41) ]).
+b_line_i(25,2,2,cmd,2,[ t('',107,25,0),t('Insert_categoryid',23,25,6),t(=,10,25,6),t('val(',1,25,6),t([ t('Trncontextatt',23,25,37),t('Attributevalue',3,25,52) ],29,25,52),t(')',4,2,66) ]).
+b_line_i(26,2,2,cmd,2,[ t('',154,26,0) ]).
+b_line_i([ 27,1 ],2,2,cmd,2,[ t('',107,27,0),t('GXV1',23,2,0),t(=,10,2,0),t('GXV1',23,2,0),t(+,5,2,0),t(1,3,2,0) ]).
+b_line_i([ 27,2 ],2,2,cmd,2,[ t('',115,27,0) ]).
+b_line_i(28,2,2,cmd,3,[ t('',111,28,0) ]).
+b_line_i(30,2,2,cmd,3,[ t('',109,30,0),t('Mode',23,3,5),t(=,10,3,11),t([ 71,'Delete' ],44,30,13) ]).
+b_line_i(31,2,2,cmd,3,[ t('',107,31,0),t([ t('Btn_enter',3,3,0),t('Caption',3,3,0) ],29,3,0),t(=,10,3,0),t('"Delete"',3,3,0) ]).
+b_line_i(32,2,2,cmd,3,[ t('',107,32,0),t([ t('Btn_enter',3,3,0),t('Tooltiptext',3,3,0) ],29,3,0),t(=,10,3,0),t('"Delete"',3,3,0) ]).
+b_line_i(33,2,2,cmd,3,[ t('',111,33,0) ]).
+b_line_i(36,2,2,cmd,3,[ t('',147,36,0) ]).
+b_line_i(38,2,2,cmd,3,[ t('',146,38,0),t('After Trn',3,38,7) ]).
+b_line_i(42,2,3,cmd,3,[ t('',109,42,0),t('(',0,3,5),t('Mode',23,3,6),t(=,10,3,12),t([ 71,'Delete' ],44,42,14),t('.AND.',9,3,29),t('.NOT.',8,3,35),t([ t('Trncontext',23,42,41),t('Callerondelete',3,42,53) ],29,42,53),t(')',4,3,67) ]).
+b_line_i(43,2,3,cmd,3,[ t('',104,43,0),t(o(13,'WWAttraction'),28,3,3) ]).
+b_line_i(44,2,3,cmd,3,[ t('',111,44,0) ]).
+b_line_i(46,2,3,cmd,3,[ t('',118,46,0) ]).
+b_line_i(49,2,3,cmd,3,[ t('',147,49,0) ]).
  
  
  
@@ -1530,34 +1631,173 @@ tbl_att_prop_i(2,4,11,'AllowNulls',n).
 tbl_att_prop_i(2,4,11,'AUTONUMBER',y).
 tbl_att_prop_i(2,4,12,'AllowNulls',n).
  
+var_prop_i(2,'Attractionid',idBasedOn,'',v).
+var_prop_i(2,'Insert_countryid',idBasedOn,'',v).
+var_prop_i(2,'Insert_cityid',idBasedOn,'',v).
+var_prop_i(2,'Insert_categoryid',idBasedOn,'',v).
  
  
  
  
 trn_level_i(2,[ [ 7,8,9,10,14,15,11,12,13,40000 ],'Attraction','Attraction','Attraction','',8 ]).
  
+struct_dt_i([ 26,61,0 ],name,'General\UI\TransactionContext').
+struct_dt_i([ 26,61,0 ],namespace,'TravelAgency_Capa202309').
+struct_dt_i([ 26,61,0 ],'ObjName','TransactionContext').
+struct_dt_i([ 26,61,0 ],'ObjDesc','Transaction Context').
+struct_dt_i([ 26,61,0 ],'ExternalName','TransactionContext').
+struct_dt_i([ 26,61,0 ],'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_i([ 26,61,0 ],'JsonInputFormat','JsonInputWrapped').
+struct_dt_i([ 26,61,0 ],'JsonInclude',idJsonNoProperty).
+struct_dt_i([ 26,61,92 ],name,'Attribute').
+struct_dt_i([ 26,61,92 ],namespace,'TravelAgency_Capa202309.TransactionContext').
+struct_dt_i([ 26,61,0 ],fullname,'General\UI\TransactionContext').
+struct_dt_i([ 26,61,92 ],fullname,'General\UI\TransactionContext.Attribute').
+ 
+struct_dt_elem_i([ 26,61,0 ],1,name,'Callerobject').
+struct_dt_elem_i([ 26,61,0 ],1,camelname,'CallerObject').
+struct_dt_elem_i([ 26,61,0 ],1,basedon,51).
+struct_dt_elem_i([ 26,61,0 ],1,length,256).
+struct_dt_elem_i([ 26,61,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],1,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,61,0 ],1,pic,'').
+struct_dt_elem_i([ 26,61,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],1,'ExternalName','CallerObject').
+struct_dt_elem_i([ 26,61,0 ],1,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],2,name,'Callerondelete').
+struct_dt_elem_i([ 26,61,0 ],2,camelname,'CallerOnDelete').
+struct_dt_elem_i([ 26,61,0 ],2,length,4).
+struct_dt_elem_i([ 26,61,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],2,type,[ 15,4,0 ]).
+struct_dt_elem_i([ 26,61,0 ],2,pic,'').
+struct_dt_elem_i([ 26,61,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],2,'ExternalName','CallerOnDelete').
+struct_dt_elem_i([ 26,61,0 ],2,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],3,name,'Callerurl').
+struct_dt_elem_i([ 26,61,0 ],3,camelname,'CallerURL').
+struct_dt_elem_i([ 26,61,0 ],3,basedon,8).
+struct_dt_elem_i([ 26,61,0 ],3,length,1000).
+struct_dt_elem_i([ 26,61,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],3,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,61,0 ],3,pic,'').
+struct_dt_elem_i([ 26,61,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],3,'ExternalName','CallerURL').
+struct_dt_elem_i([ 26,61,0 ],3,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],4,name,'Transactionname').
+struct_dt_elem_i([ 26,61,0 ],4,camelname,'TransactionName').
+struct_dt_elem_i([ 26,61,0 ],4,basedon,51).
+struct_dt_elem_i([ 26,61,0 ],4,length,256).
+struct_dt_elem_i([ 26,61,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],4,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,61,0 ],4,pic,'').
+struct_dt_elem_i([ 26,61,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],4,'ExternalName','TransactionName').
+struct_dt_elem_i([ 26,61,0 ],4,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],5,name,'Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,camelname,'Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,type,[ [ 26,61,92 ],0,0 ]).
+struct_dt_elem_i([ 26,61,0 ],5,pic,'').
+struct_dt_elem_i([ 26,61,0 ],5,collection,'True').
+struct_dt_elem_i([ 26,61,0 ],5,'ObjName','Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,'ObjDesc','Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,'CollectionItemName','Attribute').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlCollectionItemName','').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],5,'CollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,61,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],5,'JsonInclude',idJsonNoProperty).
+struct_dt_elem_i([ 26,61,0 ],5,'JsonCollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,61,92 ],1,name,'Attributename').
+struct_dt_elem_i([ 26,61,92 ],1,camelname,'AttributeName').
+struct_dt_elem_i([ 26,61,92 ],1,length,128).
+struct_dt_elem_i([ 26,61,92 ],1,decimals,0).
+struct_dt_elem_i([ 26,61,92 ],1,type,[ 13,128,0 ]).
+struct_dt_elem_i([ 26,61,92 ],1,pic,'').
+struct_dt_elem_i([ 26,61,92 ],1,collection,'False').
+struct_dt_elem_i([ 26,61,92 ],1,'ExternalName','AttributeName').
+struct_dt_elem_i([ 26,61,92 ],1,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlName','').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,92 ],1,soaptype,'').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,92 ],1,'JsonName','').
+struct_dt_elem_i([ 26,61,92 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,92 ],2,name,'Attributevalue').
+struct_dt_elem_i([ 26,61,92 ],2,camelname,'AttributeValue').
+struct_dt_elem_i([ 26,61,92 ],2,length,1000).
+struct_dt_elem_i([ 26,61,92 ],2,decimals,0).
+struct_dt_elem_i([ 26,61,92 ],2,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,61,92 ],2,pic,'').
+struct_dt_elem_i([ 26,61,92 ],2,collection,'False').
+struct_dt_elem_i([ 26,61,92 ],2,'ExternalName','AttributeValue').
+struct_dt_elem_i([ 26,61,92 ],2,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlName','').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,92 ],2,soaptype,'').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,92 ],2,'JsonName','').
+struct_dt_elem_i([ 26,61,92 ],2,'JsonInclude',idJsonEmpty).
  
  
  
  
  
+sub_info_i(146,'Start',1,36,[ [ 'Pgmname','Websession','Mode' ],[ 'Trncontext','Insert_countryid','Insert_cityid','Insert_categoryid','GXV1','Trncontextatt',[ t('Btn_enter',3),t('Caption',3) ],[ t('Btn_enter',3),t('Tooltiptext',3) ] ] ]).
+sub_info_i(146,'After Trn',38,49,[ [ 'Mode','Trncontext' ],[] ]).
  
- 
-pgm_parm_i(web,4,'GX0020',[ [ int,4,0,0 ] ],[ [ pAttractionId,out,[] ] ]).
 pgm_parm_i(web,5,'GX0030',[ [ int,4,0,0 ] ],[ [ pCountryId,out,[] ] ]).
 pgm_parm_i(web,7,'GX0051',[ [ int,4,0,0 ],[ int,4,0,0 ] ],[ [ pCountryId,in,[] ],[ pCityId,out,[] ] ]).
 pgm_parm_i(web,6,'GX0040',[ [ int,4,0,0 ] ],[ [ pCategoryId,out,[] ] ]).
+pgm_parm_i(web,17,'WWATTRACTION',[],[]).
+pgm_parm_i(web,8,'GENERAL\SECURITY\NOTAUTHORIZED',[ [ svchar,256,0,0 ] ],[ [ 'GxObject',in,[] ] ]).
+pgm_parm_i(proc,13,'GENERAL\SECURITY\ISAUTHORIZED',[ [ svchar,256,0,0 ],[ boolean,4,0,0 ] ],[ [ 'GxObject',in,[] ],[ 'Authorized',out,[] ] ]).
  
 pgm_callprotocol_i(trn,2,'ATTRACTION','INTERNAL','Unsecure').
-pgm_callprotocol_i(web,4,'GX0020','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,5,'GX0030','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,7,'GX0051','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,6,'GX0040','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,17,'WWATTRACTION','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,8,'GENERAL\SECURITY\NOTAUTHORIZED','INTERNAL','Unsecure').
+pgm_callprotocol_i(proc,13,'GENERAL\SECURITY\ISAUTHORIZED','INTERNAL','Unsecure').
  
  
  
  
  
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').
  
  
  

@@ -5,12 +5,6 @@
    <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus18Trial/</Path>
    <Object>
       <ObjCls>0</ObjCls>
-      <ObjName>Attraction</ObjName>
-      <ObjDesc>Attraction</ObjDesc>
-      <ObjLink>attraction.aspx</ObjLink>
-   </Object>
-   <Object>
-      <ObjCls>0</ObjCls>
       <ObjName>Category</ObjName>
       <ObjDesc>Category</ObjDesc>
       <ObjLink>category.aspx</ObjLink>
@@ -26,5 +20,11 @@
       <ObjName>WWCountry</ObjName>
       <ObjDesc>Countries</ObjDesc>
       <ObjLink>wwcountry.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWAttraction</ObjName>
+      <ObjDesc>Attractions</ObjDesc>
+      <ObjLink>wwattraction.aspx</ObjLink>
    </Object>
 </Objects>

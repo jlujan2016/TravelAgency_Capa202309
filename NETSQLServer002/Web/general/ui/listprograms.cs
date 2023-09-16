@@ -79,6 +79,16 @@ namespace GeneXus.Programs.general.ui {
          /* GeneXus formulas */
          /* Output device settings */
          AV9ProgramNames = new GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName>( context, "ProgramName", "TravelAgency_Capa202309");
+         AV11name = "WWAttraction";
+         AV12description = "Attractions";
+         AV13link = formatLink("wwattraction.aspx") ;
+         /* Execute user subroutine: 'ADDPROGRAM' */
+         S111 ();
+         if ( returnInSub )
+         {
+            this.cleanup();
+            if (true) return;
+         }
          AV11name = "WWCountry";
          AV12description = "Countries";
          AV13link = formatLink("wwcountry.aspx") ;

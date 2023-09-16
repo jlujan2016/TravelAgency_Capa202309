@@ -2499,6 +2499,24 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "attractiongeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/attractiongeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/attractiongeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "category/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2768,6 +2786,24 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "viewattraction/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewattraction.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewattraction.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "viewcountry/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2799,6 +2835,24 @@
         },
         "runtime": {
           "bin/placeholder/viewcustomer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwattraction/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwattraction.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwattraction.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -8179,6 +8233,11 @@
       "path": "../attraction/attraction.csproj",
       "msbuildProject": "../attraction/attraction.csproj"
     },
+    "attractiongeneral/1.0.0": {
+      "type": "project",
+      "path": "../attractiongeneral/attractiongeneral.csproj",
+      "msbuildProject": "../attractiongeneral/attractiongeneral.csproj"
+    },
     "category/1.0.0": {
       "type": "project",
       "path": "../category/category.csproj",
@@ -8254,6 +8313,11 @@
       "path": "../gx0051/gx0051.csproj",
       "msbuildProject": "../gx0051/gx0051.csproj"
     },
+    "viewattraction/1.0.0": {
+      "type": "project",
+      "path": "../viewattraction/viewattraction.csproj",
+      "msbuildProject": "../viewattraction/viewattraction.csproj"
+    },
     "viewcountry/1.0.0": {
       "type": "project",
       "path": "../viewcountry/viewcountry.csproj",
@@ -8263,6 +8327,11 @@
       "type": "project",
       "path": "../viewcustomer/viewcustomer.csproj",
       "msbuildProject": "../viewcustomer/viewcustomer.csproj"
+    },
+    "wwattraction/1.0.0": {
+      "type": "project",
+      "path": "../wwattraction/wwattraction.csproj",
+      "msbuildProject": "../wwattraction/wwattraction.csproj"
     },
     "wwcountry/1.0.0": {
       "type": "project",
@@ -8281,6 +8350,7 @@
       "GeneXus.PdfReportsCS.Core >= 1.24.1 <= 1.24.1",
       "GeneXus.Programs.Common >= 1.0.0",
       "attraction >= 1.0.0",
+      "attractiongeneral >= 1.0.0",
       "category >= 1.0.0",
       "country >= 1.0.0",
       "countrycitywc >= 1.0.0",
@@ -8295,8 +8365,10 @@
       "gx0030 >= 1.0.0",
       "gx0040 >= 1.0.0",
       "gx0051 >= 1.0.0",
+      "viewattraction >= 1.0.0",
       "viewcountry >= 1.0.0",
       "viewcustomer >= 1.0.0",
+      "wwattraction >= 1.0.0",
       "wwcountry >= 1.0.0",
       "wwcustomer >= 1.0.0"
     ]
@@ -8328,6 +8400,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attractiongeneral\\attractiongeneral.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attractiongeneral\\attractiongeneral.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attraction\\attraction.csproj"
             },
@@ -8376,11 +8451,17 @@
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj"
             },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcountry\\viewcountry.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcountry\\viewcountry.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcustomer\\viewcustomer.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcustomer\\viewcustomer.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwattraction\\wwattraction.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwattraction\\wwattraction.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcountry\\wwcountry.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcountry\\wwcountry.csproj"

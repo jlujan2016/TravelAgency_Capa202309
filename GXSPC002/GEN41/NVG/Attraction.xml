@@ -16,7 +16,17 @@
 <GenId>41</GenId>
 <GenName>Default (.NET)</GenName></Generator>
 <FormClass>HTML</FormClass>
-<Parameters></Parameters>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Attractionid</VarId>
+<VarName>&amp;AttractionId</VarName></Variable></Parameter></Parameters>
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
@@ -222,24 +232,5 @@
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></OutputParameters>
-<PromptType>System</PromptType></Prompt>
-<Prompt>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<Object>
-<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
-<ObjCls>13</ObjCls>
-<ObjId>4</ObjId>
-<ObjName>Gx0020</ObjName>
-<ObjPgmName>Gx0020</ObjPgmName>
-<ObjClsName>Web Panel</ObjClsName></Object>
-<InputParameters></InputParameters>
-<OutputParameters>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>AttractionId</AttriName>
-<Description>Attraction Id</Description></Attribute></OutputParameters>
 <PromptType>System</PromptType></Prompt></Prompts>
 <Suggests></Suggests></ObjectSpec>

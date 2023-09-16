@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\wwattraction.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\wwattraction.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\refint\wwattraction.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\wwattraction.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\wwattraction\obj\Release\net6.0\ref\wwattraction.dll
