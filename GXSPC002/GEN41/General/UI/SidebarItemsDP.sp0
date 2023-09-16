@@ -44,9 +44,9 @@ rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'DS_READ_REPLICA','No')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
-rule_i(0,datastore(1,'USER_PASSWORD','')).
-rule_i(0,datastore(1,'USER_ID','')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Timeout=120')).
+rule_i(0,datastore(1,'USER_PASSWORD','u��A�*�8OYS��Fs��up�RxVY')).
+rule_i(0,datastore(1,'USER_ID',uEHOYk6k1ERudxTa)).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
 rule_i(0,datastore(1,'CS_CONNECT','First')).
 rule_i(0,datastore(1,'DBMS_PORT','')).
@@ -96,13 +96,17 @@ rule_i(0,parmio([ [ 'Gxm2rootcol',out ] ])).
  
  
  
-attri_i('Gxm1sidebaritems',[ 'Gxm1sidebaritems',o('GeneXusUnanimo\SidebarItems.SidebarItem'),0,0,'',0,'Gxm1sidebaritems','',6 ]).
-attri_i('Gxm2rootcol',[ 'Gxm2rootcol',o(objectcollection('GeneXusUnanimo\SidebarItems.SidebarItem')),0,0,'',0,'Gxm2rootcol','',5 ]).
+attri_i('GXV1',[ 'GXV1',int,8,0,'',0,'','',9 ]).
+attri_i('Gxm1sidebaritems',[ 'Gxm1sidebaritems',o('GeneXusUnanimo\SidebarItems.SidebarItem'),0,0,'',0,'Gxm1sidebaritems','',8 ]).
+attri_i('Gxm2rootcol',[ 'Gxm2rootcol',o(objectcollection('GeneXusUnanimo\SidebarItems.SidebarItem')),0,0,'',0,'Gxm2rootcol','',7 ]).
+attri_i('Wwprogramname',[ wwProgramName,o('General\UI\ProgramNames.ProgramName'),0,0,'',0,'ww Program Name','',6 ]).
+attri_i('Wwprogramnames',[ wwProgramNames,o(objectcollection('General\UI\ProgramNames.ProgramName')),0,0,'',0,'ww Program Names','',5 ]).
  
  
  
  
  
+function_i(1,'Wwprogramnames',yes,udp,o(1,'General\UI\ListPrograms'),[],4,'Wwprogramnames',[ [] ]).
  
  
  
@@ -131,8 +135,18 @@ break_i(1,rpt,0,[],[ [],[],[] ]).
  
 b_group_i(1,1,lit,0,1,0).
  
-b_line_i(1,1,1,cmd,1,[ t('',107,1,0),t('Gxm1sidebaritems',23,1,0),t(=,10,1,0),t([ 'GeneXusUnanimo\SidebarItems.SidebarItem',[ t('(',0,1,0),t(')',4,1,0) ],n ],46,1,0) ]).
-b_line_i([ 1,1 ],1,1,cmd,1,[ t('',107,1,0),t([ t('Gxm2rootcol',23,1,0),t('add(',1,1,0) ],31,1,0),t('Gxm1sidebaritems',23,1,0),t(')',4,1,0) ]).
+b_line_i(4,1,1,cmd,4,[ t('',107,4,0),t('Wwprogramnames',23,4,0),t(=,10,4,0),t('udp(',1,4,0),t('Wwprogramnames',3,4,0),t(4,3,4,0),t(')',4,4,0) ]).
+b_line_i(6,1,1,cmd,4,[ t('',107,6,0),t('GXV1',23,4,0),t(=,10,4,0),t(1,3,4,0) ]).
+b_line_i([ 6,2 ],1,1,cmd,4,[ t('',114,6,0),t('GXV1',23,4,0),t(<=,10,4,0),t([ t('Wwprogramnames',23,6,40),t('Count',3,6,0) ],29,6,0) ]).
+b_line_i([ 6,3 ],1,1,cmd,4,[ t('',107,6,0),t('Wwprogramname',23,4,0),t(=,10,4,0),t([ t('Wwprogramnames',23,4,0),t('item(',1,4,0) ],31,4,0),t('GXV1',23,4,0),t(')',4,4,0) ]).
+b_line_i([ 6,4 ],1,1,cmd,4,[ t('',107,6,0),t('Gxm1sidebaritems',23,4,0),t(=,10,4,0),t([ 'GeneXusUnanimo\SidebarItems.SidebarItem',[ t('(',0,6,0),t(')',4,6,0) ],n ],46,4,0) ]).
+b_line_i([ 6,5 ],1,1,cmd,4,[ t('',107,6,0),t([ t('Gxm2rootcol',23,6,0),t('add(',1,6,0) ],31,6,0),t('Gxm1sidebaritems',23,4,0),t(')',4,4,0) ]).
+b_line_i(9,1,1,cmd,7,[ t('',107,9,0),t([ t('Gxm1sidebaritems',23,7,0),t('Id',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Name',3,7,0) ],29,7,0) ]).
+b_line_i(10,1,1,cmd,7,[ t('',107,10,0),t([ t('Gxm1sidebaritems',23,7,0),t('Title',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Description',3,7,0) ],29,7,0) ]).
+b_line_i(11,1,1,cmd,7,[ t('',107,11,0),t([ t('Gxm1sidebaritems',23,7,0),t('Target',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Link',3,7,0) ],29,7,0) ]).
+b_line_i(12,1,1,cmd,7,[ t('',107,12,0),t([ t('Gxm1sidebaritems',23,7,0),t('Hassubitems',3,7,0) ],29,7,0),t(=,10,7,0),t('FALSE',41,7,0) ]).
+b_line_i([ 13,1 ],1,1,cmd,7,[ t('',107,13,0),t('GXV1',23,7,0),t(=,10,7,0),t('GXV1',23,7,0),t(+,5,7,0),t(1,3,7,0) ]).
+b_line_i([ 13,2 ],1,1,cmd,7,[ t('',115,13,0) ]).
  
  
  
@@ -177,6 +191,26 @@ page_layout_i([ 66,0,6 ]).
  
  
  
+struct_dt_i([ 26,60,0 ],name,'General\UI\ProgramNames').
+struct_dt_i([ 26,60,0 ],namespace,'TravelAgency_Capa202309').
+struct_dt_i([ 26,60,0 ],'ObjName','ProgramNames').
+struct_dt_i([ 26,60,0 ],'ObjDesc','Program Names').
+struct_dt_i([ 26,60,0 ],'ExternalName','ProgramNames').
+struct_dt_i([ 26,60,0 ],'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_i([ 26,60,0 ],'JsonInputFormat','JsonInputWrapped').
+struct_dt_i([ 26,60,0 ],collection,'True').
+struct_dt_i([ 26,60,0 ],datatype,[ 26,60,90 ]).
+struct_dt_i([ 26,60,0 ],'CollectionItemName','ProgramName').
+struct_dt_i([ 26,60,0 ],'XmlName','').
+struct_dt_i([ 26,60,0 ],'XmlCollectionItemName','').
+struct_dt_i([ 26,60,0 ],'XmlNamespace','').
+struct_dt_i([ 26,60,0 ],'CollectionSerialization',idXmlCollectionWrapped).
+struct_dt_i([ 26,60,0 ],'XmlInclude',idXmlIncludeAlways).
+struct_dt_i([ 26,60,0 ],'JsonName','').
+struct_dt_i([ 26,60,0 ],'JsonInclude',idJsonNoProperty).
+struct_dt_i([ 26,60,0 ],'JsonCollectionSerialization',idXmlCollectionWrapped).
+struct_dt_i([ 26,60,90 ],name,'ProgramName').
+struct_dt_i([ 26,60,90 ],namespace,'TravelAgency_Capa202309.ProgramNames').
 struct_dt_i([ 26,57,0 ],name,'GeneXusUnanimo\SidebarItems').
 struct_dt_i([ 26,57,0 ],namespace,'GeneXusUnanimo').
 struct_dt_i([ 26,57,0 ],'ObjName','SidebarItems').
@@ -202,15 +236,69 @@ struct_dt_i([ 26,57,84 ],name,'SubItem').
 struct_dt_i([ 26,57,84 ],namespace,'GeneXusUnanimo.SidebarItems.SidebarItem').
 struct_dt_i([ 26,57,85 ],name,'SubSubItem').
 struct_dt_i([ 26,57,85 ],namespace,'GeneXusUnanimo.SidebarItems.SidebarItem.SubItem').
+struct_dt_i([ 26,60,0 ],fullname,'General\UI\ProgramNames').
+struct_dt_i([ 26,60,90 ],fullname,'General\UI\ProgramNames.ProgramName').
 struct_dt_i([ 26,57,0 ],fullname,'GeneXusUnanimo\SidebarItems').
 struct_dt_i([ 26,57,83 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem').
 struct_dt_i([ 26,57,84 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem.SubItem').
 struct_dt_i([ 26,57,85 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem.SubItem.SubSubItem').
+struct_dt_i([ 26,60,0 ],camelname,'General\ui\programnames').
+struct_dt_i([ 26,60,90 ],camelname,'Programname').
 struct_dt_i([ 26,57,0 ],camelname,'Genexusunanimo\sidebaritems').
 struct_dt_i([ 26,57,83 ],camelname,'Sidebaritem').
 struct_dt_i([ 26,57,84 ],camelname,'Subitem').
 struct_dt_i([ 26,57,85 ],camelname,'Subsubitem').
  
+struct_dt_elem_i([ 26,60,90 ],1,name,'Name').
+struct_dt_elem_i([ 26,60,90 ],1,camelname,'Name').
+struct_dt_elem_i([ 26,60,90 ],1,basedon,51).
+struct_dt_elem_i([ 26,60,90 ],1,length,256).
+struct_dt_elem_i([ 26,60,90 ],1,decimals,0).
+struct_dt_elem_i([ 26,60,90 ],1,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,60,90 ],1,pic,'').
+struct_dt_elem_i([ 26,60,90 ],1,collection,'False').
+struct_dt_elem_i([ 26,60,90 ],1,'ExternalName','Name').
+struct_dt_elem_i([ 26,60,90 ],1,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,60,90 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,60,90 ],1,'XmlName','').
+struct_dt_elem_i([ 26,60,90 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,60,90 ],1,soaptype,'').
+struct_dt_elem_i([ 26,60,90 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,60,90 ],1,'JsonName','').
+struct_dt_elem_i([ 26,60,90 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,60,90 ],2,name,'Description').
+struct_dt_elem_i([ 26,60,90 ],2,camelname,'Description').
+struct_dt_elem_i([ 26,60,90 ],2,length,255).
+struct_dt_elem_i([ 26,60,90 ],2,decimals,0).
+struct_dt_elem_i([ 26,60,90 ],2,type,[ 13,255,0 ]).
+struct_dt_elem_i([ 26,60,90 ],2,pic,'').
+struct_dt_elem_i([ 26,60,90 ],2,collection,'False').
+struct_dt_elem_i([ 26,60,90 ],2,'ExternalName','Description').
+struct_dt_elem_i([ 26,60,90 ],2,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,60,90 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,60,90 ],2,'XmlName','').
+struct_dt_elem_i([ 26,60,90 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,60,90 ],2,soaptype,'').
+struct_dt_elem_i([ 26,60,90 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,60,90 ],2,'JsonName','').
+struct_dt_elem_i([ 26,60,90 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,60,90 ],3,name,'Link').
+struct_dt_elem_i([ 26,60,90 ],3,camelname,'Link').
+struct_dt_elem_i([ 26,60,90 ],3,basedon,8).
+struct_dt_elem_i([ 26,60,90 ],3,length,1000).
+struct_dt_elem_i([ 26,60,90 ],3,decimals,0).
+struct_dt_elem_i([ 26,60,90 ],3,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,60,90 ],3,pic,'').
+struct_dt_elem_i([ 26,60,90 ],3,collection,'False').
+struct_dt_elem_i([ 26,60,90 ],3,'ExternalName','Link').
+struct_dt_elem_i([ 26,60,90 ],3,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,60,90 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,60,90 ],3,'XmlName','').
+struct_dt_elem_i([ 26,60,90 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,60,90 ],3,soaptype,'').
+struct_dt_elem_i([ 26,60,90 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,60,90 ],3,'JsonName','').
+struct_dt_elem_i([ 26,60,90 ],3,'JsonInclude',idJsonEmpty).
 struct_dt_elem_i([ 26,57,83 ],1,name,'Id').
 struct_dt_elem_i([ 26,57,83 ],1,camelname,id).
 struct_dt_elem_i([ 26,57,83 ],1,basedon,91).
@@ -467,8 +555,10 @@ struct_dt_elem_i([ 26,57,83 ],7,'JsonInclude',idJsonEmpty).
  
  
  
+pgm_parm_i(proc,14,'GENERAL\UI\LISTPROGRAMS',[ [ o(objectcollection('General\UI\ProgramNames.ProgramName')),0,0,0 ] ],[ [ 'ProgramNames',out,[] ] ]).
  
 pgm_callprotocol_i(mnproc,1,'GENERAL\UI\SIDEBARITEMSDP','INTERNAL','').
+pgm_callprotocol_i(proc,14,'GENERAL\UI\LISTPROGRAMS','INTERNAL','Unsecure').
  
  
  

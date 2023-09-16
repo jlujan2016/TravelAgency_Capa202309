@@ -2,6 +2,14 @@ category
 country
 attraction
 customer
+countrycitywc
+countrygeneral
+wwcountry
+viewcountry
+customergeneral
+wwcustomer
+viewcustomer
+general\security\notauthorized
 gx0051
 gx0040
 gx0030

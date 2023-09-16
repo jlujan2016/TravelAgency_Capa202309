@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\customergeneral.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\customergeneral.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\refint\customergeneral.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\customergeneral.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\customergeneral\obj\Release\net6.0\ref\customergeneral.dll

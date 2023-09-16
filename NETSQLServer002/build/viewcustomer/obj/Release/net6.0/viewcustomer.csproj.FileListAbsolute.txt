@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\viewcustomer.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\viewcustomer.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\refint\viewcustomer.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\viewcustomer.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcustomer\obj\Release\net6.0\ref\viewcustomer.dll

@@ -3,6 +3,7 @@ current_obj_i(2,trn,1).
 current_guid('d4eb15c0-9fca-4b47-ac66-a7c4ae718b9e').
  
  
+called_tree_i(0,1,1,13).
  
  
  
@@ -26,7 +27,7 @@ current_guid('d4eb15c0-9fca-4b47-ac66-a7c4ae718b9e').
 ij_object_dependency(customer,[],[],[],1).
  
  
-obj_parms_i([],[]).
+obj_parms_i([ 'string aP0_Gx_mode','short aP1_CustomerId' ],[ [ 'Mode',in ],[ 'Customerid',in ] ]).
  
  
  

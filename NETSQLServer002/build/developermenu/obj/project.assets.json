@@ -2535,6 +2535,42 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "countrycitywc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/countrycitywc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/countrycitywc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "countrygeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/countrygeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/countrygeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "customer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2548,6 +2584,42 @@
         },
         "runtime": {
           "bin/placeholder/customer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "customergeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/customergeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/customergeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "general.security.notauthorized/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/general.security.notauthorized.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/general.security.notauthorized.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2691,6 +2763,78 @@
         },
         "runtime": {
           "bin/placeholder/gx0051.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewcountry/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewcountry.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewcountry.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewcustomer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewcustomer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewcustomer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwcountry/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwcountry.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwcountry.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwcustomer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwcustomer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwcustomer.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -8045,10 +8189,30 @@
       "path": "../country/country.csproj",
       "msbuildProject": "../country/country.csproj"
     },
+    "countrycitywc/1.0.0": {
+      "type": "project",
+      "path": "../countrycitywc/countrycitywc.csproj",
+      "msbuildProject": "../countrycitywc/countrycitywc.csproj"
+    },
+    "countrygeneral/1.0.0": {
+      "type": "project",
+      "path": "../countrygeneral/countrygeneral.csproj",
+      "msbuildProject": "../countrygeneral/countrygeneral.csproj"
+    },
     "customer/1.0.0": {
       "type": "project",
       "path": "../customer/customer.csproj",
       "msbuildProject": "../customer/customer.csproj"
+    },
+    "customergeneral/1.0.0": {
+      "type": "project",
+      "path": "../customergeneral/customergeneral.csproj",
+      "msbuildProject": "../customergeneral/customergeneral.csproj"
+    },
+    "general.security.notauthorized/1.0.0": {
+      "type": "project",
+      "path": "../general.security.notauthorized/general.security.notauthorized.csproj",
+      "msbuildProject": "../general.security.notauthorized/general.security.notauthorized.csproj"
     },
     "general.ui.masterprompt/1.0.0": {
       "type": "project",
@@ -8089,6 +8253,26 @@
       "type": "project",
       "path": "../gx0051/gx0051.csproj",
       "msbuildProject": "../gx0051/gx0051.csproj"
+    },
+    "viewcountry/1.0.0": {
+      "type": "project",
+      "path": "../viewcountry/viewcountry.csproj",
+      "msbuildProject": "../viewcountry/viewcountry.csproj"
+    },
+    "viewcustomer/1.0.0": {
+      "type": "project",
+      "path": "../viewcustomer/viewcustomer.csproj",
+      "msbuildProject": "../viewcustomer/viewcustomer.csproj"
+    },
+    "wwcountry/1.0.0": {
+      "type": "project",
+      "path": "../wwcountry/wwcountry.csproj",
+      "msbuildProject": "../wwcountry/wwcountry.csproj"
+    },
+    "wwcustomer/1.0.0": {
+      "type": "project",
+      "path": "../wwcustomer/wwcustomer.csproj",
+      "msbuildProject": "../wwcustomer/wwcustomer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8099,14 +8283,22 @@
       "attraction >= 1.0.0",
       "category >= 1.0.0",
       "country >= 1.0.0",
+      "countrycitywc >= 1.0.0",
+      "countrygeneral >= 1.0.0",
       "customer >= 1.0.0",
+      "customergeneral >= 1.0.0",
+      "general.security.notauthorized >= 1.0.0",
       "general.ui.masterprompt >= 1.0.0",
       "general.ui.masterunanimosidebar >= 1.0.0",
       "gx0010 >= 1.0.0",
       "gx0020 >= 1.0.0",
       "gx0030 >= 1.0.0",
       "gx0040 >= 1.0.0",
-      "gx0051 >= 1.0.0"
+      "gx0051 >= 1.0.0",
+      "viewcountry >= 1.0.0",
+      "viewcustomer >= 1.0.0",
+      "wwcountry >= 1.0.0",
+      "wwcustomer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8142,11 +8334,23 @@
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\category\\category.csproj"
             },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\countrycitywc\\countrycitywc.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\countrycitywc\\countrycitywc.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\countrygeneral\\countrygeneral.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\countrygeneral\\countrygeneral.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\country\\country.csproj"
             },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customergeneral\\customergeneral.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customergeneral\\customergeneral.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customer\\customer.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customer\\customer.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj"
@@ -8171,6 +8375,18 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcountry\\viewcountry.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcountry\\viewcountry.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcustomer\\viewcustomer.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewcustomer\\viewcustomer.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcountry\\wwcountry.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcountry\\wwcountry.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcustomer\\wwcustomer.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\wwcustomer\\wwcustomer.csproj"
             }
           }
         }

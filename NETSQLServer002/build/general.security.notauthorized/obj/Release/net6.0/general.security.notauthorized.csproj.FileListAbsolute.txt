@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.security.notauthorized.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\general.security.notauthorized.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\refint\general.security.notauthorized.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\general.security.notauthorized.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\general.security.notauthorized\obj\Release\net6.0\ref\general.security.notauthorized.dll

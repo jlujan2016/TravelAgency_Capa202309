@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\viewcountry.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\viewcountry.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\refint\viewcountry.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\viewcountry.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\viewcountry\obj\Release\net6.0\ref\viewcountry.dll

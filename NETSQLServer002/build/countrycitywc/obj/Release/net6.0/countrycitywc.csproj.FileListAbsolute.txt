@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\countrycitywc.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\countrycitywc.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\refint\countrycitywc.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\countrycitywc.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\countrycitywc\obj\Release\net6.0\ref\countrycitywc.dll

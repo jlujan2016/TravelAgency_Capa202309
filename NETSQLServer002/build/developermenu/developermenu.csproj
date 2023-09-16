@@ -18,6 +18,14 @@
 		<ProjectReference Include=".\..\country\country.csproj" />
 		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\countrycitywc\countrycitywc.csproj" />
+		<ProjectReference Include=".\..\countrygeneral\countrygeneral.csproj" />
+		<ProjectReference Include=".\..\wwcountry\wwcountry.csproj" />
+		<ProjectReference Include=".\..\viewcountry\viewcountry.csproj" />
+		<ProjectReference Include=".\..\customergeneral\customergeneral.csproj" />
+		<ProjectReference Include=".\..\wwcustomer\wwcustomer.csproj" />
+		<ProjectReference Include=".\..\viewcustomer\viewcustomer.csproj" />
+		<ProjectReference Include=".\..\general.security.notauthorized\general.security.notauthorized.csproj" />
 		<ProjectReference Include=".\..\gx0051\gx0051.csproj" />
 		<ProjectReference Include=".\..\gx0040\gx0040.csproj" />
 		<ProjectReference Include=".\..\gx0030\gx0030.csproj" />

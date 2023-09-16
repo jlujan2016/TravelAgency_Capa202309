@@ -1,7 +1,7 @@
 spec_i([ trn,3,'Country','Country',[],eng,'18_0_4-174187' ]).
  
-struct_i(3,0,[],[]).
-struct_i(5,3,[ 9,17,'GxBScreen' ],[ 17 ]).
+struct_i(3,0,[ 'Pgmname','Trncontext','Mode','Countryid','Websession' ],[]).
+struct_i(5,3,[ 'Pgmname','Trncontext',9,17,'GxBScreen' ],[ 17 ]).
  
 level_i(5,[ 5,[ [ 5,many ] ],[ 9,14 ],[],[],[],[ 9,14 ],'ICOUNTRYCITY',[ 5,[ [ [],9,9 ] ] ],[] ]).
 level_i(3,[ 3,[ [ 3,many ] ],[ 9 ],[],[],[],[ 9 ],'ICOUNTRY',[ 3,[] ],[] ]).
@@ -19,7 +19,7 @@ ta_i(5,[ [ [ 5,9 ],[ 5,14 ],[ 5,15 ] ] ]).
 ta_i(3,[ [ [ 3,9 ],[ 3,10 ],[ 3,17 ] ] ]).
  
 las_i(5,[ [ 9,14,17,'GxBScreen',15 ] ]).
-las_i(3,[ [ 9,'GxBScreen',10,17 ] ]).
+las_i(3,[ [ 'Pgmname','Trncontext','Mode','Countryid','Websession',9,'GxBScreen',10,17 ] ]).
  
 lac_i(5,[ [ 14,15 ] ]).
 lac_i(3,[ [ 9,10 ] ]).
@@ -38,6 +38,7 @@ pos_i(15,[ 1,2,5 ]).
  
 repeat_i(5,[ 1,2,[],[] ]).
  
+default_i(e('Pgmname',2,2,'"Country"')).
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
 rule_i(0,datastore(1,'LOCK_RETRY','10')).
@@ -154,44 +155,56 @@ rule_i(0,prop('ObjDesc','Country')).
 rule_i(0,prop('ObjName','Country')).
 rule_i(5,prompt([ 5,[ [ [],9,9 ],[ [],14,14 ] ],[],[],[ t(o(13,'Gx0051'),28),t(9,2),t(',',7),t(14,2) ],[ 9 ],n,[] ])).
 rule_i(5,rule([ a(23,[ [ 9,14 ],[ t(o(13,'Gx0051'),28),t(9,2),t(',',7),t(14,2) ] ]) ],[],[],[ 9,14 ])).
-rule_i(3,prompt([ 3,[ [ [],9,9 ] ],[],[],[ t(o(13,'Gx0030'),28),t(9,2) ],[],n,[] ])).
-rule_i(3,rule([ a(23,[ [ 9 ],[ t(o(13,'Gx0030'),28),t(9,2) ] ]) ],[],[],[ 9 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(41)).
 rule_i(0,macro(14,serial(17,[ t('1',3) ]))).
+rule_i(0,rule([ a(10,[ 'Mode','Countryid' ]) ],[],[ insert,update,delete,display ],[])).
+rule_i(0,parmio([ [ 'Mode',in ],[ 'Countryid',in ] ])).
+rule_i(3,rule([ a(3,[ t(9,2) ]) ],[],[ insert,update,delete,display ],[ 9 ])).
+rule_i(3,rule([ a(21,[ [ 9 ] ]) ],[],[ insert,update,delete,display ],[ 9 ])).
 rule_i(3,rule([ a(3,[ t(17,2) ]) ],[],[ insert,update,delete,display ],[ 17 ])).
 rule_i(5,rule([ a(3,[ t(17,2) ]) ],[],[ insert,update,delete,display ],[ 17 ])).
  
-a_i(1,3,f,[ t(17,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
-a_i(2,5,f,17,[],[ [ insert ],[ t('old(',1),t(17,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18) ] ]).
-a_i(3,5,f,14,[],[ [ insert ],[ t(17,2),t('IF',17),t(insert,1),t('AND',9),t('GxBScreen',23),t(=,10),t(1,3),t(';',18) ] ]).
-a_i(4,5,f,[ t(17,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
-a_i(5,3,t,3,[],[ [ [ [],9,9 ] ],'ICOUNTRY',[] ]).
-a_i(6,5,t,5,[],[ [ [ [],9,9 ],[ [],14,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(7,3,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(1,3,f,9,[],[ [],[ t('Countryid',23),t('IF',17),t('.NOT.',8),t('null(',1),t('Countryid',23),t(')',4),t(';',18) ] ]).
+a_i(2,3,f,[ t(9,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(3,3,f,[ t(17,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(4,5,f,17,[],[ [ insert ],[ t('old(',1),t(17,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18) ] ]).
+a_i(5,5,f,14,[],[ [ insert ],[ t(17,2),t('IF',17),t(insert,1),t('AND',9),t('GxBScreen',23),t(=,10),t(1,3),t(';',18) ] ]).
+a_i(6,5,f,[ t(17,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(7,3,t,3,[],[ [ [ [],9,9 ] ],'ICOUNTRY',[] ]).
+a_i(8,5,t,5,[],[ [ [ [],9,9 ],[ [],14,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(9,3,f,'Pgmname',[],[ [],[ t('"Country"',3) ] ]).
+a_i(10,3,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
  
-v_i(f,i,1,[]).
-v_i(f,o,1,[ t(17,2),t('Enabled',3) ]).
-v_i(f,o,2,17).
-v_i(f,i,3,17).
-v_i(f,i,3,'GxBScreen').
-v_i(f,o,3,14).
-v_i(f,i,4,[]).
-v_i(f,o,4,[ t(17,2),t('Enabled',3) ]).
-v_i(t,i,5,9).
-v_i(t,o,5,10).
-v_i(t,o,5,17).
-v_i(t,i,6,9).
-v_i(t,i,6,14).
-v_i(t,o,6,15).
+v_i(f,i,1,'Countryid').
+v_i(f,o,1,9).
 v_i(f,i,2,[]).
-v_i(f,i,7,[]).
-v_i(f,o,7,'GxBScreen').
+v_i(f,o,2,[ t(9,2),t('Enabled',3) ]).
+v_i(f,i,3,[]).
+v_i(f,o,3,[ t(17,2),t('Enabled',3) ]).
+v_i(f,o,4,17).
+v_i(f,i,5,17).
+v_i(f,i,5,'GxBScreen').
+v_i(f,o,5,14).
+v_i(f,i,6,[]).
+v_i(f,o,6,[ t(17,2),t('Enabled',3) ]).
+v_i(t,i,7,9).
+v_i(t,o,7,10).
+v_i(t,o,7,17).
+v_i(t,i,8,9).
+v_i(t,i,8,14).
+v_i(t,o,8,15).
+v_i(f,i,4,[]).
+v_i(f,i,9,[]).
+v_i(f,o,9,'Pgmname').
+v_i(f,i,10,[]).
+v_i(f,o,10,'GxBScreen').
  
-act_info_i(2,[ [ 17 ] ]).
-act_info_i(3,[ [ 14 ] ]).
+act_info_i(1,[ [ 9 ] ]).
+act_info_i(4,[ [ 17 ] ]).
+act_info_i(5,[ [ 14 ] ]).
  
-ca_i(2,17).
+ca_i(4,17).
  
 tbl_to_delete_i(5,[ 2,[ [ 5,9,9 ],[ 5,14,14 ] ],c,'IATTRACTION1',0,[ 7 ],'' ]).
 tbl_to_delete_i(3,[ 2,[ [ 3,9,9 ] ],u(5),'IATTRACTION1',0,[ 7 ],'' ]).
@@ -204,8 +217,13 @@ attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
 attri_i(17,[ 'CountryLastLine',int,4,0,'ZZZ9',0,'Country Last Line','',0 ]).
 attri_i(10,[ 'CountryName',svchar,40,0,'',0,'Country Name','',0 ]).
 attri_i(9,[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',0 ]).
-attri_i('GxBScreen',[ 'Gx_BScreen',int,1,0,'',0,'','',6 ]).
+attri_i('Pgmname',[ 'Pgmname',char,129,0,'',1,'Program name','',12 ]).
+attri_i('GxBScreen',[ 'Gx_BScreen',int,1,0,'',0,'','',11 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
+attri_i('Websession',[ 'WebSession',o(websession),4,0,'',0,'Web Session','',10 ]).
+attri_i('Trncontext',[ 'TrnContext',o('General\UI\TransactionContext'),0,0,'',0,'Trn Context','',9 ]).
+attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',8 ]).
+attri_i('Countryid',[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',7 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
 table_i(2,[ 'Attraction',[ 7,9,14 ],'Attraction','Attraction' ]).
@@ -248,8 +266,14 @@ end_i(5,0,0,[ [ [ t(9,2),t(=,10),t(9,23) ] ] ]).
  
  
  
+enum_value_i(2,71,'"INS"','Insert','"Insert"',[ none ]).
+enum_value_i(2,71,'"UPD"','Update','"Update"',[ none ]).
+enum_value_i(2,71,'"DLT"','Delete','"Delete"',[ none ]).
+enum_value_i(2,71,'"DSP"','Display','"Display"',[ none ]).
  
+enum_value_info_i(2,71,'GeneXus\TrnMode').
  
+enum_type_i(2,71,char,3,0).
  
 dom_info_i(94,[ 'Id' ]).
 dom_info_i(95,[ 'Name' ]).
@@ -257,8 +281,26 @@ dom_info_i(95,[ 'Name' ]).
  
 break_i(2,nvg,1,[],[ [],[],[] ]).
  
-b_group_i(2,1,lit,0,1,0).
+b_group_i(2,1,lit,0,1,1).
+b_group_i(2,2,lit,0,2,19).
+b_group_i(2,3,lit,0,20,0).
  
+b_line_i(1,2,1,cmd,1,[ t('',146,1,0),t('Start',3,1,7) ]).
+b_line_i(5,2,2,cmd,1,[ t('',109,5,0),t('.NOT.',8,1,5),t('udp(',1,5,23),t(o(1,'General\Security\IsAuthorized'),28,5,11),t(',',7,1,0),t('Pgmname',23,1,24),t(')',4,1,0) ]).
+b_line_i(6,2,2,cmd,1,[ t('',104,6,0),t(o(13,'General\Security\NotAuthorized'),28,1,3),t('Pgmname',23,1,17) ]).
+b_line_i(7,2,2,cmd,1,[ t('',111,7,0) ]).
+b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t([ t('Trncontext',23,9,2),t('fromxml(',1,9,14) ],31,9,2),t([ t('Websession',23,1,23),t('get(',1,1,35) ],31,9,35),t('"TrnContext"',3,9,40),t(')',4,1,53),t(')',4,1,54) ]).
+b_line_i(11,2,2,cmd,1,[ t('',109,11,0),t('Mode',23,1,5),t(=,10,1,11),t([ 71,'Delete' ],44,11,13) ]).
+b_line_i(12,2,2,cmd,1,[ t('',107,12,0),t([ t('Btn_enter',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('"Delete"',3,1,0) ]).
+b_line_i(13,2,2,cmd,1,[ t('',107,13,0),t([ t('Btn_enter',3,1,0),t('Tooltiptext',3,1,0) ],29,1,0),t(=,10,1,0),t('"Delete"',3,1,0) ]).
+b_line_i(14,2,2,cmd,1,[ t('',111,14,0) ]).
+b_line_i(17,2,2,cmd,1,[ t('',147,17,0) ]).
+b_line_i(19,2,2,cmd,1,[ t('',146,19,0),t('After Trn',3,19,7) ]).
+b_line_i(23,2,3,cmd,1,[ t('',109,23,0),t('(',0,1,5),t('Mode',23,1,6),t(=,10,1,12),t([ 71,'Delete' ],44,23,14),t('.AND.',9,1,29),t('.NOT.',8,1,35),t([ t('Trncontext',23,23,41),t('Callerondelete',3,23,53) ],29,23,53),t(')',4,1,67) ]).
+b_line_i(24,2,3,cmd,1,[ t('',104,24,0),t(o(13,'WWCountry'),28,1,3) ]).
+b_line_i(25,2,3,cmd,1,[ t('',111,25,0) ]).
+b_line_i(27,2,3,cmd,1,[ t('',118,27,0) ]).
+b_line_i(30,2,3,cmd,1,[ t('',147,30,0) ]).
  
 sf_break_i(53,5).
  
@@ -1212,6 +1254,7 @@ tbl_att_prop_i(2,5,9,'AllowNulls',n).
 tbl_att_prop_i(2,5,14,'AllowNulls',n).
 tbl_att_prop_i(2,5,15,'AllowNulls',n).
  
+var_prop_i(2,'Countryid',idBasedOn,'',v).
  
  
  
@@ -1219,24 +1262,159 @@ tbl_att_prop_i(2,5,15,'AllowNulls',n).
 trn_level_i(3,[ [ 9,10,17 ],'Country','Country','Country','',10 ]).
 trn_level_i(5,[ [ 14,15 ],'City','City','City','',15 ]).
  
+struct_dt_i([ 26,61,0 ],name,'General\UI\TransactionContext').
+struct_dt_i([ 26,61,0 ],namespace,'TravelAgency_Capa202309').
+struct_dt_i([ 26,61,0 ],'ObjName','TransactionContext').
+struct_dt_i([ 26,61,0 ],'ObjDesc','Transaction Context').
+struct_dt_i([ 26,61,0 ],'ExternalName','TransactionContext').
+struct_dt_i([ 26,61,0 ],'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_i([ 26,61,0 ],'JsonInputFormat','JsonInputWrapped').
+struct_dt_i([ 26,61,0 ],'JsonInclude',idJsonNoProperty).
+struct_dt_i([ 26,61,92 ],name,'Attribute').
+struct_dt_i([ 26,61,92 ],namespace,'TravelAgency_Capa202309.TransactionContext').
+struct_dt_i([ 26,61,0 ],fullname,'General\UI\TransactionContext').
+struct_dt_i([ 26,61,92 ],fullname,'General\UI\TransactionContext.Attribute').
+ 
+struct_dt_elem_i([ 26,61,0 ],1,name,'Callerobject').
+struct_dt_elem_i([ 26,61,0 ],1,camelname,'CallerObject').
+struct_dt_elem_i([ 26,61,0 ],1,basedon,51).
+struct_dt_elem_i([ 26,61,0 ],1,length,256).
+struct_dt_elem_i([ 26,61,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],1,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,61,0 ],1,pic,'').
+struct_dt_elem_i([ 26,61,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],1,'ExternalName','CallerObject').
+struct_dt_elem_i([ 26,61,0 ],1,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],2,name,'Callerondelete').
+struct_dt_elem_i([ 26,61,0 ],2,camelname,'CallerOnDelete').
+struct_dt_elem_i([ 26,61,0 ],2,length,4).
+struct_dt_elem_i([ 26,61,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],2,type,[ 15,4,0 ]).
+struct_dt_elem_i([ 26,61,0 ],2,pic,'').
+struct_dt_elem_i([ 26,61,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],2,'ExternalName','CallerOnDelete').
+struct_dt_elem_i([ 26,61,0 ],2,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],3,name,'Callerurl').
+struct_dt_elem_i([ 26,61,0 ],3,camelname,'CallerURL').
+struct_dt_elem_i([ 26,61,0 ],3,basedon,8).
+struct_dt_elem_i([ 26,61,0 ],3,length,1000).
+struct_dt_elem_i([ 26,61,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],3,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,61,0 ],3,pic,'').
+struct_dt_elem_i([ 26,61,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],3,'ExternalName','CallerURL').
+struct_dt_elem_i([ 26,61,0 ],3,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],4,name,'Transactionname').
+struct_dt_elem_i([ 26,61,0 ],4,camelname,'TransactionName').
+struct_dt_elem_i([ 26,61,0 ],4,basedon,51).
+struct_dt_elem_i([ 26,61,0 ],4,length,256).
+struct_dt_elem_i([ 26,61,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,61,0 ],4,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,61,0 ],4,pic,'').
+struct_dt_elem_i([ 26,61,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,61,0 ],4,'ExternalName','TransactionName').
+struct_dt_elem_i([ 26,61,0 ],4,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,61,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],5,name,'Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,camelname,'Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,type,[ [ 26,61,92 ],0,0 ]).
+struct_dt_elem_i([ 26,61,0 ],5,pic,'').
+struct_dt_elem_i([ 26,61,0 ],5,collection,'True').
+struct_dt_elem_i([ 26,61,0 ],5,'ObjName','Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,'ObjDesc','Attributes').
+struct_dt_elem_i([ 26,61,0 ],5,'CollectionItemName','Attribute').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlCollectionItemName','').
+struct_dt_elem_i([ 26,61,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,0 ],5,'CollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,61,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,61,0 ],5,'JsonInclude',idJsonNoProperty).
+struct_dt_elem_i([ 26,61,0 ],5,'JsonCollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,61,92 ],1,name,'Attributename').
+struct_dt_elem_i([ 26,61,92 ],1,camelname,'AttributeName').
+struct_dt_elem_i([ 26,61,92 ],1,length,128).
+struct_dt_elem_i([ 26,61,92 ],1,decimals,0).
+struct_dt_elem_i([ 26,61,92 ],1,type,[ 13,128,0 ]).
+struct_dt_elem_i([ 26,61,92 ],1,pic,'').
+struct_dt_elem_i([ 26,61,92 ],1,collection,'False').
+struct_dt_elem_i([ 26,61,92 ],1,'ExternalName','AttributeName').
+struct_dt_elem_i([ 26,61,92 ],1,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlName','').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,92 ],1,soaptype,'').
+struct_dt_elem_i([ 26,61,92 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,92 ],1,'JsonName','').
+struct_dt_elem_i([ 26,61,92 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,92 ],2,name,'Attributevalue').
+struct_dt_elem_i([ 26,61,92 ],2,camelname,'AttributeValue').
+struct_dt_elem_i([ 26,61,92 ],2,length,1000).
+struct_dt_elem_i([ 26,61,92 ],2,decimals,0).
+struct_dt_elem_i([ 26,61,92 ],2,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,61,92 ],2,pic,'').
+struct_dt_elem_i([ 26,61,92 ],2,collection,'False').
+struct_dt_elem_i([ 26,61,92 ],2,'ExternalName','AttributeValue').
+struct_dt_elem_i([ 26,61,92 ],2,'ExternalNamespace','TravelAgency_Capa202309').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlName','').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,92 ],2,soaptype,'').
+struct_dt_elem_i([ 26,61,92 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,92 ],2,'JsonName','').
+struct_dt_elem_i([ 26,61,92 ],2,'JsonInclude',idJsonEmpty).
  
  
  
  
  
+sub_info_i(146,'Start',1,17,[ [ 'Pgmname','Websession','Mode' ],[ 'Trncontext',[ t('Btn_enter',3),t('Caption',3) ],[ t('Btn_enter',3),t('Tooltiptext',3) ] ] ]).
+sub_info_i(146,'After Trn',19,30,[ [ 'Mode','Trncontext' ],[] ]).
  
- 
-pgm_parm_i(web,5,'GX0030',[ [ int,4,0,0 ] ],[ [ pCountryId,out,[] ] ]).
 pgm_parm_i(web,7,'GX0051',[ [ int,4,0,0 ],[ int,4,0,0 ] ],[ [ pCountryId,in,[] ],[ pCityId,out,[] ] ]).
+pgm_parm_i(web,13,'WWCOUNTRY',[],[]).
+pgm_parm_i(web,8,'GENERAL\SECURITY\NOTAUTHORIZED',[ [ svchar,256,0,0 ] ],[ [ 'GxObject',in,[] ] ]).
+pgm_parm_i(proc,13,'GENERAL\SECURITY\ISAUTHORIZED',[ [ svchar,256,0,0 ],[ boolean,4,0,0 ] ],[ [ 'GxObject',in,[] ],[ 'Authorized',out,[] ] ]).
  
 pgm_callprotocol_i(trn,3,'COUNTRY','INTERNAL','Unsecure').
-pgm_callprotocol_i(web,5,'GX0030','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,7,'GX0051','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,13,'WWCOUNTRY','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,8,'GENERAL\SECURITY\NOTAUTHORIZED','INTERNAL','Unsecure').
+pgm_callprotocol_i(proc,13,'GENERAL\SECURITY\ISAUTHORIZED','INTERNAL','Unsecure').
  
  
  
  
  
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').
  
  
  
