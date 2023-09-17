@@ -46,7 +46,7 @@ Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "attractiongeneral", "attracti
 EndProject
 Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "developermenu", "developermenu\developermenu.csproj", "{00000000-0000-0000-0000-000000000000}"
 EndProject
-Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{ab5dd014-bc01-49b9-b3dd-894e0c421907}"
+Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{88e92670-976d-493b-a588-c2ff7bd7f96e}"
 EndProject
 Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GxWebStartup", "GxWebStartup\GxWebStartup.csproj", "E73F5F30-1979-4AE2-8204-400788D5B7D5"
 EndProject
@@ -148,10 +148,10 @@ Global
 	{00000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	{00000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	{00000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
-	{ab5dd014-bc01-49b9-b3dd-894e0c421907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-	{ab5dd014-bc01-49b9-b3dd-894e0c421907}.Debug|Any CPU.Build.0 = Debug|Any CPU
-	{ab5dd014-bc01-49b9-b3dd-894e0c421907}.Release|Any CPU.ActiveCfg = Release|Any CPU
-	{ab5dd014-bc01-49b9-b3dd-894e0c421907}.Release|Any CPU.Build.0 = Release|Any CPU
+	{88e92670-976d-493b-a588-c2ff7bd7f96e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+	{88e92670-976d-493b-a588-c2ff7bd7f96e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	{88e92670-976d-493b-a588-c2ff7bd7f96e}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	{88e92670-976d-493b-a588-c2ff7bd7f96e}.Release|Any CPU.Build.0 = Release|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Debug|Any CPU.Build.0 = Debug|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Release|Any CPU.ActiveCfg = Release|Any CPU
