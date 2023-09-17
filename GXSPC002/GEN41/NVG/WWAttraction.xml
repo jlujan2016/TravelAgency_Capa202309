@@ -10,20 +10,7 @@
 <ObjPgmName>WWAttraction</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0038</MsgCode>
-<Message>
-<Token>There is no index for order </Token>
-<Attribute>
-<AttriId>8</AttriId>
-<AttriName>AttractionName</AttriName>
-<Description>Attraction Name</Description></Attribute>
-<Token>; poor performance may be noticed</Token>
-<Token> in grid '</Token>
-<Token>Grid</Token>
-<Token>'</Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>41</GenId>
@@ -63,12 +50,43 @@
 <TableId>2</TableId>
 <TableName>Attraction</TableName>
 <Description>Attraction</Description></Table></BaseTable>
+<ConditionalOrders>
+<ConditionalOrder>
 <Order>
 <Attribute>
 <AttriId>8</AttriId>
 <AttriName>AttractionName</AttriName>
 <Description>Attraction Name</Description></Attribute></Order>
+<Condition>
+<Variable>
+<VarId>Orderedby</VarId>
+<VarName>&amp;OrderedBy</VarName></Variable>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>1</Token></Condition></ConditionalOrder>
+<ConditionalOrder>
+<Order>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute></Order>
+<Condition>
+<Variable>
+<VarId>Orderedby</VarId>
+<VarName>&amp;OrderedBy</VarName></Variable>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>2</Token></Condition></ConditionalOrder>
+<ConditionalOrder>
+<Order>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AttractionId</AttriName>
+<Description>Attraction Id</Description></Attribute></Order>
 <Condition></Condition>
+<IndexName>IATTRACTION</IndexName></ConditionalOrder></ConditionalOrders>
 <LevelOptions></LevelOptions>
 <Optimizations>
 <Optimization>
