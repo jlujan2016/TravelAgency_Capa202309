@@ -1267,7 +1267,7 @@ namespace GeneXus.Programs {
             CallWebObject(formatLink("general.security.notauthorized.aspx", new object[] {UrlEncode(StringUtil.RTrim(AV17Pgmname))}, new string[] {"GxObject"}) );
             context.wjLocDisableFrm = 1;
          }
-         subGrid_Rows = 10;
+         subGrid_Rows = 1;
          GxWebStd.gx_hidden_field( context, "GRID_Rows", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGrid_Rows), 6, 0, ".", "")));
          AV12Update = "Update";
          AssignAttri("", false, edtavUpdate_Internalname, AV12Update);
@@ -1388,7 +1388,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391620222114", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2023916217894", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1404,7 +1404,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wwattraction.js", "?202391620222115", false, true);
+         context.AddJavascriptSource("wwattraction.js", "?2023916217895", false, true);
          /* End function include_jscripts */
       }
 
@@ -1835,7 +1835,7 @@ namespace GeneXus.Programs {
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
          Form.Caption = "Attractions";
-         subGrid_Rows = 10;
+         subGrid_Rows = 1;
          context.GX_msglist.DisplayMode = 1;
          if ( context.isSpaRequest( ) )
          {

@@ -258,7 +258,7 @@ b_line_i(1,2,1,cmd,1,[ t('',146,1,0),t('Start',3,1,7) ]).
 b_line_i(3,2,2,cmd,1,[ t('',109,3,0),t('.NOT.',8,1,5),t('udp(',1,3,23),t(o(1,'General\Security\IsAuthorized'),28,3,11),t(',',7,1,0),t('Pgmname',23,1,24),t(')',4,1,0) ]).
 b_line_i(4,2,2,cmd,1,[ t('',104,4,0),t(o(13,'General\Security\NotAuthorized'),28,1,3),t('Pgmname',23,1,17) ]).
 b_line_i(5,2,2,cmd,1,[ t('',111,5,0) ]).
-b_line_i(7,2,2,cmd,1,[ t('',107,7,0),t([ t('Grid',3,1,0),t('Rows',3,1,0) ],29,1,0),t(=,10,1,0),t('10',3,1,0) ]).
+b_line_i(7,2,2,cmd,1,[ t('',107,7,0),t([ t('Grid',3,1,0),t('Rows',3,1,0) ],29,1,0),t(=,10,1,0),t('1',3,1,0) ]).
 b_line_i(8,2,2,cmd,1,[ t('',107,8,0),t('Update',23,1,0),t(=,10,1,0),t('"Update"',3,1,0) ]).
 b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t('Delete',23,1,0),t(=,10,1,0),t('"Delete"',3,1,0) ]).
 b_line_i(10,2,2,cmd,1,[ t('',107,10,0),t('Orderedby',23,1,0),t(=,10,1,0),t('1',3,1,0) ]).
@@ -621,7 +621,7 @@ html_comp_i(25,'Autoresize',-1,d,[ bool ]).
 html_comp_i(25,'Gxwidth',measure(0,px),d,[ measure ]).
 html_comp_i(25,'Gxheight',measure(0,px),d,[ measure ]).
 html_comp_i(25,'Maxcols',1,d,[ num ]).
-html_comp_i(25,'Maxrows',10,v,[ num ]).
+html_comp_i(25,'Maxrows',1,v,[ num ]).
 html_comp_i(25,'Header','',d,[ str ]).
 html_comp_i(25,'Title','',d,[ str ]).
 html_comp_i(25,'Infinitescrolling',0,v,[ num ]).
