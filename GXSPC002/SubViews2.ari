@@ -1,10 +1,12 @@
  
+subtype_view_i(2,504,7,1,[ [ 24 ],[ 24,23,9,14 ],[ [ 24,[ 20 ] ],[ 23,[ 21 ] ] ],[ [ 24,20 ] ] ]).
+subtype_view_i(2,503,7,2,[ [ 25 ],[ 25,26,9,14 ],[ [ 25,[ 20 ] ],[ 26,[ 21 ] ] ],[ [ 25,20 ] ] ]).
  
 subtype_views_enabled_i(2,yes,'18_0_4-173011').
  
  
  
  
-subtype_view_last_no_i(2,501).
+subtype_view_last_no_i(2,504).
  
-subtype_view_ts_i(2,'2023-09-19 17:04:42').
+subtype_view_ts_i(2,'2023-09-19 20:11:32').

@@ -2,40 +2,40 @@ spec_i([ web,19,'Selection List Flight','Gx0060',0,eng,'18_0_4-174187' ]).
  
 struct_i(2,1,[ 'Advanced_label_template' ],[]).
  
-level_i(2,[ 6,[ [ 6,many ] ],[],[],[ [ [ 6 ],[ 23,22,19 ] ] ],[ [ [ 6 ],[] ] ],[ 19 ],'IFLIGHT',[],[] ]).
+level_i(2,[ 6,[ [ 6,many ] ],[],[],[ [ [ 6 ],[ 24,25,19 ] ] ],[ [ [ 6 ],[] ] ],[ 19 ],'IFLIGHT',[],[] ]).
  
 tw_i(2,[]).
  
 lwi_i(2,[ [] ]).
  
-cond_constraint_i(2,[ [ t(22,2),t(>=,10),t('Cflightdepartureaiportid',23) ],[ 22 ],[ t('.NOT.',8),t('null(',1),t('Cflightdepartureaiportid',23),t(')',4) ],[] ]).
-cond_constraint_i(2,[ [ t(23,2),t('.LIKE.',10),t('Cflightdepartureairportname',23) ],[ 23 ],[ t('.NOT.',8),t('null(',1),t('Cflightdepartureairportname',23),t(')',4) ],[] ]).
+cond_constraint_i(2,[ [ t(25,2),t(>=,10),t('Cflightarrivalairportid',23) ],[ 25 ],[ t('.NOT.',8),t('null(',1),t('Cflightarrivalairportid',23),t(')',4) ],[] ]).
+cond_constraint_i(2,[ [ t(24,2),t(>=,10),t('Cflightdepartureairportid',23) ],[ 24 ],[ t('.NOT.',8),t('null(',1),t('Cflightdepartureairportid',23),t(')',4) ],[] ]).
  
  
 level_option_i(2,server_paging,[ y,[] ]).
  
-ta_i(2,[ [ [ 6,23 ],[ 6,22 ],[ 6,19 ] ] ]).
+ta_i(2,[ [ [ 6,24 ],[ 6,25 ],[ 6,19 ] ] ]).
  
-las_i(2,[ [ 'Pflightid','Cflightid','Cflightdepartureaiportid','Cflightdepartureairportname',23,22,19 ] ]).
+las_i(2,[ [ 'Pflightid','Cflightid','Cflightarrivalairportid','Cflightdepartureairportid',24,25,19 ] ]).
  
-lac_i(2,[ [ 'Cflightid','Cflightdepartureaiportid','Cflightdepartureairportname' ] ]).
+lac_i(2,[ [ 'Cflightid','Cflightarrivalairportid','Cflightdepartureairportid' ] ]).
  
  
 lits_i('Flight Id',5,10).
-lits_i('Flight Departure Aiport Id',5,10).
-lits_i('Flight Departure Airport Name',5,10).
+lits_i('Flight Arrival Airport Id',5,10).
+lits_i('Flight Departure Airport Id',5,10).
  
-cls_i([ 0,0 ],[ 5,1074 ]).
+cls_i([ 0,0 ],[ 5,1038 ]).
  
 pos_i('Cflightid',[ 0,0,0 ]).
-pos_i('Cflightdepartureaiportid',[ 0,0,0 ]).
-pos_i('Cflightdepartureairportname',[ 0,0,0 ]).
+pos_i('Cflightarrivalairportid',[ 0,0,0 ]).
+pos_i('Cflightdepartureairportid',[ 0,0,0 ]).
 pos_i('Linkselection',[ 1,2,0 ]).
 pos_i(19,[ 1,2,1025 ]).
-pos_i(22,[ 1,2,1030 ]).
-pos_i(23,[ 1,2,1035 ]).
+pos_i(25,[ 1,2,1030 ]).
+pos_i(24,[ 1,2,1035 ]).
  
-repeat_i(2,[ 1,2,[ 'Linkselection',19,22,23 ],[] ]).
+repeat_i(2,[ 1,2,[ 'Linkselection',19,25,24 ],[] ]).
  
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
@@ -139,8 +139,8 @@ rule_i(0,rule([ a(22,[ '''Toggle''','''Toggle''','' ]) ],[],[],[])).
 a_i(1,2,t,6,[],[ [],'IFLIGHT',[] ]).
  
 v_i(t,i,1,[]).
-v_i(t,o,1,23).
-v_i(t,o,1,22).
+v_i(t,o,1,24).
+v_i(t,o,1,25).
 v_i(t,o,1,19).
  
  
@@ -148,18 +148,18 @@ v_i(t,o,1,19).
  
  
  
-attri_i(23,[ 'FlightDepartureAirportName',svchar,40,0,'',0,'Flight Departure Airport Name','',0 ]).
-attri_i(22,[ 'FlightDepartureAiportId',int,4,0,'ZZZ9',0,'Flight Departure Aiport Id','',0 ]).
+attri_i(24,[ 'FlightDepartureAirportId',int,4,0,'ZZZ9',0,'Flight Departure Airport Id','',0 ]).
+attri_i(25,[ 'FlightArrivalAirportId',int,4,0,'ZZZ9',0,'Flight Arrival Airport Id','',0 ]).
 attri_i(19,[ 'FlightId',int,4,0,'ZZZ9',0,'Flight Id','',0 ]).
-attri_i('Linkselection_GXI',[ 'Linkselection_GXI',svchar,2048,0,'',0,'',[],11 ]).
+attri_i('Linkselection_GXI',[ 'Linkselection_GXI',svchar,2048,0,'',0,'',[],14 ]).
 attri_i('Advanced_label_template',[ 'ADVANCED_LABEL_TEMPLATE',char,20,0,'',0,'ADVANCED_LABEL_TEMPLATE','',8 ]).
 attri_i('Pflightid',[ pFlightId,int,4,0,'ZZZ9',0,'Flight Id','',7 ]).
-attri_i('Cflightdepartureairportname',[ cFlightDepartureAirportName,svchar,40,0,'',0,'Flight Departure Airport Name','',10 ]).
-attri_i('Cflightdepartureaiportid',[ cFlightDepartureAiportId,int,4,0,'ZZZ9',0,'Flight Departure Aiport Id','',9 ]).
+attri_i('Cflightdepartureairportid',[ cFlightDepartureAirportId,int,4,0,'ZZZ9',0,'Flight Departure Airport Id','',13 ]).
+attri_i('Cflightarrivalairportid',[ cFlightArrivalAirportId,int,4,0,'ZZZ9',0,'Flight Arrival Airport Id','',11 ]).
 attri_i('Cflightid',[ cFlightId,int,4,0,'ZZZ9',0,'Flight Id','',6 ]).
 attri_i('Linkselection',[ 'LinkSelection',bits,1024,0,'',0,'Link Selection','',5 ]).
  
-table_i(6,[ 'Flight',[ 19,22,23 ],'Flight','Flight' ]).
+table_i(6,[ 'Flight',[ 19,25,24 ],'Flight','Flight' ]).
  
 index_i(6,[ 'IFLIGHT',u,[ 19 ],'IFlight' ]).
  
@@ -190,10 +190,9 @@ start_i(2,0,0,[ [ [ 19,23,'Cflightid',>= ] ],many ]).
  
  
 dom_info_i(94,[ 'Id' ]).
-dom_info_i(95,[ 'Name' ]).
  
  
-break_i(2,nvg,1,[ 19 ],[ [ 19,22,23 ],[],[] ]).
+break_i(2,nvg,1,[ 19 ],[ [ 19,25,24 ],[],[] ]).
  
 b_group_i(2,1,lit,0,1,1).
 b_group_i(2,2,lit,0,2,6).
@@ -226,22 +225,22 @@ b_line_i(21,2,4,cmd,1,[ t('',107,21,0),t([ t('Flightidfiltercontainer',3,1,0),t(
 b_line_i(22,2,4,cmd,1,[ t('',107,22,0),t([ t('Cflightid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
 b_line_i(23,2,4,cmd,1,[ t('',111,23,0) ]).
 b_line_i(24,2,4,cmd,1,[ t('',147,24,0) ]).
-b_line_i(26,2,4,cmd,1,[ t('',146,26,0),t([ t('Lblflightdepartureaiportidfilter',3,26,7),t('Click',3,26,40) ],29,26,40) ]).
-b_line_i(27,2,5,cmd,1,[ t('',109,27,0),t([ t('Flightdepartureaiportidfiltercontainer',3,27,5),t('Class',3,27,44) ],29,27,44),t(=,10,1,50),t('"AdvancedContainerItem"',3,27,99) ]).
-b_line_i(28,2,5,cmd,1,[ t('',107,28,0),t([ t('Flightdepartureaiportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
-b_line_i(29,2,5,cmd,1,[ t('',107,29,0),t([ t('Cflightdepartureaiportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('TRUE',40,1,0) ]).
+b_line_i(26,2,4,cmd,1,[ t('',146,26,0),t([ t('Lblflightarrivalairportidfilter',3,26,7),t('Click',3,26,39) ],29,26,39) ]).
+b_line_i(27,2,5,cmd,1,[ t('',109,27,0),t([ t('Flightarrivalairportidfiltercontainer',3,27,5),t('Class',3,27,43) ],29,27,43),t(=,10,1,49),t('"AdvancedContainerItem"',3,27,98) ]).
+b_line_i(28,2,5,cmd,1,[ t('',107,28,0),t([ t('Flightarrivalairportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
+b_line_i(29,2,5,cmd,1,[ t('',107,29,0),t([ t('Cflightarrivalairportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('TRUE',40,1,0) ]).
 b_line_i(30,2,5,cmd,1,[ t('',110,30,0) ]).
-b_line_i(31,2,5,cmd,1,[ t('',107,31,0),t([ t('Flightdepartureaiportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
-b_line_i(32,2,5,cmd,1,[ t('',107,32,0),t([ t('Cflightdepartureaiportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
+b_line_i(31,2,5,cmd,1,[ t('',107,31,0),t([ t('Flightarrivalairportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
+b_line_i(32,2,5,cmd,1,[ t('',107,32,0),t([ t('Cflightarrivalairportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
 b_line_i(33,2,5,cmd,1,[ t('',111,33,0) ]).
 b_line_i(34,2,5,cmd,1,[ t('',147,34,0) ]).
-b_line_i(36,2,5,cmd,1,[ t('',146,36,0),t([ t('Lblflightdepartureairportnamefilter',3,36,7),t('Click',3,36,43) ],29,36,43) ]).
-b_line_i(37,2,6,cmd,1,[ t('',109,37,0),t([ t('Flightdepartureairportnamefiltercontainer',3,37,5),t('Class',3,37,47) ],29,37,47),t(=,10,1,53),t('"AdvancedContainerItem"',3,37,102) ]).
-b_line_i(38,2,6,cmd,1,[ t('',107,38,0),t([ t('Flightdepartureairportnamefiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
-b_line_i(39,2,6,cmd,1,[ t('',107,39,0),t([ t('Cflightdepartureairportname',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('TRUE',40,1,0) ]).
+b_line_i(36,2,5,cmd,1,[ t('',146,36,0),t([ t('Lblflightdepartureairportidfilter',3,36,7),t('Click',3,36,41) ],29,36,41) ]).
+b_line_i(37,2,6,cmd,1,[ t('',109,37,0),t([ t('Flightdepartureairportidfiltercontainer',3,37,5),t('Class',3,37,45) ],29,37,45),t(=,10,1,51),t('"AdvancedContainerItem"',3,37,100) ]).
+b_line_i(38,2,6,cmd,1,[ t('',107,38,0),t([ t('Flightdepartureairportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
+b_line_i(39,2,6,cmd,1,[ t('',107,39,0),t([ t('Cflightdepartureairportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('TRUE',40,1,0) ]).
 b_line_i(40,2,6,cmd,1,[ t('',110,40,0) ]).
-b_line_i(41,2,6,cmd,1,[ t('',107,41,0),t([ t('Flightdepartureairportnamefiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
-b_line_i(42,2,6,cmd,1,[ t('',107,42,0),t([ t('Cflightdepartureairportname',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
+b_line_i(41,2,6,cmd,1,[ t('',107,41,0),t([ t('Flightdepartureairportidfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
+b_line_i(42,2,6,cmd,1,[ t('',107,42,0),t([ t('Cflightdepartureairportid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
 b_line_i(43,2,6,cmd,1,[ t('',111,43,0) ]).
 b_line_i(44,2,6,cmd,1,[ t('',147,44,0) ]).
 b_line_i(46,2,6,cmd,1,[ t('',146,46,0),t('Load',3,46,7) ]).
@@ -289,21 +288,21 @@ html_sub_i(17,18,html_i(0,div(18))).
 html_sub_i(18,19,html_i(0,div(19))).
 html_sub_i(19,20,html_i(0,div(20))).
 html_sub_i(20,21,html_i(0,div(21))).
-html_sub_i(21,22,html_i(0,t('Flight Departure Aiport Id',3))).
+html_sub_i(21,22,html_i(0,t('Flight Arrival Airport Id',3))).
 html_sub_i(19,23,html_i(1,div(23))).
 html_sub_i(23,24,html_i(0,div(24))).
 html_sub_i(24,25,html_i(0,div(25))).
-html_sub_i(25,26,html_i(0,t('Cflightdepartureaiportid',23))).
+html_sub_i(25,26,html_i(0,t('Cflightarrivalairportid',23))).
 html_sub_i(6,27,html_i(2,div(27))).
 html_sub_i(27,28,html_i(0,div(28))).
 html_sub_i(28,29,html_i(0,div(29))).
 html_sub_i(29,30,html_i(0,div(30))).
 html_sub_i(30,31,html_i(0,div(31))).
-html_sub_i(31,32,html_i(0,t('Flight Departure Airport Name',3))).
+html_sub_i(31,32,html_i(0,t('Flight Departure Airport Id',3))).
 html_sub_i(29,33,html_i(1,div(33))).
 html_sub_i(33,34,html_i(0,div(34))).
 html_sub_i(34,35,html_i(0,div(35))).
-html_sub_i(35,36,html_i(0,t('Cflightdepartureairportname',23))).
+html_sub_i(35,36,html_i(0,t('Cflightdepartureairportid',23))).
 html_sub_i(4,37,html_i(1,div(37))).
 html_sub_i(37,38,html_i(0,div(38))).
 html_sub_i(38,39,html_i(0,div(39))).
@@ -322,9 +321,9 @@ html_tags_i(2,'data-abstract-form','').
 html_tags_i(12,'ControlType','').
 html_tags_i(16,'data-gx-att','var:6').
 html_tags_i(22,'ControlType','').
-html_tags_i(26,'data-gx-att','var:9').
+html_tags_i(26,'data-gx-att','var:11').
 html_tags_i(32,'ControlType','').
-html_tags_i(36,'data-gx-att','var:10').
+html_tags_i(36,'data-gx-att','var:13').
 html_tags_i(41,'ControlType','').
 html_tags_i(51,'ControlType','').
  
@@ -493,7 +492,7 @@ html_comp_i(18,'Align',left,d,[ str ]).
 html_comp_i(18,'Valign',top,d,[ str ]).
 html_comp_i(19,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(19,'Class','AdvancedContainerItem',v,[ str ]).
-html_comp_i(19,'Id','Flightdepartureaiportidfiltercontainer',v,[ str ]).
+html_comp_i(19,'Id','Flightarrivalairportidfiltercontainer',v,[ str ]).
 html_comp_i(19,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(19,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(19,'Semanticcontent',div,d,[ str ]).
@@ -516,8 +515,8 @@ html_comp_i(21,'Semanticcontent',div,d,[ str ]).
 html_comp_i(21,'Align',left,d,[ str ]).
 html_comp_i(21,'Valign',top,d,[ str ]).
 html_comp_i(22,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(22,'Caption','Flight Departure Aiport Id',d,[ str ]).
-html_comp_i(22,'Id','Lblflightdepartureaiportidfilter',v,[ str ]).
+html_comp_i(22,'Caption','Flight Arrival Airport Id',d,[ str ]).
+html_comp_i(22,'Id','Lblflightarrivalairportidfilter',v,[ str ]).
 html_comp_i(22,'Class','WWAdvancedLabel WWFilterLabel',v,[ str ]).
 html_comp_i(22,'Event','',d,[ str ]).
 html_comp_i(22,'Returnonclick',0,d,[ bool ]).
@@ -553,14 +552,14 @@ html_comp_i(25,'Align',left,d,[ str ]).
 html_comp_i(25,'Valign',top,d,[ str ]).
 html_comp_i(26,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(26,'Colcount',4,d,[ num ]).
-html_comp_i(26,'Attid',-9,v,[ num ]).
+html_comp_i(26,'Attid',-11,v,[ num ]).
 html_comp_i(26,'Class','Attribute',v,[ str ]).
-html_comp_i(26,'Controlname','&Cflightdepartureaiportid',d,[ str ]).
+html_comp_i(26,'Controlname','&Cflightarrivalairportid',d,[ str ]).
 html_comp_i(26,'Returnonclick',0,v,[ bool ]).
 html_comp_i(26,'Captionclass','col-sm-3 AttributeLabel',v,[ str ]).
 html_comp_i(26,'Captionstyle','',v,[ str ]).
 html_comp_i(26,'Captionposition','None',v,[ str ]).
-html_comp_i(26,'Captionvalue','Flight Departure Aiport Id',d,[ str ]).
+html_comp_i(26,'Captionvalue','Flight Arrival Airport Id',d,[ str ]).
 html_comp_i(26,'Layoutclass','',v,[ str ]).
 html_comp_i(26,'Controltype',2,d,[ num ]).
 html_comp_i(26,'Inputtype',0,d,[ num ]).
@@ -600,7 +599,7 @@ html_comp_i(28,'Align',left,d,[ str ]).
 html_comp_i(28,'Valign',top,d,[ str ]).
 html_comp_i(29,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(29,'Class','AdvancedContainerItem',v,[ str ]).
-html_comp_i(29,'Id','Flightdepartureairportnamefiltercontainer',v,[ str ]).
+html_comp_i(29,'Id','Flightdepartureairportidfiltercontainer',v,[ str ]).
 html_comp_i(29,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(29,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(29,'Semanticcontent',div,d,[ str ]).
@@ -623,8 +622,8 @@ html_comp_i(31,'Semanticcontent',div,d,[ str ]).
 html_comp_i(31,'Align',left,d,[ str ]).
 html_comp_i(31,'Valign',top,d,[ str ]).
 html_comp_i(32,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(32,'Caption','Flight Departure Airport Name',d,[ str ]).
-html_comp_i(32,'Id','Lblflightdepartureairportnamefilter',v,[ str ]).
+html_comp_i(32,'Caption','Flight Departure Airport Id',d,[ str ]).
+html_comp_i(32,'Id','Lblflightdepartureairportidfilter',v,[ str ]).
 html_comp_i(32,'Class','WWAdvancedLabel WWFilterLabel',v,[ str ]).
 html_comp_i(32,'Event','',d,[ str ]).
 html_comp_i(32,'Returnonclick',0,d,[ bool ]).
@@ -659,28 +658,25 @@ html_comp_i(35,'Semanticcontent',div,d,[ str ]).
 html_comp_i(35,'Align',left,d,[ str ]).
 html_comp_i(35,'Valign',top,d,[ str ]).
 html_comp_i(36,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(36,'Colcount',40,d,[ num ]).
-html_comp_i(36,'Attid',-10,v,[ num ]).
+html_comp_i(36,'Colcount',4,d,[ num ]).
+html_comp_i(36,'Attid',-13,v,[ num ]).
 html_comp_i(36,'Class','Attribute',v,[ str ]).
-html_comp_i(36,'Controlname','&Cflightdepartureairportname',d,[ str ]).
+html_comp_i(36,'Controlname','&Cflightdepartureairportid',d,[ str ]).
 html_comp_i(36,'Returnonclick',0,v,[ bool ]).
 html_comp_i(36,'Captionclass','col-sm-3 AttributeLabel',v,[ str ]).
 html_comp_i(36,'Captionstyle','',v,[ str ]).
 html_comp_i(36,'Captionposition','None',v,[ str ]).
-html_comp_i(36,'Captionvalue','Flight Departure Airport Name',d,[ str ]).
+html_comp_i(36,'Captionvalue','Flight Departure Airport Id',d,[ str ]).
 html_comp_i(36,'Layoutclass','',v,[ str ]).
 html_comp_i(36,'Controltype',2,d,[ num ]).
 html_comp_i(36,'Inputtype',0,d,[ num ]).
-html_comp_i(36,'Editautocomplete',0,d,[ num ]).
-html_comp_i(36,'Autocorrection',-1,d,[ bool ]).
-html_comp_i(36,'Autocapitalization','FirstWord',d,[ str ]).
 html_comp_i(36,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(36,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(36,'Readonly',0,v,[ bool ]).
 html_comp_i(36,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(36,'Ispassword',0,d,[ bool ]).
 html_comp_i(36,'Autoresize',-1,d,[ bool ]).
-html_comp_i(36,'Gxwidth',measure(40,chr),d,[ measure ]).
+html_comp_i(36,'Gxwidth',measure(4,chr),d,[ measure ]).
 html_comp_i(36,'Gxheight',measure(1,row),d,[ measure ]).
 html_comp_i(36,'Ismultiline',0,d,[ bool ]).
 html_comp_i(36,'Maxtextnumberlines',0,d,[ num ]).
@@ -688,7 +684,7 @@ html_comp_i(36,'Fill',-1,d,[ bool ]).
 html_comp_i(36,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(36,'Forecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(36,'Font',font('Verdana',12,[]),d,[ font ]).
-html_comp_i(36,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(36,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(36,'Gxformat',0,d,[ num ]).
 html_comp_i(36,'Title','',d,[ str ]).
 html_comp_i(36,'Invitemsg','',v,[ str ]).
@@ -813,12 +809,12 @@ html_comp_i(46,'Colattid',19,v,[ num ]).
 html_comp_i(46,'Controlname','Flightid',d,[ str ]).
 html_comp_i(46,'Class','Attribute',v,[ str ]).
 html_comp_i(46,'Columnclass','WWColumn',v,[ str ]).
-html_comp_i(46,'Returnonclick',0,d,[ bool ]).
+html_comp_i(46,'Returnonclick',-1,v,[ bool ]).
 html_comp_i(46,'Eventgx','',d,[ str ]).
 html_comp_i(46,'Controltype',2,d,[ num ]).
 html_comp_i(46,'Inputtype',0,d,[ num ]).
 html_comp_i(46,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(46,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(46,'Colreadonly',-1,v,[ bool ]).
 html_comp_i(46,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(46,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(46,'Ispassword',0,d,[ bool ]).
@@ -837,16 +833,16 @@ html_comp_i(46,'Title','',d,[ str ]).
 html_comp_i(46,'Invitemsg','',d,[ str ]).
 html_comp_i(47,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(47,'Colcount',4,d,[ num ]).
-html_comp_i(47,'Colattid',22,v,[ num ]).
-html_comp_i(47,'Controlname','Flightdepartureaiportid',d,[ str ]).
-html_comp_i(47,'Class','DescriptionAttribute',v,[ str ]).
-html_comp_i(47,'Columnclass','WWColumn',v,[ str ]).
-html_comp_i(47,'Returnonclick',-1,v,[ bool ]).
+html_comp_i(47,'Colattid',25,v,[ num ]).
+html_comp_i(47,'Controlname','Flightarrivalairportid',d,[ str ]).
+html_comp_i(47,'Class','Attribute',v,[ str ]).
+html_comp_i(47,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(47,'Returnonclick',0,d,[ bool ]).
 html_comp_i(47,'Eventgx','',d,[ str ]).
 html_comp_i(47,'Controltype',2,d,[ num ]).
 html_comp_i(47,'Inputtype',0,d,[ num ]).
 html_comp_i(47,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(47,'Colreadonly',-1,v,[ bool ]).
+html_comp_i(47,'Colreadonly',-1,d,[ bool ]).
 html_comp_i(47,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(47,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(47,'Ispassword',0,d,[ bool ]).
@@ -855,7 +851,7 @@ html_comp_i(47,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(47,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(47,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(47,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(47,'Coltitle','Aiport Id',d,[ str ]).
+html_comp_i(47,'Coltitle','Airport Id',d,[ str ]).
 html_comp_i(47,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(47,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(47,'Horizontalalignment',right,d,[ str ]).
@@ -864,18 +860,15 @@ html_comp_i(47,'Colvisible',-1,d,[ bool ]).
 html_comp_i(47,'Title','',d,[ str ]).
 html_comp_i(47,'Invitemsg','',d,[ str ]).
 html_comp_i(48,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(48,'Colcount',40,d,[ num ]).
-html_comp_i(48,'Colattid',23,v,[ num ]).
-html_comp_i(48,'Controlname','Flightdepartureairportname',d,[ str ]).
+html_comp_i(48,'Colcount',4,d,[ num ]).
+html_comp_i(48,'Colattid',24,v,[ num ]).
+html_comp_i(48,'Controlname','Flightdepartureairportid',d,[ str ]).
 html_comp_i(48,'Class','Attribute',v,[ str ]).
 html_comp_i(48,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
 html_comp_i(48,'Returnonclick',0,d,[ bool ]).
 html_comp_i(48,'Eventgx','',d,[ str ]).
 html_comp_i(48,'Controltype',2,d,[ num ]).
 html_comp_i(48,'Inputtype',0,d,[ num ]).
-html_comp_i(48,'Editautocomplete',0,d,[ num ]).
-html_comp_i(48,'Autocorrection',-1,d,[ bool ]).
-html_comp_i(48,'Autocapitalization','FirstWord',d,[ str ]).
 html_comp_i(48,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(48,'Colreadonly',-1,d,[ bool ]).
 html_comp_i(48,'Autocomplete',-1,d,[ bool ]).
@@ -886,10 +879,10 @@ html_comp_i(48,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(48,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(48,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(48,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(48,'Coltitle','Airport Name',d,[ str ]).
+html_comp_i(48,'Coltitle','Airport Id',d,[ str ]).
 html_comp_i(48,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(48,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(48,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(48,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(48,'Gxformat',0,d,[ num ]).
 html_comp_i(48,'Colvisible',-1,d,[ bool ]).
 html_comp_i(48,'Title','',d,[ str ]).
@@ -941,24 +934,24 @@ lit_i(13,1,div(13),[ ctlname('') ]).
 lit_i(9,1,div(9),[ ctlname('Flightidfiltercontainer') ]).
 lit_i(8,1,div(8),[ ctlname('') ]).
 lit_i(7,1,div(7),[ ctlname('') ]).
-lit_i(22,1,t('Flight Departure Aiport Id',3),[ ctlname('Lblflightdepartureaiportidfilter') ]).
+lit_i(22,1,t('Flight Arrival Airport Id',3),[ ctlname('Lblflightarrivalairportidfilter') ]).
 lit_i(21,1,div(21),[ ctlname('') ]).
 lit_i(20,1,div(20),[ ctlname('') ]).
-lit_i(26,1,t('Cflightdepartureaiportid',23),[ ctlname('&Cflightdepartureaiportid'),ctrltype(edit,26),pos(26),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(26,1,t('Cflightarrivalairportid',23),[ ctlname('&Cflightarrivalairportid'),ctrltype(edit,26),pos(26),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(25,1,div(25),[ ctlname('') ]).
 lit_i(24,1,div(24),[ ctlname('') ]).
 lit_i(23,1,div(23),[ ctlname('') ]).
-lit_i(19,1,div(19),[ ctlname('Flightdepartureaiportidfiltercontainer') ]).
+lit_i(19,1,div(19),[ ctlname('Flightarrivalairportidfiltercontainer') ]).
 lit_i(18,1,div(18),[ ctlname('') ]).
 lit_i(17,1,div(17),[ ctlname('') ]).
-lit_i(32,1,t('Flight Departure Airport Name',3),[ ctlname('Lblflightdepartureairportnamefilter') ]).
+lit_i(32,1,t('Flight Departure Airport Id',3),[ ctlname('Lblflightdepartureairportidfilter') ]).
 lit_i(31,1,div(31),[ ctlname('') ]).
 lit_i(30,1,div(30),[ ctlname('') ]).
-lit_i(36,1,t('Cflightdepartureairportname',23),[ ctlname('&Cflightdepartureairportname'),ctrltype(edit,36),pos(36),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(36,1,t('Cflightdepartureairportid',23),[ ctlname('&Cflightdepartureairportid'),ctrltype(edit,36),pos(36),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(35,1,div(35),[ ctlname('') ]).
 lit_i(34,1,div(34),[ ctlname('') ]).
 lit_i(33,1,div(33),[ ctlname('') ]).
-lit_i(29,1,div(29),[ ctlname('Flightdepartureairportnamefiltercontainer') ]).
+lit_i(29,1,div(29),[ ctlname('Flightdepartureairportidfiltercontainer') ]).
 lit_i(28,1,div(28),[ ctlname('') ]).
 lit_i(27,1,div(27),[ ctlname('') ]).
 lit_i(6,1,div(6),[ ctlname('Advancedcontainer') ]).
@@ -968,9 +961,9 @@ lit_i(40,1,div(40),[ ctlname('') ]).
 lit_i(39,1,div(39),[ ctlname('') ]).
 lit_i(45,1,s(t('Linkselection',23),44),[ ctlname('&Linkselection'),ctrltype(edit,45),pos(45),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(46,1,s(t(19,2),44),[ ctlname(19),ctrltype(edit,46),pos(46),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(47,1,s(t(22,2),44),[ ctlname(22),ctrltype(edit,47),pos(47),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(48,1,s(t(23,2),44),[ ctlname(23),ctrltype(edit,48),pos(48),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(44,1,s(44),[ ctlname('Grid1'),el([ t('Linkselection',23),t(19,2),t(22,2),t(23,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(47,1,s(t(25,2),44),[ ctlname(25),ctrltype(edit,47),pos(47),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(48,1,s(t(24,2),44),[ ctlname(24),ctrltype(edit,48),pos(48),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(44,1,s(44),[ ctlname('Grid1'),el([ t('Linkselection',23),t(19,2),t(25,2),t(24,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(43,1,div(43),[ ctlname('') ]).
 lit_i(42,1,div(42),[ ctlname('') ]).
 lit_i(51,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
@@ -1006,41 +999,44 @@ att_prop_i(2,19,'AttValidationFailedMsg','',d).
 att_prop_i(2,19,'DownloadOffline','0',d).
 att_prop_i(2,19,'VarServiceExtName','',d).
 att_prop_i(2,19,'FullName','FlightId',v).
-att_prop_i(2,22,'ExternalName','FlightDepartureAiportId',d).
-att_prop_i(2,22,'ExternalNamespace','TravelAgency_Capa202309',d).
-att_prop_i(2,22,'EmptyAsNull','Yes',d).
-att_prop_i(2,22,idBasedOn,94,v).
-att_prop_i(2,22,'AUTONUMBER','-1',d).
-att_prop_i(2,22,'AUTONUMBER_START','1',d).
-att_prop_i(2,22,'AUTONUMBER_STEP','1',d).
-att_prop_i(2,22,'AUTONUMBER_FORREPLICATION','-1',d).
-att_prop_i(2,22,'ATT_INITIAL_VALUE','',d).
-att_prop_i(2,22,'AttRegEx','',d).
-att_prop_i(2,22,'AttValidationFailedMsg','',d).
-att_prop_i(2,22,'DownloadOffline','0',d).
-att_prop_i(2,22,'VarServiceExtName','',d).
-att_prop_i(2,22,'FullName','FlightDepartureAiportId',v).
-att_prop_i(2,23,'ExternalName','FlightDepartureAirportName',d).
-att_prop_i(2,23,'ExternalNamespace','TravelAgency_Capa202309',d).
-att_prop_i(2,23,'EmptyAsNull','Yes',d).
-att_prop_i(2,23,idBasedOn,95,v).
-att_prop_i(2,23,'ATT_INITIAL_VALUE','',d).
-att_prop_i(2,23,'DB_NLS_SUPPORT','Yes',d).
-att_prop_i(2,23,'AttRegEx','',d).
-att_prop_i(2,23,'AttValidationFailedMsg','',d).
-att_prop_i(2,23,'DownloadOffline','0',d).
-att_prop_i(2,23,'VarServiceExtName','',d).
-att_prop_i(2,23,'FullName','FlightDepartureAirportName',v).
+att_prop_i(2,25,'ExternalName','FlightArrivalAirportId',d).
+att_prop_i(2,25,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,25,'EmptyAsNull','Yes',d).
+att_prop_i(2,25,idBasedOn,94,d).
+att_prop_i(2,25,'AUTONUMBER','-1',d).
+att_prop_i(2,25,'AUTONUMBER_START','1',d).
+att_prop_i(2,25,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,25,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,25,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,25,'AttRegEx','',d).
+att_prop_i(2,25,'AttValidationFailedMsg','',d).
+att_prop_i(2,25,'DownloadOffline','0',d).
+att_prop_i(2,25,'VarServiceExtName','',d).
+att_prop_i(2,25,'FullName','FlightArrivalAirportId',v).
+att_prop_i(2,24,'ExternalName','FlightDepartureAirportId',d).
+att_prop_i(2,24,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,24,'EmptyAsNull','Yes',d).
+att_prop_i(2,24,idBasedOn,94,d).
+att_prop_i(2,24,'AUTONUMBER','-1',d).
+att_prop_i(2,24,'AUTONUMBER_START','1',d).
+att_prop_i(2,24,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,24,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,24,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,24,'AttRegEx','',d).
+att_prop_i(2,24,'AttValidationFailedMsg','',d).
+att_prop_i(2,24,'DownloadOffline','0',d).
+att_prop_i(2,24,'VarServiceExtName','',d).
+att_prop_i(2,24,'FullName','FlightDepartureAirportId',v).
  
  
 tbl_att_prop_i(2,6,19,'AllowNulls',n).
 tbl_att_prop_i(2,6,19,'AUTONUMBER',y).
-tbl_att_prop_i(2,6,22,'AllowNulls',n).
-tbl_att_prop_i(2,6,23,'AllowNulls',n).
+tbl_att_prop_i(2,6,25,'AllowNulls',n).
+tbl_att_prop_i(2,6,24,'AllowNulls',n).
  
 var_prop_i(2,'Cflightid',idBasedOn,'',v).
-var_prop_i(2,'Cflightdepartureaiportid',idBasedOn,'',v).
-var_prop_i(2,'Cflightdepartureairportname',idBasedOn,'',v).
+var_prop_i(2,'Cflightarrivalairportid',idBasedOn,'',v).
+var_prop_i(2,'Cflightdepartureairportid',idBasedOn,'',v).
 var_prop_i(2,'Pflightid',idBasedOn,'',v).
  
  
@@ -1056,8 +1052,8 @@ var_prop_i(2,'Pflightid',idBasedOn,'',v).
 sub_info_i(146,'Start',1,4,[ [],[ [ t('Form',3),t('Caption',3) ] ] ]).
 sub_info_i(146,'''Toggle''',6,14,[ [ [ t('Advancedcontainer',3),t('Class',3) ],[ t('Btntoggle',3),t('Class',3) ] ],[ [ t('Advancedcontainer',3),t('Class',3) ],[ t('Btntoggle',3),t('Class',3) ] ] ]).
 sub_info_i(146,[ t('Lblflightidfilter',3,16,7),t('Click',3,16,25) ],16,24,[ [ [ t('Flightidfiltercontainer',3),t('Class',3) ] ],[ [ t('Flightidfiltercontainer',3),t('Class',3) ],[ t('Cflightid',23),t('Visible',3) ] ] ]).
-sub_info_i(146,[ t('Lblflightdepartureaiportidfilter',3,26,7),t('Click',3,26,40) ],26,34,[ [ [ t('Flightdepartureaiportidfiltercontainer',3),t('Class',3) ] ],[ [ t('Flightdepartureaiportidfiltercontainer',3),t('Class',3) ],[ t('Cflightdepartureaiportid',23),t('Visible',3) ] ] ]).
-sub_info_i(146,[ t('Lblflightdepartureairportnamefilter',3,36,7),t('Click',3,36,43) ],36,44,[ [ [ t('Flightdepartureairportnamefiltercontainer',3),t('Class',3) ] ],[ [ t('Flightdepartureairportnamefiltercontainer',3),t('Class',3) ],[ t('Cflightdepartureairportname',23),t('Visible',3) ] ] ]).
+sub_info_i(146,[ t('Lblflightarrivalairportidfilter',3,26,7),t('Click',3,26,39) ],26,34,[ [ [ t('Flightarrivalairportidfiltercontainer',3),t('Class',3) ] ],[ [ t('Flightarrivalairportidfiltercontainer',3),t('Class',3) ],[ t('Cflightarrivalairportid',23),t('Visible',3) ] ] ]).
+sub_info_i(146,[ t('Lblflightdepartureairportidfilter',3,36,7),t('Click',3,36,41) ],36,44,[ [ [ t('Flightdepartureairportidfiltercontainer',3),t('Class',3) ] ],[ [ t('Flightdepartureairportidfiltercontainer',3),t('Class',3) ],[ t('Cflightdepartureairportid',23),t('Visible',3) ] ] ]).
 sub_info_i(146,'Load',46,48,[ [],[ 'Linkselection' ] ]).
 sub_info_i(146,'Enter',50,53,[ [ 19 ],[ 'Pflightid' ] ]).
  

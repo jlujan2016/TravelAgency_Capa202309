@@ -38,7 +38,29 @@
 <AttriId>19</AttriId>
 <AttriName>FlightId</AttriName>
 <Description>Flight Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
+<Tables>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas>
@@ -55,13 +77,13 @@
 <TableAction>insert</TableAction>
 <AttrisToUpdate>
 <Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description></Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute>
 <Attribute>
-<AttriId>23</AttriId>
-<AttriName>FlightDepartureAirportName</AttriName>
-<Description>Flight Departure Airport Name</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>6</TableId>
@@ -70,13 +92,13 @@
 <TableAction>update</TableAction>
 <AttrisToUpdate>
 <Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description></Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute>
 <Attribute>
-<AttriId>23</AttriId>
-<AttriName>FlightDepartureAirportName</AttriName>
-<Description>Flight Departure Airport Name</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>6</TableId>
@@ -92,6 +114,44 @@
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts>
+<Prompt>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>20</ObjId>
+<ObjName>Gx0070</ObjName>
+<ObjPgmName>Gx0070</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>20</ObjId>
+<ObjName>Gx0070</ObjName>
+<ObjPgmName>Gx0070</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>
 <TableId>6</TableId>

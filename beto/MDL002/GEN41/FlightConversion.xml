@@ -8,7 +8,7 @@
 <ReorgCls>c</ReorgCls>
 <ReorgCode>pk</ReorgCode>
 <ReorgMsg>Flight needs conversion</ReorgMsg>
-<ReorgAction>!</ReorgAction>
+<ReorgAction>#</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
@@ -43,9 +43,39 @@
 <Name>AllowNulls</Name>
 <Value>No</Value></Property></Properties></AttriType></Attribute>
 <Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description>
+<TakesValueFrom>
+<Table>
+<TableId>6</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute></FromValue></TakesValueFrom>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description>
 <TakesValueFrom>
 <FromValue>
 <Token>0</Token></FromValue></TakesValueFrom>
@@ -63,17 +93,15 @@
 <Property>
 <Name>AllowNulls</Name>
 <Value>No</Value></Property></Properties></AttriType>
-<AttriChangeType>ni</AttriChangeType></Attribute>
+<AttriChangeType>ni</AttriChangeType></Attribute></AttrisInTable>
+<AttrisNoLongerInTable>
 <Attribute>
-<AttriId>23</AttriId>
-<AttriName>FlightDepartureAirportName</AttriName>
-<Description>Flight Departure Airport Name</Description>
-<TakesValueFrom>
-<FromValue>
-<Token>' '</Token></FromValue></TakesValueFrom>
+<AttriId>22</AttriId>
+<AttriName>FlightDepartureAiportId</AttriName>
+<Description>Flight Departure Aiport Id</Description>
 <AttriType>
-<DataType>V</DataType>
-<Presicion>40</Presicion>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
 <Scale>0</Scale>
 <Properties>
 <Property>
@@ -84,12 +112,8 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property>
-<Property>
-<Name>NLS</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriChangeType>ni</AttriChangeType></Attribute></AttrisInTable>
-<AttrisNoLongerInTable></AttrisNoLongerInTable>
+<Value>No</Value></Property></Properties></AttriType>
+<AttriChangeType>del</AttriChangeType></Attribute></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
 <NavigationTree>
 <Table>
@@ -115,43 +139,181 @@
 <AttriName>FlightId</AttriName>
 <Description>Flight Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>Yes</Clustered></Index></Indices></TableIndices>
-<FKConstraints></FKConstraints>
+<Clustered>Yes</Clustered></Index>
+<Index>
+<IndexName>IFLIGHT1</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></Indices>
+<NewIndices>
+<Index>
+<IndexName>IFLIGHT2</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></NewIndices></TableIndices>
+<FKConstraints>
+<FKConstraint>
+<ChangeType>none</ChangeType>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Attributes>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute></Attributes></FKConstraint>
+<FKConstraint>
+<ChangeType>new</ChangeType>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Attributes>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>ALTER TABLE [Flight] ADD [FlightDepartureAiportId] smallint NOT NULL CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT DEFAULT convert(int, 0), [FlightDepartureAirportName] nvarchar(40) NOT NULL CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT DEFAULT ''</Statement>
-<Statement>ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT</Statement>
-<Statement>ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT</Statement></Statements>
-<NeedReorganizationProgram>False</NeedReorganizationProgram>
+<Statement>CREATE TABLE [GXA0006] ([FlightId] smallint NOT NULL IDENTITY(1,1), [FlightArrivalAirportId] smallint NOT NULL , [FlightDepartureAirportId] smallint NOT NULL ) </Statement>
+<Statement>Run conversion program for table Flight</Statement>
+<Statement>DROP TABLE [Flight]</Statement>
+<Statement>CALL sp_rename('[GXA0006]', 'Flight')</Statement>
+<Statement>ALTER TABLE [Flight] ADD PRIMARY KEY([FlightId])</Statement>
+<Statement>SET IDENTITY_INSERT [Country] ON</Statement>
+<Statement>INSERT INTO [Country] ([CountryId], [CountryName], [CountryLastLine]) SELECT TOP 1 0, ' ', 0 FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [Country] WHERE CountryId=0)</Statement>
+<Statement>SET IDENTITY_INSERT [Country] OFF</Statement>
+<Statement>INSERT INTO [CountryCity] ([CountryId], [CityId], [CityName]) SELECT TOP 1 0, 0, ' ' FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [CountryCity] WHERE CountryId=0 AND CityId=0)</Statement>
+<Statement>SET IDENTITY_INSERT [Airport] ON</Statement>
+<Statement>INSERT INTO [Airport] ([AirportId], [AirportName], [CountryId], [CityId]) SELECT TOP 1 convert(int, 0), ' ', 0, 0 FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [Airport] WHERE AirportId=convert(int, 0))</Statement>
+<Statement>SET IDENTITY_INSERT [Airport] OFF</Statement>
+<Statement>CREATE NONCLUSTERED INDEX [IFLIGHT1] ON [Flight] ([FlightArrivalAirportId] )</Statement>
+<Statement>CREATE NONCLUSTERED INDEX [IFLIGHT2] ON [Flight] ([FlightDepartureAirportId] )</Statement>
+<Statement>ALTER TABLE [Flight] ADD CONSTRAINT [IFLIGHT2] FOREIGN KEY ([FlightDepartureAirportId]) REFERENCES [Airport] ([AirportId])</Statement>
+<Statement>ALTER TABLE [Flight] ADD CONSTRAINT [IFLIGHT1] FOREIGN KEY ([FlightArrivalAirportId]) REFERENCES [Airport] ([AirportId])</Statement></Statements>
+<NeedReorganizationProgram>True</NeedReorganizationProgram>
 <Warnings>
 <Warning>
-<MsgCode>rgz0009</MsgCode>
-<Message>
-<Token>AutoNumber=True ignored. Attribute </Token>
-<Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description></Attribute>
-<Token> is not table </Token>
-<Token>Flight</Token>
-<Token>'s primary key.</Token></Message></Warning>
-<Warning>
 <MsgCode>rgz0007</MsgCode>
 <Message>
 <Token>Attribute </Token>
 <Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description></Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute>
 <Token> does not allow nulls and does not have an Initial Value. An empty default value will be used.</Token></Message></Warning>
 <Warning>
-<MsgCode>rgz0007</MsgCode>
+<MsgCode>rgo0002</MsgCode>
 <Message>
-<Token>Attribute </Token>
+<Token>Table '</Token>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Token>' is referenced by table '</Token>
+<Table>
+<TableId>6</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description></Table>
+<Token>' and at least one attribute in its foreign key (</Token>
 <Attribute>
-<AttriId>23</AttriId>
-<AttriName>FlightDepartureAirportName</AttriName>
-<Description>Flight Departure Airport Name</Description></Attribute>
-<Token> does not allow nulls and does not have an Initial Value. An empty default value will be used.</Token></Message></Warning></Warnings>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute>
+<Token>) does not allow nulls. A default record will be added if table '</Token>
+<Table>
+<TableId>6</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description></Table>
+<Token>' has records and a record with default values does not exist in table '</Token>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Token>'.</Token></Message></Warning>
+<Warning>
+<MsgCode>rgo0003</MsgCode>
+<Message>
+<Token>Table '</Token>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description></Table>
+<Token>' is referenced by table '</Token>
+<Table>
+<TableId>7</TableId>
+<TableName>Airport</TableName>
+<Description>Airport</Description></Table>
+<Token>' and at least one attribute in its foreign key (</Token>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>CityId</AttriName>
+<Description>City Id</Description></Attribute>
+<Token>) does not allow nulls. A default record will be added in table '</Token>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description></Table>
+<Token>' if table '</Token>
+<Table>
+<TableId>6</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description></Table>
+<Token>' has records and a record with default values does not exist in table '</Token>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description></Table>
+<Token>'.</Token></Message></Warning>
+<Warning>
+<MsgCode>rgo0003</MsgCode>
+<Message>
+<Token>Table '</Token>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Token>' is referenced by table '</Token>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description></Table>
+<Token>' and at least one attribute in its foreign key (</Token>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute>
+<Token>) does not allow nulls. A default record will be added in table '</Token>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Token>' if table '</Token>
+<Table>
+<TableId>6</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description></Table>
+<Token>' has records and a record with default values does not exist in table '</Token>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Token>'.</Token></Message></Warning></Warnings>
 <Errors></Errors>
 <Information>
 <InfoMsg>
@@ -161,16 +323,21 @@
 <AdditionalInfo>
 <Title>The following operations are not backward compatible:</Title>
 <Info>
-<Token>Add not null</Token>
-<Token>attribute</Token>
-<Attribute>
-<AttriId>22</AttriId>
-<AttriName>FlightDepartureAiportId</AttriName>
-<Description>Flight Departure Aiport Id</Description></Attribute></Info>
+<Token>Add </Token>
+<Token>foreign key</Token>
+<Token>constraint</Token>
+<Token>IFLIGHT2</Token></Info>
 <Info>
 <Token>Add not null</Token>
 <Token>attribute</Token>
 <Attribute>
-<AttriId>23</AttriId>
-<AttriName>FlightDepartureAirportName</AttriName>
-<Description>Flight Departure Airport Name</Description></Attribute></Info></AdditionalInfo></InfoMsg></Information></ReorgSpec>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute></Info>
+<Info>
+<Token>Delete</Token>
+<Token>attribute</Token>
+<Attribute>
+<AttriId>22</AttriId>
+<AttriName>FlightDepartureAiportId</AttriName>
+<Description>Flight Departure Aiport Id</Description></Attribute></Info></AdditionalInfo></InfoMsg></Information></ReorgSpec>

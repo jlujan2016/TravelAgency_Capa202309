@@ -156,15 +156,15 @@ namespace GeneXus.Programs {
       {
          subGrid1_Rows = (int)(Math.Round(NumberUtil.Val( GetPar( "subGrid1_Rows"), "."), 18, MidpointRounding.ToEven));
          AV6cFlightId = (short)(Math.Round(NumberUtil.Val( GetPar( "cFlightId"), "."), 18, MidpointRounding.ToEven));
-         AV9cFlightDepartureAiportId = (short)(Math.Round(NumberUtil.Val( GetPar( "cFlightDepartureAiportId"), "."), 18, MidpointRounding.ToEven));
-         AV10cFlightDepartureAirportName = GetPar( "cFlightDepartureAirportName");
+         AV11cFlightArrivalAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "cFlightArrivalAirportId"), "."), 18, MidpointRounding.ToEven));
+         AV13cFlightDepartureAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "cFlightDepartureAirportId"), "."), 18, MidpointRounding.ToEven));
          setAjaxCallMode();
          if ( ! IsValidAjaxCall( true) )
          {
             GxWebError = 1;
             return  ;
          }
-         gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+         gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          AddString( context.getJSONResponse( )) ;
          /* End function gxgrGrid1_refresh_invoke */
       }
@@ -305,8 +305,8 @@ namespace GeneXus.Programs {
       {
          /* Send hidden variables. */
          GxWebStd.gx_hidden_field( context, "GXH_vCFLIGHTID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV6cFlightId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "GXH_vCFLIGHTDEPARTUREAIPORTID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV9cFlightDepartureAiportId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "GXH_vCFLIGHTDEPARTUREAIRPORTNAME", AV10cFlightDepartureAirportName);
+         GxWebStd.gx_hidden_field( context, "GXH_vCFLIGHTARRIVALAIRPORTID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV11cFlightArrivalAirportId), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "GXH_vCFLIGHTDEPARTUREAIRPORTID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV13cFlightDepartureAirportId), 4, 0, ".", "")));
          /* Send saved values. */
          send_integrity_footer_hashes( ) ;
          GxWebStd.gx_hidden_field( context, "nRC_GXsfl_44", StringUtil.LTrim( StringUtil.NToC( (decimal)(nRC_GXsfl_44), 8, 0, ".", "")));
@@ -316,8 +316,8 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "ADVANCEDCONTAINER_Class", StringUtil.RTrim( divAdvancedcontainer_Class));
          GxWebStd.gx_hidden_field( context, "BTNTOGGLE_Class", StringUtil.RTrim( bttBtntoggle_Class));
          GxWebStd.gx_hidden_field( context, "FLIGHTIDFILTERCONTAINER_Class", StringUtil.RTrim( divFlightidfiltercontainer_Class));
-         GxWebStd.gx_hidden_field( context, "FLIGHTDEPARTUREAIPORTIDFILTERCONTAINER_Class", StringUtil.RTrim( divFlightdepartureaiportidfiltercontainer_Class));
-         GxWebStd.gx_hidden_field( context, "FLIGHTDEPARTUREAIRPORTNAMEFILTERCONTAINER_Class", StringUtil.RTrim( divFlightdepartureairportnamefiltercontainer_Class));
+         GxWebStd.gx_hidden_field( context, "FLIGHTARRIVALAIRPORTIDFILTERCONTAINER_Class", StringUtil.RTrim( divFlightarrivalairportidfiltercontainer_Class));
+         GxWebStd.gx_hidden_field( context, "FLIGHTDEPARTUREAIRPORTIDFILTERCONTAINER_Class", StringUtil.RTrim( divFlightdepartureairportidfiltercontainer_Class));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -444,13 +444,13 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
             /* Div Control */
-            GxWebStd.gx_div_start( context, divFlightdepartureaiportidfiltercontainer_Internalname, 1, 0, "px", 0, "px", divFlightdepartureaiportidfiltercontainer_Class, "start", "top", "", "", "div");
+            GxWebStd.gx_div_start( context, divFlightarrivalairportidfiltercontainer_Internalname, 1, 0, "px", 0, "px", divFlightarrivalairportidfiltercontainer_Class, "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
             /* Text block */
-            GxWebStd.gx_label_ctrl( context, lblLblflightdepartureaiportidfilter_Internalname, "Flight Departure Aiport Id", "", "", lblLblflightdepartureaiportidfilter_Jsonclick, "'"+""+"'"+",false,"+"'"+"e120j1_client"+"'", "", "WWAdvancedLabel WWFilterLabel", 7, "", 1, 1, 0, 1, "HLP_Gx0060.htm");
+            GxWebStd.gx_label_ctrl( context, lblLblflightarrivalairportidfilter_Internalname, "Flight Arrival Airport Id", "", "", lblLblflightarrivalairportidfilter_Jsonclick, "'"+""+"'"+",false,"+"'"+"e120j1_client"+"'", "", "WWAdvancedLabel WWFilterLabel", 7, "", 1, 1, 0, 1, "HLP_Gx0060.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
@@ -460,10 +460,10 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", " gx-attribute", "start", "top", "", "", "div");
             /* Attribute/Variable Label */
-            GxWebStd.gx_label_element( context, edtavCflightdepartureaiportid_Internalname, "Flight Departure Aiport Id", "col-sm-3 AttributeLabel", 0, true, "");
+            GxWebStd.gx_label_element( context, edtavCflightarrivalairportid_Internalname, "Flight Arrival Airport Id", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
             TempTags = "  onfocus=\"gx.evt.onfocus(this, 26,'',false,'" + sGXsfl_44_idx + "',0)\"";
-            GxWebStd.gx_single_line_edit( context, edtavCflightdepartureaiportid_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV9cFlightDepartureAiportId), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCflightdepartureaiportid_Enabled!=0) ? context.localUtil.Format( (decimal)(AV9cFlightDepartureAiportId), "ZZZ9") : context.localUtil.Format( (decimal)(AV9cFlightDepartureAiportId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,26);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCflightdepartureaiportid_Jsonclick, 0, "Attribute", "", "", "", "", edtavCflightdepartureaiportid_Visible, edtavCflightdepartureaiportid_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0060.htm");
+            GxWebStd.gx_single_line_edit( context, edtavCflightarrivalairportid_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV11cFlightArrivalAirportId), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCflightarrivalairportid_Enabled!=0) ? context.localUtil.Format( (decimal)(AV11cFlightArrivalAirportId), "ZZZ9") : context.localUtil.Format( (decimal)(AV11cFlightArrivalAirportId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,26);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCflightarrivalairportid_Jsonclick, 0, "Attribute", "", "", "", "", edtavCflightarrivalairportid_Visible, edtavCflightarrivalairportid_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0060.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -475,13 +475,13 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
             /* Div Control */
-            GxWebStd.gx_div_start( context, divFlightdepartureairportnamefiltercontainer_Internalname, 1, 0, "px", 0, "px", divFlightdepartureairportnamefiltercontainer_Class, "start", "top", "", "", "div");
+            GxWebStd.gx_div_start( context, divFlightdepartureairportidfiltercontainer_Internalname, 1, 0, "px", 0, "px", divFlightdepartureairportidfiltercontainer_Class, "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
             /* Text block */
-            GxWebStd.gx_label_ctrl( context, lblLblflightdepartureairportnamefilter_Internalname, "Flight Departure Airport Name", "", "", lblLblflightdepartureairportnamefilter_Jsonclick, "'"+""+"'"+",false,"+"'"+"e130j1_client"+"'", "", "WWAdvancedLabel WWFilterLabel", 7, "", 1, 1, 0, 1, "HLP_Gx0060.htm");
+            GxWebStd.gx_label_ctrl( context, lblLblflightdepartureairportidfilter_Internalname, "Flight Departure Airport Id", "", "", lblLblflightdepartureairportidfilter_Jsonclick, "'"+""+"'"+",false,"+"'"+"e130j1_client"+"'", "", "WWAdvancedLabel WWFilterLabel", 7, "", 1, 1, 0, 1, "HLP_Gx0060.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
@@ -491,10 +491,10 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", " gx-attribute", "start", "top", "", "", "div");
             /* Attribute/Variable Label */
-            GxWebStd.gx_label_element( context, edtavCflightdepartureairportname_Internalname, "Flight Departure Airport Name", "col-sm-3 AttributeLabel", 0, true, "");
+            GxWebStd.gx_label_element( context, edtavCflightdepartureairportid_Internalname, "Flight Departure Airport Id", "col-sm-3 AttributeLabel", 0, true, "");
             /* Single line edit */
             TempTags = "  onfocus=\"gx.evt.onfocus(this, 36,'',false,'" + sGXsfl_44_idx + "',0)\"";
-            GxWebStd.gx_single_line_edit( context, edtavCflightdepartureairportname_Internalname, AV10cFlightDepartureAirportName, StringUtil.RTrim( context.localUtil.Format( AV10cFlightDepartureAirportName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,36);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCflightdepartureairportname_Jsonclick, 0, "Attribute", "", "", "", "", edtavCflightdepartureairportname_Visible, edtavCflightdepartureairportname_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "", "start", true, "", "HLP_Gx0060.htm");
+            GxWebStd.gx_single_line_edit( context, edtavCflightdepartureairportid_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(AV13cFlightDepartureAirportId), 4, 0, ".", "")), StringUtil.LTrim( ((edtavCflightdepartureairportid_Enabled!=0) ? context.localUtil.Format( (decimal)(AV13cFlightDepartureAirportId), "ZZZ9") : context.localUtil.Format( (decimal)(AV13cFlightDepartureAirportId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,36);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtavCflightdepartureairportid_Jsonclick, 0, "Attribute", "", "", "", "", edtavCflightdepartureairportid_Visible, edtavCflightdepartureairportid_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Gx0060.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -702,11 +702,11 @@ namespace GeneXus.Programs {
                               sGXsfl_44_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_44_idx), 4, 0), 4, "0");
                               SubsflControlProps_442( ) ;
                               AV5LinkSelection = cgiGet( edtavLinkselection_Internalname);
-                              AssignProp("", false, edtavLinkselection_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV11Linkselection_GXI : context.convertURL( context.PathToRelativeUrl( AV5LinkSelection))), !bGXsfl_44_Refreshing);
+                              AssignProp("", false, edtavLinkselection_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV14Linkselection_GXI : context.convertURL( context.PathToRelativeUrl( AV5LinkSelection))), !bGXsfl_44_Refreshing);
                               AssignProp("", false, edtavLinkselection_Internalname, "SrcSet", context.GetImageSrcSet( AV5LinkSelection), true);
                               A19FlightId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtFlightId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-                              A22FlightDepartureAiportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtFlightDepartureAiportId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-                              A23FlightDepartureAirportName = cgiGet( edtFlightDepartureAirportName_Internalname);
+                              A25FlightArrivalAirportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtFlightArrivalAirportId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+                              A24FlightDepartureAirportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtFlightDepartureAirportId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
                               sEvtType = StringUtil.Right( sEvt, 1);
                               if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
                               {
@@ -736,13 +736,13 @@ namespace GeneXus.Programs {
                                        {
                                           Rfr0gs = true;
                                        }
-                                       /* Set Refresh If Cflightdepartureaiportid Changed */
-                                       if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTDEPARTUREAIPORTID"), ".", ",") != Convert.ToDecimal( AV9cFlightDepartureAiportId )) )
+                                       /* Set Refresh If Cflightarrivalairportid Changed */
+                                       if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTARRIVALAIRPORTID"), ".", ",") != Convert.ToDecimal( AV11cFlightArrivalAirportId )) )
                                        {
                                           Rfr0gs = true;
                                        }
-                                       /* Set Refresh If Cflightdepartureairportname Changed */
-                                       if ( StringUtil.StrCmp(cgiGet( "GXH_vCFLIGHTDEPARTUREAIRPORTNAME"), AV10cFlightDepartureAirportName) != 0 )
+                                       /* Set Refresh If Cflightdepartureairportid Changed */
+                                       if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTDEPARTUREAIRPORTID"), ".", ",") != Convert.ToDecimal( AV13cFlightDepartureAirportId )) )
                                        {
                                           Rfr0gs = true;
                                        }
@@ -837,8 +837,8 @@ namespace GeneXus.Programs {
 
       protected void gxgrGrid1_refresh( int subGrid1_Rows ,
                                         short AV6cFlightId ,
-                                        short AV9cFlightDepartureAiportId ,
-                                        string AV10cFlightDepartureAirportName )
+                                        short AV11cFlightArrivalAirportId ,
+                                        short AV13cFlightDepartureAirportId )
       {
          initialize_formulas( ) ;
          GxWebStd.set_html_headers( context, 0, "", "");
@@ -914,25 +914,24 @@ namespace GeneXus.Programs {
             GXPagingFrom2 = (int)(GRID1_nFirstRecordOnPage);
             GXPagingTo2 = (int)(subGrid1_fnc_Recordsperpage( )+1);
             pr_default.dynParam(0, new Object[]{ new Object[]{
-                                                 AV9cFlightDepartureAiportId ,
-                                                 AV10cFlightDepartureAirportName ,
-                                                 A22FlightDepartureAiportId ,
-                                                 A23FlightDepartureAirportName ,
+                                                 AV11cFlightArrivalAirportId ,
+                                                 AV13cFlightDepartureAirportId ,
+                                                 A25FlightArrivalAirportId ,
+                                                 A24FlightDepartureAirportId ,
                                                  AV6cFlightId } ,
                                                  new int[]{
-                                                 TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
+                                                 TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
                                                  }
             });
-            lV10cFlightDepartureAirportName = StringUtil.Concat( StringUtil.RTrim( AV10cFlightDepartureAirportName), "%", "");
             /* Using cursor H000J2 */
-            pr_default.execute(0, new Object[] {AV6cFlightId, AV9cFlightDepartureAiportId, lV10cFlightDepartureAirportName, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
+            pr_default.execute(0, new Object[] {AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId, GXPagingFrom2, GXPagingTo2, GXPagingTo2});
             nGXsfl_44_idx = 1;
             sGXsfl_44_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_44_idx), 4, 0), 4, "0");
             SubsflControlProps_442( ) ;
             while ( ( (pr_default.getStatus(0) != 101) ) && ( ( GRID1_nCurrentRecord < subGrid1_fnc_Recordsperpage( ) ) ) )
             {
-               A23FlightDepartureAirportName = H000J2_A23FlightDepartureAirportName[0];
-               A22FlightDepartureAiportId = H000J2_A22FlightDepartureAiportId[0];
+               A24FlightDepartureAirportId = H000J2_A24FlightDepartureAirportId[0];
+               A25FlightArrivalAirportId = H000J2_A25FlightArrivalAirportId[0];
                A19FlightId = H000J2_A19FlightId[0];
                /* Execute user event: Load */
                E160J2 ();
@@ -965,18 +964,17 @@ namespace GeneXus.Programs {
       protected int subGrid1_fnc_Recordcount( )
       {
          pr_default.dynParam(1, new Object[]{ new Object[]{
-                                              AV9cFlightDepartureAiportId ,
-                                              AV10cFlightDepartureAirportName ,
-                                              A22FlightDepartureAiportId ,
-                                              A23FlightDepartureAirportName ,
+                                              AV11cFlightArrivalAirportId ,
+                                              AV13cFlightDepartureAirportId ,
+                                              A25FlightArrivalAirportId ,
+                                              A24FlightDepartureAirportId ,
                                               AV6cFlightId } ,
                                               new int[]{
-                                              TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
+                                              TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT, TypeConstants.SHORT
                                               }
          });
-         lV10cFlightDepartureAirportName = StringUtil.Concat( StringUtil.RTrim( AV10cFlightDepartureAirportName), "%", "");
          /* Using cursor H000J3 */
-         pr_default.execute(1, new Object[] {AV6cFlightId, AV9cFlightDepartureAiportId, lV10cFlightDepartureAirportName});
+         pr_default.execute(1, new Object[] {AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId});
          GRID1_nRecordCount = H000J3_AGRID1_nRecordCount[0];
          pr_default.close(1);
          return (int)(GRID1_nRecordCount) ;
@@ -998,7 +996,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1019,7 +1017,7 @@ namespace GeneXus.Programs {
          Grid1Container.AddObjectProperty("GRID1_nFirstRecordOnPage", GRID1_nFirstRecordOnPage);
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          }
          send_integrity_footer_hashes( ) ;
          return (short)(((GRID1_nEOF==0) ? 0 : 2)) ;
@@ -1038,7 +1036,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1065,7 +1063,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          }
          send_integrity_footer_hashes( ) ;
          return 0 ;
@@ -1084,7 +1082,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "GRID1_nFirstRecordOnPage", StringUtil.LTrim( StringUtil.NToC( (decimal)(GRID1_nFirstRecordOnPage), 15, 0, ".", "")));
          if ( isFullAjaxMode( ) )
          {
-            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV9cFlightDepartureAiportId, AV10cFlightDepartureAirportName) ;
+            gxgrGrid1_refresh( subGrid1_Rows, AV6cFlightId, AV11cFlightArrivalAirportId, AV13cFlightDepartureAirportId) ;
          }
          send_integrity_footer_hashes( ) ;
          return (int)(0) ;
@@ -1127,22 +1125,34 @@ namespace GeneXus.Programs {
                AV6cFlightId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCflightid_Internalname), ".", ","), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "AV6cFlightId", StringUtil.LTrimStr( (decimal)(AV6cFlightId), 4, 0));
             }
-            if ( ( ( context.localUtil.CToN( cgiGet( edtavCflightdepartureaiportid_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtavCflightdepartureaiportid_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
+            if ( ( ( context.localUtil.CToN( cgiGet( edtavCflightarrivalairportid_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtavCflightarrivalairportid_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "vCFLIGHTDEPARTUREAIPORTID");
-               GX_FocusControl = edtavCflightdepartureaiportid_Internalname;
+               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "vCFLIGHTARRIVALAIRPORTID");
+               GX_FocusControl = edtavCflightarrivalairportid_Internalname;
                AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                wbErr = true;
-               AV9cFlightDepartureAiportId = 0;
-               AssignAttri("", false, "AV9cFlightDepartureAiportId", StringUtil.LTrimStr( (decimal)(AV9cFlightDepartureAiportId), 4, 0));
+               AV11cFlightArrivalAirportId = 0;
+               AssignAttri("", false, "AV11cFlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(AV11cFlightArrivalAirportId), 4, 0));
             }
             else
             {
-               AV9cFlightDepartureAiportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCflightdepartureaiportid_Internalname), ".", ","), 18, MidpointRounding.ToEven));
-               AssignAttri("", false, "AV9cFlightDepartureAiportId", StringUtil.LTrimStr( (decimal)(AV9cFlightDepartureAiportId), 4, 0));
+               AV11cFlightArrivalAirportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCflightarrivalairportid_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "AV11cFlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(AV11cFlightArrivalAirportId), 4, 0));
             }
-            AV10cFlightDepartureAirportName = cgiGet( edtavCflightdepartureairportname_Internalname);
-            AssignAttri("", false, "AV10cFlightDepartureAirportName", AV10cFlightDepartureAirportName);
+            if ( ( ( context.localUtil.CToN( cgiGet( edtavCflightdepartureairportid_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtavCflightdepartureairportid_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "vCFLIGHTDEPARTUREAIRPORTID");
+               GX_FocusControl = edtavCflightdepartureairportid_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+               wbErr = true;
+               AV13cFlightDepartureAirportId = 0;
+               AssignAttri("", false, "AV13cFlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(AV13cFlightDepartureAirportId), 4, 0));
+            }
+            else
+            {
+               AV13cFlightDepartureAirportId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtavCflightdepartureairportid_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "AV13cFlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(AV13cFlightDepartureAirportId), 4, 0));
+            }
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
@@ -1151,11 +1161,11 @@ namespace GeneXus.Programs {
             {
                GRID1_nFirstRecordOnPage = 0;
             }
-            if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTDEPARTUREAIPORTID"), ".", ",") != Convert.ToDecimal( AV9cFlightDepartureAiportId )) )
+            if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTARRIVALAIRPORTID"), ".", ",") != Convert.ToDecimal( AV11cFlightArrivalAirportId )) )
             {
                GRID1_nFirstRecordOnPage = 0;
             }
-            if ( StringUtil.StrCmp(cgiGet( "GXH_vCFLIGHTDEPARTUREAIRPORTNAME"), AV10cFlightDepartureAirportName) != 0 )
+            if ( ( context.localUtil.CToN( cgiGet( "GXH_vCFLIGHTDEPARTUREAIRPORTID"), ".", ",") != Convert.ToDecimal( AV13cFlightDepartureAirportId )) )
             {
                GRID1_nFirstRecordOnPage = 0;
             }
@@ -1193,7 +1203,7 @@ namespace GeneXus.Programs {
          edtavLinkselection_gximage = "selectRow";
          AV5LinkSelection = context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( ));
          AssignAttri("", false, edtavLinkselection_Internalname, AV5LinkSelection);
-         AV11Linkselection_GXI = GXDbFile.PathToUrl( context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( )));
+         AV14Linkselection_GXI = GXDbFile.PathToUrl( context.GetImagePath( "3914535b-0c03-44c5-9538-906a99cdd2bc", "", context.GetTheme( )));
          sendrow_442( ) ;
          GRID1_nCurrentRecord = (long)(GRID1_nCurrentRecord+1);
          if ( isFullAjaxMode( ) && ! bGXsfl_44_Refreshing )
@@ -1269,7 +1279,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20239191291982", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391915132529", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1285,7 +1295,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("gx0060.js", "?20239191291982", false, true);
+         context.AddJavascriptSource("gx0060.js", "?202391915132529", false, true);
          /* End function include_jscripts */
       }
 
@@ -1293,16 +1303,16 @@ namespace GeneXus.Programs {
       {
          edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_44_idx;
          edtFlightId_Internalname = "FLIGHTID_"+sGXsfl_44_idx;
-         edtFlightDepartureAiportId_Internalname = "FLIGHTDEPARTUREAIPORTID_"+sGXsfl_44_idx;
-         edtFlightDepartureAirportName_Internalname = "FLIGHTDEPARTUREAIRPORTNAME_"+sGXsfl_44_idx;
+         edtFlightArrivalAirportId_Internalname = "FLIGHTARRIVALAIRPORTID_"+sGXsfl_44_idx;
+         edtFlightDepartureAirportId_Internalname = "FLIGHTDEPARTUREAIRPORTID_"+sGXsfl_44_idx;
       }
 
       protected void SubsflControlProps_fel_442( )
       {
          edtavLinkselection_Internalname = "vLINKSELECTION_"+sGXsfl_44_fel_idx;
          edtFlightId_Internalname = "FLIGHTID_"+sGXsfl_44_fel_idx;
-         edtFlightDepartureAiportId_Internalname = "FLIGHTDEPARTUREAIPORTID_"+sGXsfl_44_fel_idx;
-         edtFlightDepartureAirportName_Internalname = "FLIGHTDEPARTUREAIRPORTNAME_"+sGXsfl_44_fel_idx;
+         edtFlightArrivalAirportId_Internalname = "FLIGHTARRIVALAIRPORTID_"+sGXsfl_44_fel_idx;
+         edtFlightDepartureAirportId_Internalname = "FLIGHTDEPARTUREAIRPORTID_"+sGXsfl_44_fel_idx;
       }
 
       protected void sendrow_442( )
@@ -1378,8 +1388,8 @@ namespace GeneXus.Programs {
             AssignProp("", false, edtavLinkselection_Internalname, "Link", edtavLinkselection_Link, !bGXsfl_44_Refreshing);
             ClassString = "SelectionAttribute" + " " + ((StringUtil.StrCmp(edtavLinkselection_gximage, "")==0) ? "" : "GX_Image_"+edtavLinkselection_gximage+"_Class");
             StyleString = "";
-            AV5LinkSelection_IsBlob = (bool)((String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection))&&String.IsNullOrEmpty(StringUtil.RTrim( AV11Linkselection_GXI)))||!String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)));
-            sImgUrl = (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV11Linkselection_GXI : context.PathToRelativeUrl( AV5LinkSelection));
+            AV5LinkSelection_IsBlob = (bool)((String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection))&&String.IsNullOrEmpty(StringUtil.RTrim( AV14Linkselection_GXI)))||!String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)));
+            sImgUrl = (String.IsNullOrEmpty(StringUtil.RTrim( AV5LinkSelection)) ? AV14Linkselection_GXI : context.PathToRelativeUrl( AV5LinkSelection));
             Grid1Row.AddColumnProperties("bitmap", 1, isAjaxCallMode( ), new Object[] {(string)edtavLinkselection_Internalname,(string)sImgUrl,(string)edtavLinkselection_Link,(string)"",(string)"",context.GetTheme( ),(short)-1,(short)1,(string)"",(string)"",(short)0,(short)-1,(short)0,(string)"px",(short)0,(string)"px",(short)0,(short)0,(short)0,(string)"",(string)"",(string)StyleString,(string)ClassString,(string)"WWActionColumn",(string)"",(string)"",(string)"",(string)"",(string)"",(string)"",(short)1,(bool)AV5LinkSelection_IsBlob,(bool)false,context.GetImageSrcSet( sImgUrl)});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
@@ -1388,25 +1398,25 @@ namespace GeneXus.Programs {
             }
             /* Single line edit */
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A19FlightId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A19FlightId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtFlightId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
+            edtFlightId_Link = "javascript:gx.popup.gxReturn(["+"'"+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A19FlightId), 4, 0, ".", "")))+"'"+"]);";
+            AssignProp("", false, edtFlightId_Internalname, "Link", edtFlightId_Link, !bGXsfl_44_Refreshing);
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A19FlightId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A19FlightId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtFlightId_Link,(string)"",(string)"",(string)"",(string)edtFlightId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
                context.WriteHtmlText( "<td valign=\"middle\" align=\""+"end"+"\""+" style=\""+""+"\">") ;
             }
             /* Single line edit */
-            ROClassString = "DescriptionAttribute";
-            edtFlightDepartureAiportId_Link = "javascript:gx.popup.gxReturn(["+"'"+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A19FlightId), 4, 0, ".", "")))+"'"+"]);";
-            AssignProp("", false, edtFlightDepartureAiportId_Internalname, "Link", edtFlightDepartureAiportId_Link, !bGXsfl_44_Refreshing);
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightDepartureAiportId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A22FlightDepartureAiportId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A22FlightDepartureAiportId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)edtFlightDepartureAiportId_Link,(string)"",(string)"",(string)"",(string)edtFlightDepartureAiportId_Jsonclick,(short)0,(string)"DescriptionAttribute",(string)"",(string)ROClassString,(string)"WWColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
+            ROClassString = "Attribute";
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightArrivalAirportId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A25FlightArrivalAirportId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A25FlightArrivalAirportId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtFlightArrivalAirportId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
             /* Subfile cell */
             if ( Grid1Container.GetWrapped() == 1 )
             {
-               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"start"+"\""+" style=\""+""+"\">") ;
+               context.WriteHtmlText( "<td valign=\"middle\" align=\""+"end"+"\""+" style=\""+""+"\">") ;
             }
             /* Single line edit */
             ROClassString = "Attribute";
-            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightDepartureAirportName_Internalname,(string)A23FlightDepartureAirportName,(string)"",(string)"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtFlightDepartureAirportName_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"",(short)0,(string)"px",(short)17,(string)"px",(short)40,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)-1,(bool)true,(string)"Name",(string)"start",(bool)true,(string)""});
+            Grid1Row.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightDepartureAirportId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A24FlightDepartureAirportId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A24FlightDepartureAirportId), "ZZZ9")),(string)" dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtFlightDepartureAirportId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"WWColumn OptionalColumn",(string)"",(short)-1,(short)0,(short)0,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)44,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
             send_integrity_lvl_hashes0J2( ) ;
             Grid1Container.AddRow(Grid1Row);
             nGXsfl_44_idx = ((subGrid1_Islastpage==1)&&(nGXsfl_44_idx+1>subGrid1_fnc_Recordsperpage( )) ? 1 : nGXsfl_44_idx+1);
@@ -1464,11 +1474,11 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Id") ;
             context.WriteHtmlTextNl( "</th>") ;
-            context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"DescriptionAttribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Aiport Id") ;
+            context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
+            context.SendWebValue( "Airport Id") ;
             context.WriteHtmlTextNl( "</th>") ;
-            context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Airport Name") ;
+            context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
+            context.SendWebValue( "Airport Id") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlTextNl( "</tr>") ;
             Grid1Container.AddObjectProperty("GridName", "Grid1");
@@ -1498,13 +1508,13 @@ namespace GeneXus.Programs {
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
             Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A19FlightId), 4, 0, ".", ""))));
+            Grid1Column.AddObjectProperty("Link", StringUtil.RTrim( edtFlightId_Link));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
-            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A22FlightDepartureAiportId), 4, 0, ".", ""))));
-            Grid1Column.AddObjectProperty("Link", StringUtil.RTrim( edtFlightDepartureAiportId_Link));
+            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A25FlightArrivalAirportId), 4, 0, ".", ""))));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Column = GXWebColumn.GetNew(isAjaxCallMode( ));
-            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( A23FlightDepartureAirportName));
+            Grid1Column.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A24FlightDepartureAirportId), 4, 0, ".", ""))));
             Grid1Container.AddColumnProperties(Grid1Column);
             Grid1Container.AddObjectProperty("Selectedindex", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGrid1_Selectedindex), 4, 0, ".", "")));
             Grid1Container.AddObjectProperty("Allowselection", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGrid1_Allowselection), 1, 0, ".", "")));
@@ -1521,18 +1531,18 @@ namespace GeneXus.Programs {
          lblLblflightidfilter_Internalname = "LBLFLIGHTIDFILTER";
          edtavCflightid_Internalname = "vCFLIGHTID";
          divFlightidfiltercontainer_Internalname = "FLIGHTIDFILTERCONTAINER";
-         lblLblflightdepartureaiportidfilter_Internalname = "LBLFLIGHTDEPARTUREAIPORTIDFILTER";
-         edtavCflightdepartureaiportid_Internalname = "vCFLIGHTDEPARTUREAIPORTID";
-         divFlightdepartureaiportidfiltercontainer_Internalname = "FLIGHTDEPARTUREAIPORTIDFILTERCONTAINER";
-         lblLblflightdepartureairportnamefilter_Internalname = "LBLFLIGHTDEPARTUREAIRPORTNAMEFILTER";
-         edtavCflightdepartureairportname_Internalname = "vCFLIGHTDEPARTUREAIRPORTNAME";
-         divFlightdepartureairportnamefiltercontainer_Internalname = "FLIGHTDEPARTUREAIRPORTNAMEFILTERCONTAINER";
+         lblLblflightarrivalairportidfilter_Internalname = "LBLFLIGHTARRIVALAIRPORTIDFILTER";
+         edtavCflightarrivalairportid_Internalname = "vCFLIGHTARRIVALAIRPORTID";
+         divFlightarrivalairportidfiltercontainer_Internalname = "FLIGHTARRIVALAIRPORTIDFILTERCONTAINER";
+         lblLblflightdepartureairportidfilter_Internalname = "LBLFLIGHTDEPARTUREAIRPORTIDFILTER";
+         edtavCflightdepartureairportid_Internalname = "vCFLIGHTDEPARTUREAIRPORTID";
+         divFlightdepartureairportidfiltercontainer_Internalname = "FLIGHTDEPARTUREAIRPORTIDFILTERCONTAINER";
          divAdvancedcontainer_Internalname = "ADVANCEDCONTAINER";
          bttBtntoggle_Internalname = "BTNTOGGLE";
          edtavLinkselection_Internalname = "vLINKSELECTION";
          edtFlightId_Internalname = "FLIGHTID";
-         edtFlightDepartureAiportId_Internalname = "FLIGHTDEPARTUREAIPORTID";
-         edtFlightDepartureAirportName_Internalname = "FLIGHTDEPARTUREAIRPORTNAME";
+         edtFlightArrivalAirportId_Internalname = "FLIGHTARRIVALAIRPORTID";
+         edtFlightDepartureAirportId_Internalname = "FLIGHTDEPARTUREAIRPORTID";
          bttBtn_cancel_Internalname = "BTN_CANCEL";
          divGridtable_Internalname = "GRIDTABLE";
          divMain_Internalname = "MAIN";
@@ -1551,25 +1561,25 @@ namespace GeneXus.Programs {
          subGrid1_Allowcollapsing = 0;
          subGrid1_Allowselection = 0;
          subGrid1_Header = "";
-         edtFlightDepartureAirportName_Jsonclick = "";
-         edtFlightDepartureAiportId_Jsonclick = "";
-         edtFlightDepartureAiportId_Link = "";
+         edtFlightDepartureAirportId_Jsonclick = "";
+         edtFlightArrivalAirportId_Jsonclick = "";
          edtFlightId_Jsonclick = "";
+         edtFlightId_Link = "";
          edtavLinkselection_gximage = "";
          edtavLinkselection_Link = "";
          subGrid1_Class = "PromptGrid";
          subGrid1_Backcolorstyle = 0;
-         edtavCflightdepartureairportname_Jsonclick = "";
-         edtavCflightdepartureairportname_Enabled = 1;
-         edtavCflightdepartureairportname_Visible = 1;
-         edtavCflightdepartureaiportid_Jsonclick = "";
-         edtavCflightdepartureaiportid_Enabled = 1;
-         edtavCflightdepartureaiportid_Visible = 1;
+         edtavCflightdepartureairportid_Jsonclick = "";
+         edtavCflightdepartureairportid_Enabled = 1;
+         edtavCflightdepartureairportid_Visible = 1;
+         edtavCflightarrivalairportid_Jsonclick = "";
+         edtavCflightarrivalairportid_Enabled = 1;
+         edtavCflightarrivalairportid_Visible = 1;
          edtavCflightid_Jsonclick = "";
          edtavCflightid_Enabled = 1;
          edtavCflightid_Visible = 1;
-         divFlightdepartureairportnamefiltercontainer_Class = "AdvancedContainerItem";
-         divFlightdepartureaiportidfiltercontainer_Class = "AdvancedContainerItem";
+         divFlightdepartureairportidfiltercontainer_Class = "AdvancedContainerItem";
+         divFlightarrivalairportidfiltercontainer_Class = "AdvancedContainerItem";
          divFlightidfiltercontainer_Class = "AdvancedContainerItem";
          bttBtntoggle_Class = "BtnToggle";
          divAdvancedcontainer_Class = "AdvancedContainerVisible";
@@ -1592,27 +1602,27 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV9cFlightDepartureAiportId',fld:'vCFLIGHTDEPARTUREAIPORTID',pic:'ZZZ9'},{av:'AV10cFlightDepartureAirportName',fld:'vCFLIGHTDEPARTUREAIRPORTNAME',pic:''}]");
+         setEventMetadata("REFRESH","{handler:'Refresh',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV11cFlightArrivalAirportId',fld:'vCFLIGHTARRIVALAIRPORTID',pic:'ZZZ9'},{av:'AV13cFlightDepartureAirportId',fld:'vCFLIGHTDEPARTUREAIRPORTID',pic:'ZZZ9'}]");
          setEventMetadata("REFRESH",",oparms:[]}");
          setEventMetadata("'TOGGLE'","{handler:'E140J1',iparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]");
          setEventMetadata("'TOGGLE'",",oparms:[{av:'divAdvancedcontainer_Class',ctrl:'ADVANCEDCONTAINER',prop:'Class'},{ctrl:'BTNTOGGLE',prop:'Class'}]}");
          setEventMetadata("LBLFLIGHTIDFILTER.CLICK","{handler:'E110J1',iparms:[{av:'divFlightidfiltercontainer_Class',ctrl:'FLIGHTIDFILTERCONTAINER',prop:'Class'}]");
          setEventMetadata("LBLFLIGHTIDFILTER.CLICK",",oparms:[{av:'divFlightidfiltercontainer_Class',ctrl:'FLIGHTIDFILTERCONTAINER',prop:'Class'},{av:'edtavCflightid_Visible',ctrl:'vCFLIGHTID',prop:'Visible'}]}");
-         setEventMetadata("LBLFLIGHTDEPARTUREAIPORTIDFILTER.CLICK","{handler:'E120J1',iparms:[{av:'divFlightdepartureaiportidfiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIPORTIDFILTERCONTAINER',prop:'Class'}]");
-         setEventMetadata("LBLFLIGHTDEPARTUREAIPORTIDFILTER.CLICK",",oparms:[{av:'divFlightdepartureaiportidfiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIPORTIDFILTERCONTAINER',prop:'Class'},{av:'edtavCflightdepartureaiportid_Visible',ctrl:'vCFLIGHTDEPARTUREAIPORTID',prop:'Visible'}]}");
-         setEventMetadata("LBLFLIGHTDEPARTUREAIRPORTNAMEFILTER.CLICK","{handler:'E130J1',iparms:[{av:'divFlightdepartureairportnamefiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIRPORTNAMEFILTERCONTAINER',prop:'Class'}]");
-         setEventMetadata("LBLFLIGHTDEPARTUREAIRPORTNAMEFILTER.CLICK",",oparms:[{av:'divFlightdepartureairportnamefiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIRPORTNAMEFILTERCONTAINER',prop:'Class'},{av:'edtavCflightdepartureairportname_Visible',ctrl:'vCFLIGHTDEPARTUREAIRPORTNAME',prop:'Visible'}]}");
+         setEventMetadata("LBLFLIGHTARRIVALAIRPORTIDFILTER.CLICK","{handler:'E120J1',iparms:[{av:'divFlightarrivalairportidfiltercontainer_Class',ctrl:'FLIGHTARRIVALAIRPORTIDFILTERCONTAINER',prop:'Class'}]");
+         setEventMetadata("LBLFLIGHTARRIVALAIRPORTIDFILTER.CLICK",",oparms:[{av:'divFlightarrivalairportidfiltercontainer_Class',ctrl:'FLIGHTARRIVALAIRPORTIDFILTERCONTAINER',prop:'Class'},{av:'edtavCflightarrivalairportid_Visible',ctrl:'vCFLIGHTARRIVALAIRPORTID',prop:'Visible'}]}");
+         setEventMetadata("LBLFLIGHTDEPARTUREAIRPORTIDFILTER.CLICK","{handler:'E130J1',iparms:[{av:'divFlightdepartureairportidfiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIRPORTIDFILTERCONTAINER',prop:'Class'}]");
+         setEventMetadata("LBLFLIGHTDEPARTUREAIRPORTIDFILTER.CLICK",",oparms:[{av:'divFlightdepartureairportidfiltercontainer_Class',ctrl:'FLIGHTDEPARTUREAIRPORTIDFILTERCONTAINER',prop:'Class'},{av:'edtavCflightdepartureairportid_Visible',ctrl:'vCFLIGHTDEPARTUREAIRPORTID',prop:'Visible'}]}");
          setEventMetadata("ENTER","{handler:'E170J2',iparms:[{av:'A19FlightId',fld:'FLIGHTID',pic:'ZZZ9',hsh:true}]");
          setEventMetadata("ENTER",",oparms:[{av:'AV7pFlightId',fld:'vPFLIGHTID',pic:'ZZZ9'}]}");
-         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV9cFlightDepartureAiportId',fld:'vCFLIGHTDEPARTUREAIPORTID',pic:'ZZZ9'},{av:'AV10cFlightDepartureAirportName',fld:'vCFLIGHTDEPARTUREAIRPORTNAME',pic:''}]");
+         setEventMetadata("GRID1_FIRSTPAGE","{handler:'subgrid1_firstpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV11cFlightArrivalAirportId',fld:'vCFLIGHTARRIVALAIRPORTID',pic:'ZZZ9'},{av:'AV13cFlightDepartureAirportId',fld:'vCFLIGHTDEPARTUREAIRPORTID',pic:'ZZZ9'}]");
          setEventMetadata("GRID1_FIRSTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV9cFlightDepartureAiportId',fld:'vCFLIGHTDEPARTUREAIPORTID',pic:'ZZZ9'},{av:'AV10cFlightDepartureAirportName',fld:'vCFLIGHTDEPARTUREAIRPORTNAME',pic:''}]");
+         setEventMetadata("GRID1_PREVPAGE","{handler:'subgrid1_previouspage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV11cFlightArrivalAirportId',fld:'vCFLIGHTARRIVALAIRPORTID',pic:'ZZZ9'},{av:'AV13cFlightDepartureAirportId',fld:'vCFLIGHTDEPARTUREAIRPORTID',pic:'ZZZ9'}]");
          setEventMetadata("GRID1_PREVPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV9cFlightDepartureAiportId',fld:'vCFLIGHTDEPARTUREAIPORTID',pic:'ZZZ9'},{av:'AV10cFlightDepartureAirportName',fld:'vCFLIGHTDEPARTUREAIRPORTNAME',pic:''}]");
+         setEventMetadata("GRID1_NEXTPAGE","{handler:'subgrid1_nextpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV11cFlightArrivalAirportId',fld:'vCFLIGHTARRIVALAIRPORTID',pic:'ZZZ9'},{av:'AV13cFlightDepartureAirportId',fld:'vCFLIGHTDEPARTUREAIRPORTID',pic:'ZZZ9'}]");
          setEventMetadata("GRID1_NEXTPAGE",",oparms:[]}");
-         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV9cFlightDepartureAiportId',fld:'vCFLIGHTDEPARTUREAIPORTID',pic:'ZZZ9'},{av:'AV10cFlightDepartureAirportName',fld:'vCFLIGHTDEPARTUREAIRPORTNAME',pic:''}]");
+         setEventMetadata("GRID1_LASTPAGE","{handler:'subgrid1_lastpage',iparms:[{av:'GRID1_nFirstRecordOnPage'},{av:'GRID1_nEOF'},{av:'subGrid1_Rows',ctrl:'GRID1',prop:'Rows'},{av:'AV6cFlightId',fld:'vCFLIGHTID',pic:'ZZZ9'},{av:'AV11cFlightArrivalAirportId',fld:'vCFLIGHTARRIVALAIRPORTID',pic:'ZZZ9'},{av:'AV13cFlightDepartureAirportId',fld:'vCFLIGHTDEPARTUREAIRPORTID',pic:'ZZZ9'}]");
          setEventMetadata("GRID1_LASTPAGE",",oparms:[]}");
-         setEventMetadata("NULL","{handler:'Valid_Flightdepartureairportname',iparms:[]");
+         setEventMetadata("NULL","{handler:'Valid_Flightdepartureairportid',iparms:[]");
          setEventMetadata("NULL",",oparms:[]}");
          return  ;
       }
@@ -1635,7 +1645,6 @@ namespace GeneXus.Programs {
       {
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
-         AV10cFlightDepartureAirportName = "";
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
@@ -1645,8 +1654,8 @@ namespace GeneXus.Programs {
          sPrefix = "";
          lblLblflightidfilter_Jsonclick = "";
          TempTags = "";
-         lblLblflightdepartureaiportidfilter_Jsonclick = "";
-         lblLblflightdepartureairportnamefilter_Jsonclick = "";
+         lblLblflightarrivalairportidfilter_Jsonclick = "";
+         lblLblflightdepartureairportidfilter_Jsonclick = "";
          ClassString = "";
          StyleString = "";
          bttBtntoggle_Jsonclick = "";
@@ -1658,12 +1667,10 @@ namespace GeneXus.Programs {
          EvtRowId = "";
          sEvtType = "";
          AV5LinkSelection = "";
-         AV11Linkselection_GXI = "";
-         A23FlightDepartureAirportName = "";
+         AV14Linkselection_GXI = "";
          scmdbuf = "";
-         lV10cFlightDepartureAirportName = "";
-         H000J2_A23FlightDepartureAirportName = new string[] {""} ;
-         H000J2_A22FlightDepartureAiportId = new short[1] ;
+         H000J2_A24FlightDepartureAirportId = new short[1] ;
+         H000J2_A25FlightArrivalAirportId = new short[1] ;
          H000J2_A19FlightId = new short[1] ;
          H000J3_AGRID1_nRecordCount = new long[1] ;
          AV8ADVANCED_LABEL_TEMPLATE = "";
@@ -1677,7 +1684,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.gx0060__default(),
             new Object[][] {
                 new Object[] {
-               H000J2_A23FlightDepartureAirportName, H000J2_A22FlightDepartureAiportId, H000J2_A19FlightId
+               H000J2_A24FlightDepartureAirportId, H000J2_A25FlightArrivalAirportId, H000J2_A19FlightId
                }
                , new Object[] {
                H000J3_AGRID1_nRecordCount
@@ -1692,13 +1699,15 @@ namespace GeneXus.Programs {
       private short nGotPars ;
       private short GxWebError ;
       private short AV6cFlightId ;
-      private short AV9cFlightDepartureAiportId ;
+      private short AV11cFlightArrivalAirportId ;
+      private short AV13cFlightDepartureAirportId ;
       private short initialized ;
       private short gxajaxcallmode ;
       private short wbEnd ;
       private short wbStart ;
       private short A19FlightId ;
-      private short A22FlightDepartureAiportId ;
+      private short A25FlightArrivalAirportId ;
+      private short A24FlightDepartureAirportId ;
       private short nDonePA ;
       private short gxcookieaux ;
       private short subGrid1_Backcolorstyle ;
@@ -1714,10 +1723,10 @@ namespace GeneXus.Programs {
       private int nGXsfl_44_idx=1 ;
       private int edtavCflightid_Enabled ;
       private int edtavCflightid_Visible ;
-      private int edtavCflightdepartureaiportid_Enabled ;
-      private int edtavCflightdepartureaiportid_Visible ;
-      private int edtavCflightdepartureairportname_Visible ;
-      private int edtavCflightdepartureairportname_Enabled ;
+      private int edtavCflightarrivalairportid_Enabled ;
+      private int edtavCflightarrivalairportid_Visible ;
+      private int edtavCflightdepartureairportid_Enabled ;
+      private int edtavCflightdepartureairportid_Visible ;
       private int subGrid1_Islastpage ;
       private int GXPagingFrom2 ;
       private int GXPagingTo2 ;
@@ -1734,8 +1743,8 @@ namespace GeneXus.Programs {
       private string divAdvancedcontainer_Class ;
       private string bttBtntoggle_Class ;
       private string divFlightidfiltercontainer_Class ;
-      private string divFlightdepartureaiportidfiltercontainer_Class ;
-      private string divFlightdepartureairportnamefiltercontainer_Class ;
+      private string divFlightarrivalairportidfiltercontainer_Class ;
+      private string divFlightdepartureairportidfiltercontainer_Class ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
       private string sGXsfl_44_idx="0001" ;
@@ -1753,16 +1762,16 @@ namespace GeneXus.Programs {
       private string edtavCflightid_Internalname ;
       private string TempTags ;
       private string edtavCflightid_Jsonclick ;
-      private string divFlightdepartureaiportidfiltercontainer_Internalname ;
-      private string lblLblflightdepartureaiportidfilter_Internalname ;
-      private string lblLblflightdepartureaiportidfilter_Jsonclick ;
-      private string edtavCflightdepartureaiportid_Internalname ;
-      private string edtavCflightdepartureaiportid_Jsonclick ;
-      private string divFlightdepartureairportnamefiltercontainer_Internalname ;
-      private string lblLblflightdepartureairportnamefilter_Internalname ;
-      private string lblLblflightdepartureairportnamefilter_Jsonclick ;
-      private string edtavCflightdepartureairportname_Internalname ;
-      private string edtavCflightdepartureairportname_Jsonclick ;
+      private string divFlightarrivalairportidfiltercontainer_Internalname ;
+      private string lblLblflightarrivalairportidfilter_Internalname ;
+      private string lblLblflightarrivalairportidfilter_Jsonclick ;
+      private string edtavCflightarrivalairportid_Internalname ;
+      private string edtavCflightarrivalairportid_Jsonclick ;
+      private string divFlightdepartureairportidfiltercontainer_Internalname ;
+      private string lblLblflightdepartureairportidfilter_Internalname ;
+      private string lblLblflightdepartureairportidfilter_Jsonclick ;
+      private string edtavCflightdepartureairportid_Internalname ;
+      private string edtavCflightdepartureairportid_Jsonclick ;
       private string divGridtable_Internalname ;
       private string ClassString ;
       private string StyleString ;
@@ -1778,8 +1787,8 @@ namespace GeneXus.Programs {
       private string sEvtType ;
       private string edtavLinkselection_Internalname ;
       private string edtFlightId_Internalname ;
-      private string edtFlightDepartureAiportId_Internalname ;
-      private string edtFlightDepartureAirportName_Internalname ;
+      private string edtFlightArrivalAirportId_Internalname ;
+      private string edtFlightDepartureAirportId_Internalname ;
       private string scmdbuf ;
       private string AV8ADVANCED_LABEL_TEMPLATE ;
       private string edtavLinkselection_gximage ;
@@ -1789,10 +1798,10 @@ namespace GeneXus.Programs {
       private string edtavLinkselection_Link ;
       private string sImgUrl ;
       private string ROClassString ;
+      private string edtFlightId_Link ;
       private string edtFlightId_Jsonclick ;
-      private string edtFlightDepartureAiportId_Link ;
-      private string edtFlightDepartureAiportId_Jsonclick ;
-      private string edtFlightDepartureAirportName_Jsonclick ;
+      private string edtFlightArrivalAirportId_Jsonclick ;
+      private string edtFlightDepartureAirportId_Jsonclick ;
       private string subGrid1_Header ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
@@ -1803,18 +1812,15 @@ namespace GeneXus.Programs {
       private bool gxdyncontrolsrefreshing ;
       private bool returnInSub ;
       private bool AV5LinkSelection_IsBlob ;
-      private string AV10cFlightDepartureAirportName ;
-      private string AV11Linkselection_GXI ;
-      private string A23FlightDepartureAirportName ;
-      private string lV10cFlightDepartureAirportName ;
+      private string AV14Linkselection_GXI ;
       private string AV5LinkSelection ;
       private GXWebGrid Grid1Container ;
       private GXWebRow Grid1Row ;
       private GXWebColumn Grid1Column ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
-      private string[] H000J2_A23FlightDepartureAirportName ;
-      private short[] H000J2_A22FlightDepartureAiportId ;
+      private short[] H000J2_A24FlightDepartureAirportId ;
+      private short[] H000J2_A25FlightArrivalAirportId ;
       private short[] H000J2_A19FlightId ;
       private long[] H000J3_AGRID1_nRecordCount ;
       private msglist BackMsgLst ;
@@ -1826,10 +1832,10 @@ namespace GeneXus.Programs {
    public class gx0060__default : DataStoreHelperBase, IDataStoreHelper
    {
       protected Object[] conditional_H000J2( IGxContext context ,
-                                             short AV9cFlightDepartureAiportId ,
-                                             string AV10cFlightDepartureAirportName ,
-                                             short A22FlightDepartureAiportId ,
-                                             string A23FlightDepartureAirportName ,
+                                             short AV11cFlightArrivalAirportId ,
+                                             short AV13cFlightDepartureAirportId ,
+                                             short A25FlightArrivalAirportId ,
+                                             short A24FlightDepartureAirportId ,
                                              short AV6cFlightId )
       {
          System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
@@ -1839,21 +1845,21 @@ namespace GeneXus.Programs {
          string sSelectString;
          string sFromString;
          string sOrderString;
-         sSelectString = " [FlightDepartureAirportName], [FlightDepartureAiportId], [FlightId]";
+         sSelectString = " [FlightDepartureAirportId], [FlightArrivalAirportId], [FlightId]";
          sFromString = " FROM [Flight]";
          sOrderString = "";
          AddWhere(sWhereString, "([FlightId] >= @AV6cFlightId)");
-         if ( ! (0==AV9cFlightDepartureAiportId) )
+         if ( ! (0==AV11cFlightArrivalAirportId) )
          {
-            AddWhere(sWhereString, "([FlightDepartureAiportId] >= @AV9cFlightDepartureAiportId)");
+            AddWhere(sWhereString, "([FlightArrivalAirportId] >= @AV11cFlightArrivalAirportId)");
          }
          else
          {
             GXv_int1[1] = 1;
          }
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV10cFlightDepartureAirportName)) )
+         if ( ! (0==AV13cFlightDepartureAirportId) )
          {
-            AddWhere(sWhereString, "([FlightDepartureAirportName] like @lV10cFlightDepartureAirportName)");
+            AddWhere(sWhereString, "([FlightDepartureAirportId] >= @AV13cFlightDepartureAirportId)");
          }
          else
          {
@@ -1867,10 +1873,10 @@ namespace GeneXus.Programs {
       }
 
       protected Object[] conditional_H000J3( IGxContext context ,
-                                             short AV9cFlightDepartureAiportId ,
-                                             string AV10cFlightDepartureAirportName ,
-                                             short A22FlightDepartureAiportId ,
-                                             string A23FlightDepartureAirportName ,
+                                             short AV11cFlightArrivalAirportId ,
+                                             short AV13cFlightDepartureAirportId ,
+                                             short A25FlightArrivalAirportId ,
+                                             short A24FlightDepartureAirportId ,
                                              short AV6cFlightId )
       {
          System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
@@ -1879,17 +1885,17 @@ namespace GeneXus.Programs {
          Object[] GXv_Object4 = new Object[2];
          scmdbuf = "SELECT COUNT(*) FROM [Flight]";
          AddWhere(sWhereString, "([FlightId] >= @AV6cFlightId)");
-         if ( ! (0==AV9cFlightDepartureAiportId) )
+         if ( ! (0==AV11cFlightArrivalAirportId) )
          {
-            AddWhere(sWhereString, "([FlightDepartureAiportId] >= @AV9cFlightDepartureAiportId)");
+            AddWhere(sWhereString, "([FlightArrivalAirportId] >= @AV11cFlightArrivalAirportId)");
          }
          else
          {
             GXv_int3[1] = 1;
          }
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV10cFlightDepartureAirportName)) )
+         if ( ! (0==AV13cFlightDepartureAirportId) )
          {
-            AddWhere(sWhereString, "([FlightDepartureAirportName] like @lV10cFlightDepartureAirportName)");
+            AddWhere(sWhereString, "([FlightDepartureAirportId] >= @AV13cFlightDepartureAirportId)");
          }
          else
          {
@@ -1908,9 +1914,9 @@ namespace GeneXus.Programs {
          switch ( cursor )
          {
                case 0 :
-                     return conditional_H000J2(context, (short)dynConstraints[0] , (string)dynConstraints[1] , (short)dynConstraints[2] , (string)dynConstraints[3] , (short)dynConstraints[4] );
+                     return conditional_H000J2(context, (short)dynConstraints[0] , (short)dynConstraints[1] , (short)dynConstraints[2] , (short)dynConstraints[3] , (short)dynConstraints[4] );
                case 1 :
-                     return conditional_H000J3(context, (short)dynConstraints[0] , (string)dynConstraints[1] , (short)dynConstraints[2] , (string)dynConstraints[3] , (short)dynConstraints[4] );
+                     return conditional_H000J3(context, (short)dynConstraints[0] , (short)dynConstraints[1] , (short)dynConstraints[2] , (short)dynConstraints[3] , (short)dynConstraints[4] );
          }
          return base.getDynamicStatement(cursor, context, dynConstraints);
       }
@@ -1932,8 +1938,8 @@ namespace GeneXus.Programs {
           Object[] prmH000J2;
           prmH000J2 = new Object[] {
           new ParDef("@AV6cFlightId",GXType.Int16,4,0) ,
-          new ParDef("@AV9cFlightDepartureAiportId",GXType.Int16,4,0) ,
-          new ParDef("@lV10cFlightDepartureAirportName",GXType.NVarChar,40,0) ,
+          new ParDef("@AV11cFlightArrivalAirportId",GXType.Int16,4,0) ,
+          new ParDef("@AV13cFlightDepartureAirportId",GXType.Int16,4,0) ,
           new ParDef("@GXPagingFrom2",GXType.Int32,9,0) ,
           new ParDef("@GXPagingTo2",GXType.Int32,9,0) ,
           new ParDef("@GXPagingTo2",GXType.Int32,9,0)
@@ -1941,8 +1947,8 @@ namespace GeneXus.Programs {
           Object[] prmH000J3;
           prmH000J3 = new Object[] {
           new ParDef("@AV6cFlightId",GXType.Int16,4,0) ,
-          new ParDef("@AV9cFlightDepartureAiportId",GXType.Int16,4,0) ,
-          new ParDef("@lV10cFlightDepartureAirportName",GXType.NVarChar,40,0)
+          new ParDef("@AV11cFlightArrivalAirportId",GXType.Int16,4,0) ,
+          new ParDef("@AV13cFlightDepartureAirportId",GXType.Int16,4,0)
           };
           def= new CursorDef[] {
               new CursorDef("H000J2", "scmdbuf",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH000J2,11, GxCacheFrequency.OFF ,false,false )
@@ -1958,7 +1964,7 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;

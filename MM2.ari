@@ -69,7 +69,11 @@ datastore_i(1,'HelpKeyword','20').
 datastore_i(1,'DBMS',12).
 datastore_i(1,'NAME','Default').
  
+subview_i(2,504,7).
+subview_i(2,503,7).
  
+subtype_group_i(2,1,[ 'FlightDepartureAirport',[ [ 24,20 ],[ 23,21 ] ] ]).
+subtype_group_i(2,2,[ 'FlightArrivalAirport',[ [ 25,20 ],[ 26,21 ] ] ]).
  
 culture_id_i(eng).
  
@@ -85,7 +89,7 @@ lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
 lng_prop_i(1,'FullyQualifiedName','English',d).
  
-ver_stamp('20230919.170442').
+ver_stamp('20230919.201132').
  
-ver_stamp(date(2023,9,19),time(12,7,30,2)).
+ver_stamp(date(2023,9,19),time(15,11,44,42)).
  

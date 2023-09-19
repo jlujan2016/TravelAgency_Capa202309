@@ -1,0 +1,26 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_4-174187</SpecVersion>
+<Object>
+<ObjClsGuid>87313f43-5eb2-41d7-9b8c-e8d9f5bf9588</ObjClsGuid>
+<ObjCls>10</ObjCls>
+<ObjId>0</ObjId>
+<ObjName>SubTypes</ObjName>
+<ObjDesc>Subtype groups analysis report</ObjDesc>
+<ObjPgmName>SubTypes</ObjPgmName>
+<ObjClsName>Subtype group</ObjClsName></Object>
+<Warnings>
+<Warning>
+<MsgCode>spc0079</MsgCode>
+<Message>
+<Token>Attribute(s) </Token>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute>
+<Token> in subtype group '</Token>
+<SubtypeGroup>
+<SubtypeGroupId>1</SubtypeGroupId>
+<SubtypeGroupName>FlightDepartureAirport</SubtypeGroupName></SubtypeGroup>
+<Token>' is(are) not associated to any transaction.</Token></Message></Warning></Warnings>
+<Errors></Errors></ObjectSpec>

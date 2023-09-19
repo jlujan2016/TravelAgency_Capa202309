@@ -1,4 +1,18 @@
-ALTER TABLE [Flight] ADD [FlightDepartureAiportId] smallint NOT NULL CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT DEFAULT convert(int, 0), [FlightDepartureAirportName] nvarchar(40) NOT NULL CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT DEFAULT '';
-ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT;
-ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT;
+CREATE TABLE [GXA0006] ([FlightId] smallint NOT NULL IDENTITY(1,1), [FlightArrivalAirportId] smallint NOT NULL , [FlightDepartureAirportId] smallint NOT NULL );
+Run conversion program for table Flight;
+DROP TABLE [Flight];
+sp_rename '[GXA0006]', 'Flight';
+ALTER TABLE [Flight] ADD PRIMARY KEY([FlightId]);
+SET IDENTITY_INSERT [Country] ON;
+INSERT INTO [Country] ([CountryId], [CountryName], [CountryLastLine]) SELECT TOP 1 0, ' ', 0 FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [Country] WHERE CountryId=0);
+SET IDENTITY_INSERT [Country] OFF;
+INSERT INTO [CountryCity] ([CountryId], [CityId], [CityName]) SELECT TOP 1 0, 0, ' ' FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [CountryCity] WHERE CountryId=0 AND CityId=0);
+SET IDENTITY_INSERT [Airport] ON;
+INSERT INTO [Airport] ([AirportId], [AirportName], [CountryId], [CityId]) SELECT TOP 1 convert(int, 0), ' ', 0, 0 FROM [Flight] WHERE NOT EXISTS (SELECT 1 FROM [Airport] WHERE AirportId=convert(int, 0));
+SET IDENTITY_INSERT [Airport] OFF;
+CREATE NONCLUSTERED INDEX [IFLIGHT1] ON [Flight] ([FlightArrivalAirportId] );
+CREATE NONCLUSTERED INDEX [IFLIGHT2] ON [Flight] ([FlightDepartureAirportId] );
+
+ALTER TABLE [Flight] ADD CONSTRAINT [IFLIGHT2] FOREIGN KEY ([FlightDepartureAirportId]) REFERENCES [Airport] ([AirportId]);
+ALTER TABLE [Flight] ADD CONSTRAINT [IFLIGHT1] FOREIGN KEY ([FlightArrivalAirportId]) REFERENCES [Airport] ([AirportId]);
 
