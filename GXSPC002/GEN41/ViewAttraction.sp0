@@ -195,6 +195,7 @@ end_i(3,0,0,[ [ [ t(7,2),t(=,10),t('Attractionid',23) ] ] ]).
  
 dom_info_i(95,[ 'Name' ]).
 dom_info_i(94,[ 'Id' ]).
+dom_info_i(13,[ 'GeneXus\Address' ]).
 dom_info_i(97,[ 'General\TabCode' ]).
  
  
@@ -621,6 +622,8 @@ pgm_callprotocol_i(proc,13,'GENERAL\SECURITY\ISAUTHORIZED','INTERNAL','Unsecure'
  
  
  
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').
  
  
  

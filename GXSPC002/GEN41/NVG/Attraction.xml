@@ -115,6 +115,10 @@
 <AttriName>AttractionPhoto.Uri  </AttriName>
 <Description></Description></Attribute>
 <Attribute>
+<AttriId>18</AttriId>
+<AttriName>AttractionAddress</AttriName>
+<Description>Attraction Address</Description></Attribute>
+<Attribute>
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute>
@@ -145,6 +149,10 @@
 <AttriId>40000</AttriId>
 <AttriName>AttractionPhoto.Uri  </AttriName>
 <Description></Description></Attribute>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>AttractionAddress</AttriName>
+<Description>Attraction Address</Description></Attribute>
 <Attribute>
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>

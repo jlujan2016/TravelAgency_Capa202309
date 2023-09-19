@@ -277,6 +277,7 @@ enum_type_i(2,71,char,3,0).
  
 dom_info_i(94,[ 'Id' ]).
 dom_info_i(95,[ 'Name' ]).
+dom_info_i(13,[ 'GeneXus\Address' ]).
  
  
 break_i(2,nvg,1,[],[ [],[],[] ]).

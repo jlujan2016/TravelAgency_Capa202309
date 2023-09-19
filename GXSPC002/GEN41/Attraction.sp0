@@ -11,11 +11,11 @@ lwi_i(2,[ [] ]).
  
  
  
-ta_i(2,[ [ [ 2,7 ],[ 2,8 ],[ 3,10 ],[ 5,15 ],[ 4,12 ],[ 2,13 ],[ 2,40000 ],[ 2,9 ],[ 2,14 ],[ 2,11 ] ] ]).
+ta_i(2,[ [ [ 2,7 ],[ 2,8 ],[ 3,10 ],[ 5,15 ],[ 4,12 ],[ 2,13 ],[ 2,40000 ],[ 2,18 ],[ 2,9 ],[ 2,14 ],[ 2,11 ] ] ]).
  
-las_i(2,[ [ 'Pgmname','Trncontext','Insert_countryid','Insert_cityid','Insert_categoryid','GXV1','Trncontextatt','Mode','Attractionid','Websession',7,9,14,11,8,10,15,12,13,40000 ] ]).
+las_i(2,[ [ 'Pgmname','Trncontext','Insert_countryid','Insert_cityid','Insert_categoryid','GXV1','Trncontextatt','Mode','Attractionid','Websession',7,9,14,11,8,10,15,12,13,40000,18 ] ]).
  
-lac_i(2,[ [ 7,8,9,14,11,13 ] ]).
+lac_i(2,[ [ 7,8,9,14,11,13,18 ] ]).
  
  
 lits_i('Attraction',5,10).
@@ -31,6 +31,7 @@ pos_i(15,[ 0,0,0 ]).
 pos_i(11,[ 0,0,0 ]).
 pos_i(12,[ 0,0,0 ]).
 pos_i(13,[ 0,0,0 ]).
+pos_i(18,[ 0,0,0 ]).
  
  
 default_i(e('Pgmname',2,2,'"Attraction"')).
@@ -211,6 +212,7 @@ v_i(t,i,14,7).
 v_i(t,o,14,8).
 v_i(t,o,14,13).
 v_i(t,o,14,40000).
+v_i(t,o,14,18).
 v_i(t,o,14,9).
 v_i(t,o,14,14).
 v_i(t,o,14,11).
@@ -236,6 +238,7 @@ ca_i(5,9).
  
  
  
+attri_i(18,[ 'AttractionAddress',svchar,1024,0,'',0,'Attraction Address','',0 ]).
 attri_i(13,[ 'AttractionPhoto',bits,4,0,'',0,'Attraction Photo','',0 ]).
 attri_i(12,[ 'CategoryName',svchar,40,0,'',0,'Category Name','',0 ]).
 attri_i(15,[ 'CityName',svchar,40,0,'',0,'City Name','',0 ]).
@@ -262,7 +265,7 @@ attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
 table_i(4,[ 'Category',[ 11,12 ],'Category','Category' ]).
 table_i(5,[ 'CountryCity',[ 9,14,15 ],'City','CountryCity' ]).
 table_i(3,[ 'Country',[ 9,10 ],'Country','Country' ]).
-table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14 ],'Attraction','Attraction' ]).
+table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14,18 ],'Attraction','Attraction' ]).
  
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
 index_i(3,[ 'ICOUNTRY',u,[ 9 ],'ICountry' ]).
@@ -282,8 +285,8 @@ index_i(4,[ 'ICATEGORY',u,[ 11 ],'ICategory' ]).
  
 add_att_i(bits,2,40000,13,'AttractionPhoto_GXI',[ svchar,2048,0,0 ]).
  
-upd_i(2,2,i,[ [ 8,13,40000,9,14,11 ],[],'IATTRACTION',[ [ [],7,7 ] ] ]).
-upd_i(2,2,u,[ [ 8,13,40000,9,14,11 ],[],'IATTRACTION',[] ]).
+upd_i(2,2,i,[ [ 8,13,40000,18,9,14,11 ],[],'IATTRACTION',[ [ [],7,7 ] ] ]).
+upd_i(2,2,u,[ [ 8,13,40000,18,9,14,11 ],[],'IATTRACTION',[] ]).
 upd_i(2,2,d,[ [],[],'IATTRACTION',[] ]).
  
  
@@ -305,6 +308,7 @@ enum_type_i(2,71,char,3,0).
  
 dom_info_i(94,[ 'Id' ]).
 dom_info_i(95,[ 'Name' ]).
+dom_info_i(13,[ 'GeneXus\Address' ]).
  
  
 break_i(2,nvg,1,[],[ [],[],[] ]).
@@ -435,15 +439,20 @@ html_sub_i(70,71,html_i(0,div(71))).
 html_sub_i(71,72,html_i(0,div(72))).
 html_sub_i(72,73,html_i(0,div(73))).
 html_sub_i(73,74,html_i(0,t(13,2))).
-html_sub_i(3,75,html_i(2,div(75))).
+html_sub_i(15,75,html_i(10,div(75))).
 html_sub_i(75,76,html_i(0,div(76))).
 html_sub_i(76,77,html_i(0,div(77))).
 html_sub_i(77,78,html_i(0,div(78))).
-html_sub_i(78,79,html_i(0,button('Enter'))).
-html_sub_i(77,80,html_i(1,div(80))).
-html_sub_i(80,81,html_i(0,button('Cancel'))).
-html_sub_i(77,82,html_i(2,div(82))).
-html_sub_i(82,83,html_i(0,button('Delete'))).
+html_sub_i(78,79,html_i(0,t(18,2))).
+html_sub_i(3,80,html_i(2,div(80))).
+html_sub_i(80,81,html_i(0,div(81))).
+html_sub_i(81,82,html_i(0,div(82))).
+html_sub_i(82,83,html_i(0,div(83))).
+html_sub_i(83,84,html_i(0,button('Enter'))).
+html_sub_i(82,85,html_i(1,div(85))).
+html_sub_i(85,86,html_i(0,button('Cancel'))).
+html_sub_i(82,87,html_i(2,div(87))).
+html_sub_i(87,88,html_i(0,button('Delete'))).
  
 html_tags_i(1,'Class','form-horizontal Form').
 html_tags_i(2,'data-gx-base-lib',none).
@@ -473,10 +482,12 @@ html_tags_i(67,'data-gx-att','att:12').
 html_tags_i(69,'data-gx-att','att:12').
 html_tags_i(72,'data-gx-att','att:13').
 html_tags_i(74,'data-gx-att','att:13').
-html_tags_i(77,'data-gx-actiongroup-type',toolbar).
-html_tags_i(79,'ControlType','').
-html_tags_i(81,'ControlType','').
-html_tags_i(83,'ControlType','').
+html_tags_i(77,'data-gx-att','att:18').
+html_tags_i(79,'data-gx-att','att:18').
+html_tags_i(82,'data-gx-actiongroup-type',toolbar).
+html_tags_i(84,'ControlType','').
+html_tags_i(86,'ControlType','').
+html_tags_i(88,'ControlType','').
  
 html_comp_i(12,'Backcolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(2,'Isabstractlayoutcontrol',0,d,[ bool ]).
@@ -1308,15 +1319,15 @@ html_comp_i(75,'Semanticcontent',div,d,[ str ]).
 html_comp_i(75,'Align',left,d,[ str ]).
 html_comp_i(75,'Valign',top,d,[ str ]).
 html_comp_i(76,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(76,'Class','col-xs-12 form__actions--fixed',v,[ str ]).
+html_comp_i(76,'Class','col-xs-12 form__cell',v,[ str ]).
 html_comp_i(76,'Id','',d,[ str ]).
 html_comp_i(76,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(76,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(76,'Semanticcontent',div,d,[ str ]).
-html_comp_i(76,'Align','Right',v,[ str ]).
-html_comp_i(76,'Valign','Middle',v,[ str ]).
+html_comp_i(76,'Align',left,d,[ str ]).
+html_comp_i(76,'Valign',top,d,[ str ]).
 html_comp_i(77,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(77,'Class','gx-action-group',v,[ str ]).
+html_comp_i(77,'Class','form-group gx-form-group ',v,[ str ]).
 html_comp_i(77,'Id','',d,[ str ]).
 html_comp_i(77,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(77,'Width',measure(0,px),d,[ measure ]).
@@ -1324,7 +1335,7 @@ html_comp_i(77,'Semanticcontent',div,d,[ str ]).
 html_comp_i(77,'Align',left,d,[ str ]).
 html_comp_i(77,'Valign',top,d,[ str ]).
 html_comp_i(78,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(78,'Class','gx-button',v,[ str ]).
+html_comp_i(78,'Class','col-sm-9 gx-attribute',v,[ str ]).
 html_comp_i(78,'Id','',d,[ str ]).
 html_comp_i(78,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(78,'Width',measure(0,px),d,[ measure ]).
@@ -1332,19 +1343,41 @@ html_comp_i(78,'Semanticcontent',div,d,[ str ]).
 html_comp_i(78,'Align',left,d,[ str ]).
 html_comp_i(78,'Valign',top,d,[ str ]).
 html_comp_i(79,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(79,'Controlname','Btn_enter',v,[ str ]).
-html_comp_i(79,'Class','Button button-primary',v,[ str ]).
-html_comp_i(79,'Event','Enter',v,[ str ]).
-html_comp_i(79,'Caption','Confirm',d,[ str ]).
-html_comp_i(79,'Title','Confirm',d,[ str ]).
-html_comp_i(79,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(79,'Colcount',80,d,[ num ]).
+html_comp_i(79,'Attid',18,v,[ num ]).
+html_comp_i(79,'Class','Attribute',v,[ str ]).
+html_comp_i(79,'Controlname','Attractionaddress',d,[ str ]).
+html_comp_i(79,'Returnonclick',0,v,[ bool ]).
+html_comp_i(79,'Captionclass','col-sm-3 AttributeLabel',v,[ str ]).
+html_comp_i(79,'Captionstyle','',v,[ str ]).
+html_comp_i(79,'Captionposition','Left',v,[ str ]).
+html_comp_i(79,'Captionvalue','Address',d,[ str ]).
+html_comp_i(79,'Layoutclass','col-sm-9',v,[ str ]).
+html_comp_i(79,'Controltype',2,d,[ num ]).
+html_comp_i(79,'Inputtype',0,d,[ num ]).
+html_comp_i(79,'Editautocomplete',0,d,[ num ]).
+html_comp_i(79,'Autocorrection',0,d,[ bool ]).
+html_comp_i(79,'Autocapitalization','FirstWord',d,[ str ]).
+html_comp_i(79,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(79,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(79,'Readonly',0,v,[ bool ]).
+html_comp_i(79,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(79,'Ispassword',0,d,[ bool ]).
+html_comp_i(79,'Autoresize',-1,d,[ bool ]).
+html_comp_i(79,'Gxwidth',measure(80,chr),d,[ measure ]).
+html_comp_i(79,'Gxheight',measure(10,row),d,[ measure ]).
+html_comp_i(79,'Ismultiline',-1,d,[ bool ]).
+html_comp_i(79,'Maxtextnumberlines',0,d,[ num ]).
+html_comp_i(79,'Fill',-1,d,[ bool ]).
+html_comp_i(79,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(79,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(79,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(79,'Border','2',d,[ str ]).
-html_comp_i(79,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(79,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(79,'Font',font('Verdana',12,[]),d,[ font ]).
+html_comp_i(79,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(79,'Gxformat',0,d,[ num ]).
+html_comp_i(79,'Title','',d,[ str ]).
+html_comp_i(79,'Invitemsg','',v,[ str ]).
 html_comp_i(80,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(80,'Class','gx-button',v,[ str ]).
+html_comp_i(80,'Class',row,v,[ str ]).
 html_comp_i(80,'Id','',d,[ str ]).
 html_comp_i(80,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(80,'Width',measure(0,px),d,[ measure ]).
@@ -1352,19 +1385,15 @@ html_comp_i(80,'Semanticcontent',div,d,[ str ]).
 html_comp_i(80,'Align',left,d,[ str ]).
 html_comp_i(80,'Valign',top,d,[ str ]).
 html_comp_i(81,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(81,'Controlname','Btn_cancel',v,[ str ]).
-html_comp_i(81,'Class','Button button-tertiary',v,[ str ]).
-html_comp_i(81,'Event','Cancel',v,[ str ]).
-html_comp_i(81,'Caption','Cancel',d,[ str ]).
-html_comp_i(81,'Title','Cancel',d,[ str ]).
-html_comp_i(81,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(81,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(81,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(81,'Border','2',d,[ str ]).
-html_comp_i(81,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(81,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(81,'Class','col-xs-12 form__actions--fixed',v,[ str ]).
+html_comp_i(81,'Id','',d,[ str ]).
+html_comp_i(81,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(81,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(81,'Semanticcontent',div,d,[ str ]).
+html_comp_i(81,'Align','Right',v,[ str ]).
+html_comp_i(81,'Valign','Middle',v,[ str ]).
 html_comp_i(82,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(82,'Class','gx-button',v,[ str ]).
+html_comp_i(82,'Class','gx-action-group',v,[ str ]).
 html_comp_i(82,'Id','',d,[ str ]).
 html_comp_i(82,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(82,'Width',measure(0,px),d,[ measure ]).
@@ -1372,17 +1401,65 @@ html_comp_i(82,'Semanticcontent',div,d,[ str ]).
 html_comp_i(82,'Align',left,d,[ str ]).
 html_comp_i(82,'Valign',top,d,[ str ]).
 html_comp_i(83,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(83,'Controlname','Btn_delete',v,[ str ]).
-html_comp_i(83,'Class','Button button-tertiary',v,[ str ]).
-html_comp_i(83,'Event','Delete',v,[ str ]).
-html_comp_i(83,'Caption','Delete',d,[ str ]).
-html_comp_i(83,'Title','Delete',d,[ str ]).
-html_comp_i(83,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(83,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(83,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(83,'Border','2',d,[ str ]).
-html_comp_i(83,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(83,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(83,'Class','gx-button',v,[ str ]).
+html_comp_i(83,'Id','',d,[ str ]).
+html_comp_i(83,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(83,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(83,'Semanticcontent',div,d,[ str ]).
+html_comp_i(83,'Align',left,d,[ str ]).
+html_comp_i(83,'Valign',top,d,[ str ]).
+html_comp_i(84,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(84,'Controlname','Btn_enter',v,[ str ]).
+html_comp_i(84,'Class','Button button-primary',v,[ str ]).
+html_comp_i(84,'Event','Enter',v,[ str ]).
+html_comp_i(84,'Caption','Confirm',d,[ str ]).
+html_comp_i(84,'Title','Confirm',d,[ str ]).
+html_comp_i(84,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(84,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(84,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(84,'Border','2',d,[ str ]).
+html_comp_i(84,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(84,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(85,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(85,'Class','gx-button',v,[ str ]).
+html_comp_i(85,'Id','',d,[ str ]).
+html_comp_i(85,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(85,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(85,'Semanticcontent',div,d,[ str ]).
+html_comp_i(85,'Align',left,d,[ str ]).
+html_comp_i(85,'Valign',top,d,[ str ]).
+html_comp_i(86,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(86,'Controlname','Btn_cancel',v,[ str ]).
+html_comp_i(86,'Class','Button button-tertiary',v,[ str ]).
+html_comp_i(86,'Event','Cancel',v,[ str ]).
+html_comp_i(86,'Caption','Cancel',d,[ str ]).
+html_comp_i(86,'Title','Cancel',d,[ str ]).
+html_comp_i(86,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(86,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(86,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(86,'Border','2',d,[ str ]).
+html_comp_i(86,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(86,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(87,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(87,'Class','gx-button',v,[ str ]).
+html_comp_i(87,'Id','',d,[ str ]).
+html_comp_i(87,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(87,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(87,'Semanticcontent',div,d,[ str ]).
+html_comp_i(87,'Align',left,d,[ str ]).
+html_comp_i(87,'Valign',top,d,[ str ]).
+html_comp_i(88,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(88,'Controlname','Btn_delete',v,[ str ]).
+html_comp_i(88,'Class','Button button-tertiary',v,[ str ]).
+html_comp_i(88,'Event','Delete',v,[ str ]).
+html_comp_i(88,'Caption','Delete',d,[ str ]).
+html_comp_i(88,'Title','Delete',d,[ str ]).
+html_comp_i(88,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(88,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(88,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(88,'Border','2',d,[ str ]).
+html_comp_i(88,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(88,'Buttonborderstyle',standard,d,[ str ]).
  
  
  
@@ -1460,18 +1537,23 @@ lit_i(73,1,div(73),[ ctlname('') ]).
 lit_i(72,1,div(72),[ ctlname('') ]).
 lit_i(71,1,div(71),[ ctlname('') ]).
 lit_i(70,1,div(70),[ ctlname('') ]).
-lit_i(15,1,div(15),[ ctlname('Formcontainer') ]).
-lit_i(14,1,div(14),[ ctlname('') ]).
-lit_i(13,1,div(13),[ ctlname('') ]).
-lit_i(79,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(79,1,t(18,2),[ ctlname(18),ctrltype(edit,79),pos(79),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(78,1,div(78),[ ctlname('') ]).
-lit_i(81,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(80,1,div(80),[ ctlname('') ]).
-lit_i(83,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(82,1,div(82),[ ctlname('') ]).
 lit_i(77,1,div(77),[ ctlname('') ]).
 lit_i(76,1,div(76),[ ctlname('') ]).
 lit_i(75,1,div(75),[ ctlname('') ]).
+lit_i(15,1,div(15),[ ctlname('Formcontainer') ]).
+lit_i(14,1,div(14),[ ctlname('') ]).
+lit_i(13,1,div(13),[ ctlname('') ]).
+lit_i(84,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(83,1,div(83),[ ctlname('') ]).
+lit_i(86,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(85,1,div(85),[ ctlname('') ]).
+lit_i(88,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(87,1,div(87),[ ctlname('') ]).
+lit_i(82,1,div(82),[ ctlname('') ]).
+lit_i(81,1,div(81),[ ctlname('') ]).
+lit_i(80,1,div(80),[ ctlname('') ]).
 lit_i(3,1,div(3),[ ctlname('Maintable') ]).
 lit_i(2,1,div(2),[ ctlname('') ]).
 lit_i(1,1,window,[ rect(0,0,1000,1000),ctlname('Form') ]).
@@ -1595,6 +1677,17 @@ att_prop_i(2,13,'AttValidationFailedMsg','',d).
 att_prop_i(2,13,'DownloadOffline','0',d).
 att_prop_i(2,13,'VarServiceExtName','',d).
 att_prop_i(2,13,'FullName','AttractionPhoto',v).
+att_prop_i(2,18,'ExternalName','AttractionAddress',d).
+att_prop_i(2,18,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,18,'EmptyAsNull','Yes',d).
+att_prop_i(2,18,idBasedOn,13,v).
+att_prop_i(2,18,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,18,'DB_NLS_SUPPORT','Yes',d).
+att_prop_i(2,18,'AttRegEx','',d).
+att_prop_i(2,18,'AttValidationFailedMsg','',d).
+att_prop_i(2,18,'DownloadOffline','0',d).
+att_prop_i(2,18,'VarServiceExtName','',d).
+att_prop_i(2,18,'FullName','AttractionAddress',v).
 att_prop_i(2,40000,'ExternalName','',d).
 att_prop_i(2,40000,'ExternalNamespace','',d).
 att_prop_i(2,40000,'EmptyAsNull','Yes',d).
@@ -1621,6 +1714,7 @@ tbl_att_prop_i(2,2,9,'AllowNulls',n).
 tbl_att_prop_i(2,2,11,'AllowNulls',n).
 tbl_att_prop_i(2,2,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,40000,'AllowNulls',n).
+tbl_att_prop_i(2,2,18,'AllowNulls',n).
 tbl_att_prop_i(2,3,9,'AllowNulls',n).
 tbl_att_prop_i(2,3,9,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,10,'AllowNulls',n).
@@ -1639,7 +1733,7 @@ var_prop_i(2,'Insert_categoryid',idBasedOn,'',v).
  
  
  
-trn_level_i(2,[ [ 7,8,9,10,14,15,11,12,13,40000 ],'Attraction','Attraction','Attraction','',8 ]).
+trn_level_i(2,[ [ 7,8,9,10,14,15,11,12,13,40000,18 ],'Attraction','Attraction','Attraction','',8 ]).
  
 struct_dt_i([ 26,61,0 ],name,'General\UI\TransactionContext').
 struct_dt_i([ 26,61,0 ],namespace,'TravelAgency_Capa202309').

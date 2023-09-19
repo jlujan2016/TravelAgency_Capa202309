@@ -19,10 +19,20 @@
     <Id>1</Id>
     <Part>9b0a32a3-de6d-4be1-a4dd-1b85d3741534</Part>
   </Object>
+  <Object>
+    <Type>78cecefe-be7d-4980-86ce-8d6e91fba04b</Type>
+    <Id>1</Id>
+    <Part>a51ced48-7bee-0001-ab12-04e9e32123d1</Part>
+  </Object>
   <Recent>
     <RecentKBObjectsList>
       <MaximumItems>10</MaximumItems>
       <RecentKBObjects>
+        <RecentKBObject>
+          <Key>78cecefe-be7d-4980-86ce-8d6e91fba04b-1</Key>
+          <Name>WorkWithWebCustomer</Name>
+          <LastAccess>2023-09-18T17:01:58.6118972-05:00</LastAccess>
+        </RecentKBObject>
         <RecentKBObject>
           <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-1</Key>
           <Name>Customer</Name>

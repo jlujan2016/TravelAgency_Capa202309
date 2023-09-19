@@ -56,17 +56,17 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeCountry( )
+      public void ReorganizeAttraction( )
       {
          string cmdBuffer = "";
-         /* Indices for table Country */
-         cmdBuffer=" ALTER TABLE [Country] ADD [CountryLastLine] smallint NOT NULL CONSTRAINT CountryLastLineCountry_DEFAULT DEFAULT convert(int, 0) "
+         /* Indices for table Attraction */
+         cmdBuffer=" ALTER TABLE [Attraction] ADD [AttractionAddress] nvarchar(1024) NOT NULL CONSTRAINT AttractionAddressAttraction_DEFAULT DEFAULT '' "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Country] DROP CONSTRAINT CountryLastLineCountry_DEFAULT "
+         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT AttractionAddressAttraction_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -80,9 +80,9 @@ namespace GeneXus.Programs {
          {
             /* Using cursor P00012 */
             pr_default.execute(0);
-            CountryCount = P00012_ACountryCount[0];
+            AttractionCount = P00012_AAttractionCount[0];
             pr_default.close(0);
-            PrintRecordCount ( "Country" ,  CountryCount );
+            PrintRecordCount ( "Attraction" ,  AttractionCount );
          }
       }
 
@@ -124,9 +124,9 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ColumnExist("Country",sSchemaVar,"CountryLastLine") )
+         if ( ColumnExist("Attraction",sSchemaVar,"AttractionAddress") )
          {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"CountryLastLine", "Country"}) ) ;
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"AttractionAddress", "Attraction"}) ) ;
             return false ;
          }
          return true ;
@@ -157,7 +157,7 @@ namespace GeneXus.Programs {
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeCountry" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeAttraction" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
@@ -179,7 +179,7 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Country", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Attraction", ""}) );
       }
 
       private void SetPrecedenceris( )
@@ -217,7 +217,7 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          scmdbuf = "";
-         P00012_ACountryCount = new int[1] ;
+         P00012_AAttractionCount = new int[1] ;
          sSchemaVar = "";
          nsSchemaVar = false;
          P00023_AsSchemaVar = new string[] {""} ;
@@ -242,7 +242,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_ACountryCount
+               P00012_AAttractionCount
                }
                , new Object[] {
                P00023_AsSchemaVar
@@ -259,7 +259,7 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int CountryCount ;
+      protected int AttractionCount ;
       protected string scmdbuf ;
       protected string sSchemaVar ;
       protected string sTableName ;
@@ -275,7 +275,7 @@ namespace GeneXus.Programs {
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_ACountryCount ;
+      protected int[] P00012_AAttractionCount ;
       protected string[] P00023_AsSchemaVar ;
       protected bool[] P00023_nsSchemaVar ;
       protected string[] P00034_AsSchemaVar ;
@@ -322,7 +322,7 @@ namespace GeneXus.Programs {
           new ParDef("@sMyColumnName",GXType.Char,255,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM [Country] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT COUNT(*) FROM [Attraction] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00045", "SELECT TABLE_NAME, TABLE_SCHEMA, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) AND (COLUMN_NAME = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )

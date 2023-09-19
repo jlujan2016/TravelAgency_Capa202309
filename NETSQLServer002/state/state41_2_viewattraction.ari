@@ -35,4 +35,6 @@ ij_usercontrol_directory_i(shared).
  
  
  
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').
  
