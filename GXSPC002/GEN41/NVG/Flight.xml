@@ -49,7 +49,33 @@
 <AttriId>25</AttriId>
 <AttriName>FlightArrivalAirportId</AttriName>
 <Description>Flight Arrival Airport Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>FlightArrivalCountryId</AttriName>
+<Description>Flight Arrival Country Id</Description></Attribute></KeyAttributes>
 <Tables></Tables></Table>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>FlightArrivalCountryId</AttriName>
+<Description>Flight Arrival Country Id</Description></Attribute>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>FlightArrivalCityId</AttriName>
+<Description>Flight Arrival City Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table>
 <Table>
 <TableId>7</TableId>
 <TableName>Airport</TableName>
@@ -60,7 +86,33 @@
 <AttriId>24</AttriId>
 <AttriName>FlightDepartureAirportId</AttriName>
 <Description>Flight Departure Airport Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>FlightDepartureCountryId</AttriName>
+<Description>Flight Departure Country Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>5</TableId>
+<TableName>CountryCity</TableName>
+<Description>City</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>FlightDepartureCountryId</AttriName>
+<Description>Flight Departure Country Id</Description></Attribute>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>FlightDepartureCityId</AttriName>
+<Description>Flight Departure City Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas>

@@ -125,6 +125,19 @@
 <AttriId>19</AttriId>
 <AttriName>FlightId</AttriName>
 <Description>Flight Id</Description></Attribute></KeyAttributes>
+<Into>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>FlightDepartureAirportId</AttriName>
+<Description>Flight Departure Airport Id</Description></Attribute>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>FlightArrivalAirportId</AttriName>
+<Description>Flight Arrival Airport Id</Description></Attribute>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>FlightId</AttriName>
+<Description>Flight Id</Description></Attribute></Into>
 <Tables></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>
