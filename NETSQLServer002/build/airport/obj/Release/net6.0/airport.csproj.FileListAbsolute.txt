@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\airport.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\airport.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\refint\airport.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\airport.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airport\obj\Release\net6.0\ref\airport.dll

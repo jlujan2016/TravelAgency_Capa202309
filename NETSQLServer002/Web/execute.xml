@@ -8,6 +8,18 @@
     <ObjLink>category.aspx</ObjLink>
   </Object>
   <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Flight</ObjName>
+    <ObjDesc>Flight</ObjDesc>
+    <ObjLink>flight.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Airport</ObjName>
+    <ObjDesc>Airport</ObjDesc>
+    <ObjLink>airport.aspx</ObjLink>
+  </Object>
+  <Object>
     <ObjCls>13</ObjCls>
     <ObjName>WWCustomer</ObjName>
     <ObjDesc>Customers</ObjDesc>

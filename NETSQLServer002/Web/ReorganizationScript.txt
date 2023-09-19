@@ -1,3 +1,4 @@
-ALTER TABLE [Attraction] ADD [AttractionAddress] nvarchar(1024) NOT NULL CONSTRAINT AttractionAddressAttraction_DEFAULT DEFAULT '';
-ALTER TABLE [Attraction] DROP CONSTRAINT AttractionAddressAttraction_DEFAULT;
+ALTER TABLE [Flight] ADD [FlightDepartureAiportId] smallint NOT NULL CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT DEFAULT convert(int, 0), [FlightDepartureAirportName] nvarchar(40) NOT NULL CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT DEFAULT '';
+ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAiportIdFlight_DEFAULT;
+ALTER TABLE [Flight] DROP CONSTRAINT FlightDepartureAirportNameFlight_DEFAULT;
 

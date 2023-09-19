@@ -2481,6 +2481,24 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "airport/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/airport.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/airport.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "attraction/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2620,6 +2638,24 @@
         },
         "runtime": {
           "bin/placeholder/customergeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "flight/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/flight.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/flight.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2781,6 +2817,42 @@
         },
         "runtime": {
           "bin/placeholder/gx0051.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "gx0060/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx0060.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx0060.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "gx0070/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx0070.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx0070.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -8228,6 +8300,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "airport/1.0.0": {
+      "type": "project",
+      "path": "../airport/airport.csproj",
+      "msbuildProject": "../airport/airport.csproj"
+    },
     "attraction/1.0.0": {
       "type": "project",
       "path": "../attraction/attraction.csproj",
@@ -8267,6 +8344,11 @@
       "type": "project",
       "path": "../customergeneral/customergeneral.csproj",
       "msbuildProject": "../customergeneral/customergeneral.csproj"
+    },
+    "flight/1.0.0": {
+      "type": "project",
+      "path": "../flight/flight.csproj",
+      "msbuildProject": "../flight/flight.csproj"
     },
     "general.security.notauthorized/1.0.0": {
       "type": "project",
@@ -8313,6 +8395,16 @@
       "path": "../gx0051/gx0051.csproj",
       "msbuildProject": "../gx0051/gx0051.csproj"
     },
+    "gx0060/1.0.0": {
+      "type": "project",
+      "path": "../gx0060/gx0060.csproj",
+      "msbuildProject": "../gx0060/gx0060.csproj"
+    },
+    "gx0070/1.0.0": {
+      "type": "project",
+      "path": "../gx0070/gx0070.csproj",
+      "msbuildProject": "../gx0070/gx0070.csproj"
+    },
     "viewattraction/1.0.0": {
       "type": "project",
       "path": "../viewattraction/viewattraction.csproj",
@@ -8349,6 +8441,7 @@
       "GeneXus.Classes.Web.Core >= 1.24.1 <= 1.24.1",
       "GeneXus.PdfReportsCS.Core >= 1.24.1 <= 1.24.1",
       "GeneXus.Programs.Common >= 1.0.0",
+      "airport >= 1.0.0",
       "attraction >= 1.0.0",
       "attractiongeneral >= 1.0.0",
       "category >= 1.0.0",
@@ -8357,6 +8450,7 @@
       "countrygeneral >= 1.0.0",
       "customer >= 1.0.0",
       "customergeneral >= 1.0.0",
+      "flight >= 1.0.0",
       "general.security.notauthorized >= 1.0.0",
       "general.ui.masterprompt >= 1.0.0",
       "general.ui.masterunanimosidebar >= 1.0.0",
@@ -8365,6 +8459,8 @@
       "gx0030 >= 1.0.0",
       "gx0040 >= 1.0.0",
       "gx0051 >= 1.0.0",
+      "gx0060 >= 1.0.0",
+      "gx0070 >= 1.0.0",
       "viewattraction >= 1.0.0",
       "viewcountry >= 1.0.0",
       "viewcustomer >= 1.0.0",
@@ -8400,6 +8496,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\airport\\airport.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\airport\\airport.csproj"
+            },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attractiongeneral\\attractiongeneral.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\attractiongeneral\\attractiongeneral.csproj"
             },
@@ -8423,6 +8522,9 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customer\\customer.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\customer\\customer.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\flight\\flight.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\flight\\flight.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj"
@@ -8450,6 +8552,12 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0051\\gx0051.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0060\\gx0060.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0060\\gx0060.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0070\\gx0070.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0070\\gx0070.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj"
