@@ -1,3 +1,4 @@
+reorg_i.
  
  
  
@@ -75,9 +76,17 @@ subview_i(2,507,5).
 subview_i(2,508,7).
 subview_i(2,509,3).
 subview_i(2,510,5).
+subview_i(1,505,7).
+subview_i(1,506,3).
+subview_i(1,507,5).
+subview_i(1,508,7).
+subview_i(1,509,3).
+subview_i(1,510,5).
  
 subtype_group_i(2,1,[ 'FlightDepartureAirport',[ [ 24,20 ],[ 23,21 ],[ 27,9 ],[ 29,14 ],[ 28,10 ],[ 30,15 ] ] ]).
 subtype_group_i(2,2,[ 'FlightArrivalAirport',[ [ 25,20 ],[ 26,21 ],[ 31,9 ],[ 33,14 ],[ 32,10 ],[ 34,15 ] ] ]).
+subtype_group_i(1,1,[ 'FlightDepartureAirport',[ [ 24,20 ],[ 23,21 ],[ 27,9 ],[ 29,14 ],[ 28,10 ],[ 30,15 ] ] ]).
+subtype_group_i(1,2,[ 'FlightArrivalAirport',[ [ 25,20 ],[ 26,21 ],[ 31,9 ],[ 33,14 ],[ 32,10 ],[ 34,15 ] ] ]).
  
 culture_id_i(eng).
  
@@ -93,7 +102,7 @@ lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
 lng_prop_i(1,'FullyQualifiedName','English',d).
  
-ver_stamp('20230919.210458').
+ver_stamp('20230920.151502').
  
-ver_stamp(date(2023,9,19),time(16,6,5,77)).
+ver_stamp(date(2023,9,20),time(10,49,41,84)).
  
