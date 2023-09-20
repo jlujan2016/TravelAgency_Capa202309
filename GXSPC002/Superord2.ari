@@ -5,9 +5,9 @@ dir_superordinates_i(2,509,[]).
 dir_superordinates_i(2,510,[ [ 3,[ 9 ] ] ]).
 dir_superordinates_i(2,506,[]).
 dir_superordinates_i(2,507,[ [ 3,[ 9 ] ] ]).
+dir_superordinates_i(2,11,[ [ 9,[ 19 ] ] ]).
 dir_superordinates_i(2,8,[]).
 dir_superordinates_i(2,7,[ [ 5,[ 9,14 ] ] ]).
 dir_superordinates_i(2,3,[]).
 dir_superordinates_i(2,5,[ [ 3,[ 9 ] ] ]).
-dir_superordinates_i(2,10,[ [ 9,[ 19 ] ] ]).
  

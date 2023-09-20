@@ -56,67 +56,46 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void CreateFlightSeat( )
+      public void ReorganizeFlightSeat( )
       {
          string cmdBuffer = "";
          /* Indices for table FlightSeat */
-         try
+         cmdBuffer=" ALTER TABLE [FlightSeat] ADD [FlightSeatChar] nchar(1) NOT NULL CONSTRAINT FlightSeatCharFlightSeat_DEFAULT DEFAULT '' "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
+         cmdBuffer=" ALTER TABLE [FlightSeat] DROP CONSTRAINT FlightSeatCharFlightSeat_DEFAULT "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
+         /* Using cursor P00012 */
+         pr_default.execute(0);
+         while ( (pr_default.getStatus(0) != 101) )
          {
-            cmdBuffer=" CREATE TABLE [FlightSeat] ([FlightId] smallint NOT NULL , [FlightSeatId] smallint NOT NULL , [FlightSeatLocation] nchar(1) NOT NULL , PRIMARY KEY([FlightId], [FlightSeatId]))  "
-            ;
+            constid = P00012_Aconstid[0];
+            nconstid = P00012_nconstid[0];
+            xtype = P00012_Axtype[0];
+            nxtype = P00012_nxtype[0];
+            parent_obj = P00012_Aparent_obj[0];
+            nparent_obj = P00012_nparent_obj[0];
+            cmdBuffer = "ALTER TABLE " + "[" + "FlightSeat" + "] DROP CONSTRAINT " + constid;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
+            pr_default.readNext(0);
          }
-         catch
-         {
-            try
-            {
-               DropTableConstraints( "[FlightSeat]") ;
-               cmdBuffer=" DROP TABLE [FlightSeat] "
-               ;
-               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-               RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-               RGZ.ExecuteStmt() ;
-               RGZ.Drop();
-            }
-            catch
-            {
-               try
-               {
-                  DropTableConstraints( "[FlightSeat]") ;
-                  cmdBuffer=" DROP VIEW [FlightSeat] "
-                  ;
-                  RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-                  RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-                  RGZ.ExecuteStmt() ;
-                  RGZ.Drop();
-               }
-               catch
-               {
-                  try
-                  {
-                     DropTableConstraints( "[FlightSeat]") ;
-                     cmdBuffer=" DROP FUNCTION [FlightSeat] "
-                     ;
-                     RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-                     RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-                     RGZ.ExecuteStmt() ;
-                     RGZ.Drop();
-                  }
-                  catch
-                  {
-                  }
-               }
-            }
-            cmdBuffer=" CREATE TABLE [FlightSeat] ([FlightId] smallint NOT NULL , [FlightSeatId] smallint NOT NULL , [FlightSeatLocation] nchar(1) NOT NULL , PRIMARY KEY([FlightId], [FlightSeatId]))  "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
+         pr_default.close(0);
+         cmdBuffer=" ALTER TABLE [FlightSeat] ADD PRIMARY KEY([FlightId], [FlightSeatId], [FlightSeatChar]) "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
       }
 
       public void RIFlightSeatFlight( )
@@ -174,18 +153,6 @@ namespace GeneXus.Programs {
          }
          if ( GXUtil.IsSQLSERVER2005( context, "DEFAULT") )
          {
-            /* Using cursor P00012 */
-            pr_default.execute(0);
-            while ( (pr_default.getStatus(0) != 101) )
-            {
-               sSchemaVar = P00012_AsSchemaVar[0];
-               nsSchemaVar = P00012_nsSchemaVar[0];
-               pr_default.readNext(0);
-            }
-            pr_default.close(0);
-         }
-         else
-         {
             /* Using cursor P00023 */
             pr_default.execute(1);
             while ( (pr_default.getStatus(1) != 101) )
@@ -196,37 +163,52 @@ namespace GeneXus.Programs {
             }
             pr_default.close(1);
          }
-         if ( tableexist("FlightSeat",sSchemaVar) )
+         else
          {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_table_exist", new   object[]  {"FlightSeat"}) ) ;
+            /* Using cursor P00034 */
+            pr_default.execute(2);
+            while ( (pr_default.getStatus(2) != 101) )
+            {
+               sSchemaVar = P00034_AsSchemaVar[0];
+               nsSchemaVar = P00034_nsSchemaVar[0];
+               pr_default.readNext(2);
+            }
+            pr_default.close(2);
+         }
+         if ( ColumnExist("FlightSeat",sSchemaVar,"FlightSeatChar") )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"FlightSeatChar", "FlightSeat"}) ) ;
             return false ;
          }
          return true ;
       }
 
-      private bool tableexist( string sTableName ,
-                               string sMySchemaName )
+      private bool ColumnExist( string sTableName ,
+                                string sMySchemaName ,
+                                string sMyColumnName )
       {
          bool result;
          result = false;
-         /* Using cursor P00034 */
-         pr_default.execute(2, new Object[] {sTableName, sMySchemaName});
-         while ( (pr_default.getStatus(2) != 101) )
+         /* Using cursor P00045 */
+         pr_default.execute(3, new Object[] {sTableName, sMySchemaName, sMyColumnName});
+         while ( (pr_default.getStatus(3) != 101) )
          {
-            tablename = P00034_Atablename[0];
-            ntablename = P00034_ntablename[0];
-            schemaname = P00034_Aschemaname[0];
-            nschemaname = P00034_nschemaname[0];
+            tablename = P00045_Atablename[0];
+            ntablename = P00045_ntablename[0];
+            schemaname = P00045_Aschemaname[0];
+            nschemaname = P00045_nschemaname[0];
+            columnname = P00045_Acolumnname[0];
+            ncolumnname = P00045_ncolumnname[0];
             result = true;
-            pr_default.readNext(2);
+            pr_default.readNext(3);
          }
-         pr_default.close(2);
+         pr_default.close(3);
          return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "CreateFlightSeat" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeFlightSeat" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
@@ -249,13 +231,13 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_filecrea", new   object[]  {"FlightSeat", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"FlightSeat", ""}) );
       }
 
       private void SetPrecedenceris( )
       {
          GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IFLIGHTSEAT1]"}) );
-         ReorgExecute.RegisterPrecedence( "RIFlightSeatFlight" ,  "CreateFlightSeat" );
+         ReorgExecute.RegisterPrecedence( "RIFlightSeatFlight" ,  "ReorganizeFlightSeat" );
       }
 
       private void ExecuteReorganization( )
@@ -270,29 +252,6 @@ namespace GeneXus.Programs {
                ExecuteTablesReorganization( ) ;
             }
          }
-      }
-
-      public void DropTableConstraints( string sTableName )
-      {
-         string cmdBuffer;
-         /* Using cursor P00045 */
-         pr_default.execute(3, new Object[] {sTableName});
-         while ( (pr_default.getStatus(3) != 101) )
-         {
-            constid = P00045_Aconstid[0];
-            nconstid = P00045_nconstid[0];
-            fkeyid = P00045_Afkeyid[0];
-            nfkeyid = P00045_nfkeyid[0];
-            rkeyid = P00045_Arkeyid[0];
-            nrkeyid = P00045_nrkeyid[0];
-            cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-            pr_default.readNext(3);
-         }
-         pr_default.close(3);
       }
 
       public void UtilsCleanup( )
@@ -311,46 +270,51 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
+         constid = "";
+         nconstid = false;
+         xtype = "";
+         nxtype = false;
+         scmdbuf = "";
+         P00012_Aconstid = new string[] {""} ;
+         P00012_nconstid = new bool[] {false} ;
+         P00012_Axtype = new string[] {""} ;
+         P00012_nxtype = new bool[] {false} ;
+         P00012_Aparent_obj = new int[1] ;
+         P00012_nparent_obj = new bool[] {false} ;
          sSchemaVar = "";
          nsSchemaVar = false;
-         scmdbuf = "";
-         P00012_AsSchemaVar = new string[] {""} ;
-         P00012_nsSchemaVar = new bool[] {false} ;
          P00023_AsSchemaVar = new string[] {""} ;
          P00023_nsSchemaVar = new bool[] {false} ;
+         P00034_AsSchemaVar = new string[] {""} ;
+         P00034_nsSchemaVar = new bool[] {false} ;
          sTableName = "";
          sMySchemaName = "";
+         sMyColumnName = "";
          tablename = "";
          ntablename = false;
          schemaname = "";
          nschemaname = false;
-         P00034_Atablename = new string[] {""} ;
-         P00034_ntablename = new bool[] {false} ;
-         P00034_Aschemaname = new string[] {""} ;
-         P00034_nschemaname = new bool[] {false} ;
-         constid = "";
-         nconstid = false;
-         fkeyid = "";
-         nfkeyid = false;
-         P00045_Aconstid = new string[] {""} ;
-         P00045_nconstid = new bool[] {false} ;
-         P00045_Afkeyid = new string[] {""} ;
-         P00045_nfkeyid = new bool[] {false} ;
-         P00045_Arkeyid = new int[1] ;
-         P00045_nrkeyid = new bool[] {false} ;
+         columnname = "";
+         ncolumnname = false;
+         P00045_Atablename = new string[] {""} ;
+         P00045_ntablename = new bool[] {false} ;
+         P00045_Aschemaname = new string[] {""} ;
+         P00045_nschemaname = new bool[] {false} ;
+         P00045_Acolumnname = new string[] {""} ;
+         P00045_ncolumnname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_AsSchemaVar
+               P00012_Aconstid, P00012_Axtype, P00012_Aparent_obj
                }
                , new Object[] {
                P00023_AsSchemaVar
                }
                , new Object[] {
-               P00034_Atablename, P00034_Aschemaname
+               P00034_AsSchemaVar
                }
                , new Object[] {
-               P00045_Aconstid, P00045_Afkeyid, P00045_Arkeyid
+               P00045_Atablename, P00045_Aschemaname, P00045_Acolumnname
                }
             }
          );
@@ -358,38 +322,43 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int rkeyid ;
-      protected string sSchemaVar ;
+      protected int parent_obj ;
       protected string scmdbuf ;
+      protected string sSchemaVar ;
       protected string sTableName ;
       protected string sMySchemaName ;
+      protected string sMyColumnName ;
+      protected bool nconstid ;
+      protected bool nxtype ;
+      protected bool nparent_obj ;
       protected bool nsSchemaVar ;
       protected bool ntablename ;
       protected bool nschemaname ;
-      protected bool nconstid ;
-      protected bool nfkeyid ;
-      protected bool nrkeyid ;
+      protected bool ncolumnname ;
+      protected string constid ;
+      protected string xtype ;
       protected string tablename ;
       protected string schemaname ;
-      protected string constid ;
-      protected string fkeyid ;
+      protected string columnname ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected string[] P00012_AsSchemaVar ;
-      protected bool[] P00012_nsSchemaVar ;
+      protected string[] P00012_Aconstid ;
+      protected bool[] P00012_nconstid ;
+      protected string[] P00012_Axtype ;
+      protected bool[] P00012_nxtype ;
+      protected int[] P00012_Aparent_obj ;
+      protected bool[] P00012_nparent_obj ;
       protected string[] P00023_AsSchemaVar ;
       protected bool[] P00023_nsSchemaVar ;
-      protected string[] P00034_Atablename ;
-      protected bool[] P00034_ntablename ;
-      protected string[] P00034_Aschemaname ;
-      protected bool[] P00034_nschemaname ;
-      protected string[] P00045_Aconstid ;
-      protected bool[] P00045_nconstid ;
-      protected string[] P00045_Afkeyid ;
-      protected bool[] P00045_nfkeyid ;
-      protected int[] P00045_Arkeyid ;
-      protected bool[] P00045_nrkeyid ;
+      protected string[] P00034_AsSchemaVar ;
+      protected bool[] P00034_nsSchemaVar ;
+      protected string[] P00045_Atablename ;
+      protected bool[] P00045_ntablename ;
+      protected string[] P00045_Aschemaname ;
+      protected bool[] P00045_nschemaname ;
+      protected string[] P00045_Acolumnname ;
+      protected bool[] P00045_ncolumnname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -418,18 +387,18 @@ namespace GeneXus.Programs {
           };
           Object[] prmP00034;
           prmP00034 = new Object[] {
-          new ParDef("@sTableName",GXType.Char,255,0) ,
-          new ParDef("@sMySchemaName",GXType.Char,255,0)
           };
           Object[] prmP00045;
           prmP00045 = new Object[] {
-          new ParDef("@sTableName",GXType.Char,255,0)
+          new ParDef("@sTableName",GXType.Char,255,0) ,
+          new ParDef("@sMySchemaName",GXType.Char,255,0) ,
+          new ParDef("@sMyColumnName",GXType.Char,255,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00023", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00034", "SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00045", "SELECT OBJECT_NAME(object_id), OBJECT_NAME(parent_object_id), referenced_object_id FROM sys.foreign_keys WHERE referenced_object_id = OBJECT_ID(RTRIM(LTRIM(@sTableName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT name, xtype, parent_obj FROM [sysobjects] WHERE (xtype = 'PK') AND (parent_obj = OBJECT_ID('FlightSeat')) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00045", "SELECT TABLE_NAME, TABLE_SCHEMA, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) AND (COLUMN_NAME = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -441,19 +410,20 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((string[]) buf[0])[0] = rslt.getString(1, 255);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((int[]) buf[2])[0] = rslt.getInt(3);
                 return;
              case 1 :
                 ((string[]) buf[0])[0] = rslt.getString(1, 255);
                 return;
              case 2 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                ((string[]) buf[0])[0] = rslt.getString(1, 255);
                 return;
              case 3 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
-                ((int[]) buf[2])[0] = rslt.getInt(3);
+                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
        }
     }

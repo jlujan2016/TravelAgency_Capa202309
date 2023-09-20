@@ -1,4 +1,6 @@
-CREATE TABLE [FlightSeat] ([FlightId] smallint NOT NULL , [FlightSeatId] smallint NOT NULL , [FlightSeatLocation] nchar(1) NOT NULL , PRIMARY KEY([FlightId], [FlightSeatId]));
+ALTER TABLE [FlightSeat] ADD [FlightSeatChar] nchar(1) NOT NULL CONSTRAINT FlightSeatCharFlightSeat_DEFAULT DEFAULT '';
+ALTER TABLE [FlightSeat] DROP CONSTRAINT FlightSeatCharFlightSeat_DEFAULT;
+ALTER TABLE [FlightSeat] ADD PRIMARY KEY([FlightId], [FlightSeatId], [FlightSeatChar]);
 
 ALTER TABLE [FlightSeat] ADD CONSTRAINT [IFLIGHTSEAT1] FOREIGN KEY ([FlightId]) REFERENCES [Flight] ([FlightId]);
 

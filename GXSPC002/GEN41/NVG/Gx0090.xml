@@ -9,7 +9,7 @@
 <ObjDesc>Selection List Flight</ObjDesc>
 <ObjPgmName>Gx0090</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
-<Result>genreq</Result>
+<Result>nogenreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <Generator>

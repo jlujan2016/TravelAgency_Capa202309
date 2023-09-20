@@ -124,6 +124,24 @@
 <AttriId>29</AttriId>
 <AttriName>FlightDepartureCityId</AttriName>
 <Description>Flight Departure City Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table>
+<Table>
+<TableId>9</TableId>
+<TableName>FlightCapacity navigation</TableName>
+<Description>Flight</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>11</TableId>
+<TableName>FlightSeat</TableName>
+<Description>Seat</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>FlightId</AttriName>
+<Description>Flight Id</Description></Attribute></KeyAttributes>
 <Tables></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
@@ -201,15 +219,15 @@
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
-<LevelNumber>10</LevelNumber>
+<LevelNumber>11</LevelNumber>
 <BaseTable>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description></Table></BaseTable>
 <NavigationTree>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description>
 <Updated>Yes</Updated>
@@ -222,7 +240,11 @@
 <Attribute>
 <AttriId>42</AttriId>
 <AttriName>FlightSeatId</AttriName>
-<Description>Flight Seat Id</Description></Attribute></KeyAttributes>
+<Description>Flight Seat Id</Description></Attribute>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>FlightSeatChar</AttriName>
+<Description>Flight Seat Char</Description></Attribute></KeyAttributes>
 <Tables></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
@@ -234,7 +256,7 @@
 <TablesToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description></Table>
 <TableAction>insert</TableAction>
@@ -248,12 +270,16 @@
 <AttriName>FlightSeatId</AttriName>
 <Description>Flight Seat Id</Description></Attribute>
 <Attribute>
+<AttriId>44</AttriId>
+<AttriName>FlightSeatChar</AttriName>
+<Description>Flight Seat Char</Description></Attribute>
+<Attribute>
 <AttriId>43</AttriId>
 <AttriName>FlightSeatLocation</AttriName>
 <Description>Flight Seat Location</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description></Table>
 <TableAction>update</TableAction>
@@ -264,7 +290,7 @@
 <Description>Flight Seat Location</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description></Table>
 <TableAction>delete</TableAction>
@@ -280,16 +306,11 @@
 <Prompts>
 <Prompt>
 <Table>
-<TableId>10</TableId>
+<TableId>11</TableId>
 <TableName>FlightSeat</TableName>
 <Description>Seat</Description></Table>
-<Object>
-<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
-<ObjCls>13</ObjCls>
-<ObjId>23</ObjId>
-<ObjName>Gx00A1</ObjName>
-<ObjPgmName>Gx00A1</ObjPgmName>
-<ObjClsName>Web Panel</ObjClsName></Object>
+<ProgramName>
+<Token>Gx00B1</Token></ProgramName>
 <InputParameters>
 <Attribute>
 <AttriId>19</AttriId>
@@ -299,7 +320,11 @@
 <Attribute>
 <AttriId>42</AttriId>
 <AttriName>FlightSeatId</AttriName>
-<Description>Flight Seat Id</Description></Attribute></OutputParameters>
+<Description>Flight Seat Id</Description></Attribute>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>FlightSeatChar</AttriName>
+<Description>Flight Seat Char</Description></Attribute></OutputParameters>
 <PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>

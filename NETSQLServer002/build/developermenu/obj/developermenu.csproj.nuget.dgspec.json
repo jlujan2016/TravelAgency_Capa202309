@@ -857,8 +857,8 @@
               "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0090\\gx0090.csproj": {
                 "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0090\\gx0090.csproj"
               },
-              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj": {
-                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj"
+              "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\gx00b1.csproj": {
+                "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\gx00b1.csproj"
               },
               "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj": {
                 "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj"
@@ -1911,14 +1911,14 @@
         }
       }
     },
-    "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj": {
+    "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\gx00b1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj",
-        "projectName": "gx00a1",
-        "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj",
+        "projectUniqueName": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\gx00b1.csproj",
+        "projectName": "gx00b1",
+        "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\gx00b1.csproj",
         "packagesPath": "C:\\Users\\beto\\.nuget\\packages\\",
-        "outputPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\obj\\",
+        "outputPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00b1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\NuGet.Config",

@@ -1,5 +1,5 @@
-dir_subordinates_i(2,9,[ [ 10,[ 19 ] ] ]).
-dir_subordinates_i(2,10,[]).
+dir_subordinates_i(2,9,[ [ 11,[ 19 ] ] ]).
+dir_subordinates_i(2,11,[]).
 dir_subordinates_i(2,8,[ [ 9,[ 38 ] ] ]).
 dir_subordinates_i(2,508,[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ]).
 dir_subordinates_i(2,7,[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ]).

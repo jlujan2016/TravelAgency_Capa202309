@@ -1,2 +1,3 @@
 domain_i(100,'gxdomainlocation.cs').
+domain_i(101,'gxdomainseatchar.cs').
 domain_i(96,'general\gxdomainpage.cs').
