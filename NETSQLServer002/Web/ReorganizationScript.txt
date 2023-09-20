@@ -1,4 +1,3 @@
-ALTER TABLE [Flight] ADD [FlightPrice] smallmoney NOT NULL CONSTRAINT FlightPriceFlight_DEFAULT DEFAULT convert(int, 0), [FlightDiscountPercentaje] smallint NOT NULL CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT DEFAULT convert(int, 0);
-ALTER TABLE [Flight] DROP CONSTRAINT FlightPriceFlight_DEFAULT;
+ALTER TABLE [Flight] ADD [FlightDiscountPercentaje] smallint NOT NULL CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT DEFAULT convert(int, 0);
 ALTER TABLE [Flight] DROP CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT;
 

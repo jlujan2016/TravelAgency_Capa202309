@@ -1,0 +1,10 @@
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\airline.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\web\bin\airline.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.csproj.AssemblyReference.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.csproj.CoreCompileInputs.cache
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.csproj.CopyComplete
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\refint\airline.dll
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\airline.pdb
+C:\KBs\TravelAgency_Capa202309\NETSQLServer002\build\airline\obj\Release\net6.0\ref\airline.dll

@@ -4,7 +4,7 @@
 <Object>
 <ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
 <ObjCls>0</ObjCls>
-<ObjId>5</ObjId>
+<ObjId>8</ObjId>
 <ObjName>Flight</ObjName>
 <ObjDesc>Flight</ObjDesc>
 <ObjPgmName>Flight</ObjPgmName>
@@ -20,15 +20,15 @@
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
-<LevelNumber>6</LevelNumber>
+<LevelNumber>9</LevelNumber>
 <BaseTable>
 <Table>
-<TableId>6</TableId>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description></Table></BaseTable>
 <NavigationTree>
 <Table>
-<TableId>6</TableId>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description>
 <Updated>Yes</Updated>
@@ -39,6 +39,18 @@
 <AttriName>FlightId</AttriName>
 <Description>Flight Id</Description></Attribute></KeyAttributes>
 <Tables>
+<Table>
+<TableId>8</TableId>
+<TableName>Airline</TableName>
+<Description>Airline</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>AirlineId</AttriName>
+<Description>Airline Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
+<Tables></Tables></Table>
 <Table>
 <TableId>7</TableId>
 <TableName>Airport</TableName>
@@ -123,12 +135,24 @@
 <TablesToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>6</TableId>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description></Table>
 <TableAction>insert</TableAction>
 <AttrisToUpdate>
 <Attribute>
+<AttriId>35</AttriId>
+<AttriName>FlightPrice</AttriName>
+<Description>Flight Price</Description></Attribute>
+<Attribute>
+<AttriId>36</AttriId>
+<AttriName>FlightDiscountPercentaje</AttriName>
+<Description>Flight Discount Percentaje</Description></Attribute>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>AirlineId</AttriName>
+<Description>Airline Id</Description></Attribute>
+<Attribute>
 <AttriId>25</AttriId>
 <AttriName>FlightArrivalAirportId</AttriName>
 <Description>Flight Arrival Airport Id</Description></Attribute>
@@ -138,12 +162,24 @@
 <Description>Flight Departure Airport Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>6</TableId>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description></Table>
 <TableAction>update</TableAction>
 <AttrisToUpdate>
 <Attribute>
+<AttriId>35</AttriId>
+<AttriName>FlightPrice</AttriName>
+<Description>Flight Price</Description></Attribute>
+<Attribute>
+<AttriId>36</AttriId>
+<AttriName>FlightDiscountPercentaje</AttriName>
+<Description>Flight Discount Percentaje</Description></Attribute>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>AirlineId</AttriName>
+<Description>Airline Id</Description></Attribute>
+<Attribute>
 <AttriId>25</AttriId>
 <AttriName>FlightArrivalAirportId</AttriName>
 <Description>Flight Arrival Airport Id</Description></Attribute>
@@ -153,7 +189,7 @@
 <Description>Flight Departure Airport Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>6</TableId>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description></Table>
 <TableAction>delete</TableAction>
@@ -206,15 +242,34 @@
 <PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>
-<TableId>6</TableId>
+<TableId>8</TableId>
+<TableName>Airline</TableName>
+<Description>Airline</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>21</ObjId>
+<ObjName>Gx0080</ObjName>
+<ObjPgmName>Gx0080</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>AirlineId</AttriName>
+<Description>Airline Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>9</TableId>
 <TableName>Flight</TableName>
 <Description>Flight</Description></Table>
 <Object>
 <ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
 <ObjCls>13</ObjCls>
-<ObjId>19</ObjId>
-<ObjName>Gx0060</ObjName>
-<ObjPgmName>Gx0060</ObjPgmName>
+<ObjId>22</ObjId>
+<ObjName>Gx0090</ObjName>
+<ObjPgmName>Gx0090</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>

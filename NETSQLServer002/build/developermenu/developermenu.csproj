@@ -14,14 +14,16 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<ProjectReference Include=".\..\airport\airport.csproj" />
 		<ProjectReference Include=".\..\flight\flight.csproj" />
+		<ProjectReference Include=".\..\airline\airline.csproj" />
+		<ProjectReference Include=".\..\airport\airport.csproj" />
 		<ProjectReference Include=".\..\category\category.csproj" />
 		<ProjectReference Include=".\..\country\country.csproj" />
 		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\gx0090\gx0090.csproj" />
+		<ProjectReference Include=".\..\gx0080\gx0080.csproj" />
 		<ProjectReference Include=".\..\gx0070\gx0070.csproj" />
-		<ProjectReference Include=".\..\gx0060\gx0060.csproj" />
 		<ProjectReference Include=".\..\attractiongeneral\attractiongeneral.csproj" />
 		<ProjectReference Include=".\..\wwattraction\wwattraction.csproj" />
 		<ProjectReference Include=".\..\viewattraction\viewattraction.csproj" />

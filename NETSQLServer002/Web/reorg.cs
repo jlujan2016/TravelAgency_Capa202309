@@ -60,13 +60,7 @@ namespace GeneXus.Programs {
       {
          string cmdBuffer = "";
          /* Indices for table Flight */
-         cmdBuffer=" ALTER TABLE [Flight] ADD [FlightPrice] smallmoney NOT NULL CONSTRAINT FlightPriceFlight_DEFAULT DEFAULT convert(int, 0), [FlightDiscountPercentaje] smallint NOT NULL CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT DEFAULT convert(int, 0) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Flight] DROP CONSTRAINT FlightPriceFlight_DEFAULT "
+         cmdBuffer=" ALTER TABLE [Flight] ADD [FlightDiscountPercentaje] smallint NOT NULL CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT DEFAULT convert(int, 0) "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -129,11 +123,6 @@ namespace GeneXus.Programs {
                pr_default.readNext(2);
             }
             pr_default.close(2);
-         }
-         if ( ColumnExist("Flight",sSchemaVar,"FlightPrice") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"FlightPrice", "Flight"}) ) ;
-            return false ;
          }
          if ( ColumnExist("Flight",sSchemaVar,"FlightDiscountPercentaje") )
          {
