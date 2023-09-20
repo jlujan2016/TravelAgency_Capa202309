@@ -1,24 +1,32 @@
 spec_i([ trn,8,'Flight','Flight',[],eng,'18_0_4-174187' ]).
  
 struct_i(9,0,[],[]).
+struct_i(10,9,[ 19 ],[]).
  
+level_i(10,[ 10,[ [ 10,many ] ],[ 19,42 ],[],[],[],[ 19,42 ],'IFLIGHTSEAT',[ 10,[ [ [],19,19 ] ] ],[] ]).
 level_i(9,[ 9,[ [ 9,many ],[ 8,one ],[ 508,one ],[ 505,one ],[ 509,one ],[ 510,one ],[ 506,one ],[ 507,one ] ],[ 19 ],[],[],[],[ 19 ],'IFLIGHT',[ 9,[] ],[] ]).
  
+tw_i(10,[]).
 tw_i(9,[ [ 8,[ [ 9,38,38 ] ] ],[ 508,[ [ 9,25,20 ] ] ],[ 505,[ [ 9,24,20 ] ] ],[ 509,[ [ 508,31,9 ] ] ],[ 510,[ [ 508,31,9 ],[ 508,33,14 ] ] ],[ 506,[ [ 505,27,9 ] ] ],[ 507,[ [ 505,27,9 ],[ 505,29,14 ] ] ] ]).
  
+lwi_i(10,[ [] ]).
 lwi_i(9,[ [] ]).
  
  
  
  
+ta_i(10,[ [ [ 10,19 ],[ 10,42 ],[ 10,43 ] ] ]).
 ta_i(9,[ [ [ 9,19 ],[ 508,26 ],[ 509,32 ],[ 510,34 ],[ 505,23 ],[ 506,28 ],[ 507,30 ],[ 9,35 ],[ 9,36 ],[ 8,39 ],[ 8,40 ],[ 9,38 ],[ 9,25 ],[ 9,24 ],[ 508,31 ],[ 508,33 ],[ 505,27 ],[ 505,29 ] ] ]).
  
+las_i(10,[ [ 19,42,43 ] ]).
 las_i(9,[ [ 19,37,25,26,31,32,33,34,24,23,27,28,29,30,35,36,38,39,40 ] ]).
  
+lac_i(10,[ [ 42,43 ] ]).
 lac_i(9,[ [ 19,25,24,35,36,38 ] ]).
  
  
 lits_i('Flight',5,10).
+lits_i('Seat',5,10).
  
 cls_i([ 0,0 ],[ 5,39 ]).
  
@@ -41,7 +49,10 @@ pos_i(38,[ 0,0,0 ]).
 pos_i(39,[ 0,0,0 ]).
 pos_i(40,[ 0,0,0 ]).
 pos_i(37,[ 0,0,0 ]).
+pos_i(42,[ 1,2,0 ]).
+pos_i(43,[ 1,2,5 ]).
  
+repeat_i(10,[ 1,2,[],[] ]).
  
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
@@ -157,6 +168,8 @@ rule_i(0,prop(idBC,'0')).
 rule_i(0,prop('Folder',o(120,'Root Module'))).
 rule_i(0,prop('ObjDesc','Flight')).
 rule_i(0,prop('ObjName','Flight')).
+rule_i(10,prompt([ 10,[ [ [],19,19 ],[ [],42,42 ] ],[],[],[ t(o(13,'Gx00A1'),28),t(19,2),t(',',7),t(42,2) ],[ 19 ],n,[] ])).
+rule_i(10,rule([ a(23,[ [ 19,42 ],[ t(o(13,'Gx00A1'),28),t(19,2),t(',',7),t(42,2) ] ]) ],[],[],[ 19,42 ])).
 rule_i(9,prompt([ 505,[ [ 9,24,20 ] ],[ 24 ],[ 24 ],[ t(o(13,'Gx0070'),28),t(24,2) ],[],n,[] ])).
 rule_i(9,rule([ a(23,[ [ 24 ],[ t(o(13,'Gx0070'),28),t(24,2) ] ]) ],[],[],[ 24 ])).
 rule_i(9,prompt([ 508,[ [ 9,25,20 ] ],[ 25 ],[ 25 ],[ t(o(13,'Gx0070'),28),t(25,2) ],[],n,[] ])).
@@ -175,53 +188,65 @@ rule_i(9,rule([ a(19,[ [ 31 ],msg([ t('"No matching ''Flight Arrival Airport''."
 rule_i(9,rule([ a(19,[ [ 31,33 ],msg([ t('"No matching ''Flight Arrival Airport''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 31,33 ])).
 rule_i(9,rule([ a(19,[ [ 27 ],msg([ t('"No matching ''Flight Departure Airport''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 27 ])).
 rule_i(9,rule([ a(19,[ [ 27,29 ],msg([ t('"No matching ''Flight Departure Airport''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 27,29 ])).
+rule_i(10,rule([ a(1,msg([ t('"Field Flight Seat Location is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(43,2),t(=,10),t('''W''',3),t('.OR.',9),t(43,2),t(=,10),t('''M''',3),t('.OR.',9),t(43,2),t(=,10),t('''A''',3),t(')',4) ],[ insert,update ],[ 43 ])).
  
-a_i(1,9,f,37,[],[ [],[ t(35,2),t(*,6),t('(',0),t('1',3),t(-,5),t(40,2),t(/,6),t('100',3),t(')',4) ] ]).
-a_i(2,9,t,9,[],[ [ [ [],19,19 ] ],'IFLIGHT',[] ]).
-a_i(3,9,r,8,[],[ [ [ 9,38,38 ] ],'IAIRLINE',[] ]).
-a_i(4,9,r,508,[],[ [ [ 9,25,20 ] ],'IAIRPORT',[] ]).
-a_i(5,9,r,505,[],[ [ [ 9,24,20 ] ],'IAIRPORT',[] ]).
-a_i(6,9,r,509,[],[ [ [ 508,31,9 ] ],'ICOUNTRY',[] ]).
-a_i(7,9,r,510,[],[ [ [ 508,31,9 ],[ 508,33,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(8,9,r,506,[],[ [ [ 505,27,9 ] ],'ICOUNTRY',[] ]).
-a_i(9,9,r,507,[],[ [ [ 505,27,9 ],[ 505,29,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(1,9,f,37,[],[ [],[ t(35,2),t(*,6),t('(',0),t('1',3),t(-,5),t(40,2),t(/,6),t('100',3),t(')',4),t('IF',17),t(40,2),t(>=,10),t(36,2),t(';',18),t(35,2),t(*,6),t('(',0),t('1',3),t(-,5),t(36,2),t(/,6),t('100',3),t(')',4),t('OTHERWISE',19) ] ]).
+a_i(2,10,b,0,[],[ [],[ a(1,msg([ t('"Field Flight Seat Location is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(43,2),t(=,10),t('''W''',3),t('.OR.',9),t(43,2),t(=,10),t('''M''',3),t('.OR.',9),t(43,2),t(=,10),t('''A''',3),t(')',4) ] ]).
+a_i(3,9,t,9,[],[ [ [ [],19,19 ] ],'IFLIGHT',[] ]).
+a_i(4,9,r,8,[],[ [ [ 9,38,38 ] ],'IAIRLINE',[] ]).
+a_i(5,9,r,508,[],[ [ [ 9,25,20 ] ],'IAIRPORT',[] ]).
+a_i(6,9,r,505,[],[ [ [ 9,24,20 ] ],'IAIRPORT',[] ]).
+a_i(7,9,r,509,[],[ [ [ 508,31,9 ] ],'ICOUNTRY',[] ]).
+a_i(8,9,r,510,[],[ [ [ 508,31,9 ],[ 508,33,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(9,9,r,506,[],[ [ [ 505,27,9 ] ],'ICOUNTRY',[] ]).
+a_i(10,9,r,507,[],[ [ [ 505,27,9 ],[ 505,29,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(11,10,t,10,[],[ [ [ [],19,19 ],[ [],42,42 ] ],'IFLIGHTSEAT',[] ]).
  
 v_i(f,i,1,35).
 v_i(f,i,1,40).
+v_i(f,i,1,36).
 v_i(f,o,1,37).
-v_i(t,i,2,19).
-v_i(t,o,2,35).
-v_i(t,o,2,36).
-v_i(t,o,2,38).
-v_i(t,o,2,25).
-v_i(t,o,2,24).
-v_i(r,i,3,38).
-v_i(r,o,3,39).
-v_i(r,o,3,40).
-v_i(r,i,4,25).
-v_i(r,o,4,26).
-v_i(r,o,4,31).
-v_i(r,o,4,33).
-v_i(r,i,5,24).
-v_i(r,o,5,23).
-v_i(r,o,5,27).
-v_i(r,o,5,29).
-v_i(r,i,6,31).
-v_i(r,o,6,32).
+v_i(b,i,2,43).
+v_i(b,o,2,[]).
+v_i(t,i,3,19).
+v_i(t,o,3,35).
+v_i(t,o,3,36).
+v_i(t,o,3,38).
+v_i(t,o,3,25).
+v_i(t,o,3,24).
+v_i(r,i,4,38).
+v_i(r,o,4,39).
+v_i(r,o,4,40).
+v_i(r,i,5,25).
+v_i(r,o,5,26).
+v_i(r,o,5,31).
+v_i(r,o,5,33).
+v_i(r,i,6,24).
+v_i(r,o,6,23).
+v_i(r,o,6,27).
+v_i(r,o,6,29).
 v_i(r,i,7,31).
-v_i(r,i,7,33).
-v_i(r,o,7,34).
-v_i(r,i,8,27).
-v_i(r,o,8,28).
+v_i(r,o,7,32).
+v_i(r,i,8,31).
+v_i(r,i,8,33).
+v_i(r,o,8,34).
 v_i(r,i,9,27).
-v_i(r,i,9,29).
-v_i(r,o,9,30).
+v_i(r,o,9,28).
+v_i(r,i,10,27).
+v_i(r,i,10,29).
+v_i(r,o,10,30).
+v_i(t,i,11,19).
+v_i(t,i,11,42).
+v_i(t,o,11,43).
  
  
  
+tbl_to_delete_i(9,[ 10,[ [ 9,19,19 ] ],d,'IFLIGHTSEAT',0,[ 19,42 ],'' ]).
  
  
  
+attri_i(43,[ 'FlightSeatLocation',char,1,0,'',0,'Flight Seat Location','',0 ]).
+attri_i(42,[ 'FlightSeatId',int,4,0,'ZZZ9',0,'Flight Seat Id','',0 ]).
 attri_i(40,[ 'AirlineDiscountPercentage',int,4,0,'ZZZ9',0,'Airline Discount Percentage','',0 ]).
 attri_i(39,[ 'AirlineName',svchar,40,0,'',0,'Airline Name','',0 ]).
 attri_i(38,[ 'AirlineId',int,4,0,'ZZZ9',0,'Airline Id','',0 ]).
@@ -255,6 +280,7 @@ table_i(510,[ 'CountryCity',[ 31,33,34 ],'City','CountryCity' ]).
 table_i(509,[ 'Country',[ 31,32 ],'Country','Country' ]).
 table_i(508,[ 'Airport',[ 25,26,31,33 ],'Airport','Airport' ]).
 table_i(9,[ 'Flight',[ 19,25,24,35,38,36 ],'Flight','Flight' ]).
+table_i(10,[ 'FlightSeat',[ 19,42,43 ],'Seat','FlightSeat' ]).
  
 index_i(9,[ 'IFLIGHT',u,[ 19 ],'IFlight' ]).
 index_i(8,[ 'IAIRLINE',u,[ 38 ],'IAirline' ]).
@@ -264,6 +290,7 @@ index_i(509,[ 'ICOUNTRY',u,[ 31 ],'ICountry' ]).
 index_i(510,[ 'ICOUNTRYCITY',u,[ 31,33 ],'ICountryCity' ]).
 index_i(506,[ 'ICOUNTRY',u,[ 27 ],'ICountry' ]).
 index_i(507,[ 'ICOUNTRYCITY',u,[ 27,29 ],'ICountryCity' ]).
+index_i(10,[ 'IFLIGHTSEAT',u,[ 19,42 ],'IFlightSeat' ]).
  
  
  
@@ -280,10 +307,15 @@ index_i(507,[ 'ICOUNTRYCITY',u,[ 27,29 ],'ICountryCity' ]).
 upd_i(9,9,i,[ [ 35,36,38,25,24 ],[],'IFLIGHT',[ [ [],19,19 ] ] ]).
 upd_i(9,9,u,[ [ 35,36,38,25,24 ],[],'IFLIGHT',[] ]).
 upd_i(9,9,d,[ [],[],'IFLIGHT',[] ]).
+upd_i(10,10,i,[ [ 19,42,43 ],[],'IFLIGHTSEAT',[ [ [],19,19 ],[ [],42,42 ] ] ]).
+upd_i(10,10,u,[ [ 43 ],[],'IFLIGHTSEAT',[] ]).
+upd_i(10,10,d,[ [],[],'IFLIGHTSEAT',[] ]).
  
  
  
+start_i(10,0,0,[ [ [ 19,2,19,= ] ],many ]).
  
+end_i(10,0,0,[ [ [ t(19,2),t(=,10),t(19,23) ] ] ]).
  
  
 map_i(507,a,30,[ 'CityName' ]).
@@ -306,21 +338,30 @@ map_i(508,a,26,[ 'AirportName' ]).
 map_i(508,a,25,[ 'AirportId' ]).
  
  
+enumerated_i(2,43,100).
  
+enum_value_i(2,100,'"W"','Windows','"Windows"',[ none ]).
+enum_value_i(2,100,'"M"','Middle','"Middle"',[ none ]).
+enum_value_i(2,100,'"A"','Aisle','"Aisle"',[ none ]).
  
+enum_value_info_i(2,100,'Location').
  
+enum_type_i(2,100,char,1,0).
  
 dom_info_i(94,[ 'Id' ]).
 dom_info_i(95,[ 'Name' ]).
 dom_info_i(98,[ 'Price' ]).
 dom_info_i(99,[ 'Percentage' ]).
+dom_info_i(100,[ 'Location' ]).
  
+a_ctrl_i(43,c,[ '''W''','''M''','''A''' ]).
  
 break_i(2,nvg,1,[],[ [],[],[] ]).
  
 b_group_i(2,1,lit,0,1,0).
  
  
+sf_break_i(133,10).
  
  
  
@@ -458,15 +499,24 @@ html_sub_i(120,121,html_i(0,div(121))).
 html_sub_i(121,122,html_i(0,div(122))).
 html_sub_i(122,123,html_i(0,div(123))).
 html_sub_i(123,124,html_i(0,t(37,2))).
-html_sub_i(3,125,html_i(2,div(125))).
+html_sub_i(15,125,html_i(20,div(125))).
 html_sub_i(125,126,html_i(0,div(126))).
 html_sub_i(126,127,html_i(0,div(127))).
 html_sub_i(127,128,html_i(0,div(128))).
-html_sub_i(128,129,html_i(0,button('Enter'))).
-html_sub_i(127,130,html_i(1,div(130))).
-html_sub_i(130,131,html_i(0,button('Cancel'))).
-html_sub_i(127,132,html_i(2,div(132))).
-html_sub_i(132,133,html_i(0,button('Delete'))).
+html_sub_i(128,129,html_i(0,div(129))).
+html_sub_i(129,130,html_i(0,t('Seat',3))).
+html_sub_i(127,131,html_i(1,div(131))).
+html_sub_i(131,132,html_i(0,div(132))).
+html_sub_i(132,133,html_i(0,s(133))).
+html_sub_i(3,136,html_i(2,div(136))).
+html_sub_i(136,137,html_i(0,div(137))).
+html_sub_i(137,138,html_i(0,div(138))).
+html_sub_i(138,139,html_i(0,div(139))).
+html_sub_i(139,140,html_i(0,button('Enter'))).
+html_sub_i(138,141,html_i(1,div(141))).
+html_sub_i(141,142,html_i(0,button('Cancel'))).
+html_sub_i(138,143,html_i(2,div(143))).
+html_sub_i(143,144,html_i(0,button('Delete'))).
  
 html_tags_i(1,'Class','form-horizontal Form').
 html_tags_i(2,'data-gx-base-lib',none).
@@ -516,10 +566,11 @@ html_tags_i(117,'data-gx-att','att:40').
 html_tags_i(119,'data-gx-att','att:40').
 html_tags_i(122,'data-gx-att','att:37').
 html_tags_i(124,'data-gx-att','att:37').
-html_tags_i(127,'data-gx-actiongroup-type',toolbar).
-html_tags_i(129,'ControlType','').
-html_tags_i(131,'ControlType','').
-html_tags_i(133,'ControlType','').
+html_tags_i(130,'ControlType','').
+html_tags_i(138,'data-gx-actiongroup-type',toolbar).
+html_tags_i(140,'ControlType','').
+html_tags_i(142,'ControlType','').
+html_tags_i(144,'ControlType','').
  
 html_comp_i(12,'Backcolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(2,'Isabstractlayoutcontrol',0,d,[ bool ]).
@@ -1996,23 +2047,23 @@ html_comp_i(125,'Semanticcontent',div,d,[ str ]).
 html_comp_i(125,'Align',left,d,[ str ]).
 html_comp_i(125,'Valign',top,d,[ str ]).
 html_comp_i(126,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(126,'Class','col-xs-12 form__actions--fixed',v,[ str ]).
+html_comp_i(126,'Class','col-xs-12',v,[ str ]).
 html_comp_i(126,'Id','',d,[ str ]).
 html_comp_i(126,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(126,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(126,'Semanticcontent',div,d,[ str ]).
-html_comp_i(126,'Align','Right',v,[ str ]).
-html_comp_i(126,'Valign','Middle',v,[ str ]).
+html_comp_i(126,'Align',left,d,[ str ]).
+html_comp_i(126,'Valign',top,d,[ str ]).
 html_comp_i(127,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(127,'Class','gx-action-group',v,[ str ]).
-html_comp_i(127,'Id','',d,[ str ]).
+html_comp_i(127,'Class','form__table-level',v,[ str ]).
+html_comp_i(127,'Id','Seattable',v,[ str ]).
 html_comp_i(127,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(127,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(127,'Semanticcontent',div,d,[ str ]).
 html_comp_i(127,'Align',left,d,[ str ]).
 html_comp_i(127,'Valign',top,d,[ str ]).
 html_comp_i(128,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(128,'Class','gx-button',v,[ str ]).
+html_comp_i(128,'Class',row,v,[ str ]).
 html_comp_i(128,'Id','',d,[ str ]).
 html_comp_i(128,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(128,'Width',measure(0,px),d,[ measure ]).
@@ -2020,57 +2071,205 @@ html_comp_i(128,'Semanticcontent',div,d,[ str ]).
 html_comp_i(128,'Align',left,d,[ str ]).
 html_comp_i(128,'Valign',top,d,[ str ]).
 html_comp_i(129,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(129,'Controlname','Btn_enter',v,[ str ]).
-html_comp_i(129,'Class','Button button-primary',v,[ str ]).
-html_comp_i(129,'Event','Enter',v,[ str ]).
-html_comp_i(129,'Caption','Confirm',d,[ str ]).
-html_comp_i(129,'Title','Confirm',d,[ str ]).
-html_comp_i(129,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(129,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(129,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(129,'Border','2',d,[ str ]).
-html_comp_i(129,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(129,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(129,'Class','col-xs-12 form__cell',v,[ str ]).
+html_comp_i(129,'Id','',d,[ str ]).
+html_comp_i(129,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(129,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(129,'Semanticcontent',div,d,[ str ]).
+html_comp_i(129,'Align',left,d,[ str ]).
+html_comp_i(129,'Valign',top,d,[ str ]).
 html_comp_i(130,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(130,'Class','gx-button',v,[ str ]).
-html_comp_i(130,'Id','',d,[ str ]).
-html_comp_i(130,'Height',measure(0,px),d,[ measure ]).
-html_comp_i(130,'Width',measure(0,px),d,[ measure ]).
-html_comp_i(130,'Semanticcontent',div,d,[ str ]).
-html_comp_i(130,'Align',left,d,[ str ]).
-html_comp_i(130,'Valign',top,d,[ str ]).
+html_comp_i(130,'Caption','Seat',d,[ str ]).
+html_comp_i(130,'Id','Titleseat',v,[ str ]).
+html_comp_i(130,'Class','heading-04',v,[ str ]).
+html_comp_i(130,'Event','',d,[ str ]).
+html_comp_i(130,'Returnonclick',0,d,[ bool ]).
+html_comp_i(130,'Gxformat',0,d,[ num ]).
+html_comp_i(130,'Title','',d,[ str ]).
+html_comp_i(130,'Fill',-1,d,[ bool ]).
+html_comp_i(130,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(130,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(130,'Font','',d,[ str ]).
 html_comp_i(131,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(131,'Controlname','Btn_cancel',v,[ str ]).
-html_comp_i(131,'Class','Button button-tertiary',v,[ str ]).
-html_comp_i(131,'Event','Cancel',v,[ str ]).
-html_comp_i(131,'Caption','Cancel',d,[ str ]).
-html_comp_i(131,'Title','Cancel',d,[ str ]).
-html_comp_i(131,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(131,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(131,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(131,'Border','2',d,[ str ]).
-html_comp_i(131,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(131,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(131,'Class',row,v,[ str ]).
+html_comp_i(131,'Id','',d,[ str ]).
+html_comp_i(131,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(131,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(131,'Semanticcontent',div,d,[ str ]).
+html_comp_i(131,'Align',left,d,[ str ]).
+html_comp_i(131,'Valign',top,d,[ str ]).
 html_comp_i(132,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(132,'Class','gx-button',v,[ str ]).
+html_comp_i(132,'Class','col-xs-12',v,[ str ]).
 html_comp_i(132,'Id','',d,[ str ]).
 html_comp_i(132,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(132,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(132,'Semanticcontent',div,d,[ str ]).
 html_comp_i(132,'Align',left,d,[ str ]).
 html_comp_i(132,'Valign',top,d,[ str ]).
-html_comp_i(133,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(133,'Controlname','Btn_delete',v,[ str ]).
-html_comp_i(133,'Class','Button button-tertiary',v,[ str ]).
-html_comp_i(133,'Event','Delete',v,[ str ]).
-html_comp_i(133,'Caption','Delete',d,[ str ]).
-html_comp_i(133,'Title','Delete',d,[ str ]).
-html_comp_i(133,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(133,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(133,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(133,'Border','2',d,[ str ]).
-html_comp_i(133,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(133,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(133,'Isabstractlayoutcontrol',-1,v,[ bool ]).
+html_comp_i(133,'Controlname','Gridflight_seat',v,[ str ]).
+html_comp_i(133,'Save_state',0,d,[ bool ]).
+html_comp_i(133,'Sflrender','',d,[ str ]).
+html_comp_i(133,'Class','Grid',v,[ str ]).
+html_comp_i(133,'Prop_emptydatasettext','',d,[ str ]).
+html_comp_i(133,'Autoresize',-1,d,[ bool ]).
+html_comp_i(133,'Gxwidth',measure(0,px),d,[ measure ]).
+html_comp_i(133,'Gxheight',measure(0,px),d,[ measure ]).
+html_comp_i(133,'Maxcols',1,d,[ num ]).
+html_comp_i(133,'Maxrows',5,d,[ num ]).
+html_comp_i(133,'Header','',d,[ str ]).
+html_comp_i(133,'Title','',d,[ str ]).
+html_comp_i(133,'Infinitescrolling',0,d,[ num ]).
+html_comp_i(133,'Linescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(133,'Linesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(133,'Titlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(133,'Titlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(133,'Align',left,d,[ str ]).
+html_comp_i(133,'Cellpadding','1',d,[ str ]).
+html_comp_i(133,'Cellspacing','2',d,[ str ]).
+html_comp_i(133,'Sortable',-1,d,[ bool ]).
+html_comp_i(133,'Allowdrop',0,d,[ bool ]).
+html_comp_i(133,'Allowdrag',0,d,[ bool ]).
+html_comp_i(133,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(133,'Allowcollapsing',0,d,[ bool ]).
+html_comp_i(133,'Allowselection',0,d,[ bool ]).
+html_comp_i(134,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(134,'Colcount',4,d,[ num ]).
+html_comp_i(134,'Colattid',42,v,[ num ]).
+html_comp_i(134,'Controlname','Flightseatid',d,[ str ]).
+html_comp_i(134,'Class','Attribute',v,[ str ]).
+html_comp_i(134,'Columnclass','',d,[ str ]).
+html_comp_i(134,'Returnonclick',0,d,[ bool ]).
+html_comp_i(134,'Controltype',2,d,[ num ]).
+html_comp_i(134,'Inputtype',0,d,[ num ]).
+html_comp_i(134,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(134,'Colreadonly',0,d,[ bool ]).
+html_comp_i(134,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(134,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(134,'Ispassword',0,d,[ bool ]).
+html_comp_i(134,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(134,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(134,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(134,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(134,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(134,'Coltitle','Seat Id',d,[ str ]).
+html_comp_i(134,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(134,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(134,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(134,'Gxformat',0,d,[ num ]).
+html_comp_i(134,'Colvisible',-1,d,[ bool ]).
+html_comp_i(134,'Title','',d,[ str ]).
+html_comp_i(134,'Invitemsg','',d,[ str ]).
+html_comp_i(135,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(135,'Colcount',1,d,[ num ]).
+html_comp_i(135,'Colattid',43,v,[ num ]).
+html_comp_i(135,'Controlname','Flightseatlocation',d,[ str ]).
+html_comp_i(135,'Class','Attribute',v,[ str ]).
+html_comp_i(135,'Columnclass','',d,[ str ]).
+html_comp_i(135,'Returnonclick',0,d,[ bool ]).
+html_comp_i(135,'Controltype',0,d,[ num ]).
+html_comp_i(135,'Controlvalues',[ [ 'Windows','W' ],[ 'Middle','M' ],[ 'Aisle','A' ] ],d,[ values ]).
+html_comp_i(135,'Addemptyitem',0,d,[ bool ]).
+html_comp_i(135,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(135,'Colreadonly',0,d,[ bool ]).
+html_comp_i(135,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(135,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(135,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(135,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(135,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(135,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(135,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(135,'Coltitle','Seat Location',d,[ str ]).
+html_comp_i(135,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(135,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(135,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(135,'Colvisible',-1,d,[ bool ]).
+html_comp_i(135,'Title','',d,[ str ]).
+html_comp_i(135,'Invitemsg','',d,[ str ]).
+html_comp_i(136,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(136,'Class',row,v,[ str ]).
+html_comp_i(136,'Id','',d,[ str ]).
+html_comp_i(136,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(136,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(136,'Semanticcontent',div,d,[ str ]).
+html_comp_i(136,'Align',left,d,[ str ]).
+html_comp_i(136,'Valign',top,d,[ str ]).
+html_comp_i(137,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(137,'Class','col-xs-12 form__actions--fixed',v,[ str ]).
+html_comp_i(137,'Id','',d,[ str ]).
+html_comp_i(137,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(137,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(137,'Semanticcontent',div,d,[ str ]).
+html_comp_i(137,'Align','Right',v,[ str ]).
+html_comp_i(137,'Valign','Middle',v,[ str ]).
+html_comp_i(138,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(138,'Class','gx-action-group',v,[ str ]).
+html_comp_i(138,'Id','',d,[ str ]).
+html_comp_i(138,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(138,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(138,'Semanticcontent',div,d,[ str ]).
+html_comp_i(138,'Align',left,d,[ str ]).
+html_comp_i(138,'Valign',top,d,[ str ]).
+html_comp_i(139,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(139,'Class','gx-button',v,[ str ]).
+html_comp_i(139,'Id','',d,[ str ]).
+html_comp_i(139,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(139,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(139,'Semanticcontent',div,d,[ str ]).
+html_comp_i(139,'Align',left,d,[ str ]).
+html_comp_i(139,'Valign',top,d,[ str ]).
+html_comp_i(140,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(140,'Controlname','Btn_enter',v,[ str ]).
+html_comp_i(140,'Class','Button button-primary',v,[ str ]).
+html_comp_i(140,'Event','Enter',v,[ str ]).
+html_comp_i(140,'Caption','Confirm',d,[ str ]).
+html_comp_i(140,'Title','Confirm',d,[ str ]).
+html_comp_i(140,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(140,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(140,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(140,'Border','2',d,[ str ]).
+html_comp_i(140,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(140,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(141,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(141,'Class','gx-button',v,[ str ]).
+html_comp_i(141,'Id','',d,[ str ]).
+html_comp_i(141,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(141,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(141,'Semanticcontent',div,d,[ str ]).
+html_comp_i(141,'Align',left,d,[ str ]).
+html_comp_i(141,'Valign',top,d,[ str ]).
+html_comp_i(142,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(142,'Controlname','Btn_cancel',v,[ str ]).
+html_comp_i(142,'Class','Button button-tertiary',v,[ str ]).
+html_comp_i(142,'Event','Cancel',v,[ str ]).
+html_comp_i(142,'Caption','Cancel',d,[ str ]).
+html_comp_i(142,'Title','Cancel',d,[ str ]).
+html_comp_i(142,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(142,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(142,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(142,'Border','2',d,[ str ]).
+html_comp_i(142,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(142,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(143,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(143,'Class','gx-button',v,[ str ]).
+html_comp_i(143,'Id','',d,[ str ]).
+html_comp_i(143,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(143,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(143,'Semanticcontent',div,d,[ str ]).
+html_comp_i(143,'Align',left,d,[ str ]).
+html_comp_i(143,'Valign',top,d,[ str ]).
+html_comp_i(144,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(144,'Controlname','Btn_delete',v,[ str ]).
+html_comp_i(144,'Class','Button button-tertiary',v,[ str ]).
+html_comp_i(144,'Event','Delete',v,[ str ]).
+html_comp_i(144,'Caption','Delete',d,[ str ]).
+html_comp_i(144,'Title','Delete',d,[ str ]).
+html_comp_i(144,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(144,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(144,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(144,'Border','2',d,[ str ]).
+html_comp_i(144,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(144,'Buttonborderstyle',standard,d,[ str ]).
  
  
  
@@ -2198,18 +2397,29 @@ lit_i(123,1,div(123),[ ctlname('') ]).
 lit_i(122,1,div(122),[ ctlname('') ]).
 lit_i(121,1,div(121),[ ctlname('') ]).
 lit_i(120,1,div(120),[ ctlname('') ]).
+lit_i(130,1,t('Seat',3),[ ctlname('Titleseat') ]).
+lit_i(129,1,div(129),[ ctlname('') ]).
+lit_i(128,1,div(128),[ ctlname('') ]).
+lit_i(134,1,s(t(42,2),133),[ ctlname(42),ctrltype(edit,134),pos(134),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(135,1,s(t(43,2),133),[ ctlname(43),ctrltype(combo,135),pos(135),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(133,1,s(133),[ ctlname('Gridflight_seat'),el([ t(42,2),t(43,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(132,1,div(132),[ ctlname('') ]).
+lit_i(131,1,div(131),[ ctlname('') ]).
+lit_i(127,1,div(127),[ ctlname('Seattable') ]).
+lit_i(126,1,div(126),[ ctlname('') ]).
+lit_i(125,1,div(125),[ ctlname('') ]).
 lit_i(15,1,div(15),[ ctlname('Formcontainer') ]).
 lit_i(14,1,div(14),[ ctlname('') ]).
 lit_i(13,1,div(13),[ ctlname('') ]).
-lit_i(129,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(128,1,div(128),[ ctlname('') ]).
-lit_i(131,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(130,1,div(130),[ ctlname('') ]).
-lit_i(133,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(132,1,div(132),[ ctlname('') ]).
-lit_i(127,1,div(127),[ ctlname('') ]).
-lit_i(126,1,div(126),[ ctlname('') ]).
-lit_i(125,1,div(125),[ ctlname('') ]).
+lit_i(140,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(139,1,div(139),[ ctlname('') ]).
+lit_i(142,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(141,1,div(141),[ ctlname('') ]).
+lit_i(144,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(143,1,div(143),[ ctlname('') ]).
+lit_i(138,1,div(138),[ ctlname('') ]).
+lit_i(137,1,div(137),[ ctlname('') ]).
+lit_i(136,1,div(136),[ ctlname('') ]).
 lit_i(3,1,div(3),[ ctlname('Maintable') ]).
 lit_i(2,1,div(2),[ ctlname('') ]).
 lit_i(1,1,window,[ rect(0,0,1000,1000),ctlname('Form') ]).
@@ -2219,6 +2429,7 @@ lit_i(1,1,window,[ rect(0,0,1000,1000),ctlname('Form') ]).
  
  
  
+ctrl_info_i(1,135,[ [ [ 'Windows','W' ],[ 'Middle','M' ],[ 'Aisle','A' ] ],[ '' ] ]).
  
  
  
@@ -2450,6 +2661,31 @@ att_prop_i(2,37,idBasedOn,98,v).
 att_prop_i(2,37,'DownloadOffline','0',d).
 att_prop_i(2,37,'VarServiceExtName','',d).
 att_prop_i(2,37,'FullName','FlightFinalPrice',v).
+att_prop_i(2,42,'ExternalName','FlightSeatId',d).
+att_prop_i(2,42,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,42,'EmptyAsNull','Yes',d).
+att_prop_i(2,42,idBasedOn,94,v).
+att_prop_i(2,42,'AUTONUMBER','-1',d).
+att_prop_i(2,42,'AUTONUMBER_START','1',d).
+att_prop_i(2,42,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,42,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,42,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,42,'AttRegEx','',d).
+att_prop_i(2,42,'AttValidationFailedMsg','',d).
+att_prop_i(2,42,'DownloadOffline','0',d).
+att_prop_i(2,42,'VarServiceExtName','',d).
+att_prop_i(2,42,'FullName','FlightSeatId',v).
+att_prop_i(2,43,'ExternalName','FlightSeatLocation',d).
+att_prop_i(2,43,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,43,'EmptyAsNull','Yes',d).
+att_prop_i(2,43,idBasedOn,100,v).
+att_prop_i(2,43,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,43,'DB_NLS_SUPPORT','Yes',d).
+att_prop_i(2,43,'AttRegEx','',d).
+att_prop_i(2,43,'AttValidationFailedMsg','GXSPC_OutOfRange',d).
+att_prop_i(2,43,'DownloadOffline','0',d).
+att_prop_i(2,43,'VarServiceExtName','',d).
+att_prop_i(2,43,'FullName','FlightSeatLocation',v).
 att_prop_i(2,20,'ExternalName','AirportId',d).
 att_prop_i(2,20,'ExternalNamespace','TravelAgency_Capa202309',d).
 att_prop_i(2,20,'EmptyAsNull','Yes',d).
@@ -2493,12 +2729,15 @@ att_prop_i(2,14,'DownloadOffline','0',d).
 att_prop_i(2,14,'VarServiceExtName','',d).
 att_prop_i(2,14,'FullName','CityId',v).
  
+tbl_prop_i(2,10,'AllDirSuper',[ [ 9,[ 19 ] ] ],v).
 tbl_prop_i(2,9,'AllDirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 8,[ 38 ] ] ],v).
 tbl_prop_i(2,9,'DirSuperNull',[ [ 8,[ 38 ] ] ],v).
 tbl_prop_i(2,505,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
 tbl_prop_i(2,7,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
 tbl_prop_i(2,508,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
 tbl_prop_i(2,8,'DirSubor',[ [ 9,[ 38 ] ] ],v).
+tbl_prop_i(2,9,'DirSubor',[ [ 10,[ 19 ] ] ],v).
+tbl_prop_i(2,10,'DirSuper',[ [ 9,[ 19 ] ] ],v).
 tbl_prop_i(2,9,'DirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 8,[ 38 ] ] ],v).
  
 tbl_att_prop_i(2,9,19,'AllowNulls',n).
@@ -2529,6 +2768,9 @@ tbl_att_prop_i(2,506,28,'AllowNulls',n).
 tbl_att_prop_i(2,507,27,'AllowNulls',n).
 tbl_att_prop_i(2,507,29,'AllowNulls',n).
 tbl_att_prop_i(2,507,30,'AllowNulls',n).
+tbl_att_prop_i(2,10,19,'AllowNulls',n).
+tbl_att_prop_i(2,10,42,'AllowNulls',n).
+tbl_att_prop_i(2,10,43,'AllowNulls',n).
  
  
  
@@ -2547,6 +2789,7 @@ a_alias_i(28,'FlightDepartureCountryName').
 a_alias_i(30,'FlightDepartureCityName').
  
 trn_level_i(9,[ [ 19,25,26,31,32,33,34,24,23,27,28,29,30,35,36,38,39,40,37 ],'Flight','Flight','Flight','',0 ]).
+trn_level_i(10,[ [ 42,43 ],'Seat','Seat','Seat','',43 ]).
  
  
  
@@ -2558,11 +2801,13 @@ trn_level_i(9,[ [ 19,25,26,31,32,33,34,24,23,27,28,29,30,35,36,38,39,40,37 ],'Fl
 pgm_parm_i(web,22,'GX0090',[ [ int,4,0,0 ] ],[ [ pFlightId,out,[] ] ]).
 pgm_parm_i(web,21,'GX0080',[ [ int,4,0,0 ] ],[ [ pAirlineId,out,[] ] ]).
 pgm_parm_i(web,20,'GX0070',[ [ int,4,0,0 ] ],[ [ pAirportId,out,[] ] ]).
+pgm_parm_i(web,23,'GX00A1',[ [ int,4,0,0 ],[ int,4,0,0 ] ],[ [ pFlightId,in,[] ],[ pFlightSeatId,out,[] ] ]).
  
 pgm_callprotocol_i(trn,8,'FLIGHT','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,22,'GX0090','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,21,'GX0080','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,20,'GX0070','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,23,'GX00A1','INTERNAL','Unsecure').
  
  
  

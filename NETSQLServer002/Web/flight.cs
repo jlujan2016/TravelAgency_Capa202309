@@ -53,7 +53,7 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_4") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_5") == 0 )
          {
             A25FlightArrivalAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalAirportId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A25FlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(A25FlightArrivalAirportId), 4, 0));
@@ -63,10 +63,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_4( A25FlightArrivalAirportId) ;
+            gxLoad_5( A25FlightArrivalAirportId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
          {
             A31FlightArrivalCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
@@ -76,10 +76,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_6( A31FlightArrivalCountryId) ;
+            gxLoad_7( A31FlightArrivalCountryId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
          {
             A31FlightArrivalCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
@@ -91,10 +91,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_7( A31FlightArrivalCountryId, A33FlightArrivalCityId) ;
+            gxLoad_8( A31FlightArrivalCountryId, A33FlightArrivalCityId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_5") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
          {
             A24FlightDepartureAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureAirportId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A24FlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(A24FlightDepartureAirportId), 4, 0));
@@ -104,10 +104,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_5( A24FlightDepartureAirportId) ;
+            gxLoad_6( A24FlightDepartureAirportId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
          {
             A27FlightDepartureCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
@@ -117,10 +117,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_8( A27FlightDepartureCountryId) ;
+            gxLoad_9( A27FlightDepartureCountryId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_10") == 0 )
          {
             A27FlightDepartureCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
@@ -132,10 +132,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_9( A27FlightDepartureCountryId, A29FlightDepartureCityId) ;
+            gxLoad_10( A27FlightDepartureCountryId, A29FlightDepartureCityId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_3") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_4") == 0 )
          {
             A38AirlineId = (short)(Math.Round(NumberUtil.Val( GetPar( "AirlineId"), "."), 18, MidpointRounding.ToEven));
             n38AirlineId = false;
@@ -146,7 +146,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_3( A38AirlineId) ;
+            gxLoad_4( A38AirlineId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -167,6 +167,11 @@ namespace GeneXus.Programs {
                return  ;
             }
             gxfirstwebparm = GetNextPar( );
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxNewRow_"+"Gridflight_seat") == 0 )
+         {
+            gxnrGridflight_seat_newrow_invoke( ) ;
+            return  ;
          }
          else
          {
@@ -229,6 +234,22 @@ namespace GeneXus.Programs {
          }
       }
 
+      protected void gxnrGridflight_seat_newrow_invoke( )
+      {
+         nRC_GXsfl_133 = (int)(Math.Round(NumberUtil.Val( GetPar( "nRC_GXsfl_133"), "."), 18, MidpointRounding.ToEven));
+         nGXsfl_133_idx = (int)(Math.Round(NumberUtil.Val( GetPar( "nGXsfl_133_idx"), "."), 18, MidpointRounding.ToEven));
+         sGXsfl_133_idx = GetPar( "sGXsfl_133_idx");
+         Gx_mode = GetPar( "Mode");
+         setAjaxCallMode();
+         if ( ! IsValidAjaxCall( true) )
+         {
+            GxWebError = 1;
+            return  ;
+         }
+         gxnrGridflight_seat_newrow( ) ;
+         /* End function gxnrGridflight_seat_newrow_invoke */
+      }
+
       public flight( )
       {
          context = new GxContext(  );
@@ -258,6 +279,7 @@ namespace GeneXus.Programs {
 
       protected override void createObjects( )
       {
+         cmbFlightSeatLocation = new GXCombobox();
       }
 
       public override void webExecute( )
@@ -733,6 +755,30 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, divSeattable_Internalname, 1, 0, "px", 0, "px", "form__table-level", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 form__cell", "start", "top", "", "", "div");
+         /* Text block */
+         GxWebStd.gx_label_ctrl( context, lblTitleseat_Internalname, "Seat", "", "", lblTitleseat_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "heading-04", 0, "", 1, 1, 0, 0, "HLP_Flight.htm");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12", "start", "top", "", "", "div");
+         gxdraw_Gridflight_seat( ) ;
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -744,21 +790,21 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-action-group", "start", "top", " "+"data-gx-actiongroup-type=\"toolbar\""+" ", "", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 129,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 140,'',false,'',0)\"";
          ClassString = "Button button-primary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", "Confirm", bttBtn_enter_Jsonclick, 5, "Confirm", "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Flight.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 131,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 142,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_cancel_Internalname, "", "Cancel", bttBtn_cancel_Jsonclick, 1, "Cancel", "", StyleString, ClassString, bttBtn_cancel_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ECANCEL."+"'", TempTags, "", context.GetButtonType( ), "HLP_Flight.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 133,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 144,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_delete_Internalname, "", "Delete", bttBtn_delete_Jsonclick, 5, "Delete", "", StyleString, ClassString, bttBtn_delete_Visible, bttBtn_delete_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EDELETE."+"'", TempTags, "", context.GetButtonType( ), "HLP_Flight.htm");
@@ -768,6 +814,124 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
+      }
+
+      protected void gxdraw_Gridflight_seat( )
+      {
+         /*  Grid Control  */
+         StartGridControl133( ) ;
+         nGXsfl_133_idx = 0;
+         if ( ( nKeyPressed == 1 ) && ( AnyError == 0 ) )
+         {
+            /* Enter key processing. */
+            nBlankRcdCount10 = 5;
+            if ( ! IsIns( ) )
+            {
+               /* Display confirmed (stored) records */
+               nRcdExists_10 = 1;
+               ScanStart0810( ) ;
+               while ( RcdFound10 != 0 )
+               {
+                  init_level_properties10( ) ;
+                  getByPrimaryKey0810( ) ;
+                  AddRow0810( ) ;
+                  ScanNext0810( ) ;
+               }
+               ScanEnd0810( ) ;
+               nBlankRcdCount10 = 5;
+            }
+         }
+         else if ( ( nKeyPressed == 3 ) || ( nKeyPressed == 4 ) || ( ( nKeyPressed == 1 ) && ( AnyError != 0 ) ) )
+         {
+            /* Button check  or addlines. */
+            standaloneNotModal0810( ) ;
+            standaloneModal0810( ) ;
+            sMode10 = Gx_mode;
+            while ( nGXsfl_133_idx < nRC_GXsfl_133 )
+            {
+               bGXsfl_133_Refreshing = true;
+               ReadRow0810( ) ;
+               edtFlightSeatId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "FLIGHTSEATID_"+sGXsfl_133_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+               AssignProp("", false, edtFlightSeatId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightSeatId_Enabled), 5, 0), !bGXsfl_133_Refreshing);
+               cmbFlightSeatLocation.Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "FLIGHTSEATLOCATION_"+sGXsfl_133_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+               AssignProp("", false, cmbFlightSeatLocation_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0), !bGXsfl_133_Refreshing);
+               if ( ( nRcdExists_10 == 0 ) && ! IsIns( ) )
+               {
+                  Gx_mode = "INS";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  standaloneModal0810( ) ;
+               }
+               SendRow0810( ) ;
+               bGXsfl_133_Refreshing = false;
+            }
+            Gx_mode = sMode10;
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+         }
+         else
+         {
+            /* Get or get-alike key processing. */
+            nBlankRcdCount10 = 5;
+            nRcdExists_10 = 1;
+            if ( ! IsIns( ) )
+            {
+               ScanStart0810( ) ;
+               while ( RcdFound10 != 0 )
+               {
+                  sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx+1), 4, 0), 4, "0");
+                  SubsflControlProps_13310( ) ;
+                  init_level_properties10( ) ;
+                  standaloneNotModal0810( ) ;
+                  getByPrimaryKey0810( ) ;
+                  standaloneModal0810( ) ;
+                  AddRow0810( ) ;
+                  ScanNext0810( ) ;
+               }
+               ScanEnd0810( ) ;
+            }
+         }
+         /* Initialize fields for 'new' records and send them. */
+         sMode10 = Gx_mode;
+         Gx_mode = "INS";
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx+1), 4, 0), 4, "0");
+         SubsflControlProps_13310( ) ;
+         InitAll0810( ) ;
+         init_level_properties10( ) ;
+         nRcdExists_10 = 0;
+         nIsMod_10 = 0;
+         nRcdDeleted_10 = 0;
+         nBlankRcdCount10 = (short)(nBlankRcdUsr10+nBlankRcdCount10);
+         fRowAdded = 0;
+         while ( nBlankRcdCount10 > 0 )
+         {
+            standaloneNotModal0810( ) ;
+            standaloneModal0810( ) ;
+            AddRow0810( ) ;
+            if ( ( nKeyPressed == 4 ) && ( fRowAdded == 0 ) )
+            {
+               fRowAdded = 1;
+               GX_FocusControl = edtFlightSeatId_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            }
+            nBlankRcdCount10 = (short)(nBlankRcdCount10-1);
+         }
+         Gx_mode = sMode10;
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         sStyleString = "";
+         context.WriteHtmlText( "<div id=\""+"Gridflight_seatContainer"+"Div\" "+sStyleString+">"+"</div>") ;
+         context.httpAjaxContext.ajax_rsp_assign_grid("_"+"Gridflight_seat", Gridflight_seatContainer, subGridflight_seat_Internalname);
+         if ( ! context.isAjaxRequest( ) && ! context.isSpaRequest( ) )
+         {
+            GxWebStd.gx_hidden_field( context, "Gridflight_seatContainerData", Gridflight_seatContainer.ToJavascriptSource());
+         }
+         if ( context.isAjaxRequest( ) || context.isSpaRequest( ) )
+         {
+            GxWebStd.gx_hidden_field( context, "Gridflight_seatContainerData"+"V", Gridflight_seatContainer.GridValuesHidden());
+         }
+         else
+         {
+            context.WriteHtmlText( "<input type=\"hidden\" "+"name=\""+"Gridflight_seatContainerData"+"V"+"\" value='"+Gridflight_seatContainer.GridValuesHidden()+"'/>") ;
+         }
       }
 
       protected void UserMain( )
@@ -810,6 +974,7 @@ namespace GeneXus.Programs {
             IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ".", ","), 18, MidpointRounding.ToEven));
             IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ".", ","), 18, MidpointRounding.ToEven));
             Gx_mode = cgiGet( "Mode");
+            nRC_GXsfl_133 = (int)(Math.Round(context.localUtil.CToN( cgiGet( "nRC_GXsfl_133"), ".", ","), 18, MidpointRounding.ToEven));
             /* Read variables values. */
             if ( ( ( context.localUtil.CToN( cgiGet( edtFlightId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtFlightId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
             {
@@ -933,6 +1098,7 @@ namespace GeneXus.Programs {
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+            /* Check if conditions changed and reset current page numbers */
             standaloneNotModal( ) ;
          }
          else
@@ -1023,6 +1189,8 @@ namespace GeneXus.Programs {
                      }
                      else
                      {
+                        sEvtType = StringUtil.Right( sEvt, 4);
+                        sEvt = StringUtil.Left( sEvt, (short)(StringUtil.Len( sEvt)-4));
                      }
                   }
                   context.wbHandled = 1;
@@ -1111,21 +1279,123 @@ namespace GeneXus.Programs {
          }
       }
 
+      protected void CONFIRM_0810( )
+      {
+         nGXsfl_133_idx = 0;
+         while ( nGXsfl_133_idx < nRC_GXsfl_133 )
+         {
+            ReadRow0810( ) ;
+            if ( ( nRcdExists_10 != 0 ) || ( nIsMod_10 != 0 ) )
+            {
+               GetKey0810( ) ;
+               if ( ( nRcdExists_10 == 0 ) && ( nRcdDeleted_10 == 0 ) )
+               {
+                  if ( RcdFound10 == 0 )
+                  {
+                     Gx_mode = "INS";
+                     AssignAttri("", false, "Gx_mode", Gx_mode);
+                     BeforeValidate0810( ) ;
+                     if ( AnyError == 0 )
+                     {
+                        CheckExtendedTable0810( ) ;
+                        CloseExtendedTableCursors0810( ) ;
+                        if ( AnyError == 0 )
+                        {
+                           IsConfirmed = 1;
+                           AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
+                        }
+                     }
+                  }
+                  else
+                  {
+                     GXCCtl = "FLIGHTSEATID_" + sGXsfl_133_idx;
+                     GX_msglist.addItem(context.GetMessage( "GXM_noupdate", ""), "DuplicatePrimaryKey", 1, GXCCtl);
+                     AnyError = 1;
+                     GX_FocusControl = edtFlightSeatId_Internalname;
+                     AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                  }
+               }
+               else
+               {
+                  if ( RcdFound10 != 0 )
+                  {
+                     if ( nRcdDeleted_10 != 0 )
+                     {
+                        Gx_mode = "DLT";
+                        AssignAttri("", false, "Gx_mode", Gx_mode);
+                        getByPrimaryKey0810( ) ;
+                        Load0810( ) ;
+                        BeforeValidate0810( ) ;
+                        if ( AnyError == 0 )
+                        {
+                           OnDeleteControls0810( ) ;
+                        }
+                     }
+                     else
+                     {
+                        if ( nIsMod_10 != 0 )
+                        {
+                           Gx_mode = "UPD";
+                           AssignAttri("", false, "Gx_mode", Gx_mode);
+                           BeforeValidate0810( ) ;
+                           if ( AnyError == 0 )
+                           {
+                              CheckExtendedTable0810( ) ;
+                              CloseExtendedTableCursors0810( ) ;
+                              if ( AnyError == 0 )
+                              {
+                                 IsConfirmed = 1;
+                                 AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
+                              }
+                           }
+                        }
+                     }
+                  }
+                  else
+                  {
+                     if ( nRcdDeleted_10 == 0 )
+                     {
+                        GXCCtl = "FLIGHTSEATID_" + sGXsfl_133_idx;
+                        GX_msglist.addItem(context.GetMessage( "GXM_recdeleted", ""), 1, GXCCtl);
+                        AnyError = 1;
+                        GX_FocusControl = edtFlightSeatId_Internalname;
+                        AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                     }
+                  }
+               }
+            }
+            ChangePostValue( edtFlightSeatId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A42FlightSeatId), 4, 0, ".", ""))) ;
+            ChangePostValue( cmbFlightSeatLocation_Internalname, StringUtil.RTrim( A43FlightSeatLocation)) ;
+            ChangePostValue( "ZT_"+"Z42FlightSeatId_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z42FlightSeatId), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z43FlightSeatLocation_"+sGXsfl_133_idx, StringUtil.RTrim( Z43FlightSeatLocation)) ;
+            ChangePostValue( "nRcdDeleted_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_10), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_10), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_10), 4, 0, ".", ""))) ;
+            if ( nIsMod_10 != 0 )
+            {
+               ChangePostValue( "FLIGHTSEATID_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtFlightSeatId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "FLIGHTSEATLOCATION_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0, ".", ""))) ;
+            }
+         }
+         /* Start of After( level) rules */
+         /* End of After( level) rules */
+      }
+
       protected void ResetCaption080( )
       {
       }
 
       protected void ZM089( short GX_JID )
       {
-         if ( ( GX_JID == 2 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 3 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
-               Z35FlightPrice = T00083_A35FlightPrice[0];
-               Z36FlightDiscountPercentaje = T00083_A36FlightDiscountPercentaje[0];
-               Z38AirlineId = T00083_A38AirlineId[0];
-               Z25FlightArrivalAirportId = T00083_A25FlightArrivalAirportId[0];
-               Z24FlightDepartureAirportId = T00083_A24FlightDepartureAirportId[0];
+               Z35FlightPrice = T00085_A35FlightPrice[0];
+               Z36FlightDiscountPercentaje = T00085_A36FlightDiscountPercentaje[0];
+               Z38AirlineId = T00085_A38AirlineId[0];
+               Z25FlightArrivalAirportId = T00085_A25FlightArrivalAirportId[0];
+               Z24FlightDepartureAirportId = T00085_A24FlightDepartureAirportId[0];
             }
             else
             {
@@ -1136,7 +1406,7 @@ namespace GeneXus.Programs {
                Z24FlightDepartureAirportId = A24FlightDepartureAirportId;
             }
          }
-         if ( GX_JID == -2 )
+         if ( GX_JID == -3 )
          {
             Z19FlightId = A19FlightId;
             Z35FlightPrice = A35FlightPrice;
@@ -1192,56 +1462,64 @@ namespace GeneXus.Programs {
 
       protected void Load089( )
       {
-         /* Using cursor T000811 */
-         pr_default.execute(9, new Object[] {A19FlightId});
-         if ( (pr_default.getStatus(9) != 101) )
+         /* Using cursor T000813 */
+         pr_default.execute(11, new Object[] {A19FlightId});
+         if ( (pr_default.getStatus(11) != 101) )
          {
             RcdFound9 = 1;
-            A26FlightArrivalAirportName = T000811_A26FlightArrivalAirportName[0];
+            A26FlightArrivalAirportName = T000813_A26FlightArrivalAirportName[0];
             AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
-            A32FlightArrivalCountryName = T000811_A32FlightArrivalCountryName[0];
+            A32FlightArrivalCountryName = T000813_A32FlightArrivalCountryName[0];
             AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
-            A34FlightArrivalCityName = T000811_A34FlightArrivalCityName[0];
+            A34FlightArrivalCityName = T000813_A34FlightArrivalCityName[0];
             AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
-            A23FlightDepartureAirportName = T000811_A23FlightDepartureAirportName[0];
+            A23FlightDepartureAirportName = T000813_A23FlightDepartureAirportName[0];
             AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
-            A28FlightDepartureCountryName = T000811_A28FlightDepartureCountryName[0];
+            A28FlightDepartureCountryName = T000813_A28FlightDepartureCountryName[0];
             AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
-            A30FlightDepartureCityName = T000811_A30FlightDepartureCityName[0];
+            A30FlightDepartureCityName = T000813_A30FlightDepartureCityName[0];
             AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
-            A35FlightPrice = T000811_A35FlightPrice[0];
+            A35FlightPrice = T000813_A35FlightPrice[0];
             AssignAttri("", false, "A35FlightPrice", StringUtil.LTrimStr( A35FlightPrice, 7, 2));
-            A36FlightDiscountPercentaje = T000811_A36FlightDiscountPercentaje[0];
+            A36FlightDiscountPercentaje = T000813_A36FlightDiscountPercentaje[0];
             AssignAttri("", false, "A36FlightDiscountPercentaje", StringUtil.LTrimStr( (decimal)(A36FlightDiscountPercentaje), 4, 0));
-            A39AirlineName = T000811_A39AirlineName[0];
+            A39AirlineName = T000813_A39AirlineName[0];
             AssignAttri("", false, "A39AirlineName", A39AirlineName);
-            A40AirlineDiscountPercentage = T000811_A40AirlineDiscountPercentage[0];
+            A40AirlineDiscountPercentage = T000813_A40AirlineDiscountPercentage[0];
             AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
-            A38AirlineId = T000811_A38AirlineId[0];
-            n38AirlineId = T000811_n38AirlineId[0];
+            A38AirlineId = T000813_A38AirlineId[0];
+            n38AirlineId = T000813_n38AirlineId[0];
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-            A25FlightArrivalAirportId = T000811_A25FlightArrivalAirportId[0];
+            A25FlightArrivalAirportId = T000813_A25FlightArrivalAirportId[0];
             AssignAttri("", false, "A25FlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(A25FlightArrivalAirportId), 4, 0));
-            A24FlightDepartureAirportId = T000811_A24FlightDepartureAirportId[0];
+            A24FlightDepartureAirportId = T000813_A24FlightDepartureAirportId[0];
             AssignAttri("", false, "A24FlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(A24FlightDepartureAirportId), 4, 0));
-            A31FlightArrivalCountryId = T000811_A31FlightArrivalCountryId[0];
+            A31FlightArrivalCountryId = T000813_A31FlightArrivalCountryId[0];
             AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
-            A33FlightArrivalCityId = T000811_A33FlightArrivalCityId[0];
+            A33FlightArrivalCityId = T000813_A33FlightArrivalCityId[0];
             AssignAttri("", false, "A33FlightArrivalCityId", StringUtil.LTrimStr( (decimal)(A33FlightArrivalCityId), 4, 0));
-            A27FlightDepartureCountryId = T000811_A27FlightDepartureCountryId[0];
+            A27FlightDepartureCountryId = T000813_A27FlightDepartureCountryId[0];
             AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
-            A29FlightDepartureCityId = T000811_A29FlightDepartureCityId[0];
+            A29FlightDepartureCityId = T000813_A29FlightDepartureCityId[0];
             AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
-            ZM089( -2) ;
+            ZM089( -3) ;
          }
-         pr_default.close(9);
+         pr_default.close(11);
          OnLoadActions089( ) ;
       }
 
       protected void OnLoadActions089( )
       {
-         A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
-         AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         if ( A40AirlineDiscountPercentage >= A36FlightDiscountPercentaje )
+         {
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
+            AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         }
+         else
+         {
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A36FlightDiscountPercentaje/ (decimal)(100)));
+            AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         }
       }
 
       protected void CheckExtendedTable089( )
@@ -1249,81 +1527,81 @@ namespace GeneXus.Programs {
          nIsDirty_9 = 0;
          Gx_BScreen = 1;
          standaloneModal( ) ;
-         /* Using cursor T00085 */
-         pr_default.execute(3, new Object[] {A25FlightArrivalAirportId});
-         if ( (pr_default.getStatus(3) == 101) )
+         /* Using cursor T00087 */
+         pr_default.execute(5, new Object[] {A25FlightArrivalAirportId});
+         if ( (pr_default.getStatus(5) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALAIRPORTID");
             AnyError = 1;
             GX_FocusControl = edtFlightArrivalAirportId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         A26FlightArrivalAirportName = T00085_A26FlightArrivalAirportName[0];
+         A26FlightArrivalAirportName = T00087_A26FlightArrivalAirportName[0];
          AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
-         A31FlightArrivalCountryId = T00085_A31FlightArrivalCountryId[0];
+         A31FlightArrivalCountryId = T00087_A31FlightArrivalCountryId[0];
          AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
-         A33FlightArrivalCityId = T00085_A33FlightArrivalCityId[0];
+         A33FlightArrivalCityId = T00087_A33FlightArrivalCityId[0];
          AssignAttri("", false, "A33FlightArrivalCityId", StringUtil.LTrimStr( (decimal)(A33FlightArrivalCityId), 4, 0));
-         pr_default.close(3);
-         /* Using cursor T00087 */
-         pr_default.execute(5, new Object[] {A31FlightArrivalCountryId});
-         if ( (pr_default.getStatus(5) == 101) )
+         pr_default.close(5);
+         /* Using cursor T00089 */
+         pr_default.execute(7, new Object[] {A31FlightArrivalCountryId});
+         if ( (pr_default.getStatus(7) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCOUNTRYID");
             AnyError = 1;
          }
-         A32FlightArrivalCountryName = T00087_A32FlightArrivalCountryName[0];
+         A32FlightArrivalCountryName = T00089_A32FlightArrivalCountryName[0];
          AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
-         pr_default.close(5);
-         /* Using cursor T00088 */
-         pr_default.execute(6, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
-         if ( (pr_default.getStatus(6) == 101) )
+         pr_default.close(7);
+         /* Using cursor T000810 */
+         pr_default.execute(8, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
+         if ( (pr_default.getStatus(8) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCITYID");
             AnyError = 1;
          }
-         A34FlightArrivalCityName = T00088_A34FlightArrivalCityName[0];
+         A34FlightArrivalCityName = T000810_A34FlightArrivalCityName[0];
          AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
-         pr_default.close(6);
-         /* Using cursor T00086 */
-         pr_default.execute(4, new Object[] {A24FlightDepartureAirportId});
-         if ( (pr_default.getStatus(4) == 101) )
+         pr_default.close(8);
+         /* Using cursor T00088 */
+         pr_default.execute(6, new Object[] {A24FlightDepartureAirportId});
+         if ( (pr_default.getStatus(6) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTUREAIRPORTID");
             AnyError = 1;
             GX_FocusControl = edtFlightDepartureAirportId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         A23FlightDepartureAirportName = T00086_A23FlightDepartureAirportName[0];
+         A23FlightDepartureAirportName = T00088_A23FlightDepartureAirportName[0];
          AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
-         A27FlightDepartureCountryId = T00086_A27FlightDepartureCountryId[0];
+         A27FlightDepartureCountryId = T00088_A27FlightDepartureCountryId[0];
          AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
-         A29FlightDepartureCityId = T00086_A29FlightDepartureCityId[0];
+         A29FlightDepartureCityId = T00088_A29FlightDepartureCityId[0];
          AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
-         pr_default.close(4);
-         /* Using cursor T00089 */
-         pr_default.execute(7, new Object[] {A27FlightDepartureCountryId});
-         if ( (pr_default.getStatus(7) == 101) )
+         pr_default.close(6);
+         /* Using cursor T000811 */
+         pr_default.execute(9, new Object[] {A27FlightDepartureCountryId});
+         if ( (pr_default.getStatus(9) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECOUNTRYID");
             AnyError = 1;
          }
-         A28FlightDepartureCountryName = T00089_A28FlightDepartureCountryName[0];
+         A28FlightDepartureCountryName = T000811_A28FlightDepartureCountryName[0];
          AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
-         pr_default.close(7);
-         /* Using cursor T000810 */
-         pr_default.execute(8, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
-         if ( (pr_default.getStatus(8) == 101) )
+         pr_default.close(9);
+         /* Using cursor T000812 */
+         pr_default.execute(10, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
+         if ( (pr_default.getStatus(10) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECITYID");
             AnyError = 1;
          }
-         A30FlightDepartureCityName = T000810_A30FlightDepartureCityName[0];
+         A30FlightDepartureCityName = T000812_A30FlightDepartureCityName[0];
          AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
-         pr_default.close(8);
-         /* Using cursor T00084 */
-         pr_default.execute(2, new Object[] {n38AirlineId, A38AirlineId});
-         if ( (pr_default.getStatus(2) == 101) )
+         pr_default.close(10);
+         /* Using cursor T00086 */
+         pr_default.execute(4, new Object[] {n38AirlineId, A38AirlineId});
+         if ( (pr_default.getStatus(4) == 101) )
          {
             if ( ! ( (0==A38AirlineId) ) )
             {
@@ -1333,100 +1611,60 @@ namespace GeneXus.Programs {
                AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
             }
          }
-         A39AirlineName = T00084_A39AirlineName[0];
+         A39AirlineName = T00086_A39AirlineName[0];
          AssignAttri("", false, "A39AirlineName", A39AirlineName);
-         A40AirlineDiscountPercentage = T00084_A40AirlineDiscountPercentage[0];
+         A40AirlineDiscountPercentage = T00086_A40AirlineDiscountPercentage[0];
          AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
-         pr_default.close(2);
-         nIsDirty_9 = 1;
-         A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
-         AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         pr_default.close(4);
+         if ( A40AirlineDiscountPercentage >= A36FlightDiscountPercentaje )
+         {
+            nIsDirty_9 = 1;
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
+            AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         }
+         else
+         {
+            nIsDirty_9 = 1;
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A36FlightDiscountPercentaje/ (decimal)(100)));
+            AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+         }
       }
 
       protected void CloseExtendedTableCursors089( )
       {
-         pr_default.close(3);
          pr_default.close(5);
-         pr_default.close(6);
-         pr_default.close(4);
          pr_default.close(7);
          pr_default.close(8);
-         pr_default.close(2);
+         pr_default.close(6);
+         pr_default.close(9);
+         pr_default.close(10);
+         pr_default.close(4);
       }
 
       protected void enableDisable( )
       {
       }
 
-      protected void gxLoad_4( short A25FlightArrivalAirportId )
+      protected void gxLoad_5( short A25FlightArrivalAirportId )
       {
-         /* Using cursor T000812 */
-         pr_default.execute(10, new Object[] {A25FlightArrivalAirportId});
-         if ( (pr_default.getStatus(10) == 101) )
+         /* Using cursor T000814 */
+         pr_default.execute(12, new Object[] {A25FlightArrivalAirportId});
+         if ( (pr_default.getStatus(12) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALAIRPORTID");
             AnyError = 1;
             GX_FocusControl = edtFlightArrivalAirportId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         A26FlightArrivalAirportName = T000812_A26FlightArrivalAirportName[0];
+         A26FlightArrivalAirportName = T000814_A26FlightArrivalAirportName[0];
          AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
-         A31FlightArrivalCountryId = T000812_A31FlightArrivalCountryId[0];
+         A31FlightArrivalCountryId = T000814_A31FlightArrivalCountryId[0];
          AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
-         A33FlightArrivalCityId = T000812_A33FlightArrivalCityId[0];
+         A33FlightArrivalCityId = T000814_A33FlightArrivalCityId[0];
          AssignAttri("", false, "A33FlightArrivalCityId", StringUtil.LTrimStr( (decimal)(A33FlightArrivalCityId), 4, 0));
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
          AddString( "\""+GXUtil.EncodeJSConstant( A26FlightArrivalAirportName)+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A31FlightArrivalCountryId), 4, 0, ".", "")))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A33FlightArrivalCityId), 4, 0, ".", "")))+"\"") ;
-         AddString( "]") ;
-         if ( (pr_default.getStatus(10) == 101) )
-         {
-            AddString( ",") ;
-            AddString( "101") ;
-         }
-         AddString( "]") ;
-         pr_default.close(10);
-      }
-
-      protected void gxLoad_6( short A31FlightArrivalCountryId )
-      {
-         /* Using cursor T000813 */
-         pr_default.execute(11, new Object[] {A31FlightArrivalCountryId});
-         if ( (pr_default.getStatus(11) == 101) )
-         {
-            GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCOUNTRYID");
-            AnyError = 1;
-         }
-         A32FlightArrivalCountryName = T000813_A32FlightArrivalCountryName[0];
-         AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
-         GxWebStd.set_html_headers( context, 0, "", "");
-         AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A32FlightArrivalCountryName)+"\"") ;
-         AddString( "]") ;
-         if ( (pr_default.getStatus(11) == 101) )
-         {
-            AddString( ",") ;
-            AddString( "101") ;
-         }
-         AddString( "]") ;
-         pr_default.close(11);
-      }
-
-      protected void gxLoad_7( short A31FlightArrivalCountryId ,
-                               short A33FlightArrivalCityId )
-      {
-         /* Using cursor T000814 */
-         pr_default.execute(12, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
-         if ( (pr_default.getStatus(12) == 101) )
-         {
-            GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCITYID");
-            AnyError = 1;
-         }
-         A34FlightArrivalCityName = T000814_A34FlightArrivalCityName[0];
-         AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
-         GxWebStd.set_html_headers( context, 0, "", "");
-         AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A34FlightArrivalCityName)+"\"") ;
          AddString( "]") ;
          if ( (pr_default.getStatus(12) == 101) )
          {
@@ -1437,26 +1675,20 @@ namespace GeneXus.Programs {
          pr_default.close(12);
       }
 
-      protected void gxLoad_5( short A24FlightDepartureAirportId )
+      protected void gxLoad_7( short A31FlightArrivalCountryId )
       {
          /* Using cursor T000815 */
-         pr_default.execute(13, new Object[] {A24FlightDepartureAirportId});
+         pr_default.execute(13, new Object[] {A31FlightArrivalCountryId});
          if ( (pr_default.getStatus(13) == 101) )
          {
-            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTUREAIRPORTID");
+            GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCOUNTRYID");
             AnyError = 1;
-            GX_FocusControl = edtFlightDepartureAirportId_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         A23FlightDepartureAirportName = T000815_A23FlightDepartureAirportName[0];
-         AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
-         A27FlightDepartureCountryId = T000815_A27FlightDepartureCountryId[0];
-         AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
-         A29FlightDepartureCityId = T000815_A29FlightDepartureCityId[0];
-         AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
+         A32FlightArrivalCountryName = T000815_A32FlightArrivalCountryName[0];
+         AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A23FlightDepartureAirportName)+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A27FlightDepartureCountryId), 4, 0, ".", "")))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A29FlightDepartureCityId), 4, 0, ".", "")))+"\"") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A32FlightArrivalCountryName)+"\"") ;
          AddString( "]") ;
          if ( (pr_default.getStatus(13) == 101) )
          {
@@ -1467,20 +1699,21 @@ namespace GeneXus.Programs {
          pr_default.close(13);
       }
 
-      protected void gxLoad_8( short A27FlightDepartureCountryId )
+      protected void gxLoad_8( short A31FlightArrivalCountryId ,
+                               short A33FlightArrivalCityId )
       {
          /* Using cursor T000816 */
-         pr_default.execute(14, new Object[] {A27FlightDepartureCountryId});
+         pr_default.execute(14, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
          if ( (pr_default.getStatus(14) == 101) )
          {
-            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECOUNTRYID");
+            GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCITYID");
             AnyError = 1;
          }
-         A28FlightDepartureCountryName = T000816_A28FlightDepartureCountryName[0];
-         AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
+         A34FlightArrivalCityName = T000816_A34FlightArrivalCityName[0];
+         AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A28FlightDepartureCountryName)+"\"") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A34FlightArrivalCityName)+"\"") ;
          AddString( "]") ;
          if ( (pr_default.getStatus(14) == 101) )
          {
@@ -1491,21 +1724,26 @@ namespace GeneXus.Programs {
          pr_default.close(14);
       }
 
-      protected void gxLoad_9( short A27FlightDepartureCountryId ,
-                               short A29FlightDepartureCityId )
+      protected void gxLoad_6( short A24FlightDepartureAirportId )
       {
          /* Using cursor T000817 */
-         pr_default.execute(15, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
+         pr_default.execute(15, new Object[] {A24FlightDepartureAirportId});
          if ( (pr_default.getStatus(15) == 101) )
          {
-            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECITYID");
+            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTUREAIRPORTID");
             AnyError = 1;
+            GX_FocusControl = edtFlightDepartureAirportId_Internalname;
+            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
-         A30FlightDepartureCityName = T000817_A30FlightDepartureCityName[0];
-         AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
+         A23FlightDepartureAirportName = T000817_A23FlightDepartureAirportName[0];
+         AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
+         A27FlightDepartureCountryId = T000817_A27FlightDepartureCountryId[0];
+         AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
+         A29FlightDepartureCityId = T000817_A29FlightDepartureCityId[0];
+         AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A30FlightDepartureCityName)+"\"") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A23FlightDepartureAirportName)+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A27FlightDepartureCountryId), 4, 0, ".", "")))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A29FlightDepartureCityId), 4, 0, ".", "")))+"\"") ;
          AddString( "]") ;
          if ( (pr_default.getStatus(15) == 101) )
          {
@@ -1516,27 +1754,20 @@ namespace GeneXus.Programs {
          pr_default.close(15);
       }
 
-      protected void gxLoad_3( short A38AirlineId )
+      protected void gxLoad_9( short A27FlightDepartureCountryId )
       {
          /* Using cursor T000818 */
-         pr_default.execute(16, new Object[] {n38AirlineId, A38AirlineId});
+         pr_default.execute(16, new Object[] {A27FlightDepartureCountryId});
          if ( (pr_default.getStatus(16) == 101) )
          {
-            if ( ! ( (0==A38AirlineId) ) )
-            {
-               GX_msglist.addItem("No matching 'Airline'.", "ForeignKeyNotFound", 1, "AIRLINEID");
-               AnyError = 1;
-               GX_FocusControl = edtAirlineId_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-            }
+            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECOUNTRYID");
+            AnyError = 1;
          }
-         A39AirlineName = T000818_A39AirlineName[0];
-         AssignAttri("", false, "A39AirlineName", A39AirlineName);
-         A40AirlineDiscountPercentage = T000818_A40AirlineDiscountPercentage[0];
-         AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+         A28FlightDepartureCountryName = T000818_A28FlightDepartureCountryName[0];
+         AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
-         AddString( "\""+GXUtil.EncodeJSConstant( A39AirlineName)+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A40AirlineDiscountPercentage), 4, 0, ".", "")))+"\"") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A28FlightDepartureCountryName)+"\"") ;
          AddString( "]") ;
          if ( (pr_default.getStatus(16) == 101) )
          {
@@ -1547,11 +1778,67 @@ namespace GeneXus.Programs {
          pr_default.close(16);
       }
 
-      protected void GetKey089( )
+      protected void gxLoad_10( short A27FlightDepartureCountryId ,
+                                short A29FlightDepartureCityId )
       {
          /* Using cursor T000819 */
-         pr_default.execute(17, new Object[] {A19FlightId});
-         if ( (pr_default.getStatus(17) != 101) )
+         pr_default.execute(17, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
+         if ( (pr_default.getStatus(17) == 101) )
+         {
+            GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECITYID");
+            AnyError = 1;
+         }
+         A30FlightDepartureCityName = T000819_A30FlightDepartureCityName[0];
+         AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A30FlightDepartureCityName)+"\"") ;
+         AddString( "]") ;
+         if ( (pr_default.getStatus(17) == 101) )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+         pr_default.close(17);
+      }
+
+      protected void gxLoad_4( short A38AirlineId )
+      {
+         /* Using cursor T000820 */
+         pr_default.execute(18, new Object[] {n38AirlineId, A38AirlineId});
+         if ( (pr_default.getStatus(18) == 101) )
+         {
+            if ( ! ( (0==A38AirlineId) ) )
+            {
+               GX_msglist.addItem("No matching 'Airline'.", "ForeignKeyNotFound", 1, "AIRLINEID");
+               AnyError = 1;
+               GX_FocusControl = edtAirlineId_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            }
+         }
+         A39AirlineName = T000820_A39AirlineName[0];
+         AssignAttri("", false, "A39AirlineName", A39AirlineName);
+         A40AirlineDiscountPercentage = T000820_A40AirlineDiscountPercentage[0];
+         AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( A39AirlineName)+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A40AirlineDiscountPercentage), 4, 0, ".", "")))+"\"") ;
+         AddString( "]") ;
+         if ( (pr_default.getStatus(18) == 101) )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+         pr_default.close(18);
+      }
+
+      protected void GetKey089( )
+      {
+         /* Using cursor T000821 */
+         pr_default.execute(19, new Object[] {A19FlightId});
+         if ( (pr_default.getStatus(19) != 101) )
          {
             RcdFound9 = 1;
          }
@@ -1559,29 +1846,29 @@ namespace GeneXus.Programs {
          {
             RcdFound9 = 0;
          }
-         pr_default.close(17);
+         pr_default.close(19);
       }
 
       protected void getByPrimaryKey( )
       {
-         /* Using cursor T00083 */
-         pr_default.execute(1, new Object[] {A19FlightId});
-         if ( (pr_default.getStatus(1) != 101) )
+         /* Using cursor T00085 */
+         pr_default.execute(3, new Object[] {A19FlightId});
+         if ( (pr_default.getStatus(3) != 101) )
          {
-            ZM089( 2) ;
+            ZM089( 3) ;
             RcdFound9 = 1;
-            A19FlightId = T00083_A19FlightId[0];
+            A19FlightId = T00085_A19FlightId[0];
             AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
-            A35FlightPrice = T00083_A35FlightPrice[0];
+            A35FlightPrice = T00085_A35FlightPrice[0];
             AssignAttri("", false, "A35FlightPrice", StringUtil.LTrimStr( A35FlightPrice, 7, 2));
-            A36FlightDiscountPercentaje = T00083_A36FlightDiscountPercentaje[0];
+            A36FlightDiscountPercentaje = T00085_A36FlightDiscountPercentaje[0];
             AssignAttri("", false, "A36FlightDiscountPercentaje", StringUtil.LTrimStr( (decimal)(A36FlightDiscountPercentaje), 4, 0));
-            A38AirlineId = T00083_A38AirlineId[0];
-            n38AirlineId = T00083_n38AirlineId[0];
+            A38AirlineId = T00085_A38AirlineId[0];
+            n38AirlineId = T00085_n38AirlineId[0];
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-            A25FlightArrivalAirportId = T00083_A25FlightArrivalAirportId[0];
+            A25FlightArrivalAirportId = T00085_A25FlightArrivalAirportId[0];
             AssignAttri("", false, "A25FlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(A25FlightArrivalAirportId), 4, 0));
-            A24FlightDepartureAirportId = T00083_A24FlightDepartureAirportId[0];
+            A24FlightDepartureAirportId = T00085_A24FlightDepartureAirportId[0];
             AssignAttri("", false, "A24FlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(A24FlightDepartureAirportId), 4, 0));
             Z19FlightId = A19FlightId;
             sMode9 = Gx_mode;
@@ -1608,7 +1895,7 @@ namespace GeneXus.Programs {
             Gx_mode = sMode9;
             AssignAttri("", false, "Gx_mode", Gx_mode);
          }
-         pr_default.close(1);
+         pr_default.close(3);
       }
 
       protected void getEqualNoModal( )
@@ -1630,43 +1917,43 @@ namespace GeneXus.Programs {
       protected void move_next( )
       {
          RcdFound9 = 0;
-         /* Using cursor T000820 */
-         pr_default.execute(18, new Object[] {A19FlightId});
-         if ( (pr_default.getStatus(18) != 101) )
+         /* Using cursor T000822 */
+         pr_default.execute(20, new Object[] {A19FlightId});
+         if ( (pr_default.getStatus(20) != 101) )
          {
-            while ( (pr_default.getStatus(18) != 101) && ( ( T000820_A19FlightId[0] < A19FlightId ) ) )
+            while ( (pr_default.getStatus(20) != 101) && ( ( T000822_A19FlightId[0] < A19FlightId ) ) )
             {
-               pr_default.readNext(18);
+               pr_default.readNext(20);
             }
-            if ( (pr_default.getStatus(18) != 101) && ( ( T000820_A19FlightId[0] > A19FlightId ) ) )
+            if ( (pr_default.getStatus(20) != 101) && ( ( T000822_A19FlightId[0] > A19FlightId ) ) )
             {
-               A19FlightId = T000820_A19FlightId[0];
+               A19FlightId = T000822_A19FlightId[0];
                AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
                RcdFound9 = 1;
             }
          }
-         pr_default.close(18);
+         pr_default.close(20);
       }
 
       protected void move_previous( )
       {
          RcdFound9 = 0;
-         /* Using cursor T000821 */
-         pr_default.execute(19, new Object[] {A19FlightId});
-         if ( (pr_default.getStatus(19) != 101) )
+         /* Using cursor T000823 */
+         pr_default.execute(21, new Object[] {A19FlightId});
+         if ( (pr_default.getStatus(21) != 101) )
          {
-            while ( (pr_default.getStatus(19) != 101) && ( ( T000821_A19FlightId[0] > A19FlightId ) ) )
+            while ( (pr_default.getStatus(21) != 101) && ( ( T000823_A19FlightId[0] > A19FlightId ) ) )
             {
-               pr_default.readNext(19);
+               pr_default.readNext(21);
             }
-            if ( (pr_default.getStatus(19) != 101) && ( ( T000821_A19FlightId[0] < A19FlightId ) ) )
+            if ( (pr_default.getStatus(21) != 101) && ( ( T000823_A19FlightId[0] < A19FlightId ) ) )
             {
-               A19FlightId = T000821_A19FlightId[0];
+               A19FlightId = T000823_A19FlightId[0];
                AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
                RcdFound9 = 1;
             }
          }
-         pr_default.close(19);
+         pr_default.close(21);
       }
 
       protected void btn_enter( )
@@ -1912,45 +2199,45 @@ namespace GeneXus.Programs {
       {
          if ( ! IsIns( ) )
          {
-            /* Using cursor T00082 */
-            pr_default.execute(0, new Object[] {A19FlightId});
-            if ( (pr_default.getStatus(0) == 103) )
+            /* Using cursor T00084 */
+            pr_default.execute(2, new Object[] {A19FlightId});
+            if ( (pr_default.getStatus(2) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Flight"}), "RecordIsLocked", 1, "");
                AnyError = 1;
                return  ;
             }
-            if ( (pr_default.getStatus(0) == 101) || ( Z35FlightPrice != T00082_A35FlightPrice[0] ) || ( Z36FlightDiscountPercentaje != T00082_A36FlightDiscountPercentaje[0] ) || ( Z38AirlineId != T00082_A38AirlineId[0] ) || ( Z25FlightArrivalAirportId != T00082_A25FlightArrivalAirportId[0] ) || ( Z24FlightDepartureAirportId != T00082_A24FlightDepartureAirportId[0] ) )
+            if ( (pr_default.getStatus(2) == 101) || ( Z35FlightPrice != T00084_A35FlightPrice[0] ) || ( Z36FlightDiscountPercentaje != T00084_A36FlightDiscountPercentaje[0] ) || ( Z38AirlineId != T00084_A38AirlineId[0] ) || ( Z25FlightArrivalAirportId != T00084_A25FlightArrivalAirportId[0] ) || ( Z24FlightDepartureAirportId != T00084_A24FlightDepartureAirportId[0] ) )
             {
-               if ( Z35FlightPrice != T00082_A35FlightPrice[0] )
+               if ( Z35FlightPrice != T00084_A35FlightPrice[0] )
                {
                   GXUtil.WriteLog("flight:[seudo value changed for attri]"+"FlightPrice");
                   GXUtil.WriteLogRaw("Old: ",Z35FlightPrice);
-                  GXUtil.WriteLogRaw("Current: ",T00082_A35FlightPrice[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00084_A35FlightPrice[0]);
                }
-               if ( Z36FlightDiscountPercentaje != T00082_A36FlightDiscountPercentaje[0] )
+               if ( Z36FlightDiscountPercentaje != T00084_A36FlightDiscountPercentaje[0] )
                {
                   GXUtil.WriteLog("flight:[seudo value changed for attri]"+"FlightDiscountPercentaje");
                   GXUtil.WriteLogRaw("Old: ",Z36FlightDiscountPercentaje);
-                  GXUtil.WriteLogRaw("Current: ",T00082_A36FlightDiscountPercentaje[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00084_A36FlightDiscountPercentaje[0]);
                }
-               if ( Z38AirlineId != T00082_A38AirlineId[0] )
+               if ( Z38AirlineId != T00084_A38AirlineId[0] )
                {
                   GXUtil.WriteLog("flight:[seudo value changed for attri]"+"AirlineId");
                   GXUtil.WriteLogRaw("Old: ",Z38AirlineId);
-                  GXUtil.WriteLogRaw("Current: ",T00082_A38AirlineId[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00084_A38AirlineId[0]);
                }
-               if ( Z25FlightArrivalAirportId != T00082_A25FlightArrivalAirportId[0] )
+               if ( Z25FlightArrivalAirportId != T00084_A25FlightArrivalAirportId[0] )
                {
                   GXUtil.WriteLog("flight:[seudo value changed for attri]"+"FlightArrivalAirportId");
                   GXUtil.WriteLogRaw("Old: ",Z25FlightArrivalAirportId);
-                  GXUtil.WriteLogRaw("Current: ",T00082_A25FlightArrivalAirportId[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00084_A25FlightArrivalAirportId[0]);
                }
-               if ( Z24FlightDepartureAirportId != T00082_A24FlightDepartureAirportId[0] )
+               if ( Z24FlightDepartureAirportId != T00084_A24FlightDepartureAirportId[0] )
                {
                   GXUtil.WriteLog("flight:[seudo value changed for attri]"+"FlightDepartureAirportId");
                   GXUtil.WriteLogRaw("Old: ",Z24FlightDepartureAirportId);
-                  GXUtil.WriteLogRaw("Current: ",T00082_A24FlightDepartureAirportId[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00084_A24FlightDepartureAirportId[0]);
                }
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Flight"}), "RecordWasChanged", 1, "");
                AnyError = 1;
@@ -1978,11 +2265,11 @@ namespace GeneXus.Programs {
                   BeforeInsert089( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000822 */
-                     pr_default.execute(20, new Object[] {A35FlightPrice, A36FlightDiscountPercentaje, n38AirlineId, A38AirlineId, A25FlightArrivalAirportId, A24FlightDepartureAirportId});
-                     A19FlightId = T000822_A19FlightId[0];
+                     /* Using cursor T000824 */
+                     pr_default.execute(22, new Object[] {A35FlightPrice, A36FlightDiscountPercentaje, n38AirlineId, A38AirlineId, A25FlightArrivalAirportId, A24FlightDepartureAirportId});
+                     A19FlightId = T000824_A19FlightId[0];
                      AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
-                     pr_default.close(20);
+                     pr_default.close(22);
                      pr_default.SmartCacheProvider.SetUpdated("Flight");
                      if ( AnyError == 0 )
                      {
@@ -1990,10 +2277,14 @@ namespace GeneXus.Programs {
                         /* End of After( Insert) rules */
                         if ( AnyError == 0 )
                         {
-                           /* Save values for previous() function. */
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucadded", "");
-                           endTrnMsgCod = "SuccessfullyAdded";
-                           ResetCaption080( ) ;
+                           ProcessLevel089( ) ;
+                           if ( AnyError == 0 )
+                           {
+                              /* Save values for previous() function. */
+                              endTrnMsgTxt = context.GetMessage( "GXM_sucadded", "");
+                              endTrnMsgCod = "SuccessfullyAdded";
+                              ResetCaption080( ) ;
+                           }
                         }
                      }
                   }
@@ -2031,11 +2322,11 @@ namespace GeneXus.Programs {
                   BeforeUpdate089( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000823 */
-                     pr_default.execute(21, new Object[] {A35FlightPrice, A36FlightDiscountPercentaje, n38AirlineId, A38AirlineId, A25FlightArrivalAirportId, A24FlightDepartureAirportId, A19FlightId});
-                     pr_default.close(21);
+                     /* Using cursor T000825 */
+                     pr_default.execute(23, new Object[] {A35FlightPrice, A36FlightDiscountPercentaje, n38AirlineId, A38AirlineId, A25FlightArrivalAirportId, A24FlightDepartureAirportId, A19FlightId});
+                     pr_default.close(23);
                      pr_default.SmartCacheProvider.SetUpdated("Flight");
-                     if ( (pr_default.getStatus(21) == 103) )
+                     if ( (pr_default.getStatus(23) == 103) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Flight"}), "RecordIsLocked", 1, "");
                         AnyError = 1;
@@ -2047,10 +2338,14 @@ namespace GeneXus.Programs {
                         /* End of After( update) rules */
                         if ( AnyError == 0 )
                         {
-                           getByPrimaryKey( ) ;
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucupdated", "");
-                           endTrnMsgCod = "SuccessfullyUpdated";
-                           ResetCaption080( ) ;
+                           ProcessLevel089( ) ;
+                           if ( AnyError == 0 )
+                           {
+                              getByPrimaryKey( ) ;
+                              endTrnMsgTxt = context.GetMessage( "GXM_sucupdated", "");
+                              endTrnMsgCod = "SuccessfullyUpdated";
+                              ResetCaption080( ) ;
+                           }
                         }
                      }
                      else
@@ -2088,39 +2383,49 @@ namespace GeneXus.Programs {
                BeforeDelete089( ) ;
                if ( AnyError == 0 )
                {
-                  /* No cascading delete specified. */
-                  /* Using cursor T000824 */
-                  pr_default.execute(22, new Object[] {A19FlightId});
-                  pr_default.close(22);
-                  pr_default.SmartCacheProvider.SetUpdated("Flight");
+                  ScanStart0810( ) ;
+                  while ( RcdFound10 != 0 )
+                  {
+                     getByPrimaryKey0810( ) ;
+                     Delete0810( ) ;
+                     ScanNext0810( ) ;
+                  }
+                  ScanEnd0810( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Start of After( delete) rules */
-                     /* End of After( delete) rules */
+                     /* Using cursor T000826 */
+                     pr_default.execute(24, new Object[] {A19FlightId});
+                     pr_default.close(24);
+                     pr_default.SmartCacheProvider.SetUpdated("Flight");
                      if ( AnyError == 0 )
                      {
-                        move_next( ) ;
-                        if ( RcdFound9 == 0 )
+                        /* Start of After( delete) rules */
+                        /* End of After( delete) rules */
+                        if ( AnyError == 0 )
                         {
-                           InitAll089( ) ;
-                           Gx_mode = "INS";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
+                           move_next( ) ;
+                           if ( RcdFound9 == 0 )
+                           {
+                              InitAll089( ) ;
+                              Gx_mode = "INS";
+                              AssignAttri("", false, "Gx_mode", Gx_mode);
+                           }
+                           else
+                           {
+                              getByPrimaryKey( ) ;
+                              Gx_mode = "UPD";
+                              AssignAttri("", false, "Gx_mode", Gx_mode);
+                           }
+                           endTrnMsgTxt = context.GetMessage( "GXM_sucdeleted", "");
+                           endTrnMsgCod = "SuccessfullyDeleted";
+                           ResetCaption080( ) ;
                         }
-                        else
-                        {
-                           getByPrimaryKey( ) ;
-                           Gx_mode = "UPD";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
-                        }
-                        endTrnMsgTxt = context.GetMessage( "GXM_sucdeleted", "");
-                        endTrnMsgCod = "SuccessfullyDeleted";
-                        ResetCaption080( ) ;
                      }
-                  }
-                  else
-                  {
-                     GX_msglist.addItem(context.GetMessage( "GXM_unexp", ""), 1, "");
-                     AnyError = 1;
+                     else
+                     {
+                        GX_msglist.addItem(context.GetMessage( "GXM_unexp", ""), 1, "");
+                        AnyError = 1;
+                     }
                   }
                }
             }
@@ -2139,61 +2444,156 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
-            /* Using cursor T000825 */
-            pr_default.execute(23, new Object[] {A25FlightArrivalAirportId});
-            A26FlightArrivalAirportName = T000825_A26FlightArrivalAirportName[0];
-            AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
-            A31FlightArrivalCountryId = T000825_A31FlightArrivalCountryId[0];
-            AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
-            A33FlightArrivalCityId = T000825_A33FlightArrivalCityId[0];
-            AssignAttri("", false, "A33FlightArrivalCityId", StringUtil.LTrimStr( (decimal)(A33FlightArrivalCityId), 4, 0));
-            pr_default.close(23);
-            /* Using cursor T000826 */
-            pr_default.execute(24, new Object[] {A31FlightArrivalCountryId});
-            A32FlightArrivalCountryName = T000826_A32FlightArrivalCountryName[0];
-            AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
-            pr_default.close(24);
             /* Using cursor T000827 */
-            pr_default.execute(25, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
-            A34FlightArrivalCityName = T000827_A34FlightArrivalCityName[0];
-            AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
+            pr_default.execute(25, new Object[] {A25FlightArrivalAirportId});
+            A26FlightArrivalAirportName = T000827_A26FlightArrivalAirportName[0];
+            AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
+            A31FlightArrivalCountryId = T000827_A31FlightArrivalCountryId[0];
+            AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
+            A33FlightArrivalCityId = T000827_A33FlightArrivalCityId[0];
+            AssignAttri("", false, "A33FlightArrivalCityId", StringUtil.LTrimStr( (decimal)(A33FlightArrivalCityId), 4, 0));
             pr_default.close(25);
             /* Using cursor T000828 */
-            pr_default.execute(26, new Object[] {A24FlightDepartureAirportId});
-            A23FlightDepartureAirportName = T000828_A23FlightDepartureAirportName[0];
-            AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
-            A27FlightDepartureCountryId = T000828_A27FlightDepartureCountryId[0];
-            AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
-            A29FlightDepartureCityId = T000828_A29FlightDepartureCityId[0];
-            AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
+            pr_default.execute(26, new Object[] {A31FlightArrivalCountryId});
+            A32FlightArrivalCountryName = T000828_A32FlightArrivalCountryName[0];
+            AssignAttri("", false, "A32FlightArrivalCountryName", A32FlightArrivalCountryName);
             pr_default.close(26);
             /* Using cursor T000829 */
-            pr_default.execute(27, new Object[] {A27FlightDepartureCountryId});
-            A28FlightDepartureCountryName = T000829_A28FlightDepartureCountryName[0];
-            AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
+            pr_default.execute(27, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
+            A34FlightArrivalCityName = T000829_A34FlightArrivalCityName[0];
+            AssignAttri("", false, "A34FlightArrivalCityName", A34FlightArrivalCityName);
             pr_default.close(27);
             /* Using cursor T000830 */
-            pr_default.execute(28, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
-            A30FlightDepartureCityName = T000830_A30FlightDepartureCityName[0];
-            AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
+            pr_default.execute(28, new Object[] {A24FlightDepartureAirportId});
+            A23FlightDepartureAirportName = T000830_A23FlightDepartureAirportName[0];
+            AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
+            A27FlightDepartureCountryId = T000830_A27FlightDepartureCountryId[0];
+            AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
+            A29FlightDepartureCityId = T000830_A29FlightDepartureCityId[0];
+            AssignAttri("", false, "A29FlightDepartureCityId", StringUtil.LTrimStr( (decimal)(A29FlightDepartureCityId), 4, 0));
             pr_default.close(28);
             /* Using cursor T000831 */
-            pr_default.execute(29, new Object[] {n38AirlineId, A38AirlineId});
-            A39AirlineName = T000831_A39AirlineName[0];
-            AssignAttri("", false, "A39AirlineName", A39AirlineName);
-            A40AirlineDiscountPercentage = T000831_A40AirlineDiscountPercentage[0];
-            AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+            pr_default.execute(29, new Object[] {A27FlightDepartureCountryId});
+            A28FlightDepartureCountryName = T000831_A28FlightDepartureCountryName[0];
+            AssignAttri("", false, "A28FlightDepartureCountryName", A28FlightDepartureCountryName);
             pr_default.close(29);
-            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
-            AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+            /* Using cursor T000832 */
+            pr_default.execute(30, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
+            A30FlightDepartureCityName = T000832_A30FlightDepartureCityName[0];
+            AssignAttri("", false, "A30FlightDepartureCityName", A30FlightDepartureCityName);
+            pr_default.close(30);
+            /* Using cursor T000833 */
+            pr_default.execute(31, new Object[] {n38AirlineId, A38AirlineId});
+            A39AirlineName = T000833_A39AirlineName[0];
+            AssignAttri("", false, "A39AirlineName", A39AirlineName);
+            A40AirlineDiscountPercentage = T000833_A40AirlineDiscountPercentage[0];
+            AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+            pr_default.close(31);
+            if ( A40AirlineDiscountPercentage >= A36FlightDiscountPercentaje )
+            {
+               A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
+               AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+            }
+            else
+            {
+               A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A36FlightDiscountPercentaje/ (decimal)(100)));
+               AssignAttri("", false, "A37FlightFinalPrice", StringUtil.LTrimStr( A37FlightFinalPrice, 7, 2));
+            }
          }
+      }
+
+      protected void ProcessNestedLevel0810( )
+      {
+         nGXsfl_133_idx = 0;
+         while ( nGXsfl_133_idx < nRC_GXsfl_133 )
+         {
+            ReadRow0810( ) ;
+            if ( ( nRcdExists_10 != 0 ) || ( nIsMod_10 != 0 ) )
+            {
+               standaloneNotModal0810( ) ;
+               GetKey0810( ) ;
+               if ( ( nRcdExists_10 == 0 ) && ( nRcdDeleted_10 == 0 ) )
+               {
+                  Gx_mode = "INS";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  Insert0810( ) ;
+               }
+               else
+               {
+                  if ( RcdFound10 != 0 )
+                  {
+                     if ( ( nRcdDeleted_10 != 0 ) && ( nRcdExists_10 != 0 ) )
+                     {
+                        Gx_mode = "DLT";
+                        AssignAttri("", false, "Gx_mode", Gx_mode);
+                        Delete0810( ) ;
+                     }
+                     else
+                     {
+                        if ( nRcdExists_10 != 0 )
+                        {
+                           Gx_mode = "UPD";
+                           AssignAttri("", false, "Gx_mode", Gx_mode);
+                           Update0810( ) ;
+                        }
+                     }
+                  }
+                  else
+                  {
+                     if ( nRcdDeleted_10 == 0 )
+                     {
+                        GXCCtl = "FLIGHTSEATID_" + sGXsfl_133_idx;
+                        GX_msglist.addItem(context.GetMessage( "GXM_recdeleted", ""), 1, GXCCtl);
+                        AnyError = 1;
+                        GX_FocusControl = edtFlightSeatId_Internalname;
+                        AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                     }
+                  }
+               }
+            }
+            ChangePostValue( edtFlightSeatId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A42FlightSeatId), 4, 0, ".", ""))) ;
+            ChangePostValue( cmbFlightSeatLocation_Internalname, StringUtil.RTrim( A43FlightSeatLocation)) ;
+            ChangePostValue( "ZT_"+"Z42FlightSeatId_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z42FlightSeatId), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z43FlightSeatLocation_"+sGXsfl_133_idx, StringUtil.RTrim( Z43FlightSeatLocation)) ;
+            ChangePostValue( "nRcdDeleted_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_10), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_10), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_10_"+sGXsfl_133_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_10), 4, 0, ".", ""))) ;
+            if ( nIsMod_10 != 0 )
+            {
+               ChangePostValue( "FLIGHTSEATID_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtFlightSeatId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "FLIGHTSEATLOCATION_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0, ".", ""))) ;
+            }
+         }
+         /* Start of After( level) rules */
+         /* End of After( level) rules */
+         InitAll0810( ) ;
+         if ( AnyError != 0 )
+         {
+         }
+         nRcdExists_10 = 0;
+         nIsMod_10 = 0;
+         nRcdDeleted_10 = 0;
+      }
+
+      protected void ProcessLevel089( )
+      {
+         /* Save parent mode. */
+         sMode9 = Gx_mode;
+         ProcessNestedLevel0810( ) ;
+         if ( AnyError != 0 )
+         {
+         }
+         /* Restore parent mode. */
+         Gx_mode = sMode9;
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         /* ' Update level parameters */
       }
 
       protected void EndLevel089( )
       {
          if ( ! IsIns( ) )
          {
-            pr_default.close(0);
+            pr_default.close(2);
          }
          if ( AnyError == 0 )
          {
@@ -2201,14 +2601,16 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
+            pr_default.close(3);
             pr_default.close(1);
-            pr_default.close(29);
-            pr_default.close(23);
-            pr_default.close(26);
-            pr_default.close(24);
+            pr_default.close(0);
+            pr_default.close(31);
             pr_default.close(25);
-            pr_default.close(27);
             pr_default.close(28);
+            pr_default.close(26);
+            pr_default.close(27);
+            pr_default.close(29);
+            pr_default.close(30);
             context.CommitDataStores("flight",pr_default);
             if ( AnyError == 0 )
             {
@@ -2220,14 +2622,16 @@ namespace GeneXus.Programs {
          }
          else
          {
+            pr_default.close(3);
             pr_default.close(1);
-            pr_default.close(29);
-            pr_default.close(23);
-            pr_default.close(26);
-            pr_default.close(24);
+            pr_default.close(0);
+            pr_default.close(31);
             pr_default.close(25);
-            pr_default.close(27);
             pr_default.close(28);
+            pr_default.close(26);
+            pr_default.close(27);
+            pr_default.close(29);
+            pr_default.close(30);
             context.RollbackDataStores("flight",pr_default);
          }
          IsModified = 0;
@@ -2240,13 +2644,13 @@ namespace GeneXus.Programs {
 
       public void ScanStart089( )
       {
-         /* Using cursor T000832 */
-         pr_default.execute(30);
+         /* Using cursor T000834 */
+         pr_default.execute(32);
          RcdFound9 = 0;
-         if ( (pr_default.getStatus(30) != 101) )
+         if ( (pr_default.getStatus(32) != 101) )
          {
             RcdFound9 = 1;
-            A19FlightId = T000832_A19FlightId[0];
+            A19FlightId = T000834_A19FlightId[0];
             AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
          }
          /* Load Subordinate Levels */
@@ -2255,19 +2659,19 @@ namespace GeneXus.Programs {
       protected void ScanNext089( )
       {
          /* Scan next routine */
-         pr_default.readNext(30);
+         pr_default.readNext(32);
          RcdFound9 = 0;
-         if ( (pr_default.getStatus(30) != 101) )
+         if ( (pr_default.getStatus(32) != 101) )
          {
             RcdFound9 = 1;
-            A19FlightId = T000832_A19FlightId[0];
+            A19FlightId = T000834_A19FlightId[0];
             AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
          }
       }
 
       protected void ScanEnd089( )
       {
-         pr_default.close(30);
+         pr_default.close(32);
       }
 
       protected void AfterConfirm089( )
@@ -2342,16 +2746,588 @@ namespace GeneXus.Programs {
          AssignProp("", false, edtFlightFinalPrice_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightFinalPrice_Enabled), 5, 0), true);
       }
 
+      protected void ZM0810( short GX_JID )
+      {
+         if ( ( GX_JID == 11 ) || ( GX_JID == 0 ) )
+         {
+            if ( ! IsIns( ) )
+            {
+               Z43FlightSeatLocation = T00083_A43FlightSeatLocation[0];
+            }
+            else
+            {
+               Z43FlightSeatLocation = A43FlightSeatLocation;
+            }
+         }
+         if ( GX_JID == -11 )
+         {
+            Z19FlightId = A19FlightId;
+            Z42FlightSeatId = A42FlightSeatId;
+            Z43FlightSeatLocation = A43FlightSeatLocation;
+         }
+      }
+
+      protected void standaloneNotModal0810( )
+      {
+      }
+
+      protected void standaloneModal0810( )
+      {
+         if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
+         {
+            edtFlightSeatId_Enabled = 0;
+            AssignProp("", false, edtFlightSeatId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightSeatId_Enabled), 5, 0), !bGXsfl_133_Refreshing);
+         }
+         else
+         {
+            edtFlightSeatId_Enabled = 1;
+            AssignProp("", false, edtFlightSeatId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightSeatId_Enabled), 5, 0), !bGXsfl_133_Refreshing);
+         }
+      }
+
+      protected void Load0810( )
+      {
+         /* Using cursor T000835 */
+         pr_default.execute(33, new Object[] {A19FlightId, A42FlightSeatId});
+         if ( (pr_default.getStatus(33) != 101) )
+         {
+            RcdFound10 = 1;
+            A43FlightSeatLocation = T000835_A43FlightSeatLocation[0];
+            ZM0810( -11) ;
+         }
+         pr_default.close(33);
+         OnLoadActions0810( ) ;
+      }
+
+      protected void OnLoadActions0810( )
+      {
+      }
+
+      protected void CheckExtendedTable0810( )
+      {
+         nIsDirty_10 = 0;
+         Gx_BScreen = 1;
+         standaloneModal0810( ) ;
+         if ( ! ( ( StringUtil.StrCmp(A43FlightSeatLocation, "W") == 0 ) || ( StringUtil.StrCmp(A43FlightSeatLocation, "M") == 0 ) || ( StringUtil.StrCmp(A43FlightSeatLocation, "A") == 0 ) ) )
+         {
+            GXCCtl = "FLIGHTSEATLOCATION_" + sGXsfl_133_idx;
+            GX_msglist.addItem("Field Flight Seat Location is out of range", "OutOfRange", 1, GXCCtl);
+            AnyError = 1;
+            GX_FocusControl = cmbFlightSeatLocation_Internalname;
+            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+         }
+      }
+
+      protected void CloseExtendedTableCursors0810( )
+      {
+      }
+
+      protected void enableDisable0810( )
+      {
+      }
+
+      protected void GetKey0810( )
+      {
+         /* Using cursor T000836 */
+         pr_default.execute(34, new Object[] {A19FlightId, A42FlightSeatId});
+         if ( (pr_default.getStatus(34) != 101) )
+         {
+            RcdFound10 = 1;
+         }
+         else
+         {
+            RcdFound10 = 0;
+         }
+         pr_default.close(34);
+      }
+
+      protected void getByPrimaryKey0810( )
+      {
+         /* Using cursor T00083 */
+         pr_default.execute(1, new Object[] {A19FlightId, A42FlightSeatId});
+         if ( (pr_default.getStatus(1) != 101) )
+         {
+            ZM0810( 11) ;
+            RcdFound10 = 1;
+            InitializeNonKey0810( ) ;
+            A42FlightSeatId = T00083_A42FlightSeatId[0];
+            A43FlightSeatLocation = T00083_A43FlightSeatLocation[0];
+            Z19FlightId = A19FlightId;
+            Z42FlightSeatId = A42FlightSeatId;
+            sMode10 = Gx_mode;
+            Gx_mode = "DSP";
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+            standaloneModal0810( ) ;
+            Load0810( ) ;
+            Gx_mode = sMode10;
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+         }
+         else
+         {
+            RcdFound10 = 0;
+            InitializeNonKey0810( ) ;
+            sMode10 = Gx_mode;
+            Gx_mode = "DSP";
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+            standaloneModal0810( ) ;
+            Gx_mode = sMode10;
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+         }
+         if ( IsDsp( ) || IsDlt( ) )
+         {
+            DisableAttributes0810( ) ;
+         }
+         pr_default.close(1);
+      }
+
+      protected void CheckOptimisticConcurrency0810( )
+      {
+         if ( ! IsIns( ) )
+         {
+            /* Using cursor T00082 */
+            pr_default.execute(0, new Object[] {A19FlightId, A42FlightSeatId});
+            if ( (pr_default.getStatus(0) == 103) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"FlightSeat"}), "RecordIsLocked", 1, "");
+               AnyError = 1;
+               return  ;
+            }
+            if ( (pr_default.getStatus(0) == 101) || ( StringUtil.StrCmp(Z43FlightSeatLocation, T00082_A43FlightSeatLocation[0]) != 0 ) )
+            {
+               if ( StringUtil.StrCmp(Z43FlightSeatLocation, T00082_A43FlightSeatLocation[0]) != 0 )
+               {
+                  GXUtil.WriteLog("flight:[seudo value changed for attri]"+"FlightSeatLocation");
+                  GXUtil.WriteLogRaw("Old: ",Z43FlightSeatLocation);
+                  GXUtil.WriteLogRaw("Current: ",T00082_A43FlightSeatLocation[0]);
+               }
+               GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"FlightSeat"}), "RecordWasChanged", 1, "");
+               AnyError = 1;
+               return  ;
+            }
+         }
+      }
+
+      protected void Insert0810( )
+      {
+         BeforeValidate0810( ) ;
+         if ( AnyError == 0 )
+         {
+            CheckExtendedTable0810( ) ;
+         }
+         if ( AnyError == 0 )
+         {
+            ZM0810( 0) ;
+            CheckOptimisticConcurrency0810( ) ;
+            if ( AnyError == 0 )
+            {
+               AfterConfirm0810( ) ;
+               if ( AnyError == 0 )
+               {
+                  BeforeInsert0810( ) ;
+                  if ( AnyError == 0 )
+                  {
+                     /* Using cursor T000837 */
+                     pr_default.execute(35, new Object[] {A19FlightId, A42FlightSeatId, A43FlightSeatLocation});
+                     pr_default.close(35);
+                     pr_default.SmartCacheProvider.SetUpdated("FlightSeat");
+                     if ( (pr_default.getStatus(35) == 1) )
+                     {
+                        GX_msglist.addItem(context.GetMessage( "GXM_noupdate", ""), "DuplicatePrimaryKey", 1, "");
+                        AnyError = 1;
+                     }
+                     if ( AnyError == 0 )
+                     {
+                        /* Start of After( Insert) rules */
+                        /* End of After( Insert) rules */
+                        if ( AnyError == 0 )
+                        {
+                           /* Save values for previous() function. */
+                        }
+                     }
+                  }
+                  else
+                  {
+                     GX_msglist.addItem(context.GetMessage( "GXM_unexp", ""), 1, "");
+                     AnyError = 1;
+                  }
+               }
+            }
+            else
+            {
+               Load0810( ) ;
+            }
+            EndLevel0810( ) ;
+         }
+         CloseExtendedTableCursors0810( ) ;
+      }
+
+      protected void Update0810( )
+      {
+         BeforeValidate0810( ) ;
+         if ( AnyError == 0 )
+         {
+            CheckExtendedTable0810( ) ;
+         }
+         if ( ( nIsMod_10 != 0 ) || ( nIsDirty_10 != 0 ) )
+         {
+            if ( AnyError == 0 )
+            {
+               CheckOptimisticConcurrency0810( ) ;
+               if ( AnyError == 0 )
+               {
+                  AfterConfirm0810( ) ;
+                  if ( AnyError == 0 )
+                  {
+                     BeforeUpdate0810( ) ;
+                     if ( AnyError == 0 )
+                     {
+                        /* Using cursor T000838 */
+                        pr_default.execute(36, new Object[] {A43FlightSeatLocation, A19FlightId, A42FlightSeatId});
+                        pr_default.close(36);
+                        pr_default.SmartCacheProvider.SetUpdated("FlightSeat");
+                        if ( (pr_default.getStatus(36) == 103) )
+                        {
+                           GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"FlightSeat"}), "RecordIsLocked", 1, "");
+                           AnyError = 1;
+                        }
+                        DeferredUpdate0810( ) ;
+                        if ( AnyError == 0 )
+                        {
+                           /* Start of After( update) rules */
+                           /* End of After( update) rules */
+                           if ( AnyError == 0 )
+                           {
+                              getByPrimaryKey0810( ) ;
+                           }
+                        }
+                        else
+                        {
+                           GX_msglist.addItem(context.GetMessage( "GXM_unexp", ""), 1, "");
+                           AnyError = 1;
+                        }
+                     }
+                  }
+               }
+               EndLevel0810( ) ;
+            }
+         }
+         CloseExtendedTableCursors0810( ) ;
+      }
+
+      protected void DeferredUpdate0810( )
+      {
+      }
+
+      protected void Delete0810( )
+      {
+         Gx_mode = "DLT";
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         BeforeValidate0810( ) ;
+         if ( AnyError == 0 )
+         {
+            CheckOptimisticConcurrency0810( ) ;
+         }
+         if ( AnyError == 0 )
+         {
+            OnDeleteControls0810( ) ;
+            AfterConfirm0810( ) ;
+            if ( AnyError == 0 )
+            {
+               BeforeDelete0810( ) ;
+               if ( AnyError == 0 )
+               {
+                  /* No cascading delete specified. */
+                  /* Using cursor T000839 */
+                  pr_default.execute(37, new Object[] {A19FlightId, A42FlightSeatId});
+                  pr_default.close(37);
+                  pr_default.SmartCacheProvider.SetUpdated("FlightSeat");
+                  if ( AnyError == 0 )
+                  {
+                     /* Start of After( delete) rules */
+                     /* End of After( delete) rules */
+                  }
+                  else
+                  {
+                     GX_msglist.addItem(context.GetMessage( "GXM_unexp", ""), 1, "");
+                     AnyError = 1;
+                  }
+               }
+            }
+         }
+         sMode10 = Gx_mode;
+         Gx_mode = "DLT";
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         EndLevel0810( ) ;
+         Gx_mode = sMode10;
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+      }
+
+      protected void OnDeleteControls0810( )
+      {
+         standaloneModal0810( ) ;
+         /* No delete mode formulas found. */
+      }
+
+      protected void EndLevel0810( )
+      {
+         if ( ! IsIns( ) )
+         {
+            pr_default.close(0);
+         }
+         if ( AnyError != 0 )
+         {
+            context.wjLoc = "";
+            context.nUserReturn = 0;
+         }
+      }
+
+      public void ScanStart0810( )
+      {
+         /* Scan By routine */
+         /* Using cursor T000840 */
+         pr_default.execute(38, new Object[] {A19FlightId});
+         RcdFound10 = 0;
+         if ( (pr_default.getStatus(38) != 101) )
+         {
+            RcdFound10 = 1;
+            A42FlightSeatId = T000840_A42FlightSeatId[0];
+         }
+         /* Load Subordinate Levels */
+      }
+
+      protected void ScanNext0810( )
+      {
+         /* Scan next routine */
+         pr_default.readNext(38);
+         RcdFound10 = 0;
+         if ( (pr_default.getStatus(38) != 101) )
+         {
+            RcdFound10 = 1;
+            A42FlightSeatId = T000840_A42FlightSeatId[0];
+         }
+      }
+
+      protected void ScanEnd0810( )
+      {
+         pr_default.close(38);
+      }
+
+      protected void AfterConfirm0810( )
+      {
+         /* After Confirm Rules */
+      }
+
+      protected void BeforeInsert0810( )
+      {
+         /* Before Insert Rules */
+      }
+
+      protected void BeforeUpdate0810( )
+      {
+         /* Before Update Rules */
+      }
+
+      protected void BeforeDelete0810( )
+      {
+         /* Before Delete Rules */
+      }
+
+      protected void BeforeComplete0810( )
+      {
+         /* Before Complete Rules */
+      }
+
+      protected void BeforeValidate0810( )
+      {
+         /* Before Validate Rules */
+      }
+
+      protected void DisableAttributes0810( )
+      {
+         edtFlightSeatId_Enabled = 0;
+         AssignProp("", false, edtFlightSeatId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightSeatId_Enabled), 5, 0), !bGXsfl_133_Refreshing);
+         cmbFlightSeatLocation.Enabled = 0;
+         AssignProp("", false, cmbFlightSeatLocation_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0), !bGXsfl_133_Refreshing);
+      }
+
+      protected void send_integrity_lvl_hashes0810( )
+      {
+      }
+
       protected void send_integrity_lvl_hashes089( )
       {
       }
 
+      protected void SubsflControlProps_13310( )
+      {
+         edtFlightSeatId_Internalname = "FLIGHTSEATID_"+sGXsfl_133_idx;
+         cmbFlightSeatLocation_Internalname = "FLIGHTSEATLOCATION_"+sGXsfl_133_idx;
+      }
+
+      protected void SubsflControlProps_fel_13310( )
+      {
+         edtFlightSeatId_Internalname = "FLIGHTSEATID_"+sGXsfl_133_fel_idx;
+         cmbFlightSeatLocation_Internalname = "FLIGHTSEATLOCATION_"+sGXsfl_133_fel_idx;
+      }
+
+      protected void AddRow0810( )
+      {
+         nGXsfl_133_idx = (int)(nGXsfl_133_idx+1);
+         sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx), 4, 0), 4, "0");
+         SubsflControlProps_13310( ) ;
+         SendRow0810( ) ;
+      }
+
+      protected void SendRow0810( )
+      {
+         Gridflight_seatRow = GXWebRow.GetNew(context);
+         if ( subGridflight_seat_Backcolorstyle == 0 )
+         {
+            /* None style subfile background logic. */
+            subGridflight_seat_Backstyle = 0;
+            if ( StringUtil.StrCmp(subGridflight_seat_Class, "") != 0 )
+            {
+               subGridflight_seat_Linesclass = subGridflight_seat_Class+"Odd";
+            }
+         }
+         else if ( subGridflight_seat_Backcolorstyle == 1 )
+         {
+            /* Uniform style subfile background logic. */
+            subGridflight_seat_Backstyle = 0;
+            subGridflight_seat_Backcolor = subGridflight_seat_Allbackcolor;
+            if ( StringUtil.StrCmp(subGridflight_seat_Class, "") != 0 )
+            {
+               subGridflight_seat_Linesclass = subGridflight_seat_Class+"Uniform";
+            }
+         }
+         else if ( subGridflight_seat_Backcolorstyle == 2 )
+         {
+            /* Header style subfile background logic. */
+            subGridflight_seat_Backstyle = 1;
+            if ( StringUtil.StrCmp(subGridflight_seat_Class, "") != 0 )
+            {
+               subGridflight_seat_Linesclass = subGridflight_seat_Class+"Odd";
+            }
+            subGridflight_seat_Backcolor = (int)(0x0);
+         }
+         else if ( subGridflight_seat_Backcolorstyle == 3 )
+         {
+            /* Report style subfile background logic. */
+            subGridflight_seat_Backstyle = 1;
+            if ( ((int)((nGXsfl_133_idx) % (2))) == 0 )
+            {
+               subGridflight_seat_Backcolor = (int)(0x0);
+               if ( StringUtil.StrCmp(subGridflight_seat_Class, "") != 0 )
+               {
+                  subGridflight_seat_Linesclass = subGridflight_seat_Class+"Even";
+               }
+            }
+            else
+            {
+               subGridflight_seat_Backcolor = (int)(0x0);
+               if ( StringUtil.StrCmp(subGridflight_seat_Class, "") != 0 )
+               {
+                  subGridflight_seat_Linesclass = subGridflight_seat_Class+"Odd";
+               }
+            }
+         }
+         /* Subfile cell */
+         /* Single line edit */
+         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_10_" + sGXsfl_133_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 134,'',false,'" + sGXsfl_133_idx + "',133)\"";
+         ROClassString = "Attribute";
+         Gridflight_seatRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(string)edtFlightSeatId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A42FlightSeatId), 4, 0, ".", "")),StringUtil.LTrim( context.localUtil.Format( (decimal)(A42FlightSeatId), "ZZZ9"))," dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,134);\"",(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"",(string)"",(string)"",(string)"",(string)edtFlightSeatId_Jsonclick,(short)0,(string)"Attribute",(string)"",(string)ROClassString,(string)"",(string)"",(short)-1,(int)edtFlightSeatId_Enabled,(short)1,(string)"text",(string)"1",(short)0,(string)"px",(short)17,(string)"px",(short)4,(short)0,(short)0,(short)133,(short)0,(short)-1,(short)0,(bool)true,(string)"Id",(string)"end",(bool)false,(string)""});
+         /* Subfile cell */
+         TempTags = " data-gxoch1=\"gx.fn.setControlValue('nIsMod_10_" + sGXsfl_133_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 135,'',false,'" + sGXsfl_133_idx + "',133)\"";
+         if ( ( cmbFlightSeatLocation.ItemCount == 0 ) && isAjaxCallMode( ) )
+         {
+            GXCCtl = "FLIGHTSEATLOCATION_" + sGXsfl_133_idx;
+            cmbFlightSeatLocation.Name = GXCCtl;
+            cmbFlightSeatLocation.WebTags = "";
+            cmbFlightSeatLocation.addItem("W", "Windows", 0);
+            cmbFlightSeatLocation.addItem("M", "Middle", 0);
+            cmbFlightSeatLocation.addItem("A", "Aisle", 0);
+            if ( cmbFlightSeatLocation.ItemCount > 0 )
+            {
+               A43FlightSeatLocation = cmbFlightSeatLocation.getValidValue(A43FlightSeatLocation);
+            }
+         }
+         /* ComboBox */
+         Gridflight_seatRow.AddColumnProperties("combobox", 2, isAjaxCallMode( ), new Object[] {(GXCombobox)cmbFlightSeatLocation,(string)cmbFlightSeatLocation_Internalname,StringUtil.RTrim( A43FlightSeatLocation),(short)1,(string)cmbFlightSeatLocation_Jsonclick,(short)0,(string)"'"+""+"'"+",false,"+"'"+""+"'",(string)"char",(string)"",(short)-1,cmbFlightSeatLocation.Enabled,(short)0,(short)0,(short)0,(string)"px",(short)0,(string)"px",(string)"",(string)"Attribute",(string)"",(string)"",TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,135);\"",(string)"",(bool)true,(short)0});
+         cmbFlightSeatLocation.CurrentValue = StringUtil.RTrim( A43FlightSeatLocation);
+         AssignProp("", false, cmbFlightSeatLocation_Internalname, "Values", (string)(cmbFlightSeatLocation.ToJavascriptSource()), !bGXsfl_133_Refreshing);
+         ajax_sending_grid_row(Gridflight_seatRow);
+         send_integrity_lvl_hashes0810( ) ;
+         GXCCtl = "Z42FlightSeatId_" + sGXsfl_133_idx;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z42FlightSeatId), 4, 0, ".", "")));
+         GXCCtl = "Z43FlightSeatLocation_" + sGXsfl_133_idx;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.RTrim( Z43FlightSeatLocation));
+         GXCCtl = "nRcdDeleted_10_" + sGXsfl_133_idx;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_10), 4, 0, ".", "")));
+         GXCCtl = "nRcdExists_10_" + sGXsfl_133_idx;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_10), 4, 0, ".", "")));
+         GXCCtl = "nIsMod_10_" + sGXsfl_133_idx;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_10), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "FLIGHTSEATID_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtFlightSeatId_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "FLIGHTSEATLOCATION_"+sGXsfl_133_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0, ".", "")));
+         ajax_sending_grid_row(null);
+         Gridflight_seatContainer.AddRow(Gridflight_seatRow);
+      }
+
+      protected void ReadRow0810( )
+      {
+         nGXsfl_133_idx = (int)(nGXsfl_133_idx+1);
+         sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx), 4, 0), 4, "0");
+         SubsflControlProps_13310( ) ;
+         edtFlightSeatId_Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "FLIGHTSEATID_"+sGXsfl_133_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+         cmbFlightSeatLocation.Enabled = (int)(Math.Round(context.localUtil.CToN( cgiGet( "FLIGHTSEATLOCATION_"+sGXsfl_133_idx+"Enabled"), ".", ","), 18, MidpointRounding.ToEven));
+         if ( ( ( context.localUtil.CToN( cgiGet( edtFlightSeatId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtFlightSeatId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
+         {
+            GXCCtl = "FLIGHTSEATID_" + sGXsfl_133_idx;
+            GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, GXCCtl);
+            AnyError = 1;
+            GX_FocusControl = edtFlightSeatId_Internalname;
+            wbErr = true;
+            A42FlightSeatId = 0;
+         }
+         else
+         {
+            A42FlightSeatId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtFlightSeatId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+         }
+         cmbFlightSeatLocation.Name = cmbFlightSeatLocation_Internalname;
+         cmbFlightSeatLocation.CurrentValue = cgiGet( cmbFlightSeatLocation_Internalname);
+         A43FlightSeatLocation = cgiGet( cmbFlightSeatLocation_Internalname);
+         GXCCtl = "Z42FlightSeatId_" + sGXsfl_133_idx;
+         Z42FlightSeatId = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
+         GXCCtl = "Z43FlightSeatLocation_" + sGXsfl_133_idx;
+         Z43FlightSeatLocation = cgiGet( GXCCtl);
+         GXCCtl = "nRcdDeleted_10_" + sGXsfl_133_idx;
+         nRcdDeleted_10 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
+         GXCCtl = "nRcdExists_10_" + sGXsfl_133_idx;
+         nRcdExists_10 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
+         GXCCtl = "nIsMod_10_" + sGXsfl_133_idx;
+         nIsMod_10 = (short)(Math.Round(context.localUtil.CToN( cgiGet( GXCCtl), ".", ","), 18, MidpointRounding.ToEven));
+      }
+
       protected void assign_properties_default( )
       {
+         defedtFlightSeatId_Enabled = edtFlightSeatId_Enabled;
       }
 
       protected void ConfirmValues080( )
       {
+         nGXsfl_133_idx = 0;
+         sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx), 4, 0), 4, "0");
+         SubsflControlProps_13310( ) ;
+         while ( nGXsfl_133_idx < nRC_GXsfl_133 )
+         {
+            nGXsfl_133_idx = (int)(nGXsfl_133_idx+1);
+            sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx), 4, 0), 4, "0");
+            SubsflControlProps_13310( ) ;
+            ChangePostValue( "Z42FlightSeatId_"+sGXsfl_133_idx, cgiGet( "ZT_"+"Z42FlightSeatId_"+sGXsfl_133_idx)) ;
+            DeletePostValue( "ZT_"+"Z42FlightSeatId_"+sGXsfl_133_idx) ;
+            ChangePostValue( "Z43FlightSeatLocation_"+sGXsfl_133_idx, cgiGet( "ZT_"+"Z43FlightSeatLocation_"+sGXsfl_133_idx)) ;
+            DeletePostValue( "ZT_"+"Z43FlightSeatLocation_"+sGXsfl_133_idx) ;
+         }
       }
 
       public override void RenderHtmlHeaders( )
@@ -2443,6 +3419,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
+         GxWebStd.gx_hidden_field( context, "nRC_GXsfl_133", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_133_idx), 8, 0, ".", "")));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -2570,6 +3547,22 @@ namespace GeneXus.Programs {
       {
       }
 
+      protected void InitializeNonKey0810( )
+      {
+         A43FlightSeatLocation = "";
+         Z43FlightSeatLocation = "";
+      }
+
+      protected void InitAll0810( )
+      {
+         A42FlightSeatId = 0;
+         InitializeNonKey0810( ) ;
+      }
+
+      protected void StandaloneModalInsert0810( )
+      {
+      }
+
       protected void define_styles( )
       {
          AddThemeStyleSheetFile("", context.GetTheme( )+".css", "?"+GetCacheInvalidationToken( ));
@@ -2581,7 +3574,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392012184222", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392015302670", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2597,8 +3590,41 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("flight.js", "?202392012184222", false, true);
+         context.AddJavascriptSource("flight.js", "?202392015302671", false, true);
          /* End function include_jscripts */
+      }
+
+      protected void init_level_properties10( )
+      {
+         edtFlightSeatId_Enabled = defedtFlightSeatId_Enabled;
+         AssignProp("", false, edtFlightSeatId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtFlightSeatId_Enabled), 5, 0), !bGXsfl_133_Refreshing);
+      }
+
+      protected void StartGridControl133( )
+      {
+         Gridflight_seatContainer.AddObjectProperty("GridName", "Gridflight_seat");
+         Gridflight_seatContainer.AddObjectProperty("Header", subGridflight_seat_Header);
+         Gridflight_seatContainer.AddObjectProperty("Class", "Grid");
+         Gridflight_seatContainer.AddObjectProperty("Cellpadding", StringUtil.LTrim( StringUtil.NToC( (decimal)(1), 4, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Cellspacing", StringUtil.LTrim( StringUtil.NToC( (decimal)(2), 4, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Backcolorstyle", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Backcolorstyle), 1, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("CmpContext", "");
+         Gridflight_seatContainer.AddObjectProperty("InMasterPage", "false");
+         Gridflight_seatColumn = GXWebColumn.GetNew(isAjaxCallMode( ));
+         Gridflight_seatColumn.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.LTrim( StringUtil.NToC( (decimal)(A42FlightSeatId), 4, 0, ".", ""))));
+         Gridflight_seatColumn.AddObjectProperty("Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtFlightSeatId_Enabled), 5, 0, ".", "")));
+         Gridflight_seatContainer.AddColumnProperties(Gridflight_seatColumn);
+         Gridflight_seatColumn = GXWebColumn.GetNew(isAjaxCallMode( ));
+         Gridflight_seatColumn.AddObjectProperty("Value", GXUtil.ValueEncode( StringUtil.RTrim( A43FlightSeatLocation)));
+         Gridflight_seatColumn.AddObjectProperty("Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(cmbFlightSeatLocation.Enabled), 5, 0, ".", "")));
+         Gridflight_seatContainer.AddColumnProperties(Gridflight_seatColumn);
+         Gridflight_seatContainer.AddObjectProperty("Selectedindex", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Selectedindex), 4, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Allowselection", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Allowselection), 1, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Selectioncolor", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Selectioncolor), 9, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Allowhover", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Allowhovering), 1, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Hovercolor", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Hoveringcolor), 9, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Allowcollapsing", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Allowcollapsing), 1, 0, ".", "")));
+         Gridflight_seatContainer.AddObjectProperty("Collapsed", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridflight_seat_Collapsed), 1, 0, ".", "")));
       }
 
       protected void init_default_properties( )
@@ -2630,6 +3656,10 @@ namespace GeneXus.Programs {
          edtAirlineName_Internalname = "AIRLINENAME";
          edtAirlineDiscountPercentage_Internalname = "AIRLINEDISCOUNTPERCENTAGE";
          edtFlightFinalPrice_Internalname = "FLIGHTFINALPRICE";
+         lblTitleseat_Internalname = "TITLESEAT";
+         edtFlightSeatId_Internalname = "FLIGHTSEATID";
+         cmbFlightSeatLocation_Internalname = "FLIGHTSEATLOCATION";
+         divSeattable_Internalname = "SEATTABLE";
          divFormcontainer_Internalname = "FORMCONTAINER";
          bttBtn_enter_Internalname = "BTN_ENTER";
          bttBtn_cancel_Internalname = "BTN_CANCEL";
@@ -2639,6 +3669,7 @@ namespace GeneXus.Programs {
          imgprompt_25_Internalname = "PROMPT_25";
          imgprompt_24_Internalname = "PROMPT_24";
          imgprompt_38_Internalname = "PROMPT_38";
+         subGridflight_seat_Internalname = "GRIDFLIGHT_SEAT";
       }
 
       public override void initialize_properties( )
@@ -2649,11 +3680,20 @@ namespace GeneXus.Programs {
             disableJsOutput();
          }
          init_default_properties( ) ;
+         subGridflight_seat_Allowcollapsing = 0;
+         subGridflight_seat_Allowselection = 0;
+         subGridflight_seat_Header = "";
          Form.Headerrawhtml = "";
          Form.Background = "";
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
          Form.Caption = "Flight";
+         cmbFlightSeatLocation_Jsonclick = "";
+         edtFlightSeatId_Jsonclick = "";
+         subGridflight_seat_Class = "Grid";
+         subGridflight_seat_Backcolorstyle = 0;
+         cmbFlightSeatLocation.Enabled = 1;
+         edtFlightSeatId_Enabled = 1;
          bttBtn_delete_Enabled = 1;
          bttBtn_delete_Visible = 1;
          bttBtn_cancel_Visible = 1;
@@ -2720,8 +3760,41 @@ namespace GeneXus.Programs {
          /* End function dynload_actions */
       }
 
+      protected void gxnrGridflight_seat_newrow( )
+      {
+         GxWebStd.set_html_headers( context, 0, "", "");
+         Gx_mode = "INS";
+         AssignAttri("", false, "Gx_mode", Gx_mode);
+         SubsflControlProps_13310( ) ;
+         while ( nGXsfl_133_idx <= nRC_GXsfl_133 )
+         {
+            standaloneNotModal( ) ;
+            standaloneModal( ) ;
+            standaloneNotModal0810( ) ;
+            standaloneModal0810( ) ;
+            init_web_controls( ) ;
+            dynload_actions( ) ;
+            SendRow0810( ) ;
+            nGXsfl_133_idx = (int)(nGXsfl_133_idx+1);
+            sGXsfl_133_idx = StringUtil.PadL( StringUtil.LTrimStr( (decimal)(nGXsfl_133_idx), 4, 0), 4, "0");
+            SubsflControlProps_13310( ) ;
+         }
+         AddString( context.httpAjaxContext.getJSONContainerResponse( Gridflight_seatContainer)) ;
+         /* End function gxnrGridflight_seat_newrow */
+      }
+
       protected void init_web_controls( )
       {
+         GXCCtl = "FLIGHTSEATLOCATION_" + sGXsfl_133_idx;
+         cmbFlightSeatLocation.Name = GXCCtl;
+         cmbFlightSeatLocation.WebTags = "";
+         cmbFlightSeatLocation.addItem("W", "Windows", 0);
+         cmbFlightSeatLocation.addItem("M", "Middle", 0);
+         cmbFlightSeatLocation.addItem("A", "Aisle", 0);
+         if ( cmbFlightSeatLocation.ItemCount > 0 )
+         {
+            A43FlightSeatLocation = cmbFlightSeatLocation.getValidValue(A43FlightSeatLocation);
+         }
          /* End function init_web_controls */
       }
 
@@ -2810,36 +3883,36 @@ namespace GeneXus.Programs {
 
       public void Valid_Flightarrivalairportid( )
       {
-         /* Using cursor T000825 */
-         pr_default.execute(23, new Object[] {A25FlightArrivalAirportId});
-         if ( (pr_default.getStatus(23) == 101) )
+         /* Using cursor T000827 */
+         pr_default.execute(25, new Object[] {A25FlightArrivalAirportId});
+         if ( (pr_default.getStatus(25) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALAIRPORTID");
             AnyError = 1;
             GX_FocusControl = edtFlightArrivalAirportId_Internalname;
          }
-         A26FlightArrivalAirportName = T000825_A26FlightArrivalAirportName[0];
-         A31FlightArrivalCountryId = T000825_A31FlightArrivalCountryId[0];
-         A33FlightArrivalCityId = T000825_A33FlightArrivalCityId[0];
-         pr_default.close(23);
-         /* Using cursor T000826 */
-         pr_default.execute(24, new Object[] {A31FlightArrivalCountryId});
-         if ( (pr_default.getStatus(24) == 101) )
+         A26FlightArrivalAirportName = T000827_A26FlightArrivalAirportName[0];
+         A31FlightArrivalCountryId = T000827_A31FlightArrivalCountryId[0];
+         A33FlightArrivalCityId = T000827_A33FlightArrivalCityId[0];
+         pr_default.close(25);
+         /* Using cursor T000828 */
+         pr_default.execute(26, new Object[] {A31FlightArrivalCountryId});
+         if ( (pr_default.getStatus(26) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCOUNTRYID");
             AnyError = 1;
          }
-         A32FlightArrivalCountryName = T000826_A32FlightArrivalCountryName[0];
-         pr_default.close(24);
-         /* Using cursor T000827 */
-         pr_default.execute(25, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
-         if ( (pr_default.getStatus(25) == 101) )
+         A32FlightArrivalCountryName = T000828_A32FlightArrivalCountryName[0];
+         pr_default.close(26);
+         /* Using cursor T000829 */
+         pr_default.execute(27, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
+         if ( (pr_default.getStatus(27) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Arrival Airport'.", "ForeignKeyNotFound", 1, "FLIGHTARRIVALCITYID");
             AnyError = 1;
          }
-         A34FlightArrivalCityName = T000827_A34FlightArrivalCityName[0];
-         pr_default.close(25);
+         A34FlightArrivalCityName = T000829_A34FlightArrivalCityName[0];
+         pr_default.close(27);
          dynload_actions( ) ;
          /*  Sending validation outputs */
          AssignAttri("", false, "A26FlightArrivalAirportName", A26FlightArrivalAirportName);
@@ -2851,36 +3924,36 @@ namespace GeneXus.Programs {
 
       public void Valid_Flightdepartureairportid( )
       {
-         /* Using cursor T000828 */
-         pr_default.execute(26, new Object[] {A24FlightDepartureAirportId});
-         if ( (pr_default.getStatus(26) == 101) )
+         /* Using cursor T000830 */
+         pr_default.execute(28, new Object[] {A24FlightDepartureAirportId});
+         if ( (pr_default.getStatus(28) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTUREAIRPORTID");
             AnyError = 1;
             GX_FocusControl = edtFlightDepartureAirportId_Internalname;
          }
-         A23FlightDepartureAirportName = T000828_A23FlightDepartureAirportName[0];
-         A27FlightDepartureCountryId = T000828_A27FlightDepartureCountryId[0];
-         A29FlightDepartureCityId = T000828_A29FlightDepartureCityId[0];
-         pr_default.close(26);
-         /* Using cursor T000829 */
-         pr_default.execute(27, new Object[] {A27FlightDepartureCountryId});
-         if ( (pr_default.getStatus(27) == 101) )
+         A23FlightDepartureAirportName = T000830_A23FlightDepartureAirportName[0];
+         A27FlightDepartureCountryId = T000830_A27FlightDepartureCountryId[0];
+         A29FlightDepartureCityId = T000830_A29FlightDepartureCityId[0];
+         pr_default.close(28);
+         /* Using cursor T000831 */
+         pr_default.execute(29, new Object[] {A27FlightDepartureCountryId});
+         if ( (pr_default.getStatus(29) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECOUNTRYID");
             AnyError = 1;
          }
-         A28FlightDepartureCountryName = T000829_A28FlightDepartureCountryName[0];
-         pr_default.close(27);
-         /* Using cursor T000830 */
-         pr_default.execute(28, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
-         if ( (pr_default.getStatus(28) == 101) )
+         A28FlightDepartureCountryName = T000831_A28FlightDepartureCountryName[0];
+         pr_default.close(29);
+         /* Using cursor T000832 */
+         pr_default.execute(30, new Object[] {A27FlightDepartureCountryId, A29FlightDepartureCityId});
+         if ( (pr_default.getStatus(30) == 101) )
          {
             GX_msglist.addItem("No matching 'Flight Departure Airport'.", "ForeignKeyNotFound", 1, "FLIGHTDEPARTURECITYID");
             AnyError = 1;
          }
-         A30FlightDepartureCityName = T000830_A30FlightDepartureCityName[0];
-         pr_default.close(28);
+         A30FlightDepartureCityName = T000832_A30FlightDepartureCityName[0];
+         pr_default.close(30);
          dynload_actions( ) ;
          /*  Sending validation outputs */
          AssignAttri("", false, "A23FlightDepartureAirportName", A23FlightDepartureAirportName);
@@ -2893,9 +3966,9 @@ namespace GeneXus.Programs {
       public void Valid_Airlineid( )
       {
          n38AirlineId = false;
-         /* Using cursor T000831 */
-         pr_default.execute(29, new Object[] {n38AirlineId, A38AirlineId});
-         if ( (pr_default.getStatus(29) == 101) )
+         /* Using cursor T000833 */
+         pr_default.execute(31, new Object[] {n38AirlineId, A38AirlineId});
+         if ( (pr_default.getStatus(31) == 101) )
          {
             if ( ! ( (0==A38AirlineId) ) )
             {
@@ -2904,10 +3977,17 @@ namespace GeneXus.Programs {
                GX_FocusControl = edtAirlineId_Internalname;
             }
          }
-         A39AirlineName = T000831_A39AirlineName[0];
-         A40AirlineDiscountPercentage = T000831_A40AirlineDiscountPercentage[0];
-         pr_default.close(29);
-         A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
+         A39AirlineName = T000833_A39AirlineName[0];
+         A40AirlineDiscountPercentage = T000833_A40AirlineDiscountPercentage[0];
+         pr_default.close(31);
+         if ( A40AirlineDiscountPercentage >= A36FlightDiscountPercentaje )
+         {
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A40AirlineDiscountPercentage/ (decimal)(100)));
+         }
+         else
+         {
+            A37FlightFinalPrice = (decimal)(A35FlightPrice*(1-A36FlightDiscountPercentaje/ (decimal)(100)));
+         }
          dynload_actions( ) ;
          /*  Sending validation outputs */
          AssignAttri("", false, "A39AirlineName", A39AirlineName);
@@ -2942,10 +4022,16 @@ namespace GeneXus.Programs {
          setEventMetadata("VALID_FLIGHTDEPARTURECITYID",",oparms:[]}");
          setEventMetadata("VALID_FLIGHTPRICE","{handler:'Valid_Flightprice',iparms:[]");
          setEventMetadata("VALID_FLIGHTPRICE",",oparms:[]}");
-         setEventMetadata("VALID_AIRLINEID","{handler:'Valid_Airlineid',iparms:[{av:'A38AirlineId',fld:'AIRLINEID',pic:'ZZZ9'},{av:'A35FlightPrice',fld:'FLIGHTPRICE',pic:'ZZZ9.99'},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A37FlightFinalPrice',fld:'FLIGHTFINALPRICE',pic:'ZZZ9.99'}]");
+         setEventMetadata("VALID_FLIGHTDISCOUNTPERCENTAJE","{handler:'Valid_Flightdiscountpercentaje',iparms:[]");
+         setEventMetadata("VALID_FLIGHTDISCOUNTPERCENTAJE",",oparms:[]}");
+         setEventMetadata("VALID_AIRLINEID","{handler:'Valid_Airlineid',iparms:[{av:'A38AirlineId',fld:'AIRLINEID',pic:'ZZZ9'},{av:'A35FlightPrice',fld:'FLIGHTPRICE',pic:'ZZZ9.99'},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'A36FlightDiscountPercentaje',fld:'FLIGHTDISCOUNTPERCENTAJE',pic:'ZZZ9'},{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A37FlightFinalPrice',fld:'FLIGHTFINALPRICE',pic:'ZZZ9.99'}]");
          setEventMetadata("VALID_AIRLINEID",",oparms:[{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'A37FlightFinalPrice',fld:'FLIGHTFINALPRICE',pic:'ZZZ9.99'}]}");
          setEventMetadata("VALID_AIRLINEDISCOUNTPERCENTAGE","{handler:'Valid_Airlinediscountpercentage',iparms:[]");
          setEventMetadata("VALID_AIRLINEDISCOUNTPERCENTAGE",",oparms:[]}");
+         setEventMetadata("VALID_FLIGHTSEATID","{handler:'Valid_Flightseatid',iparms:[]");
+         setEventMetadata("VALID_FLIGHTSEATID",",oparms:[]}");
+         setEventMetadata("VALID_FLIGHTSEATLOCATION","{handler:'Valid_Flightseatlocation',iparms:[]");
+         setEventMetadata("VALID_FLIGHTSEATLOCATION",",oparms:[]}");
          return  ;
       }
 
@@ -2962,18 +4048,20 @@ namespace GeneXus.Programs {
       protected void CloseOpenCursors( )
       {
          pr_default.close(1);
-         pr_default.close(29);
-         pr_default.close(23);
-         pr_default.close(26);
-         pr_default.close(24);
+         pr_default.close(3);
+         pr_default.close(31);
          pr_default.close(25);
-         pr_default.close(27);
          pr_default.close(28);
+         pr_default.close(26);
+         pr_default.close(27);
+         pr_default.close(29);
+         pr_default.close(30);
       }
 
       public override void initialize( )
       {
          sPrefix = "";
+         Z43FlightSeatLocation = "";
          scmdbuf = "";
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
@@ -2982,6 +4070,7 @@ namespace GeneXus.Programs {
          PreviousCaption = "";
          Form = new GXWebForm();
          GX_FocusControl = "";
+         Gx_mode = "";
          lblTitle_Jsonclick = "";
          ClassString = "";
          StyleString = "";
@@ -3002,16 +4091,21 @@ namespace GeneXus.Programs {
          A30FlightDepartureCityName = "";
          imgprompt_38_gximage = "";
          A39AirlineName = "";
+         lblTitleseat_Jsonclick = "";
          bttBtn_enter_Jsonclick = "";
          bttBtn_cancel_Jsonclick = "";
          bttBtn_delete_Jsonclick = "";
-         Gx_mode = "";
+         Gridflight_seatContainer = new GXWebGrid( context);
+         sMode10 = "";
+         sStyleString = "";
          sEvt = "";
          EvtGridId = "";
          EvtRowId = "";
          sEvtType = "";
          endTrnMsgTxt = "";
          endTrnMsgCod = "";
+         GXCCtl = "";
+         A43FlightSeatLocation = "";
          Z26FlightArrivalAirportName = "";
          Z32FlightArrivalCountryName = "";
          Z34FlightArrivalCityName = "";
@@ -3019,84 +4113,101 @@ namespace GeneXus.Programs {
          Z28FlightDepartureCountryName = "";
          Z30FlightDepartureCityName = "";
          Z39AirlineName = "";
-         T000811_A19FlightId = new short[1] ;
-         T000811_A26FlightArrivalAirportName = new string[] {""} ;
-         T000811_A32FlightArrivalCountryName = new string[] {""} ;
-         T000811_A34FlightArrivalCityName = new string[] {""} ;
-         T000811_A23FlightDepartureAirportName = new string[] {""} ;
-         T000811_A28FlightDepartureCountryName = new string[] {""} ;
-         T000811_A30FlightDepartureCityName = new string[] {""} ;
-         T000811_A35FlightPrice = new decimal[1] ;
-         T000811_A36FlightDiscountPercentaje = new short[1] ;
-         T000811_A39AirlineName = new string[] {""} ;
-         T000811_A40AirlineDiscountPercentage = new short[1] ;
-         T000811_A38AirlineId = new short[1] ;
-         T000811_n38AirlineId = new bool[] {false} ;
-         T000811_A25FlightArrivalAirportId = new short[1] ;
-         T000811_A24FlightDepartureAirportId = new short[1] ;
-         T000811_A31FlightArrivalCountryId = new short[1] ;
-         T000811_A33FlightArrivalCityId = new short[1] ;
-         T000811_A27FlightDepartureCountryId = new short[1] ;
-         T000811_A29FlightDepartureCityId = new short[1] ;
-         T00085_A26FlightArrivalAirportName = new string[] {""} ;
-         T00085_A31FlightArrivalCountryId = new short[1] ;
-         T00085_A33FlightArrivalCityId = new short[1] ;
-         T00087_A32FlightArrivalCountryName = new string[] {""} ;
-         T00088_A34FlightArrivalCityName = new string[] {""} ;
-         T00086_A23FlightDepartureAirportName = new string[] {""} ;
-         T00086_A27FlightDepartureCountryId = new short[1] ;
-         T00086_A29FlightDepartureCityId = new short[1] ;
-         T00089_A28FlightDepartureCountryName = new string[] {""} ;
-         T000810_A30FlightDepartureCityName = new string[] {""} ;
-         T00084_A39AirlineName = new string[] {""} ;
-         T00084_A40AirlineDiscountPercentage = new short[1] ;
-         T000812_A26FlightArrivalAirportName = new string[] {""} ;
-         T000812_A31FlightArrivalCountryId = new short[1] ;
-         T000812_A33FlightArrivalCityId = new short[1] ;
+         T000813_A19FlightId = new short[1] ;
+         T000813_A26FlightArrivalAirportName = new string[] {""} ;
          T000813_A32FlightArrivalCountryName = new string[] {""} ;
-         T000814_A34FlightArrivalCityName = new string[] {""} ;
-         T000815_A23FlightDepartureAirportName = new string[] {""} ;
-         T000815_A27FlightDepartureCountryId = new short[1] ;
-         T000815_A29FlightDepartureCityId = new short[1] ;
-         T000816_A28FlightDepartureCountryName = new string[] {""} ;
-         T000817_A30FlightDepartureCityName = new string[] {""} ;
-         T000818_A39AirlineName = new string[] {""} ;
-         T000818_A40AirlineDiscountPercentage = new short[1] ;
-         T000819_A19FlightId = new short[1] ;
-         T00083_A19FlightId = new short[1] ;
-         T00083_A35FlightPrice = new decimal[1] ;
-         T00083_A36FlightDiscountPercentaje = new short[1] ;
-         T00083_A38AirlineId = new short[1] ;
-         T00083_n38AirlineId = new bool[] {false} ;
-         T00083_A25FlightArrivalAirportId = new short[1] ;
-         T00083_A24FlightDepartureAirportId = new short[1] ;
-         sMode9 = "";
-         T000820_A19FlightId = new short[1] ;
+         T000813_A34FlightArrivalCityName = new string[] {""} ;
+         T000813_A23FlightDepartureAirportName = new string[] {""} ;
+         T000813_A28FlightDepartureCountryName = new string[] {""} ;
+         T000813_A30FlightDepartureCityName = new string[] {""} ;
+         T000813_A35FlightPrice = new decimal[1] ;
+         T000813_A36FlightDiscountPercentaje = new short[1] ;
+         T000813_A39AirlineName = new string[] {""} ;
+         T000813_A40AirlineDiscountPercentage = new short[1] ;
+         T000813_A38AirlineId = new short[1] ;
+         T000813_n38AirlineId = new bool[] {false} ;
+         T000813_A25FlightArrivalAirportId = new short[1] ;
+         T000813_A24FlightDepartureAirportId = new short[1] ;
+         T000813_A31FlightArrivalCountryId = new short[1] ;
+         T000813_A33FlightArrivalCityId = new short[1] ;
+         T000813_A27FlightDepartureCountryId = new short[1] ;
+         T000813_A29FlightDepartureCityId = new short[1] ;
+         T00087_A26FlightArrivalAirportName = new string[] {""} ;
+         T00087_A31FlightArrivalCountryId = new short[1] ;
+         T00087_A33FlightArrivalCityId = new short[1] ;
+         T00089_A32FlightArrivalCountryName = new string[] {""} ;
+         T000810_A34FlightArrivalCityName = new string[] {""} ;
+         T00088_A23FlightDepartureAirportName = new string[] {""} ;
+         T00088_A27FlightDepartureCountryId = new short[1] ;
+         T00088_A29FlightDepartureCityId = new short[1] ;
+         T000811_A28FlightDepartureCountryName = new string[] {""} ;
+         T000812_A30FlightDepartureCityName = new string[] {""} ;
+         T00086_A39AirlineName = new string[] {""} ;
+         T00086_A40AirlineDiscountPercentage = new short[1] ;
+         T000814_A26FlightArrivalAirportName = new string[] {""} ;
+         T000814_A31FlightArrivalCountryId = new short[1] ;
+         T000814_A33FlightArrivalCityId = new short[1] ;
+         T000815_A32FlightArrivalCountryName = new string[] {""} ;
+         T000816_A34FlightArrivalCityName = new string[] {""} ;
+         T000817_A23FlightDepartureAirportName = new string[] {""} ;
+         T000817_A27FlightDepartureCountryId = new short[1] ;
+         T000817_A29FlightDepartureCityId = new short[1] ;
+         T000818_A28FlightDepartureCountryName = new string[] {""} ;
+         T000819_A30FlightDepartureCityName = new string[] {""} ;
+         T000820_A39AirlineName = new string[] {""} ;
+         T000820_A40AirlineDiscountPercentage = new short[1] ;
          T000821_A19FlightId = new short[1] ;
-         T00082_A19FlightId = new short[1] ;
-         T00082_A35FlightPrice = new decimal[1] ;
-         T00082_A36FlightDiscountPercentaje = new short[1] ;
-         T00082_A38AirlineId = new short[1] ;
-         T00082_n38AirlineId = new bool[] {false} ;
-         T00082_A25FlightArrivalAirportId = new short[1] ;
-         T00082_A24FlightDepartureAirportId = new short[1] ;
+         T00085_A19FlightId = new short[1] ;
+         T00085_A35FlightPrice = new decimal[1] ;
+         T00085_A36FlightDiscountPercentaje = new short[1] ;
+         T00085_A38AirlineId = new short[1] ;
+         T00085_n38AirlineId = new bool[] {false} ;
+         T00085_A25FlightArrivalAirportId = new short[1] ;
+         T00085_A24FlightDepartureAirportId = new short[1] ;
+         sMode9 = "";
          T000822_A19FlightId = new short[1] ;
-         T000825_A26FlightArrivalAirportName = new string[] {""} ;
-         T000825_A31FlightArrivalCountryId = new short[1] ;
-         T000825_A33FlightArrivalCityId = new short[1] ;
-         T000826_A32FlightArrivalCountryName = new string[] {""} ;
-         T000827_A34FlightArrivalCityName = new string[] {""} ;
-         T000828_A23FlightDepartureAirportName = new string[] {""} ;
-         T000828_A27FlightDepartureCountryId = new short[1] ;
-         T000828_A29FlightDepartureCityId = new short[1] ;
-         T000829_A28FlightDepartureCountryName = new string[] {""} ;
-         T000830_A30FlightDepartureCityName = new string[] {""} ;
-         T000831_A39AirlineName = new string[] {""} ;
-         T000831_A40AirlineDiscountPercentage = new short[1] ;
-         T000832_A19FlightId = new short[1] ;
+         T000823_A19FlightId = new short[1] ;
+         T00084_A19FlightId = new short[1] ;
+         T00084_A35FlightPrice = new decimal[1] ;
+         T00084_A36FlightDiscountPercentaje = new short[1] ;
+         T00084_A38AirlineId = new short[1] ;
+         T00084_n38AirlineId = new bool[] {false} ;
+         T00084_A25FlightArrivalAirportId = new short[1] ;
+         T00084_A24FlightDepartureAirportId = new short[1] ;
+         T000824_A19FlightId = new short[1] ;
+         T000827_A26FlightArrivalAirportName = new string[] {""} ;
+         T000827_A31FlightArrivalCountryId = new short[1] ;
+         T000827_A33FlightArrivalCityId = new short[1] ;
+         T000828_A32FlightArrivalCountryName = new string[] {""} ;
+         T000829_A34FlightArrivalCityName = new string[] {""} ;
+         T000830_A23FlightDepartureAirportName = new string[] {""} ;
+         T000830_A27FlightDepartureCountryId = new short[1] ;
+         T000830_A29FlightDepartureCityId = new short[1] ;
+         T000831_A28FlightDepartureCountryName = new string[] {""} ;
+         T000832_A30FlightDepartureCityName = new string[] {""} ;
+         T000833_A39AirlineName = new string[] {""} ;
+         T000833_A40AirlineDiscountPercentage = new short[1] ;
+         T000834_A19FlightId = new short[1] ;
+         T000835_A19FlightId = new short[1] ;
+         T000835_A42FlightSeatId = new short[1] ;
+         T000835_A43FlightSeatLocation = new string[] {""} ;
+         T000836_A19FlightId = new short[1] ;
+         T000836_A42FlightSeatId = new short[1] ;
+         T00083_A19FlightId = new short[1] ;
+         T00083_A42FlightSeatId = new short[1] ;
+         T00083_A43FlightSeatLocation = new string[] {""} ;
+         T00082_A19FlightId = new short[1] ;
+         T00082_A42FlightSeatId = new short[1] ;
+         T00082_A43FlightSeatLocation = new string[] {""} ;
+         T000840_A19FlightId = new short[1] ;
+         T000840_A42FlightSeatId = new short[1] ;
+         Gridflight_seatRow = new GXWebRow();
+         subGridflight_seat_Linesclass = "";
+         ROClassString = "";
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
+         Gridflight_seatColumn = new GXWebColumn();
          ZZ26FlightArrivalAirportName = "";
          ZZ32FlightArrivalCountryName = "";
          ZZ34FlightArrivalCityName = "";
@@ -3107,62 +4218,62 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.flight__default(),
             new Object[][] {
                 new Object[] {
-               T00082_A19FlightId, T00082_A35FlightPrice, T00082_A36FlightDiscountPercentaje, T00082_A38AirlineId, T00082_n38AirlineId, T00082_A25FlightArrivalAirportId, T00082_A24FlightDepartureAirportId
+               T00082_A19FlightId, T00082_A42FlightSeatId, T00082_A43FlightSeatLocation
                }
                , new Object[] {
-               T00083_A19FlightId, T00083_A35FlightPrice, T00083_A36FlightDiscountPercentaje, T00083_A38AirlineId, T00083_n38AirlineId, T00083_A25FlightArrivalAirportId, T00083_A24FlightDepartureAirportId
+               T00083_A19FlightId, T00083_A42FlightSeatId, T00083_A43FlightSeatLocation
                }
                , new Object[] {
-               T00084_A39AirlineName, T00084_A40AirlineDiscountPercentage
+               T00084_A19FlightId, T00084_A35FlightPrice, T00084_A36FlightDiscountPercentaje, T00084_A38AirlineId, T00084_n38AirlineId, T00084_A25FlightArrivalAirportId, T00084_A24FlightDepartureAirportId
                }
                , new Object[] {
-               T00085_A26FlightArrivalAirportName, T00085_A31FlightArrivalCountryId, T00085_A33FlightArrivalCityId
+               T00085_A19FlightId, T00085_A35FlightPrice, T00085_A36FlightDiscountPercentaje, T00085_A38AirlineId, T00085_n38AirlineId, T00085_A25FlightArrivalAirportId, T00085_A24FlightDepartureAirportId
                }
                , new Object[] {
-               T00086_A23FlightDepartureAirportName, T00086_A27FlightDepartureCountryId, T00086_A29FlightDepartureCityId
+               T00086_A39AirlineName, T00086_A40AirlineDiscountPercentage
                }
                , new Object[] {
-               T00087_A32FlightArrivalCountryName
+               T00087_A26FlightArrivalAirportName, T00087_A31FlightArrivalCountryId, T00087_A33FlightArrivalCityId
                }
                , new Object[] {
-               T00088_A34FlightArrivalCityName
+               T00088_A23FlightDepartureAirportName, T00088_A27FlightDepartureCountryId, T00088_A29FlightDepartureCityId
                }
                , new Object[] {
-               T00089_A28FlightDepartureCountryName
+               T00089_A32FlightArrivalCountryName
                }
                , new Object[] {
-               T000810_A30FlightDepartureCityName
+               T000810_A34FlightArrivalCityName
                }
                , new Object[] {
-               T000811_A19FlightId, T000811_A26FlightArrivalAirportName, T000811_A32FlightArrivalCountryName, T000811_A34FlightArrivalCityName, T000811_A23FlightDepartureAirportName, T000811_A28FlightDepartureCountryName, T000811_A30FlightDepartureCityName, T000811_A35FlightPrice, T000811_A36FlightDiscountPercentaje, T000811_A39AirlineName,
-               T000811_A40AirlineDiscountPercentage, T000811_A38AirlineId, T000811_n38AirlineId, T000811_A25FlightArrivalAirportId, T000811_A24FlightDepartureAirportId, T000811_A31FlightArrivalCountryId, T000811_A33FlightArrivalCityId, T000811_A27FlightDepartureCountryId, T000811_A29FlightDepartureCityId
+               T000811_A28FlightDepartureCountryName
                }
                , new Object[] {
-               T000812_A26FlightArrivalAirportName, T000812_A31FlightArrivalCountryId, T000812_A33FlightArrivalCityId
+               T000812_A30FlightDepartureCityName
                }
                , new Object[] {
-               T000813_A32FlightArrivalCountryName
+               T000813_A19FlightId, T000813_A26FlightArrivalAirportName, T000813_A32FlightArrivalCountryName, T000813_A34FlightArrivalCityName, T000813_A23FlightDepartureAirportName, T000813_A28FlightDepartureCountryName, T000813_A30FlightDepartureCityName, T000813_A35FlightPrice, T000813_A36FlightDiscountPercentaje, T000813_A39AirlineName,
+               T000813_A40AirlineDiscountPercentage, T000813_A38AirlineId, T000813_n38AirlineId, T000813_A25FlightArrivalAirportId, T000813_A24FlightDepartureAirportId, T000813_A31FlightArrivalCountryId, T000813_A33FlightArrivalCityId, T000813_A27FlightDepartureCountryId, T000813_A29FlightDepartureCityId
                }
                , new Object[] {
-               T000814_A34FlightArrivalCityName
+               T000814_A26FlightArrivalAirportName, T000814_A31FlightArrivalCountryId, T000814_A33FlightArrivalCityId
                }
                , new Object[] {
-               T000815_A23FlightDepartureAirportName, T000815_A27FlightDepartureCountryId, T000815_A29FlightDepartureCityId
+               T000815_A32FlightArrivalCountryName
                }
                , new Object[] {
-               T000816_A28FlightDepartureCountryName
+               T000816_A34FlightArrivalCityName
                }
                , new Object[] {
-               T000817_A30FlightDepartureCityName
+               T000817_A23FlightDepartureAirportName, T000817_A27FlightDepartureCountryId, T000817_A29FlightDepartureCityId
                }
                , new Object[] {
-               T000818_A39AirlineName, T000818_A40AirlineDiscountPercentage
+               T000818_A28FlightDepartureCountryName
                }
                , new Object[] {
-               T000819_A19FlightId
+               T000819_A30FlightDepartureCityName
                }
                , new Object[] {
-               T000820_A19FlightId
+               T000820_A39AirlineName, T000820_A40AirlineDiscountPercentage
                }
                , new Object[] {
                T000821_A19FlightId
@@ -3171,32 +4282,53 @@ namespace GeneXus.Programs {
                T000822_A19FlightId
                }
                , new Object[] {
+               T000823_A19FlightId
+               }
+               , new Object[] {
+               T000824_A19FlightId
                }
                , new Object[] {
                }
                , new Object[] {
-               T000825_A26FlightArrivalAirportName, T000825_A31FlightArrivalCountryId, T000825_A33FlightArrivalCityId
                }
                , new Object[] {
-               T000826_A32FlightArrivalCountryName
+               T000827_A26FlightArrivalAirportName, T000827_A31FlightArrivalCountryId, T000827_A33FlightArrivalCityId
                }
                , new Object[] {
-               T000827_A34FlightArrivalCityName
+               T000828_A32FlightArrivalCountryName
                }
                , new Object[] {
-               T000828_A23FlightDepartureAirportName, T000828_A27FlightDepartureCountryId, T000828_A29FlightDepartureCityId
+               T000829_A34FlightArrivalCityName
                }
                , new Object[] {
-               T000829_A28FlightDepartureCountryName
+               T000830_A23FlightDepartureAirportName, T000830_A27FlightDepartureCountryId, T000830_A29FlightDepartureCityId
                }
                , new Object[] {
-               T000830_A30FlightDepartureCityName
+               T000831_A28FlightDepartureCountryName
                }
                , new Object[] {
-               T000831_A39AirlineName, T000831_A40AirlineDiscountPercentage
+               T000832_A30FlightDepartureCityName
                }
                , new Object[] {
-               T000832_A19FlightId
+               T000833_A39AirlineName, T000833_A40AirlineDiscountPercentage
+               }
+               , new Object[] {
+               T000834_A19FlightId
+               }
+               , new Object[] {
+               T000835_A19FlightId, T000835_A42FlightSeatId, T000835_A43FlightSeatLocation
+               }
+               , new Object[] {
+               T000836_A19FlightId, T000836_A42FlightSeatId
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               T000840_A19FlightId, T000840_A42FlightSeatId
                }
             }
          );
@@ -3207,6 +4339,10 @@ namespace GeneXus.Programs {
       private short Z38AirlineId ;
       private short Z25FlightArrivalAirportId ;
       private short Z24FlightDepartureAirportId ;
+      private short Z42FlightSeatId ;
+      private short nRcdDeleted_10 ;
+      private short nRcdExists_10 ;
+      private short nIsMod_10 ;
       private short GxWebError ;
       private short A25FlightArrivalAirportId ;
       private short A31FlightArrivalCountryId ;
@@ -3224,6 +4360,10 @@ namespace GeneXus.Programs {
       private short A19FlightId ;
       private short A36FlightDiscountPercentaje ;
       private short A40AirlineDiscountPercentage ;
+      private short nBlankRcdCount10 ;
+      private short RcdFound10 ;
+      private short nBlankRcdUsr10 ;
+      private short A42FlightSeatId ;
       private short GX_JID ;
       private short Z31FlightArrivalCountryId ;
       private short Z33FlightArrivalCityId ;
@@ -3233,7 +4373,14 @@ namespace GeneXus.Programs {
       private short RcdFound9 ;
       private short nIsDirty_9 ;
       private short Gx_BScreen ;
+      private short nIsDirty_10 ;
+      private short subGridflight_seat_Backcolorstyle ;
+      private short subGridflight_seat_Backstyle ;
       private short gxajaxcallmode ;
+      private short subGridflight_seat_Allowselection ;
+      private short subGridflight_seat_Allowhovering ;
+      private short subGridflight_seat_Allowcollapsing ;
+      private short subGridflight_seat_Collapsed ;
       private short ZZ19FlightId ;
       private short ZZ25FlightArrivalAirportId ;
       private short ZZ24FlightDepartureAirportId ;
@@ -3244,6 +4391,8 @@ namespace GeneXus.Programs {
       private short ZZ27FlightDepartureCountryId ;
       private short ZZ29FlightDepartureCityId ;
       private short ZZ40AirlineDiscountPercentage ;
+      private int nRC_GXsfl_133 ;
+      private int nGXsfl_133_idx=1 ;
       private int trnEnded ;
       private int bttBtn_first_Visible ;
       private int bttBtn_previous_Visible ;
@@ -3277,7 +4426,16 @@ namespace GeneXus.Programs {
       private int bttBtn_cancel_Visible ;
       private int bttBtn_delete_Visible ;
       private int bttBtn_delete_Enabled ;
+      private int edtFlightSeatId_Enabled ;
+      private int fRowAdded ;
+      private int subGridflight_seat_Backcolor ;
+      private int subGridflight_seat_Allbackcolor ;
+      private int defedtFlightSeatId_Enabled ;
       private int idxLst ;
+      private int subGridflight_seat_Selectedindex ;
+      private int subGridflight_seat_Selectioncolor ;
+      private int subGridflight_seat_Hoveringcolor ;
+      private long GRIDFLIGHT_SEAT_nFirstRecordOnPage ;
       private decimal Z35FlightPrice ;
       private decimal A35FlightPrice ;
       private decimal A37FlightFinalPrice ;
@@ -3285,6 +4443,7 @@ namespace GeneXus.Programs {
       private decimal ZZ35FlightPrice ;
       private decimal ZZ37FlightFinalPrice ;
       private string sPrefix ;
+      private string Z43FlightSeatLocation ;
       private string scmdbuf ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
@@ -3293,6 +4452,8 @@ namespace GeneXus.Programs {
       private string PreviousCaption ;
       private string GX_FocusControl ;
       private string edtFlightId_Internalname ;
+      private string sGXsfl_133_idx="0001" ;
+      private string Gx_mode ;
       private string divMaintable_Internalname ;
       private string divTitlecontainer_Internalname ;
       private string lblTitle_Internalname ;
@@ -3359,27 +4520,44 @@ namespace GeneXus.Programs {
       private string edtAirlineDiscountPercentage_Jsonclick ;
       private string edtFlightFinalPrice_Internalname ;
       private string edtFlightFinalPrice_Jsonclick ;
+      private string divSeattable_Internalname ;
+      private string lblTitleseat_Internalname ;
+      private string lblTitleseat_Jsonclick ;
       private string bttBtn_enter_Internalname ;
       private string bttBtn_enter_Jsonclick ;
       private string bttBtn_cancel_Internalname ;
       private string bttBtn_cancel_Jsonclick ;
       private string bttBtn_delete_Internalname ;
       private string bttBtn_delete_Jsonclick ;
-      private string Gx_mode ;
+      private string sMode10 ;
+      private string edtFlightSeatId_Internalname ;
+      private string cmbFlightSeatLocation_Internalname ;
+      private string sStyleString ;
+      private string subGridflight_seat_Internalname ;
       private string sEvt ;
       private string EvtGridId ;
       private string EvtRowId ;
       private string sEvtType ;
       private string endTrnMsgTxt ;
       private string endTrnMsgCod ;
+      private string GXCCtl ;
+      private string A43FlightSeatLocation ;
       private string sMode9 ;
+      private string sGXsfl_133_fel_idx="0001" ;
+      private string subGridflight_seat_Class ;
+      private string subGridflight_seat_Linesclass ;
+      private string ROClassString ;
+      private string edtFlightSeatId_Jsonclick ;
+      private string cmbFlightSeatLocation_Jsonclick ;
       private string sDynURL ;
       private string FormProcess ;
       private string bodyStyle ;
+      private string subGridflight_seat_Header ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool n38AirlineId ;
       private bool wbErr ;
+      private bool bGXsfl_133_Refreshing=false ;
       private string A26FlightArrivalAirportName ;
       private string A32FlightArrivalCountryName ;
       private string A34FlightArrivalCityName ;
@@ -3401,82 +4579,99 @@ namespace GeneXus.Programs {
       private string ZZ28FlightDepartureCountryName ;
       private string ZZ30FlightDepartureCityName ;
       private string ZZ39AirlineName ;
+      private GXWebGrid Gridflight_seatContainer ;
+      private GXWebRow Gridflight_seatRow ;
+      private GXWebColumn Gridflight_seatColumn ;
       private IGxDataStore dsDefault ;
+      private GXCombobox cmbFlightSeatLocation ;
       private IDataStoreProvider pr_default ;
-      private short[] T000811_A19FlightId ;
-      private string[] T000811_A26FlightArrivalAirportName ;
-      private string[] T000811_A32FlightArrivalCountryName ;
-      private string[] T000811_A34FlightArrivalCityName ;
-      private string[] T000811_A23FlightDepartureAirportName ;
-      private string[] T000811_A28FlightDepartureCountryName ;
-      private string[] T000811_A30FlightDepartureCityName ;
-      private decimal[] T000811_A35FlightPrice ;
-      private short[] T000811_A36FlightDiscountPercentaje ;
-      private string[] T000811_A39AirlineName ;
-      private short[] T000811_A40AirlineDiscountPercentage ;
-      private short[] T000811_A38AirlineId ;
-      private bool[] T000811_n38AirlineId ;
-      private short[] T000811_A25FlightArrivalAirportId ;
-      private short[] T000811_A24FlightDepartureAirportId ;
-      private short[] T000811_A31FlightArrivalCountryId ;
-      private short[] T000811_A33FlightArrivalCityId ;
-      private short[] T000811_A27FlightDepartureCountryId ;
-      private short[] T000811_A29FlightDepartureCityId ;
-      private string[] T00085_A26FlightArrivalAirportName ;
-      private short[] T00085_A31FlightArrivalCountryId ;
-      private short[] T00085_A33FlightArrivalCityId ;
-      private string[] T00087_A32FlightArrivalCountryName ;
-      private string[] T00088_A34FlightArrivalCityName ;
-      private string[] T00086_A23FlightDepartureAirportName ;
-      private short[] T00086_A27FlightDepartureCountryId ;
-      private short[] T00086_A29FlightDepartureCityId ;
-      private string[] T00089_A28FlightDepartureCountryName ;
-      private string[] T000810_A30FlightDepartureCityName ;
-      private string[] T00084_A39AirlineName ;
-      private short[] T00084_A40AirlineDiscountPercentage ;
-      private string[] T000812_A26FlightArrivalAirportName ;
-      private short[] T000812_A31FlightArrivalCountryId ;
-      private short[] T000812_A33FlightArrivalCityId ;
+      private short[] T000813_A19FlightId ;
+      private string[] T000813_A26FlightArrivalAirportName ;
       private string[] T000813_A32FlightArrivalCountryName ;
-      private string[] T000814_A34FlightArrivalCityName ;
-      private string[] T000815_A23FlightDepartureAirportName ;
-      private short[] T000815_A27FlightDepartureCountryId ;
-      private short[] T000815_A29FlightDepartureCityId ;
-      private string[] T000816_A28FlightDepartureCountryName ;
-      private string[] T000817_A30FlightDepartureCityName ;
-      private string[] T000818_A39AirlineName ;
-      private short[] T000818_A40AirlineDiscountPercentage ;
-      private short[] T000819_A19FlightId ;
-      private short[] T00083_A19FlightId ;
-      private decimal[] T00083_A35FlightPrice ;
-      private short[] T00083_A36FlightDiscountPercentaje ;
-      private short[] T00083_A38AirlineId ;
-      private bool[] T00083_n38AirlineId ;
-      private short[] T00083_A25FlightArrivalAirportId ;
-      private short[] T00083_A24FlightDepartureAirportId ;
-      private short[] T000820_A19FlightId ;
+      private string[] T000813_A34FlightArrivalCityName ;
+      private string[] T000813_A23FlightDepartureAirportName ;
+      private string[] T000813_A28FlightDepartureCountryName ;
+      private string[] T000813_A30FlightDepartureCityName ;
+      private decimal[] T000813_A35FlightPrice ;
+      private short[] T000813_A36FlightDiscountPercentaje ;
+      private string[] T000813_A39AirlineName ;
+      private short[] T000813_A40AirlineDiscountPercentage ;
+      private short[] T000813_A38AirlineId ;
+      private bool[] T000813_n38AirlineId ;
+      private short[] T000813_A25FlightArrivalAirportId ;
+      private short[] T000813_A24FlightDepartureAirportId ;
+      private short[] T000813_A31FlightArrivalCountryId ;
+      private short[] T000813_A33FlightArrivalCityId ;
+      private short[] T000813_A27FlightDepartureCountryId ;
+      private short[] T000813_A29FlightDepartureCityId ;
+      private string[] T00087_A26FlightArrivalAirportName ;
+      private short[] T00087_A31FlightArrivalCountryId ;
+      private short[] T00087_A33FlightArrivalCityId ;
+      private string[] T00089_A32FlightArrivalCountryName ;
+      private string[] T000810_A34FlightArrivalCityName ;
+      private string[] T00088_A23FlightDepartureAirportName ;
+      private short[] T00088_A27FlightDepartureCountryId ;
+      private short[] T00088_A29FlightDepartureCityId ;
+      private string[] T000811_A28FlightDepartureCountryName ;
+      private string[] T000812_A30FlightDepartureCityName ;
+      private string[] T00086_A39AirlineName ;
+      private short[] T00086_A40AirlineDiscountPercentage ;
+      private string[] T000814_A26FlightArrivalAirportName ;
+      private short[] T000814_A31FlightArrivalCountryId ;
+      private short[] T000814_A33FlightArrivalCityId ;
+      private string[] T000815_A32FlightArrivalCountryName ;
+      private string[] T000816_A34FlightArrivalCityName ;
+      private string[] T000817_A23FlightDepartureAirportName ;
+      private short[] T000817_A27FlightDepartureCountryId ;
+      private short[] T000817_A29FlightDepartureCityId ;
+      private string[] T000818_A28FlightDepartureCountryName ;
+      private string[] T000819_A30FlightDepartureCityName ;
+      private string[] T000820_A39AirlineName ;
+      private short[] T000820_A40AirlineDiscountPercentage ;
       private short[] T000821_A19FlightId ;
-      private short[] T00082_A19FlightId ;
-      private decimal[] T00082_A35FlightPrice ;
-      private short[] T00082_A36FlightDiscountPercentaje ;
-      private short[] T00082_A38AirlineId ;
-      private bool[] T00082_n38AirlineId ;
-      private short[] T00082_A25FlightArrivalAirportId ;
-      private short[] T00082_A24FlightDepartureAirportId ;
+      private short[] T00085_A19FlightId ;
+      private decimal[] T00085_A35FlightPrice ;
+      private short[] T00085_A36FlightDiscountPercentaje ;
+      private short[] T00085_A38AirlineId ;
+      private bool[] T00085_n38AirlineId ;
+      private short[] T00085_A25FlightArrivalAirportId ;
+      private short[] T00085_A24FlightDepartureAirportId ;
       private short[] T000822_A19FlightId ;
-      private string[] T000825_A26FlightArrivalAirportName ;
-      private short[] T000825_A31FlightArrivalCountryId ;
-      private short[] T000825_A33FlightArrivalCityId ;
-      private string[] T000826_A32FlightArrivalCountryName ;
-      private string[] T000827_A34FlightArrivalCityName ;
-      private string[] T000828_A23FlightDepartureAirportName ;
-      private short[] T000828_A27FlightDepartureCountryId ;
-      private short[] T000828_A29FlightDepartureCityId ;
-      private string[] T000829_A28FlightDepartureCountryName ;
-      private string[] T000830_A30FlightDepartureCityName ;
-      private string[] T000831_A39AirlineName ;
-      private short[] T000831_A40AirlineDiscountPercentage ;
-      private short[] T000832_A19FlightId ;
+      private short[] T000823_A19FlightId ;
+      private short[] T00084_A19FlightId ;
+      private decimal[] T00084_A35FlightPrice ;
+      private short[] T00084_A36FlightDiscountPercentaje ;
+      private short[] T00084_A38AirlineId ;
+      private bool[] T00084_n38AirlineId ;
+      private short[] T00084_A25FlightArrivalAirportId ;
+      private short[] T00084_A24FlightDepartureAirportId ;
+      private short[] T000824_A19FlightId ;
+      private string[] T000827_A26FlightArrivalAirportName ;
+      private short[] T000827_A31FlightArrivalCountryId ;
+      private short[] T000827_A33FlightArrivalCityId ;
+      private string[] T000828_A32FlightArrivalCountryName ;
+      private string[] T000829_A34FlightArrivalCityName ;
+      private string[] T000830_A23FlightDepartureAirportName ;
+      private short[] T000830_A27FlightDepartureCountryId ;
+      private short[] T000830_A29FlightDepartureCityId ;
+      private string[] T000831_A28FlightDepartureCountryName ;
+      private string[] T000832_A30FlightDepartureCityName ;
+      private string[] T000833_A39AirlineName ;
+      private short[] T000833_A40AirlineDiscountPercentage ;
+      private short[] T000834_A19FlightId ;
+      private short[] T000835_A19FlightId ;
+      private short[] T000835_A42FlightSeatId ;
+      private string[] T000835_A43FlightSeatLocation ;
+      private short[] T000836_A19FlightId ;
+      private short[] T000836_A42FlightSeatId ;
+      private short[] T00083_A19FlightId ;
+      private short[] T00083_A42FlightSeatId ;
+      private string[] T00083_A43FlightSeatLocation ;
+      private short[] T00082_A19FlightId ;
+      private short[] T00082_A42FlightSeatId ;
+      private string[] T00082_A43FlightSeatLocation ;
+      private short[] T000840_A19FlightId ;
+      private short[] T000840_A42FlightSeatId ;
       private GXWebForm Form ;
    }
 
@@ -3507,16 +4702,24 @@ namespace GeneXus.Programs {
          ,new ForEachCursor(def[18])
          ,new ForEachCursor(def[19])
          ,new ForEachCursor(def[20])
-         ,new UpdateCursor(def[21])
-         ,new UpdateCursor(def[22])
-         ,new ForEachCursor(def[23])
-         ,new ForEachCursor(def[24])
+         ,new ForEachCursor(def[21])
+         ,new ForEachCursor(def[22])
+         ,new UpdateCursor(def[23])
+         ,new UpdateCursor(def[24])
          ,new ForEachCursor(def[25])
          ,new ForEachCursor(def[26])
          ,new ForEachCursor(def[27])
          ,new ForEachCursor(def[28])
          ,new ForEachCursor(def[29])
          ,new ForEachCursor(def[30])
+         ,new ForEachCursor(def[31])
+         ,new ForEachCursor(def[32])
+         ,new ForEachCursor(def[33])
+         ,new ForEachCursor(def[34])
+         ,new UpdateCursor(def[35])
+         ,new UpdateCursor(def[36])
+         ,new UpdateCursor(def[37])
+         ,new ForEachCursor(def[38])
        };
     }
 
@@ -3525,100 +4728,100 @@ namespace GeneXus.Programs {
     {
        if ( def == null )
        {
-          Object[] prmT000811;
-          prmT000811 = new Object[] {
+          Object[] prmT000813;
+          prmT000813 = new Object[] {
           new ParDef("@FlightId",GXType.Int16,4,0)
-          };
-          Object[] prmT00085;
-          prmT00085 = new Object[] {
-          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
           };
           Object[] prmT00087;
           prmT00087 = new Object[] {
-          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
-          };
-          Object[] prmT00088;
-          prmT00088 = new Object[] {
-          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0) ,
-          new ParDef("@FlightArrivalCityId",GXType.Int16,4,0)
-          };
-          Object[] prmT00086;
-          prmT00086 = new Object[] {
-          new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
+          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
           };
           Object[] prmT00089;
           prmT00089 = new Object[] {
-          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0)
+          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
           };
           Object[] prmT000810;
           prmT000810 = new Object[] {
-          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0) ,
-          new ParDef("@FlightDepartureCityId",GXType.Int16,4,0)
-          };
-          Object[] prmT00084;
-          prmT00084 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
-          };
-          Object[] prmT000812;
-          prmT000812 = new Object[] {
-          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
-          };
-          Object[] prmT000813;
-          prmT000813 = new Object[] {
-          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
-          };
-          Object[] prmT000814;
-          prmT000814 = new Object[] {
           new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0) ,
           new ParDef("@FlightArrivalCityId",GXType.Int16,4,0)
           };
-          Object[] prmT000815;
-          prmT000815 = new Object[] {
+          Object[] prmT00088;
+          prmT00088 = new Object[] {
           new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
           };
-          Object[] prmT000816;
-          prmT000816 = new Object[] {
+          Object[] prmT000811;
+          prmT000811 = new Object[] {
           new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0)
           };
-          Object[] prmT000817;
-          prmT000817 = new Object[] {
+          Object[] prmT000812;
+          prmT000812 = new Object[] {
           new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0) ,
           new ParDef("@FlightDepartureCityId",GXType.Int16,4,0)
           };
+          Object[] prmT00086;
+          prmT00086 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000814;
+          prmT000814 = new Object[] {
+          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
+          };
+          Object[] prmT000815;
+          prmT000815 = new Object[] {
+          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
+          };
+          Object[] prmT000816;
+          prmT000816 = new Object[] {
+          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0) ,
+          new ParDef("@FlightArrivalCityId",GXType.Int16,4,0)
+          };
+          Object[] prmT000817;
+          prmT000817 = new Object[] {
+          new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
+          };
           Object[] prmT000818;
           prmT000818 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
+          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0)
           };
           Object[] prmT000819;
           prmT000819 = new Object[] {
-          new ParDef("@FlightId",GXType.Int16,4,0)
-          };
-          Object[] prmT00083;
-          prmT00083 = new Object[] {
-          new ParDef("@FlightId",GXType.Int16,4,0)
+          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0) ,
+          new ParDef("@FlightDepartureCityId",GXType.Int16,4,0)
           };
           Object[] prmT000820;
           prmT000820 = new Object[] {
-          new ParDef("@FlightId",GXType.Int16,4,0)
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000821;
           prmT000821 = new Object[] {
           new ParDef("@FlightId",GXType.Int16,4,0)
           };
-          Object[] prmT00082;
-          prmT00082 = new Object[] {
+          Object[] prmT00085;
+          prmT00085 = new Object[] {
           new ParDef("@FlightId",GXType.Int16,4,0)
           };
           Object[] prmT000822;
           prmT000822 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0)
+          };
+          Object[] prmT000823;
+          prmT000823 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0)
+          };
+          Object[] prmT00084;
+          prmT00084 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0)
+          };
+          Object[] prmT000824;
+          prmT000824 = new Object[] {
           new ParDef("@FlightPrice",GXType.Decimal,7,2) ,
           new ParDef("@FlightDiscountPercentaje",GXType.Int16,4,0) ,
           new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true} ,
           new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0) ,
           new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
           };
-          Object[] prmT000823;
-          prmT000823 = new Object[] {
+          Object[] prmT000825;
+          prmT000825 = new Object[] {
           new ParDef("@FlightPrice",GXType.Decimal,7,2) ,
           new ParDef("@FlightDiscountPercentaje",GXType.Int16,4,0) ,
           new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true} ,
@@ -3626,75 +4829,124 @@ namespace GeneXus.Programs {
           new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0) ,
           new ParDef("@FlightId",GXType.Int16,4,0)
           };
-          Object[] prmT000824;
-          prmT000824 = new Object[] {
-          new ParDef("@FlightId",GXType.Int16,4,0)
-          };
-          Object[] prmT000832;
-          prmT000832 = new Object[] {
-          };
-          Object[] prmT000825;
-          prmT000825 = new Object[] {
-          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
-          };
           Object[] prmT000826;
           prmT000826 = new Object[] {
-          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
+          new ParDef("@FlightId",GXType.Int16,4,0)
+          };
+          Object[] prmT000834;
+          prmT000834 = new Object[] {
+          };
+          Object[] prmT000835;
+          prmT000835 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT000836;
+          prmT000836 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT00083;
+          prmT00083 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT00082;
+          prmT00082 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT000837;
+          prmT000837 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatLocation",GXType.NChar,1,0)
+          };
+          Object[] prmT000838;
+          prmT000838 = new Object[] {
+          new ParDef("@FlightSeatLocation",GXType.NChar,1,0) ,
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT000839;
+          prmT000839 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0) ,
+          new ParDef("@FlightSeatId",GXType.Int16,4,0)
+          };
+          Object[] prmT000840;
+          prmT000840 = new Object[] {
+          new ParDef("@FlightId",GXType.Int16,4,0)
           };
           Object[] prmT000827;
           prmT000827 = new Object[] {
-          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0) ,
-          new ParDef("@FlightArrivalCityId",GXType.Int16,4,0)
+          new ParDef("@FlightArrivalAirportId",GXType.Int16,4,0)
           };
           Object[] prmT000828;
           prmT000828 = new Object[] {
-          new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
+          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0)
           };
           Object[] prmT000829;
           prmT000829 = new Object[] {
-          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0)
+          new ParDef("@FlightArrivalCountryId",GXType.Int16,4,0) ,
+          new ParDef("@FlightArrivalCityId",GXType.Int16,4,0)
           };
           Object[] prmT000830;
           prmT000830 = new Object[] {
-          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0) ,
-          new ParDef("@FlightDepartureCityId",GXType.Int16,4,0)
+          new ParDef("@FlightDepartureAirportId",GXType.Int16,4,0)
           };
           Object[] prmT000831;
           prmT000831 = new Object[] {
+          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0)
+          };
+          Object[] prmT000832;
+          prmT000832 = new Object[] {
+          new ParDef("@FlightDepartureCountryId",GXType.Int16,4,0) ,
+          new ParDef("@FlightDepartureCityId",GXType.Int16,4,0)
+          };
+          Object[] prmT000833;
+          prmT000833 = new Object[] {
           new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
           def= new CursorDef[] {
-              new CursorDef("T00082", "SELECT [FlightId], [FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId] AS FlightArrivalAirportId, [FlightDepartureAirportId] AS FlightDepartureAirportId FROM [Flight] WITH (UPDLOCK) WHERE [FlightId] = @FlightId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00082,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00083", "SELECT [FlightId], [FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId] AS FlightArrivalAirportId, [FlightDepartureAirportId] AS FlightDepartureAirportId FROM [Flight] WHERE [FlightId] = @FlightId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00083,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00084", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00084,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00085", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00085,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00086", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00086,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00087", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00087,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00088", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00088,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00089", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00089,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000810", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000810,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000811", "SELECT TM1.[FlightId], T2.[AirportName] AS FlightArrivalAirportName, T3.[CountryName] AS FlightArrivalCountryName, T4.[CityName] AS FlightArrivalCityName, T5.[AirportName] AS FlightDepartureAirportName, T6.[CountryName] AS FlightDepartureCountryName, T7.[CityName] AS FlightDepartureCityName, TM1.[FlightPrice], TM1.[FlightDiscountPercentaje], T8.[AirlineName], T8.[AirlineDiscountPercentage], TM1.[AirlineId], TM1.[FlightArrivalAirportId] AS FlightArrivalAirportId, TM1.[FlightDepartureAirportId] AS FlightDepartureAirportId, T2.[CountryId] AS FlightArrivalCountryId, T2.[CityId] AS FlightArrivalCityId, T5.[CountryId] AS FlightDepartureCountryId, T5.[CityId] AS FlightDepartureCityId FROM ((((((([Flight] TM1 INNER JOIN [Airport] T2 ON T2.[AirportId] = TM1.[FlightArrivalAirportId]) INNER JOIN [Country] T3 ON T3.[CountryId] = T2.[CountryId]) INNER JOIN [CountryCity] T4 ON T4.[CountryId] = T2.[CountryId] AND T4.[CityId] = T2.[CityId]) INNER JOIN [Airport] T5 ON T5.[AirportId] = TM1.[FlightDepartureAirportId]) INNER JOIN [Country] T6 ON T6.[CountryId] = T5.[CountryId]) INNER JOIN [CountryCity] T7 ON T7.[CountryId] = T5.[CountryId] AND T7.[CityId] = T5.[CityId]) LEFT JOIN [Airline] T8 ON T8.[AirlineId] = TM1.[AirlineId]) WHERE TM1.[FlightId] = @FlightId ORDER BY TM1.[FlightId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000811,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000812", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000812,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000813", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000813,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000814", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000814,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000815", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000815,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000816", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000816,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000817", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000817,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000818", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000818,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000819", "SELECT [FlightId] FROM [Flight] WHERE [FlightId] = @FlightId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000819,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000820", "SELECT TOP 1 [FlightId] FROM [Flight] WHERE ( [FlightId] > @FlightId) ORDER BY [FlightId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000820,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000821", "SELECT TOP 1 [FlightId] FROM [Flight] WHERE ( [FlightId] < @FlightId) ORDER BY [FlightId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000821,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000822", "INSERT INTO [Flight]([FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId], [FlightDepartureAirportId]) VALUES(@FlightPrice, @FlightDiscountPercentaje, @AirlineId, @FlightArrivalAirportId, @FlightDepartureAirportId); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000822,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000823", "UPDATE [Flight] SET [FlightPrice]=@FlightPrice, [FlightDiscountPercentaje]=@FlightDiscountPercentaje, [AirlineId]=@AirlineId, [FlightArrivalAirportId]=@FlightArrivalAirportId, [FlightDepartureAirportId]=@FlightDepartureAirportId  WHERE [FlightId] = @FlightId", GxErrorMask.GX_NOMASK,prmT000823)
-             ,new CursorDef("T000824", "DELETE FROM [Flight]  WHERE [FlightId] = @FlightId", GxErrorMask.GX_NOMASK,prmT000824)
-             ,new CursorDef("T000825", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000825,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000826", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000826,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000827", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000827,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000828", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000828,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000829", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000829,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000830", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000830,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000831", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000831,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T000832", "SELECT [FlightId] FROM [Flight] ORDER BY [FlightId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000832,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("T00082", "SELECT [FlightId], [FlightSeatId], [FlightSeatLocation] FROM [FlightSeat] WITH (UPDLOCK) WHERE [FlightId] = @FlightId AND [FlightSeatId] = @FlightSeatId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00082,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00083", "SELECT [FlightId], [FlightSeatId], [FlightSeatLocation] FROM [FlightSeat] WHERE [FlightId] = @FlightId AND [FlightSeatId] = @FlightSeatId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00083,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00084", "SELECT [FlightId], [FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId] AS FlightArrivalAirportId, [FlightDepartureAirportId] AS FlightDepartureAirportId FROM [Flight] WITH (UPDLOCK) WHERE [FlightId] = @FlightId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00084,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00085", "SELECT [FlightId], [FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId] AS FlightArrivalAirportId, [FlightDepartureAirportId] AS FlightDepartureAirportId FROM [Flight] WHERE [FlightId] = @FlightId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00085,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00086", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00086,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00087", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00087,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00088", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00088,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00089", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00089,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000810", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000810,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000811", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000811,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000812", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000812,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000813", "SELECT TM1.[FlightId], T2.[AirportName] AS FlightArrivalAirportName, T3.[CountryName] AS FlightArrivalCountryName, T4.[CityName] AS FlightArrivalCityName, T5.[AirportName] AS FlightDepartureAirportName, T6.[CountryName] AS FlightDepartureCountryName, T7.[CityName] AS FlightDepartureCityName, TM1.[FlightPrice], TM1.[FlightDiscountPercentaje], T8.[AirlineName], T8.[AirlineDiscountPercentage], TM1.[AirlineId], TM1.[FlightArrivalAirportId] AS FlightArrivalAirportId, TM1.[FlightDepartureAirportId] AS FlightDepartureAirportId, T2.[CountryId] AS FlightArrivalCountryId, T2.[CityId] AS FlightArrivalCityId, T5.[CountryId] AS FlightDepartureCountryId, T5.[CityId] AS FlightDepartureCityId FROM ((((((([Flight] TM1 INNER JOIN [Airport] T2 ON T2.[AirportId] = TM1.[FlightArrivalAirportId]) INNER JOIN [Country] T3 ON T3.[CountryId] = T2.[CountryId]) INNER JOIN [CountryCity] T4 ON T4.[CountryId] = T2.[CountryId] AND T4.[CityId] = T2.[CityId]) INNER JOIN [Airport] T5 ON T5.[AirportId] = TM1.[FlightDepartureAirportId]) INNER JOIN [Country] T6 ON T6.[CountryId] = T5.[CountryId]) INNER JOIN [CountryCity] T7 ON T7.[CountryId] = T5.[CountryId] AND T7.[CityId] = T5.[CityId]) LEFT JOIN [Airline] T8 ON T8.[AirlineId] = TM1.[AirlineId]) WHERE TM1.[FlightId] = @FlightId ORDER BY TM1.[FlightId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000813,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000814", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000814,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000815", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000815,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000816", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000816,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000817", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000817,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000818", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000818,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000819", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000819,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000820", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000820,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000821", "SELECT [FlightId] FROM [Flight] WHERE [FlightId] = @FlightId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000821,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000822", "SELECT TOP 1 [FlightId] FROM [Flight] WHERE ( [FlightId] > @FlightId) ORDER BY [FlightId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000822,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000823", "SELECT TOP 1 [FlightId] FROM [Flight] WHERE ( [FlightId] < @FlightId) ORDER BY [FlightId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000823,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000824", "INSERT INTO [Flight]([FlightPrice], [FlightDiscountPercentaje], [AirlineId], [FlightArrivalAirportId], [FlightDepartureAirportId]) VALUES(@FlightPrice, @FlightDiscountPercentaje, @AirlineId, @FlightArrivalAirportId, @FlightDepartureAirportId); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000824,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000825", "UPDATE [Flight] SET [FlightPrice]=@FlightPrice, [FlightDiscountPercentaje]=@FlightDiscountPercentaje, [AirlineId]=@AirlineId, [FlightArrivalAirportId]=@FlightArrivalAirportId, [FlightDepartureAirportId]=@FlightDepartureAirportId  WHERE [FlightId] = @FlightId", GxErrorMask.GX_NOMASK,prmT000825)
+             ,new CursorDef("T000826", "DELETE FROM [Flight]  WHERE [FlightId] = @FlightId", GxErrorMask.GX_NOMASK,prmT000826)
+             ,new CursorDef("T000827", "SELECT [AirportName] AS FlightArrivalAirportName, [CountryId] AS FlightArrivalCountryId, [CityId] AS FlightArrivalCityId FROM [Airport] WHERE [AirportId] = @FlightArrivalAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000827,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000828", "SELECT [CountryName] AS FlightArrivalCountryName FROM [Country] WHERE [CountryId] = @FlightArrivalCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000828,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000829", "SELECT [CityName] AS FlightArrivalCityName FROM [CountryCity] WHERE [CountryId] = @FlightArrivalCountryId AND [CityId] = @FlightArrivalCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000829,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000830", "SELECT [AirportName] AS FlightDepartureAirportName, [CountryId] AS FlightDepartureCountryId, [CityId] AS FlightDepartureCityId FROM [Airport] WHERE [AirportId] = @FlightDepartureAirportId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000830,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000831", "SELECT [CountryName] AS FlightDepartureCountryName FROM [Country] WHERE [CountryId] = @FlightDepartureCountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000831,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000832", "SELECT [CityName] AS FlightDepartureCityName FROM [CountryCity] WHERE [CountryId] = @FlightDepartureCountryId AND [CityId] = @FlightDepartureCityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000832,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000833", "SELECT [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000833,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000834", "SELECT [FlightId] FROM [Flight] ORDER BY [FlightId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000834,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000835", "SELECT [FlightId], [FlightSeatId], [FlightSeatLocation] FROM [FlightSeat] WHERE [FlightId] = @FlightId and [FlightSeatId] = @FlightSeatId ORDER BY [FlightId], [FlightSeatId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000835,11, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000836", "SELECT [FlightId], [FlightSeatId] FROM [FlightSeat] WHERE [FlightId] = @FlightId AND [FlightSeatId] = @FlightSeatId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000836,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000837", "INSERT INTO [FlightSeat]([FlightId], [FlightSeatId], [FlightSeatLocation]) VALUES(@FlightId, @FlightSeatId, @FlightSeatLocation)", GxErrorMask.GX_NOMASK,prmT000837)
+             ,new CursorDef("T000838", "UPDATE [FlightSeat] SET [FlightSeatLocation]=@FlightSeatLocation  WHERE [FlightId] = @FlightId AND [FlightSeatId] = @FlightSeatId", GxErrorMask.GX_NOMASK,prmT000838)
+             ,new CursorDef("T000839", "DELETE FROM [FlightSeat]  WHERE [FlightId] = @FlightId AND [FlightSeatId] = @FlightSeatId", GxErrorMask.GX_NOMASK,prmT000839)
+             ,new CursorDef("T000840", "SELECT [FlightId], [FlightSeatId] FROM [FlightSeat] WHERE [FlightId] = @FlightId ORDER BY [FlightId], [FlightSeatId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000840,11, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -3707,14 +4959,15 @@ namespace GeneXus.Programs {
        {
              case 0 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
-                ((short[]) buf[3])[0] = rslt.getShort(4);
-                ((bool[]) buf[4])[0] = rslt.wasNull(4);
-                ((short[]) buf[5])[0] = rslt.getShort(5);
-                ((short[]) buf[6])[0] = rslt.getShort(6);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((string[]) buf[2])[0] = rslt.getString(3, 1);
                 return;
              case 1 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((string[]) buf[2])[0] = rslt.getString(3, 1);
+                return;
+             case 2 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((decimal[]) buf[1])[0] = rslt.getDecimal(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
@@ -3723,25 +4976,28 @@ namespace GeneXus.Programs {
                 ((short[]) buf[5])[0] = rslt.getShort(5);
                 ((short[]) buf[6])[0] = rslt.getShort(6);
                 return;
-             case 2 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
-                return;
              case 3 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((decimal[]) buf[1])[0] = rslt.getDecimal(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
+                ((short[]) buf[3])[0] = rslt.getShort(4);
+                ((bool[]) buf[4])[0] = rslt.wasNull(4);
+                ((short[]) buf[5])[0] = rslt.getShort(5);
+                ((short[]) buf[6])[0] = rslt.getShort(6);
                 return;
              case 4 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 5 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 6 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 7 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
@@ -3750,6 +5006,12 @@ namespace GeneXus.Programs {
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 return;
              case 9 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                return;
+             case 10 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                return;
+             case 11 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((string[]) buf[2])[0] = rslt.getVarchar(3);
@@ -3770,37 +5032,31 @@ namespace GeneXus.Programs {
                 ((short[]) buf[17])[0] = rslt.getShort(17);
                 ((short[]) buf[18])[0] = rslt.getShort(18);
                 return;
-             case 10 :
+             case 12 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
-                return;
-             case 11 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                return;
-             case 12 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 return;
              case 13 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 14 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 return;
              case 15 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 16 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;
              case 17 :
-                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 return;
              case 18 :
-                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;
              case 19 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
@@ -3808,31 +5064,30 @@ namespace GeneXus.Programs {
              case 20 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
-             case 23 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
+             case 21 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
-             case 24 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+             case 22 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
              case 25 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 26 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
-                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 27 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
                 return;
              case 28 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((short[]) buf[2])[0] = rslt.getShort(3);
                 return;
              case 29 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;
        }
        getresults30( cursor, rslt, buf) ;
@@ -3845,7 +5100,27 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 30 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                return;
+             case 31 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                return;
+             case 32 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
+                return;
+             case 33 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                ((string[]) buf[2])[0] = rslt.getString(3, 1);
+                return;
+             case 34 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
+                return;
+             case 38 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;
        }
     }

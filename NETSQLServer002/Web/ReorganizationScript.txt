@@ -1,3 +1,4 @@
-ALTER TABLE [Flight] ADD [FlightDiscountPercentaje] smallint NOT NULL CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT DEFAULT convert(int, 0);
-ALTER TABLE [Flight] DROP CONSTRAINT FlightDiscountPercentajeFlight_DEFAULT;
+CREATE TABLE [FlightSeat] ([FlightId] smallint NOT NULL , [FlightSeatId] smallint NOT NULL , [FlightSeatLocation] nchar(1) NOT NULL , PRIMARY KEY([FlightId], [FlightSeatId]));
+
+ALTER TABLE [FlightSeat] ADD CONSTRAINT [IFLIGHTSEAT1] FOREIGN KEY ([FlightId]) REFERENCES [Flight] ([FlightId]);
 

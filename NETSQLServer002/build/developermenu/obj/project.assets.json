@@ -2894,6 +2894,24 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "gx00a1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx00a1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx00a1.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "viewattraction/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -8451,6 +8469,11 @@
       "path": "../gx0090/gx0090.csproj",
       "msbuildProject": "../gx0090/gx0090.csproj"
     },
+    "gx00a1/1.0.0": {
+      "type": "project",
+      "path": "../gx00a1/gx00a1.csproj",
+      "msbuildProject": "../gx00a1/gx00a1.csproj"
+    },
     "viewattraction/1.0.0": {
       "type": "project",
       "path": "../viewattraction/viewattraction.csproj",
@@ -8509,6 +8532,7 @@
       "gx0070 >= 1.0.0",
       "gx0080 >= 1.0.0",
       "gx0090 >= 1.0.0",
+      "gx00a1 >= 1.0.0",
       "viewattraction >= 1.0.0",
       "viewcountry >= 1.0.0",
       "viewcustomer >= 1.0.0",
@@ -8612,6 +8636,9 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0090\\gx0090.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx0090\\gx0090.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00a1\\gx00a1.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj"

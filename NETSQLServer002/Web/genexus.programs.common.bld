@@ -4,4 +4,5 @@ SoapParm.cs
 GxFullTextSearchReindexer.cs
 GxModelInfoProvider.cs
 @genexus.programs.sdt.bld
+gxdomainlocation.cs
 general\gxdomainpage.cs
