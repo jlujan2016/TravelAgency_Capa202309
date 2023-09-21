@@ -14,6 +14,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+		<ProjectReference Include=".\..\supplier\supplier.csproj" />
 		<ProjectReference Include=".\..\airline\airline.csproj" />
 		<ProjectReference Include=".\..\flight\flight.csproj" />
 		<ProjectReference Include=".\..\airport\airport.csproj" />
@@ -21,6 +22,7 @@
 		<ProjectReference Include=".\..\country\country.csproj" />
 		<ProjectReference Include=".\..\attraction\attraction.csproj" />
 		<ProjectReference Include=".\..\customer\customer.csproj" />
+		<ProjectReference Include=".\..\gx00d0\gx00d0.csproj" />
 		<ProjectReference Include=".\..\gx00c0\gx00c0.csproj" />
 		<ProjectReference Include=".\..\gx00b1\gx00b1.csproj" />
 		<ProjectReference Include=".\..\gx0090\gx0090.csproj" />

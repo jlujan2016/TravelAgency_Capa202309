@@ -2912,6 +2912,42 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "gx00d0/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx00d0.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx00d0.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "supplier/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.24.1]",
+          "GeneXus.PdfReportsCS.Core": "[1.24.1]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/supplier.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/supplier.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "viewattraction/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -8474,6 +8510,16 @@
       "path": "../gx00c0/gx00c0.csproj",
       "msbuildProject": "../gx00c0/gx00c0.csproj"
     },
+    "gx00d0/1.0.0": {
+      "type": "project",
+      "path": "../gx00d0/gx00d0.csproj",
+      "msbuildProject": "../gx00d0/gx00d0.csproj"
+    },
+    "supplier/1.0.0": {
+      "type": "project",
+      "path": "../supplier/supplier.csproj",
+      "msbuildProject": "../supplier/supplier.csproj"
+    },
     "viewattraction/1.0.0": {
       "type": "project",
       "path": "../viewattraction/viewattraction.csproj",
@@ -8533,6 +8579,8 @@
       "gx0090 >= 1.0.0",
       "gx00b1 >= 1.0.0",
       "gx00c0 >= 1.0.0",
+      "gx00d0 >= 1.0.0",
+      "supplier >= 1.0.0",
       "viewattraction >= 1.0.0",
       "viewcountry >= 1.0.0",
       "viewcustomer >= 1.0.0",
@@ -8639,6 +8687,12 @@
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00c0\\gx00c0.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00c0\\gx00c0.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00d0\\gx00d0.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\gx00d0\\gx00d0.csproj"
+            },
+            "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\supplier\\supplier.csproj": {
+              "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\supplier\\supplier.csproj"
             },
             "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj": {
               "projectPath": "C:\\KBs\\TravelAgency_Capa202309\\NETSQLServer002\\build\\viewattraction\\viewattraction.csproj"

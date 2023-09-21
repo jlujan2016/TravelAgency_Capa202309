@@ -1,2 +1,9 @@
-CREATE UNIQUE NONCLUSTERED INDEX [UATTRACTION] ON [Attraction] ([AttractionName] );
+ALTER TABLE [Attraction] ADD [SupplierId] smallint NOT NULL CONSTRAINT SupplierIdAttraction_DEFAULT DEFAULT convert(int, 0);
+ALTER TABLE [Attraction] DROP CONSTRAINT SupplierIdAttraction_DEFAULT;
+SET IDENTITY_INSERT [Supplier] ON;
+INSERT INTO [Supplier] ([SupplierId], [SupplierName], [SupplierAddress]) SELECT TOP 1 convert(int, 0), ' ', ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Supplier] WHERE SupplierId=convert(int, 0));
+SET IDENTITY_INSERT [Supplier] OFF;
+CREATE NONCLUSTERED INDEX [IATTRACTION3] ON [Attraction] ([SupplierId] );
+
+ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION3] FOREIGN KEY ([SupplierId]) REFERENCES [Supplier] ([SupplierId]);
 

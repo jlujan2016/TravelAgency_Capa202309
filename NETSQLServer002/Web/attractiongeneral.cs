@@ -588,6 +588,38 @@ namespace GeneXus.Programs {
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 form__cell", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+edtSupplierId_Internalname+"\"", "", "div");
+            /* Attribute/Variable Label */
+            GxWebStd.gx_label_element( context, edtSupplierId_Internalname, "Supplier Id", "col-sm-3 ReadonlyAttributeLabel", 1, true, "");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
+            /* Single line edit */
+            GxWebStd.gx_single_line_edit( context, edtSupplierId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A48SupplierId), 4, 0, ".", "")), StringUtil.LTrim( ((edtSupplierId_Enabled!=0) ? context.localUtil.Format( (decimal)(A48SupplierId), "ZZZ9") : context.localUtil.Format( (decimal)(A48SupplierId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+"", "'"+sPrefix+"'"+",false,"+"'"+""+"'", "", "", "", "", edtSupplierId_Jsonclick, 0, "ReadonlyAttribute", "", "", "", "", 1, edtSupplierId_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "Id", "end", false, "", "HLP_AttractionGeneral.htm");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 form__cell", "start", "top", "", "", "div");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+edtSupplierName_Internalname+"\"", "", "div");
+            /* Attribute/Variable Label */
+            GxWebStd.gx_label_element( context, edtSupplierName_Internalname, "Supplier Name", "col-sm-3 ReadonlyAttributeLabel", 1, true, "");
+            /* Div Control */
+            GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
+            /* Single line edit */
+            GxWebStd.gx_single_line_edit( context, edtSupplierName_Internalname, A49SupplierName, StringUtil.RTrim( context.localUtil.Format( A49SupplierName, "")), "", "'"+sPrefix+"'"+",false,"+"'"+""+"'", "", "", "", "", edtSupplierName_Jsonclick, 0, "ReadonlyAttribute", "", "", "", "", 1, edtSupplierName_Enabled, 0, "text", "", 40, "chr", 1, "row", 40, 0, 0, 0, 0, -1, -1, true, "Name", "start", true, "", "HLP_AttractionGeneral.htm");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
+            GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
@@ -897,6 +929,10 @@ namespace GeneXus.Programs {
                A40000AttractionPhoto_GXI = H000I2_A40000AttractionPhoto_GXI[0];
                AssignProp(sPrefix, false, imgAttractionPhoto_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( A13AttractionPhoto)) ? A40000AttractionPhoto_GXI : context.convertURL( context.PathToRelativeUrl( A13AttractionPhoto))), true);
                AssignProp(sPrefix, false, imgAttractionPhoto_Internalname, "SrcSet", context.GetImageSrcSet( A13AttractionPhoto), true);
+               A49SupplierName = H000I2_A49SupplierName[0];
+               AssignAttri(sPrefix, false, "A49SupplierName", A49SupplierName);
+               A48SupplierId = H000I2_A48SupplierId[0];
+               AssignAttri(sPrefix, false, "A48SupplierId", StringUtil.LTrimStr( (decimal)(A48SupplierId), 4, 0));
                A18AttractionAddress = H000I2_A18AttractionAddress[0];
                AssignAttri(sPrefix, false, "A18AttractionAddress", A18AttractionAddress);
                A12CategoryName = H000I2_A12CategoryName[0];
@@ -918,6 +954,8 @@ namespace GeneXus.Programs {
                AssignAttri(sPrefix, false, "A13AttractionPhoto", A13AttractionPhoto);
                AssignProp(sPrefix, false, imgAttractionPhoto_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( A13AttractionPhoto)) ? A40000AttractionPhoto_GXI : context.convertURL( context.PathToRelativeUrl( A13AttractionPhoto))), true);
                AssignProp(sPrefix, false, imgAttractionPhoto_Internalname, "SrcSet", context.GetImageSrcSet( A13AttractionPhoto), true);
+               A49SupplierName = H000I2_A49SupplierName[0];
+               AssignAttri(sPrefix, false, "A49SupplierName", A49SupplierName);
                A12CategoryName = H000I2_A12CategoryName[0];
                AssignAttri(sPrefix, false, "A12CategoryName", A12CategoryName);
                A10CountryName = H000I2_A10CountryName[0];
@@ -979,6 +1017,10 @@ namespace GeneXus.Programs {
             AssignAttri(sPrefix, false, "A12CategoryName", A12CategoryName);
             A18AttractionAddress = cgiGet( edtAttractionAddress_Internalname);
             AssignAttri(sPrefix, false, "A18AttractionAddress", A18AttractionAddress);
+            A48SupplierId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtSupplierId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+            AssignAttri(sPrefix, false, "A48SupplierId", StringUtil.LTrimStr( (decimal)(A48SupplierId), 4, 0));
+            A49SupplierName = cgiGet( edtSupplierName_Internalname);
+            AssignAttri(sPrefix, false, "A49SupplierName", A49SupplierName);
             A13AttractionPhoto = cgiGet( imgAttractionPhoto_Internalname);
             AssignAttri(sPrefix, false, "A13AttractionPhoto", A13AttractionPhoto);
             /* Read subfile selected row values. */
@@ -1261,7 +1303,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202391723575961", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392112492354", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1277,7 +1319,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("attractiongeneral.js", "?202391723575963", false, true);
+         context.AddJavascriptSource("attractiongeneral.js", "?202392112492354", false, true);
          /* End function include_jscripts */
       }
 
@@ -1299,6 +1341,8 @@ namespace GeneXus.Programs {
          edtCategoryId_Internalname = sPrefix+"CATEGORYID";
          edtCategoryName_Internalname = sPrefix+"CATEGORYNAME";
          edtAttractionAddress_Internalname = sPrefix+"ATTRACTIONADDRESS";
+         edtSupplierId_Internalname = sPrefix+"SUPPLIERID";
+         edtSupplierName_Internalname = sPrefix+"SUPPLIERNAME";
          divAttributestable_Internalname = sPrefix+"ATTRIBUTESTABLE";
          imgAttractionPhoto_Internalname = sPrefix+"ATTRACTIONPHOTO";
          divImagestable_Internalname = sPrefix+"IMAGESTABLE";
@@ -1320,6 +1364,10 @@ namespace GeneXus.Programs {
             }
          }
          init_default_properties( ) ;
+         edtSupplierName_Jsonclick = "";
+         edtSupplierName_Enabled = 0;
+         edtSupplierId_Jsonclick = "";
+         edtSupplierId_Enabled = 0;
          edtAttractionAddress_Enabled = 0;
          edtCategoryName_Jsonclick = "";
          edtCategoryName_Enabled = 0;
@@ -1368,6 +1416,8 @@ namespace GeneXus.Programs {
          setEventMetadata("VALID_CITYID",",oparms:[]}");
          setEventMetadata("VALID_CATEGORYID","{handler:'Valid_Categoryid',iparms:[]");
          setEventMetadata("VALID_CATEGORYID",",oparms:[]}");
+         setEventMetadata("VALID_SUPPLIERID","{handler:'Valid_Supplierid',iparms:[]");
+         setEventMetadata("VALID_SUPPLIERID",",oparms:[]}");
          return  ;
       }
 
@@ -1407,6 +1457,7 @@ namespace GeneXus.Programs {
          A15CityName = "";
          A12CategoryName = "";
          A18AttractionAddress = "";
+         A49SupplierName = "";
          A13AttractionPhoto = "";
          A40000AttractionPhoto_GXI = "";
          sImgUrl = "";
@@ -1419,6 +1470,8 @@ namespace GeneXus.Programs {
          scmdbuf = "";
          H000I2_A7AttractionId = new short[1] ;
          H000I2_A40000AttractionPhoto_GXI = new string[] {""} ;
+         H000I2_A49SupplierName = new string[] {""} ;
+         H000I2_A48SupplierId = new short[1] ;
          H000I2_A18AttractionAddress = new string[] {""} ;
          H000I2_A12CategoryName = new string[] {""} ;
          H000I2_A11CategoryId = new short[1] ;
@@ -1440,8 +1493,8 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.attractiongeneral__default(),
             new Object[][] {
                 new Object[] {
-               H000I2_A7AttractionId, H000I2_A40000AttractionPhoto_GXI, H000I2_A18AttractionAddress, H000I2_A12CategoryName, H000I2_A11CategoryId, H000I2_A15CityName, H000I2_A14CityId, H000I2_n14CityId, H000I2_A10CountryName, H000I2_A9CountryId,
-               H000I2_A8AttractionName, H000I2_A13AttractionPhoto
+               H000I2_A7AttractionId, H000I2_A40000AttractionPhoto_GXI, H000I2_A49SupplierName, H000I2_A48SupplierId, H000I2_A18AttractionAddress, H000I2_A12CategoryName, H000I2_A11CategoryId, H000I2_A15CityName, H000I2_A14CityId, H000I2_n14CityId,
+               H000I2_A10CountryName, H000I2_A9CountryId, H000I2_A8AttractionName, H000I2_A13AttractionPhoto
                }
             }
          );
@@ -1461,6 +1514,7 @@ namespace GeneXus.Programs {
       private short wbStart ;
       private short A14CityId ;
       private short A11CategoryId ;
+      private short A48SupplierId ;
       private short nDraw ;
       private short nDoneStart ;
       private short nDonePA ;
@@ -1476,6 +1530,8 @@ namespace GeneXus.Programs {
       private int edtCategoryId_Enabled ;
       private int edtCategoryName_Enabled ;
       private int edtAttractionAddress_Enabled ;
+      private int edtSupplierId_Enabled ;
+      private int edtSupplierName_Enabled ;
       private int idxLst ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
@@ -1515,6 +1571,10 @@ namespace GeneXus.Programs {
       private string edtCategoryName_Internalname ;
       private string edtCategoryName_Jsonclick ;
       private string edtAttractionAddress_Internalname ;
+      private string edtSupplierId_Internalname ;
+      private string edtSupplierId_Jsonclick ;
+      private string edtSupplierName_Internalname ;
+      private string edtSupplierName_Jsonclick ;
       private string divImagestable_Internalname ;
       private string sImgUrl ;
       private string imgAttractionPhoto_Internalname ;
@@ -1540,6 +1600,7 @@ namespace GeneXus.Programs {
       private string A15CityName ;
       private string A12CategoryName ;
       private string A18AttractionAddress ;
+      private string A49SupplierName ;
       private string A40000AttractionPhoto_GXI ;
       private string A13AttractionPhoto ;
       private GXProperties forbiddenHiddens ;
@@ -1548,6 +1609,8 @@ namespace GeneXus.Programs {
       private IDataStoreProvider pr_default ;
       private short[] H000I2_A7AttractionId ;
       private string[] H000I2_A40000AttractionPhoto_GXI ;
+      private string[] H000I2_A49SupplierName ;
+      private short[] H000I2_A48SupplierId ;
       private string[] H000I2_A18AttractionAddress ;
       private string[] H000I2_A12CategoryName ;
       private short[] H000I2_A11CategoryId ;
@@ -1586,7 +1649,7 @@ namespace GeneXus.Programs {
           new ParDef("@AttractionId",GXType.Int16,4,0)
           };
           def= new CursorDef[] {
-              new CursorDef("H000I2", "SELECT T1.[AttractionId], T1.[AttractionPhoto_GXI], T1.[AttractionAddress], T2.[CategoryName], T1.[CategoryId], T4.[CityName], T1.[CityId], T3.[CountryName], T1.[CountryId], T1.[AttractionName], T1.[AttractionPhoto] FROM ((([Attraction] T1 INNER JOIN [Category] T2 ON T2.[CategoryId] = T1.[CategoryId]) INNER JOIN [Country] T3 ON T3.[CountryId] = T1.[CountryId]) LEFT JOIN [CountryCity] T4 ON T4.[CountryId] = T1.[CountryId] AND T4.[CityId] = T1.[CityId]) WHERE T1.[AttractionId] = @AttractionId ORDER BY T1.[AttractionId] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH000I2,1, GxCacheFrequency.OFF ,true,true )
+              new CursorDef("H000I2", "SELECT T1.[AttractionId], T1.[AttractionPhoto_GXI], T2.[SupplierName], T1.[SupplierId], T1.[AttractionAddress], T3.[CategoryName], T1.[CategoryId], T5.[CityName], T1.[CityId], T4.[CountryName], T1.[CountryId], T1.[AttractionName], T1.[AttractionPhoto] FROM (((([Attraction] T1 INNER JOIN [Supplier] T2 ON T2.[SupplierId] = T1.[SupplierId]) INNER JOIN [Category] T3 ON T3.[CategoryId] = T1.[CategoryId]) INNER JOIN [Country] T4 ON T4.[CountryId] = T1.[CountryId]) LEFT JOIN [CountryCity] T5 ON T5.[CountryId] = T1.[CountryId] AND T5.[CityId] = T1.[CityId]) WHERE T1.[AttractionId] = @AttractionId ORDER BY T1.[AttractionId] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH000I2,1, GxCacheFrequency.OFF ,true,true )
           };
        }
     }
@@ -1601,15 +1664,17 @@ namespace GeneXus.Programs {
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getMultimediaUri(2);
                 ((string[]) buf[2])[0] = rslt.getVarchar(3);
-                ((string[]) buf[3])[0] = rslt.getVarchar(4);
-                ((short[]) buf[4])[0] = rslt.getShort(5);
+                ((short[]) buf[3])[0] = rslt.getShort(4);
+                ((string[]) buf[4])[0] = rslt.getVarchar(5);
                 ((string[]) buf[5])[0] = rslt.getVarchar(6);
                 ((short[]) buf[6])[0] = rslt.getShort(7);
-                ((bool[]) buf[7])[0] = rslt.wasNull(7);
-                ((string[]) buf[8])[0] = rslt.getVarchar(8);
-                ((short[]) buf[9])[0] = rslt.getShort(9);
+                ((string[]) buf[7])[0] = rslt.getVarchar(8);
+                ((short[]) buf[8])[0] = rslt.getShort(9);
+                ((bool[]) buf[9])[0] = rslt.wasNull(9);
                 ((string[]) buf[10])[0] = rslt.getVarchar(10);
-                ((string[]) buf[11])[0] = rslt.getMultimediaFile(11, rslt.getVarchar(2));
+                ((short[]) buf[11])[0] = rslt.getShort(11);
+                ((string[]) buf[12])[0] = rslt.getVarchar(12);
+                ((string[]) buf[13])[0] = rslt.getMultimediaFile(13, rslt.getVarchar(2));
                 return;
        }
     }

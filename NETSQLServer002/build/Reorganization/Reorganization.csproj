@@ -18,15 +18,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="GeneXus.dll" > 
-			<HintPath>$(WebBinDirectory)\GeneXus.dll</HintPath>
-		</Reference>
 
 
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Include = "$(WebDirectory)\gxrtctls.cs" />
 		<Compile Include = "$(WebDirectory)\reorg.cs" />
 		<Compile Include = "$(WebDirectory)\Reorganization.cs" />
 

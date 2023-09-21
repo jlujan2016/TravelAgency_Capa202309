@@ -26,6 +26,12 @@
     <ObjLink>airline.aspx</ObjLink>
   </Object>
   <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Supplier</ObjName>
+    <ObjDesc>Supplier</ObjDesc>
+    <ObjLink>supplier.aspx</ObjLink>
+  </Object>
+  <Object>
     <ObjCls>13</ObjCls>
     <ObjName>WWCustomer</ObjName>
     <ObjDesc>Customers</ObjDesc>

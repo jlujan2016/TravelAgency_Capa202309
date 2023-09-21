@@ -3,4 +3,5 @@ dir_subordinates_i(2,3,[ [ 5,[ 9 ] ] ]).
 dir_subordinates_i(2,5,[ [ 2,[ 9,14 ] ],[ 7,[ 9,14 ] ] ]).
 dir_subordinates_i(2,7,[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ]).
 dir_subordinates_i(2,4,[ [ 2,[ 11 ] ] ]).
+dir_subordinates_i(2,13,[ [ 2,[ 48 ] ] ]).
  
