@@ -25,4 +25,6 @@
 <EventName>Sidebarmenu.Itemclick</EventName></Event>
 <Event>
 <EventName>Sidebarmenu.Getstate</EventName></Event>
+<Event>
+<EventName>Refresh</EventName></Event>
 <Suggests></Suggests></ObjectSpec>

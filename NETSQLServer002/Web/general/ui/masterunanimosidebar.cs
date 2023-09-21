@@ -137,7 +137,7 @@ namespace GeneXus.Programs.general.ui {
          }
          context.AddJavascriptSource("Unanimo_chameleon/chameleon.js", "", false, true);
          context.AddJavascriptSource("UserControls/GeneXusUnanimo.SidebarRender.js", "", false, true);
-         context.AddJavascriptSource("general/ui/masterunanimosidebar.js", "?202392116113810", false, true);
+         context.AddJavascriptSource("general/ui/masterunanimosidebar.js", "?202392116524138", false, true);
          context.WriteHtmlTextNl( "</body>") ;
          context.WriteHtmlTextNl( "</html>") ;
          if ( context.isSpaRequest( ) )
@@ -360,6 +360,13 @@ namespace GeneXus.Programs.general.ui {
                            /* Execute user event: Load */
                            E11012 ();
                         }
+                        else if ( StringUtil.StrCmp(sEvt, "REFRESH_MPAGE") == 0 )
+                        {
+                           context.wbHandled = 1;
+                           dynload_actions( ) ;
+                           /* Execute user event: Refresh */
+                           E12012 ();
+                        }
                         else if ( StringUtil.StrCmp(sEvt, "ENTER_MPAGE") == 0 )
                         {
                            context.wbHandled = 1;
@@ -479,6 +486,8 @@ namespace GeneXus.Programs.general.ui {
          clear_multi_value_controls( ) ;
          if ( ShowMPWhenPopUp( ) || ! context.isPopUpObject( ) )
          {
+            /* Execute user event: Refresh */
+            E12012 ();
             gxdyncontrolsrefreshing = true;
             fix_multi_value_controls( ) ;
             gxdyncontrolsrefreshing = false;
@@ -546,6 +555,15 @@ namespace GeneXus.Programs.general.ui {
          AV5sidebarItems = GXt_objcol_SdtSidebarItems_SidebarItem1;
       }
 
+      protected void E12012( )
+      {
+         /* Refresh Routine */
+         returnInSub = false;
+         (getDataAreaObject() == null ? Form : getDataAreaObject().GetForm()).Headerrawhtml = "";
+         (getDataAreaObject() == null ? Form : getDataAreaObject().GetForm()).Headerrawhtml = "<link href=\"css/user_styles.css\" rel=\"stylesheet\" />";
+         /*  Sending Event outputs  */
+      }
+
       public override void setparameters( Object[] obj )
       {
          createObjects();
@@ -591,7 +609,7 @@ namespace GeneXus.Programs.general.ui {
          idxLst = 1;
          while ( idxLst <= (getDataAreaObject() == null ? Form : getDataAreaObject().GetForm()).Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)(getDataAreaObject() == null ? Form : getDataAreaObject().GetForm()).Jscriptsrc.Item(idxLst))), "?202392116113825", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)(getDataAreaObject() == null ? Form : getDataAreaObject().GetForm()).Jscriptsrc.Item(idxLst))), "?202392116524147", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -606,7 +624,7 @@ namespace GeneXus.Programs.general.ui {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("general/ui/masterunanimosidebar.js", "?202392116113825", false, true);
+         context.AddJavascriptSource("general/ui/masterunanimosidebar.js", "?202392116524148", false, true);
          context.AddJavascriptSource("Unanimo_chameleon/chameleon.js", "", false, true);
          context.AddJavascriptSource("UserControls/GeneXusUnanimo.SidebarRender.js", "", false, true);
          /* End function include_jscripts */
@@ -657,7 +675,7 @@ namespace GeneXus.Programs.general.ui {
       public override void InitializeDynEvents( )
       {
          setEventMetadata("REFRESH_MPAGE","{handler:'Refresh',iparms:[]");
-         setEventMetadata("REFRESH_MPAGE",",oparms:[]}");
+         setEventMetadata("REFRESH_MPAGE",",oparms:[{ctrl:'FORM_MPAGE',prop:'Headerrawhtml'}]}");
          return  ;
       }
 

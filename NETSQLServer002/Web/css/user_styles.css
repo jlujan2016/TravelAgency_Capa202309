@@ -1,0 +1,14 @@
+.HeaderContainer{
+    background-color: #0a0;
+    height: 60px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--colors_header-separator-bg);
+    margin: 0 -15px;
+    margin-bottom: var(--spacing_stack-xxl);
+
+}
+
+.ch-sidebar{
+    --menu-background-color:#070 ;
+}

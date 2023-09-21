@@ -161,7 +161,8 @@ break_i(2,nvg,1,[],[ [],[],[] ]).
 b_group_i(2,1,lit,0,1,1).
 b_group_i(2,2,lit,0,2,8).
 b_group_i(2,3,lit,0,9,13).
-b_group_i(2,4,lit,0,14,0).
+b_group_i(2,4,lit,0,14,22).
+b_group_i(2,5,lit,0,23,0).
  
 b_line_i(1,2,1,cmd,1,[ t('',146,1,0),t('Load',3,1,7) ]).
 b_line_i(3,2,2,cmd,1,[ t('',107,3,0),t([ t('Sidebarmenu',3,1,0),t('Title',3,1,0) ],29,1,0),t(=,10,1,0),t('"Unanimo"',3,1,0) ]).
@@ -180,6 +181,10 @@ b_line_i(16,2,4,cmd,1,[ t('',110,16,0) ]).
 b_line_i(17,2,4,cmd,1,[ t('',107,17,0),t([ t('Content',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"expandible-container"',3,1,0) ]).
 b_line_i(18,2,4,cmd,1,[ t('',111,18,0) ]).
 b_line_i(19,2,4,cmd,1,[ t('',147,19,0) ]).
+b_line_i(22,2,4,cmd,1,[ t('',146,22,0),t('Refresh',3,22,7) ]).
+b_line_i(23,2,5,cmd,1,[ t('',107,23,0),t([ t('Form',3,1,0),t('Headerrawhtml',3,1,0) ],29,1,0),t(=,10,1,0),t('''''',3,1,0) ]).
+b_line_i(24,2,5,cmd,1,[ t('',107,24,0),t([ t('Form',3,1,0),t('Headerrawhtml',3,1,0) ],29,1,0),t(=,10,1,0),t('''<link href="css/user_styles.css" rel="stylesheet" />''',3,1,0) ]).
+b_line_i(25,2,5,cmd,1,[ t('',147,25,0) ]).
  
  
  
@@ -776,6 +781,7 @@ struct_dt_elem_i([ 26,57,83 ],7,'JsonInclude',idJsonEmpty).
 sub_info_i(146,'Load',1,6,[ [],[ [ t('Sidebarmenu',3),t('Title',3) ],[ t('Sidebarmenu',3),t('Distancetotop',3) ],'Sidebaritems' ] ]).
 sub_info_i(146,[ t('Sidebarmenu',3,8,7),t('Itemclick',3,8,19) ],8,11,[ [ [ t('Sidebarmenu',3),t('Selecteditemtarget',3) ] ],[] ]).
 sub_info_i(146,[ t('Sidebarmenu',3,13,7),t('Getstate',3,13,19) ],13,19,[ [ [ t('Sidebarmenu',3),t('Iscollapsed',3) ] ],[ [ t('Content',3),t('Class',3) ] ] ]).
+sub_info_i(146,'Refresh',22,25,[ [],[ [ t('Form',3),t('Headerrawhtml',3) ] ] ]).
  
 pgm_parm_i(mnproc,1,'GENERAL\UI\SIDEBARITEMSDP',[ [ o(objectcollection('GeneXusUnanimo\SidebarItems.SidebarItem')),0,0,0 ] ],[ [ 'ReturnValue',out,[] ] ]).
  
