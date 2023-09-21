@@ -181,10 +181,11 @@ a_i(11,2,b,6,[],[ [],[ a(3,[ t(9,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' 
 a_i(12,2,b,8,[],[ [],[ a(3,[ t(14,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_cityid',23),t(')',4) ] ]).
 a_i(13,2,b,10,[],[ [],[ a(3,[ t(11,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_categoryid',23),t(')',4) ] ]).
 a_i(14,2,t,2,[],[ [ [ [],7,7 ] ],'IATTRACTION',[] ]).
-a_i(15,2,r,3,[],[ [ [ 2,9,9 ] ],'ICOUNTRY',[] ]).
-a_i(16,2,r,5,[],[ [ [ 2,9,9 ],[ 2,14,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(17,2,r,4,[],[ [ [ 2,11,11 ] ],'ICATEGORY',[] ]).
-a_i(18,2,f,'Pgmname',[],[ [],[ t('"Attraction"',3) ] ]).
+a_i(15,2,k,2,[],[ [ [ [],8,8 ] ],'UATTRACTION',[] ]).
+a_i(16,2,r,3,[],[ [ [ 2,9,9 ] ],'ICOUNTRY',[] ]).
+a_i(17,2,r,5,[],[ [ [ 2,9,9 ],[ 2,14,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(18,2,r,4,[],[ [ [ 2,11,11 ] ],'ICATEGORY',[] ]).
+a_i(19,2,f,'Pgmname',[],[ [],[ t('"Attraction"',3) ] ]).
  
 v_i(f,i,3,'Attractionid').
 v_i(f,o,3,7).
@@ -216,15 +217,18 @@ v_i(t,o,14,18).
 v_i(t,o,14,9).
 v_i(t,o,14,14).
 v_i(t,o,14,11).
-v_i(r,i,15,9).
-v_i(r,o,15,10).
+v_i(k,i,15,8).
+v_i(k,i,15,7).
+v_i(k,o,15,[]).
 v_i(r,i,16,9).
-v_i(r,i,16,14).
-v_i(r,o,16,15).
-v_i(r,i,17,11).
-v_i(r,o,17,12).
-v_i(f,i,18,[]).
-v_i(f,o,18,'Pgmname').
+v_i(r,o,16,10).
+v_i(r,i,17,9).
+v_i(r,i,17,14).
+v_i(r,o,17,15).
+v_i(r,i,18,11).
+v_i(r,o,18,12).
+v_i(f,i,19,[]).
+v_i(f,o,19,'Pgmname').
  
 act_info_i(3,[ [ 7 ] ]).
 act_info_i(5,[ [ 9 ] ]).
@@ -268,6 +272,7 @@ table_i(3,[ 'Country',[ 9,10 ],'Country','Country' ]).
 table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14,18 ],'Attraction','Attraction' ]).
  
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
+index_i(2,[ 'UATTRACTION',k,[ 8 ],'UAttraction' ]).
 index_i(3,[ 'ICOUNTRY',u,[ 9 ],'ICountry' ]).
 index_i(5,[ 'ICOUNTRYCITY',u,[ 9,14 ],'ICountryCity' ]).
 index_i(4,[ 'ICATEGORY',u,[ 11 ],'ICategory' ]).

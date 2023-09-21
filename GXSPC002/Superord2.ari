@@ -1,13 +1,6 @@
-dir_superordinates_i(2,12,[]).
-dir_superordinates_i(2,9,[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 12,[ 38 ] ] ]).
-dir_superordinates_i(2,508,[ [ 5,[ 9,14 ] ] ]).
-dir_superordinates_i(2,505,[ [ 5,[ 9,14 ] ] ]).
-dir_superordinates_i(2,509,[]).
-dir_superordinates_i(2,510,[ [ 3,[ 9 ] ] ]).
-dir_superordinates_i(2,506,[]).
-dir_superordinates_i(2,507,[ [ 3,[ 9 ] ] ]).
-dir_superordinates_i(2,11,[ [ 9,[ 19 ] ] ]).
-dir_superordinates_i(2,7,[ [ 5,[ 9,14 ] ] ]).
+dir_superordinates_i(2,2,[ [ 5,[ 9,14 ] ],[ 4,[ 11 ] ] ]).
 dir_superordinates_i(2,3,[]).
 dir_superordinates_i(2,5,[ [ 3,[ 9 ] ] ]).
+dir_superordinates_i(2,7,[ [ 5,[ 9,14 ] ] ]).
+dir_superordinates_i(2,4,[]).
  

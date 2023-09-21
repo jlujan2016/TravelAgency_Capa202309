@@ -9,7 +9,7 @@
 <ObjDesc>Attractions</ObjDesc>
 <ObjPgmName>WWAttraction</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
-<Result>nogenreq</Result>
+<Result>genreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <Generator>
@@ -64,7 +64,8 @@
 <Sp></Sp>
 <Token>=</Token>
 <Sp></Sp>
-<Token>1</Token></Condition></ConditionalOrder>
+<Token>1</Token></Condition>
+<IndexName>UATTRACTION</IndexName></ConditionalOrder>
 <ConditionalOrder>
 <Order>
 <Attribute>
@@ -196,6 +197,29 @@
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>'DoInsert'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>2</ObjId>
+<ObjName>Attraction</ObjName>
+<ObjPgmName>Attraction</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Expression>
+<Token>TrnMode</Token>
+<Token>.Insert</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Token>nullvalue(</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AttractionId</AttriName>
+<Description>Attraction Id</Description></Attribute>
+<Token>)</Token></Expression>
+<IF></IF></CALL></Event>
 <Event>
 <EventName>'PREPARETRANSACTION'</EventName>
 <EventType>Subrutine</EventType></Event>

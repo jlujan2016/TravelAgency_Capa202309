@@ -60,7 +60,7 @@ Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "gx00c0", "gx00c0\gx00c0.cspro
 EndProject
 Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "developermenu", "developermenu\developermenu.csproj", "{00000000-0000-0000-0000-000000000000}"
 EndProject
-Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{d5656dd3-e910-4b0a-b8a8-b89e063ff976}"
+Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{7a176207-e28e-4933-bef2-11a61710f1f1}"
 EndProject
 Project("9A19103F-16F7-4668-BE54-9A1E7A4F7556") = "GxWebStartup", "GxWebStartup\GxWebStartup.csproj", "E73F5F30-1979-4AE2-8204-400788D5B7D5"
 EndProject
@@ -190,10 +190,10 @@ Global
 	{00000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	{00000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	{00000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
-	{d5656dd3-e910-4b0a-b8a8-b89e063ff976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-	{d5656dd3-e910-4b0a-b8a8-b89e063ff976}.Debug|Any CPU.Build.0 = Debug|Any CPU
-	{d5656dd3-e910-4b0a-b8a8-b89e063ff976}.Release|Any CPU.ActiveCfg = Release|Any CPU
-	{d5656dd3-e910-4b0a-b8a8-b89e063ff976}.Release|Any CPU.Build.0 = Release|Any CPU
+	{7a176207-e28e-4933-bef2-11a61710f1f1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+	{7a176207-e28e-4933-bef2-11a61710f1f1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	{7a176207-e28e-4933-bef2-11a61710f1f1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	{7a176207-e28e-4933-bef2-11a61710f1f1}.Release|Any CPU.Build.0 = Release|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Debug|Any CPU.Build.0 = Debug|Any CPU
 	E73F5F30-1979-4AE2-8204-400788D5B7D5.Release|Any CPU.ActiveCfg = Release|Any CPU
