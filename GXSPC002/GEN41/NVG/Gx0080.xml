@@ -34,6 +34,8 @@
 <Event>
 <EventName>Lblairlinediscountpercentagefilter.Click</EventName></Event>
 <Event>
+<EventName>Lblairlineflightmostexpensiceidfilter.Click</EventName></Event>
+<Event>
 <EventName>Load</EventName>
 <LoadMethod>Auto</LoadMethod>
 <ImplicitForEach>
@@ -111,6 +113,27 @@
 <Variable>
 <VarId>Cairlinediscountpercentage</VarId>
 <VarName>&amp;cAirlineDiscountPercentage</VarName></Variable>
+<Token>.</Token>
+<Token>isempty(</Token>
+<Token>)</Token></Condition></ConditionalConstraint>
+<ConditionalConstraint>
+<Constraint>
+<Attribute>
+<AttriId>46</AttriId>
+<AttriName>AirlineFlightMostExpensiceId</AttriName>
+<Description>Airline Flight Most Expensice Id</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cairlineflightmostexpensiceid</VarId>
+<VarName>&amp;cAirlineFlightMostExpensiceId</VarName></Variable></Constraint>
+<Condition>
+<Token>not</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cairlineflightmostexpensiceid</VarId>
+<VarName>&amp;cAirlineFlightMostExpensiceId</VarName></Variable>
 <Token>.</Token>
 <Token>isempty(</Token>
 <Token>)</Token></Condition></ConditionalConstraint></NonOptimizedWhere>

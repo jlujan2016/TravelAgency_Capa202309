@@ -6,7 +6,7 @@
 <TableName>Attraction</TableName>
 <Description>Attraction</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>pk</ReorgCode>
+<ReorgCode>same</ReorgCode>
 <ReorgMsg>Attraction needs conversion</ReorgMsg>
 <ReorgAction>#</ReorgAction>
 <TableAttributes>
@@ -15,18 +15,7 @@
 <AttriId>7</AttriId>
 <AttriName>AttractionId</AttriName>
 <Description>Attraction Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>AttractionId</AttriName>
-<Description>Attraction Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -46,18 +35,7 @@
 <AttriId>8</AttriId>
 <AttriName>AttractionName</AttriName>
 <Description>Attraction Name</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>8</AttriId>
-<AttriName>AttractionName</AttriName>
-<Description>Attraction Name</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>40</Presicion>
@@ -79,18 +57,7 @@
 <AttriId>9</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>9</AttriId>
-<AttriName>CountryId</AttriName>
-<Description>Country Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -109,18 +76,7 @@
 <AttriId>11</AttriId>
 <AttriName>CategoryId</AttriName>
 <Description>Category Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>11</AttriId>
-<AttriName>CategoryId</AttriName>
-<Description>Category Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -139,18 +95,7 @@
 <AttriId>13</AttriId>
 <AttriName>AttractionPhoto</AttriName>
 <Description>Attraction Photo</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>13</AttriId>
-<AttriName>AttractionPhoto</AttriName>
-<Description>Attraction Photo</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>B</DataType>
 <Presicion>1024</Presicion>
@@ -169,18 +114,7 @@
 <AttriId>40000</AttriId>
 <AttriName>AttractionPhoto_GXI</AttriName>
 <Description>AttractionPhoto_GXI</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>40000</AttriId>
-<AttriName>AttractionPhoto.Uri  </AttriName>
-<Description></Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>2048</Presicion>
@@ -199,18 +133,7 @@
 <AttriId>14</AttriId>
 <AttriName>CityId</AttriName>
 <Description>City Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>14</AttriId>
-<AttriName>CityId</AttriName>
-<Description>City Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -229,9 +152,7 @@
 <AttriId>18</AttriId>
 <AttriName>AttractionAddress</AttriName>
 <Description>Attraction Address</Description>
-<TakesValueFrom>
-<FromValue>
-<Token>' '</Token></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>1024</Presicion>
@@ -248,23 +169,9 @@
 <Value>No</Value></Property>
 <Property>
 <Name>NLS</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriChangeType>ni</AttriChangeType></Attribute></AttrisInTable>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
-<NavigationTree>
-<Table>
-<TableId>2</TableId>
-<TableName>Attraction</TableName>
-<Description>Attraction</Description>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>AttractionId</AttriName>
-<Description>Attraction Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -300,7 +207,18 @@
 <AttriName>CityId</AttriName>
 <Description>City Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>No</Clustered></Index></Indices></TableIndices>
+<Clustered>No</Clustered></Index></Indices>
+<NewIndices>
+<Index>
+<IndexName>UATTRACTION</IndexName>
+<IndexType>k</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></NewIndices></TableIndices>
 <FKConstraints>
 <FKConstraint>
 <ChangeType>none</ChangeType>
@@ -340,19 +258,18 @@
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>ALTER TABLE [Attraction] ADD [AttractionAddress] nvarchar(1024) NOT NULL CONSTRAINT AttractionAddressAttraction_DEFAULT DEFAULT ''</Statement>
-<Statement>ALTER TABLE [Attraction] DROP CONSTRAINT AttractionAddressAttraction_DEFAULT</Statement></Statements>
+<Statement>CREATE UNIQUE NONCLUSTERED INDEX [UATTRACTION] ON [Attraction] ([AttractionName] )</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings>
 <Warning>
-<MsgCode>rgz0007</MsgCode>
+<MsgCode>rgz0020</MsgCode>
 <Message>
-<Token>Attribute </Token>
+<Token>Reorganization may fail if there are duplicate values for </Token>
 <Attribute>
-<AttriId>18</AttriId>
-<AttriName>AttractionAddress</AttriName>
-<Description>Attraction Address</Description></Attribute>
-<Token> does not allow nulls and does not have an Initial Value. An empty default value will be used.</Token></Message></Warning></Warnings>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute>
+<Token>.</Token></Message></Warning></Warnings>
 <Errors></Errors>
 <Information>
 <InfoMsg>
@@ -362,9 +279,7 @@
 <AdditionalInfo>
 <Title>The following operations are not backward compatible:</Title>
 <Info>
-<Token>Add not null</Token>
-<Token>attribute</Token>
-<Attribute>
-<AttriId>18</AttriId>
-<AttriName>AttractionAddress</AttriName>
-<Description>Attraction Address</Description></Attribute></Info></AdditionalInfo></InfoMsg></Information></ReorgSpec>
+<Token>Add </Token>
+<Token>unique</Token>
+<Token>constraint</Token>
+<Token>UATTRACTION</Token></Info></AdditionalInfo></InfoMsg></Information></ReorgSpec>

@@ -53,7 +53,7 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_12") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_13") == 0 )
          {
             A19FlightId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
@@ -63,10 +63,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_12( A19FlightId) ;
+            gxLoad_13( A19FlightId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
          {
             A25FlightArrivalAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalAirportId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A25FlightArrivalAirportId", StringUtil.LTrimStr( (decimal)(A25FlightArrivalAirportId), 4, 0));
@@ -76,10 +76,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_6( A25FlightArrivalAirportId) ;
+            gxLoad_7( A25FlightArrivalAirportId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
          {
             A31FlightArrivalCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
@@ -89,10 +89,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_8( A31FlightArrivalCountryId) ;
+            gxLoad_9( A31FlightArrivalCountryId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_10") == 0 )
          {
             A31FlightArrivalCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightArrivalCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A31FlightArrivalCountryId", StringUtil.LTrimStr( (decimal)(A31FlightArrivalCountryId), 4, 0));
@@ -104,10 +104,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_9( A31FlightArrivalCountryId, A33FlightArrivalCityId) ;
+            gxLoad_10( A31FlightArrivalCountryId, A33FlightArrivalCityId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
          {
             A24FlightDepartureAirportId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureAirportId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A24FlightDepartureAirportId", StringUtil.LTrimStr( (decimal)(A24FlightDepartureAirportId), 4, 0));
@@ -117,10 +117,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_7( A24FlightDepartureAirportId) ;
+            gxLoad_8( A24FlightDepartureAirportId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_10") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_11") == 0 )
          {
             A27FlightDepartureCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
@@ -130,10 +130,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_10( A27FlightDepartureCountryId) ;
+            gxLoad_11( A27FlightDepartureCountryId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_11") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_12") == 0 )
          {
             A27FlightDepartureCountryId = (short)(Math.Round(NumberUtil.Val( GetPar( "FlightDepartureCountryId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A27FlightDepartureCountryId", StringUtil.LTrimStr( (decimal)(A27FlightDepartureCountryId), 4, 0));
@@ -145,10 +145,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_11( A27FlightDepartureCountryId, A29FlightDepartureCityId) ;
+            gxLoad_12( A27FlightDepartureCountryId, A29FlightDepartureCityId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_5") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
          {
             A38AirlineId = (short)(Math.Round(NumberUtil.Val( GetPar( "AirlineId"), "."), 18, MidpointRounding.ToEven));
             n38AirlineId = false;
@@ -159,7 +159,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_5( A38AirlineId) ;
+            gxLoad_6( A38AirlineId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -1430,6 +1430,11 @@ namespace GeneXus.Programs {
             n45FlightCapacity = false;
             AssignAttri("", false, "A45FlightCapacity", StringUtil.LTrimStr( (decimal)(A45FlightCapacity), 4, 0));
          }
+         if ( ( A45FlightCapacity < 4 ) && ( A45FlightCapacity > 0 ) )
+         {
+            GX_msglist.addItem("No se puede registrar menos de 4 asientos", 1, "");
+            AnyError = 1;
+         }
          /* End of After( level) rules */
       }
 
@@ -1439,7 +1444,7 @@ namespace GeneXus.Programs {
 
       protected void ZM089( short GX_JID )
       {
-         if ( ( GX_JID == 4 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 5 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -1458,7 +1463,7 @@ namespace GeneXus.Programs {
                Z24FlightDepartureAirportId = A24FlightDepartureAirportId;
             }
          }
-         if ( GX_JID == -4 )
+         if ( GX_JID == -5 )
          {
             Z19FlightId = A19FlightId;
             Z35FlightPrice = A35FlightPrice;
@@ -1486,7 +1491,7 @@ namespace GeneXus.Programs {
       {
          imgprompt_25_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0070.aspx"+"',["+"{Ctrl:gx.dom.el('"+"FLIGHTARRIVALAIRPORTID"+"'), id:'"+"FLIGHTARRIVALAIRPORTID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
          imgprompt_24_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0070.aspx"+"',["+"{Ctrl:gx.dom.el('"+"FLIGHTDEPARTUREAIRPORTID"+"'), id:'"+"FLIGHTDEPARTUREAIRPORTID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
-         imgprompt_38_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0080.aspx"+"',["+"{Ctrl:gx.dom.el('"+"AIRLINEID"+"'), id:'"+"AIRLINEID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
+         imgprompt_38_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx00c0.aspx"+"',["+"{Ctrl:gx.dom.el('"+"AIRLINEID"+"'), id:'"+"AIRLINEID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
       }
 
       protected void standaloneModal( )
@@ -1558,7 +1563,7 @@ namespace GeneXus.Programs {
             A45FlightCapacity = T000816_A45FlightCapacity[0];
             n45FlightCapacity = T000816_n45FlightCapacity[0];
             AssignAttri("", false, "A45FlightCapacity", StringUtil.LTrimStr( (decimal)(A45FlightCapacity), 4, 0));
-            ZM089( -4) ;
+            ZM089( -5) ;
          }
          pr_default.close(12);
          OnLoadActions089( ) ;
@@ -1718,7 +1723,7 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void gxLoad_12( short A19FlightId )
+      protected void gxLoad_13( short A19FlightId )
       {
          /* Using cursor T000818 */
          pr_default.execute(13, new Object[] {A19FlightId});
@@ -1747,7 +1752,7 @@ namespace GeneXus.Programs {
          pr_default.close(13);
       }
 
-      protected void gxLoad_6( short A25FlightArrivalAirportId )
+      protected void gxLoad_7( short A25FlightArrivalAirportId )
       {
          /* Using cursor T000819 */
          pr_default.execute(14, new Object[] {A25FlightArrivalAirportId});
@@ -1777,7 +1782,7 @@ namespace GeneXus.Programs {
          pr_default.close(14);
       }
 
-      protected void gxLoad_8( short A31FlightArrivalCountryId )
+      protected void gxLoad_9( short A31FlightArrivalCountryId )
       {
          /* Using cursor T000820 */
          pr_default.execute(15, new Object[] {A31FlightArrivalCountryId});
@@ -1801,8 +1806,8 @@ namespace GeneXus.Programs {
          pr_default.close(15);
       }
 
-      protected void gxLoad_9( short A31FlightArrivalCountryId ,
-                               short A33FlightArrivalCityId )
+      protected void gxLoad_10( short A31FlightArrivalCountryId ,
+                                short A33FlightArrivalCityId )
       {
          /* Using cursor T000821 */
          pr_default.execute(16, new Object[] {A31FlightArrivalCountryId, A33FlightArrivalCityId});
@@ -1826,7 +1831,7 @@ namespace GeneXus.Programs {
          pr_default.close(16);
       }
 
-      protected void gxLoad_7( short A24FlightDepartureAirportId )
+      protected void gxLoad_8( short A24FlightDepartureAirportId )
       {
          /* Using cursor T000822 */
          pr_default.execute(17, new Object[] {A24FlightDepartureAirportId});
@@ -1856,7 +1861,7 @@ namespace GeneXus.Programs {
          pr_default.close(17);
       }
 
-      protected void gxLoad_10( short A27FlightDepartureCountryId )
+      protected void gxLoad_11( short A27FlightDepartureCountryId )
       {
          /* Using cursor T000823 */
          pr_default.execute(18, new Object[] {A27FlightDepartureCountryId});
@@ -1880,7 +1885,7 @@ namespace GeneXus.Programs {
          pr_default.close(18);
       }
 
-      protected void gxLoad_11( short A27FlightDepartureCountryId ,
+      protected void gxLoad_12( short A27FlightDepartureCountryId ,
                                 short A29FlightDepartureCityId )
       {
          /* Using cursor T000824 */
@@ -1905,7 +1910,7 @@ namespace GeneXus.Programs {
          pr_default.close(19);
       }
 
-      protected void gxLoad_5( short A38AirlineId )
+      protected void gxLoad_6( short A38AirlineId )
       {
          /* Using cursor T000825 */
          pr_default.execute(20, new Object[] {n38AirlineId, A38AirlineId});
@@ -1957,7 +1962,7 @@ namespace GeneXus.Programs {
          pr_default.execute(4, new Object[] {A19FlightId});
          if ( (pr_default.getStatus(4) != 101) )
          {
-            ZM089( 4) ;
+            ZM089( 5) ;
             RcdFound9 = 1;
             A19FlightId = T00087_A19FlightId[0];
             AssignAttri("", false, "A19FlightId", StringUtil.LTrimStr( (decimal)(A19FlightId), 4, 0));
@@ -2699,6 +2704,11 @@ namespace GeneXus.Programs {
             n45FlightCapacity = false;
             AssignAttri("", false, "A45FlightCapacity", StringUtil.LTrimStr( (decimal)(A45FlightCapacity), 4, 0));
          }
+         if ( ( A45FlightCapacity < 4 ) && ( A45FlightCapacity > 0 ) )
+         {
+            GX_msglist.addItem("No se puede registrar menos de 4 asientos", 1, "");
+            AnyError = 1;
+         }
          /* End of After( level) rules */
          InitAll0811( ) ;
          if ( AnyError != 0 )
@@ -2886,7 +2896,7 @@ namespace GeneXus.Programs {
 
       protected void ZM0811( short GX_JID )
       {
-         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -2897,7 +2907,7 @@ namespace GeneXus.Programs {
                Z43FlightSeatLocation = A43FlightSeatLocation;
             }
          }
-         if ( GX_JID == -13 )
+         if ( GX_JID == -14 )
          {
             Z19FlightId = A19FlightId;
             Z42FlightSeatId = A42FlightSeatId;
@@ -2942,7 +2952,7 @@ namespace GeneXus.Programs {
          {
             RcdFound11 = 1;
             A43FlightSeatLocation = T000842_A43FlightSeatLocation[0];
-            ZM0811( -13) ;
+            ZM0811( -14) ;
          }
          pr_default.close(36);
          OnLoadActions0811( ) ;
@@ -3004,7 +3014,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A19FlightId, A42FlightSeatId, A44FlightSeatChar});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0811( 13) ;
+            ZM0811( 14) ;
             RcdFound11 = 1;
             InitializeNonKey0811( ) ;
             A42FlightSeatId = T00083_A42FlightSeatId[0];
@@ -3774,7 +3784,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392016271271", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392111364226", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3790,7 +3800,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("flight.js", "?202392016271271", false, true);
+         context.AddJavascriptSource("flight.js", "?202392111364226", false, true);
          /* End function include_jscripts */
       }
 
@@ -4268,6 +4278,8 @@ namespace GeneXus.Programs {
          setEventMetadata("VALID_AIRLINEID",",oparms:[{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'A37FlightFinalPrice',fld:'FLIGHTFINALPRICE',pic:'ZZZ9.99'}]}");
          setEventMetadata("VALID_AIRLINEDISCOUNTPERCENTAGE","{handler:'Valid_Airlinediscountpercentage',iparms:[]");
          setEventMetadata("VALID_AIRLINEDISCOUNTPERCENTAGE",",oparms:[]}");
+         setEventMetadata("VALID_FLIGHTCAPACITY","{handler:'Valid_Flightcapacity',iparms:[]");
+         setEventMetadata("VALID_FLIGHTCAPACITY",",oparms:[]}");
          setEventMetadata("VALID_FLIGHTSEATID","{handler:'Valid_Flightseatid',iparms:[]");
          setEventMetadata("VALID_FLIGHTSEATID",",oparms:[]}");
          setEventMetadata("VALID_FLIGHTSEATCHAR","{handler:'Valid_Flightseatchar',iparms:[]");

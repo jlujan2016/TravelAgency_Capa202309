@@ -306,7 +306,7 @@ namespace GeneXus.Programs {
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 29,'',false,'',0)\"";
          ClassString = "Button button-secondary";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Select", bttBtn_select_Jsonclick, 4, "Select", "", StyleString, ClassString, bttBtn_select_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "gx.popup.openPrompt('"+"gx0080.aspx"+"',["+"{Ctrl:gx.dom.el('"+"AIRLINEID"+"'), id:'"+"AIRLINEID"+"'"+",IOType:'out',isKey:true,isLastKey:true}"+"],"+"null"+","+"'', false"+","+"true"+");"+"return false;", 2, "HLP_Airline.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Select", bttBtn_select_Jsonclick, 4, "Select", "", StyleString, ClassString, bttBtn_select_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "gx.popup.openPrompt('"+"gx00c0.aspx"+"',["+"{Ctrl:gx.dom.el('"+"AIRLINEID"+"'), id:'"+"AIRLINEID"+"'"+",IOType:'out',isKey:true,isLastKey:true}"+"],"+"null"+","+"'', false"+","+"true"+");"+"return false;", 2, "HLP_Airline.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -363,6 +363,23 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 form__cell", "start", "top", "", "", "div");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+edtAirlineFlightMostExpensiveId_Internalname+"\"", "", "div");
+         /* Attribute/Variable Label */
+         GxWebStd.gx_label_element( context, edtAirlineFlightMostExpensiveId_Internalname, "Expensive Id", "col-sm-3 AttributeLabel", 1, true, "");
+         /* Div Control */
+         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
+         /* Single line edit */
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 49,'',false,'',0)\"";
+         GxWebStd.gx_single_line_edit( context, edtAirlineFlightMostExpensiveId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0, ".", "")), StringUtil.LTrim( ((edtAirlineFlightMostExpensiveId_Enabled!=0) ? context.localUtil.Format( (decimal)(A47AirlineFlightMostExpensiveId), "ZZZ9") : context.localUtil.Format( (decimal)(A47AirlineFlightMostExpensiveId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(this,49);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtAirlineFlightMostExpensiveId_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtAirlineFlightMostExpensiveId_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "Id", "end", false, "", "HLP_Airline.htm");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
+         GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -374,21 +391,21 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-action-group", "start", "top", " "+"data-gx-actiongroup-type=\"toolbar\""+" ", "", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 49,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 54,'',false,'',0)\"";
          ClassString = "Button button-primary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", "Confirm", bttBtn_enter_Jsonclick, 5, "Confirm", "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Airline.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 51,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 56,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_cancel_Internalname, "", "Cancel", bttBtn_cancel_Jsonclick, 1, "Cancel", "", StyleString, ClassString, bttBtn_cancel_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ECANCEL."+"'", TempTags, "", context.GetButtonType( ), "HLP_Airline.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 53,'',false,'',0)\"";
+         TempTags = "  onfocus=\"gx.evt.onfocus(this, 58,'',false,'',0)\"";
          ClassString = "Button button-tertiary";
          StyleString = "";
          GxWebStd.gx_button_ctrl( context, bttBtn_delete_Internalname, "", "Delete", bttBtn_delete_Jsonclick, 5, "Delete", "", StyleString, ClassString, bttBtn_delete_Visible, bttBtn_delete_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EDELETE."+"'", TempTags, "", context.GetButtonType( ), "HLP_Airline.htm");
@@ -433,6 +450,7 @@ namespace GeneXus.Programs {
             Z38AirlineId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z38AirlineId"), ".", ","), 18, MidpointRounding.ToEven));
             Z39AirlineName = cgiGet( "Z39AirlineName");
             Z40AirlineDiscountPercentage = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z40AirlineDiscountPercentage"), ".", ","), 18, MidpointRounding.ToEven));
+            Z47AirlineFlightMostExpensiveId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z47AirlineFlightMostExpensiveId"), ".", ","), 18, MidpointRounding.ToEven));
             IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ".", ","), 18, MidpointRounding.ToEven));
             IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ".", ","), 18, MidpointRounding.ToEven));
             Gx_mode = cgiGet( "Mode");
@@ -445,11 +463,13 @@ namespace GeneXus.Programs {
                AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                wbErr = true;
                A38AirlineId = 0;
+               n38AirlineId = false;
                AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
             }
             else
             {
                A38AirlineId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtAirlineId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+               n38AirlineId = false;
                AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
             }
             A39AirlineName = cgiGet( edtAirlineName_Internalname);
@@ -469,6 +489,21 @@ namespace GeneXus.Programs {
                A40AirlineDiscountPercentage = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtAirlineDiscountPercentage_Internalname), ".", ","), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
             }
+            if ( ( ( context.localUtil.CToN( cgiGet( edtAirlineFlightMostExpensiveId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtAirlineFlightMostExpensiveId_Internalname), ".", ",") > Convert.ToDecimal( 9999 )) ) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "AIRLINEFLIGHTMOSTEXPENSIVEID");
+               AnyError = 1;
+               GX_FocusControl = edtAirlineFlightMostExpensiveId_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+               wbErr = true;
+               A47AirlineFlightMostExpensiveId = 0;
+               AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrimStr( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0));
+            }
+            else
+            {
+               A47AirlineFlightMostExpensiveId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtAirlineFlightMostExpensiveId_Internalname), ".", ","), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrimStr( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0));
+            }
             /* Read subfile selected row values. */
             /* Read hidden variables. */
             GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
@@ -482,6 +517,7 @@ namespace GeneXus.Programs {
                Gx_mode = "DSP";
                AssignAttri("", false, "Gx_mode", Gx_mode);
                A38AirlineId = (short)(Math.Round(NumberUtil.Val( GetPar( "AirlineId"), "."), 18, MidpointRounding.ToEven));
+               n38AirlineId = false;
                AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
                getEqualNoModal( ) ;
                Gx_mode = "DSP";
@@ -584,7 +620,7 @@ namespace GeneXus.Programs {
             if ( IsIns( )  )
             {
                /* Clear variables for new insertion. */
-               InitAll078( ) ;
+               InitAll0912( ) ;
                standaloneNotModal( ) ;
                standaloneModal( ) ;
             }
@@ -632,7 +668,7 @@ namespace GeneXus.Programs {
             bttBtn_enter_Visible = 0;
             AssignProp("", false, bttBtn_enter_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Visible), 5, 0), true);
          }
-         DisableAttributes078( ) ;
+         DisableAttributes0912( ) ;
       }
 
       protected void set_caption( )
@@ -650,23 +686,25 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void ResetCaption070( )
+      protected void ResetCaption090( )
       {
       }
 
-      protected void ZM078( short GX_JID )
+      protected void ZM0912( short GX_JID )
       {
          if ( ( GX_JID == 1 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
-               Z39AirlineName = T00073_A39AirlineName[0];
-               Z40AirlineDiscountPercentage = T00073_A40AirlineDiscountPercentage[0];
+               Z39AirlineName = T00093_A39AirlineName[0];
+               Z40AirlineDiscountPercentage = T00093_A40AirlineDiscountPercentage[0];
+               Z47AirlineFlightMostExpensiveId = T00093_A47AirlineFlightMostExpensiveId[0];
             }
             else
             {
                Z39AirlineName = A39AirlineName;
                Z40AirlineDiscountPercentage = A40AirlineDiscountPercentage;
+               Z47AirlineFlightMostExpensiveId = A47AirlineFlightMostExpensiveId;
             }
          }
          if ( GX_JID == -1 )
@@ -674,6 +712,7 @@ namespace GeneXus.Programs {
             Z38AirlineId = A38AirlineId;
             Z39AirlineName = A39AirlineName;
             Z40AirlineDiscountPercentage = A40AirlineDiscountPercentage;
+            Z47AirlineFlightMostExpensiveId = A47AirlineFlightMostExpensiveId;
          }
       }
 
@@ -705,35 +744,37 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void Load078( )
+      protected void Load0912( )
       {
-         /* Using cursor T00074 */
-         pr_default.execute(2, new Object[] {A38AirlineId});
+         /* Using cursor T00094 */
+         pr_default.execute(2, new Object[] {n38AirlineId, A38AirlineId});
          if ( (pr_default.getStatus(2) != 101) )
          {
-            RcdFound8 = 1;
-            A39AirlineName = T00074_A39AirlineName[0];
+            RcdFound12 = 1;
+            A39AirlineName = T00094_A39AirlineName[0];
             AssignAttri("", false, "A39AirlineName", A39AirlineName);
-            A40AirlineDiscountPercentage = T00074_A40AirlineDiscountPercentage[0];
+            A40AirlineDiscountPercentage = T00094_A40AirlineDiscountPercentage[0];
             AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
-            ZM078( -1) ;
+            A47AirlineFlightMostExpensiveId = T00094_A47AirlineFlightMostExpensiveId[0];
+            AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrimStr( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0));
+            ZM0912( -1) ;
          }
          pr_default.close(2);
-         OnLoadActions078( ) ;
+         OnLoadActions0912( ) ;
       }
 
-      protected void OnLoadActions078( )
+      protected void OnLoadActions0912( )
       {
       }
 
-      protected void CheckExtendedTable078( )
+      protected void CheckExtendedTable0912( )
       {
-         nIsDirty_8 = 0;
+         nIsDirty_12 = 0;
          Gx_BScreen = 1;
          standaloneModal( ) ;
       }
 
-      protected void CloseExtendedTableCursors078( )
+      protected void CloseExtendedTableCursors0912( )
       {
       }
 
@@ -741,58 +782,61 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void GetKey078( )
+      protected void GetKey0912( )
       {
-         /* Using cursor T00075 */
-         pr_default.execute(3, new Object[] {A38AirlineId});
+         /* Using cursor T00095 */
+         pr_default.execute(3, new Object[] {n38AirlineId, A38AirlineId});
          if ( (pr_default.getStatus(3) != 101) )
          {
-            RcdFound8 = 1;
+            RcdFound12 = 1;
          }
          else
          {
-            RcdFound8 = 0;
+            RcdFound12 = 0;
          }
          pr_default.close(3);
       }
 
       protected void getByPrimaryKey( )
       {
-         /* Using cursor T00073 */
-         pr_default.execute(1, new Object[] {A38AirlineId});
+         /* Using cursor T00093 */
+         pr_default.execute(1, new Object[] {n38AirlineId, A38AirlineId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM078( 1) ;
-            RcdFound8 = 1;
-            A38AirlineId = T00073_A38AirlineId[0];
+            ZM0912( 1) ;
+            RcdFound12 = 1;
+            A38AirlineId = T00093_A38AirlineId[0];
+            n38AirlineId = T00093_n38AirlineId[0];
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-            A39AirlineName = T00073_A39AirlineName[0];
+            A39AirlineName = T00093_A39AirlineName[0];
             AssignAttri("", false, "A39AirlineName", A39AirlineName);
-            A40AirlineDiscountPercentage = T00073_A40AirlineDiscountPercentage[0];
+            A40AirlineDiscountPercentage = T00093_A40AirlineDiscountPercentage[0];
             AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+            A47AirlineFlightMostExpensiveId = T00093_A47AirlineFlightMostExpensiveId[0];
+            AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrimStr( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0));
             Z38AirlineId = A38AirlineId;
-            sMode8 = Gx_mode;
+            sMode12 = Gx_mode;
             Gx_mode = "DSP";
             AssignAttri("", false, "Gx_mode", Gx_mode);
             standaloneModal( ) ;
-            Load078( ) ;
+            Load0912( ) ;
             if ( AnyError == 1 )
             {
-               RcdFound8 = 0;
-               InitializeNonKey078( ) ;
+               RcdFound12 = 0;
+               InitializeNonKey0912( ) ;
             }
-            Gx_mode = sMode8;
+            Gx_mode = sMode12;
             AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          else
          {
-            RcdFound8 = 0;
-            InitializeNonKey078( ) ;
-            sMode8 = Gx_mode;
+            RcdFound12 = 0;
+            InitializeNonKey0912( ) ;
+            sMode12 = Gx_mode;
             Gx_mode = "DSP";
             AssignAttri("", false, "Gx_mode", Gx_mode);
             standaloneModal( ) ;
-            Gx_mode = sMode8;
+            Gx_mode = sMode12;
             AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          pr_default.close(1);
@@ -800,8 +844,8 @@ namespace GeneXus.Programs {
 
       protected void getEqualNoModal( )
       {
-         GetKey078( ) ;
-         if ( RcdFound8 == 0 )
+         GetKey0912( ) ;
+         if ( RcdFound12 == 0 )
          {
             Gx_mode = "INS";
             AssignAttri("", false, "Gx_mode", Gx_mode);
@@ -816,20 +860,21 @@ namespace GeneXus.Programs {
 
       protected void move_next( )
       {
-         RcdFound8 = 0;
-         /* Using cursor T00076 */
-         pr_default.execute(4, new Object[] {A38AirlineId});
+         RcdFound12 = 0;
+         /* Using cursor T00096 */
+         pr_default.execute(4, new Object[] {n38AirlineId, A38AirlineId});
          if ( (pr_default.getStatus(4) != 101) )
          {
-            while ( (pr_default.getStatus(4) != 101) && ( ( T00076_A38AirlineId[0] < A38AirlineId ) ) )
+            while ( (pr_default.getStatus(4) != 101) && ( ( T00096_A38AirlineId[0] < A38AirlineId ) ) )
             {
                pr_default.readNext(4);
             }
-            if ( (pr_default.getStatus(4) != 101) && ( ( T00076_A38AirlineId[0] > A38AirlineId ) ) )
+            if ( (pr_default.getStatus(4) != 101) && ( ( T00096_A38AirlineId[0] > A38AirlineId ) ) )
             {
-               A38AirlineId = T00076_A38AirlineId[0];
+               A38AirlineId = T00096_A38AirlineId[0];
+               n38AirlineId = T00096_n38AirlineId[0];
                AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-               RcdFound8 = 1;
+               RcdFound12 = 1;
             }
          }
          pr_default.close(4);
@@ -837,20 +882,21 @@ namespace GeneXus.Programs {
 
       protected void move_previous( )
       {
-         RcdFound8 = 0;
-         /* Using cursor T00077 */
-         pr_default.execute(5, new Object[] {A38AirlineId});
+         RcdFound12 = 0;
+         /* Using cursor T00097 */
+         pr_default.execute(5, new Object[] {n38AirlineId, A38AirlineId});
          if ( (pr_default.getStatus(5) != 101) )
          {
-            while ( (pr_default.getStatus(5) != 101) && ( ( T00077_A38AirlineId[0] > A38AirlineId ) ) )
+            while ( (pr_default.getStatus(5) != 101) && ( ( T00097_A38AirlineId[0] > A38AirlineId ) ) )
             {
                pr_default.readNext(5);
             }
-            if ( (pr_default.getStatus(5) != 101) && ( ( T00077_A38AirlineId[0] < A38AirlineId ) ) )
+            if ( (pr_default.getStatus(5) != 101) && ( ( T00097_A38AirlineId[0] < A38AirlineId ) ) )
             {
-               A38AirlineId = T00077_A38AirlineId[0];
+               A38AirlineId = T00097_A38AirlineId[0];
+               n38AirlineId = T00097_n38AirlineId[0];
                AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-               RcdFound8 = 1;
+               RcdFound12 = 1;
             }
          }
          pr_default.close(5);
@@ -859,13 +905,13 @@ namespace GeneXus.Programs {
       protected void btn_enter( )
       {
          nKeyPressed = 1;
-         GetKey078( ) ;
+         GetKey0912( ) ;
          if ( IsIns( ) )
          {
             /* Insert record */
             GX_FocusControl = edtAirlineId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-            Insert078( ) ;
+            Insert0912( ) ;
             if ( AnyError == 1 )
             {
                GX_FocusControl = "";
@@ -874,11 +920,12 @@ namespace GeneXus.Programs {
          }
          else
          {
-            if ( RcdFound8 == 1 )
+            if ( RcdFound12 == 1 )
             {
                if ( A38AirlineId != Z38AirlineId )
                {
                   A38AirlineId = Z38AirlineId;
+                  n38AirlineId = false;
                   AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
                   GX_msglist.addItem(context.GetMessage( "GXM_getbeforeupd", ""), "CandidateKeyNotFound", 1, "AIRLINEID");
                   AnyError = 1;
@@ -897,7 +944,7 @@ namespace GeneXus.Programs {
                   Gx_mode = "UPD";
                   AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Update record */
-                  Update078( ) ;
+                  Update0912( ) ;
                   GX_FocusControl = edtAirlineId_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                }
@@ -911,7 +958,7 @@ namespace GeneXus.Programs {
                   /* Insert record */
                   GX_FocusControl = edtAirlineId_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-                  Insert078( ) ;
+                  Insert0912( ) ;
                   if ( AnyError == 1 )
                   {
                      GX_FocusControl = "";
@@ -934,7 +981,7 @@ namespace GeneXus.Programs {
                      /* Insert record */
                      GX_FocusControl = edtAirlineId_Internalname;
                      AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-                     Insert078( ) ;
+                     Insert0912( ) ;
                      if ( AnyError == 1 )
                      {
                         GX_FocusControl = "";
@@ -952,6 +999,7 @@ namespace GeneXus.Programs {
          if ( A38AirlineId != Z38AirlineId )
          {
             A38AirlineId = Z38AirlineId;
+            n38AirlineId = false;
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
             GX_msglist.addItem(context.GetMessage( "GXM_getbeforedlt", ""), 1, "AIRLINEID");
             AnyError = 1;
@@ -983,7 +1031,7 @@ namespace GeneXus.Programs {
          IsConfirmed = 0;
          AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
          getEqualNoModal( ) ;
-         if ( RcdFound8 == 0 )
+         if ( RcdFound12 == 0 )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_keynfound", ""), "PrimaryKeyNotFound", 1, "AIRLINEID");
             AnyError = 1;
@@ -1001,8 +1049,8 @@ namespace GeneXus.Programs {
          nKeyPressed = 2;
          IsConfirmed = 0;
          AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart078( ) ;
-         if ( RcdFound8 == 0 )
+         ScanStart0912( ) ;
+         if ( RcdFound12 == 0 )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
          }
@@ -1013,7 +1061,7 @@ namespace GeneXus.Programs {
          }
          GX_FocusControl = edtAirlineName_Internalname;
          AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd078( ) ;
+         ScanEnd0912( ) ;
          getByPrimaryKey( ) ;
          standaloneNotModal( ) ;
          standaloneModal( ) ;
@@ -1025,7 +1073,7 @@ namespace GeneXus.Programs {
          IsConfirmed = 0;
          AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
          move_previous( ) ;
-         if ( RcdFound8 == 0 )
+         if ( RcdFound12 == 0 )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
          }
@@ -1047,7 +1095,7 @@ namespace GeneXus.Programs {
          IsConfirmed = 0;
          AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
          move_next( ) ;
-         if ( RcdFound8 == 0 )
+         if ( RcdFound12 == 0 )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
          }
@@ -1068,23 +1116,23 @@ namespace GeneXus.Programs {
          nKeyPressed = 2;
          IsConfirmed = 0;
          AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart078( ) ;
-         if ( RcdFound8 == 0 )
+         ScanStart0912( ) ;
+         if ( RcdFound12 == 0 )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
          }
          else
          {
-            while ( RcdFound8 != 0 )
+            while ( RcdFound12 != 0 )
             {
-               ScanNext078( ) ;
+               ScanNext0912( ) ;
             }
             Gx_mode = "UPD";
             AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          GX_FocusControl = edtAirlineName_Internalname;
          AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd078( ) ;
+         ScanEnd0912( ) ;
          getByPrimaryKey( ) ;
          standaloneNotModal( ) ;
          standaloneModal( ) ;
@@ -1095,31 +1143,37 @@ namespace GeneXus.Programs {
          getEqualNoModal( ) ;
       }
 
-      protected void CheckOptimisticConcurrency078( )
+      protected void CheckOptimisticConcurrency0912( )
       {
          if ( ! IsIns( ) )
          {
-            /* Using cursor T00072 */
-            pr_default.execute(0, new Object[] {A38AirlineId});
+            /* Using cursor T00092 */
+            pr_default.execute(0, new Object[] {n38AirlineId, A38AirlineId});
             if ( (pr_default.getStatus(0) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Airline"}), "RecordIsLocked", 1, "");
                AnyError = 1;
                return  ;
             }
-            if ( (pr_default.getStatus(0) == 101) || ( StringUtil.StrCmp(Z39AirlineName, T00072_A39AirlineName[0]) != 0 ) || ( Z40AirlineDiscountPercentage != T00072_A40AirlineDiscountPercentage[0] ) )
+            if ( (pr_default.getStatus(0) == 101) || ( StringUtil.StrCmp(Z39AirlineName, T00092_A39AirlineName[0]) != 0 ) || ( Z40AirlineDiscountPercentage != T00092_A40AirlineDiscountPercentage[0] ) || ( Z47AirlineFlightMostExpensiveId != T00092_A47AirlineFlightMostExpensiveId[0] ) )
             {
-               if ( StringUtil.StrCmp(Z39AirlineName, T00072_A39AirlineName[0]) != 0 )
+               if ( StringUtil.StrCmp(Z39AirlineName, T00092_A39AirlineName[0]) != 0 )
                {
                   GXUtil.WriteLog("airline:[seudo value changed for attri]"+"AirlineName");
                   GXUtil.WriteLogRaw("Old: ",Z39AirlineName);
-                  GXUtil.WriteLogRaw("Current: ",T00072_A39AirlineName[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00092_A39AirlineName[0]);
                }
-               if ( Z40AirlineDiscountPercentage != T00072_A40AirlineDiscountPercentage[0] )
+               if ( Z40AirlineDiscountPercentage != T00092_A40AirlineDiscountPercentage[0] )
                {
                   GXUtil.WriteLog("airline:[seudo value changed for attri]"+"AirlineDiscountPercentage");
                   GXUtil.WriteLogRaw("Old: ",Z40AirlineDiscountPercentage);
-                  GXUtil.WriteLogRaw("Current: ",T00072_A40AirlineDiscountPercentage[0]);
+                  GXUtil.WriteLogRaw("Current: ",T00092_A40AirlineDiscountPercentage[0]);
+               }
+               if ( Z47AirlineFlightMostExpensiveId != T00092_A47AirlineFlightMostExpensiveId[0] )
+               {
+                  GXUtil.WriteLog("airline:[seudo value changed for attri]"+"AirlineFlightMostExpensiveId");
+                  GXUtil.WriteLogRaw("Old: ",Z47AirlineFlightMostExpensiveId);
+                  GXUtil.WriteLogRaw("Current: ",T00092_A47AirlineFlightMostExpensiveId[0]);
                }
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Airline"}), "RecordWasChanged", 1, "");
                AnyError = 1;
@@ -1128,28 +1182,29 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void Insert078( )
+      protected void Insert0912( )
       {
-         BeforeValidate078( ) ;
+         BeforeValidate0912( ) ;
          if ( AnyError == 0 )
          {
-            CheckExtendedTable078( ) ;
+            CheckExtendedTable0912( ) ;
          }
          if ( AnyError == 0 )
          {
-            ZM078( 0) ;
-            CheckOptimisticConcurrency078( ) ;
+            ZM0912( 0) ;
+            CheckOptimisticConcurrency0912( ) ;
             if ( AnyError == 0 )
             {
-               AfterConfirm078( ) ;
+               AfterConfirm0912( ) ;
                if ( AnyError == 0 )
                {
-                  BeforeInsert078( ) ;
+                  BeforeInsert0912( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T00078 */
-                     pr_default.execute(6, new Object[] {A39AirlineName, A40AirlineDiscountPercentage});
-                     A38AirlineId = T00078_A38AirlineId[0];
+                     /* Using cursor T00098 */
+                     pr_default.execute(6, new Object[] {A39AirlineName, A40AirlineDiscountPercentage, A47AirlineFlightMostExpensiveId});
+                     A38AirlineId = T00098_A38AirlineId[0];
+                     n38AirlineId = T00098_n38AirlineId[0];
                      AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
                      pr_default.close(6);
                      pr_default.SmartCacheProvider.SetUpdated("Airline");
@@ -1162,7 +1217,7 @@ namespace GeneXus.Programs {
                            /* Save values for previous() function. */
                            endTrnMsgTxt = context.GetMessage( "GXM_sucadded", "");
                            endTrnMsgCod = "SuccessfullyAdded";
-                           ResetCaption070( ) ;
+                           ResetCaption090( ) ;
                         }
                      }
                   }
@@ -1175,33 +1230,33 @@ namespace GeneXus.Programs {
             }
             else
             {
-               Load078( ) ;
+               Load0912( ) ;
             }
-            EndLevel078( ) ;
+            EndLevel0912( ) ;
          }
-         CloseExtendedTableCursors078( ) ;
+         CloseExtendedTableCursors0912( ) ;
       }
 
-      protected void Update078( )
+      protected void Update0912( )
       {
-         BeforeValidate078( ) ;
+         BeforeValidate0912( ) ;
          if ( AnyError == 0 )
          {
-            CheckExtendedTable078( ) ;
+            CheckExtendedTable0912( ) ;
          }
          if ( AnyError == 0 )
          {
-            CheckOptimisticConcurrency078( ) ;
+            CheckOptimisticConcurrency0912( ) ;
             if ( AnyError == 0 )
             {
-               AfterConfirm078( ) ;
+               AfterConfirm0912( ) ;
                if ( AnyError == 0 )
                {
-                  BeforeUpdate078( ) ;
+                  BeforeUpdate0912( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T00079 */
-                     pr_default.execute(7, new Object[] {A39AirlineName, A40AirlineDiscountPercentage, A38AirlineId});
+                     /* Using cursor T00099 */
+                     pr_default.execute(7, new Object[] {A39AirlineName, A40AirlineDiscountPercentage, A47AirlineFlightMostExpensiveId, n38AirlineId, A38AirlineId});
                      pr_default.close(7);
                      pr_default.SmartCacheProvider.SetUpdated("Airline");
                      if ( (pr_default.getStatus(7) == 103) )
@@ -1209,7 +1264,7 @@ namespace GeneXus.Programs {
                         GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Airline"}), "RecordIsLocked", 1, "");
                         AnyError = 1;
                      }
-                     DeferredUpdate078( ) ;
+                     DeferredUpdate0912( ) ;
                      if ( AnyError == 0 )
                      {
                         /* Start of After( update) rules */
@@ -1219,7 +1274,7 @@ namespace GeneXus.Programs {
                            getByPrimaryKey( ) ;
                            endTrnMsgTxt = context.GetMessage( "GXM_sucupdated", "");
                            endTrnMsgCod = "SuccessfullyUpdated";
-                           ResetCaption070( ) ;
+                           ResetCaption090( ) ;
                         }
                      }
                      else
@@ -1230,12 +1285,12 @@ namespace GeneXus.Programs {
                   }
                }
             }
-            EndLevel078( ) ;
+            EndLevel0912( ) ;
          }
-         CloseExtendedTableCursors078( ) ;
+         CloseExtendedTableCursors0912( ) ;
       }
 
-      protected void DeferredUpdate078( )
+      protected void DeferredUpdate0912( )
       {
       }
 
@@ -1243,23 +1298,23 @@ namespace GeneXus.Programs {
       {
          Gx_mode = "DLT";
          AssignAttri("", false, "Gx_mode", Gx_mode);
-         BeforeValidate078( ) ;
+         BeforeValidate0912( ) ;
          if ( AnyError == 0 )
          {
-            CheckOptimisticConcurrency078( ) ;
+            CheckOptimisticConcurrency0912( ) ;
          }
          if ( AnyError == 0 )
          {
-            OnDeleteControls078( ) ;
-            AfterConfirm078( ) ;
+            OnDeleteControls0912( ) ;
+            AfterConfirm0912( ) ;
             if ( AnyError == 0 )
             {
-               BeforeDelete078( ) ;
+               BeforeDelete0912( ) ;
                if ( AnyError == 0 )
                {
                   /* No cascading delete specified. */
-                  /* Using cursor T000710 */
-                  pr_default.execute(8, new Object[] {A38AirlineId});
+                  /* Using cursor T000910 */
+                  pr_default.execute(8, new Object[] {n38AirlineId, A38AirlineId});
                   pr_default.close(8);
                   pr_default.SmartCacheProvider.SetUpdated("Airline");
                   if ( AnyError == 0 )
@@ -1269,9 +1324,9 @@ namespace GeneXus.Programs {
                      if ( AnyError == 0 )
                      {
                         move_next( ) ;
-                        if ( RcdFound8 == 0 )
+                        if ( RcdFound12 == 0 )
                         {
-                           InitAll078( ) ;
+                           InitAll0912( ) ;
                            Gx_mode = "INS";
                            AssignAttri("", false, "Gx_mode", Gx_mode);
                         }
@@ -1283,7 +1338,7 @@ namespace GeneXus.Programs {
                         }
                         endTrnMsgTxt = context.GetMessage( "GXM_sucdeleted", "");
                         endTrnMsgCod = "SuccessfullyDeleted";
-                        ResetCaption070( ) ;
+                        ResetCaption090( ) ;
                      }
                   }
                   else
@@ -1294,21 +1349,32 @@ namespace GeneXus.Programs {
                }
             }
          }
-         sMode8 = Gx_mode;
+         sMode12 = Gx_mode;
          Gx_mode = "DLT";
          AssignAttri("", false, "Gx_mode", Gx_mode);
-         EndLevel078( ) ;
-         Gx_mode = sMode8;
+         EndLevel0912( ) ;
+         Gx_mode = sMode12;
          AssignAttri("", false, "Gx_mode", Gx_mode);
       }
 
-      protected void OnDeleteControls078( )
+      protected void OnDeleteControls0912( )
       {
          standaloneModal( ) ;
          /* No delete mode formulas found. */
+         if ( AnyError == 0 )
+         {
+            /* Using cursor T000911 */
+            pr_default.execute(9, new Object[] {n38AirlineId, A38AirlineId});
+            if ( (pr_default.getStatus(9) != 101) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Flight"}), "CannotDeleteReferencedRecord", 1, "");
+               AnyError = 1;
+            }
+            pr_default.close(9);
+         }
       }
 
-      protected void EndLevel078( )
+      protected void EndLevel0912( )
       {
          if ( ! IsIns( ) )
          {
@@ -1316,7 +1382,7 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            BeforeComplete078( ) ;
+            BeforeComplete0912( ) ;
          }
          if ( AnyError == 0 )
          {
@@ -1324,7 +1390,7 @@ namespace GeneXus.Programs {
             context.CommitDataStores("airline",pr_default);
             if ( AnyError == 0 )
             {
-               ConfirmValues070( ) ;
+               ConfirmValues090( ) ;
             }
             /* After transaction rules */
             /* Execute 'After Trn' event if defined. */
@@ -1343,69 +1409,71 @@ namespace GeneXus.Programs {
          }
       }
 
-      public void ScanStart078( )
+      public void ScanStart0912( )
       {
-         /* Using cursor T000711 */
-         pr_default.execute(9);
-         RcdFound8 = 0;
-         if ( (pr_default.getStatus(9) != 101) )
+         /* Using cursor T000912 */
+         pr_default.execute(10);
+         RcdFound12 = 0;
+         if ( (pr_default.getStatus(10) != 101) )
          {
-            RcdFound8 = 1;
-            A38AirlineId = T000711_A38AirlineId[0];
+            RcdFound12 = 1;
+            A38AirlineId = T000912_A38AirlineId[0];
+            n38AirlineId = T000912_n38AirlineId[0];
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
          }
          /* Load Subordinate Levels */
       }
 
-      protected void ScanNext078( )
+      protected void ScanNext0912( )
       {
          /* Scan next routine */
-         pr_default.readNext(9);
-         RcdFound8 = 0;
-         if ( (pr_default.getStatus(9) != 101) )
+         pr_default.readNext(10);
+         RcdFound12 = 0;
+         if ( (pr_default.getStatus(10) != 101) )
          {
-            RcdFound8 = 1;
-            A38AirlineId = T000711_A38AirlineId[0];
+            RcdFound12 = 1;
+            A38AirlineId = T000912_A38AirlineId[0];
+            n38AirlineId = T000912_n38AirlineId[0];
             AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
          }
       }
 
-      protected void ScanEnd078( )
+      protected void ScanEnd0912( )
       {
-         pr_default.close(9);
+         pr_default.close(10);
       }
 
-      protected void AfterConfirm078( )
+      protected void AfterConfirm0912( )
       {
          /* After Confirm Rules */
       }
 
-      protected void BeforeInsert078( )
+      protected void BeforeInsert0912( )
       {
          /* Before Insert Rules */
       }
 
-      protected void BeforeUpdate078( )
+      protected void BeforeUpdate0912( )
       {
          /* Before Update Rules */
       }
 
-      protected void BeforeDelete078( )
+      protected void BeforeDelete0912( )
       {
          /* Before Delete Rules */
       }
 
-      protected void BeforeComplete078( )
+      protected void BeforeComplete0912( )
       {
          /* Before Complete Rules */
       }
 
-      protected void BeforeValidate078( )
+      protected void BeforeValidate0912( )
       {
          /* Before Validate Rules */
       }
 
-      protected void DisableAttributes078( )
+      protected void DisableAttributes0912( )
       {
          edtAirlineId_Enabled = 0;
          AssignProp("", false, edtAirlineId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtAirlineId_Enabled), 5, 0), true);
@@ -1413,9 +1481,11 @@ namespace GeneXus.Programs {
          AssignProp("", false, edtAirlineName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtAirlineName_Enabled), 5, 0), true);
          edtAirlineDiscountPercentage_Enabled = 0;
          AssignProp("", false, edtAirlineDiscountPercentage_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtAirlineDiscountPercentage_Enabled), 5, 0), true);
+         edtAirlineFlightMostExpensiveId_Enabled = 0;
+         AssignProp("", false, edtAirlineFlightMostExpensiveId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtAirlineFlightMostExpensiveId_Enabled), 5, 0), true);
       }
 
-      protected void send_integrity_lvl_hashes078( )
+      protected void send_integrity_lvl_hashes0912( )
       {
       }
 
@@ -1423,7 +1493,7 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void ConfirmValues070( )
+      protected void ConfirmValues090( )
       {
       }
 
@@ -1510,6 +1580,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "Z38AirlineId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z38AirlineId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z39AirlineName", Z39AirlineName);
          GxWebStd.gx_hidden_field( context, "Z40AirlineDiscountPercentage", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z40AirlineDiscountPercentage), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "Z47AirlineFlightMostExpensiveId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z47AirlineFlightMostExpensiveId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
@@ -1582,21 +1653,25 @@ namespace GeneXus.Programs {
          return "Airline" ;
       }
 
-      protected void InitializeNonKey078( )
+      protected void InitializeNonKey0912( )
       {
          A39AirlineName = "";
          AssignAttri("", false, "A39AirlineName", A39AirlineName);
          A40AirlineDiscountPercentage = 0;
          AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrimStr( (decimal)(A40AirlineDiscountPercentage), 4, 0));
+         A47AirlineFlightMostExpensiveId = 0;
+         AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrimStr( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0));
          Z39AirlineName = "";
          Z40AirlineDiscountPercentage = 0;
+         Z47AirlineFlightMostExpensiveId = 0;
       }
 
-      protected void InitAll078( )
+      protected void InitAll0912( )
       {
          A38AirlineId = 0;
+         n38AirlineId = false;
          AssignAttri("", false, "A38AirlineId", StringUtil.LTrimStr( (decimal)(A38AirlineId), 4, 0));
-         InitializeNonKey078( ) ;
+         InitializeNonKey0912( ) ;
       }
 
       protected void StandaloneModalInsert( )
@@ -1614,7 +1689,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392011263922", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392111354820", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1630,7 +1705,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("airline.js", "?202392011263922", false, true);
+         context.AddJavascriptSource("airline.js", "?202392111354821", false, true);
          /* End function include_jscripts */
       }
 
@@ -1647,6 +1722,7 @@ namespace GeneXus.Programs {
          edtAirlineId_Internalname = "AIRLINEID";
          edtAirlineName_Internalname = "AIRLINENAME";
          edtAirlineDiscountPercentage_Internalname = "AIRLINEDISCOUNTPERCENTAGE";
+         edtAirlineFlightMostExpensiveId_Internalname = "AIRLINEFLIGHTMOSTEXPENSIVEID";
          divFormcontainer_Internalname = "FORMCONTAINER";
          bttBtn_enter_Internalname = "BTN_ENTER";
          bttBtn_cancel_Internalname = "BTN_CANCEL";
@@ -1673,6 +1749,8 @@ namespace GeneXus.Programs {
          bttBtn_cancel_Visible = 1;
          bttBtn_enter_Enabled = 1;
          bttBtn_enter_Visible = 1;
+         edtAirlineFlightMostExpensiveId_Jsonclick = "";
+         edtAirlineFlightMostExpensiveId_Enabled = 1;
          edtAirlineDiscountPercentage_Jsonclick = "";
          edtAirlineDiscountPercentage_Enabled = 1;
          edtAirlineName_Jsonclick = "";
@@ -1735,6 +1813,7 @@ namespace GeneXus.Programs {
 
       public void Valid_Airlineid( )
       {
+         n38AirlineId = false;
          context.wbHandled = 1;
          AfterKeyLoadScreen( ) ;
          Draw( ) ;
@@ -1743,10 +1822,12 @@ namespace GeneXus.Programs {
          /*  Sending validation outputs */
          AssignAttri("", false, "A39AirlineName", A39AirlineName);
          AssignAttri("", false, "A40AirlineDiscountPercentage", StringUtil.LTrim( StringUtil.NToC( (decimal)(A40AirlineDiscountPercentage), 4, 0, ".", "")));
+         AssignAttri("", false, "A47AirlineFlightMostExpensiveId", StringUtil.LTrim( StringUtil.NToC( (decimal)(A47AirlineFlightMostExpensiveId), 4, 0, ".", "")));
          AssignAttri("", false, "Gx_mode", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "Z38AirlineId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z38AirlineId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z39AirlineName", Z39AirlineName);
          GxWebStd.gx_hidden_field( context, "Z40AirlineDiscountPercentage", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z40AirlineDiscountPercentage), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "Z47AirlineFlightMostExpensiveId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z47AirlineFlightMostExpensiveId), 4, 0, ".", "")));
          AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
          AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
          SendCloseFormHiddens( ) ;
@@ -1764,7 +1845,7 @@ namespace GeneXus.Programs {
          setEventMetadata("REFRESH","{handler:'Refresh',iparms:[]");
          setEventMetadata("REFRESH",",oparms:[]}");
          setEventMetadata("VALID_AIRLINEID","{handler:'Valid_Airlineid',iparms:[{av:'A38AirlineId',fld:'AIRLINEID',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'}]");
-         setEventMetadata("VALID_AIRLINEID",",oparms:[{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z38AirlineId'},{av:'Z39AirlineName'},{av:'Z40AirlineDiscountPercentage'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
+         setEventMetadata("VALID_AIRLINEID",",oparms:[{av:'A39AirlineName',fld:'AIRLINENAME',pic:''},{av:'A40AirlineDiscountPercentage',fld:'AIRLINEDISCOUNTPERCENTAGE',pic:'ZZZ9'},{av:'A47AirlineFlightMostExpensiveId',fld:'AIRLINEFLIGHTMOSTEXPENSIVEID',pic:'ZZZ9'},{av:'Gx_mode',fld:'vMODE',pic:'@!'},{av:'Z38AirlineId'},{av:'Z39AirlineName'},{av:'Z40AirlineDiscountPercentage'},{av:'Z47AirlineFlightMostExpensiveId'},{ctrl:'BTN_DELETE',prop:'Enabled'},{ctrl:'BTN_ENTER',prop:'Enabled'}]}");
          return  ;
       }
 
@@ -1815,21 +1896,33 @@ namespace GeneXus.Programs {
          sEvtType = "";
          endTrnMsgTxt = "";
          endTrnMsgCod = "";
-         T00074_A38AirlineId = new short[1] ;
-         T00074_A39AirlineName = new string[] {""} ;
-         T00074_A40AirlineDiscountPercentage = new short[1] ;
-         T00075_A38AirlineId = new short[1] ;
-         T00073_A38AirlineId = new short[1] ;
-         T00073_A39AirlineName = new string[] {""} ;
-         T00073_A40AirlineDiscountPercentage = new short[1] ;
-         sMode8 = "";
-         T00076_A38AirlineId = new short[1] ;
-         T00077_A38AirlineId = new short[1] ;
-         T00072_A38AirlineId = new short[1] ;
-         T00072_A39AirlineName = new string[] {""} ;
-         T00072_A40AirlineDiscountPercentage = new short[1] ;
-         T00078_A38AirlineId = new short[1] ;
-         T000711_A38AirlineId = new short[1] ;
+         T00094_A38AirlineId = new short[1] ;
+         T00094_n38AirlineId = new bool[] {false} ;
+         T00094_A39AirlineName = new string[] {""} ;
+         T00094_A40AirlineDiscountPercentage = new short[1] ;
+         T00094_A47AirlineFlightMostExpensiveId = new short[1] ;
+         T00095_A38AirlineId = new short[1] ;
+         T00095_n38AirlineId = new bool[] {false} ;
+         T00093_A38AirlineId = new short[1] ;
+         T00093_n38AirlineId = new bool[] {false} ;
+         T00093_A39AirlineName = new string[] {""} ;
+         T00093_A40AirlineDiscountPercentage = new short[1] ;
+         T00093_A47AirlineFlightMostExpensiveId = new short[1] ;
+         sMode12 = "";
+         T00096_A38AirlineId = new short[1] ;
+         T00096_n38AirlineId = new bool[] {false} ;
+         T00097_A38AirlineId = new short[1] ;
+         T00097_n38AirlineId = new bool[] {false} ;
+         T00092_A38AirlineId = new short[1] ;
+         T00092_n38AirlineId = new bool[] {false} ;
+         T00092_A39AirlineName = new string[] {""} ;
+         T00092_A40AirlineDiscountPercentage = new short[1] ;
+         T00092_A47AirlineFlightMostExpensiveId = new short[1] ;
+         T00098_A38AirlineId = new short[1] ;
+         T00098_n38AirlineId = new bool[] {false} ;
+         T000911_A19FlightId = new short[1] ;
+         T000912_A38AirlineId = new short[1] ;
+         T000912_n38AirlineId = new bool[] {false} ;
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
@@ -1837,32 +1930,35 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.airline__default(),
             new Object[][] {
                 new Object[] {
-               T00072_A38AirlineId, T00072_A39AirlineName, T00072_A40AirlineDiscountPercentage
+               T00092_A38AirlineId, T00092_A39AirlineName, T00092_A40AirlineDiscountPercentage, T00092_A47AirlineFlightMostExpensiveId
                }
                , new Object[] {
-               T00073_A38AirlineId, T00073_A39AirlineName, T00073_A40AirlineDiscountPercentage
+               T00093_A38AirlineId, T00093_A39AirlineName, T00093_A40AirlineDiscountPercentage, T00093_A47AirlineFlightMostExpensiveId
                }
                , new Object[] {
-               T00074_A38AirlineId, T00074_A39AirlineName, T00074_A40AirlineDiscountPercentage
+               T00094_A38AirlineId, T00094_A39AirlineName, T00094_A40AirlineDiscountPercentage, T00094_A47AirlineFlightMostExpensiveId
                }
                , new Object[] {
-               T00075_A38AirlineId
+               T00095_A38AirlineId
                }
                , new Object[] {
-               T00076_A38AirlineId
+               T00096_A38AirlineId
                }
                , new Object[] {
-               T00077_A38AirlineId
+               T00097_A38AirlineId
                }
                , new Object[] {
-               T00078_A38AirlineId
+               T00098_A38AirlineId
                }
                , new Object[] {
                }
                , new Object[] {
                }
                , new Object[] {
-               T000711_A38AirlineId
+               T000911_A19FlightId
+               }
+               , new Object[] {
+               T000912_A38AirlineId
                }
             }
          );
@@ -1870,6 +1966,7 @@ namespace GeneXus.Programs {
 
       private short Z38AirlineId ;
       private short Z40AirlineDiscountPercentage ;
+      private short Z47AirlineFlightMostExpensiveId ;
       private short GxWebError ;
       private short gxcookieaux ;
       private short IsConfirmed ;
@@ -1879,13 +1976,15 @@ namespace GeneXus.Programs {
       private short initialized ;
       private short A38AirlineId ;
       private short A40AirlineDiscountPercentage ;
+      private short A47AirlineFlightMostExpensiveId ;
       private short GX_JID ;
-      private short RcdFound8 ;
-      private short nIsDirty_8 ;
+      private short RcdFound12 ;
+      private short nIsDirty_12 ;
       private short Gx_BScreen ;
       private short gxajaxcallmode ;
       private short ZZ38AirlineId ;
       private short ZZ40AirlineDiscountPercentage ;
+      private short ZZ47AirlineFlightMostExpensiveId ;
       private int trnEnded ;
       private int bttBtn_first_Visible ;
       private int bttBtn_previous_Visible ;
@@ -1895,6 +1994,7 @@ namespace GeneXus.Programs {
       private int edtAirlineId_Enabled ;
       private int edtAirlineName_Enabled ;
       private int edtAirlineDiscountPercentage_Enabled ;
+      private int edtAirlineFlightMostExpensiveId_Enabled ;
       private int bttBtn_enter_Visible ;
       private int bttBtn_enter_Enabled ;
       private int bttBtn_cancel_Visible ;
@@ -1934,6 +2034,8 @@ namespace GeneXus.Programs {
       private string edtAirlineName_Jsonclick ;
       private string edtAirlineDiscountPercentage_Internalname ;
       private string edtAirlineDiscountPercentage_Jsonclick ;
+      private string edtAirlineFlightMostExpensiveId_Internalname ;
+      private string edtAirlineFlightMostExpensiveId_Jsonclick ;
       private string bttBtn_enter_Internalname ;
       private string bttBtn_enter_Jsonclick ;
       private string bttBtn_cancel_Internalname ;
@@ -1947,32 +2049,45 @@ namespace GeneXus.Programs {
       private string sEvtType ;
       private string endTrnMsgTxt ;
       private string endTrnMsgCod ;
-      private string sMode8 ;
+      private string sMode12 ;
       private string sDynURL ;
       private string FormProcess ;
       private string bodyStyle ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool wbErr ;
+      private bool n38AirlineId ;
       private string Z39AirlineName ;
       private string A39AirlineName ;
       private string ZZ39AirlineName ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
-      private short[] T00074_A38AirlineId ;
-      private string[] T00074_A39AirlineName ;
-      private short[] T00074_A40AirlineDiscountPercentage ;
-      private short[] T00075_A38AirlineId ;
-      private short[] T00073_A38AirlineId ;
-      private string[] T00073_A39AirlineName ;
-      private short[] T00073_A40AirlineDiscountPercentage ;
-      private short[] T00076_A38AirlineId ;
-      private short[] T00077_A38AirlineId ;
-      private short[] T00072_A38AirlineId ;
-      private string[] T00072_A39AirlineName ;
-      private short[] T00072_A40AirlineDiscountPercentage ;
-      private short[] T00078_A38AirlineId ;
-      private short[] T000711_A38AirlineId ;
+      private short[] T00094_A38AirlineId ;
+      private bool[] T00094_n38AirlineId ;
+      private string[] T00094_A39AirlineName ;
+      private short[] T00094_A40AirlineDiscountPercentage ;
+      private short[] T00094_A47AirlineFlightMostExpensiveId ;
+      private short[] T00095_A38AirlineId ;
+      private bool[] T00095_n38AirlineId ;
+      private short[] T00093_A38AirlineId ;
+      private bool[] T00093_n38AirlineId ;
+      private string[] T00093_A39AirlineName ;
+      private short[] T00093_A40AirlineDiscountPercentage ;
+      private short[] T00093_A47AirlineFlightMostExpensiveId ;
+      private short[] T00096_A38AirlineId ;
+      private bool[] T00096_n38AirlineId ;
+      private short[] T00097_A38AirlineId ;
+      private bool[] T00097_n38AirlineId ;
+      private short[] T00092_A38AirlineId ;
+      private bool[] T00092_n38AirlineId ;
+      private string[] T00092_A39AirlineName ;
+      private short[] T00092_A40AirlineDiscountPercentage ;
+      private short[] T00092_A47AirlineFlightMostExpensiveId ;
+      private short[] T00098_A38AirlineId ;
+      private bool[] T00098_n38AirlineId ;
+      private short[] T000911_A19FlightId ;
+      private short[] T000912_A38AirlineId ;
+      private bool[] T000912_n38AirlineId ;
       private GXWebForm Form ;
    }
 
@@ -1992,6 +2107,7 @@ namespace GeneXus.Programs {
          ,new UpdateCursor(def[7])
          ,new UpdateCursor(def[8])
          ,new ForEachCursor(def[9])
+         ,new ForEachCursor(def[10])
        };
     }
 
@@ -2000,59 +2116,66 @@ namespace GeneXus.Programs {
     {
        if ( def == null )
        {
-          Object[] prmT00074;
-          prmT00074 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00094;
+          prmT00094 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00075;
-          prmT00075 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00095;
+          prmT00095 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00073;
-          prmT00073 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00093;
+          prmT00093 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00076;
-          prmT00076 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00096;
+          prmT00096 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00077;
-          prmT00077 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00097;
+          prmT00097 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00072;
-          prmT00072 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00092;
+          prmT00092 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT00078;
-          prmT00078 = new Object[] {
-          new ParDef("@AirlineName",GXType.NVarChar,40,0) ,
-          new ParDef("@AirlineDiscountPercentage",GXType.Int16,4,0)
-          };
-          Object[] prmT00079;
-          prmT00079 = new Object[] {
+          Object[] prmT00098;
+          prmT00098 = new Object[] {
           new ParDef("@AirlineName",GXType.NVarChar,40,0) ,
           new ParDef("@AirlineDiscountPercentage",GXType.Int16,4,0) ,
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          new ParDef("@AirlineFlightMostExpensiveId",GXType.Int16,4,0)
           };
-          Object[] prmT000710;
-          prmT000710 = new Object[] {
-          new ParDef("@AirlineId",GXType.Int16,4,0)
+          Object[] prmT00099;
+          prmT00099 = new Object[] {
+          new ParDef("@AirlineName",GXType.NVarChar,40,0) ,
+          new ParDef("@AirlineDiscountPercentage",GXType.Int16,4,0) ,
+          new ParDef("@AirlineFlightMostExpensiveId",GXType.Int16,4,0) ,
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
           };
-          Object[] prmT000711;
-          prmT000711 = new Object[] {
+          Object[] prmT000910;
+          prmT000910 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000911;
+          prmT000911 = new Object[] {
+          new ParDef("@AirlineId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000912;
+          prmT000912 = new Object[] {
           };
           def= new CursorDef[] {
-              new CursorDef("T00072", "SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WITH (UPDLOCK) WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00072,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00073", "SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00073,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00074", "SELECT TM1.[AirlineId], TM1.[AirlineName], TM1.[AirlineDiscountPercentage] FROM [Airline] TM1 WHERE TM1.[AirlineId] = @AirlineId ORDER BY TM1.[AirlineId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00074,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00075", "SELECT [AirlineId] FROM [Airline] WHERE [AirlineId] = @AirlineId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00075,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00076", "SELECT TOP 1 [AirlineId] FROM [Airline] WHERE ( [AirlineId] > @AirlineId) ORDER BY [AirlineId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00076,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T00077", "SELECT TOP 1 [AirlineId] FROM [Airline] WHERE ( [AirlineId] < @AirlineId) ORDER BY [AirlineId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00077,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T00078", "INSERT INTO [Airline]([AirlineName], [AirlineDiscountPercentage]) VALUES(@AirlineName, @AirlineDiscountPercentage); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT00078,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T00079", "UPDATE [Airline] SET [AirlineName]=@AirlineName, [AirlineDiscountPercentage]=@AirlineDiscountPercentage  WHERE [AirlineId] = @AirlineId", GxErrorMask.GX_NOMASK,prmT00079)
-             ,new CursorDef("T000710", "DELETE FROM [Airline]  WHERE [AirlineId] = @AirlineId", GxErrorMask.GX_NOMASK,prmT000710)
-             ,new CursorDef("T000711", "SELECT [AirlineId] FROM [Airline] ORDER BY [AirlineId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000711,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("T00092", "SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage], [AirlineFlightMostExpensiveId] FROM [Airline] WITH (UPDLOCK) WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00092,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00093", "SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage], [AirlineFlightMostExpensiveId] FROM [Airline] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00093,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00094", "SELECT TM1.[AirlineId], TM1.[AirlineName], TM1.[AirlineDiscountPercentage], TM1.[AirlineFlightMostExpensiveId] FROM [Airline] TM1 WHERE TM1.[AirlineId] = @AirlineId ORDER BY TM1.[AirlineId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00094,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00095", "SELECT [AirlineId] FROM [Airline] WHERE [AirlineId] = @AirlineId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00095,1, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00096", "SELECT TOP 1 [AirlineId] FROM [Airline] WHERE ( [AirlineId] > @AirlineId) ORDER BY [AirlineId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00096,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T00097", "SELECT TOP 1 [AirlineId] FROM [Airline] WHERE ( [AirlineId] < @AirlineId) ORDER BY [AirlineId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00097,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T00098", "INSERT INTO [Airline]([AirlineName], [AirlineDiscountPercentage], [AirlineFlightMostExpensiveId]) VALUES(@AirlineName, @AirlineDiscountPercentage, @AirlineFlightMostExpensiveId); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT00098,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T00099", "UPDATE [Airline] SET [AirlineName]=@AirlineName, [AirlineDiscountPercentage]=@AirlineDiscountPercentage, [AirlineFlightMostExpensiveId]=@AirlineFlightMostExpensiveId  WHERE [AirlineId] = @AirlineId", GxErrorMask.GX_NOMASK,prmT00099)
+             ,new CursorDef("T000910", "DELETE FROM [Airline]  WHERE [AirlineId] = @AirlineId", GxErrorMask.GX_NOMASK,prmT000910)
+             ,new CursorDef("T000911", "SELECT TOP 1 [FlightId] FROM [Flight] WHERE [AirlineId] = @AirlineId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000911,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000912", "SELECT [AirlineId] FROM [Airline] ORDER BY [AirlineId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000912,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -2067,16 +2190,19 @@ namespace GeneXus.Programs {
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
+                ((short[]) buf[3])[0] = rslt.getShort(4);
                 return;
              case 1 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
+                ((short[]) buf[3])[0] = rslt.getShort(4);
                 return;
              case 2 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
+                ((short[]) buf[3])[0] = rslt.getShort(4);
                 return;
              case 3 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
@@ -2091,6 +2217,9 @@ namespace GeneXus.Programs {
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
              case 9 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                return;
+             case 10 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
        }

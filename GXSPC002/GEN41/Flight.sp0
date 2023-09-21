@@ -4,10 +4,10 @@ struct_i(9,0,[],[]).
 struct_i(11,9,[ 19,45 ],[]).
  
 level_i(11,[ 11,[ [ 11,many ] ],[ 19,42,44 ],[],[],[],[ 19,42,44 ],'IFLIGHTSEAT',[ 11,[ [ [],19,19 ] ] ],[] ]).
-level_i(9,[ 9,[ [ 9,many ],[ 8,one ],[ 508,one ],[ 505,one ],[ 509,one ],[ 510,one ],[ 506,one ],[ 507,one ],[ 2000,one ] ],[ 19 ],[],[],[],[ 19 ],'IFLIGHT',[ 9,[] ],[] ]).
+level_i(9,[ 9,[ [ 9,many ],[ 12,one ],[ 508,one ],[ 505,one ],[ 509,one ],[ 510,one ],[ 506,one ],[ 507,one ],[ 2000,one ] ],[ 19 ],[],[],[],[ 19 ],'IFLIGHT',[ 9,[] ],[] ]).
  
 tw_i(11,[]).
-tw_i(9,[ [ 8,[ [ 9,38,38 ] ] ],[ 508,[ [ 9,25,20 ] ] ],[ 505,[ [ 9,24,20 ] ] ],[ 509,[ [ 508,31,9 ] ] ],[ 510,[ [ 508,31,9 ],[ 508,33,14 ] ] ],[ 506,[ [ 505,27,9 ] ] ],[ 507,[ [ 505,27,9 ],[ 505,29,14 ] ] ],[ 2000,[ [ 9,oe([ t(19,2) ]),19 ] ] ] ]).
+tw_i(9,[ [ 12,[ [ 9,38,38 ] ] ],[ 508,[ [ 9,25,20 ] ] ],[ 505,[ [ 9,24,20 ] ] ],[ 509,[ [ 508,31,9 ] ] ],[ 510,[ [ 508,31,9 ],[ 508,33,14 ] ] ],[ 506,[ [ 505,27,9 ] ] ],[ 507,[ [ 505,27,9 ],[ 505,29,14 ] ] ],[ 2000,[ [ 9,oe([ t(19,2) ]),19 ] ] ] ]).
  
 lwi_i(11,[ [] ]).
 lwi_i(9,[ [] ]).
@@ -16,7 +16,7 @@ lwi_i(9,[ [] ]).
  
  
 ta_i(11,[ [ [ 11,19 ],[ 11,42 ],[ 11,44 ],[ 11,43 ] ] ]).
-ta_i(9,[ [ [ 9,19 ],[ 508,26 ],[ 509,32 ],[ 510,34 ],[ 505,23 ],[ 506,28 ],[ 507,30 ],[ 9,35 ],[ 9,36 ],[ 8,39 ],[ 8,40 ],[ 9,38 ],[ 9,25 ],[ 9,24 ],[ 508,31 ],[ 508,33 ],[ 505,27 ],[ 505,29 ],[ 2000,se(45,[ [ 2000,45 ] ],[ t('coalesce(',1),t(45,2),t(',',7),t('0',3),t(')',4) ]) ] ] ]).
+ta_i(9,[ [ [ 9,19 ],[ 508,26 ],[ 509,32 ],[ 510,34 ],[ 505,23 ],[ 506,28 ],[ 507,30 ],[ 9,35 ],[ 9,36 ],[ 12,39 ],[ 12,40 ],[ 9,38 ],[ 9,25 ],[ 9,24 ],[ 508,31 ],[ 508,33 ],[ 505,27 ],[ 505,29 ],[ 2000,se(45,[ [ 2000,45 ] ],[ t('coalesce(',1),t(45,2),t(',',7),t('0',3),t(')',4) ]) ] ] ]).
  
 las_i(11,[ [ 19,42,44,45,43 ] ]).
 las_i(9,[ [ 19,37,25,26,31,32,33,34,24,23,27,28,29,30,35,36,38,39,40,45 ] ]).
@@ -176,8 +176,8 @@ rule_i(9,prompt([ 505,[ [ 9,24,20 ] ],[ 24 ],[ 24 ],[ t(o(13,'Gx0070'),28),t(24,
 rule_i(9,rule([ a(23,[ [ 24 ],[ t(o(13,'Gx0070'),28),t(24,2) ] ]) ],[],[],[ 24 ])).
 rule_i(9,prompt([ 508,[ [ 9,25,20 ] ],[ 25 ],[ 25 ],[ t(o(13,'Gx0070'),28),t(25,2) ],[],n,[] ])).
 rule_i(9,rule([ a(23,[ [ 25 ],[ t(o(13,'Gx0070'),28),t(25,2) ] ]) ],[],[],[ 25 ])).
-rule_i(9,prompt([ 8,[ [ 9,38,38 ] ],[ 38 ],[ 38 ],[ t(o(13,'Gx0080'),28),t(38,2) ],[],n,[] ])).
-rule_i(9,rule([ a(23,[ [ 38 ],[ t(o(13,'Gx0080'),28),t(38,2) ] ]) ],[],[],[ 38 ])).
+rule_i(9,prompt([ 12,[ [ 9,38,38 ] ],[ 38 ],[ 38 ],[ t(o(13,'Gx00C0'),28),t(38,2) ],[],n,[] ])).
+rule_i(9,rule([ a(23,[ [ 38 ],[ t(o(13,'Gx00C0'),28),t(38,2) ] ]) ],[],[],[ 38 ])).
 rule_i(9,prompt([ 9,[ [ [],19,19 ] ],[],[],[ t(o(13,'Gx0090'),28),t(19,2) ],[],n,[] ])).
 rule_i(9,rule([ a(23,[ [ 19 ],[ t(o(13,'Gx0090'),28),t(19,2) ] ]) ],[],[],[ 19 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
@@ -193,21 +193,23 @@ rule_i(9,rule([ a(19,[ [ 27 ],msg([ t('"No matching ''Flight Departure Airport''
 rule_i(9,rule([ a(19,[ [ 27,29 ],msg([ t('"No matching ''Flight Departure Airport''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 27,29 ])).
 rule_i(11,rule([ a(1,msg([ t('"Field Flight Seat Char is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(44,2),t(=,10),t('''A''',3),t('.OR.',9),t(44,2),t(=,10),t('''B''',3),t('.OR.',9),t(44,2),t(=,10),t('''C''',3),t('.OR.',9),t(44,2),t(=,10),t('''D''',3),t('.OR.',9),t(44,2),t(=,10),t('''E''',3),t('.OR.',9),t(44,2),t(=,10),t('''F''',3),t(')',4) ],[ insert,update ],[ 44 ])).
 rule_i(11,rule([ a(1,msg([ t('"Field Flight Seat Location is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(43,2),t(=,10),t('''W''',3),t('.OR.',9),t(43,2),t(=,10),t('''M''',3),t('.OR.',9),t(43,2),t(=,10),t('''A''',3),t(')',4) ],[ insert,update ],[ 43 ])).
+rule_i(11,rule([ a(1,[ t('"No se puede registrar menos de 4 asientos"',3) ]) ],[ t(45,2),t(<,10),t('4',3),t('.AND.',9),t(45,2),t(>,10),t('0',3) ],[ insert,update,delete,display ],[ 45 ])).
  
 a_i(1,9,f,37,[],[ [],[ t(35,2),t(*,6),t('(',0),t('1',3),t(-,5),t(40,2),t(/,6),t('100',3),t(')',4),t('IF',17),t(40,2),t(>=,10),t(36,2),t(';',18),t(35,2),t(*,6),t('(',0),t('1',3),t(-,5),t(36,2),t(/,6),t('100',3),t(')',4),t('OTHERWISE',19) ] ]).
 a_i(2,11,b,0,[],[ [],[ a(1,msg([ t('"Field Flight Seat Char is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(44,2),t(=,10),t('''A''',3),t('.OR.',9),t(44,2),t(=,10),t('''B''',3),t('.OR.',9),t(44,2),t(=,10),t('''C''',3),t('.OR.',9),t(44,2),t(=,10),t('''D''',3),t('.OR.',9),t(44,2),t(=,10),t('''E''',3),t('.OR.',9),t(44,2),t(=,10),t('''F''',3),t(')',4) ] ]).
 a_i(3,11,b,0,[],[ [],[ a(1,msg([ t('"Field Flight Seat Location is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t(43,2),t(=,10),t('''W''',3),t('.OR.',9),t(43,2),t(=,10),t('''M''',3),t('.OR.',9),t(43,2),t(=,10),t('''A''',3),t(')',4) ] ]).
-a_i(4,9,t,9,[],[ [ [ [],19,19 ] ],'IFLIGHT',[] ]).
-a_i(5,9,r,8,[],[ [ [ 9,38,38 ] ],'IAIRLINE',[] ]).
-a_i(6,9,r,508,[],[ [ [ 9,25,20 ] ],'IAIRPORT',[] ]).
-a_i(7,9,r,505,[],[ [ [ 9,24,20 ] ],'IAIRPORT',[] ]).
-a_i(8,9,r,509,[],[ [ [ 508,31,9 ] ],'ICOUNTRY',[] ]).
-a_i(9,9,r,510,[],[ [ [ 508,31,9 ],[ 508,33,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(10,9,r,506,[],[ [ [ 505,27,9 ] ],'ICOUNTRY',[] ]).
-a_i(11,9,r,507,[],[ [ [ 505,27,9 ],[ 505,29,14 ] ],'ICOUNTRYCITY',[] ]).
-a_i(12,9,r,2000,[],[ [ [ 9,oe([ t(19,2) ]),19 ] ],'IFLIGHT',[] ]).
-a_i(13,11,t,11,[],[ [ [ [],19,19 ],[ [],42,42 ],[ [],44,44 ] ],'IFLIGHTSEAT',[] ]).
-a_i(14,11,r,2000,[ level ],[ [ [ 9,oe([ t(19,2) ]),19 ] ],'IFLIGHT',[] ]).
+a_i(4,11,b,1,[ level ],[ [],[ a(1,[ t('"No se puede registrar menos de 4 asientos"',3) ]) ],[ t(45,2),t(<,10),t('4',3),t('.AND.',9),t(45,2),t(>,10),t('0',3) ] ]).
+a_i(5,9,t,9,[],[ [ [ [],19,19 ] ],'IFLIGHT',[] ]).
+a_i(6,9,r,12,[],[ [ [ 9,38,38 ] ],'IAIRLINE',[] ]).
+a_i(7,9,r,508,[],[ [ [ 9,25,20 ] ],'IAIRPORT',[] ]).
+a_i(8,9,r,505,[],[ [ [ 9,24,20 ] ],'IAIRPORT',[] ]).
+a_i(9,9,r,509,[],[ [ [ 508,31,9 ] ],'ICOUNTRY',[] ]).
+a_i(10,9,r,510,[],[ [ [ 508,31,9 ],[ 508,33,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(11,9,r,506,[],[ [ [ 505,27,9 ] ],'ICOUNTRY',[] ]).
+a_i(12,9,r,507,[],[ [ [ 505,27,9 ],[ 505,29,14 ] ],'ICOUNTRYCITY',[] ]).
+a_i(13,9,r,2000,[],[ [ [ 9,oe([ t(19,2) ]),19 ] ],'IFLIGHT',[] ]).
+a_i(14,11,t,11,[],[ [ [ [],19,19 ],[ [],42,42 ],[ [],44,44 ] ],'IFLIGHTSEAT',[] ]).
+a_i(15,11,r,2000,[ level ],[ [ [ 9,oe([ t(19,2) ]),19 ] ],'IFLIGHT',[] ]).
  
 v_i(f,i,1,35).
 v_i(f,i,1,40).
@@ -217,41 +219,43 @@ v_i(b,i,2,44).
 v_i(b,o,2,[]).
 v_i(b,i,3,43).
 v_i(b,o,3,[]).
-v_i(t,i,4,19).
-v_i(t,o,4,35).
-v_i(t,o,4,36).
-v_i(t,o,4,38).
-v_i(t,o,4,25).
-v_i(t,o,4,24).
-v_i(r,i,5,38).
-v_i(r,o,5,39).
-v_i(r,o,5,40).
-v_i(r,i,6,25).
-v_i(r,o,6,26).
-v_i(r,o,6,31).
-v_i(r,o,6,33).
-v_i(r,i,7,24).
-v_i(r,o,7,23).
-v_i(r,o,7,27).
-v_i(r,o,7,29).
-v_i(r,i,8,31).
-v_i(r,o,8,32).
+v_i(b,i,4,45).
+v_i(b,o,4,[]).
+v_i(t,i,5,19).
+v_i(t,o,5,35).
+v_i(t,o,5,36).
+v_i(t,o,5,38).
+v_i(t,o,5,25).
+v_i(t,o,5,24).
+v_i(r,i,6,38).
+v_i(r,o,6,39).
+v_i(r,o,6,40).
+v_i(r,i,7,25).
+v_i(r,o,7,26).
+v_i(r,o,7,31).
+v_i(r,o,7,33).
+v_i(r,i,8,24).
+v_i(r,o,8,23).
+v_i(r,o,8,27).
+v_i(r,o,8,29).
 v_i(r,i,9,31).
-v_i(r,i,9,33).
-v_i(r,o,9,34).
-v_i(r,i,10,27).
-v_i(r,o,10,28).
+v_i(r,o,9,32).
+v_i(r,i,10,31).
+v_i(r,i,10,33).
+v_i(r,o,10,34).
 v_i(r,i,11,27).
-v_i(r,i,11,29).
-v_i(r,o,11,30).
-v_i(r,i,12,19).
-v_i(r,o,12,45).
-v_i(t,i,13,19).
-v_i(t,i,13,42).
-v_i(t,i,13,44).
-v_i(t,o,13,43).
-v_i(r,i,14,19).
-v_i(r,o,14,45).
+v_i(r,o,11,28).
+v_i(r,i,12,27).
+v_i(r,i,12,29).
+v_i(r,o,12,30).
+v_i(r,i,13,19).
+v_i(r,o,13,45).
+v_i(t,i,14,19).
+v_i(t,i,14,42).
+v_i(t,i,14,44).
+v_i(t,o,14,43).
+v_i(r,i,15,19).
+v_i(r,o,15,45).
  
  
  
@@ -289,7 +293,7 @@ attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
 table_i(2000,[ 'Flight',[ 45,19 ],'Flight','Flight' ]).
-table_i(8,[ 'Airline',[ 38,39,40 ],'Airline','Airline' ]).
+table_i(12,[ 'Airline',[ 38,39,40 ],'Airline','Airline' ]).
 table_i(507,[ 'CountryCity',[ 27,29,30 ],'City','CountryCity' ]).
 table_i(506,[ 'Country',[ 27,28 ],'Country','Country' ]).
 table_i(505,[ 'Airport',[ 24,23,27,29 ],'Airport','Airport' ]).
@@ -301,7 +305,7 @@ table_i(11,[ 'FlightSeat',[ 19,42,44,43 ],'Seat','FlightSeat' ]).
  
 index_i(11,[ 'IFLIGHTSEAT',u,[ 19,42,44 ],'IFlightSeat' ]).
 index_i(9,[ 'IFLIGHT',u,[ 19 ],'IFlight' ]).
-index_i(8,[ 'IAIRLINE',u,[ 38 ],'IAirline' ]).
+index_i(12,[ 'IAIRLINE',u,[ 38 ],'IAirline' ]).
 index_i(508,[ 'IAIRPORT',u,[ 25 ],'IAirport' ]).
 index_i(505,[ 'IAIRPORT',u,[ 24 ],'IAirport' ]).
 index_i(509,[ 'ICOUNTRY',u,[ 31 ],'ICountry' ]).
@@ -2882,17 +2886,17 @@ att_prop_i(2,14,'DownloadOffline','0',d).
 att_prop_i(2,14,'VarServiceExtName','',d).
 att_prop_i(2,14,'FullName','CityId',v).
  
-tbl_prop_i(2,9,'AllDirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 8,[ 38 ] ] ],v).
+tbl_prop_i(2,9,'AllDirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 12,[ 38 ] ] ],v).
 tbl_prop_i(2,11,'AllDirSuper',[ [ 9,[ 19 ] ] ],v).
-tbl_prop_i(2,9,'DirSuperNull',[ [ 8,[ 38 ] ] ],v).
+tbl_prop_i(2,9,'DirSuperNull',[ [ 12,[ 38 ] ] ],v).
 tbl_prop_i(2,2000,'DirSubor',[ [ 11,[ 19 ] ] ],v).
 tbl_prop_i(2,505,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
 tbl_prop_i(2,7,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
 tbl_prop_i(2,508,'DirSubor',[ [ 9,[ 25 ] ],[ 9,[ 24 ] ] ],v).
-tbl_prop_i(2,8,'DirSubor',[ [ 9,[ 38 ] ] ],v).
+tbl_prop_i(2,12,'DirSubor',[ [ 9,[ 38 ] ] ],v).
 tbl_prop_i(2,9,'DirSubor',[ [ 11,[ 19 ] ] ],v).
-tbl_prop_i(2,2000,'DirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 8,[ 38 ] ] ],v).
-tbl_prop_i(2,9,'DirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 8,[ 38 ] ] ],v).
+tbl_prop_i(2,2000,'DirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 12,[ 38 ] ] ],v).
+tbl_prop_i(2,9,'DirSuper',[ [ 508,[ 25 ] ],[ 505,[ 24 ] ],[ 12,[ 38 ] ] ],v).
 tbl_prop_i(2,11,'DirSuper',[ [ 9,[ 19 ] ] ],v).
  
 tbl_att_prop_i(2,11,19,'AllowNulls',n).
@@ -2905,10 +2909,10 @@ tbl_att_prop_i(2,9,25,'AllowNulls',n).
 tbl_att_prop_i(2,9,24,'AllowNulls',n).
 tbl_att_prop_i(2,9,35,'AllowNulls',n).
 tbl_att_prop_i(2,9,36,'AllowNulls',n).
-tbl_att_prop_i(2,8,38,'AllowNulls',n).
-tbl_att_prop_i(2,8,38,'AUTONUMBER',y).
-tbl_att_prop_i(2,8,39,'AllowNulls',n).
-tbl_att_prop_i(2,8,40,'AllowNulls',n).
+tbl_att_prop_i(2,12,38,'AllowNulls',n).
+tbl_att_prop_i(2,12,38,'AUTONUMBER',y).
+tbl_att_prop_i(2,12,39,'AllowNulls',n).
+tbl_att_prop_i(2,12,40,'AllowNulls',n).
 tbl_att_prop_i(2,508,25,'AllowNulls',n).
 tbl_att_prop_i(2,508,26,'AllowNulls',n).
 tbl_att_prop_i(2,508,31,'AllowNulls',n).
@@ -2959,13 +2963,13 @@ trn_level_i(11,[ [ 42,44,43 ],'Seat','Seat','Seat','',0 ]).
  
  
 pgm_parm_i(web,22,'GX0090',[ [ int,4,0,0 ] ],[ [ pFlightId,out,[] ] ]).
-pgm_parm_i(web,21,'GX0080',[ [ int,4,0,0 ] ],[ [ pAirlineId,out,[] ] ]).
+pgm_parm_i(web,25,'GX00C0',[ [ int,4,0,0 ] ],[ [ pAirlineId,out,[] ] ]).
 pgm_parm_i(web,20,'GX0070',[ [ int,4,0,0 ] ],[ [ pAirportId,out,[] ] ]).
 pgm_parm_i(web,24,'GX00B1',[ [ int,4,0,0 ],[ int,4,0,0 ],[ char,1,0,0 ] ],[ [ pFlightId,in,[] ],[ pFlightSeatId,out,[] ],[ pFlightSeatChar,out,[] ] ]).
  
 pgm_callprotocol_i(trn,8,'FLIGHT','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,22,'GX0090','INTERNAL','Unsecure').
-pgm_callprotocol_i(web,21,'GX0080','INTERNAL','Unsecure').
+pgm_callprotocol_i(web,25,'GX00C0','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,20,'GX0070','INTERNAL','Unsecure').
 pgm_callprotocol_i(web,24,'GX00B1','INTERNAL','Unsecure').
  

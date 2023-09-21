@@ -4,7 +4,7 @@
 <Object>
 <ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
 <ObjCls>0</ObjCls>
-<ObjId>7</ObjId>
+<ObjId>9</ObjId>
 <ObjName>Airline</ObjName>
 <ObjDesc>Airline</ObjDesc>
 <ObjPgmName>Airline</ObjPgmName>
@@ -20,15 +20,15 @@
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
-<LevelNumber>8</LevelNumber>
+<LevelNumber>12</LevelNumber>
 <BaseTable>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table></BaseTable>
 <NavigationTree>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description>
 <Updated>Yes</Updated>
@@ -49,7 +49,7 @@
 <TablesToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table>
 <TableAction>insert</TableAction>
@@ -61,10 +61,14 @@
 <Attribute>
 <AttriId>40</AttriId>
 <AttriName>AirlineDiscountPercentage</AttriName>
-<Description>Airline Discount Percentage</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Airline Discount Percentage</Description></Attribute>
+<Attribute>
+<AttriId>47</AttriId>
+<AttriName>AirlineFlightMostExpensiveId</AttriName>
+<Description>Airline Flight Most Expensive Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table>
 <TableAction>update</TableAction>
@@ -76,10 +80,14 @@
 <Attribute>
 <AttriId>40</AttriId>
 <AttriName>AirlineDiscountPercentage</AttriName>
-<Description>Airline Discount Percentage</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Airline Discount Percentage</Description></Attribute>
+<Attribute>
+<AttriId>47</AttriId>
+<AttriName>AirlineFlightMostExpensiveId</AttriName>
+<Description>Airline Flight Most Expensive Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table>
 <TableAction>delete</TableAction>
@@ -87,18 +95,28 @@
 <AfterInsertRules></AfterInsertRules>
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
-<TablesToControlOnDelete></TablesToControlOnDelete>
+<TablesToControlOnDelete>
+<Table>
+<TableId>9</TableId>
+<TableName>Flight</TableName>
+<Description>Flight</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>AirlineId</AttriName>
+<Description>Airline Id</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
 <Levels></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts>
 <Prompt>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table>
 <ProgramName>
-<Token>Gx0080</Token></ProgramName>
+<Token>Gx00C0</Token></ProgramName>
 <InputParameters></InputParameters>
 <OutputParameters>
 <Attribute>

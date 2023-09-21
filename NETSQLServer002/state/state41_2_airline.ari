@@ -1,8 +1,6 @@
-current_obj_i(2,trn,7).
+current_obj_i(2,trn,9).
  
-current_guid('fedf85c6-f073-4634-a49c-a4b5c0277c11').
- 
- 
+current_guid('faa1b8de-9727-4468-af30-105face313f3').
  
  
  
@@ -23,7 +21,9 @@ current_guid('fedf85c6-f073-4634-a49c-a4b5c0277c11').
  
  
  
-ij_object_dependency(airline,[],[],[],7).
+ 
+ 
+ij_object_dependency(airline,[],[],[],9).
  
  
 obj_parms_i([],[]).

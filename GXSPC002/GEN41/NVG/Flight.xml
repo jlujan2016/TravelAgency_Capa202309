@@ -40,7 +40,7 @@
 <Description>Flight Id</Description></Attribute></KeyAttributes>
 <Tables>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description>
 <RecordsToRead>one</RecordsToRead>
@@ -390,15 +390,15 @@
 <PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>
-<TableId>8</TableId>
+<TableId>12</TableId>
 <TableName>Airline</TableName>
 <Description>Airline</Description></Table>
 <Object>
 <ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
 <ObjCls>13</ObjCls>
-<ObjId>21</ObjId>
-<ObjName>Gx0080</ObjName>
-<ObjPgmName>Gx0080</ObjPgmName>
+<ObjId>25</ObjId>
+<ObjName>Gx00C0</ObjName>
+<ObjPgmName>Gx00C0</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>

@@ -2162,10 +2162,18 @@ namespace GeneXus.Programs {
             pr_default.execute(19, new Object[] {A9CountryId, n14CityId, A14CityId});
             if ( (pr_default.getStatus(19) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Attraction"}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Airport"}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(19);
+            /* Using cursor T000322 */
+            pr_default.execute(20, new Object[] {A9CountryId, n14CityId, A14CityId});
+            if ( (pr_default.getStatus(20) != 101) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Attraction"}), "CannotDeleteReferencedRecord", 1, "");
+               AnyError = 1;
+            }
+            pr_default.close(20);
          }
       }
 
@@ -2185,14 +2193,14 @@ namespace GeneXus.Programs {
       public void ScanStart035( )
       {
          /* Scan By routine */
-         /* Using cursor T000322 */
-         pr_default.execute(20, new Object[] {A9CountryId});
+         /* Using cursor T000323 */
+         pr_default.execute(21, new Object[] {A9CountryId});
          RcdFound5 = 0;
-         if ( (pr_default.getStatus(20) != 101) )
+         if ( (pr_default.getStatus(21) != 101) )
          {
             RcdFound5 = 1;
-            A14CityId = T000322_A14CityId[0];
-            n14CityId = T000322_n14CityId[0];
+            A14CityId = T000323_A14CityId[0];
+            n14CityId = T000323_n14CityId[0];
          }
          /* Load Subordinate Levels */
       }
@@ -2200,19 +2208,19 @@ namespace GeneXus.Programs {
       protected void ScanNext035( )
       {
          /* Scan next routine */
-         pr_default.readNext(20);
+         pr_default.readNext(21);
          RcdFound5 = 0;
-         if ( (pr_default.getStatus(20) != 101) )
+         if ( (pr_default.getStatus(21) != 101) )
          {
             RcdFound5 = 1;
-            A14CityId = T000322_A14CityId[0];
-            n14CityId = T000322_n14CityId[0];
+            A14CityId = T000323_A14CityId[0];
+            n14CityId = T000323_n14CityId[0];
          }
       }
 
       protected void ScanEnd035( )
       {
-         pr_default.close(20);
+         pr_default.close(21);
       }
 
       protected void AfterConfirm035( )
@@ -2664,7 +2672,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20239172358364", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20239211118107", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2680,7 +2688,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("country.js", "?20239172358364", false, true);
+         context.AddJavascriptSource("country.js", "?20239211118107", false, true);
          /* End function include_jscripts */
       }
 
@@ -2958,10 +2966,11 @@ namespace GeneXus.Programs {
          T00032_A14CityId = new short[1] ;
          T00032_n14CityId = new bool[] {false} ;
          T00032_A15CityName = new string[] {""} ;
-         T000321_A7AttractionId = new short[1] ;
-         T000322_A9CountryId = new short[1] ;
-         T000322_A14CityId = new short[1] ;
-         T000322_n14CityId = new bool[] {false} ;
+         T000321_A20AirportId = new short[1] ;
+         T000322_A7AttractionId = new short[1] ;
+         T000323_A9CountryId = new short[1] ;
+         T000323_A14CityId = new short[1] ;
+         T000323_n14CityId = new bool[] {false} ;
          Gridcountry_cityRow = new GXWebRow();
          subGridcountry_city_Linesclass = "";
          ROClassString = "";
@@ -3023,10 +3032,13 @@ namespace GeneXus.Programs {
                , new Object[] {
                }
                , new Object[] {
-               T000321_A7AttractionId
+               T000321_A20AirportId
                }
                , new Object[] {
-               T000322_A9CountryId, T000322_A14CityId
+               T000322_A7AttractionId
+               }
+               , new Object[] {
+               T000323_A9CountryId, T000323_A14CityId
                }
             }
          );
@@ -3216,10 +3228,11 @@ namespace GeneXus.Programs {
       private short[] T00032_A14CityId ;
       private bool[] T00032_n14CityId ;
       private string[] T00032_A15CityName ;
-      private short[] T000321_A7AttractionId ;
-      private short[] T000322_A9CountryId ;
-      private short[] T000322_A14CityId ;
-      private bool[] T000322_n14CityId ;
+      private short[] T000321_A20AirportId ;
+      private short[] T000322_A7AttractionId ;
+      private short[] T000323_A9CountryId ;
+      private short[] T000323_A14CityId ;
+      private bool[] T000323_n14CityId ;
       private GXWebForm Form ;
       private GeneXus.Programs.general.ui.SdtTransactionContext AV9TrnContext ;
    }
@@ -3251,6 +3264,7 @@ namespace GeneXus.Programs {
          ,new UpdateCursor(def[18])
          ,new ForEachCursor(def[19])
          ,new ForEachCursor(def[20])
+         ,new ForEachCursor(def[21])
        };
     }
 
@@ -3354,6 +3368,11 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000322;
           prmT000322 = new Object[] {
+          new ParDef("@CountryId",GXType.Int16,4,0) ,
+          new ParDef("@CityId",GXType.Int16,4,0){Nullable=true}
+          };
+          Object[] prmT000323;
+          prmT000323 = new Object[] {
           new ParDef("@CountryId",GXType.Int16,4,0)
           };
           def= new CursorDef[] {
@@ -3376,8 +3395,9 @@ namespace GeneXus.Programs {
              ,new CursorDef("T000318", "INSERT INTO [CountryCity]([CountryId], [CityId], [CityName]) VALUES(@CountryId, @CityId, @CityName)", GxErrorMask.GX_NOMASK,prmT000318)
              ,new CursorDef("T000319", "UPDATE [CountryCity] SET [CityName]=@CityName  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000319)
              ,new CursorDef("T000320", "DELETE FROM [CountryCity]  WHERE [CountryId] = @CountryId AND [CityId] = @CityId", GxErrorMask.GX_NOMASK,prmT000320)
-             ,new CursorDef("T000321", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000321,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000322", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000322,11, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T000321", "SELECT TOP 1 [AirportId] FROM [Airport] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000321,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000322", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE [CountryId] = @CountryId AND [CityId] = @CityId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000322,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000323", "SELECT [CountryId], [CityId] FROM [CountryCity] WHERE [CountryId] = @CountryId ORDER BY [CountryId], [CityId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000323,11, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -3444,6 +3464,9 @@ namespace GeneXus.Programs {
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 return;
              case 20 :
+                ((short[]) buf[0])[0] = rslt.getShort(1);
+                return;
+             case 21 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((short[]) buf[1])[0] = rslt.getShort(2);
                 return;

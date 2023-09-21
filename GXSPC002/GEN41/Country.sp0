@@ -206,11 +206,13 @@ act_info_i(5,[ [ 14 ] ]).
  
 ca_i(4,17).
  
+tbl_to_delete_i(5,[ 7,[ [ 5,9,9 ],[ 5,14,14 ] ],c,'IAIRPORT1',0,[ 20 ],'' ]).
 tbl_to_delete_i(5,[ 2,[ [ 5,9,9 ],[ 5,14,14 ] ],c,'IATTRACTION1',0,[ 7 ],'' ]).
 tbl_to_delete_i(3,[ 2,[ [ 3,9,9 ] ],u(5),'IATTRACTION1',0,[ 7 ],'' ]).
  
  
  
+attri_i(20,[ 'AirportId',int,4,0,'ZZZ9',0,'Airport Id','',0 ]).
 attri_i(15,[ 'CityName',svchar,40,0,'',0,'City Name','',0 ]).
 attri_i(14,[ 'CityId',int,4,0,'ZZZ9',0,'City Id','',0 ]).
 attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
@@ -226,6 +228,7 @@ attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',8 ])
 attri_i('Countryid',[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',7 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
+table_i(7,[ 'Airport',[ 20,9,14 ],'Airport','Airport' ]).
 table_i(2,[ 'Attraction',[ 7,9,14 ],'Attraction','Attraction' ]).
 table_i(3,[ 'Country',[ 9,10,17 ],'Country','Country' ]).
 table_i(5,[ 'CountryCity',[ 9,14,15 ],'City','CountryCity' ]).
@@ -234,6 +237,8 @@ index_i(3,[ 'ICOUNTRY',u,[ 9 ],'ICountry' ]).
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
 index_i(2,[ 'IATTRACTION1',d,[ 9,14 ],'IAttraction1' ]).
 index_i(5,[ 'ICOUNTRYCITY',u,[ 9,14 ],'ICountryCity' ]).
+index_i(7,[ 'IAIRPORT',u,[ 20 ],'IAirport' ]).
+index_i(7,[ 'IAIRPORT1',d,[ 9,14 ],'IAirport1' ]).
  
  
  
@@ -1235,12 +1240,28 @@ att_prop_i(2,7,'AttValidationFailedMsg','',d).
 att_prop_i(2,7,'DownloadOffline','0',d).
 att_prop_i(2,7,'VarServiceExtName','',d).
 att_prop_i(2,7,'FullName','AttractionId',v).
+att_prop_i(2,20,'ExternalName','AirportId',d).
+att_prop_i(2,20,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,20,'EmptyAsNull','Yes',d).
+att_prop_i(2,20,idBasedOn,94,v).
+att_prop_i(2,20,'AUTONUMBER','-1',d).
+att_prop_i(2,20,'AUTONUMBER_START','1',d).
+att_prop_i(2,20,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,20,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,20,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,20,'AttRegEx','',d).
+att_prop_i(2,20,'AttValidationFailedMsg','',d).
+att_prop_i(2,20,'DownloadOffline','0',d).
+att_prop_i(2,20,'VarServiceExtName','',d).
+att_prop_i(2,20,'FullName','AirportId',v).
  
+tbl_prop_i(2,7,'AllDirSuper',[ [ 5,[ 9,14 ] ] ],v).
 tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 9 ] ] ],v).
 tbl_prop_i(2,2,'AllDirSuper',[ [ 5,[ 9,14 ] ],[ 3,[ 9 ] ] ],v).
 tbl_prop_i(2,2,'DirSuperNull',[ [ 5,[ 9,14 ] ] ],v).
-tbl_prop_i(2,5,'DirSubor',[ [ 2,[ 9,14 ] ] ],v).
+tbl_prop_i(2,5,'DirSubor',[ [ 2,[ 9,14 ] ],[ 7,[ 9,14 ] ] ],v).
 tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 9 ] ] ],v).
+tbl_prop_i(2,7,'DirSuper',[ [ 5,[ 9,14 ] ] ],v).
 tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 9 ] ] ],v).
 tbl_prop_i(2,2,'DirSuper',[ [ 5,[ 9,14 ] ] ],v).
  
@@ -1254,6 +1275,10 @@ tbl_att_prop_i(2,2,9,'AllowNulls',n).
 tbl_att_prop_i(2,5,9,'AllowNulls',n).
 tbl_att_prop_i(2,5,14,'AllowNulls',n).
 tbl_att_prop_i(2,5,15,'AllowNulls',n).
+tbl_att_prop_i(2,7,20,'AllowNulls',n).
+tbl_att_prop_i(2,7,20,'AUTONUMBER',y).
+tbl_att_prop_i(2,7,9,'AllowNulls',n).
+tbl_att_prop_i(2,7,14,'AllowNulls',n).
  
 var_prop_i(2,'Countryid',idBasedOn,'',v).
  

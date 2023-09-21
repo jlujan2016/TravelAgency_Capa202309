@@ -1,6 +1,10 @@
-ALTER TABLE [FlightSeat] ADD [FlightSeatChar] nchar(1) NOT NULL CONSTRAINT FlightSeatCharFlightSeat_DEFAULT DEFAULT '';
-ALTER TABLE [FlightSeat] DROP CONSTRAINT FlightSeatCharFlightSeat_DEFAULT;
-ALTER TABLE [FlightSeat] ADD PRIMARY KEY([FlightId], [FlightSeatId], [FlightSeatChar]);
+CREATE TABLE [Airline] ([AirlineId] smallint NOT NULL IDENTITY(1,1), [AirlineName] nvarchar(40) NOT NULL , [AirlineDiscountPercentage] smallint NOT NULL , [AirlineFlightMostExpensiveId] smallint NOT NULL , PRIMARY KEY([AirlineId]));
+SET IDENTITY_INSERT [Airline] ON;
+INSERT INTO [Airline] ([AirlineId], [AirlineName], [AirlineDiscountPercentage], [AirlineFlightMostExpensiveId]) SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage], convert(int, 0) FROM (SELECT [AirlineId], [AirlineName], [AirlineDiscountPercentage], ROW_NUMBER() OVER (PARTITION BY AirlineId ORDER BY AirlineId DESC) As _GX_ROW_NUMBER FROM [Flight]) T WHERE _GX_ROW_NUMBER = 1 AND (NOT [AirlineId] IS NULL );
+SET IDENTITY_INSERT [Airline] OFF;
 
-ALTER TABLE [FlightSeat] ADD CONSTRAINT [IFLIGHTSEAT1] FOREIGN KEY ([FlightId]) REFERENCES [Flight] ([FlightId]);
+CREATE NONCLUSTERED INDEX [IFLIGHT3] ON [Flight] ([AirlineId] );
+ALTER TABLE [Flight] DROP COLUMN [AirlineName], [AirlineDiscountPercentage];
+
+ALTER TABLE [Flight] ADD CONSTRAINT [IFLIGHT3] FOREIGN KEY ([AirlineId]) REFERENCES [Airline] ([AirlineId]);
 
