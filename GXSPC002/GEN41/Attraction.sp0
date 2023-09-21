@@ -263,6 +263,7 @@ ca_i(5,9).
  
  
  
+attri_i(51,[ 'SupplierAttractionDate',date,8,0,'99/99/99',0,'Supplier Attraction Date','',0 ]).
 attri_i(49,[ 'SupplierName',svchar,40,0,'',0,'Supplier Name','',0 ]).
 attri_i(18,[ 'AttractionAddress',svchar,1024,0,'',0,'Attraction Address','',0 ]).
 attri_i(13,[ 'AttractionPhoto',bits,4,0,'',0,'Attraction Photo','',0 ]).
@@ -294,7 +295,7 @@ table_i(13,[ 'Supplier',[ 48,49 ],'Supplier','Supplier' ]).
 table_i(4,[ 'Category',[ 11,12 ],'Category','Category' ]).
 table_i(5,[ 'CountryCity',[ 9,14,15 ],'City','CountryCity' ]).
 table_i(3,[ 'Country',[ 9,10 ],'Country','Country' ]).
-table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14,18,48 ],'Attraction','Attraction' ]).
+table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14,18,48,51 ],'Attraction','Attraction' ]).
  
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
 index_i(2,[ 'UATTRACTION',k,[ 8 ],'UAttraction' ]).
@@ -1900,6 +1901,17 @@ att_prop_i(2,49,'AttValidationFailedMsg','',d).
 att_prop_i(2,49,'DownloadOffline','0',d).
 att_prop_i(2,49,'VarServiceExtName','',d).
 att_prop_i(2,49,'FullName','SupplierName',v).
+att_prop_i(2,51,'ExternalName','SupplierAttractionDate',d).
+att_prop_i(2,51,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,51,'EmptyAsNull','Yes',d).
+att_prop_i(2,51,idBasedOn,'',d).
+att_prop_i(2,51,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,51,'AttRegEx','',d).
+att_prop_i(2,51,'AttValidationFailedMsg','',d).
+att_prop_i(2,51,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,51,'DownloadOffline','0',d).
+att_prop_i(2,51,'VarServiceExtName','',d).
+att_prop_i(2,51,'FullName','SupplierAttractionDate',v).
 att_prop_i(2,40000,'ExternalName','',d).
 att_prop_i(2,40000,'ExternalNamespace','',d).
 att_prop_i(2,40000,'EmptyAsNull','Yes',d).
@@ -1929,6 +1941,7 @@ tbl_att_prop_i(2,2,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,40000,'AllowNulls',n).
 tbl_att_prop_i(2,2,18,'AllowNulls',n).
 tbl_att_prop_i(2,2,48,'AllowNulls',n).
+tbl_att_prop_i(2,2,51,'AllowNulls',n).
 tbl_att_prop_i(2,3,9,'AllowNulls',n).
 tbl_att_prop_i(2,3,9,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,10,'AllowNulls',n).
@@ -2081,6 +2094,8 @@ struct_dt_elem_i([ 26,61,92 ],2,soaptype,'').
 struct_dt_elem_i([ 26,61,92 ],2,'XmlInclude',idXmlIncludeAlways).
 struct_dt_elem_i([ 26,61,92 ],2,'JsonName','').
 struct_dt_elem_i([ 26,61,92 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,0 ],1,pic,'99/99/99').
+struct_dt_elem_i([ 26,61,0 ],4,pic,'99/99/99').
  
  
  

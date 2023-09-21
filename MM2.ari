@@ -3,7 +3,6 @@
  
  
 pgm_prop_i(web,2,'GENERAL\UI\MASTERPROMPT','WEB_COMP','Master').
-pgm_prop_i(web,1,'GENERAL\UI\MASTERUNANIMOSIDEBAR','WEB_COMP','Master').
 pgm_prop_i(web,11,'CUSTOMERGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,11,'CUSTOMERGENERAL','URLAccess','No').
 pgm_prop_i(web,14,'COUNTRYGENERAL','WEB_COMP','Yes').
@@ -13,6 +12,7 @@ pgm_prop_i(web,15,'COUNTRYCITYWC','URLAccess','No').
 pgm_prop_i(mnproc,1,'GENERAL\UI\SIDEBARITEMSDP','OutputSDT',o(26,'GeneXusUnanimo\SidebarItems')).
 pgm_prop_i(web,18,'ATTRACTIONGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,18,'ATTRACTIONGENERAL','URLAccess','No').
+pgm_prop_i(web,1,'GENERAL\UI\MASTERUNANIMOSIDEBAR','WEB_COMP','Master').
  
 model_wrkinfo_i([ '.NET','NETSQLServer002' ]).
  
@@ -93,7 +93,7 @@ lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
 lng_prop_i(1,'FullyQualifiedName','English',d).
  
-ver_stamp('20230921.174106').
+ver_stamp('20230921.175908').
  
-ver_stamp(date(2023,9,21),time(12,46,59,74)).
+ver_stamp(date(2023,9,21),time(14,50,6,57)).
  

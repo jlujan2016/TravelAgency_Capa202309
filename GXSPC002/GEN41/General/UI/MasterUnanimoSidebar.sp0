@@ -18,9 +18,9 @@ las_i(2,[ [ 'Sidebaritems' ] ]).
 lac_i(2,[ [ 'Sidebaritems' ] ]).
  
  
-lits_i('Application Name',5,10).
+lits_i('Lujan Travel',5,10).
  
-cls_i([ 0,0 ],[ 5,25 ]).
+cls_i([ 0,0 ],[ 5,21 ]).
  
 pos_i('Sidebaritems',[ 0,0,0 ]).
  
@@ -54,9 +54,9 @@ rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'DS_READ_REPLICA','No')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
-rule_i(0,datastore(1,'USER_PASSWORD','')).
-rule_i(0,datastore(1,'USER_ID','')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Timeout=120')).
+rule_i(0,datastore(1,'USER_PASSWORD','u��A�*�8OYS��Fs��up�RxVY')).
+rule_i(0,datastore(1,'USER_ID',uEHOYk6k1ERudxTa)).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
 rule_i(0,datastore(1,'CS_CONNECT','First')).
 rule_i(0,datastore(1,'DBMS_PORT','')).
@@ -205,7 +205,7 @@ html_sub_i(7,8,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-74'))).
 html_sub_i(6,9,html_i(1,div(9))).
 html_sub_i(9,10,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-46'))).
 html_sub_i(6,11,html_i(2,div(11))).
-html_sub_i(11,12,html_i(0,t('Application Name',3))).
+html_sub_i(11,12,html_i(0,t('Lujan Travel',3))).
 html_sub_i(3,13,html_i(1,div(13))).
 html_sub_i(13,14,html_i(0,div(14))).
 html_sub_i(14,15,html_i(0,div(15))).
@@ -329,7 +329,7 @@ html_comp_i(11,'Semanticcontent',div,d,[ str ]).
 html_comp_i(11,'Align','Center',v,[ str ]).
 html_comp_i(11,'Valign',top,d,[ str ]).
 html_comp_i(12,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(12,'Caption','Application Name',d,[ str ]).
+html_comp_i(12,'Caption','Lujan Travel',d,[ str ]).
 html_comp_i(12,'Id','Applicationheader',v,[ str ]).
 html_comp_i(12,'Class',header__title,v,[ str ]).
 html_comp_i(12,'Event','',d,[ str ]).
@@ -449,7 +449,7 @@ lit_i(8,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-74'),[ ctlname('Image2') 
 lit_i(7,1,div(7),[ ctlname('') ]).
 lit_i(10,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-46'),[ ctlname('Image1') ]).
 lit_i(9,1,div(9),[ ctlname('') ]).
-lit_i(12,1,t('Application Name',3),[ ctlname('Applicationheader') ]).
+lit_i(12,1,t('Lujan Travel',3),[ ctlname('Applicationheader') ]).
 lit_i(11,1,div(11),[ ctlname('') ]).
 lit_i(6,1,div(6),[ ctlname('Header') ]).
 lit_i(5,1,div(5),[ ctlname('') ]).

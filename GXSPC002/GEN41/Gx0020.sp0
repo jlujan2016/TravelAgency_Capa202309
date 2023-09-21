@@ -2,7 +2,7 @@ spec_i([ web,4,'Selection List Attraction','Gx0020',0,eng,'18_0_4-174187' ]).
  
 struct_i(2,1,[ 'Advanced_label_template' ],[]).
  
-level_i(2,[ 2,[ [ 2,many ] ],[],[],[ [ [ 2 ],[ 14,13,40000,11,9,8,7 ] ] ],[ [ [ 2 ],[] ] ],[ 7 ],'IATTRACTION',[],[] ]).
+level_i(2,[ 2,[ [ 2,many ] ],[],[],[ [ [ 2 ],[ 51,48,14,13,40000,11,9,8,7 ] ] ],[ [ [ 2 ],[] ] ],[ 7 ],'IATTRACTION',[],[] ]).
  
 tw_i(2,[]).
  
@@ -12,15 +12,17 @@ cond_constraint_i(2,[ [ t(8,2),t('.LIKE.',10),t('Cattractionname',23) ],[ 8 ],[ 
 cond_constraint_i(2,[ [ t(9,2),t(>=,10),t('Ccountryid',23) ],[ 9 ],[ t('.NOT.',8),t('null(',1),t('Ccountryid',23),t(')',4) ],[] ]).
 cond_constraint_i(2,[ [ t(11,2),t(>=,10),t('Ccategoryid',23) ],[ 11 ],[ t('.NOT.',8),t('null(',1),t('Ccategoryid',23),t(')',4) ],[] ]).
 cond_constraint_i(2,[ [ t(14,2),t(>=,10),t('Ccityid',23) ],[ 14 ],[ t('.NOT.',8),t('null(',1),t('Ccityid',23),t(')',4) ],[] ]).
+cond_constraint_i(2,[ [ t(48,2),t(>=,10),t('Csupplierid',23) ],[ 48 ],[ t('.NOT.',8),t('null(',1),t('Csupplierid',23),t(')',4) ],[] ]).
+cond_constraint_i(2,[ [ t(51,2),t(>=,10),t('Csupplierattractiondate',23) ],[ 51 ],[ t('.NOT.',8),t('null(',1),t('Csupplierattractiondate',23),t(')',4) ],[] ]).
  
  
 level_option_i(2,server_paging,[ y,[] ]).
  
-ta_i(2,[ [ [ 2,14 ],[ 2,13 ],[ 2,40000 ],[ 2,11 ],[ 2,9 ],[ 2,8 ],[ 2,7 ] ] ]).
+ta_i(2,[ [ [ 2,51 ],[ 2,48 ],[ 2,14 ],[ 2,13 ],[ 2,40000 ],[ 2,11 ],[ 2,9 ],[ 2,8 ],[ 2,7 ] ] ]).
  
-las_i(2,[ [ 'Pattractionid','Cattractionid','Cattractionname','Ccountryid','Ccategoryid','Ccityid',14,13,40000,11,9,8,7 ] ]).
+las_i(2,[ [ 'Pattractionid','Cattractionid','Cattractionname','Ccountryid','Ccategoryid','Ccityid','Csupplierid','Csupplierattractiondate',51,48,14,13,40000,11,9,8,7 ] ]).
  
-lac_i(2,[ [ 'Cattractionid','Cattractionname','Ccountryid','Ccategoryid','Ccityid' ] ]).
+lac_i(2,[ [ 'Cattractionid','Cattractionname','Ccountryid','Ccategoryid','Ccityid','Csupplierid','Csupplierattractiondate' ] ]).
  
  
 lits_i('Attraction Id',5,10).
@@ -28,14 +30,18 @@ lits_i('Attraction Name',5,10).
 lits_i('Country Id',5,10).
 lits_i('Category Id',5,10).
 lits_i('City Id',5,10).
+lits_i('Supplier Id',5,10).
+lits_i('Supplier Attraction Date',5,10).
  
-cls_i([ 0,0 ],[ 5,2109 ]).
+cls_i([ 0,0 ],[ 5,2114 ]).
  
 pos_i('Cattractionid',[ 0,0,0 ]).
 pos_i('Cattractionname',[ 0,0,0 ]).
 pos_i('Ccountryid',[ 0,0,0 ]).
 pos_i('Ccategoryid',[ 0,0,0 ]).
 pos_i('Ccityid',[ 0,0,0 ]).
+pos_i('Csupplierid',[ 0,0,0 ]).
+pos_i('Csupplierattractiondate',[ 0,0,0 ]).
 pos_i('Linkselection',[ 1,2,0 ]).
 pos_i(7,[ 1,2,1025 ]).
 pos_i(8,[ 1,2,1030 ]).
@@ -43,8 +49,9 @@ pos_i(9,[ 1,2,1071 ]).
 pos_i(11,[ 1,2,1076 ]).
 pos_i(13,[ 1,2,1081 ]).
 pos_i(14,[ 1,2,2106 ]).
+pos_i(48,[ 1,2,2111 ]).
  
-repeat_i(2,[ 1,2,[ 'Linkselection',7,8,9,11,13,14 ],[] ]).
+repeat_i(2,[ 1,2,[ 'Linkselection',7,8,9,11,13,14,48 ],[] ]).
  
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
@@ -143,11 +150,15 @@ rule_i(0,maingen(41)).
 rule_i(0,parm([ 'Pattractionid' ],[])).
 rule_i(0,parmio([ [ 'Pattractionid',out ] ])).
 rule_i(0,order([ 7 ])).
+rule_i(2,rule([ a(1,msg([ t('"Field Supplier Attraction Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t('Csupplierattractiondate',2),t(')',4),t('.OR.',9),t('Csupplierattractiondate',2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ],[ insert,update ],[ 'Csupplierattractiondate' ])).
 rule_i(0,rule([ a(22,[ '''Toggle''','''Toggle''','' ]) ],[],[],[])).
  
 a_i(1,2,t,2,[],[ [],'IATTRACTION',[] ]).
+a_i(2,2,b,0,[],[ [],[ a(1,msg([ t('"Field Supplier Attraction Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t('Csupplierattractiondate',2),t(')',4),t('.OR.',9),t('Csupplierattractiondate',2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
  
 v_i(t,i,1,[]).
+v_i(t,o,1,51).
+v_i(t,o,1,48).
 v_i(t,o,1,14).
 v_i(t,o,1,13).
 v_i(t,o,1,40000).
@@ -155,22 +166,28 @@ v_i(t,o,1,11).
 v_i(t,o,1,9).
 v_i(t,o,1,8).
 v_i(t,o,1,7).
+v_i(b,i,2,'Csupplierattractiondate').
+v_i(b,o,2,[]).
  
  
  
  
  
  
+attri_i(51,[ 'SupplierAttractionDate',date,8,0,'99/99/99',0,'Supplier Attraction Date','',0 ]).
 attri_i(40000,[ 'AttractionPhoto_GXI',svchar,2048,0,'',0,'',[],0 ]).
+attri_i(48,[ 'SupplierId',int,4,0,'ZZZ9',0,'Supplier Id','',0 ]).
 attri_i(14,[ 'CityId',int,4,0,'ZZZ9',0,'City Id','',0 ]).
 attri_i(13,[ 'AttractionPhoto',bits,4,0,'',0,'Attraction Photo','',0 ]).
 attri_i(11,[ 'CategoryId',int,4,0,'ZZZ9',0,'Category Id','',0 ]).
 attri_i(9,[ 'CountryId',int,4,0,'ZZZ9',0,'Country Id','',0 ]).
 attri_i(8,[ 'AttractionName',svchar,40,0,'',0,'Attraction Name','',0 ]).
 attri_i(7,[ 'AttractionId',int,4,0,'ZZZ9',0,'Attraction Id','',0 ]).
-attri_i('Linkselection_GXI',[ 'Linkselection_GXI',svchar,2048,0,'',0,'',[],13 ]).
+attri_i('Linkselection_GXI',[ 'Linkselection_GXI',svchar,2048,0,'',0,'',[],15 ]).
 attri_i('Advanced_label_template',[ 'ADVANCED_LABEL_TEMPLATE',char,20,0,'',0,'ADVANCED_LABEL_TEMPLATE','',9 ]).
 attri_i('Pattractionid',[ pAttractionId,int,4,0,'ZZZ9',0,'Attraction Id','',8 ]).
+attri_i('Csupplierattractiondate',[ cSupplierAttractionDate,date,8,0,'99/99/99',0,'Supplier Attraction Date','',14 ]).
+attri_i('Csupplierid',[ cSupplierId,int,4,0,'ZZZ9',0,'Supplier Id','',13 ]).
 attri_i('Ccityid',[ cCityId,int,4,0,'ZZZ9',0,'City Id','',12 ]).
 attri_i('Ccategoryid',[ cCategoryId,int,4,0,'ZZZ9',0,'Category Id','',11 ]).
 attri_i('Ccountryid',[ cCountryId,int,4,0,'ZZZ9',0,'Country Id','',10 ]).
@@ -178,7 +195,7 @@ attri_i('Cattractionname',[ cAttractionName,svchar,40,0,'',0,'Attraction Name','
 attri_i('Cattractionid',[ cAttractionId,int,4,0,'ZZZ9',0,'Attraction Id','',6 ]).
 attri_i('Linkselection',[ 'LinkSelection',bits,1024,0,'',0,'Link Selection','',5 ]).
  
-table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14 ],'Attraction','Attraction' ]).
+table_i(2,[ 'Attraction',[ 7,8,9,11,13,40000,14,48,51 ],'Attraction','Attraction' ]).
  
 index_i(2,[ 'IATTRACTION',u,[ 7 ],'IAttraction' ]).
  
@@ -214,7 +231,7 @@ dom_info_i(95,[ 'Name' ]).
 dom_info_i(13,[ 'GeneXus\Address' ]).
  
  
-break_i(2,nvg,1,[ 7 ],[ [ 7,8,9,11,13,14 ],[],[] ]).
+break_i(2,nvg,1,[ 7 ],[ [ 7,8,9,11,13,14,48 ],[],[] ]).
  
 b_group_i(2,1,lit,0,1,1).
 b_group_i(2,2,lit,0,2,6).
@@ -224,8 +241,10 @@ b_group_i(2,5,lit,0,27,36).
 b_group_i(2,6,lit,0,37,46).
 b_group_i(2,7,lit,0,47,56).
 b_group_i(2,8,lit,0,57,66).
-b_group_i(2,9,lit,0,67,70).
-b_group_i(2,10,lit,0,71,0).
+b_group_i(2,9,lit,0,67,76).
+b_group_i(2,10,lit,0,77,84).
+b_group_i(2,11,lit,0,85,88).
+b_group_i(2,12,lit,0,89,0).
  
 b_line_i(1,2,1,cmd,1,[ t('',146,1,0),t('Start',3,1,7) ]).
 b_line_i(2,2,2,cmd,1,[ t('',107,2,0),t([ t('Form',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('format(',1,1,0),t('"Selection List %1"',3,1,0),t(',',7,1,0),t('"Attraction"',3,1,0),t(')',4,1,0) ]).
@@ -285,17 +304,33 @@ b_line_i(61,2,8,cmd,1,[ t('',107,61,0),t([ t('Cityidfiltercontainer',3,1,0),t('C
 b_line_i(62,2,8,cmd,1,[ t('',107,62,0),t([ t('Ccityid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
 b_line_i(63,2,8,cmd,1,[ t('',111,63,0) ]).
 b_line_i(64,2,8,cmd,1,[ t('',147,64,0) ]).
-b_line_i(66,2,8,cmd,1,[ t('',146,66,0),t('Load',3,66,7) ]).
-b_line_i(67,2,9,cmd,1,[ t('',107,67,0),t([ t('Linkselection',23,67,2),t('fromimage(',1,67,17) ],31,67,2),t(i(98,'3914535b-0c03-44c5-9538-906a99cdd2bc'),69,1,28),t(')',4,1,37) ]).
-b_line_i([ 67,1 ],2,9,cmd,1,[ t('',107,67,0),t('Linkselection_GXI',23,1,0),t(=,10,1,0),t('urifromurl(',1,1,0),t(i(98,'3914535b-0c03-44c5-9538-906a99cdd2bc'),69,1,0),t(')',4,1,0) ]).
-b_line_i(68,2,9,cmd,2,[ t('',155,68,0) ]).
-b_line_i(68,2,9,cmd,2,[ t('',147,68,0) ]).
-b_line_i(70,2,9,cmd,2,[ t('',146,70,0),t('Enter',3,70,7) ]).
-b_line_i(71,2,10,cmd,2,[ t('',107,71,0),t('Pattractionid',23,2,0),t(=,10,2,0),t(7,2,2,0) ]).
-b_line_i(72,2,10,cmd,2,[ t('',118,72,0) ]).
-b_line_i(73,2,10,cmd,2,[ t('',147,73,0) ]).
+b_line_i(66,2,8,cmd,1,[ t('',146,66,0),t([ t('Lblsupplieridfilter',3,66,7),t('Click',3,66,27) ],29,66,27) ]).
+b_line_i(67,2,9,cmd,1,[ t('',109,67,0),t([ t('Supplieridfiltercontainer',3,67,5),t('Class',3,67,31) ],29,67,31),t(=,10,1,37),t('"AdvancedContainerItem"',3,67,86) ]).
+b_line_i(68,2,9,cmd,1,[ t('',107,68,0),t([ t('Supplieridfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
+b_line_i(69,2,9,cmd,1,[ t('',107,69,0),t([ t('Csupplierid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('TRUE',40,1,0) ]).
+b_line_i(70,2,9,cmd,1,[ t('',110,70,0) ]).
+b_line_i(71,2,9,cmd,1,[ t('',107,71,0),t([ t('Supplieridfiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
+b_line_i(72,2,9,cmd,1,[ t('',107,72,0),t([ t('Csupplierid',23,1,0),t('Visible',3,1,0) ],29,1,0),t(=,10,1,0),t('FALSE',41,1,0) ]).
+b_line_i(73,2,9,cmd,1,[ t('',111,73,0) ]).
+b_line_i(74,2,9,cmd,1,[ t('',147,74,0) ]).
+b_line_i(76,2,9,cmd,1,[ t('',146,76,0),t([ t('Lblsupplierattractiondatefilter',3,76,7),t('Click',3,76,39) ],29,76,39) ]).
+b_line_i(77,2,10,cmd,1,[ t('',109,77,0),t([ t('Supplierattractiondatefiltercontainer',3,77,5),t('Class',3,77,43) ],29,77,43),t(=,10,1,49),t('"AdvancedContainerItem"',3,77,98) ]).
+b_line_i(78,2,10,cmd,1,[ t('',107,78,0),t([ t('Supplierattractiondatefiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0),t(+,5,1,0),t('" "',3,1,0),t(+,5,1,0),t('"AdvancedContainerItemExpanded"',3,1,0) ]).
+b_line_i(79,2,10,cmd,1,[ t('',110,79,0) ]).
+b_line_i(80,2,10,cmd,1,[ t('',107,80,0),t([ t('Supplierattractiondatefiltercontainer',3,1,0),t('Class',3,1,0) ],29,1,0),t(=,10,1,0),t('"AdvancedContainerItem"',3,1,0) ]).
+b_line_i(81,2,10,cmd,1,[ t('',111,81,0) ]).
+b_line_i(82,2,10,cmd,1,[ t('',147,82,0) ]).
+b_line_i(84,2,10,cmd,1,[ t('',146,84,0),t('Load',3,84,7) ]).
+b_line_i(85,2,11,cmd,1,[ t('',107,85,0),t([ t('Linkselection',23,85,2),t('fromimage(',1,85,17) ],31,85,2),t(i(98,'3914535b-0c03-44c5-9538-906a99cdd2bc'),69,1,28),t(')',4,1,37) ]).
+b_line_i([ 85,1 ],2,11,cmd,1,[ t('',107,85,0),t('Linkselection_GXI',23,1,0),t(=,10,1,0),t('urifromurl(',1,1,0),t(i(98,'3914535b-0c03-44c5-9538-906a99cdd2bc'),69,1,0),t(')',4,1,0) ]).
+b_line_i(86,2,11,cmd,2,[ t('',155,86,0) ]).
+b_line_i(86,2,11,cmd,2,[ t('',147,86,0) ]).
+b_line_i(88,2,11,cmd,2,[ t('',146,88,0),t('Enter',3,88,7) ]).
+b_line_i(89,2,12,cmd,2,[ t('',107,89,0),t('Pattractionid',23,2,0),t(=,10,2,0),t(7,2,2,0) ]).
+b_line_i(90,2,12,cmd,2,[ t('',118,90,0) ]).
+b_line_i(91,2,12,cmd,2,[ t('',147,91,0) ]).
  
-sf_break_i(64,2).
+sf_break_i(84,2).
  
  
  
@@ -365,17 +400,37 @@ html_sub_i(49,53,html_i(1,div(53))).
 html_sub_i(53,54,html_i(0,div(54))).
 html_sub_i(54,55,html_i(0,div(55))).
 html_sub_i(55,56,html_i(0,t('Ccityid',23))).
-html_sub_i(4,57,html_i(1,div(57))).
+html_sub_i(6,57,html_i(5,div(57))).
 html_sub_i(57,58,html_i(0,div(58))).
 html_sub_i(58,59,html_i(0,div(59))).
 html_sub_i(59,60,html_i(0,div(60))).
-html_sub_i(60,61,html_i(0,button('''Toggle'''))).
-html_sub_i(58,62,html_i(1,div(62))).
-html_sub_i(62,63,html_i(0,div(63))).
-html_sub_i(63,64,html_i(0,s(64))).
-html_sub_i(58,72,html_i(2,div(72))).
-html_sub_i(72,73,html_i(0,div(73))).
-html_sub_i(73,74,html_i(0,button('Cancel'))).
+html_sub_i(60,61,html_i(0,div(61))).
+html_sub_i(61,62,html_i(0,t('Supplier Id',3))).
+html_sub_i(59,63,html_i(1,div(63))).
+html_sub_i(63,64,html_i(0,div(64))).
+html_sub_i(64,65,html_i(0,div(65))).
+html_sub_i(65,66,html_i(0,t('Csupplierid',23))).
+html_sub_i(6,67,html_i(6,div(67))).
+html_sub_i(67,68,html_i(0,div(68))).
+html_sub_i(68,69,html_i(0,div(69))).
+html_sub_i(69,70,html_i(0,div(70))).
+html_sub_i(70,71,html_i(0,div(71))).
+html_sub_i(71,72,html_i(0,t('Supplier Attraction Date',3))).
+html_sub_i(69,73,html_i(1,div(73))).
+html_sub_i(73,74,html_i(0,div(74))).
+html_sub_i(74,75,html_i(0,div(75))).
+html_sub_i(75,76,html_i(0,t('Csupplierattractiondate',23))).
+html_sub_i(4,77,html_i(1,div(77))).
+html_sub_i(77,78,html_i(0,div(78))).
+html_sub_i(78,79,html_i(0,div(79))).
+html_sub_i(79,80,html_i(0,div(80))).
+html_sub_i(80,81,html_i(0,button('''Toggle'''))).
+html_sub_i(78,82,html_i(1,div(82))).
+html_sub_i(82,83,html_i(0,div(83))).
+html_sub_i(83,84,html_i(0,s(84))).
+html_sub_i(78,93,html_i(2,div(93))).
+html_sub_i(93,94,html_i(0,div(94))).
+html_sub_i(94,95,html_i(0,button('Cancel'))).
  
 html_tags_i(1,'Class','form-horizontal Form').
 html_tags_i(2,'data-gx-base-lib',none).
@@ -390,8 +445,12 @@ html_tags_i(42,'ControlType','').
 html_tags_i(46,'data-gx-att','var:11').
 html_tags_i(52,'ControlType','').
 html_tags_i(56,'data-gx-att','var:12').
-html_tags_i(61,'ControlType','').
-html_tags_i(74,'ControlType','').
+html_tags_i(62,'ControlType','').
+html_tags_i(66,'data-gx-att','var:13').
+html_tags_i(72,'ControlType','').
+html_tags_i(76,'data-gx-att','var:14').
+html_tags_i(81,'ControlType','').
+html_tags_i(95,'ControlType','').
  
 html_comp_i(2,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(2,'Class','Section',d,[ str ]).
@@ -972,7 +1031,7 @@ html_comp_i(56,'Gxformat',0,d,[ num ]).
 html_comp_i(56,'Title','',d,[ str ]).
 html_comp_i(56,'Invitemsg','',v,[ str ]).
 html_comp_i(57,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(57,'Class','col-xs-12 col-sm-9 WWGridCell',v,[ str ]).
+html_comp_i(57,'Class',row,v,[ str ]).
 html_comp_i(57,'Id','',d,[ str ]).
 html_comp_i(57,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(57,'Width',measure(0,px),d,[ measure ]).
@@ -980,23 +1039,23 @@ html_comp_i(57,'Semanticcontent',div,d,[ str ]).
 html_comp_i(57,'Align',left,d,[ str ]).
 html_comp_i(57,'Valign',top,d,[ str ]).
 html_comp_i(58,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(58,'Class','Table',v,[ str ]).
-html_comp_i(58,'Id','Gridtable',v,[ str ]).
+html_comp_i(58,'Class','col-xs-12',v,[ str ]).
+html_comp_i(58,'Id','',d,[ str ]).
 html_comp_i(58,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(58,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(58,'Semanticcontent',div,d,[ str ]).
 html_comp_i(58,'Align',left,d,[ str ]).
 html_comp_i(58,'Valign',top,d,[ str ]).
 html_comp_i(59,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(59,'Class',row,v,[ str ]).
-html_comp_i(59,'Id','',d,[ str ]).
+html_comp_i(59,'Class','AdvancedContainerItem',v,[ str ]).
+html_comp_i(59,'Id','Supplieridfiltercontainer',v,[ str ]).
 html_comp_i(59,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(59,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(59,'Semanticcontent',div,d,[ str ]).
 html_comp_i(59,'Align',left,d,[ str ]).
 html_comp_i(59,'Valign',top,d,[ str ]).
 html_comp_i(60,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(60,'Class','col-xs-12 hidden-sm hidden-md hidden-lg ToggleCell',v,[ str ]).
+html_comp_i(60,'Class',row,v,[ str ]).
 html_comp_i(60,'Id','',d,[ str ]).
 html_comp_i(60,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(60,'Width',measure(0,px),d,[ measure ]).
@@ -1004,266 +1063,134 @@ html_comp_i(60,'Semanticcontent',div,d,[ str ]).
 html_comp_i(60,'Align',left,d,[ str ]).
 html_comp_i(60,'Valign',top,d,[ str ]).
 html_comp_i(61,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(61,'Controlname','Btntoggle',v,[ str ]).
-html_comp_i(61,'Class','BtnToggle',v,[ str ]).
-html_comp_i(61,'Event','''Toggle''',v,[ str ]).
-html_comp_i(61,'Caption','|||',d,[ str ]).
-html_comp_i(61,'Title','|||',d,[ str ]).
-html_comp_i(61,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(61,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(61,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(61,'Border','2',d,[ str ]).
-html_comp_i(61,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(61,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(61,'Class','col-xs-12',v,[ str ]).
+html_comp_i(61,'Id','',d,[ str ]).
+html_comp_i(61,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(61,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(61,'Semanticcontent',div,d,[ str ]).
+html_comp_i(61,'Align',left,d,[ str ]).
+html_comp_i(61,'Valign',top,d,[ str ]).
 html_comp_i(62,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(62,'Class',row,v,[ str ]).
-html_comp_i(62,'Id','',d,[ str ]).
-html_comp_i(62,'Height',measure(0,px),d,[ measure ]).
-html_comp_i(62,'Width',measure(0,px),d,[ measure ]).
-html_comp_i(62,'Semanticcontent',div,d,[ str ]).
-html_comp_i(62,'Align',left,d,[ str ]).
-html_comp_i(62,'Valign',top,d,[ str ]).
+html_comp_i(62,'Caption','Supplier Id',d,[ str ]).
+html_comp_i(62,'Id','Lblsupplieridfilter',v,[ str ]).
+html_comp_i(62,'Class','WWAdvancedLabel WWFilterLabel',v,[ str ]).
+html_comp_i(62,'Event','',d,[ str ]).
+html_comp_i(62,'Returnonclick',0,d,[ bool ]).
+html_comp_i(62,'Gxformat',1,v,[ num ]).
+html_comp_i(62,'Title','',d,[ str ]).
+html_comp_i(62,'Fill',-1,d,[ bool ]).
+html_comp_i(62,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(62,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(62,'Font','',d,[ str ]).
 html_comp_i(63,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(63,'Class','col-xs-12',v,[ str ]).
+html_comp_i(63,'Class',row,v,[ str ]).
 html_comp_i(63,'Id','',d,[ str ]).
 html_comp_i(63,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(63,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(63,'Semanticcontent',div,d,[ str ]).
 html_comp_i(63,'Align',left,d,[ str ]).
 html_comp_i(63,'Valign',top,d,[ str ]).
-html_comp_i(64,'Isabstractlayoutcontrol',-1,v,[ bool ]).
-html_comp_i(64,'Controlname','Grid1',v,[ str ]).
-html_comp_i(64,'Controlwhere','',d,[ str ]).
-html_comp_i(64,'Controlunique','',d,[ str ]).
-html_comp_i(64,'Save_state',0,d,[ bool ]).
-html_comp_i(64,'Iddataselector','',d,[ str ]).
-html_comp_i(64,'Sflrender','',d,[ str ]).
-html_comp_i(64,'Class','PromptGrid',v,[ str ]).
-html_comp_i(64,'Prop_emptydatasettext','',d,[ str ]).
-html_comp_i(64,'Autoresize',-1,d,[ bool ]).
-html_comp_i(64,'Gxwidth',measure(0,px),d,[ measure ]).
-html_comp_i(64,'Gxheight',measure(0,px),d,[ measure ]).
-html_comp_i(64,'Maxcols',1,d,[ num ]).
-html_comp_i(64,'Maxrows',10,v,[ num ]).
-html_comp_i(64,'Header','',d,[ str ]).
-html_comp_i(64,'Title','',d,[ str ]).
-html_comp_i(64,'Infinitescrolling',0,d,[ num ]).
-html_comp_i(64,'Linescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(64,'Linesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(64,'Titlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(64,'Titlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(64,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(64,'Class','col-xs-12 WWFiltersCell',v,[ str ]).
+html_comp_i(64,'Id','',d,[ str ]).
+html_comp_i(64,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(64,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(64,'Semanticcontent',div,d,[ str ]).
 html_comp_i(64,'Align',left,d,[ str ]).
-html_comp_i(64,'Cellpadding','1',d,[ str ]).
-html_comp_i(64,'Cellspacing','2',d,[ str ]).
-html_comp_i(64,'Sortable',-1,d,[ bool ]).
-html_comp_i(64,'Allowdrop',0,d,[ bool ]).
-html_comp_i(64,'Allowdrag',0,d,[ bool ]).
-html_comp_i(64,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(64,'Allowcollapsing',0,d,[ bool ]).
-html_comp_i(64,'Allowselection',0,d,[ bool ]).
+html_comp_i(64,'Valign',top,d,[ str ]).
 html_comp_i(65,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(65,'Colcount',5,d,[ num ]).
-html_comp_i(65,'Colattid',-5,v,[ num ]).
-html_comp_i(65,'Controlname','&Linkselection',d,[ str ]).
-html_comp_i(65,'Class','SelectionAttribute',v,[ str ]).
-html_comp_i(65,'Columnclass','WWActionColumn',v,[ str ]).
-html_comp_i(65,'Returnonclick',-1,v,[ bool ]).
-html_comp_i(65,'Eventgx','',d,[ str ]).
-html_comp_i(65,'Controltype',2,d,[ num ]).
-html_comp_i(65,'Inputtype',0,d,[ num ]).
-html_comp_i(65,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(65,'Autocomplete',0,d,[ bool ]).
-html_comp_i(65,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(65,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(65,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(65,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(65,'Coltitle','',d,[ str ]).
-html_comp_i(65,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(65,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(65,'Colvisible',-1,d,[ bool ]).
-html_comp_i(65,'Border','0',d,[ str ]).
-html_comp_i(65,'Alt','',d,[ str ]).
-html_comp_i(65,'Title','',d,[ str ]).
-html_comp_i(65,'Hspace',0,d,[ num ]).
-html_comp_i(65,'Vspace',0,d,[ num ]).
+html_comp_i(65,'Class',' gx-attribute',v,[ str ]).
+html_comp_i(65,'Id','',d,[ str ]).
+html_comp_i(65,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(65,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(65,'Semanticcontent',div,d,[ str ]).
+html_comp_i(65,'Align',left,d,[ str ]).
+html_comp_i(65,'Valign',top,d,[ str ]).
 html_comp_i(66,'Isabstractlayoutcontrol',0,d,[ bool ]).
 html_comp_i(66,'Colcount',4,d,[ num ]).
-html_comp_i(66,'Colattid',7,v,[ num ]).
-html_comp_i(66,'Controlname','Attractionid',d,[ str ]).
+html_comp_i(66,'Attid',-13,v,[ num ]).
 html_comp_i(66,'Class','Attribute',v,[ str ]).
-html_comp_i(66,'Columnclass','WWColumn',v,[ str ]).
-html_comp_i(66,'Returnonclick',0,d,[ bool ]).
-html_comp_i(66,'Eventgx','',d,[ str ]).
+html_comp_i(66,'Controlname','&Csupplierid',d,[ str ]).
+html_comp_i(66,'Returnonclick',0,v,[ bool ]).
+html_comp_i(66,'Captionclass','col-sm-3 AttributeLabel',v,[ str ]).
+html_comp_i(66,'Captionstyle','',v,[ str ]).
+html_comp_i(66,'Captionposition','None',v,[ str ]).
+html_comp_i(66,'Captionvalue','Supplier Id',d,[ str ]).
+html_comp_i(66,'Layoutclass','',v,[ str ]).
 html_comp_i(66,'Controltype',2,d,[ num ]).
 html_comp_i(66,'Inputtype',0,d,[ num ]).
 html_comp_i(66,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(66,'Colreadonly',-1,d,[ bool ]).
-html_comp_i(66,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(66,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(66,'Readonly',0,v,[ bool ]).
+html_comp_i(66,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(66,'Ispassword',0,d,[ bool ]).
-html_comp_i(66,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(66,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(66,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(66,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(66,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(66,'Coltitle','Id',d,[ str ]).
-html_comp_i(66,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(66,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(66,'Autoresize',-1,d,[ bool ]).
+html_comp_i(66,'Gxwidth',measure(4,chr),d,[ measure ]).
+html_comp_i(66,'Gxheight',measure(1,row),d,[ measure ]).
+html_comp_i(66,'Ismultiline',0,d,[ bool ]).
+html_comp_i(66,'Maxtextnumberlines',0,d,[ num ]).
+html_comp_i(66,'Fill',-1,d,[ bool ]).
+html_comp_i(66,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(66,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(66,'Font',font('Verdana',12,[]),d,[ font ]).
 html_comp_i(66,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(66,'Gxformat',0,d,[ num ]).
-html_comp_i(66,'Colvisible',-1,d,[ bool ]).
 html_comp_i(66,'Title','',d,[ str ]).
-html_comp_i(66,'Invitemsg','',d,[ str ]).
+html_comp_i(66,'Invitemsg','',v,[ str ]).
 html_comp_i(67,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(67,'Colcount',40,d,[ num ]).
-html_comp_i(67,'Colattid',8,v,[ num ]).
-html_comp_i(67,'Controlname','Attractionname',d,[ str ]).
-html_comp_i(67,'Class','DescriptionAttribute',v,[ str ]).
-html_comp_i(67,'Columnclass','WWColumn',v,[ str ]).
-html_comp_i(67,'Returnonclick',-1,v,[ bool ]).
-html_comp_i(67,'Eventgx','',d,[ str ]).
-html_comp_i(67,'Controltype',2,d,[ num ]).
-html_comp_i(67,'Inputtype',0,d,[ num ]).
-html_comp_i(67,'Editautocomplete',0,d,[ num ]).
-html_comp_i(67,'Autocorrection',-1,d,[ bool ]).
-html_comp_i(67,'Autocapitalization','FirstWord',d,[ str ]).
-html_comp_i(67,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(67,'Colreadonly',-1,v,[ bool ]).
-html_comp_i(67,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(67,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(67,'Ispassword',0,d,[ bool ]).
-html_comp_i(67,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(67,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(67,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(67,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(67,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(67,'Coltitle','Name',d,[ str ]).
-html_comp_i(67,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(67,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(67,'Horizontalalignment',left,d,[ str ]).
-html_comp_i(67,'Gxformat',0,d,[ num ]).
-html_comp_i(67,'Colvisible',-1,d,[ bool ]).
-html_comp_i(67,'Title','',d,[ str ]).
-html_comp_i(67,'Invitemsg','',d,[ str ]).
+html_comp_i(67,'Class',row,v,[ str ]).
+html_comp_i(67,'Id','',d,[ str ]).
+html_comp_i(67,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(67,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(67,'Semanticcontent',div,d,[ str ]).
+html_comp_i(67,'Align',left,d,[ str ]).
+html_comp_i(67,'Valign',top,d,[ str ]).
 html_comp_i(68,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(68,'Colcount',4,d,[ num ]).
-html_comp_i(68,'Colattid',9,v,[ num ]).
-html_comp_i(68,'Controlname','Countryid',d,[ str ]).
-html_comp_i(68,'Class','Attribute',v,[ str ]).
-html_comp_i(68,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
-html_comp_i(68,'Returnonclick',0,d,[ bool ]).
-html_comp_i(68,'Eventgx','',d,[ str ]).
-html_comp_i(68,'Controltype',2,d,[ num ]).
-html_comp_i(68,'Inputtype',0,d,[ num ]).
-html_comp_i(68,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(68,'Colreadonly',-1,d,[ bool ]).
-html_comp_i(68,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(68,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(68,'Ispassword',0,d,[ bool ]).
-html_comp_i(68,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(68,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(68,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(68,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(68,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(68,'Coltitle','Country Id',d,[ str ]).
-html_comp_i(68,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(68,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(68,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(68,'Gxformat',0,d,[ num ]).
-html_comp_i(68,'Colvisible',-1,d,[ bool ]).
-html_comp_i(68,'Title','',d,[ str ]).
-html_comp_i(68,'Invitemsg','',d,[ str ]).
+html_comp_i(68,'Class','col-xs-12',v,[ str ]).
+html_comp_i(68,'Id','',d,[ str ]).
+html_comp_i(68,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(68,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(68,'Semanticcontent',div,d,[ str ]).
+html_comp_i(68,'Align',left,d,[ str ]).
+html_comp_i(68,'Valign',top,d,[ str ]).
 html_comp_i(69,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(69,'Colcount',4,d,[ num ]).
-html_comp_i(69,'Colattid',11,v,[ num ]).
-html_comp_i(69,'Controlname','Categoryid',d,[ str ]).
-html_comp_i(69,'Class','Attribute',v,[ str ]).
-html_comp_i(69,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
-html_comp_i(69,'Returnonclick',0,d,[ bool ]).
-html_comp_i(69,'Eventgx','',d,[ str ]).
-html_comp_i(69,'Controltype',2,d,[ num ]).
-html_comp_i(69,'Inputtype',0,d,[ num ]).
-html_comp_i(69,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(69,'Colreadonly',-1,d,[ bool ]).
-html_comp_i(69,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(69,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(69,'Ispassword',0,d,[ bool ]).
-html_comp_i(69,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(69,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(69,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(69,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(69,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(69,'Coltitle','Category Id',d,[ str ]).
-html_comp_i(69,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(69,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(69,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(69,'Gxformat',0,d,[ num ]).
-html_comp_i(69,'Colvisible',-1,d,[ bool ]).
-html_comp_i(69,'Title','',d,[ str ]).
-html_comp_i(69,'Invitemsg','',d,[ str ]).
+html_comp_i(69,'Class','AdvancedContainerItem',v,[ str ]).
+html_comp_i(69,'Id','Supplierattractiondatefiltercontainer',v,[ str ]).
+html_comp_i(69,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(69,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(69,'Semanticcontent',div,d,[ str ]).
+html_comp_i(69,'Align',left,d,[ str ]).
+html_comp_i(69,'Valign',top,d,[ str ]).
 html_comp_i(70,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(70,'Colcount',5,d,[ num ]).
-html_comp_i(70,'Colattid',13,v,[ num ]).
-html_comp_i(70,'Controlname','Attractionphoto',d,[ str ]).
-html_comp_i(70,'Class','ImageAttribute',v,[ str ]).
-html_comp_i(70,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
-html_comp_i(70,'Returnonclick',0,d,[ bool ]).
-html_comp_i(70,'Eventgx','',d,[ str ]).
-html_comp_i(70,'Controltype',2,d,[ num ]).
-html_comp_i(70,'Inputtype',0,d,[ num ]).
-html_comp_i(70,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(70,'Autocomplete',0,d,[ bool ]).
-html_comp_i(70,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(70,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(70,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(70,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(70,'Coltitle','Photo',d,[ str ]).
-html_comp_i(70,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(70,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(70,'Colvisible',-1,d,[ bool ]).
-html_comp_i(70,'Border','0',d,[ str ]).
-html_comp_i(70,'Alt','',d,[ str ]).
-html_comp_i(70,'Title','',d,[ str ]).
-html_comp_i(70,'Hspace',0,d,[ num ]).
-html_comp_i(70,'Vspace',0,d,[ num ]).
+html_comp_i(70,'Class',row,v,[ str ]).
+html_comp_i(70,'Id','',d,[ str ]).
+html_comp_i(70,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(70,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(70,'Semanticcontent',div,d,[ str ]).
+html_comp_i(70,'Align',left,d,[ str ]).
+html_comp_i(70,'Valign',top,d,[ str ]).
 html_comp_i(71,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(71,'Colcount',4,d,[ num ]).
-html_comp_i(71,'Colattid',14,v,[ num ]).
-html_comp_i(71,'Controlname','Cityid',d,[ str ]).
-html_comp_i(71,'Class','Attribute',v,[ str ]).
-html_comp_i(71,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
-html_comp_i(71,'Returnonclick',0,d,[ bool ]).
-html_comp_i(71,'Eventgx','',d,[ str ]).
-html_comp_i(71,'Controltype',2,d,[ num ]).
-html_comp_i(71,'Inputtype',0,d,[ num ]).
-html_comp_i(71,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(71,'Colreadonly',-1,d,[ bool ]).
-html_comp_i(71,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(71,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(71,'Ispassword',0,d,[ bool ]).
-html_comp_i(71,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(71,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(71,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(71,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
-html_comp_i(71,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(71,'Coltitle','City Id',d,[ str ]).
-html_comp_i(71,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
-html_comp_i(71,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(71,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(71,'Gxformat',0,d,[ num ]).
-html_comp_i(71,'Colvisible',-1,d,[ bool ]).
-html_comp_i(71,'Title','',d,[ str ]).
-html_comp_i(71,'Invitemsg','',d,[ str ]).
+html_comp_i(71,'Class','col-xs-12',v,[ str ]).
+html_comp_i(71,'Id','',d,[ str ]).
+html_comp_i(71,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(71,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(71,'Semanticcontent',div,d,[ str ]).
+html_comp_i(71,'Align',left,d,[ str ]).
+html_comp_i(71,'Valign',top,d,[ str ]).
 html_comp_i(72,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(72,'Class',row,v,[ str ]).
-html_comp_i(72,'Id','',d,[ str ]).
-html_comp_i(72,'Height',measure(0,px),d,[ measure ]).
-html_comp_i(72,'Width',measure(0,px),d,[ measure ]).
-html_comp_i(72,'Semanticcontent',div,d,[ str ]).
-html_comp_i(72,'Align',left,d,[ str ]).
-html_comp_i(72,'Valign',top,d,[ str ]).
+html_comp_i(72,'Caption','Supplier Attraction Date',d,[ str ]).
+html_comp_i(72,'Id','Lblsupplierattractiondatefilter',v,[ str ]).
+html_comp_i(72,'Class','WWAdvancedLabel WWDateFilterLabel',v,[ str ]).
+html_comp_i(72,'Event','',d,[ str ]).
+html_comp_i(72,'Returnonclick',0,d,[ bool ]).
+html_comp_i(72,'Gxformat',1,v,[ num ]).
+html_comp_i(72,'Title','',d,[ str ]).
+html_comp_i(72,'Fill',-1,d,[ bool ]).
+html_comp_i(72,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(72,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(72,'Font','',d,[ str ]).
 html_comp_i(73,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(73,'Class','col-xs-12',v,[ str ]).
+html_comp_i(73,'Class',row,v,[ str ]).
 html_comp_i(73,'Id','',d,[ str ]).
 html_comp_i(73,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(73,'Width',measure(0,px),d,[ measure ]).
@@ -1271,17 +1198,392 @@ html_comp_i(73,'Semanticcontent',div,d,[ str ]).
 html_comp_i(73,'Align',left,d,[ str ]).
 html_comp_i(73,'Valign',top,d,[ str ]).
 html_comp_i(74,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(74,'Controlname','Btn_cancel',v,[ str ]).
-html_comp_i(74,'Class','BtnCancel',v,[ str ]).
-html_comp_i(74,'Event','Cancel',v,[ str ]).
-html_comp_i(74,'Caption','Cancel',d,[ str ]).
-html_comp_i(74,'Title','Cancel',d,[ str ]).
-html_comp_i(74,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
-html_comp_i(74,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(74,'Backcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(74,'Border','2',d,[ str ]).
-html_comp_i(74,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(74,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(74,'Class','col-xs-12 WWFiltersCell',v,[ str ]).
+html_comp_i(74,'Id','',d,[ str ]).
+html_comp_i(74,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(74,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(74,'Semanticcontent',div,d,[ str ]).
+html_comp_i(74,'Align',left,d,[ str ]).
+html_comp_i(74,'Valign',top,d,[ str ]).
+html_comp_i(75,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(75,'Class',' gx-attribute',v,[ str ]).
+html_comp_i(75,'Id','',d,[ str ]).
+html_comp_i(75,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(75,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(75,'Semanticcontent',div,d,[ str ]).
+html_comp_i(75,'Align',left,d,[ str ]).
+html_comp_i(75,'Valign',top,d,[ str ]).
+html_comp_i(76,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(76,'Colcount',8,d,[ num ]).
+html_comp_i(76,'Attid',-14,v,[ num ]).
+html_comp_i(76,'Class','Attribute',v,[ str ]).
+html_comp_i(76,'Controlname','&Csupplierattractiondate',d,[ str ]).
+html_comp_i(76,'Returnonclick',0,v,[ bool ]).
+html_comp_i(76,'Captionclass','col-sm-3 AttributeLabel',v,[ str ]).
+html_comp_i(76,'Captionstyle','',v,[ str ]).
+html_comp_i(76,'Captionposition','None',v,[ str ]).
+html_comp_i(76,'Captionvalue','Supplier Attraction Date',d,[ str ]).
+html_comp_i(76,'Layoutclass','',v,[ str ]).
+html_comp_i(76,'Controltype',2,d,[ num ]).
+html_comp_i(76,'Inputtype',0,d,[ num ]).
+html_comp_i(76,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(76,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(76,'Readonly',0,v,[ bool ]).
+html_comp_i(76,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(76,'Ispassword',0,d,[ bool ]).
+html_comp_i(76,'Autoresize',-1,d,[ bool ]).
+html_comp_i(76,'Gxwidth',measure(8,chr),d,[ measure ]).
+html_comp_i(76,'Gxheight',measure(1,row),d,[ measure ]).
+html_comp_i(76,'Ismultiline',0,d,[ bool ]).
+html_comp_i(76,'Maxtextnumberlines',0,d,[ num ]).
+html_comp_i(76,'Fill',-1,d,[ bool ]).
+html_comp_i(76,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(76,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(76,'Font',font('Verdana',12,[]),d,[ font ]).
+html_comp_i(76,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(76,'Gxformat',0,d,[ num ]).
+html_comp_i(76,'Title','',d,[ str ]).
+html_comp_i(76,'Use_datepicker',-1,d,[ bool ]).
+html_comp_i(76,'Flat_datepicker',-1,v,[ bool ]).
+html_comp_i(77,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(77,'Class','col-xs-12 col-sm-9 WWGridCell',v,[ str ]).
+html_comp_i(77,'Id','',d,[ str ]).
+html_comp_i(77,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(77,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(77,'Semanticcontent',div,d,[ str ]).
+html_comp_i(77,'Align',left,d,[ str ]).
+html_comp_i(77,'Valign',top,d,[ str ]).
+html_comp_i(78,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(78,'Class','Table',v,[ str ]).
+html_comp_i(78,'Id','Gridtable',v,[ str ]).
+html_comp_i(78,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(78,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(78,'Semanticcontent',div,d,[ str ]).
+html_comp_i(78,'Align',left,d,[ str ]).
+html_comp_i(78,'Valign',top,d,[ str ]).
+html_comp_i(79,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(79,'Class',row,v,[ str ]).
+html_comp_i(79,'Id','',d,[ str ]).
+html_comp_i(79,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(79,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(79,'Semanticcontent',div,d,[ str ]).
+html_comp_i(79,'Align',left,d,[ str ]).
+html_comp_i(79,'Valign',top,d,[ str ]).
+html_comp_i(80,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(80,'Class','col-xs-12 hidden-sm hidden-md hidden-lg ToggleCell',v,[ str ]).
+html_comp_i(80,'Id','',d,[ str ]).
+html_comp_i(80,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(80,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(80,'Semanticcontent',div,d,[ str ]).
+html_comp_i(80,'Align',left,d,[ str ]).
+html_comp_i(80,'Valign',top,d,[ str ]).
+html_comp_i(81,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(81,'Controlname','Btntoggle',v,[ str ]).
+html_comp_i(81,'Class','BtnToggle',v,[ str ]).
+html_comp_i(81,'Event','''Toggle''',v,[ str ]).
+html_comp_i(81,'Caption','|||',d,[ str ]).
+html_comp_i(81,'Title','|||',d,[ str ]).
+html_comp_i(81,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(81,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(81,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(81,'Border','2',d,[ str ]).
+html_comp_i(81,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(81,'Buttonborderstyle',standard,d,[ str ]).
+html_comp_i(82,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(82,'Class',row,v,[ str ]).
+html_comp_i(82,'Id','',d,[ str ]).
+html_comp_i(82,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(82,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(82,'Semanticcontent',div,d,[ str ]).
+html_comp_i(82,'Align',left,d,[ str ]).
+html_comp_i(82,'Valign',top,d,[ str ]).
+html_comp_i(83,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(83,'Class','col-xs-12',v,[ str ]).
+html_comp_i(83,'Id','',d,[ str ]).
+html_comp_i(83,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(83,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(83,'Semanticcontent',div,d,[ str ]).
+html_comp_i(83,'Align',left,d,[ str ]).
+html_comp_i(83,'Valign',top,d,[ str ]).
+html_comp_i(84,'Isabstractlayoutcontrol',-1,v,[ bool ]).
+html_comp_i(84,'Controlname','Grid1',v,[ str ]).
+html_comp_i(84,'Controlwhere','',d,[ str ]).
+html_comp_i(84,'Controlunique','',d,[ str ]).
+html_comp_i(84,'Save_state',0,d,[ bool ]).
+html_comp_i(84,'Iddataselector','',d,[ str ]).
+html_comp_i(84,'Sflrender','',d,[ str ]).
+html_comp_i(84,'Class','PromptGrid',v,[ str ]).
+html_comp_i(84,'Prop_emptydatasettext','',d,[ str ]).
+html_comp_i(84,'Autoresize',-1,d,[ bool ]).
+html_comp_i(84,'Gxwidth',measure(0,px),d,[ measure ]).
+html_comp_i(84,'Gxheight',measure(0,px),d,[ measure ]).
+html_comp_i(84,'Maxcols',1,d,[ num ]).
+html_comp_i(84,'Maxrows',10,v,[ num ]).
+html_comp_i(84,'Header','',d,[ str ]).
+html_comp_i(84,'Title','',d,[ str ]).
+html_comp_i(84,'Infinitescrolling',0,d,[ num ]).
+html_comp_i(84,'Linescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(84,'Linesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(84,'Titlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(84,'Titlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(84,'Align',left,d,[ str ]).
+html_comp_i(84,'Cellpadding','1',d,[ str ]).
+html_comp_i(84,'Cellspacing','2',d,[ str ]).
+html_comp_i(84,'Sortable',-1,d,[ bool ]).
+html_comp_i(84,'Allowdrop',0,d,[ bool ]).
+html_comp_i(84,'Allowdrag',0,d,[ bool ]).
+html_comp_i(84,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(84,'Allowcollapsing',0,d,[ bool ]).
+html_comp_i(84,'Allowselection',0,d,[ bool ]).
+html_comp_i(85,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(85,'Colcount',5,d,[ num ]).
+html_comp_i(85,'Colattid',-5,v,[ num ]).
+html_comp_i(85,'Controlname','&Linkselection',d,[ str ]).
+html_comp_i(85,'Class','SelectionAttribute',v,[ str ]).
+html_comp_i(85,'Columnclass','WWActionColumn',v,[ str ]).
+html_comp_i(85,'Returnonclick',-1,v,[ bool ]).
+html_comp_i(85,'Eventgx','',d,[ str ]).
+html_comp_i(85,'Controltype',2,d,[ num ]).
+html_comp_i(85,'Inputtype',0,d,[ num ]).
+html_comp_i(85,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(85,'Autocomplete',0,d,[ bool ]).
+html_comp_i(85,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(85,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(85,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(85,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(85,'Coltitle','',d,[ str ]).
+html_comp_i(85,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(85,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(85,'Colvisible',-1,d,[ bool ]).
+html_comp_i(85,'Border','0',d,[ str ]).
+html_comp_i(85,'Alt','',d,[ str ]).
+html_comp_i(85,'Title','',d,[ str ]).
+html_comp_i(85,'Hspace',0,d,[ num ]).
+html_comp_i(85,'Vspace',0,d,[ num ]).
+html_comp_i(86,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(86,'Colcount',4,d,[ num ]).
+html_comp_i(86,'Colattid',7,v,[ num ]).
+html_comp_i(86,'Controlname','Attractionid',d,[ str ]).
+html_comp_i(86,'Class','Attribute',v,[ str ]).
+html_comp_i(86,'Columnclass','WWColumn',v,[ str ]).
+html_comp_i(86,'Returnonclick',0,d,[ bool ]).
+html_comp_i(86,'Eventgx','',d,[ str ]).
+html_comp_i(86,'Controltype',2,d,[ num ]).
+html_comp_i(86,'Inputtype',0,d,[ num ]).
+html_comp_i(86,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(86,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(86,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(86,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(86,'Ispassword',0,d,[ bool ]).
+html_comp_i(86,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(86,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(86,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(86,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(86,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(86,'Coltitle','Id',d,[ str ]).
+html_comp_i(86,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(86,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(86,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(86,'Gxformat',0,d,[ num ]).
+html_comp_i(86,'Colvisible',-1,d,[ bool ]).
+html_comp_i(86,'Title','',d,[ str ]).
+html_comp_i(86,'Invitemsg','',d,[ str ]).
+html_comp_i(87,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(87,'Colcount',40,d,[ num ]).
+html_comp_i(87,'Colattid',8,v,[ num ]).
+html_comp_i(87,'Controlname','Attractionname',d,[ str ]).
+html_comp_i(87,'Class','DescriptionAttribute',v,[ str ]).
+html_comp_i(87,'Columnclass','WWColumn',v,[ str ]).
+html_comp_i(87,'Returnonclick',-1,v,[ bool ]).
+html_comp_i(87,'Eventgx','',d,[ str ]).
+html_comp_i(87,'Controltype',2,d,[ num ]).
+html_comp_i(87,'Inputtype',0,d,[ num ]).
+html_comp_i(87,'Editautocomplete',0,d,[ num ]).
+html_comp_i(87,'Autocorrection',-1,d,[ bool ]).
+html_comp_i(87,'Autocapitalization','FirstWord',d,[ str ]).
+html_comp_i(87,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(87,'Colreadonly',-1,v,[ bool ]).
+html_comp_i(87,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(87,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(87,'Ispassword',0,d,[ bool ]).
+html_comp_i(87,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(87,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(87,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(87,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(87,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(87,'Coltitle','Name',d,[ str ]).
+html_comp_i(87,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(87,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(87,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(87,'Gxformat',0,d,[ num ]).
+html_comp_i(87,'Colvisible',-1,d,[ bool ]).
+html_comp_i(87,'Title','',d,[ str ]).
+html_comp_i(87,'Invitemsg','',d,[ str ]).
+html_comp_i(88,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(88,'Colcount',4,d,[ num ]).
+html_comp_i(88,'Colattid',9,v,[ num ]).
+html_comp_i(88,'Controlname','Countryid',d,[ str ]).
+html_comp_i(88,'Class','Attribute',v,[ str ]).
+html_comp_i(88,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(88,'Returnonclick',0,d,[ bool ]).
+html_comp_i(88,'Eventgx','',d,[ str ]).
+html_comp_i(88,'Controltype',2,d,[ num ]).
+html_comp_i(88,'Inputtype',0,d,[ num ]).
+html_comp_i(88,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(88,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(88,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(88,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(88,'Ispassword',0,d,[ bool ]).
+html_comp_i(88,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(88,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(88,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(88,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(88,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(88,'Coltitle','Country Id',d,[ str ]).
+html_comp_i(88,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(88,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(88,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(88,'Gxformat',0,d,[ num ]).
+html_comp_i(88,'Colvisible',-1,d,[ bool ]).
+html_comp_i(88,'Title','',d,[ str ]).
+html_comp_i(88,'Invitemsg','',d,[ str ]).
+html_comp_i(89,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(89,'Colcount',4,d,[ num ]).
+html_comp_i(89,'Colattid',11,v,[ num ]).
+html_comp_i(89,'Controlname','Categoryid',d,[ str ]).
+html_comp_i(89,'Class','Attribute',v,[ str ]).
+html_comp_i(89,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(89,'Returnonclick',0,d,[ bool ]).
+html_comp_i(89,'Eventgx','',d,[ str ]).
+html_comp_i(89,'Controltype',2,d,[ num ]).
+html_comp_i(89,'Inputtype',0,d,[ num ]).
+html_comp_i(89,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(89,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(89,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(89,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(89,'Ispassword',0,d,[ bool ]).
+html_comp_i(89,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(89,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(89,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(89,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(89,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(89,'Coltitle','Category Id',d,[ str ]).
+html_comp_i(89,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(89,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(89,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(89,'Gxformat',0,d,[ num ]).
+html_comp_i(89,'Colvisible',-1,d,[ bool ]).
+html_comp_i(89,'Title','',d,[ str ]).
+html_comp_i(89,'Invitemsg','',d,[ str ]).
+html_comp_i(90,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(90,'Colcount',5,d,[ num ]).
+html_comp_i(90,'Colattid',13,v,[ num ]).
+html_comp_i(90,'Controlname','Attractionphoto',d,[ str ]).
+html_comp_i(90,'Class','ImageAttribute',v,[ str ]).
+html_comp_i(90,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(90,'Returnonclick',0,d,[ bool ]).
+html_comp_i(90,'Eventgx','',d,[ str ]).
+html_comp_i(90,'Controltype',2,d,[ num ]).
+html_comp_i(90,'Inputtype',0,d,[ num ]).
+html_comp_i(90,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(90,'Autocomplete',0,d,[ bool ]).
+html_comp_i(90,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(90,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(90,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(90,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(90,'Coltitle','Photo',d,[ str ]).
+html_comp_i(90,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(90,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(90,'Colvisible',-1,d,[ bool ]).
+html_comp_i(90,'Border','0',d,[ str ]).
+html_comp_i(90,'Alt','',d,[ str ]).
+html_comp_i(90,'Title','',d,[ str ]).
+html_comp_i(90,'Hspace',0,d,[ num ]).
+html_comp_i(90,'Vspace',0,d,[ num ]).
+html_comp_i(91,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(91,'Colcount',4,d,[ num ]).
+html_comp_i(91,'Colattid',14,v,[ num ]).
+html_comp_i(91,'Controlname','Cityid',d,[ str ]).
+html_comp_i(91,'Class','Attribute',v,[ str ]).
+html_comp_i(91,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(91,'Returnonclick',0,d,[ bool ]).
+html_comp_i(91,'Eventgx','',d,[ str ]).
+html_comp_i(91,'Controltype',2,d,[ num ]).
+html_comp_i(91,'Inputtype',0,d,[ num ]).
+html_comp_i(91,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(91,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(91,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(91,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(91,'Ispassword',0,d,[ bool ]).
+html_comp_i(91,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(91,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(91,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(91,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(91,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(91,'Coltitle','City Id',d,[ str ]).
+html_comp_i(91,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(91,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(91,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(91,'Gxformat',0,d,[ num ]).
+html_comp_i(91,'Colvisible',-1,d,[ bool ]).
+html_comp_i(91,'Title','',d,[ str ]).
+html_comp_i(91,'Invitemsg','',d,[ str ]).
+html_comp_i(92,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(92,'Colcount',4,d,[ num ]).
+html_comp_i(92,'Colattid',48,v,[ num ]).
+html_comp_i(92,'Controlname','Supplierid',d,[ str ]).
+html_comp_i(92,'Class','Attribute',v,[ str ]).
+html_comp_i(92,'Columnclass','WWColumn OptionalColumn',v,[ str ]).
+html_comp_i(92,'Returnonclick',0,d,[ bool ]).
+html_comp_i(92,'Eventgx','',d,[ str ]).
+html_comp_i(92,'Controltype',2,d,[ num ]).
+html_comp_i(92,'Inputtype',0,d,[ num ]).
+html_comp_i(92,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(92,'Colreadonly',-1,d,[ bool ]).
+html_comp_i(92,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(92,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(92,'Ispassword',0,d,[ bool ]).
+html_comp_i(92,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(92,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(92,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(92,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
+html_comp_i(92,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(92,'Coltitle','Supplier Id',d,[ str ]).
+html_comp_i(92,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
+html_comp_i(92,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(92,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(92,'Gxformat',0,d,[ num ]).
+html_comp_i(92,'Colvisible',-1,d,[ bool ]).
+html_comp_i(92,'Title','',d,[ str ]).
+html_comp_i(92,'Invitemsg','',d,[ str ]).
+html_comp_i(93,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(93,'Class',row,v,[ str ]).
+html_comp_i(93,'Id','',d,[ str ]).
+html_comp_i(93,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(93,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(93,'Semanticcontent',div,d,[ str ]).
+html_comp_i(93,'Align',left,d,[ str ]).
+html_comp_i(93,'Valign',top,d,[ str ]).
+html_comp_i(94,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(94,'Class','col-xs-12',v,[ str ]).
+html_comp_i(94,'Id','',d,[ str ]).
+html_comp_i(94,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(94,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(94,'Semanticcontent',div,d,[ str ]).
+html_comp_i(94,'Align',left,d,[ str ]).
+html_comp_i(94,'Valign',top,d,[ str ]).
+html_comp_i(95,'Isabstractlayoutcontrol',0,d,[ bool ]).
+html_comp_i(95,'Controlname','Btn_cancel',v,[ str ]).
+html_comp_i(95,'Class','BtnCancel',v,[ str ]).
+html_comp_i(95,'Event','Cancel',v,[ str ]).
+html_comp_i(95,'Caption','Cancel',d,[ str ]).
+html_comp_i(95,'Title','Cancel',d,[ str ]).
+html_comp_i(95,'Font',font('Microsoft Sans Serif',10,[]),d,[ font ]).
+html_comp_i(95,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(95,'Backcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(95,'Border','2',d,[ str ]).
+html_comp_i(95,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(95,'Buttonborderstyle',standard,d,[ str ]).
  
  
  
@@ -1341,26 +1643,47 @@ lit_i(53,1,div(53),[ ctlname('') ]).
 lit_i(49,1,div(49),[ ctlname('Cityidfiltercontainer') ]).
 lit_i(48,1,div(48),[ ctlname('') ]).
 lit_i(47,1,div(47),[ ctlname('') ]).
+lit_i(62,1,t('Supplier Id',3),[ ctlname('Lblsupplieridfilter') ]).
+lit_i(61,1,div(61),[ ctlname('') ]).
+lit_i(60,1,div(60),[ ctlname('') ]).
+lit_i(66,1,t('Csupplierid',23),[ ctlname('&Csupplierid'),ctrltype(edit,66),pos(66),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(65,1,div(65),[ ctlname('') ]).
+lit_i(64,1,div(64),[ ctlname('') ]).
+lit_i(63,1,div(63),[ ctlname('') ]).
+lit_i(59,1,div(59),[ ctlname('Supplieridfiltercontainer') ]).
+lit_i(58,1,div(58),[ ctlname('') ]).
+lit_i(57,1,div(57),[ ctlname('') ]).
+lit_i(72,1,t('Supplier Attraction Date',3),[ ctlname('Lblsupplierattractiondatefilter') ]).
+lit_i(71,1,div(71),[ ctlname('') ]).
+lit_i(70,1,div(70),[ ctlname('') ]).
+lit_i(76,1,t('Csupplierattractiondate',23),[ ctlname('&Csupplierattractiondate'),ctrltype(edit,76),pos(76),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(75,1,div(75),[ ctlname('') ]).
+lit_i(74,1,div(74),[ ctlname('') ]).
+lit_i(73,1,div(73),[ ctlname('') ]).
+lit_i(69,1,div(69),[ ctlname('Supplierattractiondatefiltercontainer') ]).
+lit_i(68,1,div(68),[ ctlname('') ]).
+lit_i(67,1,div(67),[ ctlname('') ]).
 lit_i(6,1,div(6),[ ctlname('Advancedcontainer') ]).
 lit_i(5,1,div(5),[ ctlname('') ]).
-lit_i(61,1,button('''Toggle'''),[ ctlname('Btntoggle'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(60,1,div(60),[ ctlname('') ]).
-lit_i(59,1,div(59),[ ctlname('') ]).
-lit_i(65,1,s(t('Linkselection',23),64),[ ctlname('&Linkselection'),ctrltype(edit,65),pos(65),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(66,1,s(t(7,2),64),[ ctlname(7),ctrltype(edit,66),pos(66),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(67,1,s(t(8,2),64),[ ctlname(8),ctrltype(edit,67),pos(67),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(68,1,s(t(9,2),64),[ ctlname(9),ctrltype(edit,68),pos(68),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(69,1,s(t(11,2),64),[ ctlname(11),ctrltype(edit,69),pos(69),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(70,1,s(t(13,2),64),[ ctlname(13),ctrltype(edit,70),pos(70),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(71,1,s(t(14,2),64),[ ctlname(14),ctrltype(edit,71),pos(71),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(64,1,s(64),[ ctlname('Grid1'),el([ t('Linkselection',23),t(7,2),t(8,2),t(9,2),t(11,2),t(13,2),t(14,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(63,1,div(63),[ ctlname('') ]).
-lit_i(62,1,div(62),[ ctlname('') ]).
-lit_i(74,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(73,1,div(73),[ ctlname('') ]).
-lit_i(72,1,div(72),[ ctlname('') ]).
-lit_i(58,1,div(58),[ ctlname('Gridtable') ]).
-lit_i(57,1,div(57),[ ctlname('') ]).
+lit_i(81,1,button('''Toggle'''),[ ctlname('Btntoggle'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(80,1,div(80),[ ctlname('') ]).
+lit_i(79,1,div(79),[ ctlname('') ]).
+lit_i(85,1,s(t('Linkselection',23),84),[ ctlname('&Linkselection'),ctrltype(edit,85),pos(85),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(86,1,s(t(7,2),84),[ ctlname(7),ctrltype(edit,86),pos(86),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(87,1,s(t(8,2),84),[ ctlname(8),ctrltype(edit,87),pos(87),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(88,1,s(t(9,2),84),[ ctlname(9),ctrltype(edit,88),pos(88),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(89,1,s(t(11,2),84),[ ctlname(11),ctrltype(edit,89),pos(89),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(90,1,s(t(13,2),84),[ ctlname(13),ctrltype(edit,90),pos(90),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(91,1,s(t(14,2),84),[ ctlname(14),ctrltype(edit,91),pos(91),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(92,1,s(t(48,2),84),[ ctlname(48),ctrltype(edit,92),pos(92),readonly,ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(84,1,s(84),[ ctlname('Grid1'),el([ t('Linkselection',23),t(7,2),t(8,2),t(9,2),t(11,2),t(13,2),t(14,2),t(48,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(83,1,div(83),[ ctlname('') ]).
+lit_i(82,1,div(82),[ ctlname('') ]).
+lit_i(95,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(94,1,div(94),[ ctlname('') ]).
+lit_i(93,1,div(93),[ ctlname('') ]).
+lit_i(78,1,div(78),[ ctlname('Gridtable') ]).
+lit_i(77,1,div(77),[ ctlname('') ]).
 lit_i(4,1,div(4),[ ctlname('') ]).
 lit_i(3,1,div(3),[ ctlname('Main') ]).
 lit_i(2,1,div(2),[ ctlname('') ]).
@@ -1371,7 +1694,7 @@ lit_i(1,1,window,[ rect(0,0,1000,1000),ctlname('Form') ]).
  
  
  
-ctrl_info_i(1,65,[ [ 0,0,sort,[],[],0,0,5,0,0 ] ]).
+ctrl_info_i(1,85,[ [ 0,0,sort,[],[],0,0,5,0,0 ] ]).
  
  
  
@@ -1453,6 +1776,31 @@ att_prop_i(2,14,'AttValidationFailedMsg','',d).
 att_prop_i(2,14,'DownloadOffline','0',d).
 att_prop_i(2,14,'VarServiceExtName','',d).
 att_prop_i(2,14,'FullName','CityId',v).
+att_prop_i(2,48,'ExternalName','SupplierId',d).
+att_prop_i(2,48,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,48,'EmptyAsNull','Yes',d).
+att_prop_i(2,48,idBasedOn,94,v).
+att_prop_i(2,48,'AUTONUMBER','-1',d).
+att_prop_i(2,48,'AUTONUMBER_START','1',d).
+att_prop_i(2,48,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,48,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,48,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,48,'AttRegEx','',d).
+att_prop_i(2,48,'AttValidationFailedMsg','',d).
+att_prop_i(2,48,'DownloadOffline','0',d).
+att_prop_i(2,48,'VarServiceExtName','',d).
+att_prop_i(2,48,'FullName','SupplierId',v).
+att_prop_i(2,51,'ExternalName','SupplierAttractionDate',d).
+att_prop_i(2,51,'ExternalNamespace','TravelAgency_Capa202309',d).
+att_prop_i(2,51,'EmptyAsNull','Yes',d).
+att_prop_i(2,51,idBasedOn,'',d).
+att_prop_i(2,51,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,51,'AttRegEx','',d).
+att_prop_i(2,51,'AttValidationFailedMsg','',d).
+att_prop_i(2,51,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,51,'DownloadOffline','0',d).
+att_prop_i(2,51,'VarServiceExtName','',d).
+att_prop_i(2,51,'FullName','SupplierAttractionDate',v).
 att_prop_i(2,40000,'ExternalName','',d).
 att_prop_i(2,40000,'ExternalNamespace','',d).
 att_prop_i(2,40000,'EmptyAsNull','Yes',d).
@@ -1471,12 +1819,16 @@ tbl_att_prop_i(2,2,9,'AllowNulls',n).
 tbl_att_prop_i(2,2,11,'AllowNulls',n).
 tbl_att_prop_i(2,2,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,40000,'AllowNulls',n).
+tbl_att_prop_i(2,2,48,'AllowNulls',n).
+tbl_att_prop_i(2,2,51,'AllowNulls',n).
  
 var_prop_i(2,'Cattractionid',idBasedOn,'',v).
 var_prop_i(2,'Cattractionname',idBasedOn,'',v).
 var_prop_i(2,'Ccountryid',idBasedOn,'',v).
 var_prop_i(2,'Ccategoryid',idBasedOn,'',v).
 var_prop_i(2,'Ccityid',idBasedOn,'',v).
+var_prop_i(2,'Csupplierid',idBasedOn,'',v).
+var_prop_i(2,'Csupplierattractiondate',idBasedOn,'',v).
 var_prop_i(2,'Pattractionid',idBasedOn,'',v).
  
  
@@ -1496,8 +1848,10 @@ sub_info_i(146,[ t('Lblattractionnamefilter',3,26,7),t('Click',3,26,31) ],26,34,
 sub_info_i(146,[ t('Lblcountryidfilter',3,36,7),t('Click',3,36,26) ],36,44,[ [ [ t('Countryidfiltercontainer',3),t('Class',3) ] ],[ [ t('Countryidfiltercontainer',3),t('Class',3) ],[ t('Ccountryid',23),t('Visible',3) ] ] ]).
 sub_info_i(146,[ t('Lblcategoryidfilter',3,46,7),t('Click',3,46,27) ],46,54,[ [ [ t('Categoryidfiltercontainer',3),t('Class',3) ] ],[ [ t('Categoryidfiltercontainer',3),t('Class',3) ],[ t('Ccategoryid',23),t('Visible',3) ] ] ]).
 sub_info_i(146,[ t('Lblcityidfilter',3,56,7),t('Click',3,56,23) ],56,64,[ [ [ t('Cityidfiltercontainer',3),t('Class',3) ] ],[ [ t('Cityidfiltercontainer',3),t('Class',3) ],[ t('Ccityid',23),t('Visible',3) ] ] ]).
-sub_info_i(146,'Load',66,68,[ [],[ 'Linkselection' ] ]).
-sub_info_i(146,'Enter',70,73,[ [ 7 ],[ 'Pattractionid' ] ]).
+sub_info_i(146,[ t('Lblsupplieridfilter',3,66,7),t('Click',3,66,27) ],66,74,[ [ [ t('Supplieridfiltercontainer',3),t('Class',3) ] ],[ [ t('Supplieridfiltercontainer',3),t('Class',3) ],[ t('Csupplierid',23),t('Visible',3) ] ] ]).
+sub_info_i(146,[ t('Lblsupplierattractiondatefilter',3,76,7),t('Click',3,76,39) ],76,82,[ [ [ t('Supplierattractiondatefiltercontainer',3),t('Class',3) ] ],[ [ t('Supplierattractiondatefiltercontainer',3),t('Class',3) ] ] ]).
+sub_info_i(146,'Load',84,86,[ [],[ 'Linkselection' ] ]).
+sub_info_i(146,'Enter',88,91,[ [ 7 ],[ 'Pattractionid' ] ]).
  
  
 pgm_callprotocol_i(web,4,'GX0020','INTERNAL','Unsecure').

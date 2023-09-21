@@ -26,25 +26,43 @@
 <TableId>13</TableId>
 <TableName>Supplier</TableName>
 <Description>Supplier</Description></Table></BaseTable>
-<NavigationTree>
+<StandAloneRules></StandAloneRules>
+<BaseTableRule>
+<Action>
+<ActionType>ReadBaseTable</ActionType>
 <Table>
 <TableId>13</TableId>
 <TableName>Supplier</TableName>
-<Description>Supplier</Description>
-<Updated>Yes</Updated>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
+<Description>Supplier</Description></Table>
+<JoinConditions>
+<Table>
+<TableId>13</TableId>
+<TableName>Supplier</TableName>
+<Description>Supplier</Description></Table>
+<JoinCondition>
+<AttributeTo>
 <Attribute>
 <AttriId>48</AttriId>
 <AttriName>SupplierId</AttriName>
-<Description>Supplier Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<Formulas>
-<VerticalFormulas></VerticalFormulas>
-<AggSelFormulas></AggSelFormulas></Formulas>
-<DynamicLoads></DynamicLoads>
+<Description>Supplier Id</Description></Attribute></AttributeTo>
+<Table></Table>
+<AttributeFrom>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>SupplierId</AttriName>
+<Description>Supplier Id</Description></Attribute></AttributeFrom></JoinCondition></JoinConditions>
+<Into>
+<Attribute>
+<AttriId>49</AttriId>
+<AttriName>SupplierName</AttriName>
+<Description>Supplier Name</Description></Attribute>
+<Attribute>
+<AttriId>50</AttriId>
+<AttriName>SupplierAddress</AttriName>
+<Description>Supplier Address</Description></Attribute></Into></Action></BaseTableRule>
+<StandAloneWithModeRules></StandAloneWithModeRules>
 <Rules></Rules>
-<AfterAttributeRules></AfterAttributeRules>
+<BeforeConfirmRules></BeforeConfirmRules>
 <AfterConfirmRules></AfterConfirmRules>
 <TablesToUpdate>
 <TableToUpdate>
@@ -84,21 +102,236 @@
 <Description>Supplier</Description></Table>
 <TableAction>delete</TableAction>
 <AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<BeforeInsertRules></BeforeInsertRules>
 <AfterInsertRules></AfterInsertRules>
+<BeforeUpdateRules></BeforeUpdateRules>
 <AfterUpdateRules></AfterUpdateRules>
+<BeforeDeleteRules></BeforeDeleteRules>
 <AfterDeleteRules></AfterDeleteRules>
+<AfterDisplayRules></AfterDisplayRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>2</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table></BaseTable>
+<StandAloneRules></StandAloneRules>
+<BaseTableRule>
+<Action>
+<ActionType>ReadBaseTable</ActionType>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<JoinConditions>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<JoinCondition>
+<AttributeTo>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AttractionId</AttriName>
+<Description>Attraction Id</Description></Attribute></AttributeTo>
+<Table></Table>
+<AttributeFrom>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AttractionId</AttriName>
+<Description>Attraction Id</Description></Attribute></AttributeFrom></JoinCondition></JoinConditions>
+<Into>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>AttractionPhoto</AttriName>
+<Description>Attraction Photo</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>AttractionPhoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>SupplierAttractionDate</AttriName>
+<Description>Supplier Attraction Date</Description></Attribute></Into></Action></BaseTableRule>
+<StandAloneWithModeRules></StandAloneWithModeRules>
+<Rules>
+<Action>
+<ActionType>BusinessRule</ActionType>
+<RuleType>ErrorRule</RuleType>
+<Expression>
+<Token>&quot;Field Supplier Attraction Date is out of range&quot;</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Token>OutOfRange</Token></Expression>
+<Condition>
+<Token>not</Token>
+<Token>(</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>SupplierAttractionDate</AttriName>
+<Description>Supplier Attraction Date</Description></Attribute>
+<Token>.</Token>
+<Token>isempty(</Token>
+<Token>)</Token>
+<Sp></Sp>
+<Token>or</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>SupplierAttractionDate</AttriName>
+<Description>Supplier Attraction Date</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Token>ymdtod(</Token>
+<Sp></Sp>
+<Token>1753</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Token>01</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Token>01</Token>
+<Token>)</Token>
+<Token>)</Token></Condition></Action>
+<Action>
+<ActionType>ReadCKey</ActionType>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<JoinConditions>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<JoinCondition>
+<AttributeTo>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute></AttributeTo>
+<Table></Table>
+<AttributeFrom>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute></AttributeFrom></JoinCondition></JoinConditions>
+<Into></Into></Action></Rules>
+<BeforeConfirmRules></BeforeConfirmRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>AttractionPhoto</AttriName>
+<Description>Attraction Photo</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>AttractionPhoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>SupplierAttractionDate</AttriName>
+<Description>Supplier Attraction Date</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>AttractionName</AttriName>
+<Description>Attraction Name</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>AttractionPhoto</AttriName>
+<Description>Attraction Photo</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>AttractionPhoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>SupplierAttractionDate</AttriName>
+<Description>Supplier Attraction Date</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<BeforeInsertRules></BeforeInsertRules>
+<AfterInsertRules></AfterInsertRules>
+<BeforeUpdateRules></BeforeUpdateRules>
+<AfterUpdateRules></AfterUpdateRules>
+<BeforeDeleteRules></BeforeDeleteRules>
+<AfterDeleteRules></AfterDeleteRules>
+<AfterDisplayRules></AfterDisplayRules>
 <TablesToControlOnDelete></TablesToControlOnDelete>
 <Levels></Levels>
+<AfterLevelRules></AfterLevelRules>
+<Formulas>
+<AggSelFormulas></AggSelFormulas></Formulas></Level></Levels>
+<BeforeTrnRules></BeforeTrnRules>
 <AfterTrnRules></AfterTrnRules>
-<AfterLevelRules></AfterLevelRules></Level></Levels>
+<AfterLevelRules></AfterLevelRules>
+<Formulas>
+<AggSelFormulas></AggSelFormulas></Formulas></Level></Levels>
 <Prompts>
+<Prompt>
+<Table>
+<TableId>2</TableId>
+<TableName>Attraction</TableName>
+<Description>Attraction</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjPgmName>Gx0020</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AttractionId</AttriName>
+<Description>Attraction Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>
 <TableId>13</TableId>
 <TableName>Supplier</TableName>
 <Description>Supplier</Description></Table>
-<ProgramName>
-<Token>Gx00D0</Token></ProgramName>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>26</ObjId>
+<ObjName>Gx00D0</ObjName>
+<ObjPgmName>Gx00D0</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>
 <Attribute>

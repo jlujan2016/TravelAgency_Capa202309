@@ -2404,7 +2404,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392112492074", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202392114514097", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2420,7 +2420,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("attraction.js", "?202392112492074", false, true);
+         context.AddJavascriptSource("attraction.js", "?202392114514098", false, true);
          /* End function include_jscripts */
       }
 
@@ -3284,7 +3284,7 @@ namespace GeneXus.Programs {
              ,new CursorDef("T000214", "SELECT [AttractionId] FROM [Attraction] WHERE [AttractionId] = @AttractionId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000214,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T000215", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE ( [AttractionId] > @AttractionId) ORDER BY [AttractionId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000215,1, GxCacheFrequency.OFF ,true,true )
              ,new CursorDef("T000216", "SELECT TOP 1 [AttractionId] FROM [Attraction] WHERE ( [AttractionId] < @AttractionId) ORDER BY [AttractionId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000216,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("T000217", "INSERT INTO [Attraction]([AttractionName], [AttractionPhoto], [AttractionPhoto_GXI], [AttractionAddress], [CountryId], [CityId], [CategoryId], [SupplierId]) VALUES(@AttractionName, @AttractionPhoto, @AttractionPhoto_GXI, @AttractionAddress, @CountryId, @CityId, @CategoryId, @SupplierId); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000217,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("T000217", "INSERT INTO [Attraction]([AttractionName], [AttractionPhoto], [AttractionPhoto_GXI], [AttractionAddress], [CountryId], [CityId], [CategoryId], [SupplierId], [SupplierAttractionDate]) VALUES(@AttractionName, @AttractionPhoto, @AttractionPhoto_GXI, @AttractionAddress, @CountryId, @CityId, @CategoryId, @SupplierId, convert( DATETIME, '17530101', 112 )); SELECT SCOPE_IDENTITY()",true, GxErrorMask.GX_NOMASK, false, this,prmT000217,1, GxCacheFrequency.OFF ,true,true )
              ,new CursorDef("T000218", "UPDATE [Attraction] SET [AttractionName]=@AttractionName, [AttractionAddress]=@AttractionAddress, [CountryId]=@CountryId, [CityId]=@CityId, [CategoryId]=@CategoryId, [SupplierId]=@SupplierId  WHERE [AttractionId] = @AttractionId", GxErrorMask.GX_NOMASK,prmT000218)
              ,new CursorDef("T000219", "UPDATE [Attraction] SET [AttractionPhoto]=@AttractionPhoto, [AttractionPhoto_GXI]=@AttractionPhoto_GXI  WHERE [AttractionId] = @AttractionId", GxErrorMask.GX_NOMASK,prmT000219)
              ,new CursorDef("T000220", "DELETE FROM [Attraction]  WHERE [AttractionId] = @AttractionId", GxErrorMask.GX_NOMASK,prmT000220)

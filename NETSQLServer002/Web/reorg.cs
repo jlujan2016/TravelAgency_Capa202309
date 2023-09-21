@@ -60,95 +60,18 @@ namespace GeneXus.Programs {
       {
          string cmdBuffer = "";
          /* Indices for table Attraction */
-         cmdBuffer=" ALTER TABLE [Attraction] ADD [SupplierId] smallint NOT NULL CONSTRAINT SupplierIdAttraction_DEFAULT DEFAULT convert(int, 0) "
+         cmdBuffer=" ALTER TABLE [Attraction] ADD [SupplierAttractionDate] datetime NOT NULL CONSTRAINT SupplierAttractionDateAttraction_DEFAULT DEFAULT convert( DATETIME, '17530101', 112 ) "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT SupplierIdAttraction_DEFAULT "
+         cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT SupplierAttractionDateAttraction_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
          RGZ.ExecuteStmt() ;
          RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Supplier] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Supplier] ([SupplierId], [SupplierName], [SupplierAddress]) SELECT TOP 1 convert(int, 0), ' ', ' ' FROM [Attraction] WHERE NOT EXISTS (SELECT 1 FROM [Supplier] WHERE SupplierId=convert(int, 0)) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Supplier] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         try
-         {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION3] ON [Attraction] ([SupplierId] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-            cmdBuffer=" DROP INDEX [IATTRACTION3] ON [Attraction] "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IATTRACTION3] ON [Attraction] ([SupplierId] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-      }
-
-      public void RIAttractionSupplier( )
-      {
-         string cmdBuffer;
-         try
-         {
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION3] FOREIGN KEY ([SupplierId]) REFERENCES [Supplier] ([SupplierId]) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-            try
-            {
-               cmdBuffer=" ALTER TABLE [Attraction] DROP CONSTRAINT [IATTRACTION3] "
-               ;
-               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-               RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-               RGZ.ExecuteStmt() ;
-               RGZ.Drop();
-            }
-            catch
-            {
-            }
-            cmdBuffer=" ALTER TABLE [Attraction] ADD CONSTRAINT [IATTRACTION3] FOREIGN KEY ([SupplierId]) REFERENCES [Supplier] ([SupplierId]) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
       }
 
       private void TablesCount( )
@@ -201,9 +124,9 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ColumnExist("Attraction",sSchemaVar,"SupplierId") )
+         if ( ColumnExist("Attraction",sSchemaVar,"SupplierAttractionDate") )
          {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"SupplierId", "Attraction"}) ) ;
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"SupplierAttractionDate", "Attraction"}) ) ;
             return false ;
          }
          return true ;
@@ -239,7 +162,6 @@ namespace GeneXus.Programs {
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIAttractionSupplier" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -262,8 +184,6 @@ namespace GeneXus.Programs {
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IATTRACTION3]"}) );
-         ReorgExecute.RegisterPrecedence( "RIAttractionSupplier" ,  "ReorganizeAttraction" );
       }
 
       private void ExecuteReorganization( )
